@@ -71,7 +71,7 @@ const Five = () => {
             textTransform="uppercase"
             width="617px"
           >
-            EXPLORE THE ENEMIES
+            Know your ENEMIES
           </Typography>
         </Box>
         <Box sx={{ marginTop: "60px" }}>

@@ -81,7 +81,6 @@ const Six = () => {
             <Box
               sx={{
                 position: "relative",
-                width: "355px",
                 marginLeft: index ? "323px" : "",
               }}
               key={`screen-6-step-${index}`}
@@ -114,7 +113,10 @@ const Six = () => {
                   step.good.map((item, goodIndex) => (
                     <Box
                       key={`screen-6-step-${index}-bad-${goodIndex}`}
-                      sx={{ display: "flex" }}
+                      sx={{
+                        display: "flex",
+                        marginTop: goodIndex ? "15px" : "",
+                      }}
                     >
                       <Box>
                         <Box
@@ -131,6 +133,7 @@ const Six = () => {
                         fontWeight="300"
                         fontSize="18px"
                         color="#FFFFFF"
+                        maxWidth="361px"
                       >
                         {item}
                       </Typography>
@@ -140,7 +143,10 @@ const Six = () => {
                   step.bad.map((item, badIndex) => (
                     <Box
                       key={`screen-6-step-${index}-bad-${badIndex}`}
-                      sx={{ display: "flex" }}
+                      sx={{
+                        display: "flex",
+                        marginTop: badIndex || step.good ? "15px" : "",
+                      }}
                     >
                       <Box>
                         <Box
@@ -157,6 +163,7 @@ const Six = () => {
                         fontWeight="300"
                         fontSize="18px"
                         color="#FFFFFF"
+                        textTransform="capitalize"
                       >
                         {item}
                       </Typography>

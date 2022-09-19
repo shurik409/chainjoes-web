@@ -37,8 +37,8 @@ const Nine = () => {
             lineHeight="50px"
           >
             <Box sx={{ color: "#44F4C3", display: "inline" }}>
-              Stay updated{" "}
-            </Box>{" "}
+              Stay up to date{" "}
+            </Box>
             with our latest news, events, and announcements.
           </Typography>
           <Box sx={{ position: "absolute", top: 0, left: 0 }}>

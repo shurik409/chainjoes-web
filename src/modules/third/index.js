@@ -10,6 +10,8 @@ import {
   HeaderTexture,
 } from "../../imgs/screen3";
 import { Line } from "../first/components/header/components/Icons";
+import { DsLogo } from "../first/components/header/components/Icons";
+import GreenBtn from "../../imgs/green_btn_small.png";
 
 const Third = () => {
   const [curentItem, setCurentItem] = useState(0);
@@ -191,6 +193,37 @@ const Third = () => {
                 {header[curentItem].descriptionTwo}
               </Typography>
             )}
+          </Box>
+          <Box
+            className="first_dsBtn"
+            sx={{
+              background: `url(${GreenBtn})`,
+              cursor: "pointer",
+              width: 225,
+              height: 64,
+              marginTop: "40px",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Typography
+                fontFamily="Inter"
+                fontSize="18px"
+                fontStyle="italic"
+                fontWeight="400"
+                textTransform="uppercase"
+                color="#000000"
+                style={{ marginLeft: "11px" }}
+              >
+                explore the lore
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>

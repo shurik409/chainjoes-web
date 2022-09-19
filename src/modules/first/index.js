@@ -86,7 +86,8 @@ const First = () => {
           fontWeight="400"
           lineHeight="28.8px"
         >
-          Chain Joes is a action mobile game designed for the WEB3 generation
+          Chain Joes is an action-packed mobile game designed for the WEB3
+          generation
         </Typography>
         <Typography
           fontFamily="Inter"
@@ -98,7 +99,7 @@ const First = () => {
         >
           Battle with each other to win and earn rewards through our
           Play-and-Earn mechanics and protect the community from Spammers,
-          Skammers and Hackers to get unique rewards
+          Scammers and Hackers to get unique rewards
         </Typography>
       </Box>
       <Box
@@ -121,27 +122,10 @@ const First = () => {
             cursor: "pointer",
             width: 288,
             height: 64,
-            // background: `linear-gradient(180deg, #00FFB7 9.38%, #005B42 100%)`,
-            // transform: "skewX(-14deg)",
-            // position: "relative",
           }}
         >
-          {/* <Box
-          sx={{
-            background: `url(${DiscordBtn})`,
-            backgroundSize: "cover",
-            width: 306,
-            height: 64,
-            transform: "skewX(14deg)",
-            position: "absolute",
-            top: 0,
-            left: -9,
-            opacity: 0.6,
-          }}
-        ></Box> */}
           <Box
             sx={{
-              // transform: "skewX(14deg)",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

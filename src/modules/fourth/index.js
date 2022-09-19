@@ -15,7 +15,8 @@ const Fourth = () => {
     {
       title: "Play different modes",
       description:
-        "Expolre classic deathmatch, battle royale, meat grinder, capture the flag duck hunt, run the labyrinth and become a champ.",
+        "Explore classic deathmatch, battle royale, meat grinder, capture the flag, duck hunt, run the labyrinth and become a champ.",
+      descriptionWidth: "410px",
       img: FirstImg,
       mask: FirstMask,
       height: "400px",
@@ -24,7 +25,8 @@ const Fourth = () => {
     },
     {
       title: "Create clan",
-      description: "United to fight the opponents more effectively.",
+      description: "Unite with others to fight more effectively.",
+      descriptionWidth: "250px",
       img: SecondImg,
       mask: SecondMask,
       height: "410px",
@@ -32,7 +34,7 @@ const Fourth = () => {
       transformY: "-61%",
     },
     {
-      title: "Join weekly, seasons activities & tournaments",
+      title: "Join weekly & seasonal activities & tournaments",
       description:
         "Participate in various quests and missions to receive unique rewards and $CJs tokens.",
       img: ThirdImg,
@@ -117,7 +119,7 @@ const Fourth = () => {
               fontSize="18px"
               fontWeight="300"
               color="#FFFFFF"
-              width="400px"
+              width={item.descriptionWidth || "400px"}
               marginTop="15px"
               lineHeight="21.8px"
             >

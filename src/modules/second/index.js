@@ -8,28 +8,24 @@ const Second = () => {
 
   const texts = [
     {
-      title: `[01] Free gameplay`,
+      title: `Free gameplay`,
       img: FirstImg,
-      description: `Chain Joes is a free Battle Arena game in crypto and memes setting
-            that will cause real game lovers to delight. Explore thoughtful
-            ChainVerse and unique characters, enjoy high-quality visualization
-            and enemies in the form of Scammers, Spammers and Hackers and
-            become a champion. Join the battle without any barrier!`,
+      description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion. Join the battle without any barrier! `,
     },
     {
-      title: `[02]  Play & Earn system`,
+      title: `Play & Earn system`,
       img: SecondImg,
       description: `Our Plan-And-Earn model evolved from the P2E framework and puts the focus back on providing real entertainment value to create a sustainable, open game economy.`,
       descriptionTwo: `With Play-to-Earn we aim to build value with gameplay. Providing a high entertainment value encourages players to keep playing, and to do so, they’ll want to get rewards they can spend in the game to improve their gameplay experience.`,
     },
     {
-      title: `[03]  NFT assets`,
+      title: `NFT assets`,
       img: ThirdImg,
       description: `Improve and Merge the NFT’s to increase their power and get the first positions in the competitions. `,
       descriptionTwo: `Our NFTs are not just collections, they deine the life of the game and the legacy of the players. `,
     },
     {
-      title: `[04]  Ranked PvP systeme`,
+      title: `Ranked PvP system`,
       img: FourthImg,
       description: `The essence of the game revolves around PVP champs fighting each other in a ranked system to increase their rating.`,
       descriptionTwo: `The balance of the Ranked System, based on the Elo Rating system, will help the player find a team suitable for the level. Increase your rank and skill to reach the highest rank and earn more tokens for winning.`,
@@ -103,7 +99,8 @@ const Second = () => {
             >
               <Box>
                 <Typography
-                  fontFamily="Furore"
+                  fontFamily="Inter"
+                  fontWeight={index === curentItem ? "500" : "300"}
                   fontSize="20px"
                   color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                 >
