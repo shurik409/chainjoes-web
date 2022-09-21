@@ -1,7 +1,8 @@
 import React from "react";
 
-const Line = () => (
+const Line = ({ style }) => (
   <svg
+    style={style || {}}
     width="98"
     height="58"
     viewBox="0 0 98 58"
@@ -19,13 +20,13 @@ const Line = () => (
         ry="4.25333"
         transform="matrix(-0.145175 0.989406 -0.985244 -0.171154 48.8276 27.5335)"
         fill="#4AF5C5"
-        fill-opacity="0.5"
+        fillOpacity="0.5"
       />
     </g>
     <path
       d="M57.0406 -8.31982L42.233 70.766"
       stroke="url(#paint1_linear_31_48)"
-      stroke-width="1.21059"
+      strokeWidth="1.21059"
     />
     <defs>
       <filter
@@ -35,9 +36,9 @@ const Line = () => (
         width="96.782"
         height="143.676"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -58,7 +59,7 @@ const Line = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop />
-        <stop offset="1" stop-opacity="0" />
+        <stop offset="1" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_31_48"
@@ -68,11 +69,11 @@ const Line = () => (
         y2="64.8586"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.0109952" stop-color="#00FFB7" stop-opacity="0" />
-        <stop offset="0.323495" stop-color="#47FFF4" stop-opacity="0.722892" />
-        <stop offset="0.443287" stop-color="white" />
-        <stop offset="0.609954" stop-color="#00B2FF" stop-opacity="0.55" />
-        <stop offset="1" stop-color="#00FFB7" stop-opacity="0" />
+        <stop offset="0.0109952" stopColor="#00FFB7" stopOpacity="0" />
+        <stop offset="0.323495" stopColor="#47FFF4" stopOpacity="0.722892" />
+        <stop offset="0.443287" stopColor="white" />
+        <stop offset="0.609954" stopColor="#00B2FF" stopOpacity="0.55" />
+        <stop offset="1" stopColor="#00FFB7" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>

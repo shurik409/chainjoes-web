@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { FirstImg, SecondImg, ThirdImg, FourthImg } from "../../imgs/screen2";
 import Smoke from "../../imgs/screen2_smoke.png";
 
@@ -10,7 +10,8 @@ const Second = () => {
     {
       title: `Free gameplay`,
       img: FirstImg,
-      description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion. Join the battle without any barrier! `,
+      description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion.`,
+      descriptionTwo: "Join the battle without any barrier!",
     },
     {
       title: `Play & Earn system`,
@@ -32,125 +33,316 @@ const Second = () => {
     },
   ];
 
+  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+
+  const desktop768Width = useMediaQuery("(min-width: 768px");
+
   return (
-    <Box
-      sx={{
-        background: `url(${Smoke})`,
-        paddingTop: "181px",
-        paddingBottom: "220px",
-        position: "relative",
-        backgroundPositionY: "bottom",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      <Box sx={{ width: "540px", marginLeft: "80px" }}>
-        <Typography
-          fontFamily="Furore"
-          fontSize="75px"
-          color="#ffffff"
-          lineHeight="75px"
-          style={{
-            textFillColor: "transparent",
-            backgroundcolor: "primary",
-            backgroundImage:
-              "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-            backgroundSize: "100%",
-            backgroundRepeat: "repeat",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          EXPLORE THE WORLD
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          marginTop: "115px",
-          marginLeft: "80px",
-          display: "flex",
-        }}
-      >
+    <Box>
+      {desktop1080Width && (
         <Box
           sx={{
-            width: "3px",
-            height: "510px",
-            backgroundColor: "#A5a5a5",
-            marginRight: "45px",
-            marginTop: "-10px",
+            background: `url(${Smoke})`,
+            position: "relative",
+            backgroundPositionY: "bottom",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            padding: "136px 0 105px 80px",
           }}
         >
-          <Box
-            sx={{
-              width: "3px",
-              height: "228px",
-              backgroundColor: "#44F4C3",
-              marginTop: `${curentItem * 94}px`,
-            }}
-          ></Box>
-        </Box>
-        <Box>
-          {texts.map((item, index) => (
-            <Box
-              key={`secondScreen_items_${index}`}
-              sx={{ marginTop: index ? "56px" : "", cursor: "pointer" }}
-              onClick={() => setCurentItem(index)}
-            >
-              <Box>
+          <Box sx={{ display: "flex" }}>
+            <Box>
+              <Box sx={{ width: "540px" }}>
                 <Typography
-                  fontFamily="Inter"
-                  fontWeight={index === curentItem ? "500" : "300"}
-                  fontSize="20px"
-                  color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                  fontFamily="Furore"
+                  fontSize="75px"
+                  color="#ffffff"
+                  lineHeight="75px"
+                  style={{
+                    textFillColor: "transparent",
+                    backgroundcolor: "primary",
+                    backgroundImage:
+                      "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                    backgroundSize: "100%",
+                    backgroundRepeat: "repeat",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
                 >
-                  {item.title}
+                  EXPLORE THE WORLD
                 </Typography>
               </Box>
-              {index === curentItem && (
+              <Box
+                sx={{
+                  marginTop: "115px",
+                  display: "flex",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "3px",
+                    height: "510px",
+                    backgroundColor: "#A5a5a5",
+                    marginRight: "45px",
+                    marginTop: "-10px",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: "3px",
+                      height: "228px",
+                      backgroundColor: "#44F4C3",
+                      marginTop: `${curentItem * 94}px`,
+                    }}
+                  ></Box>
+                </Box>
                 <Box>
-                  <Box sx={{ width: "730px", marginTop: "25px" }}>
+                  {texts.map((item, index) => (
+                    <Box
+                      key={`secondScreen_items_${index}`}
+                      sx={{ marginTop: index ? "56px" : "", cursor: "pointer" }}
+                      onClick={() => setCurentItem(index)}
+                    >
+                      <Box>
+                        <Typography
+                          fontFamily="Inter"
+                          fontWeight={index === curentItem ? "500" : "300"}
+                          fontSize="20px"
+                          color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Box>
+                      {index === curentItem && (
+                        <Box>
+                          <Box sx={{ marginTop: "25px" }}>
+                            <Typography
+                              fontFamily="Inter"
+                              fontWeight="300"
+                              fontSize="18px"
+                              color="#ffffff"
+                              maxWidth="730px"
+                            >
+                              {item.description}
+                            </Typography>
+                          </Box>
+                          {item.descriptionTwo && (
+                            <Box sx={{ marginTop: "25px" }}>
+                              <Typography
+                                fontFamily="Inter"
+                                fontWeight="300"
+                                fontSize="18px"
+                                color="#ffffff"
+                                maxWidth="730px"
+                              >
+                                {item.descriptionTwo}
+                              </Typography>
+                            </Box>
+                          )}
+                        </Box>
+                      )}
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            </Box>
+            <Box>
+              <img
+                src={`${texts[curentItem].img}`}
+                alt={texts[curentItem].title}
+                loading="lazy"
+                style={{ maxWidth: "100%" }}
+              />
+            </Box>
+          </Box>
+        </Box>
+      )}
+      {!desktop1080Width && desktop768Width && (
+        <Box
+          sx={{
+            background: `url(${Smoke})`,
+            position: "relative",
+            backgroundPositionY: "bottom",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            padding: "102px 42px 78px 30px",
+          }}
+        >
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="60px"
+              color="#ffffff"
+              lineHeight="60px"
+              maxWidth="380px"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              EXPLORE THE WORLD
+            </Typography>
+          </Box>
+          <Box>
+            <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "60px",
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: "3px",
+                      height: "172px",
+                      backgroundColor: "#A5a5a5",
+                      marginRight: "35px",
+                    }}
+                  >
+                    {curentItem < 2 && (
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "86px",
+                          backgroundColor: "#44F4C3",
+                          marginTop: `${curentItem * 86}px`,
+                        }}
+                      />
+                    )}
+                  </Box>
+                  <Box>
+                    {texts.slice(0, 2).map((item, index) => (
+                      <Box
+                        key={`secondScreen_items_${index}`}
+                        sx={{
+                          marginTop: index ? "58px" : "",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => setCurentItem(index)}
+                      >
+                        <Box>
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight={index === curentItem ? "500" : "300"}
+                            fontSize="20px"
+                            color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                            width="200px"
+                          >
+                            {item.title}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: "3px",
+                      height: "172px",
+                      backgroundColor: "#A5a5a5",
+                      marginRight: "35px",
+                    }}
+                  >
+                    {curentItem >= 2 && (
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "86px",
+                          backgroundColor: "#44F4C3",
+                          marginTop: `${(curentItem - 2) * 86}px`,
+                        }}
+                      />
+                    )}
+                  </Box>
+                  <Box>
+                    {texts.slice(2, 4).map((item, index) => (
+                      <Box
+                        key={`secondScreen_items_${index + 2}`}
+                        sx={{
+                          marginTop: index ? "56px" : "",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => setCurentItem(index + 2)}
+                      >
+                        <Box>
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight={
+                              index + 2 === curentItem ? "500" : "300"
+                            }
+                            fontSize="20px"
+                            color={
+                              index + 2 === curentItem ? "#44F4C3" : "#FFFFFF"
+                            }
+                            width="200px"
+                          >
+                            {item.title}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "43px",
+            }}
+          >
+            <Box sx={{ width: "343px" }}>
+              <img
+                src={`${texts[curentItem].img}`}
+                alt={texts[curentItem].title}
+                loading="lazy"
+                style={{ maxWidth: "100%" }}
+              />
+            </Box>
+            <Box sx={{ marginLeft: "27px" }}>
+              <Box>
+                <Box>
+                  <Typography
+                    fontFamily="Inter"
+                    fontWeight="300"
+                    fontSize="14px"
+                    color="#ffffff"
+                    maxWidth="340px"
+                  >
+                    {texts[curentItem].description}
+                  </Typography>
+                </Box>
+                {texts[curentItem].descriptionTwo && (
+                  <Box sx={{ marginTop: "20px" }}>
                     <Typography
                       fontFamily="Inter"
                       fontWeight="300"
-                      fontSize="18px"
+                      fontSize="14px"
                       color="#ffffff"
+                      maxWidth="340px"
                     >
-                      {item.description}
+                      {texts[curentItem].descriptionTwo}
                     </Typography>
                   </Box>
-                  {item.descriptionTwo && (
-                    <Box sx={{ width: "730px", marginTop: "25px" }}>
-                      <Typography
-                        fontFamily="Inter"
-                        fontWeight="300"
-                        fontSize="18px"
-                        color="#ffffff"
-                      >
-                        {item.descriptionTwo}
-                      </Typography>
-                    </Box>
-                  )}
-                </Box>
-              )}
+                )}
+              </Box>
             </Box>
-          ))}
+          </Box>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          transform: "translateY(-50%)",
-          right: "175px",
-        }}
-      >
-        <img
-          src={`${texts[curentItem].img}`}
-          alt={texts[curentItem].title}
-          loading="lazy"
-        />
-      </Box>
+      )}
     </Box>
   );
 };

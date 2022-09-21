@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   Photo1,
   Photo2,
@@ -42,10 +42,19 @@ const Seven = () => {
     { name: "Alex Andriyashko", job: "3D artist", photo: Photo3 },
     { name: "Jpa Driga", job: "SMM manager", photo: Photo1 },
   ];
+
+  const desktop1080Width = useMediaQuery("(min-width: 1200px");
+
+  const desktopFullGridWidth = useMediaQuery("(min-width: 1555px");
+
+  const desktop768Width = useMediaQuery("(min-width: 768px");
+
   return (
     <Box
       sx={{
-        padding: "173px 0px 180px 80px",
+        padding: desktop1080Width
+          ? "173px 80px 180px 80px"
+          : "66px 28px 110px 28px",
         background: `url(${Smoke})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -54,9 +63,9 @@ const Seven = () => {
       <Box>
         <Typography
           fontFamily="Furore"
-          fontSize="75px"
+          fontSize={desktop1080Width ? "75px" : "60px"}
           color="#ffffff"
-          lineHeight="75px"
+          lineHeight={desktop1080Width ? "75px" : "60px"}
           style={{
             textFillColor: "transparent",
             backgroundcolor: "primary",
@@ -75,11 +84,14 @@ const Seven = () => {
         </Typography>
       </Box>
       {/* managment */}
-      <Box sx={{ display: "flex", marginTop: "67px" }}>
+      <Box
+        sx={{ display: desktopFullGridWidth ? "flex" : "", marginTop: "67px" }}
+      >
         <Box
           sx={{
             // width: "910px",
             // height: "417px",
+            width: desktopFullGridWidth ? "100%" : "calc(100% - 80px)",
             border: "1px solid",
             borderImageSlice: 1,
             borderWidth: "1px",
@@ -87,7 +99,9 @@ const Seven = () => {
             borderColor: "buttonborder",
             borderImageSource:
               "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
-            padding: "38px 40px 45px 40px",
+            padding: desktop1080Width
+              ? "38px 40px 45px 40px"
+              : "34px 34px 37px 36px",
           }}
         >
           <Box sx={{ marginBottom: "30px" }}>
@@ -114,11 +128,17 @@ const Seven = () => {
               Managment
             </Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(142px,1fr))",
+              gridGap: desktop1080Width ? "30px" : "24px",
+            }}
+          >
             {managment.map((person, index) => (
               <Box
                 key={`screen-7-managment-person-${index}`}
-                sx={{ marginLeft: index ? "30px" : "" }}
+                // sx={{ marginLeft: index ? "30px" : "" }}
               >
                 <Box sx={{ width: "142px", height: "165px" }}>
                   <img
@@ -158,7 +178,8 @@ const Seven = () => {
         {/* RedRift */}
         <Box
           sx={{
-            marginLeft: "32px",
+            marginTop: desktopFullGridWidth ? "" : "30px",
+            marginLeft: desktopFullGridWidth ? "32px" : "",
             border: "1px solid",
             borderImageSlice: 1,
             borderWidth: "1px",
@@ -166,7 +187,7 @@ const Seven = () => {
             borderColor: "buttonborder",
             borderImageSource:
               "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
-            padding: "38px 116px 45px 40px",
+            padding: "38px 90px 45px 40px",
           }}
         >
           <Box sx={{ marginBottom: "30px" }}>
@@ -199,6 +220,7 @@ const Seven = () => {
                 src={`${RedRiftLogo}`}
                 alt={"Red Rift Logo"}
                 loading="lazy"
+                width={desktop1080Width ? "" : "531px"}
               />
             </Box>
             <Box
@@ -237,7 +259,7 @@ const Seven = () => {
       <Box sx={{ display: "flex", marginTop: "30px" }}>
         <Box
           sx={{
-            // width: "1433px",
+            width: "1433px",
             // height: "427px",
             border: "1px solid",
             borderImageSlice: 1,
@@ -246,7 +268,9 @@ const Seven = () => {
             borderColor: "buttonborder",
             borderImageSource:
               "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
-            padding: "38px 40px 45px 40px",
+            padding: desktop1080Width
+              ? "38px 40px 45px 40px"
+              : "34px 34px 37px 36px",
           }}
         >
           <Box sx={{ marginBottom: "30px" }}>
@@ -273,11 +297,17 @@ const Seven = () => {
               Marketing
             </Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(142px,1fr))",
+              gridGap: desktop1080Width ? "30px" : "24px",
+            }}
+          >
             {marketing.map((person, index) => (
               <Box
                 key={`screen-7-managment-person-${index}`}
-                sx={{ marginLeft: index ? "30px" : "" }}
+                // sx={{ marginLeft: index ? "30px" : "" }}
               >
                 <Box sx={{ width: "142px", height: "165px" }}>
                   <img

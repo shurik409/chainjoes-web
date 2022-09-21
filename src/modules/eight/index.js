@@ -1,56 +1,160 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   Partner1,
   Partner2,
   Partner3,
   Partner4,
-  Partner5,
+  // Partner5,
 } from "../../imgs/screen8";
 
 const Eight = () => {
+  const desktopFlexWidth = useMediaQuery("(min-width: 1555px");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+
+  const desktop768Width = useMediaQuery("(min-width: 768px");
+
   return (
-    <Box
-      sx={{
-        padding: "165px 80px 180px 80px",
-        display: "flex",
-        justifyContent: "space-between",
-        backgroundColor: '#091015'
-      }}
-    >
-      <Box>
-        <Typography
-          fontFamily="Furore"
-          fontSize="75px"
-          color="#ffffff"
-          lineHeight="75px"
-          style={{
-            textFillColor: "transparent",
-            backgroundcolor: "primary",
-            backgroundImage:
-              "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-            backgroundSize: "100%",
-            backgroundRepeat: "repeat",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+    <Box>
+      {desktop1080Width && (
+        <Box
+          sx={{
+            padding: "165px 80px 180px 80px",
+            display: desktopFlexWidth ? "flex" : "",
+            justifyContent: "space-between",
+            backgroundColor: "#091015",
           }}
-          textTransform="uppercase"
         >
-          OUR PARTNERS
-        </Typography>
-      </Box>
-      <Box sx={{ width: "822px" }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
-          <img src={`${Partner2}`} alt={"Red Rift"} loading="lazy" />
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="75px"
+              color="#ffffff"
+              lineHeight="75px"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              textTransform="uppercase"
+              minWidth="630px"
+            >
+              OUR PARTNERS
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: desktopFlexWidth ? "822px" : "unset",
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: !desktopFlexWidth ? "45px" : "",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+              }}>
+              <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
+              <img src={`${Partner3}`} alt="Tamashi" loading="lazy" />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+              }}>
+              <img src={`${Partner2}`} alt={"Red Rift"} loading="lazy" />
+              <img src={`${Partner4}`} alt={"Damnn"} loading="lazy" />
+              {/* <img src={`${Partner5}`} alt={"Moonraised"} loading="lazy" /> */}
+            </Box>
+          </Box>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <img src={`${Partner3}`} alt="Tamashi" loading="lazy" />
-          <img src={`${Partner4}`} alt={"Damnn"} loading="lazy" />
-          <img src={`${Partner5}`} alt={"Moonraised"} loading="lazy" />
+      )}
+      {desktop768Width && !desktop1080Width && (
+        <Box
+          sx={{
+            padding: "102px 25px 105px 25px",
+            justifyContent: "space-between",
+            backgroundColor: "#091015",
+          }}
+        >
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="60px"
+              color="#ffffff"
+              lineHeight="60px"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              textTransform="uppercase"
+            >
+              OUR PARTNERS
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "45px",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <img
+                src={`${Partner1}`}
+                alt="Pay accept"
+                loading="lazy"
+                width="270px"
+              />
+              <img
+                src={`${Partner3}`}
+                alt="Tamashi"
+                loading="lazy"
+                width="268px"
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <img
+                src={`${Partner2}`}
+                alt={"Red Rift"}
+                loading="lazy"
+                width="305px"
+              />
+              <img
+                src={`${Partner4}`}
+                alt={"Damnn"}
+                loading="lazy"
+                width="224px"
+              />
+              {/* <img src={`${Partner5}`} alt={"Moonraised"} loading="lazy" /> */}
+            </Box>
+          </Box>
         </Box>
-      </Box>
+      )}
     </Box>
   );
 };

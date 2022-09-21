@@ -17,7 +17,7 @@ const HeaderButton = (props) => {
       }}
       onMouseLeave={() => setHover(false)}
       style={{
-        zIndex: props.index + 1,
+        zIndex: props.index || 0 + 1,
         marginLeft: props.index && "3px",
         cursor: "pointer",
       }}
@@ -31,7 +31,7 @@ const HeaderButton = (props) => {
       >
         <Box
           sx={{
-            height: "58px",
+            height: props.height || "58px",
             width: props.width || "74px",
             backgroundImage: `url(${BtnTexture})`,
             transform: "skewX(-11deg)",
@@ -45,9 +45,13 @@ const HeaderButton = (props) => {
             sx={{
               transform: "skewX(11deg)",
               display: "flex",
+              alignItems: "center",
             }}
           >
-            <props.icon color={hover ? "#44F4C3" : ""} />
+            <props.icon
+              color={hover ? "#44F4C3" : ""}
+              style={{ height: `${props.iconHeight}px`, display: "block" }}
+            />
             {props.title && (
               <Typography
                 fontSize="16px"
@@ -66,7 +70,7 @@ const HeaderButton = (props) => {
         </Box>
         {!(props.last || props.noLine) && (
           <Box id="btn_line" sx={{ position: "absolute", right: "-50px" }}>
-            <Line />
+            <Line style={{ height: `${props.height}px`, display: "block" }} />
           </Box>
         )}
       </Box>

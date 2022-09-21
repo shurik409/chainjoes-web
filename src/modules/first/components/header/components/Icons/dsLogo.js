@@ -1,7 +1,8 @@
 import React from "react";
 
-const DSLogo = ({ color }) => (
+const DSLogo = ({ color, style }) => (
   <svg
+    style={style || {}}
     width="28"
     height="21"
     viewBox="0 0 28 21"

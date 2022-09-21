@@ -1,7 +1,8 @@
 import React from "react";
 
-const TwitterLogo = ({ color }) => (
+const TwitterLogo = ({ color, style }) => (
   <svg
+    style={style || {}}
     width="26"
     height="20"
     viewBox="0 0 26 20"

@@ -1,7 +1,8 @@
 import React from "react";
 
-const DocsLogo = ({ color }) => (
+const DocsLogo = ({ color, style }) => (
   <svg
+    style={style || {}}
     width="17"
     height="21"
     viewBox="0 0 17 21"
