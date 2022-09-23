@@ -75,9 +75,9 @@ const Nine = () => {
                 maxWidth="550px"
                 lineHeight="50px"
               >
-                <Box sx={{ color: "#44F4C3", display: "inline" }}>
+                <span style={{ color: "#44F4C3", display: "inline" }}>
                   Stay up to date{" "}
-                </Box>
+                </span>
                 with our latest news, events, and announcements.
               </Typography>
               <Box
@@ -336,9 +336,9 @@ const Nine = () => {
                 maxWidth="387px"
                 lineHeight="35px"
               >
-                <Box sx={{ color: "#44F4C3", display: "inline" }}>
+                <span style={{ color: "#44F4C3", display: "inline" }}>
                   Stay up to date{" "}
-                </Box>
+                </span>
                 with our latest news, events, and announcements.
               </Typography>
               <Box
@@ -649,9 +649,9 @@ const Nine = () => {
                 lineHeight="25px"
                 textAlign="center"
               >
-                <Box sx={{ color: "#44F4C3", display: "inline" }}>
+                <span style={{ color: "#44F4C3", display: "inline" }}>
                   Stay up to date{" "}
-                </Box>
+                </span>
                 with our latest news, events, and announcements.
               </Typography>
               <Box

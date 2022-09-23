@@ -503,7 +503,7 @@ const Second = () => {
               ref={swiperRef}
             >
               {texts.map((item, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={`screen-2-swiper-item-${index}`}>
                   <Box
                     sx={{
                       position: "relative",

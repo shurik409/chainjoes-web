@@ -457,7 +457,7 @@ const Five = () => {
                 ref={swiperRef}
               >
                 {texts.map((item, index) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={`screen-5-swiper-item-${index}`}>
                     <Box>
                       <Typography
                         fontFamily="Inter"

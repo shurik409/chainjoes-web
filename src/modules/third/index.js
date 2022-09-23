@@ -620,7 +620,7 @@ const Third = () => {
               ref={swiperRef}
             >
               {header.map((item, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={`screen-3-swiper-item-${index}`}>
                   <Box
                     sx={{
                       display: "flex",
