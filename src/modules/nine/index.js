@@ -202,7 +202,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://discord.com/"
+                    href="https://discord.com/invite/6XcvPDbXBa"
                     target="_blank"
                     underline="none"
                   >
@@ -233,7 +233,7 @@ const Nine = () => {
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
                 >
                   <Link
-                    href="https://medium.com/"
+                    href="https://medium.com/@ChainJoes"
                     target="_blank"
                     underline="none"
                   >
@@ -489,7 +489,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://discord.com/"
+                    href="https://discord.com/invite/6XcvPDbXBa"
                     target="_blank"
                     underline="none"
                   >
@@ -520,7 +520,7 @@ const Nine = () => {
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
                 >
                   <Link
-                    href="https://medium.com/"
+                    href="https://medium.com/@ChainJoes"
                     target="_blank"
                     underline="none"
                   >
@@ -784,7 +784,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://discord.com/"
+                    href="https://discord.com/invite/6XcvPDbXBa"
                     target="_blank"
                     underline="none"
                   >
@@ -818,7 +818,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://medium.com/"
+                    href="https://medium.com/@ChainJoes"
                     target="_blank"
                     underline="none"
                   >

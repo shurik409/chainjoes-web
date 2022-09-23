@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import Header from "./components/header";
 import Background from "../../imgs/first_screen.png";
 import Scratches from "../../imgs/scratches.svg";
@@ -162,37 +162,43 @@ const First = () => {
                 },
               }}
             >
-              <Box
-                className="first_dsBtn"
-                sx={{
-                  background: `url(${GreenBtn})`,
-                  cursor: "pointer",
-                  width: 288,
-                  height: 64,
-                }}
+              <Link
+                href="https://discord.com/invite/6XcvPDbXBa"
+                target="_blank"
+                underline="none"
               >
                 <Box
+                  className="first_dsBtn"
                   sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
+                    background: `url(${GreenBtn})`,
+                    cursor: "pointer",
+                    width: 288,
+                    height: 64,
                   }}
                 >
-                  <DsLogo color="#000000" />
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="16px"
-                    fontStyle="italic"
-                    fontWeight="400"
-                    textTransform="uppercase"
-                    color="#000000"
-                    style={{ marginLeft: "11px" }}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
                   >
-                    Join discord server
-                  </Typography>
+                    <DsLogo color="#000000" />
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="16px"
+                      fontStyle="italic"
+                      fontWeight="400"
+                      textTransform="uppercase"
+                      color="#000000"
+                      style={{ marginLeft: "11px" }}
+                    >
+                      Join discord server
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </Box>
           </Box>
           <Box
@@ -330,37 +336,43 @@ const First = () => {
                 },
               }}
             >
-              <Box
-                className="first_dsBtn"
-                sx={{
-                  background: `url(${GreenBtn})`,
-                  cursor: "pointer",
-                  width: 288,
-                  height: 64,
-                }}
+              <Link
+                href="https://discord.com/invite/6XcvPDbXBa"
+                target="_blank"
+                underline="none"
               >
                 <Box
+                  className="first_dsBtn"
                   sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
+                    background: `url(${GreenBtn})`,
+                    cursor: "pointer",
+                    width: 288,
+                    height: 64,
                   }}
                 >
-                  <DsLogo color="#000000" />
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="16px"
-                    fontStyle="italic"
-                    fontWeight="400"
-                    textTransform="uppercase"
-                    color="#000000"
-                    style={{ marginLeft: "11px" }}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
                   >
-                    Join discord server
-                  </Typography>
+                    <DsLogo color="#000000" />
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="16px"
+                      fontStyle="italic"
+                      fontWeight="400"
+                      textTransform="uppercase"
+                      color="#000000"
+                      style={{ marginLeft: "11px" }}
+                    >
+                      Join discord server
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </Box>
           </Box>
           <Box
@@ -510,43 +522,49 @@ const First = () => {
                   },
                 }}
               >
-                <Box
-                  className="first_dsBtn"
-                  sx={{
-                    background: `url(${GreenBtn})`,
-                    cursor: "pointer",
-                    width: 253,
-                    height: 50,
-                    marginX: "auto",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
+                <Link
+                  href="https://discord.com/invite/6XcvPDbXBa"
+                  target="_blank"
+                  underline="none"
                 >
                   <Box
+                    className="first_dsBtn"
                     sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
+                      background: `url(${GreenBtn})`,
+                      cursor: "pointer",
+                      width: 253,
+                      height: 50,
+                      marginX: "auto",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
                     }}
                   >
-                    <DsLogo
-                      color="#000000"
-                      style={{ display: "block", height: "20px" }}
-                    />
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="14px"
-                      fontStyle="italic"
-                      fontWeight="400"
-                      textTransform="uppercase"
-                      color="#000000"
-                      style={{ marginLeft: "11px" }}
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%",
+                      }}
                     >
-                      Join discord server
-                    </Typography>
+                      <DsLogo
+                        color="#000000"
+                        style={{ display: "block", height: "20px" }}
+                      />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="14px"
+                        fontStyle="italic"
+                        fontWeight="400"
+                        textTransform="uppercase"
+                        color="#000000"
+                        style={{ marginLeft: "11px" }}
+                      >
+                        Join discord server
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
+                </Link>
               </Box>
             </Box>
           </Box>

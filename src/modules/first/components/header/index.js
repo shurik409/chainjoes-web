@@ -75,6 +75,7 @@ const Header = (props) => {
                 icon={item.icon}
                 index={index}
                 last={index === buttons.length - 1}
+                link={item.link}
               />
             ))}
             <Box sx={{ marginLeft: "14px" }}>
@@ -111,6 +112,7 @@ const Header = (props) => {
                 height={40}
                 iconHeight={14}
                 width={50}
+                link={item.link}
               />
             ))}
             <Box sx={{ marginLeft: "14px" }}>
