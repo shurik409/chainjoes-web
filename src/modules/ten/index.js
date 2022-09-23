@@ -387,6 +387,205 @@ const Ten = () => {
           </Box>
         </Box>
       )}
+      {!desktop1080Width && !desktop768Width && (
+        <Box
+          sx={{
+            padding: "35px 15px 35px 15px",
+            background: `url(${Texture})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <Box>
+              <Link
+                href="mailto:info@chainjoes.com"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    color: "#44F4C3",
+                  }}
+                >
+                  <Typography
+                    fontFamily="Inter"
+                    fontSize="16px"
+                    fontWeight="400"
+                    color="inherit"
+                  >
+                    info@chainjoes.com
+                  </Typography>
+                </Box>
+              </Link>
+            </Box>
+            <Box>
+              <Link
+                href=""
+                target="_blank"
+                underline="none"
+                onMouseOver={(e) => {
+                  setdocsHover(true);
+                }}
+                onMouseLeave={() => setdocsHover(false)}
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    position: "relative",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: "41px",
+                      width: "102px",
+                      transform: "skewX(-11deg)",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      color: "#ffffff",
+                      border: `1px solid #44F4C3`,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        transform: "skewX(11deg)",
+                        display: "flex",
+                      }}
+                    >
+                      <Box>
+                        <DocsLogo
+                          color="#44F4C3"
+                          style={{ width: "11px", display: "block" }}
+                        />
+                      </Box>
+                      <Typography
+                        fontSize="14px"
+                        fontFamily="Inter"
+                        fontStyle="italic"
+                        textTransform="uppercase"
+                        style={{
+                          marginLeft: "12px",
+                        }}
+                        color="#44F4C3"
+                      >
+                        Docs
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              </Link>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+              marginTop: "32px",
+            }}
+          >
+            <Box>
+              <Typography
+                fontFamily="Inter"
+                fontSize="13px"
+                fontWeight="300"
+                color="#BDBDBD"
+                marginBottom="7px"
+              >
+                Powered by
+              </Typography>
+              <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+            </Box>
+            <Box sx={{ marginLeft: "22px" }}>
+              <Typography
+                fontFamily="Inter"
+                fontSize="13px"
+                fontWeight="300"
+                color="#BDBDBD"
+                marginBottom="7px"
+              >
+                Production by
+              </Typography>
+              <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: "35px",
+            }}
+          >
+            <Link href="" target="_blank" underline="none">
+              <Box
+                sx={{
+                  color: "#FFFFFF",
+                  ":hover": {
+                    color: "#44F4C3",
+                  },
+                }}
+              >
+                <Typography
+                  fontFamily="Inter"
+                  fontSize="12px"
+                  fontWeight="300"
+                  color="inherit"
+                >
+                  Terms of Service
+                </Typography>
+              </Box>
+            </Link>
+            <Link href="" target="_blank" underline="none">
+              <Box
+                sx={{
+                  color: "#FFFFFF",
+                  ":hover": {
+                    color: "#44F4C3",
+                  },
+                }}
+              >
+                <Typography
+                  fontFamily="Inter"
+                  fontSize="12px"
+                  fontWeight="300"
+                  color="inherit"
+                >
+                  Contract Audit
+                </Typography>
+              </Box>
+            </Link>
+            <Link href="" target="_blank" underline="none">
+              <Box
+                sx={{
+                  color: "#FFFFFF",
+                  ":hover": {
+                    color: "#44F4C3",
+                  },
+                }}
+              >
+                <Typography
+                  fontFamily="Inter"
+                  fontSize="12px"
+                  fontWeight="300"
+                  color="inherit"
+                >
+                  Privacy Policy
+                </Typography>
+              </Box>
+            </Link>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };

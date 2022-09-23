@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   FirstImg,
@@ -8,7 +8,9 @@ import {
   SecondMask,
   ThirdMask,
   Smoke,
-  FirstMaskTablet,
+  SmokeMobile,
+  MaskTablet,
+  MaskMobile,
 } from "../../imgs/screen4";
 
 const Fourth = () => {
@@ -34,9 +36,10 @@ const Fourth = () => {
       description:
         "Explore classic deathmatch, battle royale, meat grinder, capture the flag, duck hunt, run the labyrinth and become a champ.",
       descriptionWidth: "410px",
+      descriptionWidthMobile: "242px",
       img: FirstImg,
       mask: FirstMask,
-      maskTablet: FirstMaskTablet,
+      maskTablet: MaskTablet,
       height: "400px",
       transformX: "-51%",
       transformY: "-54%",
@@ -45,10 +48,11 @@ const Fourth = () => {
       title: "Create clan",
       description: "Unite with others to fight more effectively.",
       descriptionWidth: "250px",
+      descriptionWidthMobile: "235px",
       descriptionWidthTablet: "195px",
       img: SecondImg,
       mask: SecondMask,
-      maskTablet: FirstMaskTablet,
+      maskTablet: MaskTablet,
       height: "410px",
       transformX: "-50%",
       transformY: "-61%",
@@ -57,9 +61,10 @@ const Fourth = () => {
       title: "Join weekly & seasonal activities & tournaments",
       description:
         "Participate in various quests and missions to receive unique rewards and $CJs tokens.",
+      descriptionWidthMobile: "243px",
       img: ThirdImg,
       mask: ThirdMask,
-      maskTablet: FirstMaskTablet,
+      maskTablet: MaskTablet,
       height: "400px",
       transformX: "-51%",
       transformY: "-55%",
@@ -129,7 +134,7 @@ const Fourth = () => {
                       position: "relative",
                     }}
                   >
-                    <Box sx={{ marginLeft: "45px" }}>
+                    <Box sx={{ marginLeft: "25px" }}>
                       <Typography
                         fontFamily="Furore"
                         fontSize="26px"
@@ -143,7 +148,7 @@ const Fourth = () => {
                         fontWeight="500"
                         color="#FFFFFF"
                         width="310px"
-                        marginTop="15px"
+                        marginTop="9px"
                         lineHeight="28.6px"
                       >
                         {item.title}
@@ -154,7 +159,7 @@ const Fourth = () => {
                         fontWeight="300"
                         color="#FFFFFF"
                         width={item.descriptionWidth || "400px"}
-                        marginTop="15px"
+                        marginTop="9px"
                         lineHeight="21.8px"
                       >
                         {item.description}
@@ -559,6 +564,113 @@ const Fourth = () => {
                   </Box>
                 </Box>
               )}
+            </Box>
+          </Box>
+        </Box>
+      )}
+      {!tablet768Width && !desktop1080Width && (
+        <Box
+          sx={{
+            background: `url(${SmokeMobile})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            padding: "76px 0px 162px 0px",
+          }}
+        >
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="32px"
+              color="#ffffff"
+              lineHeight="32px"
+              textAlign="center"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              textTransform="uppercase"
+            >
+              Activities
+            </Typography>
+            <Box>
+              <Box
+                sx={{
+                  marginTop: "92px",
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                {activities.map((item, index) => (
+                  <Box
+                    key={`screen4-tablet-activity-${index}`}
+                    sx={{
+                      width: "290px",
+                      height: "273px",
+                      background: `url(${MaskMobile})`,
+                      backgroundPositionX: "center",
+                      backgroundRepeat: "no-repeat",
+                      position: "relative",
+                      marginTop: index ? "119px" : "0",
+                    }}
+                  >
+                    <Box sx={{ marginLeft: "27px" }}>
+                      <Typography
+                        fontFamily="Furore"
+                        fontSize="15px"
+                        color="#44F4C3"
+                        marginTop="25px"
+                        lineHeight="17.6px"
+                      >{`[0${index + 1}]`}</Typography>
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="16px"
+                        fontWeight="400"
+                        color="#FFFFFF"
+                        maxWidth="191px"
+                        marginTop="9px"
+                        lineHeight="19.2px"
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="13px"
+                        fontWeight="300"
+                        color="#FFFFFF"
+                        maxWidth={item.descriptionWidthMobile}
+                        marginTop="15px"
+                        lineHeight="15.73px"
+                      >
+                        {item.description}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        left: "50%",
+                        transform: `translate(${item.transformX}, ${item.transformY})`,
+                        top: "100%",
+                      }}
+                    >
+                      <img
+                        src={`${item.img}`}
+                        width="240px"
+                        alt={item.title}
+                        loading="lazy"
+                      />
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
             </Box>
           </Box>
         </Box>

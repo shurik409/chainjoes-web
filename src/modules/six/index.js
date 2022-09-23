@@ -396,6 +396,130 @@ const Six = () => {
           </Box>
         </Box>
       )}
+      {!desktop768Width && !desktop1080Width && (
+        <Box sx={{ padding: "77px 0 73px 15px", backgroundColor: "#000000" }}>
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="32px"
+              color="#ffffff"
+              lineHeight="32px"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              textTransform="uppercase"
+              maxWidth="186px"
+            >
+              RELEASE ROADMAP
+            </Typography>
+          </Box>
+          <Box>
+            {steps.map((step, index) => (
+              <Box
+                key={`screen-6-Tablet-step-${index}`}
+                sx={{ marginTop: index ? "35px" : "45px" }}
+              >
+                <Box>
+                  <Box
+                    sx={{
+                      width: "177px",
+                      height: "44px",
+                      background: `url(${step.img})`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Typography
+                      fontFamily="Inter"
+                      fontWeight="400"
+                      fontSize="16px"
+                      color="#44F4C3"
+                    >
+                      {step.title}
+                    </Typography>
+                  </Box>
+                  <Box sx={{ marginLeft: "42px", marginTop: "35px" }}>
+                    {step.good && (
+                      <Box>
+                        {step.good.map((item, goodIndex) => (
+                          <Box
+                            key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
+                            sx={{
+                              marginTop: goodIndex ? "10px" : "",
+                              display: "flex",
+                            }}
+                          >
+                            <Box>
+                              <Box
+                                sx={{
+                                  width: "12px",
+                                  height: "21px",
+                                  background: `url(${GoodPoint})`,
+                                  marginRight: "34px",
+                                }}
+                              />
+                            </Box>
+                            <Typography
+                              fontFamily="Inter"
+                              fontWeight="300"
+                              fontSize="13px"
+                              color="#FFFFFF"
+                              maxWidth="193px"
+                            >
+                              {item}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Box>
+                    )}
+                    {step.bad &&
+                      step.bad.map((item, badIndex) => (
+                        <Box
+                          key={`screen-6-step-${index}-bad-${badIndex}`}
+                          sx={{
+                            display: "flex",
+                            marginTop: badIndex || step.good ? "10px" : "",
+                          }}
+                        >
+                          <Box>
+                            <Box
+                              sx={{
+                                width: "12px",
+                                height: "21px",
+                                background: `url(${BadPoint})`,
+                                marginRight: "34px",
+                              }}
+                            />
+                          </Box>
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight="300"
+                            fontSize="13px"
+                            color="#FFFFFF"
+                            textTransform="capitalize"
+                          >
+                            {item}
+                          </Typography>
+                        </Box>
+                      ))}
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };

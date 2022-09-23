@@ -6,6 +6,18 @@ import Tg from "./tg.png";
 import Twitter from "./twitter.png";
 import Logo from "./logo.png";
 import Scratches from "./scratches.png";
+import ScratchesMobile from "./scratches_mobile.png";
 import Smoke from "./smoke.png";
 
-export { Fb, Discord, Medium, Inst, Tg, Twitter, Logo, Scratches, Smoke };
+export {
+  Fb,
+  Discord,
+  Medium,
+  Inst,
+  Tg,
+  Twitter,
+  Logo,
+  Scratches,
+  Smoke,
+  ScratchesMobile,
+};

@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Background from "../../imgs/first_screen.png";
 import Scratches from "../../imgs/scratches.svg";
 import ScratchesTablet from "../../imgs/screen1/scratchesTablet.png";
+import ScratchesMobile from "../../imgs/screen1/scratchesMobile.png";
 // import DiscordBtn from "../../imgs/discord_btn.png";
 import GreenBtn from "../../imgs/green_btn.png";
 import { DsLogo } from "./components/header/components/Icons";
@@ -224,7 +225,7 @@ const First = () => {
                 background:
                   "linear-gradient(180deg, #000000 7.85%, rgba(0, 0, 0, 0) 78.92%)",
                 position: "absolute",
-                top: "calc(100vh - 781px)",
+                top: "calc(100vh - 681px)",
                 left: 0,
                 zIndex: -1,
               }}
@@ -358,6 +359,193 @@ const First = () => {
                   >
                     Join discord server
                   </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              background: `url(${FirstFooter})`,
+              height: "230px",
+              width: "100%",
+              bottom: "-160px",
+              backgroundSize: "cover",
+              zIndex: -1,
+            }}
+          />
+        </Box>
+      )}
+      {!desktop1080Width && !desktop768Width && (
+        <Box
+          sx={{
+            position: "relative",
+            height: "100vh",
+            backgroundColor: "#000000",
+            zIndex: 0,
+          }}
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "100px",
+              height: "calc(100vh - 200px)",
+              minHeight: "382px",
+              width: "100%",
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                height: "135px",
+                background:
+                  "linear-gradient(180deg, #000000 13.63%, rgba(0, 0, 0, 0) 92.63%)",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                zIndex: -1,
+              }}
+            />
+            <Box
+              sx={{
+                height: "100%",
+                width: "100%",
+                background: `url(${Background})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPositionX: "center",
+                backgroundSize: "cover",
+                position: "absolute",
+                bottom: "0",
+                right: 0,
+                zIndex: -2,
+              }}
+            />
+            <Box
+              sx={{
+                width: "100%",
+                height: "135px",
+                background:
+                  "linear-gradient(0deg, #000000 9.79%, rgba(0, 0, 0, 0) 74.77%)",
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                zIndex: -1,
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              width: "100%",
+            }}
+          >
+            <Header padding="0 15px 0 15px" />
+          </Box>
+          <Box
+            sx={{
+              paddingX: "13px",
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "calc(100% - 80px)",
+            }}
+          >
+            <Box
+              sx={{
+                position: "relative",
+                marginTop: "29px",
+                zIndex: 2,
+              }}
+            >
+              <Box
+                sx={{
+                  background: `url(${ScratchesMobile})`,
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                }}
+              ></Box>
+              <Typography
+                fontFamily="Furore"
+                fontSize="35px"
+                color="#ffffff"
+                lineHeight="35px"
+              >
+                WELCOME
+                <br />
+                TO{" "}
+                <span style={{ color: "#44F4C3", display: "inline" }}>
+                  CHAIN JOES
+                  <br />
+                  WORLD
+                </span>
+              </Typography>
+            </Box>
+            <Box>
+              <Box>
+                <Typography
+                  fontFamily="Inter"
+                  fontSize="14px"
+                  color="#ffffff"
+                  fontWeight="300"
+                  lineHeight="16.94px"
+                  marginTop="25px"
+                  marginX="auto"
+                >
+                  Battle with each other to win and earn rewards through our
+                  Play-and-Earn mechanics and protect the community from
+                  Spammers, Scammers and Hackers to get unique rewards
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  marginTop: "40px",
+                  ":hover": {
+                    ".first_dsBtn": {
+                      transform: "translateY(-5px)",
+                    },
+                  },
+                }}
+              >
+                <Box
+                  className="first_dsBtn"
+                  sx={{
+                    background: `url(${GreenBtn})`,
+                    cursor: "pointer",
+                    width: 253,
+                    height: 50,
+                    marginX: "auto",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
+                  >
+                    <DsLogo
+                      color="#000000"
+                      style={{ display: "block", height: "20px" }}
+                    />
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="14px"
+                      fontStyle="italic"
+                      fontWeight="400"
+                      textTransform="uppercase"
+                      color="#000000"
+                      style={{ marginLeft: "11px" }}
+                    >
+                      Join discord server
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
             </Box>

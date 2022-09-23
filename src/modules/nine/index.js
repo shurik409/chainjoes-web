@@ -9,6 +9,7 @@ import {
   Twitter,
   Logo,
   Scratches,
+  ScratchesMobile,
   Smoke,
 } from "../../imgs/screen9";
 
@@ -517,6 +518,304 @@ const Nine = () => {
               <Box sx={{ zIndex: 2 }}>
                 <Box
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
+                >
+                  <Link
+                    href="https://medium.com/"
+                    target="_blank"
+                    underline="none"
+                  >
+                    <Box
+                      sx={{
+                        color: "#FFFFFF",
+                        ":hover": { color: "#44F4C3" },
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img src={`${Medium}`} alt="Logo" loading="lazy" />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="18"
+                        fontWeight="300"
+                        color="inherit"
+                        marginLeft="17px"
+                      >
+                        Medium
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+                <Box
+                  sx={{
+                    marginTop: "20px",
+                    height: "30px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link
+                    href="https://www.facebook.com/ChainJoes"
+                    target="_blank"
+                    underline="none"
+                  >
+                    <Box
+                      sx={{
+                        color: "#FFFFFF",
+                        ":hover": { color: "#44F4C3" },
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img src={`${Fb}`} alt="Logo" loading="lazy" />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="18"
+                        fontWeight="300"
+                        color="inherit"
+                        marginLeft="17px"
+                      >
+                        Facebook
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      )}
+      {!desktop1080Width && !desktop768Width && (
+        <Box
+          sx={{
+            backgroundColor: "#070809",
+            padding: "0 15px 75px 15px",
+            backgroundImage: `url(${Smoke})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            position: "relative",
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              height: "100px",
+              background:
+                "linear-gradient(178.64deg, rgba(9, 16, 21, 0) 1.16%, #091015 84.64%)",
+              position: "absolute",
+              transform: "matrix(1, 0, 0, -1, 0, 0)",
+              top: "-2px",
+              left: 0,
+              zIndex: 0,
+            }}
+          />
+
+          <Box
+            sx={{
+              position: "relative",
+              zIndex: 1,
+              margin: "auto",
+              width: "230px",
+            }}
+          >
+            <img
+              src={`${Logo}`}
+              alt="Logo"
+              loading="lazy"
+              style={{
+                width: "230px",
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                background: "#1BD4ED",
+                filter: "blur(135.5px)",
+                height: "120px",
+                width: "120px",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -40%)",
+                zIndex: -1,
+              }}
+            />
+          </Box>
+          <Box>
+            <Box sx={{ position: "relative", width: "290px", marginX: "auto" }}>
+              <Typography
+                fontFamily="Furore"
+                fontSize="25px"
+                color="#FFFFFF"
+                maxWidth="290px"
+                lineHeight="25px"
+                textAlign="center"
+              >
+                <Box sx={{ color: "#44F4C3", display: "inline" }}>
+                  Stay up to date{" "}
+                </Box>
+                with our latest news, events, and announcements.
+              </Typography>
+              <Box
+                sx={{ position: "absolute", top: 0, left: 0, width: "100%" }}
+              >
+                <img
+                  src={`${ScratchesMobile}`}
+                  alt="scratches"
+                  loading="lazy"
+                  width="100%"
+                />
+              </Box>
+            </Box>
+          </Box>
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-around",
+                marginTop: "54px",
+                maxWidth: "500px",
+                marginX: "auto",
+              }}
+            >
+              <Box sx={{ zIndex: 2 }}>
+                <Box
+                  sx={{ height: "30px", display: "flex", alignItems: "center" }}
+                >
+                  <Link
+                    href="https://twitter.com/chainjoes"
+                    target="_blank"
+                    underline="none"
+                  >
+                    <Box
+                      sx={{
+                        color: "#FFFFFF",
+                        ":hover": { color: "#44F4C3" },
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img src={`${Twitter}`} alt="Twitter" loading="lazy" />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="18"
+                        fontWeight="300"
+                        color="inherit"
+                        marginLeft="17px"
+                      >
+                        Twitter
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+                <Box
+                  sx={{
+                    marginTop: "20px",
+                    height: "30px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link
+                    href="https://t.me/chainjoes"
+                    target="_blank"
+                    underline="none"
+                  >
+                    <Box
+                      sx={{
+                        color: "#FFFFFF",
+                        ":hover": { color: "#44F4C3" },
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img src={`${Tg}`} alt="Inst" loading="lazy" />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="18"
+                        fontWeight="300"
+                        color="inherit"
+                        marginLeft="15px"
+                      >
+                        Telegram
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+                <Box
+                  sx={{
+                    marginTop: "20px",
+                    height: "30px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link
+                    href="https://www.instagram.com/chainjoes"
+                    target="_blank"
+                    underline="none"
+                  >
+                    <Box
+                      sx={{
+                        color: "#FFFFFF",
+                        ":hover": { color: "#44F4C3" },
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img src={`${Inst}`} alt="Inst" loading="lazy" />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="18"
+                        fontWeight="300"
+                        color="inherit"
+                        marginLeft="15px"
+                      >
+                        Instagram
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+              </Box>
+              <Box sx={{ zIndex: 2 }}>
+                <Box
+                  sx={{
+                    height: "30px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link
+                    href="https://discord.com/"
+                    target="_blank"
+                    underline="none"
+                  >
+                    <Box
+                      sx={{
+                        color: "#FFFFFF",
+                        ":hover": { color: "#44F4C3" },
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img src={`${Discord}`} alt="Logo" loading="lazy" />
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="18"
+                        fontWeight="300"
+                        color="inherit"
+                        marginLeft="17px"
+                      >
+                        Discord
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+                <Box
+                  sx={{
+                    marginTop: "20px",
+                    height: "30px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
                 >
                   <Link
                     href="https://medium.com/"

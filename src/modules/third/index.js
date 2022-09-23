@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   FirstImg,
@@ -11,21 +11,28 @@ import {
 } from "../../imgs/screen3";
 import { Line } from "../first/components/header/components/Icons";
 import GreenBtn from "../../imgs/green_btn_small.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
 
 const Third = () => {
   const [curentItem, setCurentItem] = useState(0);
+  const [curentProgress, setProgress] = useState(0);
+  const swiperRef = useRef(null);
   const header = [
     {
       title: "Mr. Joe",
       background: FirstImg,
       overlayMargin: "0",
       descriptionOne: "The soul is always looking for a home...",
+      mobilePosition: "left",
       descriptionTwo:
         "This is carved on the coat of arms of the house of Hodler, whose metaverse was covered with ice after it was destroyed by hackers decades ago.  ",
     },
     {
       title: "Anwar",
       background: SecondImg,
+      mobilePosition: "left",
       overlayMargin: "120px",
       descriptionOne:
         "From the metaverse Greece 21, reconstructed on the fragments of ancient Greece with the help of web 3.0 technologies, the warrior Anwar arrived.",
@@ -34,6 +41,7 @@ const Third = () => {
     {
       title: "Tama Shi",
       background: ThirdImg,
+      mobilePosition: "left",
       overlayMargin: "130px",
       descriptionOne:
         "Duncan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years. Due to the overabundance of various advanced technologies inside the city, it can «lag» a little — the locations are distorted and merge into each other. ",
@@ -42,6 +50,7 @@ const Third = () => {
     {
       title: "Milcy",
       background: FourthImg,
+      mobilePosition: "left",
       overlayMargin: "100px",
       descriptionOne:
         "MLc s9 is one of the 10 newest bots that were created as part of the experimental development of metaverse A2. which is engaged in the creation of spam bots. These bots were supposed to be the crown of creation, which would allow them to bypass all current firewalls.",
@@ -50,6 +59,7 @@ const Third = () => {
     {
       title: "Deo",
       background: FiveImg,
+      mobilePosition: "left",
       overlayMargin: "120px",
       descriptionOne:
         "The Monk Deo arrived from the metaverse Temple of Fate...On his planet, the monks were able to curb web 3.0 technologies and now draw strength from there. ",
@@ -59,6 +69,7 @@ const Third = () => {
     {
       title: "Sam",
       background: SixImg,
+      mobilePosition: "left",
       overlayMargin: "145px",
       descriptionOne:
         "Earth X300 has reached its peak of development and formed its own system. People live in prosperity, and technologies work for the benefit of humanity and deliver only comfort.",
@@ -70,6 +81,10 @@ const Third = () => {
   const desktop1080Width = useMediaQuery("(min-width: 1000px");
 
   const desktop768Width = useMediaQuery("(min-width: 768px");
+
+  const desktop530Width = useMediaQuery(
+    `(min-width: ${125 * header.length + 30}px`
+  );
 
   return (
     <Box>
@@ -422,7 +437,7 @@ const Third = () => {
                   fontWeight="500"
                   color="#FFFFFF"
                   marginTop="60px"
-                  lineHeight='54.46px'
+                  lineHeight="54.46px"
                 >
                   {header[curentItem].title}
                 </Typography>
@@ -432,7 +447,7 @@ const Third = () => {
                     fontSize="18px"
                     fontWeight="300"
                     color="#FFFFFF"
-                    lineHeight='21.78px'
+                    lineHeight="21.78px"
                     maxWidth="420px"
                   >
                     {header[curentItem].descriptionOne}
@@ -443,7 +458,7 @@ const Third = () => {
                       fontSize="18px"
                       fontWeight="300"
                       color="#FFFFFF"
-                      lineHeight='21.78px'
+                      lineHeight="21.78px"
                       maxWidth="420px"
                       style={{ marginTop: "15px" }}
                     >
@@ -484,6 +499,237 @@ const Third = () => {
                 </Box>
               </Box>
             </Box>
+          </Box>
+        </Box>
+      )}
+      {!desktop1080Width && !desktop768Width && (
+        <Box
+          sx={{
+            // background: `url(${Smoke})`,
+            // background: `#FFF`,
+            position: "relative",
+            backgroundPositionY: "bottom",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            padding: "75px 0px 80px 0px",
+            backgroundColor: "#000000",
+          }}
+        >
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="32px"
+              color="#ffffff"
+              lineHeight="32px"
+              maxWidth="227px"
+              marginLeft="15px"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              introduce
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              position: "relative",
+              overflowX: "hidden",
+              marginTop: "28px",
+              display: desktop530Width ? "flex" : "block",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                width: `${header.length * 125}px`,
+                marginLeft: !desktop530Width
+                  ? `calc(15px + max(calc(${
+                      header.length * 125 + 30
+                    }px - 100vw), 0px) * -${curentProgress})`
+                  : 0,
+              }}
+            >
+              {header.map((item, index) => (
+                <Box
+                  key={`screen-2-mobile-title-${index}`}
+                  sx={{ width: "125px" }}
+                  onClick={() => {
+                    setCurentItem(index);
+                    swiperRef.current.swiper.slideTo(index);
+                  }}
+                >
+                  <Typography
+                    fontFamily="Inter"
+                    fontWeight={index === curentItem ? "400" : "300"}
+                    fontSize="16px"
+                    lineHeight="19.2px"
+                    textAlign="center"
+                    marginX="auto"
+                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                  >
+                    {item.title}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+            <Box
+              sx={{
+                marginLeft: !desktop530Width
+                  ? `calc(15px + max(calc(${
+                      header.length * 125 + 30
+                    }px - 100vw), 0px) * -${curentProgress})`
+                  : 0,
+                marginTop: "21px",
+                width: `${header.length * 125}px`,
+                height: 3,
+                backgroundColor: "#A5a5a5",
+              }}
+            >
+              <Box
+                sx={{
+                  width: "125px",
+                  height: "3px",
+                  backgroundColor: "#44F4C3",
+                  marginLeft: `${
+                    curentProgress * (header.length * 125 - 125)
+                  }px`,
+                }}
+              ></Box>
+            </Box>
+          </Box>
+          <Box sx={{ marginTop: "35px" }}>
+            <Swiper
+              slidesPerView={1}
+              centeredSlides={true}
+              grabCursor={true}
+              className="mySwiper"
+              onProgress={({ progress }) =>
+                !(progress < 0 || progress > 1) && setProgress(progress)
+              }
+              onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
+              ref={swiperRef}
+            >
+              {header.map((item, index) => (
+                <SwiperSlide>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "end",
+                      position: "relative",
+                      height: "400px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        backgroundImage: `url(${item.background})`,
+                        height: "343px",
+                        width: "100%",
+                        backgroundPositionY: "top",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPositionX: item.mobilePosition || "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "end",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        height: "180px",
+                        width: "100%",
+                        background:
+                          "linear-gradient(0deg, #000000 9.32%, rgba(0, 0, 0, 0) 91.43%)",
+                        bottom: "0",
+                      }}
+                    />
+                    <Box sx={{ zIndex: 1, paddingLeft: "15px" }}>
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="30px"
+                        fontWeight="500"
+                        color="#FFFFFF"
+                        lineHeight="36.31px"
+                      >
+                        {item.title}
+                      </Typography>
+                      <Box sx={{ marginTop: "15px" }}>
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="13px"
+                          fontWeight="300"
+                          color="#FFFFFF"
+                          lineHeight="15.73px"
+                          maxWidth="290px"
+                        >
+                          {item.descriptionOne}
+                        </Typography>
+                        {item.descriptionTwo && (
+                          <Typography
+                            fontFamily="Inter"
+                            marginTop="15px"
+                            fontSize="13px"
+                            fontWeight="300"
+                            color="#FFFFFF"
+                            lineHeight="15.73px"
+                            maxWidth="290px"
+                          >
+                            {item.descriptionTwo}
+                          </Typography>
+                        )}
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Box
+                    className="first_dsBtn"
+                    sx={{
+                      background: `url(${GreenBtn})`,
+                      cursor: "pointer",
+                      width: 199,
+                      height: 50,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      marginTop: "40px",
+                      marginLeft: "15px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%",
+                      }}
+                    >
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="14px"
+                        fontStyle="italic"
+                        fontWeight="400"
+                        textTransform="uppercase"
+                        color="#000000"
+                      >
+                        explore the lore
+                      </Typography>
+                    </Box>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </Box>
         </Box>
       )}

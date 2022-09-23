@@ -126,6 +126,38 @@ const Header = (props) => {
           </Box>
         </Box>
       )}
+      {!desktop1080Width && !desktop768Width && (
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            paddingTop: "10px",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            sx={{
+              height: 45,
+              width: 109,
+              backgroundImage: `url(${Logo})`,
+              backgroundSize: "cover",
+            }}
+          />
+          <Box sx={{ display: "flex" }}>
+            <Box sx={{ marginLeft: "14px" }}>
+              <HeaderButton
+                title="docs"
+                icon={DocsLogo}
+                noLine
+                width={96}
+                height={40}
+                iconHeight={14}
+              />
+            </Box>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };

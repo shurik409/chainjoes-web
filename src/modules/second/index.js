@@ -1,32 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import { FirstImg, SecondImg, ThirdImg, FourthImg } from "../../imgs/screen2";
+import {
+  FirstImg,
+  SecondImg,
+  ThirdImg,
+  FourthImg,
+  MobileMask,
+} from "../../imgs/screen2";
 import Smoke from "../../imgs/screen2_smoke.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
 
 const Second = () => {
   const [curentItem, setCurentItem] = useState(0);
+  const [curentProgress, setProgress] = useState(0);
+  const swiperRef = useRef(null);
 
   const texts = [
     {
       title: `Free gameplay`,
+      mobileTitle: (
+        <>
+          Free
+          <br />
+          gameplay
+        </>
+      ),
       img: FirstImg,
       description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion.`,
       descriptionTwo: "Join the battle without any barrier!",
     },
     {
       title: `Play & Earn system`,
+      mobileTitle: (
+        <>
+          {`Play & Earn`}
+          <br />
+          system
+        </>
+      ),
       img: SecondImg,
       description: `Our Plan-And-Earn model evolved from the P2E framework and puts the focus back on providing real entertainment value to create a sustainable, open game economy.`,
       descriptionTwo: `With Play-to-Earn we aim to build value with gameplay. Providing a high entertainment value encourages players to keep playing, and to do so, they’ll want to get rewards they can spend in the game to improve their gameplay experience.`,
     },
     {
       title: `NFT assets`,
+      mobileTitle: (
+        <>
+          NFT
+          <br />
+          assets
+        </>
+      ),
       img: ThirdImg,
       description: `Improve and Merge the NFT’s to increase their power and get the first positions in the competitions. `,
       descriptionTwo: `Our NFTs are not just collections, they deine the life of the game and the legacy of the players. `,
     },
     {
       title: `Ranked PvP system`,
+      mobileTitle: (
+        <>
+          Ranked PvP
+          <br />
+          system
+        </>
+      ),
       img: FourthImg,
       description: `The essence of the game revolves around PVP champs fighting each other in a ranked system to increase their rating.`,
       descriptionTwo: `The balance of the Ranked System, based on the Elo Rating system, will help the player find a team suitable for the level. Increase your rank and skill to reach the highest rank and earn more tokens for winning.`,
@@ -36,6 +75,10 @@ const Second = () => {
   const desktop1080Width = useMediaQuery("(min-width: 1000px");
 
   const desktop768Width = useMediaQuery("(min-width: 768px");
+
+  const desktop530Width = useMediaQuery(
+    `(min-width: ${125 * texts.length + 30}px`
+  );
 
   return (
     <Box>
@@ -340,6 +383,183 @@ const Second = () => {
                 )}
               </Box>
             </Box>
+          </Box>
+        </Box>
+      )}
+      {!desktop1080Width && !desktop768Width && (
+        <Box
+          sx={{
+            background: `url(${Smoke})`,
+            // background: `#FFF`,
+            position: "relative",
+            backgroundPositionY: "bottom",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            padding: "75px 0px 61px 0px",
+          }}
+        >
+          <Box>
+            <Typography
+              fontFamily="Furore"
+              fontSize="32px"
+              color="#ffffff"
+              lineHeight="32px"
+              maxWidth="227px"
+              marginLeft="15px"
+              style={{
+                textFillColor: "transparent",
+                backgroundcolor: "primary",
+                backgroundImage:
+                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              EXPLORE THE WORLD
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              position: "relative",
+              overflowX: "hidden",
+              marginTop: "28px",
+              display: desktop530Width ? "flex" : "block",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                width: `${texts.length * 125}px`,
+                marginLeft: !desktop530Width
+                  ? `calc(15px + max(calc(${
+                      texts.length * 125 + 30
+                    }px - 100vw), 0px) * -${curentProgress})`
+                  : 0,
+              }}
+            >
+              {texts.map((item, index) => (
+                <Box
+                  key={`screen-2-mobile-title-${index}`}
+                  sx={{ width: "125px" }}
+                  onClick={() => {
+                    setCurentItem(index);
+                    swiperRef.current.swiper.slideTo(index);
+                  }}
+                >
+                  <Typography
+                    fontFamily="Inter"
+                    fontWeight={index === curentItem ? "400" : "300"}
+                    fontSize="16px"
+                    lineHeight="19.2px"
+                    textAlign="center"
+                    marginX="auto"
+                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                  >
+                    {item.mobileTitle}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+            <Box
+              sx={{
+                marginLeft: !desktop530Width
+                  ? `calc(15px + max(calc(${
+                      texts.length * 125 + 30
+                    }px - 100vw), 0px) * -${curentProgress})`
+                  : 0,
+                marginTop: "21px",
+                width: `${texts.length * 125}px`,
+                height: 3,
+                backgroundColor: "#A5a5a5",
+              }}
+            >
+              <Box
+                sx={{
+                  width: "125px",
+                  height: "3px",
+                  backgroundColor: "#44F4C3",
+                  marginLeft: `${
+                    curentProgress * (texts.length * 125 - 125)
+                  }px`,
+                }}
+              ></Box>
+            </Box>
+          </Box>
+          <Box sx={{ marginTop: "45px" }}>
+            <Swiper
+              slidesPerView={1}
+              centeredSlides={true}
+              grabCursor={true}
+              className="mySwiper"
+              onProgress={({ progress }) =>
+                !(progress < 0 || progress > 1) && setProgress(progress)
+              }
+              onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
+              ref={swiperRef}
+            >
+              {texts.map((item, index) => (
+                <SwiperSlide>
+                  <Box
+                    sx={{
+                      position: "relative",
+                      height: "430px",
+                      width: "290px",
+                      margin: "auto",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        height: 315,
+                        width: 290,
+                        backgroundImage: `url(${MobileMask})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                      }}
+                    >
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="13px"
+                        fontWeight="300"
+                        color="#FFFFFF"
+                        paddingX="24px"
+                        paddingTop="22px"
+                        lineHeight="15.73px"
+                      >
+                        {item.description}
+                      </Typography>
+                      {item.descriptionTwo && (
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="13px"
+                          fontWeight="300"
+                          color="#FFFFFF"
+                          paddingX="24px"
+                          lineHeight="15.73px"
+                          marginTop="15px"
+                        >
+                          {item.descriptionTwo}
+                        </Typography>
+                      )}
+                    </Box>
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: "-2%",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                      }}
+                    >
+                      <img width={219} src={item.img} alt={item.title} />
+                    </Box>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </Box>
         </Box>
       )}
