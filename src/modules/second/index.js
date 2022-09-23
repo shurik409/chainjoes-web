@@ -90,10 +90,10 @@ const Second = () => {
             backgroundPositionY: "bottom",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "136px 0 105px 80px",
+            padding: "136px 0 127px 80px",
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", maxHeight: "725px" }}>
             <Box>
               <Box sx={{ width: "540px" }}>
                 <Typography
@@ -128,7 +128,7 @@ const Second = () => {
                     height: "510px",
                     backgroundColor: "#A5a5a5",
                     marginRight: "45px",
-                    marginTop: "-10px",
+                    marginTop: "-50px",
                   }}
                 >
                   <Box
@@ -153,6 +153,7 @@ const Second = () => {
                           fontWeight={index === curentItem ? "500" : "300"}
                           fontSize="20px"
                           color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                          lineHeight="17px"
                         >
                           {item.title}
                         </Typography>
@@ -166,6 +167,7 @@ const Second = () => {
                               fontSize="18px"
                               color="#ffffff"
                               maxWidth="730px"
+                              lineHeight="21.78px"
                             >
                               {item.description}
                             </Typography>
@@ -178,6 +180,7 @@ const Second = () => {
                                 fontSize="18px"
                                 color="#ffffff"
                                 maxWidth="730px"
+                                lineHeight="21.78px"
                               >
                                 {item.descriptionTwo}
                               </Typography>
@@ -195,7 +198,7 @@ const Second = () => {
                 src={`${texts[curentItem].img}`}
                 alt={texts[curentItem].title}
                 loading="lazy"
-                style={{ maxWidth: "100%" }}
+                style={{ maxWidth: "865px", width: "100%" }}
               />
             </Box>
           </Box>
