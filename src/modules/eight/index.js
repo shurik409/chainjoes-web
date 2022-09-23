@@ -57,12 +57,15 @@ const Eight = () => {
               display: "flex",
               justifyContent: "space-between",
               marginTop: "45px",
+              gap: "60px",
             }}
           >
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                height: "235px",
+                justifyContent: "space-between",
               }}
             >
               <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
@@ -72,6 +75,8 @@ const Eight = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                height: "235px",
+                justifyContent: "space-between",
               }}
             >
               <img src={`${Partner2}`} alt={"Red Rift"} loading="lazy" />
@@ -122,6 +127,8 @@ const Eight = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                height: "190px",
+                justifyContent: "space-between",
               }}
             >
               <img
@@ -141,6 +148,8 @@ const Eight = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                height: "190px",
+                justifyContent: "space-between",
               }}
             >
               <img
