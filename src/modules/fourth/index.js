@@ -68,6 +68,8 @@ const Fourth = () => {
       height: "400px",
       transformX: "-51%",
       transformY: "-55%",
+      mobileTop: "105%",
+      mobileLeft: "52%",
     },
   ];
 
@@ -656,9 +658,9 @@ const Fourth = () => {
                     <Box
                       sx={{
                         position: "absolute",
-                        left: "50%",
+                        left: item.mobileLeft || "50%",
                         transform: `translate(${item.transformX}, ${item.transformY})`,
-                        top: "100%",
+                        top: item.mobileTop || "100%",
                       }}
                     >
                       <img
