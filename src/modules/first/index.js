@@ -21,6 +21,7 @@ const First = () => {
     if (!muted) {
       refVideo.current.defaultMuted = true;
       refVideo.current.muted = true;
+      refVideo.current.play();
       setMuted(true);
     }
   });
@@ -73,7 +74,7 @@ const First = () => {
             <source src={MonkeyVideo} type="video/webm" />
             Your browser does not support the video tag.
           </video>
-          <script>document.getElementById("vid").play();</script>
+
           <Box
             sx={{
               width: "100%",
@@ -298,7 +299,7 @@ const First = () => {
               ref={refVideo}
               loop="loop"
               muted
-              defaultMuted
+              defaultmuted
               playsInline
               onContextMenu={() => false}
               preload="auto"
@@ -319,7 +320,6 @@ const First = () => {
               <source src={MonkeyVideo} type="video/webm" />
               Your browser does not support the video tag.
             </video>
-            <script>document.getElementById("vid").play();</script>
           </Box>
           <Box
             sx={{
@@ -506,7 +506,7 @@ const First = () => {
               autoPlay="autoPlay"
               loop="loop"
               muted
-              defaultMuted
+              defaultmuted
               playsInline
               onContextMenu={() => false}
               preload="auto"
@@ -526,7 +526,6 @@ const First = () => {
               <source src={MonkeyVideo} type="video/webm" />
               Your browser does not support the video tag.
             </video>
-            <script>document.getElementById("vid").play();</script>
             <Box
               sx={{
                 width: "100%",
