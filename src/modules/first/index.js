@@ -5,7 +5,8 @@ import Background from "../../imgs/screen1/first_screen_reverse.png";
 import ScratchesDesktop from "../../imgs/screen1/scratchesDesktop.png";
 import ScratchesTablet from "../../imgs/screen1/scratchesTablet.png";
 import ScratchesMobile from "../../imgs/screen1/scratchesMobile.png";
-import MonkeyVideo from "../../imgs/screen1/monkey.webm";
+import MonkeyVideoWebM from "../../imgs/screen1/monkey.webm";
+import MonkeyVideoMp4 from "../../imgs/screen1/monkey.mp4";
 import GreenBtn from "../../imgs/green_btn.png";
 import { DsLogo } from "./components/header/components/Icons";
 import FirstFooter from "../../imgs/first_footer.png";
@@ -54,7 +55,6 @@ const First = () => {
             autoPlay="autoPlay"
             loop="loop"
             muted
-            defaultmuted
             playsInline
             onContextMenu={() => false}
             preload="auto"
@@ -71,7 +71,8 @@ const First = () => {
               transform: "scale(-1, 1)",
             }}
           >
-            <source src={MonkeyVideo} type="video/webm" />
+            <source src={MonkeyVideoWebM} type="video/webm" />
+            <source src={MonkeyVideoMp4} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
@@ -299,7 +300,6 @@ const First = () => {
               ref={refVideo}
               loop="loop"
               muted
-              defaultmuted
               playsInline
               onContextMenu={() => false}
               preload="auto"
@@ -317,7 +317,8 @@ const First = () => {
                 transform: "scale(-1, 1)",
               }}
             >
-              <source src={MonkeyVideo} type="video/webm" />
+              <source src={MonkeyVideoWebM} type="video/webm" />
+              <source src={MonkeyVideoMp4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </Box>
@@ -502,11 +503,10 @@ const First = () => {
               }}
             /> */}
             <video
+              autoplay="true"
               ref={refVideo}
-              autoPlay="autoPlay"
               loop="loop"
-              muted
-              defaultmuted
+              muted="true"
               playsInline
               onContextMenu={() => false}
               preload="auto"
@@ -523,7 +523,8 @@ const First = () => {
                 transform: "scale(-1, 1)",
               }}
             >
-              <source src={MonkeyVideo} type="video/webm" />
+              <source src={MonkeyVideoWebM} type="video/webm" />
+              <source src={MonkeyVideoMp4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <Box
