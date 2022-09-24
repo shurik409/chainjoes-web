@@ -73,6 +73,7 @@ const First = () => {
             <source src={MonkeyVideo} type="video/webm" />
             Your browser does not support the video tag.
           </video>
+          <script>document.getElementById("vid").play();</script>
           <Box
             sx={{
               width: "100%",
@@ -312,11 +313,13 @@ const First = () => {
                 bottom: 0,
                 right: 0,
                 zIndex: -2,
+                transform: "scale(-1, 1)",
               }}
             >
               <source src={MonkeyVideo} type="video/webm" />
               Your browser does not support the video tag.
             </video>
+            <script>document.getElementById("vid").play();</script>
           </Box>
           <Box
             sx={{
@@ -517,11 +520,13 @@ const First = () => {
                 bottom: 0,
                 right: 0,
                 zIndex: -2,
+                transform: "scale(-1, 1)",
               }}
             >
               <source src={MonkeyVideo} type="video/webm" />
               Your browser does not support the video tag.
             </video>
+            <script>document.getElementById("vid").play();</script>
             <Box
               sx={{
                 width: "100%",
