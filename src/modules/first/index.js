@@ -5,6 +5,7 @@ import Background from "../../imgs/first_screen.png";
 import Scratches from "../../imgs/scratches.svg";
 import ScratchesTablet from "../../imgs/screen1/scratchesTablet.png";
 import ScratchesMobile from "../../imgs/screen1/scratchesMobile.png";
+import MonkeyVideo from "../../imgs/screen1/monkey.webm";
 // import DiscordBtn from "../../imgs/discord_btn.png";
 import GreenBtn from "../../imgs/green_btn.png";
 import { DsLogo } from "./components/header/components/Icons";
@@ -20,7 +21,7 @@ const First = () => {
     <Box>
       {desktop1080Width && (
         <Box sx={{ position: "relative", height: "100vh" }}>
-          <Box
+          {/* <Box
             sx={{
               height: "100vh",
               width: "100%",
@@ -33,7 +34,27 @@ const First = () => {
               right: 0,
               zIndex: -1,
             }}
-          ></Box>
+          ></Box> */}
+          <video
+            playsInline
+            id="video"
+            autoPlay
+            muted
+            loop
+            poster={Background}
+            style={{
+              objectFit: "cover",
+              height: "100vh",
+              width: "100%",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              zIndex: -1,
+            }}
+          >
+            <source src={MonkeyVideo} type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
           <Box
             sx={{
               width: "100%",
@@ -236,7 +257,7 @@ const First = () => {
                 zIndex: -1,
               }}
             />
-            <Box
+            {/* <Box
               sx={{
                 height: "100vh",
                 maxHeight: "681px",
@@ -250,7 +271,28 @@ const First = () => {
                 right: 0,
                 zIndex: -2,
               }}
-            />
+            /> */}
+            <video
+              playsInline
+              id="video"
+              autoPlay
+              muted
+              loop
+              poster={Background}
+              style={{
+                objectFit: "cover",
+                height: "100vh",
+                maxHeight: "681px",
+                width: "100%",
+                position: "absolute",
+                bottom: 0,
+                right: 0,
+                zIndex: -2,
+              }}
+            >
+              <source src={MonkeyVideo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </Box>
           <Box
             sx={{
@@ -418,7 +460,7 @@ const First = () => {
                 zIndex: -1,
               }}
             />
-            <Box
+            {/* <Box
               sx={{
                 height: "100%",
                 width: "100%",
@@ -431,7 +473,27 @@ const First = () => {
                 right: 0,
                 zIndex: -2,
               }}
-            />
+            /> */}
+            <video
+              playsInline
+              id="video"
+              autoPlay
+              muted
+              loop
+              poster={Background}
+              style={{
+                objectFit: "cover",
+                height: "100%",
+                width: "100%",
+                position: "absolute",
+                bottom: 0,
+                right: 0,
+                zIndex: -2,
+              }}
+            >
+              <source src={MonkeyVideo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
             <Box
               sx={{
                 width: "100%",
