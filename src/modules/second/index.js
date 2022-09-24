@@ -149,11 +149,11 @@ const Second = () => {
                     >
                       <Box>
                         <Typography
-                          fontFamily="Inter"
-                          fontWeight={index === curentItem ? "500" : "300"}
+                          fontFamily="Furore"
+                          textTransform="uppercase"
                           fontSize="20px"
                           color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                          lineHeight="17px"
+                          lineHeight="20px"
                         >
                           {item.title}
                         </Typography>

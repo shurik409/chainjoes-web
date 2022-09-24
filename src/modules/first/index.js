@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import Header from "./components/header";
-import Background from "../../imgs/first_screen.png";
-import Scratches from "../../imgs/scratches.svg";
+import Background from "../../imgs/screen1/first_screen_reverse.png";
+import ScratchesDesktop from "../../imgs/screen1/scratchesDesktop.png";
 import ScratchesTablet from "../../imgs/screen1/scratchesTablet.png";
 import ScratchesMobile from "../../imgs/screen1/scratchesMobile.png";
 import MonkeyVideo from "../../imgs/screen1/monkey.webm";
-// import DiscordBtn from "../../imgs/discord_btn.png";
 import GreenBtn from "../../imgs/green_btn.png";
 import { DsLogo } from "./components/header/components/Icons";
 import FirstFooter from "../../imgs/first_footer.png";
@@ -36,11 +35,13 @@ const First = () => {
             }}
           ></Box> */}
           <video
-            playsInline
-            id="video"
-            autoPlay
+            autoplay="autoplay"
+            loop="loop"
             muted
-            loop
+            defaultMuted
+            playsInline
+            onContextMenu="return false;"
+            preload="auto"
             poster={Background}
             style={{
               objectFit: "cover",
@@ -50,6 +51,7 @@ const First = () => {
               top: 0,
               right: 0,
               zIndex: -1,
+              transform: "scale(-1, 1)",
             }}
           >
             <source src={MonkeyVideo} type="video/webm" />
@@ -96,15 +98,17 @@ const First = () => {
                     return "20px";
                   }
                 },
+                maxWidth: "800px",
                 marginLeft: "80px",
               }}
             >
               <Box
                 sx={{
-                  background: `url(${Scratches})`,
+                  background: `url(${ScratchesDesktop})`,
                   width: "100%",
                   height: "100%",
                   position: "absolute",
+                  backgroundSize: "contain",
                   top: 0,
                   left: 0,
                 }}
