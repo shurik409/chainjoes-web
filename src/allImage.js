@@ -85,7 +85,8 @@ import {
   ScratchesMobile,
 } from "./imgs/webp/screen9";
 import { Texture, Solana, Damnn } from "./imgs/webp/screen10";
-import PreLogo from "./imgs/prelogo.webm";
+import PreLogoWebM from "./imgs/prelogo.webm";
+import PreLogoMp4 from "./imgs/prelogo.mp4";
 
 const getAllImage = () => {
   return [
@@ -161,7 +162,7 @@ const getAllImage = () => {
   ];
 };
 const getAllVideo = () => {
-  return [monkeyWebM, monkeyMp4, PreLogo];
+  return [monkeyMp4, PreLogoMp4];
 };
 
 export { getAllImage, getAllVideo };

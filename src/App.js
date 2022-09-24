@@ -12,11 +12,11 @@ import {
   Nine,
   Ten,
   Loader,
-  PreVideo,
 } from "./modules";
 import { Box } from "@mui/material";
 import { getAllImage, getAllVideo } from "./allImage";
-import PreLogo from "./imgs/prelogo.webm";
+import PreLogoWebM from "./imgs/prelogo.webm";
+import PreLogoMp4 from "./imgs/prelogo.mp4";
 
 function App() {
   const [progres, setProgres] = useState(0);
@@ -35,7 +35,13 @@ function App() {
     getAllVideo().forEach((src) => {
       const video = document.createElement("video");
       video.src = src;
-      video.onloadeddata = () => increaseProgres();
+      video.preload = "metadata";
+      video.muted = "true";
+      video.autoplay = "true";
+      video.onloadedmetadata = () => {
+        console.log(src, " loaded");
+        increaseProgres();
+      };
     });
   }, []);
 
@@ -67,7 +73,14 @@ function App() {
       ) : (
         <>
           {isPlaying ? (
-            <Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "#000000",
+              }}
+            >
               <video
                 ref={prevideo}
                 autoPlay="autoPlay"
@@ -78,11 +91,11 @@ function App() {
                 id="vid"
                 style={{
                   objectFit: "cover",
-                  height: "100vh",
                   width: "100%",
                 }}
               >
-                <source src={PreLogo} type="video/webm" />
+                <source src={PreLogoWebM} type="video/webm" />
+                <source src={PreLogoMp4} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </Box>
