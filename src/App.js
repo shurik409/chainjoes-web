@@ -59,7 +59,7 @@ function App() {
 
     return percent;
   };
-  // console.log("progres: ", progres);
+  console.log("progres: ", progres);
   return (
     <Box>
       {getCurrentProgresPercent() < 1 ? (

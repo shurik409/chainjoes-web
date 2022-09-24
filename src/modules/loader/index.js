@@ -62,7 +62,7 @@ const Loader = ({ progres }) => {
               height: 0,
               border: "3px solid #FFFFFF",
               position: "relative",
-              marginTop: "-2px",
+              marginTop: "-3px",
               borderRadius: "10px",
             }}
           />
