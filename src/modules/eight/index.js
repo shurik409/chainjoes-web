@@ -10,7 +10,7 @@ import {
   Partner3Color,
   Partner4Color,
   // Partner5,
-} from "../../imgs/screen8";
+} from "../../imgs/webp/screen8";
 
 const Eight = () => {
   const desktopFlexWidth = useMediaQuery("(min-width: 1555px");

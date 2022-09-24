@@ -6,8 +6,8 @@ import {
   ThirdImg,
   FourthImg,
   MobileMask,
-} from "../../imgs/screen2";
-import Smoke from "../../imgs/screen2_smoke.png";
+} from "../../imgs/webp/screen2";
+import Smoke from "../../imgs/webp/screen2_smoke.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

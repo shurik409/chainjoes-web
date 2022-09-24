@@ -8,9 +8,9 @@ import {
   FiveImg,
   SixImg,
   HeaderTexture,
-} from "../../imgs/screen3";
+} from "../../imgs/webp/screen3";
 import { Line } from "../first/components/header/components/Icons";
-import GreenBtn from "../../imgs/green_btn_small.png";
+import GreenBtn from "../../imgs/webp/green_btn_small.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

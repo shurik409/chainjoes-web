@@ -11,7 +11,7 @@ import {
   Scratches,
   ScratchesMobile,
   Smoke,
-} from "../../imgs/screen9";
+} from "../../imgs/webp/screen9";
 
 const Nine = () => {
   const desktopFlexWidth = useMediaQuery("(min-width: 1200px");

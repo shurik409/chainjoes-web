@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import Header from "./components/header";
-import Background from "../../imgs/screen1/first_screen_reverse.png";
-import ScratchesDesktop from "../../imgs/screen1/scratchesDesktop.png";
-import ScratchesTablet from "../../imgs/screen1/scratchesTablet.png";
-import ScratchesMobile from "../../imgs/screen1/scratchesMobile.png";
-import MonkeyVideoWebM from "../../imgs/screen1/monkey.webm";
-import MonkeyVideoMp4 from "../../imgs/screen1/monkey.mp4";
-import GreenBtn from "../../imgs/green_btn.png";
+import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
+import ScratchesDesktop from "../../imgs/webp/screen1/scratchesDesktop.webp";
+import ScratchesTablet from "../../imgs/webp/screen1/scratchesTablet.webp";
+import ScratchesMobile from "../../imgs/webp/screen1/scratchesMobile.webp";
+import MonkeyVideoWebM from "../../imgs/webp/screen1/monkey.webm";
+import MonkeyVideoMp4 from "../../imgs/webp/screen1/monkey.mp4";
+import GreenBtn from "../../imgs/webp/green_btn.webp";
 import { DsLogo } from "./components/header/components/Icons";
-import FirstFooter from "../../imgs/first_footer.png";
+import FirstFooter from "../../imgs/webp/first_footer.webp";
 
 const First = () => {
   const refVideo = useRef(null);

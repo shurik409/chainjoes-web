@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import { FirstPlane, GoodPoint, BadPoint } from "../../imgs/screen6";
+import { FirstPlane, GoodPoint, BadPoint } from "../../imgs/webp/screen6";
 
 const Six = () => {
   const steps = [

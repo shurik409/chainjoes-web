@@ -8,7 +8,7 @@ import {
   WebLink,
   Smoke,
   SmokeMobile,
-} from "../../imgs/screen7";
+} from "../../imgs/webp/screen7";
 
 const Seven = () => {
   const managment = [

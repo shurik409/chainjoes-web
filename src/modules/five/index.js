@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import Screen from "../../imgs/screen5.png";
+import Screen from "../../imgs/webp/screen5.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

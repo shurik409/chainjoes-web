@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, Link } from "@mui/material";
-import BtnTexture from "../../../../../../imgs/btn_texture.png";
+import BtnTexture from "../../../../../../imgs/webp/btn_texture.webp";
 import { Line } from "../Icons";
 
 const HeaderButton = (props) => {

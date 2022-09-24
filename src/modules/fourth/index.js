@@ -11,7 +11,7 @@ import {
   SmokeMobile,
   MaskTablet,
   MaskMobile,
-} from "../../imgs/screen4";
+} from "../../imgs/webp/screen4";
 
 const Fourth = () => {
   // // const [height, setHeight] = useState(window.innerHeight);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
-import { Texture, Solana, Damnn } from "../../imgs/screen10";
+import { Texture, Solana, Damnn } from "../../imgs/webp/screen10";
 import { DocsLogo } from "../first/components/header/components/Icons";
 
 const Ten = () => {

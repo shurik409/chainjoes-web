@@ -2,7 +2,7 @@ import React from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import HeaderButton from "./components/HeaderButton";
 import { TwitterLogo, TgLogo, DsLogo, DocsLogo } from "./components/Icons";
-import Logo from "../../../../imgs/logo.png";
+import Logo from "../../../../imgs/webp/logo.webp";
 
 const Header = (props) => {
   const buttons = [
