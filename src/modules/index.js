@@ -8,5 +8,18 @@ import Seven from "./seven";
 import Eight from "./eight";
 import Nine from "./nine";
 import Ten from "./ten";
+import Loader from "./loader";
 
-export { First, Second, Third, Fourth, Five, Six, Seven, Eight, Nine, Ten };
+export {
+  First,
+  Second,
+  Third,
+  Fourth,
+  Five,
+  Six,
+  Seven,
+  Eight,
+  Nine,
+  Ten,
+  Loader,
+};
