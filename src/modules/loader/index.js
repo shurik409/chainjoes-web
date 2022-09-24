@@ -1,7 +1,11 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 const Loader = ({ progres }) => {
+  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+
+  const desktop768Width = useMediaQuery("(min-width: 768px");
+
   const getText = () => {
     if (Math.floor(progres * 100) < 33) {
       return "Loading ammunition...";
@@ -11,8 +15,12 @@ const Loader = ({ progres }) => {
       return "Generating races...";
     }
   };
+
   return (
-    <Box sx={{ backgroundColor: "#000000", height: "100vh" }} className="preloadScreen">
+    <Box
+      sx={{ backgroundColor: "#000000", height: "100vh" }}
+      className="preloadScreen"
+    >
       <Box
         sx={{
           display: "flex",
@@ -25,14 +33,18 @@ const Loader = ({ progres }) => {
         <Typography
           fontFamily="Inter"
           fontWeight="400"
-          fontSize="40px"
+          fontSize={desktop768Width ? "40px" : "17px"}
           color="#FFFFFF"
         >
           {Math.floor(progres * 100)}%
         </Typography>
         <Box
           sx={{
-            width: "563px",
+            width: desktop1080Width
+              ? "563px"
+              : desktop768Width
+              ? "400px"
+              : "200px",
             height: 0,
             border: "2px solid #FFFFFF59",
             position: "relative",
@@ -42,7 +54,11 @@ const Loader = ({ progres }) => {
         >
           <Box
             sx={{
-              width: `${563 * progres}px`,
+              width: desktop1080Width
+                ? `${563 * progres}px`
+                : desktop768Width
+                ? `${400 * progres}px`
+                : `${200 * progres}px`,
               height: 0,
               border: "3px solid #FFFFFF",
               position: "relative",
@@ -59,7 +75,7 @@ const Loader = ({ progres }) => {
           <Typography
             fontFamily="Inter"
             fontWeight="400"
-            fontSize="18px"
+            fontSize={desktop768Width ? "18px" : "16px"}
             color="#FFFFFF"
             style={{ opacity: 0.4 }}
           >
