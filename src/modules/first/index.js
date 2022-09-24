@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import Header from "./components/header";
 import Background from "../../imgs/screen1/first_screen_reverse.png";
@@ -11,6 +11,20 @@ import { DsLogo } from "./components/header/components/Icons";
 import FirstFooter from "../../imgs/first_footer.png";
 
 const First = () => {
+  const refVideo = useRef(null);
+  const [muted, setMuted] = useState(false);
+
+  useEffect(() => {
+    if (!refVideo.current) {
+      return;
+    }
+    if (!muted) {
+      refVideo.current.defaultMuted = true;
+      refVideo.current.muted = true;
+      setMuted(true);
+    }
+  });
+
   const desktop1080Width = useMediaQuery("(min-width: 1000px");
   const desktop768Width = useMediaQuery("(min-width: 768px");
   const desktop1080Height = useMediaQuery("(min-height: 1000px");
@@ -35,13 +49,15 @@ const First = () => {
             }}
           ></Box> */}
           <video
-            autoplay="autoplay"
+            ref={refVideo}
+            autoPlay="autoPlay"
             loop="loop"
             muted
-            defaultMuted
+            defaultmuted
             playsInline
-            onContextMenu="return false;"
+            onContextMenu={() => false}
             preload="auto"
+            id="vid"
             poster={Background}
             style={{
               objectFit: "cover",
@@ -277,11 +293,15 @@ const First = () => {
               }}
             /> */}
             <video
-              playsInline
-              id="video"
-              autoPlay
+              autoPlay="autoPlay"
+              ref={refVideo}
+              loop="loop"
               muted
-              loop
+              defaultMuted
+              playsInline
+              onContextMenu={() => false}
+              preload="auto"
+              id="vid"
               poster={Background}
               style={{
                 objectFit: "cover",
@@ -479,11 +499,15 @@ const First = () => {
               }}
             /> */}
             <video
-              playsInline
-              id="video"
-              autoPlay
+              ref={refVideo}
+              autoPlay="autoPlay"
+              loop="loop"
               muted
-              loop
+              defaultMuted
+              playsInline
+              onContextMenu={() => false}
+              preload="auto"
+              id="vid"
               poster={Background}
               style={{
                 objectFit: "cover",
