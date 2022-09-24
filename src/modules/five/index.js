@@ -357,7 +357,7 @@ const Five = () => {
                 height: "101px",
                 width: "100%",
                 background:
-                  "linear-gradient(180deg, #091015 10.59%, rgba(9, 16, 21, 0) 83.66%)",
+                  "linear-gradient(180deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
                 top: 0,
                 right: 0,
               }}
@@ -368,7 +368,7 @@ const Five = () => {
                 height: "74px",
                 width: "100%",
                 background:
-                  "linear-gradient(0deg, #091015 10.59%, rgba(9, 16, 21, 0) 83.66%)",
+                  "linear-gradient(0deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
                 bottom: 0,
                 right: 0,
               }}

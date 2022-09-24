@@ -397,7 +397,7 @@ const Six = () => {
         </Box>
       )}
       {!desktop768Width && !desktop1080Width && (
-        <Box sx={{ padding: "77px 0 73px 15px", backgroundColor: "#000000" }}>
+        <Box sx={{ padding: "77px 0 73px 0px", backgroundColor: "#000000" }}>
           <Box>
             <Typography
               fontFamily="Furore"
@@ -414,9 +414,11 @@ const Six = () => {
                 backgroundClip: "text",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
+                margin: "auto",
               }}
               textTransform="uppercase"
-              maxWidth="186px"
+              textAlign="center"
+              maxWidth="170px"
             >
               RELEASE ROADMAP
             </Typography>
@@ -438,6 +440,7 @@ const Six = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      marginX: "auto",
                     }}
                   >
                     <Typography
@@ -449,40 +452,43 @@ const Six = () => {
                       {step.title}
                     </Typography>
                   </Box>
-                  <Box sx={{ marginLeft: "42px", marginTop: "35px" }}>
-                    {step.good && (
-                      <Box>
-                        {step.good.map((item, goodIndex) => (
-                          <Box
-                            key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
-                            sx={{
-                              marginTop: goodIndex ? "10px" : "",
-                              display: "flex",
-                            }}
-                          >
-                            <Box>
-                              <Box
-                                sx={{
-                                  width: "12px",
-                                  height: "21px",
-                                  background: `url(${GoodPoint})`,
-                                  marginRight: "34px",
-                                }}
-                              />
-                            </Box>
-                            <Typography
-                              fontFamily="Inter"
-                              fontWeight="300"
-                              fontSize="13px"
-                              color="#FFFFFF"
-                              maxWidth="193px"
-                            >
-                              {item}
-                            </Typography>
+                  <Box
+                    sx={{
+                      marginX: "auto",
+                      marginTop: "35px",
+                      maxWidth: "225px",
+                    }}
+                  >
+                    {step.good &&
+                      step.good.map((item, goodIndex) => (
+                        <Box
+                          key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
+                          sx={{
+                            marginTop: goodIndex ? "10px" : "",
+                            display: "flex",
+                          }}
+                        >
+                          <Box>
+                            <Box
+                              sx={{
+                                width: "12px",
+                                height: "21px",
+                                background: `url(${GoodPoint})`,
+                                marginRight: "34px",
+                              }}
+                            />
                           </Box>
-                        ))}
-                      </Box>
-                    )}
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight="300"
+                            fontSize="13px"
+                            color="#FFFFFF"
+                            maxWidth="193px"
+                          >
+                            {item}
+                          </Typography>
+                        </Box>
+                      ))}
                     {step.bad &&
                       step.bad.map((item, badIndex) => (
                         <Box
