@@ -28,6 +28,7 @@ const Second = () => {
         </>
       ),
       img: FirstImg,
+      mobileBottom: "5%",
       description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion.`,
       descriptionTwo: "Join the battle without any barrier!",
     },
@@ -41,6 +42,7 @@ const Second = () => {
         </>
       ),
       img: SecondImg,
+      mobileBottom: "5%",
       description: `Our Plan-And-Earn model evolved from the P2E framework and puts the focus back on providing real entertainment value to create a sustainable, open game economy.`,
       descriptionTwo: `With Play-to-Earn we aim to build value with gameplay. Providing a high entertainment value encourages players to keep playing, and to do so, they’ll want to get rewards they can spend in the game to improve their gameplay experience.`,
     },
@@ -54,6 +56,7 @@ const Second = () => {
         </>
       ),
       img: ThirdImg,
+      mobileBottom: "3%",
       description: `Improve and Merge the NFT’s to increase their power and get the first positions in the competitions. `,
       descriptionTwo: `Our NFTs are not just collections, they deine the life of the game and the legacy of the players. `,
     },
@@ -67,6 +70,7 @@ const Second = () => {
         </>
       ),
       img: FourthImg,
+      mobileBottom: "-3%",
       description: `The essence of the game revolves around PVP champs fighting each other in a ranked system to increase their rating.`,
       descriptionTwo: `The balance of the Ranked System, based on the Elo Rating system, will help the player find a team suitable for the level. Increase your rank and skill to reach the highest rank and earn more tokens for winning.`,
     },
@@ -552,7 +556,7 @@ const Second = () => {
                     <Box
                       sx={{
                         position: "absolute",
-                        bottom: "-2%",
+                        bottom: item.mobileBottom,
                         left: "50%",
                         transform: "translateX(-50%)",
                       }}

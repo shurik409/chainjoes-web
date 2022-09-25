@@ -13,15 +13,16 @@ const Five = () => {
   const texts = [
     {
       title: `Scammers`,
-      description: `Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Pellentesque vulputate quam a quam volutpat, sed ullamcorper erat commodo. Vestibulum sit amet ipsum vitae mauris mattis vulputate lacinia nec neque. Aenean quis consectetur nisi, ac interdum elit. Aliquam sit amet luctus elit.`,
+      description: `Scammers faction is based on hallucinations, illusions and fakes. The characters are very sneaky, selfish and ruthless. Some can be fast and loud, and some can be slow and persuasive. But don’t even think about getting caught by their tricks, otherwise you’re finished!`,
     },
     {
       title: `Hackers`,
-      description: `Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Pellentesque vulputate quam a quam volutpat, sed ullamcorper erat commodo. Vestibulum sit amet ipsum vitae mauris mattis vulputate lacinia nec neque. Aenean quis consectetur nisi, ac interdum elit. Aliquam sit amet luctus elit.`,
+      description: `Not numerous intelligent and technological formations that use small reprogrammed bots as cannon fodder. This faction is based on the strongest programming skills, technical skills and hacking. Protect yourself as much as possible!`,
     },
     {
       title: `Spammers`,
-      description: `Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Pellentesque vulputate quam a quam volutpat, sed ullamcorper erat commodo. Vestibulum sit amet ipsum vitae mauris mattis vulputate lacinia nec neque. Aenean quis consectetur nisi, ac interdum elit. Aliquam sit amet luctus elit.`,
+      description: `Spammers faction is based on fast and slashing movements, chaotic choice of targets, defiant and inappropriate behavior. It’s nearly impossible to dodge their attacks because you never know what the next target will be. 
+      But you can try!`,
     },
   ];
 
