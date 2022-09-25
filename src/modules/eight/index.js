@@ -13,7 +13,8 @@ import {
 } from "../../imgs/webp/screen8";
 
 const Eight = () => {
-  const desktopFlexWidth = useMediaQuery("(min-width: 1555px");
+  const desktopImageWidth = useMediaQuery("(min-width: 1555px");
+  const desktopFlexWidth = useMediaQuery("(min-width: 1300px");
   const desktop1080Width = useMediaQuery("(min-width: 1000px");
 
   const desktop768Width = useMediaQuery("(min-width: 768px");
@@ -27,6 +28,7 @@ const Eight = () => {
             display: desktopFlexWidth ? "flex" : "",
             justifyContent: "space-between",
             backgroundColor: "#091015",
+            gap: "20px",
           }}
         >
           <Box>
@@ -47,7 +49,8 @@ const Eight = () => {
                 WebkitTextFillColor: "transparent",
               }}
               textTransform="uppercase"
-              minWidth="630px"
+              minWidth={desktopImageWidth ? "630px" : "unset"}
+              maxWidth={desktopImageWidth ? "unset" : "436"}
             >
               OUR PARTNERS
             </Typography>
@@ -56,8 +59,8 @@ const Eight = () => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              marginTop: "45px",
               gap: "60px",
+              marginTop: desktopFlexWidth ? "unset" : "45px",
             }}
           >
             <Box
@@ -68,8 +71,91 @@ const Eight = () => {
                 justifyContent: "space-between",
               }}
             >
-              <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
-              <img src={`${Partner3}`} alt="Tamashi" loading="lazy" />
+              <Box
+                sx={{
+                  position: "relative",
+                  ":hover": {
+                    ".partner1": {
+                      opacity: 0,
+                    },
+                    ".partner1Color": {
+                      opacity: 1,
+                    },
+                  },
+                }}
+              >
+                <Box
+                  className="partner1"
+                  sx={{
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
+                </Box>
+                <Box
+                  className="partner1Color"
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    opacity: 0,
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner1Color}`}
+                    alt="Pay accept"
+                    loading="lazy"
+                    width="320px"
+                  />
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  position: "relative",
+                  ":hover": {
+                    ".partner3": {
+                      opacity: 0,
+                    },
+                    ".partner3Color": {
+                      opacity: 1,
+                    },
+                  },
+                }}
+              >
+                <Box
+                  className="partner3"
+                  sx={{
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner3}`}
+                    width={desktopImageWidth ? "393px" : "321px"}
+                    alt="Tamashi"
+                    loading="lazy"
+                  />
+                </Box>
+                <Box
+                  className="partner3Color"
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    opacity: 0,
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner3Color}`}
+                    width={desktopImageWidth ? "393px" : "321px"}
+                    alt="Tamashi"
+                    loading="lazy"
+                  />
+                </Box>
+              </Box>
             </Box>
             <Box
               sx={{
@@ -79,9 +165,96 @@ const Eight = () => {
                 justifyContent: "space-between",
               }}
             >
-              <img src={`${Partner2}`} alt={"Red Rift"} loading="lazy" />
-              <img src={`${Partner4}`} alt={"Damnn"} loading="lazy" />
-              {/* <img src={`${Partner5}`} alt={"Moonraised"} loading="lazy" /> */}
+              <Box
+                sx={{
+                  position: "relative",
+                  ":hover": {
+                    ".partner2": {
+                      opacity: 0,
+                    },
+                    ".partner2Color": {
+                      opacity: 1,
+                    },
+                  },
+                }}
+              >
+                <Box
+                  className="partner2"
+                  sx={{
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner2}`}
+                    alt={"Red Rift"}
+                    width={desktopImageWidth ? "361px" : "318px"}
+                    loading="lazy"
+                  />
+                </Box>
+                <Box
+                  className="partner2Color"
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    opacity: 0,
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner2Color}`}
+                    alt={"Red Rift"}
+                    loading="lazy"
+                    width={desktopImageWidth ? "361px" : "318px"}
+                  />
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  position: "relative",
+                  ":hover": {
+                    ".partner4": {
+                      opacity: 0,
+                    },
+                    ".partner4Color": {
+                      opacity: 1,
+                    },
+                  },
+                }}
+              >
+                <Box
+                  className="partner4"
+                  sx={{
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner4}`}
+                    width={desktopImageWidth ? "305px" : "269px"}
+                    alt={"Damnn"}
+                    loading="lazy"
+                  />
+                </Box>
+                <Box
+                  className="partner4Color"
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    opacity: 0,
+                    transition: "opacity 0.2s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${Partner4Color}`}
+                    width={desktopImageWidth ? "305px" : "269px"}
+                    alt={"Damnn"}
+                    loading="lazy"
+                  />
+                </Box>
+              </Box>
             </Box>
           </Box>
         </Box>

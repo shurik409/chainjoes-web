@@ -6,7 +6,6 @@ import Partner1Color from "./partner1_color.webp";
 import Partner2Color from "./partner2_color.webp";
 import Partner3Color from "./partner3_color.webp";
 import Partner4Color from "./partner4_color.webp";
-import Partner5 from "./partner5.webp";
 
 export {
   Partner1,
@@ -17,5 +16,4 @@ export {
   Partner2Color,
   Partner3Color,
   Partner4Color,
-  Partner5,
 };

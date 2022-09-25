@@ -70,7 +70,6 @@ import {
   Partner2Color,
   Partner3Color,
   Partner4Color,
-  Partner5,
 } from "./imgs/webp/screen8";
 import {
   Fb,
@@ -145,7 +144,6 @@ const getAllImage = () => {
     Partner2Color,
     Partner3Color,
     Partner4Color,
-    Partner5,
     Fb,
     Discord,
     Medium,

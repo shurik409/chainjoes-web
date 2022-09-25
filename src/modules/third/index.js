@@ -106,6 +106,7 @@ const Third = () => {
               top: 0,
               left: 0,
               zIndex: -2,
+              backgroundPositionX: "center",
             }}
           />
           <Box
