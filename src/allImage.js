@@ -11,8 +11,6 @@ import {
 } from "./imgs/webp";
 import {
   firstScreenBack,
-  monkeyWebM,
-  monkeyMp4,
   scratchesDesktop,
   scratchesTablet,
   scratchesMobile,
@@ -84,8 +82,7 @@ import {
   ScratchesMobile,
 } from "./imgs/webp/screen9";
 import { Texture, Solana, Damnn } from "./imgs/webp/screen10";
-import PreLogoWebM from "./imgs/prelogo.webm";
-import PreLogoMp4 from "./imgs/prelogo.mp4";
+import { monkeyWebM, monkeyMp4, PreLogoWebM, PreLogoMp4 } from "./videos";
 
 const getAllImage = () => {
   return [

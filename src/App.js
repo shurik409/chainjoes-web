@@ -15,18 +15,20 @@ import {
 } from "./modules";
 import { Box } from "@mui/material";
 import { getAllImage, getAllVideo } from "./allImage";
-import PreLogoWebM from "./imgs/prelogo.webm";
-import PreLogoMp4 from "./imgs/prelogo.mp4";
+import PreLogoWebM from "./videos/prelogo.webm";
+import PreLogoMp4 from "./videos/prelogo.mp4";
+import Cookies from "js-cookie";
 
 function App() {
   const [progres, setProgres] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  // const prevideo = useRef(null);
+  const [isPlayed, setIsPlayed] = useState(0);
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
 
   useEffect(() => {
-    // console.log("getAllImage.length", getAllImage().length);
+    const cook = Cookies.get("PreLogo");
+    setIsPlayed(cook);
     getAllImage().forEach((src) => {
       const img = new Image();
       img.src = src;
@@ -45,18 +47,12 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (!prevideo.current) {
-  //     return;
-  //   }
-  //   console.log(123123);
-  //   prevideo.current.onended = () => console.log("End");
-  //   console.log(prevideo.current.onended);
-  // }, [prevideo]);
-
   const prevideo = useCallback((node) => {
     if (node) {
-      node.onended = () => setIsPlaying(false);
+      node.onended = () => {
+        Cookies.set("PreLogo", 1);
+        setIsPlaying(false);
+      };
     }
   }, []);
 
@@ -65,14 +61,14 @@ function App() {
 
     return percent;
   };
-  console.log("progres: ", progres);
+  // console.log("progres: ", progres);
   return (
     <Box>
       {getCurrentProgresPercent() < 1 ? (
         <Loader progres={getCurrentProgresPercent()} />
       ) : (
         <>
-          {isPlaying ? (
+          {isPlaying && !isPlayed ? (
             <Box
               sx={{
                 display: "flex",
