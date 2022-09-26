@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import {
   Photo1,
   Photo2,
@@ -246,7 +246,9 @@ const Seven = () => {
                     Red Rift
                   </Typography>
                   <Box sx={{ marginLeft: "15px" }}>
-                    <img src={`${WebLink}`} alt={"Web link"} loading="lazy" />
+                    <Link href="https://redrift.com/" target="_blank">
+                      <img src={`${WebLink}`} alt={"Web link"} loading="lazy" />
+                    </Link>
                   </Box>
                 </Box>
                 <Typography
@@ -547,7 +549,9 @@ const Seven = () => {
                     Red Rift
                   </Typography>
                   <Box sx={{ marginLeft: "15px" }}>
-                    <img src={`${WebLink}`} alt={"Web link"} loading="lazy" />
+                    <Link href="https://redrift.com/" target="_blank">
+                      <img src={`${WebLink}`} alt={"Web link"} loading="lazy" />
+                    </Link>
                   </Box>
                 </Box>
                 <Typography
