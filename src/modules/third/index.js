@@ -656,7 +656,17 @@ const Third = () => {
                         width: "100%",
                         background:
                           "linear-gradient(0deg, #000000 9.32%, rgba(0, 0, 0, 0) 91.43%)",
-                        bottom: "0",
+                        bottom: "50px",
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        height: "90px",
+                        width: "100%",
+                        background:
+                          "linear-gradient(180deg, #000000 9.32%, rgba(0, 0, 0, 0) 91.43%)",
+                        top: "0",
                       }}
                     />
                     <Box sx={{ zIndex: 1, paddingLeft: "15px" }}>

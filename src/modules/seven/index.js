@@ -23,7 +23,8 @@ import {
 const Seven = () => {
   const managment = [
     {
-      name: "Mike Sykora",
+      name: "Mike",
+      surname: "Sykora",
       job: (
         <>
           CEO,
@@ -39,18 +40,48 @@ const Seven = () => {
       job: "Blockchain CTO,  Co-founder",
       photo: Cris,
     },
-    { name: "Gary Yankovich", job: "Chief Product Officer ", photo: Gary },
-    { name: "Dasha Maltseva", job: "Chief Operating Officer ", photo: Dasha },
-    { name: "Katsia Dziatlova", job: "Head of management", photo: Katsia },
+    {
+      name: "Gary",
+      surname: "Yankovich",
+      job: "Chief Product Officer ",
+      photo: Gary,
+    },
+    {
+      name: "Dasha",
+      surname: "Maltseva",
+      job: "Chief Operating Officer ",
+      photo: Dasha,
+    },
+    {
+      name: "Katsia",
+      surname: "Dziatlova",
+      job: "Head of management",
+      photo: Katsia,
+    },
   ];
   const marketing = [
-    { name: "Egor Aniferyk", job: "Producer", photo: Egor },
-    { name: "Maya Kostenkova", job: "Creative producer", photo: Maya },
-    { name: "Hanna Valasheniuk", job: "Creative", photo: Hanna },
-    { name: "Nastia Naumenko", job: "Head of graphic design", photo: Nastia },
-    { name: "Veronika Yasulevich", job: "Graphic Designer", photo: Veronika },
-    { name: "Pavel Ivuts", job: "Head of 3D arts", photo: Pasha },
-    { name: "Alex Andriyashko", job: "3D artist", photo: Alex },
+    { name: "Egor", surname: "Aniferyk", job: "Producer", photo: Egor },
+    {
+      name: "Maya",
+      surname: "Kostenkova",
+      job: "Creative producer",
+      photo: Maya,
+    },
+    { name: "Hanna", surname: "Valasheniuk", job: "Creative", photo: Hanna },
+    {
+      name: "Nastia",
+      surname: "Naumenko",
+      job: "Head of graphic design",
+      photo: Nastia,
+    },
+    {
+      name: "Veronika",
+      surname: "Yasulevich",
+      job: "Graphic Designer",
+      photo: Veronika,
+    },
+    { name: "Pavel", surname: "Ivuts", job: "Head of 3D arts", photo: Pasha },
+    { name: "Alex", surname: "Andriyashko", job: "3D artist", photo: Alex },
   ];
 
   const desktop1080Width = useMediaQuery("(min-width: 1200px)");
@@ -187,6 +218,8 @@ const Seven = () => {
                       lineHeight="22px"
                     >
                       {person.name}
+                      <br />
+                      {person.surname}
                     </Typography>
                     <Typography
                       fontFamily="Inter"
@@ -244,50 +277,68 @@ const Seven = () => {
                   Game dev
                 </Typography>
               </Box>
-              <Box>
+              <Box
+                sx={
+                  !desktopFullGridWidth && {
+                    display: "flex",
+                  }
+                }
+              >
                 <Box>
                   <img
                     src={`${RedRiftLogo}`}
                     alt={"Red Rift Logo"}
                     loading="lazy"
-                    width={desktop1080Width ? "" : "531px"}
+                    width={desktop1080Width ? "" : "319px"}
                   />
                 </Box>
                 <Box
-                  sx={{
-                    display: "flex",
-                    marginTop: "25px",
-                    alignItems: "center",
-                  }}
+                  sx={
+                    !desktopFullGridWidth && {
+                      marginLeft: "85px",
+                    }
+                  }
                 >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      marginTop: desktop1080Width ? "25px" : "0px",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="20px"
+                      fontWeight="500"
+                      color="#FFFFFF"
+                      lineHeight="22px"
+                    >
+                      Red Rift
+                    </Typography>
+                    <Box sx={{ marginLeft: "15px" }}>
+                      <Link href="https://redrift.com/" target="_blank">
+                        <img
+                          src={`${WebLink}`}
+                          alt={"Web link"}
+                          loading="lazy"
+                        />
+                      </Link>
+                    </Box>
+                  </Box>
                   <Typography
                     fontFamily="Inter"
-                    fontSize="20px"
-                    fontWeight="500"
+                    fontSize="18px"
+                    fontWeight="300"
                     color="#FFFFFF"
-                    lineHeight="22px"
+                    maxWidth={desktop1080Width ? "175px" : "unset"}
+                    marginTop={desktop1080Width ? "25px" : "14px"}
+                    lineHeight="21.8px"
+                    height="32px"
+                    style={{ opacity: 0.7 }}
                   >
-                    Red Rift
+                    Game Development partner
                   </Typography>
-                  <Box sx={{ marginLeft: "15px" }}>
-                    <Link href="https://redrift.com/" target="_blank">
-                      <img src={`${WebLink}`} alt={"Web link"} loading="lazy" />
-                    </Link>
-                  </Box>
                 </Box>
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="18px"
-                  fontWeight="300"
-                  color="#FFFFFF"
-                  width="175px"
-                  marginTop="25px"
-                  lineHeight="21.8px"
-                  height="32px"
-                  style={{ opacity: 0.7 }}
-                >
-                  Game Development partner
-                </Typography>
               </Box>
             </Box>
           </Box>
@@ -345,7 +396,13 @@ const Seven = () => {
                     key={`screen-7-managment-person-${index}`}
                     // sx={{ marginLeft: index ? "30px" : "" }}
                   >
-                    <Box sx={{ width: "142px", height: "165px" }}>
+                    <Box
+                      sx={{
+                        width: "142px",
+                        height: "165px",
+                        position: "relative",
+                      }}
+                    >
                       <img
                         src={`${person.photo}`}
                         alt={person.name}
@@ -353,6 +410,13 @@ const Seven = () => {
                         width="142px"
                         height="165px"
                       />
+                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
+                        <img
+                          src={LinkedIn}
+                          alt={`${person.name}-linked`}
+                          loading="lazy"
+                        />
+                      </Box>
                     </Box>
                     <Typography
                       fontFamily="Inter"
@@ -364,6 +428,8 @@ const Seven = () => {
                       lineHeight="22px"
                     >
                       {person.name}
+                      <br />
+                      {person.surname}
                     </Typography>
                     <Typography
                       fontFamily="Inter"
@@ -476,7 +542,13 @@ const Seven = () => {
               >
                 {managment.map((person, index) => (
                   <Box key={`screen-7-managment-person-${index}`}>
-                    <Box sx={{ width: "110px", height: "127px" }}>
+                    <Box
+                      sx={{
+                        width: "110px",
+                        height: "127px",
+                        position: "relative",
+                      }}
+                    >
                       <img
                         src={`${person.photo}`}
                         alt={person.name}
@@ -484,6 +556,13 @@ const Seven = () => {
                         width="110px"
                         height="127px"
                       />
+                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
+                        <img
+                          src={LinkedIn}
+                          alt={`${person.name}-linked`}
+                          loading="lazy"
+                        />
+                      </Box>
                     </Box>
                     <Typography
                       fontFamily="Inter"
@@ -495,6 +574,8 @@ const Seven = () => {
                       lineHeight="19.2px"
                     >
                       {person.name}
+                      <br />
+                      {person.surname}
                     </Typography>
                     <Typography
                       fontFamily="Inter"
@@ -654,13 +735,27 @@ const Seven = () => {
                     key={`screen-7-managment-person-${index}`}
                     // sx={{ marginLeft: index ? "30px" : "" }}
                   >
-                    <Box sx={{ width: "110px", height: "127px" }}>
+                    <Box
+                      sx={{
+                        width: "110px",
+                        height: "127px",
+                        position: "relative",
+                      }}
+                    >
                       <img
                         src={`${person.photo}`}
                         alt={person.name}
-                        width="110px"
                         loading="lazy"
+                        width="110px"
+                        height="127px"
                       />
+                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
+                        <img
+                          src={LinkedIn}
+                          alt={`${person.name}-linked`}
+                          loading="lazy"
+                        />
+                      </Box>
                     </Box>
                     <Typography
                       fontFamily="Inter"
@@ -672,6 +767,8 @@ const Seven = () => {
                       lineHeight="19.2px"
                     >
                       {person.name}
+                      <br />
+                      {person.surname}
                     </Typography>
                     <Typography
                       fontFamily="Inter"

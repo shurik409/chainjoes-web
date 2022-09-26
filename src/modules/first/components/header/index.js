@@ -2,7 +2,7 @@ import React from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import HeaderButton from "./components/HeaderButton";
 import { TwitterLogo, TgLogo, DsLogo, DocsLogo } from "./components/Icons";
-import Logo from "../../../../imgs/webp/logo.webp";
+import Logo from "../../../../imgs/webp/logo.png";
 
 const Header = (props) => {
   const buttons = [
@@ -66,7 +66,12 @@ const Header = (props) => {
           }}
         >
           <Box
-            sx={{ height: 45, width: 109, backgroundImage: `url(${Logo})` }}
+            sx={{
+              height: 45,
+              width: 109,
+              backgroundImage: `url(${Logo})`,
+              backgroundSize: "cover",
+            }}
           />
           <Box sx={{ display: "flex", paddingRight: "70px" }}>
             {buttons.map((item, index) => (

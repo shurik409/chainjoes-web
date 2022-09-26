@@ -67,8 +67,8 @@ const Ten = () => {
               >
                 <Typography
                   fontFamily="Inter"
-                  fontSize="24px"
-                  fontWeight="400"
+                  fontSize="18px"
+                  fontWeight="300"
                   color="inherit"
                 >
                   info@chainjoes.com

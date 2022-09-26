@@ -6,7 +6,7 @@ import greenBtnSmall from "./green_btn_small.webp";
 import greenBtn from "./green_btn.webp";
 import screen2Smoke from "./screen2_smoke.webp";
 import screen5 from "./screen5.webp";
-import logo from "./logo.webp";
+import logo from "./logo.png";
 
 export {
   btnTexture,
