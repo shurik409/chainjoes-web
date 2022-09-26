@@ -71,7 +71,7 @@ const First = () => {
               transform: "scale(-1, 1)",
             }}
           >
-            <source src={MonkeyVideoWebM} type="video/webm" />
+            {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
             <source src={MonkeyVideoMp4} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -317,7 +317,7 @@ const First = () => {
                 transform: "scale(-1, 1)",
               }}
             >
-              <source src={MonkeyVideoWebM} type="video/webm" />
+              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
               <source src={MonkeyVideoMp4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -523,7 +523,7 @@ const First = () => {
                 transform: "scale(-1, 1)",
               }}
             >
-              <source src={MonkeyVideoWebM} type="video/webm" />
+              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
               <source src={MonkeyVideoMp4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

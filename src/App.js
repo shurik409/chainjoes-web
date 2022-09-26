@@ -29,21 +29,20 @@ function App() {
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
     setIsPlayed(cook);
-    getAllImage().forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => increaseProgres();
-    });
     getAllVideo().forEach((src) => {
       const video = document.createElement("video");
       video.src = src;
       video.preload = "metadata";
       video.muted = "true";
       video.autoplay = "true";
-      video.onloadedmetadata = () => {
-        console.log(src, " loaded");
+      video.oncanplaythrough = () => {
         increaseProgres();
       };
+    });
+    getAllImage().forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => increaseProgres();
     });
   }, []);
 
@@ -90,7 +89,7 @@ function App() {
                   width: "100%",
                 }}
               >
-                <source src={PreLogoWebM} type="video/webm" />
+                {/* <source src={PreLogoWebM} type="video/webm" /> */}
                 <source src={PreLogoMp4} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
