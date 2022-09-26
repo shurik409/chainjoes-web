@@ -73,13 +73,13 @@ const Fourth = () => {
     },
   ];
 
-  const desktopThreeWidth = useMediaQuery("(min-width: 1890px");
+  const desktopThreeWidth = useMediaQuery("(min-width: 1890px)");
 
-  const desktop1080Width = useMediaQuery("(min-width: 1330px");
+  const desktop1080Width = useMediaQuery("(min-width: 1330px)");
 
-  const tabletThreeWidth = useMediaQuery("(min-width: 1100px");
+  const tabletThreeWidth = useMediaQuery("(min-width: 1100px)");
 
-  const tablet768Width = useMediaQuery("(min-width: 768px");
+  const tablet768Width = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box>

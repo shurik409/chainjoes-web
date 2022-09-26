@@ -26,9 +26,9 @@ const Five = () => {
     },
   ];
 
-  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   const desktop530Width = useMediaQuery(
     `(min-width: ${125 * texts.length + 30}px`

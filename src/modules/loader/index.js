@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
 const Loader = ({ progres }) => {
-  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   const getText = () => {
     if (Math.floor(progres * 100) < 33) {
@@ -18,7 +18,12 @@ const Loader = ({ progres }) => {
 
   return (
     <Box
-      sx={{ backgroundColor: "#000000", height: "100vh" }}
+      sx={{
+        backgroundColor: "#000000",
+        height: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
       className="preloadScreen"
     >
       <Box

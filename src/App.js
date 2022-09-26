@@ -38,6 +38,7 @@ function App() {
       video.oncanplaythrough = () => {
         increaseProgres();
       };
+      video.onsuspend = () => increaseProgres();
     });
     getAllImage().forEach((src) => {
       const img = new Image();
@@ -89,7 +90,7 @@ function App() {
                   width: "100%",
                 }}
               >
-                {/* <source src={PreLogoWebM} type="video/webm" /> */}
+                <source src={PreLogoWebM} type="video/webm" />
                 <source src={PreLogoMp4} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

@@ -13,11 +13,11 @@ import {
 } from "../../imgs/webp/screen8";
 
 const Eight = () => {
-  const desktopImageWidth = useMediaQuery("(min-width: 1555px");
-  const desktopFlexWidth = useMediaQuery("(min-width: 1300px");
-  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+  const desktopImageWidth = useMediaQuery("(min-width: 1555px)");
+  const desktopFlexWidth = useMediaQuery("(min-width: 1300px)");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box>

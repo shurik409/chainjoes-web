@@ -8,7 +8,7 @@ import SmokeMobile from "./smoke_mobile.webp";
 import Alex from "./team/Alex.png";
 import Cris from "./team/Cris.png";
 import Dasha from "./team/Dasha.png";
-import Egor from "./team/Egor.png";
+import Egor from "./team/Egor.jpg";
 import Hanna from "./team/Hanna.png";
 import Katsia from "./team/Katsia.png";
 import Maya from "./team/Maya.png";

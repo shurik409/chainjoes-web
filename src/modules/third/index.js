@@ -78,9 +78,9 @@ const Third = () => {
     },
   ];
 
-  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   const desktop530Width = useMediaQuery(
     `(min-width: ${125 * header.length + 30}px`
@@ -173,6 +173,7 @@ const Third = () => {
             sx={{
               display: "flex",
               justifyContent: "end",
+              WebkitJustifyContent: 'flex-end',
               height: "500px",
               marginTop: "120px",
             }}

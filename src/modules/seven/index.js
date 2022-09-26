@@ -1,9 +1,6 @@
 import React from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import {
-  Photo1,
-  Photo2,
-  Photo3,
   RedRiftLogo,
   WebLink,
   Smoke,
@@ -56,11 +53,11 @@ const Seven = () => {
     { name: "Alex Andriyashko", job: "3D artist", photo: Alex },
   ];
 
-  const desktop1080Width = useMediaQuery("(min-width: 1200px");
+  const desktop1080Width = useMediaQuery("(min-width: 1200px)");
 
-  const desktopFullGridWidth = useMediaQuery("(min-width: 1555px");
+  const desktopFullGridWidth = useMediaQuery("(min-width: 1555px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box>
@@ -169,6 +166,8 @@ const Seven = () => {
                         src={`${person.photo}`}
                         alt={person.name}
                         loading="lazy"
+                        width="142px"
+                        height="165px"
                       />
                       <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
                         <img
@@ -351,6 +350,8 @@ const Seven = () => {
                         src={`${person.photo}`}
                         alt={person.name}
                         loading="lazy"
+                        width="142px"
+                        height="165px"
                       />
                     </Box>
                     <Typography
@@ -479,8 +480,9 @@ const Seven = () => {
                       <img
                         src={`${person.photo}`}
                         alt={person.name}
-                        width="110px"
                         loading="lazy"
+                        width="110px"
+                        height="127px"
                       />
                     </Box>
                     <Typography

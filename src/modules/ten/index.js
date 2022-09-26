@@ -6,9 +6,9 @@ import { DocsLogo } from "../first/components/header/components/Icons";
 const Ten = () => {
   const [docsHover, setdocsHover] = useState(false);
 
-  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box>
@@ -208,7 +208,13 @@ const Ten = () => {
               alignItems: "center",
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "end" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "end",
+                WebkitAlignItems: "flex-end",
+              }}
+            >
               <Box>
                 <Typography
                   fontFamily="Inter"

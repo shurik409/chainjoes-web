@@ -14,10 +14,10 @@ import {
 } from "../../imgs/webp/screen9";
 
 const Nine = () => {
-  const desktopFlexWidth = useMediaQuery("(min-width: 1200px");
-  const desktop1080Width = useMediaQuery("(min-width: 1000px");
+  const desktopFlexWidth = useMediaQuery("(min-width: 1200px)");
+  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px");
+  const desktop768Width = useMediaQuery("(min-width: 768px)");
   return (
     <Box>
       {desktop1080Width && (
