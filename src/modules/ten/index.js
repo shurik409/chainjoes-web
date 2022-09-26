@@ -135,7 +135,7 @@ const Ten = () => {
               </Box>
             </Link>
           </Box>
-          <Box>
+          {/* <Box>
             <Link
               href=""
               target="_blank"
@@ -189,7 +189,7 @@ const Ten = () => {
                 </Box>
               </Box>
             </Link>
-          </Box>
+          </Box> */}
         </Box>
       )}
       {!desktop1080Width && desktop768Width && (
@@ -234,7 +234,7 @@ const Ten = () => {
                 <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
               </Box>
             </Box>
-            <Box>
+            {/* <Box>
               <Link
                 href=""
                 target="_blank"
@@ -293,7 +293,7 @@ const Ten = () => {
                   </Box>
                 </Box>
               </Link>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             sx={{
@@ -425,7 +425,7 @@ const Ten = () => {
                 </Box>
               </Link>
             </Box>
-            <Box>
+            {/* <Box>
               <Link
                 href=""
                 target="_blank"
@@ -484,7 +484,7 @@ const Ten = () => {
                   </Box>
                 </Box>
               </Link>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             sx={{

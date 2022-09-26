@@ -8,6 +8,19 @@ import {
   WebLink,
   Smoke,
   SmokeMobile,
+  Alex,
+  Cris,
+  Dasha,
+  Egor,
+  Hanna,
+  Katsia,
+  Maya,
+  Mike,
+  Nastia,
+  Pasha,
+  Veronika,
+  Gary,
+  LinkedIn,
 } from "../../imgs/webp/screen7";
 
 const Seven = () => {
@@ -21,27 +34,26 @@ const Seven = () => {
           Co-founder
         </>
       ),
-      photo: Photo1,
+      photo: Mike,
       nameWidth: "107px",
     },
     {
       name: "Christiaan van Steenbergen",
       job: "Blockchain CTO,  Co-founder",
-      photo: Photo2,
+      photo: Cris,
     },
-    { name: "Gary Yankovich", job: "Chief Product Officer ", photo: Photo3 },
-    { name: "Dasha Maltseva", job: "Chief Operating Officer ", photo: Photo1 },
-    { name: "Katsia Dziatlova", job: "Head of management", photo: Photo2 },
+    { name: "Gary Yankovich", job: "Chief Product Officer ", photo: Gary },
+    { name: "Dasha Maltseva", job: "Chief Operating Officer ", photo: Dasha },
+    { name: "Katsia Dziatlova", job: "Head of management", photo: Katsia },
   ];
   const marketing = [
-    { name: "Egor Aniferyk", job: "Producer", photo: Photo3 },
-    { name: "Maya Kostenkova", job: "Creative producer", photo: Photo1 },
-    { name: "Hanna Valasheniuk", job: "Creative", photo: Photo2 },
-    { name: "Nastia Naumenko", job: "Head of graphic design", photo: Photo3 },
-    { name: "Veronika Yasulevich", job: "Graphic Designer", photo: Photo1 },
-    { name: "Pavel Ivuts", job: "Head of 3D arts", photo: Photo2 },
-    { name: "Alex Andriyashko", job: "3D artist", photo: Photo3 },
-    { name: "Jpa Driga", job: "SMM manager", photo: Photo1 },
+    { name: "Egor Aniferyk", job: "Producer", photo: Egor },
+    { name: "Maya Kostenkova", job: "Creative producer", photo: Maya },
+    { name: "Hanna Valasheniuk", job: "Creative", photo: Hanna },
+    { name: "Nastia Naumenko", job: "Head of graphic design", photo: Nastia },
+    { name: "Veronika Yasulevich", job: "Graphic Designer", photo: Veronika },
+    { name: "Pavel Ivuts", job: "Head of 3D arts", photo: Pasha },
+    { name: "Alex Andriyashko", job: "3D artist", photo: Alex },
   ];
 
   const desktop1080Width = useMediaQuery("(min-width: 1200px");
@@ -146,12 +158,25 @@ const Seven = () => {
                     key={`screen-7-managment-person-${index}`}
                     // sx={{ marginLeft: index ? "30px" : "" }}
                   >
-                    <Box sx={{ width: "142px", height: "165px" }}>
+                    <Box
+                      sx={{
+                        width: "142px",
+                        height: "165px",
+                        position: "relative",
+                      }}
+                    >
                       <img
                         src={`${person.photo}`}
                         alt={person.name}
                         loading="lazy"
                       />
+                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
+                        <img
+                          src={LinkedIn}
+                          alt={`${person.name}-linked`}
+                          loading="lazy"
+                        />
+                      </Box>
                     </Box>
                     <Typography
                       fontFamily="Inter"

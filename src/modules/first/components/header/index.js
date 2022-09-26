@@ -78,9 +78,9 @@ const Header = (props) => {
                 link={item.link}
               />
             ))}
-            <Box sx={{ marginLeft: "14px" }}>
+            {/* <Box sx={{ marginLeft: "14px" }}>
               <HeaderButton title="docs" icon={DocsLogo} noLine width={137} />
-            </Box>
+            </Box> */}
           </Box>
         </Box>
       )}
@@ -115,7 +115,7 @@ const Header = (props) => {
                 link={item.link}
               />
             ))}
-            <Box sx={{ marginLeft: "14px" }}>
+            {/* <Box sx={{ marginLeft: "14px" }}>
               <HeaderButton
                 title="docs"
                 icon={DocsLogo}
@@ -124,7 +124,7 @@ const Header = (props) => {
                 height={40}
                 iconHeight={14}
               />
-            </Box>
+            </Box> */}
           </Box>
         </Box>
       )}
@@ -146,7 +146,7 @@ const Header = (props) => {
               backgroundSize: "cover",
             }}
           />
-          <Box sx={{ display: "flex" }}>
+          {/* <Box sx={{ display: "flex" }}>
             <Box sx={{ marginLeft: "14px" }}>
               <HeaderButton
                 title="docs"
@@ -157,7 +157,7 @@ const Header = (props) => {
                 iconHeight={14}
               />
             </Box>
-          </Box>
+          </Box> */}
         </Box>
       )}
     </Box>

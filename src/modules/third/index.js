@@ -225,7 +225,7 @@ const Third = () => {
                   </Typography>
                 )}
               </Box>
-              <Box
+              {/* <Box
                 className="first_dsBtn"
                 sx={{
                   background: `url(${GreenBtn})`,
@@ -255,7 +255,7 @@ const Third = () => {
                     explore the lore
                   </Typography>
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
           </Box>
         </Box>
@@ -467,7 +467,7 @@ const Third = () => {
                     </Typography>
                   )}
                 </Box>
-                <Box
+                {/* <Box
                   className="first_dsBtn"
                   sx={{
                     background: `url(${GreenBtn})`,
@@ -497,7 +497,7 @@ const Third = () => {
                       explore the lore
                     </Typography>
                   </Box>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           </Box>
@@ -695,7 +695,7 @@ const Third = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Box
+                  {/* <Box
                     className="first_dsBtn"
                     sx={{
                       background: `url(${GreenBtn})`,
@@ -727,7 +727,7 @@ const Third = () => {
                         explore the lore
                       </Typography>
                     </Box>
-                  </Box>
+                  </Box> */}
                 </SwiperSlide>
               ))}
             </Swiper>
