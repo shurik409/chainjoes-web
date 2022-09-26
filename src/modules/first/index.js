@@ -128,6 +128,7 @@ const First = () => {
                   height: "100%",
                   position: "absolute",
                   backgroundSize: "contain",
+                  backgroundRepeat: 'no-repeat',
                   top: 0,
                   left: 0,
                 }}
@@ -345,6 +346,7 @@ const First = () => {
                   width: "100%",
                   height: "100%",
                   position: "absolute",
+                  backgroundRepeat: 'no-repeat',
                   top: 0,
                   left: 0,
                 }}
@@ -571,6 +573,7 @@ const First = () => {
                   width: "100%",
                   height: "100%",
                   position: "absolute",
+                  backgroundRepeat: 'no-repeat',
                   top: 0,
                   left: 0,
                 }}
