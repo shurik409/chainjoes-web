@@ -3,7 +3,6 @@ import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import {
   RedRiftLogo,
   WebLink,
-  Smoke,
   SmokeMobile,
   Alex,
   Cris,
@@ -19,6 +18,7 @@ import {
   Gary,
   LinkedIn,
 } from "../../imgs/webp/screen7";
+import Smoke from "../../imgs/smoke.png";
 
 const Seven = () => {
   const managment = [

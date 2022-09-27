@@ -10,8 +10,8 @@ import {
   Logo,
   Scratches,
   ScratchesMobile,
-  Smoke,
 } from "../../imgs/webp/screen9";
+import Smoke from "../../imgs/smoke.png";
 
 const Nine = () => {
   const desktopFlexWidth = useMediaQuery("(min-width: 1200px)");

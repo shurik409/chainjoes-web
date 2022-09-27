@@ -28,6 +28,7 @@ function App() {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
+    setProgres(0);
     setIsPlayed(cook);
     getAllVideo().forEach((src) => {
       const video = document.createElement("video");

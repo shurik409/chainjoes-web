@@ -1,13 +1,13 @@
 import First from "./first";
-import Second from "./second";
-import Third from "./third";
-import Fourth from "./fourth";
-import Five from "./five";
-import Six from "./six";
-import Seven from "./seven";
-import Eight from "./eight";
-import Nine from "./nine";
-import Ten from "./ten";
+import Second from "./explore";
+import Third from "./pers";
+import Fourth from "./activities";
+import Five from "./enemies";
+import Six from "./roadmap";
+import Seven from "./team";
+import Eight from "./partners";
+import Nine from "./social";
+import Ten from "./footer";
 import Loader from "./loader";
 
 export {

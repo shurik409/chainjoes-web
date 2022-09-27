@@ -4,32 +4,14 @@ import {
   FirstImg,
   SecondImg,
   ThirdImg,
-  FirstMask,
-  SecondMask,
-  ThirdMask,
-  Smoke,
+  Mask,
   SmokeMobile,
   MaskTablet,
   MaskMobile,
 } from "../../imgs/webp/screen4";
+import Smoke from "../../imgs/smoke.png";
 
 const Fourth = () => {
-  // // const [height, setHeight] = useState(window.innerHeight);
-  // const [width, setWidth] = useState(document.documentElement.clientWidth);
-  // useEffect(() => {
-  //   const updateWindowDimensions = () => {
-  //     // const newHeight = window.innerHeight;
-  //     const newWidth = window.innerWidth;
-  //     // setHeight(newHeight);
-  //     setWidth(newWidth);
-  //     console.log("updating height");
-  //   };
-
-  //   window.addEventListener("resize", updateWindowDimensions);
-
-  //   return () => window.removeEventListener("resize", updateWindowDimensions);
-  // }, []);
-
   const activities = [
     {
       title: "Play different modes",
@@ -38,7 +20,7 @@ const Fourth = () => {
       descriptionWidth: "410px",
       descriptionWidthMobile: "242px",
       img: FirstImg,
-      mask: FirstMask,
+      mask: Mask,
       maskTablet: MaskTablet,
       height: "400px",
       transformX: "-51%",
@@ -51,7 +33,7 @@ const Fourth = () => {
       descriptionWidthMobile: "235px",
       descriptionWidthTablet: "195px",
       img: SecondImg,
-      mask: SecondMask,
+      mask: Mask,
       maskTablet: MaskTablet,
       height: "410px",
       transformX: "-50%",
@@ -63,7 +45,7 @@ const Fourth = () => {
         "Participate in various quests and missions to receive unique rewards and $CJs tokens.",
       descriptionWidthMobile: "243px",
       img: ThirdImg,
-      mask: ThirdMask,
+      mask: Mask,
       maskTablet: MaskTablet,
       height: "400px",
       transformX: "-51%",

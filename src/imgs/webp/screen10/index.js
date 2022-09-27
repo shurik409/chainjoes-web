@@ -1,4 +1,4 @@
-import Texture from "./texture.webp";
+import Texture from "./texture.png";
 import Solana from "./solana.png";
 import Damnn from "./damnn.png";
 

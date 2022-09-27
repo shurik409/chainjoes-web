@@ -35,28 +35,18 @@ import {
   FirstImg as screen4FirstImg,
   SecondImg as screen4SecondImg,
   ThirdImg as screen4ThirdImg,
-  FirstMask as screen4FirstMask,
-  SecondMask as screen4SecondMask,
-  ThirdMask as screen4ThirdMask,
-  Smoke as screen4Smoke,
+  Mask as screen4Mask,
   SmokeMobile as screen4SmokeMobile,
   MaskTablet as screen4MaskTablet,
   MaskMobile as screen4MaskMobile,
 } from "./imgs/webp/screen4";
-import {
-  FirstPlane,
-  SecondPlane,
-  ThirdPlane,
-  GoodPoint,
-  BadPoint,
-} from "./imgs/webp/screen6";
+import { Plane, GoodPoint, BadPoint } from "./imgs/webp/screen6";
 import {
   Photo1,
   Photo2,
   Photo3,
   RedRiftLogo,
   WebLink,
-  Smoke,
   SmokeMobile,
   Alex,
   Cris,
@@ -91,11 +81,11 @@ import {
   Twitter,
   Logo,
   Scratches,
-  Smoke as screen9Smoke,
   ScratchesMobile,
 } from "./imgs/webp/screen9";
 import { Texture, Solana, Damnn } from "./imgs/webp/screen10";
 import { monkeyWebM, monkeyMp4, PreLogoWebM, PreLogoMp4 } from "./videos";
+import Smoke from "./imgs/smoke.png";
 
 const getAllImage = () => {
   return [
@@ -127,16 +117,11 @@ const getAllImage = () => {
     screen4FirstImg,
     screen4SecondImg,
     screen4ThirdImg,
-    screen4FirstMask,
-    screen4SecondMask,
-    screen4ThirdMask,
-    screen4Smoke,
+    screen4Mask,
     screen4SmokeMobile,
     screen4MaskTablet,
     screen4MaskMobile,
-    FirstPlane,
-    SecondPlane,
-    ThirdPlane,
+    Plane,
     GoodPoint,
     BadPoint,
     Photo1,
@@ -162,7 +147,6 @@ const getAllImage = () => {
     Twitter,
     Logo,
     Scratches,
-    screen9Smoke,
     ScratchesMobile,
     Texture,
     Solana,

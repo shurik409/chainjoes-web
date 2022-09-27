@@ -7,7 +7,6 @@ import Twitter from "./twitter.webp";
 import Logo from "./logo.webp";
 import Scratches from "./scratches.webp";
 import ScratchesMobile from "./scratches_mobile.webp";
-import Smoke from "./smoke.webp";
 
 export {
   Fb,
@@ -18,6 +17,5 @@ export {
   Twitter,
   Logo,
   Scratches,
-  Smoke,
   ScratchesMobile,
 };

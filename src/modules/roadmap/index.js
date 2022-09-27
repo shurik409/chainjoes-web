@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import { FirstPlane, GoodPoint, BadPoint } from "../../imgs/webp/screen6";
+import { Plane, GoodPoint, BadPoint } from "../../imgs/webp/screen6";
 
 const Six = () => {
   const steps = [
@@ -14,7 +14,7 @@ const Six = () => {
         "BlockChain team formation",
         "Marketing team formation",
       ],
-      img: FirstPlane,
+      img: Plane,
     },
     {
       title: "Q3-Q4 2022",
@@ -25,12 +25,12 @@ const Six = () => {
         "Realese of socials: Twitter, Discord, Telegram and Facebook",
       ],
       bad: ["Seed Raising", "Partnerships", "Onboarding Advisors"],
-      img: FirstPlane,
+      img: Plane,
     },
     {
       title: "Q1 2023",
       bad: ["Release Roadmap", "Release Whitepaper", "Start game production"],
-      img: FirstPlane,
+      img: Plane,
     },
   ];
 
