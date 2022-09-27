@@ -33,49 +33,86 @@ const First = () => {
   const desktop768Height = useMediaQuery("(min-height:685px)");
 
   return (
-    <Box>
+    <Box
+      sx={{
+        "@keyframes video": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+        "@keyframes header": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+        "@keyframes title": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+        "@keyframes description": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+        "@keyframes button": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+      }}
+    >
       {desktop1080Width && (
         <Box sx={{ position: "relative", height: "100vh" }}>
-          {/* <Box
+          <Box
             sx={{
-              height: "100vh",
-              width: "100%",
-              background: `url(${Background})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPositionX: "center",
-              backgroundSize: "cover",
-              position: "absolute",
-              top: 0,
-              right: 0,
-              zIndex: -1,
-            }}
-          ></Box> */}
-          <video
-            ref={refVideo}
-            autoPlay="autoPlay"
-            loop="loop"
-            muted
-            playsInline
-            onContextMenu={() => false}
-            preload="auto"
-            id="vid"
-            poster={Background}
-            style={{
-              objectFit: "cover",
-              height: "100vh",
-              width: "100%",
-              position: "absolute",
-              top: 0,
-              right: 0,
-              zIndex: -1,
-              transform: "scale(-1, 1)",
+              animationName: "video",
+              animationDuration: "10s",
+              animationFillMode: "both",
+              animationDelay: "1s",
             }}
           >
-            {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-            <source src={MonkeyVideoMp4} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
+            <video
+              ref={refVideo}
+              autoPlay="autoPlay"
+              loop="loop"
+              muted
+              playsInline
+              onContextMenu={() => false}
+              preload="auto"
+              id="vid"
+              poster={Background}
+              style={{
+                objectFit: "cover",
+                height: "100vh",
+                width: "100%",
+                position: "absolute",
+                top: 0,
+                right: 0,
+                zIndex: -1,
+                transform: "scale(-1, 1)",
+              }}
+            >
+              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
+              <source src={MonkeyVideoMp4} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
           <Box
             sx={{
               width: "100%",
@@ -93,7 +130,10 @@ const First = () => {
               marginLeft: "70px",
               display: "flex",
               justifyContent: "end",
-              WebkitJustifyContent: 'flex-end',
+              WebkitJustifyContent: "flex-end",
+              animationName: "header",
+              animationDuration: "2s",
+              animationFillMode: "both",
             }}
           >
             <Header />
@@ -120,6 +160,10 @@ const First = () => {
                 },
                 maxWidth: "800px",
                 marginLeft: "80px",
+                animationName: "title",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "3s",
               }}
             >
               <Box
@@ -165,9 +209,14 @@ const First = () => {
             </Box>
             <Box
               sx={{
+                zIndex: 1,
                 width: desktop768Height ? "590px" : "400px",
                 marginTop: desktop768Height ? "60px" : "15px",
                 marginLeft: "80px",
+                animationName: "description",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "4s",
               }}
             >
               <Typography
@@ -195,6 +244,7 @@ const First = () => {
             </Box>
             <Box
               sx={{
+                zIndex: 1,
                 marginTop: desktop768Height ? "60px" : "15px",
                 marginLeft: "80px",
                 width: 288,
@@ -206,6 +256,10 @@ const First = () => {
                     transform: "translateY(-5px)",
                   },
                 },
+                animationName: "button",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "5s",
               }}
             >
               <Link
@@ -279,55 +333,52 @@ const First = () => {
                 position: "absolute",
                 top: "calc(100vh - 681px)",
                 left: 0,
-                zIndex: -1,
+                zIndex: 1,
               }}
             />
-            {/* <Box
+            <Box
               sx={{
-                height: "100vh",
-                maxHeight: "681px",
-                width: "100%",
-                background: `url(${Background})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPositionX: "center",
-                backgroundSize: "cover",
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-                zIndex: -2,
-              }}
-            /> */}
-            <video
-              autoPlay="autoPlay"
-              ref={refVideo}
-              loop="loop"
-              muted
-              playsInline
-              onContextMenu={() => false}
-              preload="auto"
-              id="vid"
-              poster={Background}
-              style={{
-                objectFit: "cover",
-                height: "100vh",
-                maxHeight: "681px",
-                width: "100%",
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-                zIndex: -2,
-                transform: "scale(-1, 1)",
+                animationName: "video",
+                animationDuration: "10s",
+                animationFillMode: "both",
+                animationDelay: "1s",
               }}
             >
-              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-              <source src={MonkeyVideoMp4} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <video
+                autoPlay="autoPlay"
+                ref={refVideo}
+                loop="loop"
+                muted
+                playsInline
+                onContextMenu={() => false}
+                preload="auto"
+                id="vid"
+                poster={Background}
+                style={{
+                  objectFit: "cover",
+                  height: "100vh",
+                  maxHeight: "681px",
+                  width: "100%",
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  zIndex: -2,
+                  transform: "scale(-1, 1)",
+                }}
+              >
+                {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
+                <source src={MonkeyVideoMp4} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
           </Box>
           <Box
             sx={{
               display: "flex",
               width: "100%",
+              animationName: "header",
+              animationDuration: "2s",
+              animationFillMode: "both",
             }}
           >
             <Header padding="0 44px 0 80px" />
@@ -339,6 +390,10 @@ const First = () => {
                 marginTop: "60px",
                 marginLeft: "27px",
                 zIndex: 2,
+                animationName: "title",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "3s",
               }}
             >
               <Box
@@ -369,6 +424,10 @@ const First = () => {
                 width: "530px",
                 marginTop: "40px",
                 marginLeft: "30px",
+                animationName: "description",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "4s",
               }}
             >
               <Typography
@@ -407,6 +466,10 @@ const First = () => {
                     transform: "translateY(-5px)",
                   },
                 },
+                animationName: "button",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "5s",
               }}
             >
               <Link
@@ -488,48 +551,43 @@ const First = () => {
                 position: "absolute",
                 top: 0,
                 left: 0,
-                zIndex: -1,
+                zIndex: 1,
               }}
             />
-            {/* <Box
+            <Box
               sx={{
-                height: "100%",
-                width: "100%",
-                background: `url(${Background})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPositionX: "center",
-                backgroundSize: "cover",
-                position: "absolute",
-                bottom: "0",
-                right: 0,
-                zIndex: -2,
-              }}
-            /> */}
-            <video
-              autoplay="true"
-              ref={refVideo}
-              loop="loop"
-              muted="true"
-              playsInline
-              onContextMenu={() => false}
-              preload="auto"
-              id="vid"
-              poster={Background}
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-                zIndex: -2,
-                transform: "scale(-1, 1)",
+                animationName: "video",
+                animationDuration: "10s",
+                animationFillMode: "both",
+                animationDelay: "1s",
               }}
             >
-              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-              <source src={MonkeyVideoMp4} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <video
+                autoplay="true"
+                ref={refVideo}
+                loop="loop"
+                muted="true"
+                playsInline
+                onContextMenu={() => false}
+                preload="auto"
+                id="vid"
+                poster={Background}
+                style={{
+                  objectFit: "cover",
+                  height: "100%",
+                  width: "100%",
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  zIndex: -2,
+                  transform: "scale(-1, 1)",
+                }}
+              >
+                {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
+                <source src={MonkeyVideoMp4} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
             <Box
               sx={{
                 width: "100%",
@@ -539,7 +597,7 @@ const First = () => {
                 position: "absolute",
                 bottom: 0,
                 left: 0,
-                zIndex: -1,
+                zIndex: 0,
               }}
             />
           </Box>
@@ -547,6 +605,9 @@ const First = () => {
             sx={{
               display: "flex",
               width: "100%",
+              animationName: "header",
+              animationDuration: "2s",
+              animationFillMode: "both",
             }}
           >
             <Header padding="0 15px 0 15px" />
@@ -566,6 +627,10 @@ const First = () => {
                 position: "relative",
                 marginTop: "29px",
                 zIndex: 2,
+                animationName: "title",
+                animationDuration: "3s",
+                animationFillMode: "both",
+                animationDelay: "3s",
               }}
             >
               <Box
@@ -596,7 +661,14 @@ const First = () => {
               </Typography>
             </Box>
             <Box>
-              <Box>
+              <Box
+                sx={{
+                  animationName: "description",
+                  animationDuration: "3s",
+                  animationFillMode: "both",
+                  animationDelay: "4s",
+                }}
+              >
                 <Typography
                   fontFamily="Inter"
                   fontSize="14px"
@@ -619,6 +691,10 @@ const First = () => {
                       transform: "translateY(-5px)",
                     },
                   },
+                  animationName: "button",
+                  animationDuration: "3s",
+                  animationFillMode: "both",
+                  animationDelay: "5s",
                 }}
               >
                 <Link
