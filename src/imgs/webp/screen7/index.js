@@ -3,7 +3,7 @@ import Photo2 from "./Photo2.webp";
 import Photo3 from "./Photo3.webp";
 import RedRiftLogo from "./redRift_logo.webp";
 import WebLink from "./link.png";
-import SmokeMobile from "./smoke_mobile.webp";
+import SmokeMobile from "./smoke_mobile.png";
 import Alex from "./team/Alex.png";
 import Cris from "./team/Cris.png";
 import Dasha from "./team/Dasha.png";
