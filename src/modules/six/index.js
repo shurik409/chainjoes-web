@@ -20,7 +20,7 @@ const Six = () => {
       title: "Q3-Q4 2022",
       good: [
         "Official realese of the project",
-        "Release of Game Design Document (GDD)",
+        "Completion of Game Design Document (GDD)",
         "Realease of website",
         "Realese of socials: Twitter, Discord, Telegram and Facebook",
       ],
