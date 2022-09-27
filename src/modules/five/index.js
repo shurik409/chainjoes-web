@@ -140,20 +140,29 @@ const Five = () => {
                         {item.title}
                       </Typography>
                     </Box>
-                    {index === curentItem && (
-                      <Box>
-                        <Box sx={{ width: "600px", marginTop: "25px" }}>
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="18px"
-                            color="#ffffff"
-                          >
-                            {item.description}
-                          </Typography>
-                        </Box>
+                    {/* {index === curentItem && ( */}
+                    <Box>
+                      <Box
+                        sx={{
+                          width: "600px",
+                          marginTop: index === curentItem ? "25px" : "0px",
+                          maxHeight: index === curentItem ? "110px" : "0px",
+                          opacity: index === curentItem ? 1 : 0,
+                          overflow: "hidden",
+                          transition: "all 0.3s ease-in",
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          fontWeight="300"
+                          fontSize="18px"
+                          color="#ffffff"
+                        >
+                          {item.description}
+                        </Typography>
                       </Box>
-                    )}
+                    </Box>
+                    {/* )} */}
                   </Box>
                 ))}
               </Box>

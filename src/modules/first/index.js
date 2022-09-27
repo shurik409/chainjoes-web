@@ -31,15 +31,7 @@ const First = () => {
   const desktop768Width = useMediaQuery("(min-width:768px)");
   const desktop1080Height = useMediaQuery("(min-height:1000px)");
   const desktop768Height = useMediaQuery("(min-height:685px)");
-  const matches = useMediaQuery("(min-width:600px)");
 
-  console.log(
-    desktop1080Width,
-    desktop768Width,
-    desktop1080Height,
-    desktop768Height,
-    matches
-  );
   return (
     <Box>
       {desktop1080Width && (

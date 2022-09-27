@@ -162,21 +162,36 @@ const Second = () => {
                           {item.title}
                         </Typography>
                       </Box>
-                      {index === curentItem && (
-                        <Box>
-                          <Box sx={{ marginTop: "25px" }}>
-                            <Typography
-                              fontFamily="Inter"
-                              fontWeight="300"
-                              fontSize="18px"
-                              color="#ffffff"
-                              maxWidth="730px"
-                              lineHeight="21.78px"
-                            >
-                              {item.description}
-                            </Typography>
-                          </Box>
-                          {item.descriptionTwo && (
+                      {/* {index === curentItem && ( */}
+                      <Box>
+                        <Box
+                          sx={{
+                            marginTop: index === curentItem ? "25px" : "0px",
+                            maxHeight: index === curentItem ? "180px" : "0px",
+                            opacity: index === curentItem ? 1 : 0,
+                            overflow: "hidden",
+                            transition: "all 0.3s ease-in-out",
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight="300"
+                            fontSize="18px"
+                            color="#ffffff"
+                            maxWidth="730px"
+                            lineHeight="21.78px"
+                          >
+                            {item.description}
+                            {item.descriptionTwo && (
+                              <>
+                                <br />
+                                <br />
+                                {item.descriptionTwo}
+                              </>
+                            )}
+                          </Typography>
+                        </Box>
+                        {/* {item.descriptionTwo && (
                             <Box sx={{ marginTop: "25px" }}>
                               <Typography
                                 fontFamily="Inter"
@@ -186,24 +201,41 @@ const Second = () => {
                                 maxWidth="730px"
                                 lineHeight="21.78px"
                               >
-                                {item.descriptionTwo}
+                                
                               </Typography>
                             </Box>
-                          )}
-                        </Box>
-                      )}
+                          )} */}
+                      </Box>
+                      {/* )} */}
                     </Box>
                   ))}
                 </Box>
               </Box>
             </Box>
-            <Box>
-              <img
-                src={`${texts[curentItem].img}`}
-                alt={texts[curentItem].title}
-                loading="lazy"
-                style={{ maxWidth: "865px", width: "100%" }}
-              />
+            <Box
+              sx={{ position: "relative", maxWidth: "865px", width: "100%" }}
+            >
+              {texts.map((item, index) => (
+                <Box
+                  key={`screen-2-image-block-${index}`}
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    heigth: "100%",
+                    opacity: index === curentItem ? 1 : 0,
+                    transition: "all 0.3s ease-in-out",
+                  }}
+                >
+                  <img
+                    src={`${item.img}`}
+                    alt={item.title}
+                    loading="lazy"
+                    style={{ width: "100%" }}
+                  />
+                </Box>
+              ))}
             </Box>
           </Box>
         </Box>
@@ -347,49 +379,58 @@ const Second = () => {
               </Box>
             </Box>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              marginTop: "43px",
-            }}
-          >
-            <Box sx={{ width: "343px" }}>
-              <img
-                src={`${texts[curentItem].img}`}
-                alt={texts[curentItem].title}
-                loading="lazy"
-                style={{ maxWidth: "100%" }}
-              />
-            </Box>
-            <Box sx={{ marginLeft: "27px" }}>
-              <Box>
-                <Box>
-                  <Typography
-                    fontFamily="Inter"
-                    fontWeight="300"
-                    fontSize="14px"
-                    color="#ffffff"
-                    maxWidth="340px"
-                  >
-                    {texts[curentItem].description}
-                  </Typography>
+          <Box>
+            {texts.map((item, index) => (
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: index === curentItem ? "43px" : "0",
+                  height: index === curentItem ? "340px" : "0px",
+                  opacity: index === curentItem ? 1 : 0,
+                  overflow: "hidden",
+                  transition: "all 0.3s ease-in-out",
+                }}
+                key={`screen-2-information-block-${index}`}
+              >
+                <Box sx={{ width: "343px" }}>
+                  <img
+                    src={`${item.img}`}
+                    alt={item.title}
+                    loading="lazy"
+                    style={{ maxWidth: "100%" }}
+                  />
                 </Box>
-                {texts[curentItem].descriptionTwo && (
-                  <Box sx={{ marginTop: "20px" }}>
-                    <Typography
-                      fontFamily="Inter"
-                      fontWeight="300"
-                      fontSize="14px"
-                      color="#ffffff"
-                      maxWidth="340px"
-                    >
-                      {texts[curentItem].descriptionTwo}
-                    </Typography>
+                <Box sx={{ marginLeft: "27px" }}>
+                  <Box>
+                    <Box>
+                      <Typography
+                        fontFamily="Inter"
+                        fontWeight="300"
+                        fontSize="14px"
+                        color="#ffffff"
+                        maxWidth="340px"
+                      >
+                        {item.description}
+                      </Typography>
+                    </Box>
+                    {item.descriptionTwo && (
+                      <Box sx={{ marginTop: "20px" }}>
+                        <Typography
+                          fontFamily="Inter"
+                          fontWeight="300"
+                          fontSize="14px"
+                          color="#ffffff"
+                          maxWidth="340px"
+                        >
+                          {item.descriptionTwo}
+                        </Typography>
+                      </Box>
+                    )}
                   </Box>
-                )}
+                </Box>
               </Box>
-            </Box>
+            ))}
           </Box>
         </Box>
       )}
