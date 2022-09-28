@@ -26,6 +26,7 @@ const Third = () => {
       overlayMargin: "0",
       descriptionOne: "The soul is always looking for a home...",
       mobilePosition: "left",
+      desktopPosition: 'center',
       descriptionTwo:
         "This is carved on the coat of arms of the house of Hodler, whose metaverse was covered with ice after it was destroyed by hackers decades ago.  ",
     },
@@ -33,6 +34,7 @@ const Third = () => {
       title: "Anwar",
       background: SecondImg,
       mobilePosition: "left",
+      desktopPosition: 'center',
       overlayMargin: "120px",
       descriptionOne:
         "From the metaverse Greece 21, reconstructed on the fragments of ancient Greece with the help of web 3.0 technologies, the warrior Anwar arrived.",
@@ -42,6 +44,7 @@ const Third = () => {
       title: "Tama Shi",
       background: ThirdImg,
       mobilePosition: "left",
+      desktopPosition: 'left',
       overlayMargin: "130px",
       descriptionOne:
         "Duncan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years. Due to the overabundance of various advanced technologies inside the city, it can «lag» a little — the locations are distorted and merge into each other. ",
@@ -51,6 +54,7 @@ const Third = () => {
       title: "Milcy",
       background: FourthImg,
       mobilePosition: "left",
+      desktopPosition: 'center',
       overlayMargin: "100px",
       descriptionOne:
         "MLc s9 is one of the 10 newest bots that were created as part of the experimental development of metaverse A2. which is engaged in the creation of spam bots. These bots were supposed to be the crown of creation, which would allow them to bypass all current firewalls.",
@@ -60,6 +64,7 @@ const Third = () => {
       title: "Deo",
       background: FiveImg,
       mobilePosition: "left",
+      desktopPosition: 'center',
       overlayMargin: "120px",
       descriptionOne:
         "The Monk Deo arrived from the metaverse Temple of Fate...On his planet, the monks were able to curb web 3.0 technologies and now draw strength from there. ",
@@ -70,6 +75,7 @@ const Third = () => {
       title: "Sam",
       background: SixImg,
       mobilePosition: "left",
+      desktopPosition: 'center',
       overlayMargin: "145px",
       descriptionOne:
         "Earth X300 has reached its peak of development and formed its own system. People live in prosperity, and technologies work for the benefit of humanity and deliver only comfort.",
@@ -92,141 +98,165 @@ const Third = () => {
         <Box
           sx={{
             position: "relative",
-            padding: "60px 0px 340px 0px",
+            padding: "90px 0px 0px 0px",
           }}
         >
           <Box
             sx={{
-              background: `url(${header[curentItem].background})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              top: 0,
-              left: 0,
-              zIndex: -2,
-              backgroundPositionX: "center",
-            }}
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              height: "100%",
-              width: "calc(50% + (100vw / 1920) * 1000)",
-              background:
-                "linear-gradient(264.4deg, #000000 15.42%, rgba(0, 0, 0, 0) 89.56%)",
-              top: 0,
-              right: 0,
-              zIndex: -1,
-            }}
-          />
-          <Box
-            sx={{
-              background: `url(${HeaderTexture})`,
-              width: "calc(100vw - 160px)",
-              height: "60px",
-              margin: "auto",
-              display: "flex",
+              position: "relative",
+              overflowX: "hidden",
+              display: desktop530Width ? "flex" : "block",
+              flexDirection: "column",
+              alignItems: "center",
+              paddingX: "80px",
             }}
           >
-            {header.map((item, index) => (
-              <Box
-                key={`third-screen_header-${index}`}
-                sx={{
-                  width: `calc(100% / ${header.length})`,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  position: "relative",
-                  color: index === curentItem ? "#47FFF4" : "#FFFFFF",
-                  cursor: "pointer",
-                  ":hover": {
-                    color: "#47FFF4",
-                  },
-                }}
-                onClick={() => setCurentItem(index)}
-              >
-                <Box sx={{}}>
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+              }}
+            >
+              {header.map((item, index) => (
+                <Box
+                  key={`screen-2-mobile-title-${index}`}
+                  sx={{ width: `calc(100% / ${header.length})` }}
+                  onClick={() => {
+                    setCurentItem(index);
+                    swiperRef.current.swiper.slideTo(index);
+                  }}
+                >
                   <Typography
-                    fontFamily="Inter"
-                    fontWeight={400}
+                    fontFamily="Furore"
                     fontSize="20px"
-                    fontStyle="italic"
-                    color="inherit"
+                    lineHeight="23.02px"
+                    textAlign="center"
+                    marginX="auto"
+                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                   >
                     {item.title}
                   </Typography>
                 </Box>
-                {index !== header.length - 1 && (
-                  <Box
-                    id="btn_line"
-                    sx={{ position: "absolute", right: "-50px" }}
-                  >
-                    <Line />
-                  </Box>
-                )}
-              </Box>
-            ))}
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "end",
-              WebkitJustifyContent: 'flex-end',
-              height: "500px",
-              marginTop: "120px",
-            }}
-          >
-            <Box sx={{ marginRight: "240px" }}>
-              <Typography
-                fontFamily="Furore"
-                fontSize="75px"
-                textTransform="uppercase"
-                style={{
-                  textFillColor: "transparent",
-                  backgroundcolor: "primary",
-                  backgroundImage:
-                    "linear-gradient(180.74deg, #FFFFFF 0.64%, rgba(255, 255, 255, 0) 247.44%)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+              ))}
+            </Box>
+            <Box
+              sx={{
+                marginTop: "16px",
+                width: "100%",
+                height: 3,
+                backgroundColor: "#A5a5a5",
+              }}
+            >
+              <Box
+                sx={{
+                  width: `calc(100% / ${header.length})`,
+                  height: "3px",
+                  backgroundColor: "#44F4C3",
+                  marginLeft: `calc(${curentProgress} * calc(${header.length} * calc(100% / ${header.length}) - calc(100% / ${header.length})))`,
                 }}
-              >
-                introduce
-              </Typography>
-              <Typography
-                fontFamily="Inter"
-                fontSize="45px"
-                fontWeight="500"
-                color="#FFFFFF"
-              >
-                {header[curentItem].title}
-              </Typography>
-              <Box sx={{ width: "530px", marginTop: "35px" }}>
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="18px"
-                  fontWeight="300"
-                  color="#FFFFFF"
-                >
-                  {header[curentItem].descriptionOne}
-                </Typography>
-                {header[curentItem].descriptionTwo && (
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="18px"
-                    fontWeight="300"
-                    color="#FFFFFF"
-                    style={{ marginTop: "25px" }}
+              ></Box>
+            </Box>
+          </Box>
+          <Box sx={{ marginTop: "90px" }}>
+            <Swiper
+              slidesPerView={1}
+              centeredSlides={true}
+              grabCursor={true}
+              className="mySwiper"
+              onProgress={({ progress }) =>
+                !(progress < 0 || progress > 1) && setProgress(progress)
+              }
+              onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
+              ref={swiperRef}
+            >
+              {header.map((item, index) => (
+                <SwiperSlide key={`screen-3-swiper-item-${index}`}>
+                  <Box
+                    sx={{
+                      background: `url(${item.background})`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      // position: "absolute",
+                      width: "100%",
+                      height: "1000px",
+                      top: 0,
+                      left: 0,
+                      zIndex: -2,
+                      backgroundPositionX: item.desktopPosition,
+                      backgroundPositionY: "center",
+                      position: "relative",
+                      paddingTop: "240px",
+                    }}
                   >
-                    {header[curentItem].descriptionTwo}
-                  </Typography>
-                )}
-              </Box>
-              {/* <Box
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        height: "100%",
+                        width: "calc(10% + (100vw / 1920) * 1000)",
+                        background:
+                          "linear-gradient(264.4deg, #000000 15.42%, rgba(0, 0, 0, 0) 89.56%)",
+                        top: 0,
+                        right: 0,
+                        zIndex: -1,
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "end",
+                        WebkitJustifyContent: "flex-end",
+                        height: "500px",
+                      }}
+                    >
+                      <Box sx={{ marginRight: "240px" }}>
+                        <Typography
+                          fontFamily="Furore"
+                          fontSize="75px"
+                          textTransform="uppercase"
+                          style={{
+                            textFillColor: "transparent",
+                            backgroundcolor: "primary",
+                            backgroundImage:
+                              "linear-gradient(180.74deg, #FFFFFF 0.64%, rgba(255, 255, 255, 0) 247.44%)",
+                            backgroundSize: "100%",
+                            backgroundRepeat: "repeat",
+                            backgroundClip: "text",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                          }}
+                        >
+                          introduce
+                        </Typography>
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="45px"
+                          fontWeight="500"
+                          color="#FFFFFF"
+                        >
+                          {item.title}
+                        </Typography>
+                        <Box sx={{ width: "530px", marginTop: "35px" }}>
+                          <Typography
+                            fontFamily="Inter"
+                            fontSize="18px"
+                            fontWeight="300"
+                            color="#FFFFFF"
+                          >
+                            {item.descriptionOne}
+                          </Typography>
+                          {item.descriptionTwo && (
+                            <Typography
+                              fontFamily="Inter"
+                              fontSize="18px"
+                              fontWeight="300"
+                              color="#FFFFFF"
+                              style={{ marginTop: "25px" }}
+                            >
+                              {item.descriptionTwo}
+                            </Typography>
+                          )}
+                        </Box>
+                        {/* <Box
                 className="first_dsBtn"
                 sx={{
                   background: `url(${GreenBtn})`,
@@ -257,7 +287,12 @@ const Third = () => {
                   </Typography>
                 </Box>
               </Box> */}
-            </Box>
+                      </Box>
+                    </Box>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </Box>
         </Box>
       )}
@@ -507,8 +542,6 @@ const Third = () => {
       {!desktop1080Width && !desktop768Width && (
         <Box
           sx={{
-            // background: `url(${Smoke})`,
-            // background: `#FFF`,
             position: "relative",
             backgroundPositionY: "bottom",
             backgroundRepeat: "no-repeat",

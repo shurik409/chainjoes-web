@@ -1,9 +1,9 @@
-import FirstImg from "./1.webp";
-import SecondImg from "./2.webp";
-import ThirdImg from "./3.webp";
-import FourthImg from "./4.webp";
-import FiveImg from "./5.webp";
-import SixImg from "./6.webp";
+import FirstImg from "./1.png";
+import SecondImg from "./2.png";
+import ThirdImg from "./3.png";
+import FourthImg from "./4.png";
+import FiveImg from "./5.png";
+import SixImg from "./6.png";
 import HeaderTexture from "./header.png";
 
 export {
