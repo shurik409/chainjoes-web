@@ -105,7 +105,6 @@ const First = () => {
                 top: 0,
                 right: 0,
                 zIndex: -1,
-                transform: "scale(-1, 1)",
               }}
             >
               {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
@@ -363,7 +362,6 @@ const First = () => {
                   bottom: 0,
                   right: 0,
                   zIndex: -2,
-                  transform: "scale(-1, 1)",
                 }}
               >
                 {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
@@ -580,7 +578,6 @@ const First = () => {
                   bottom: 0,
                   right: 0,
                   zIndex: -2,
-                  transform: "scale(-1, 1)",
                 }}
               >
                 {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
