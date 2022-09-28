@@ -82,9 +82,9 @@ const Header = (props) => {
               borderWidth: "1px",
               borderStyle: "outset",
               borderColor: "buttonborder",
-              transform: "skewX(-11deg)",
               borderImageSource:
                 "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
+              transform: "skewX(-11deg)",
             }}
           >
             {buttons.map((item, index) => (
