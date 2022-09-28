@@ -26,6 +26,7 @@ const HeaderButton = (props) => {
         sx={{
           display: "flex",
           position: "relative",
+          transform: "skewX(11deg)",
           // marginLeft: props.index && !props.noLine && "-48px",
         }}
       >
@@ -33,8 +34,6 @@ const HeaderButton = (props) => {
           sx={{
             height: props.height || "58px",
             width: props.width || "74px",
-            backgroundImage: `url(${BtnTexture})`,
-            transform: "skewX(-11deg)",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -43,7 +42,6 @@ const HeaderButton = (props) => {
         >
           <Box
             sx={{
-              transform: "skewX(11deg)",
               display: "flex",
               alignItems: "center",
             }}
