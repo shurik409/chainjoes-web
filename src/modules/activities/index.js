@@ -7,7 +7,6 @@ import {
   Mask,
   SmokeMobile,
   MaskTablet,
-  MaskMobile,
 } from "../../imgs/webp/screen4";
 import Smoke from "../../imgs/smoke.png";
 

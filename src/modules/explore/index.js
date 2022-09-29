@@ -167,7 +167,7 @@ const Second = () => {
                         <Box
                           sx={{
                             marginTop: index === curentItem ? "25px" : "0px",
-                            maxHeight: index === curentItem ? "180px" : "0px",
+                            maxHeight: index === curentItem ? "220px" : "0px",
                             opacity: index === curentItem ? 1 : 0,
                             overflow: "hidden",
                             transition: "all 0.3s ease-in-out",
@@ -443,7 +443,7 @@ const Second = () => {
             backgroundPositionY: "bottom",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "75px 0px 61px 0px",
+            padding: "75px 0px 55px 0px",
           }}
         >
           <Box>
@@ -482,10 +482,10 @@ const Second = () => {
             <Box
               sx={{
                 display: "flex",
-                width: `${texts.length * 125}px`,
+                width: `${texts.length * 140}px`,
                 marginLeft: !desktop530Width
                   ? `calc(15px + max(calc(${
-                      texts.length * 125 + 30
+                      texts.length * 140 + 30
                     }px - 100vw), 0px) * -${curentProgress})`
                   : 0,
               }}
@@ -493,15 +493,14 @@ const Second = () => {
               {texts.map((item, index) => (
                 <Box
                   key={`screen-2-mobile-title-${index}`}
-                  sx={{ width: "125px" }}
+                  sx={{ width: "140px" }}
                   onClick={() => {
                     setCurentItem(index);
                     swiperRef.current.swiper.slideTo(index);
                   }}
                 >
                   <Typography
-                    fontFamily="Inter"
-                    fontWeight={index === curentItem ? "400" : "300"}
+                    fontFamily="Furore"
                     fontSize="16px"
                     lineHeight="19.2px"
                     textAlign="center"
@@ -517,22 +516,22 @@ const Second = () => {
               sx={{
                 marginLeft: !desktop530Width
                   ? `calc(15px + max(calc(${
-                      texts.length * 125 + 30
+                      texts.length * 140 + 30
                     }px - 100vw), 0px) * -${curentProgress})`
                   : 0,
                 marginTop: "21px",
-                width: `${texts.length * 125}px`,
+                width: `${texts.length * 140}px`,
                 height: 3,
                 backgroundColor: "#A5a5a5",
               }}
             >
               <Box
                 sx={{
-                  width: "125px",
+                  width: "140px",
                   height: "3px",
                   backgroundColor: "#44F4C3",
                   marginLeft: `${
-                    curentProgress * (texts.length * 125 - 125)
+                    curentProgress * (texts.length * 140 - 140)
                   }px`,
                 }}
               ></Box>
@@ -555,28 +554,19 @@ const Second = () => {
                   <Box
                     sx={{
                       position: "relative",
-                      height: "430px",
                       width: "290px",
                       margin: "auto",
                     }}
                   >
                     <Box
-                      sx={{
-                        height: 315,
-                        width: 290,
-                        backgroundImage: `url(${MobileMask})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                      }}
                     >
                       <Typography
                         fontFamily="Inter"
                         fontSize="13px"
                         fontWeight="300"
                         color="#FFFFFF"
-                        paddingX="24px"
-                        paddingTop="22px"
                         lineHeight="15.73px"
+                        maxWidth="290px"
                       >
                         {item.description}
                       </Typography>
@@ -586,7 +576,6 @@ const Second = () => {
                           fontSize="13px"
                           fontWeight="300"
                           color="#FFFFFF"
-                          paddingX="24px"
                           lineHeight="15.73px"
                           marginTop="15px"
                         >
@@ -596,13 +585,12 @@ const Second = () => {
                     </Box>
                     <Box
                       sx={{
-                        position: "absolute",
-                        bottom: item.mobileBottom,
-                        left: "50%",
-                        transform: "translateX(-50%)",
+                        display: "flex",
+                        justifyContent: "center",
+                        marginTop: "40px",
                       }}
                     >
-                      <img width={219} src={item.img} alt={item.title} />
+                      <img width={227} src={item.img} alt={item.title} />
                     </Box>
                   </Box>
                 </SwiperSlide>
