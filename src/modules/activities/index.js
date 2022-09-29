@@ -55,7 +55,9 @@ const Fourth = () => {
     },
   ];
 
-  const desktopThreeWidth = useMediaQuery("(min-width: 1890px)");
+  const desktopBigWidth = useMediaQuery("(min-width: 1890px)");
+
+  const desktopThreeWidth = useMediaQuery("(min-width: 1440px)");
 
   const desktop1080Width = useMediaQuery("(min-width: 1330px)");
 
@@ -71,7 +73,9 @@ const Fourth = () => {
             background: `url(${Smoke})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "175px 80px 250px 80px",
+            padding: desktopThreeWidth
+              ? "175px 80px 140px 80px"
+              : "175px 40px 140px 40px",
           }}
         >
           <Box>
@@ -80,6 +84,7 @@ const Fourth = () => {
               fontSize="75px"
               color="#ffffff"
               lineHeight="75px"
+              marginLeft={desktopThreeWidth ? "unset" : "40px"}
               style={{
                 textFillColor: "transparent",
                 backgroundcolor: "primary",
@@ -97,12 +102,12 @@ const Fourth = () => {
             </Typography>
           </Box>
           <Box>
-            {desktopThreeWidth ? (
+            {desktopBigWidth ? (
               <Box
                 sx={{
                   marginTop: "92px",
                   width: "100%",
-                  justifyContent: "space-around",
+                  justifyContent: "space-between",
                   display: "flex",
                 }}
               >
@@ -171,88 +176,17 @@ const Fourth = () => {
                 ))}
               </Box>
             ) : (
-              <Box>
-                <Box
-                  sx={{
-                    marginTop: "92px",
-                    width: "100%",
-                    justifyContent: "space-around",
-                    display: "flex",
-                  }}
-                >
-                  {activities.slice(0, 2).map((item, index) => (
-                    <Box
-                      key={`screen4-activity-${index}`}
-                      sx={{
-                        position: "relative",
-                        border: "1px solid",
-                        borderImageSlice: 1,
-                        borderWidth: "1px",
-                        borderStyle: "outset",
-                        borderColor: "buttonborder",
-                        borderImageSource:
-                          "linear-gradient(154.48deg, rgba(0, 255, 183, 0) -12.15%, rgba(71, 255, 244, 0.722892) 28.8%, #FFFFFF 44.5%, rgba(0, 178, 255, 0.55) 66.34%, rgba(0, 255, 183, 0) 117.45%)",
-                        width: "567px ",
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <Box marginLeft="45px" sx={{ flexGrow: 2 }}>
-                        <Typography
-                          fontFamily="Furore"
-                          fontSize="26px"
-                          color="#44F4C3"
-                          marginTop="45px"
-                          lineHeight="28.6px"
-                        >{`[0${index + 1}]`}</Typography>
-                        <Typography
-                          fontFamily="Furore"
-                          fontSize="26px"
-                          color="#FFFFFF"
-                          width="410px"
-                          marginTop="20px"
-                          lineHeight="28.6px"
-                        >
-                          {item.title}
-                        </Typography>
-                        <Typography
-                          fontFamily="Inter"
-                          fontSize="18px"
-                          fontWeight="300"
-                          color="#FFFFFF"
-                          width="400px"
-                          marginTop="20px"
-                          lineHeight="21.8px"
-                        >
-                          {item.description}
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          width: "100%",
-                          height: "376px",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <img
-                          src={`${item.img}`}
-                          alt={item.title}
-                          loading="lazy"
-                        />
-                      </Box>
-                    </Box>
-                  ))}
-                </Box>
-                <Box
-                  sx={{
-                    marginTop: "150px",
-                    width: "100%",
-                    justifyContent: "center",
-                    display: "flex",
-                  }}
-                >
+              <Box
+                sx={{
+                  marginTop: "60px",
+                  width: "100%",
+                  justifyContent: "space-around",
+                  display: "flex",
+                }}
+              >
+                {activities.map((item, index) => (
                   <Box
+                    key={`screen4-activity-${index}`}
                     sx={{
                       position: "relative",
                       border: "1px solid",
@@ -262,7 +196,7 @@ const Fourth = () => {
                       borderColor: "buttonborder",
                       borderImageSource:
                         "linear-gradient(154.48deg, rgba(0, 255, 183, 0) -12.15%, rgba(71, 255, 244, 0.722892) 28.8%, #FFFFFF 44.5%, rgba(0, 178, 255, 0.55) 66.34%, rgba(0, 255, 183, 0) 117.45%)",
-                      width: "567px ",
+                      width: "405px ",
                       display: "flex",
                       flexDirection: "column",
                     }}
@@ -274,45 +208,45 @@ const Fourth = () => {
                         color="#44F4C3"
                         marginTop="45px"
                         lineHeight="28.6px"
-                      >{`[0${3}]`}</Typography>
+                      >{`[0${index + 1}]`}</Typography>
                       <Typography
                         fontFamily="Furore"
                         fontSize="26px"
                         color="#FFFFFF"
-                        width="410px"
+                        width="340px"
                         marginTop="20px"
                         lineHeight="28.6px"
                       >
-                        {activities[2].title}
+                        {item.title}
                       </Typography>
                       <Typography
                         fontFamily="Inter"
                         fontSize="18px"
                         fontWeight="300"
                         color="#FFFFFF"
-                        width="400px"
+                        width="343px"
                         marginTop="20px"
                         lineHeight="21.8px"
                       >
-                        {activities[2].description}
+                        {item.description}
                       </Typography>
                     </Box>
                     <Box
                       sx={{
-                        width: "100%",
-                        height: "376px",
+                        height: "290px",
                         display: "flex",
                         justifyContent: "center",
                       }}
                     >
                       <img
-                        src={`${activities[2].img}`}
-                        alt={activities[2].title}
+                        src={`${item.img}`}
+                        alt={item.title}
                         loading="lazy"
+                        height="290px"
                       />
                     </Box>
                   </Box>
-                </Box>
+                ))}
               </Box>
             )}
           </Box>
@@ -324,7 +258,7 @@ const Fourth = () => {
             background: `url(${Smoke})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "105px 30px 192px 30px",
+            padding: "105px 28px 192px 28px",
           }}
         >
           <Box>
@@ -352,7 +286,7 @@ const Fourth = () => {
               {tabletThreeWidth ? (
                 <Box
                   sx={{
-                    marginTop: "92px",
+                    marginTop: "60px",
                     width: "100%",
                     justifyContent: "space-around",
                     display: "flex",
@@ -360,31 +294,35 @@ const Fourth = () => {
                 >
                   {activities.map((item, index) => (
                     <Box
-                      key={`screen4-tablet-activity-${index}`}
+                      key={`screen4-activity-${index}`}
                       sx={{
-                        width: "345px",
-                        height: "274px",
-                        background: `url(${item.maskTablet})`,
-                        backgroundPositionX: "center",
-                        backgroundRepeat: "no-repeat",
                         position: "relative",
+                        border: "1px solid",
+                        borderImageSlice: 1,
+                        borderWidth: "1px",
+                        borderStyle: "outset",
+                        borderColor: "buttonborder",
+                        borderImageSource:
+                          "linear-gradient(154.48deg, rgba(0, 255, 183, 0) -12.15%, rgba(71, 255, 244, 0.722892) 28.8%, #FFFFFF 44.5%, rgba(0, 178, 255, 0.55) 66.34%, rgba(0, 255, 183, 0) 117.45%)",
+                        width: "344px ",
+                        display: "flex",
+                        flexDirection: "column",
                       }}
                     >
-                      <Box sx={{ marginLeft: "27px" }}>
+                      <Box marginLeft="26px" sx={{ flexGrow: 2 }}>
                         <Typography
                           fontFamily="Furore"
                           fontSize="20px"
                           color="#44F4C3"
                           marginTop="27px"
-                          lineHeight="23px"
+                          lineHeight="22px"
                         >{`[0${index + 1}]`}</Typography>
                         <Typography
-                          fontFamily="Inter"
+                          fontFamily="Furore"
                           fontSize="20px"
-                          fontWeight="500"
                           color="#FFFFFF"
-                          width="310px"
-                          marginTop="9px"
+                          width="280px"
+                          marginTop="20px"
                           lineHeight="22px"
                         >
                           {item.title}
@@ -394,26 +332,25 @@ const Fourth = () => {
                           fontSize="14px"
                           fontWeight="300"
                           color="#FFFFFF"
-                          width={item.descriptionWidthTablet || "294px"}
-                          marginTop="9px"
-                          lineHeight="17px"
+                          width="294px"
+                          marginTop="20px"
+                          lineHeight="16.94px"
                         >
                           {item.description}
                         </Typography>
                       </Box>
                       <Box
                         sx={{
-                          position: "absolute",
-                          left: "50%",
-                          transform: `translate(${item.transformX}, ${item.transformY})`,
-                          top: "100%",
+                          height: "225px",
+                          display: "flex",
+                          justifyContent: "center",
                         }}
                       >
                         <img
                           src={`${item.img}`}
-                          width="240px"
                           alt={item.title}
                           loading="lazy"
+                          height="225px"
                         />
                       </Box>
                     </Box>
@@ -423,7 +360,7 @@ const Fourth = () => {
                 <Box>
                   <Box
                     sx={{
-                      marginTop: "92px",
+                      marginTop: "60px",
                       width: "100%",
                       justifyContent: "space-around",
                       display: "flex",
@@ -431,31 +368,35 @@ const Fourth = () => {
                   >
                     {activities.slice(0, 2).map((item, index) => (
                       <Box
-                        key={`screen4-tablet-activity-${index}`}
+                        key={`screen4-activity-${index}`}
                         sx={{
-                          width: "345px",
-                          height: "274px",
-                          background: `url(${item.maskTablet})`,
-                          backgroundPositionX: "center",
-                          backgroundRepeat: "no-repeat",
                           position: "relative",
+                          border: "1px solid",
+                          borderImageSlice: 1,
+                          borderWidth: "1px",
+                          borderStyle: "outset",
+                          borderColor: "buttonborder",
+                          borderImageSource:
+                            "linear-gradient(154.48deg, rgba(0, 255, 183, 0) -12.15%, rgba(71, 255, 244, 0.722892) 28.8%, #FFFFFF 44.5%, rgba(0, 178, 255, 0.55) 66.34%, rgba(0, 255, 183, 0) 117.45%)",
+                          width: "344px ",
+                          display: "flex",
+                          flexDirection: "column",
                         }}
                       >
-                        <Box sx={{ marginLeft: "27px" }}>
+                        <Box marginLeft="26px" sx={{ flexGrow: 2 }}>
                           <Typography
                             fontFamily="Furore"
                             fontSize="20px"
                             color="#44F4C3"
                             marginTop="27px"
-                            lineHeight="23px"
+                            lineHeight="22px"
                           >{`[0${index + 1}]`}</Typography>
                           <Typography
-                            fontFamily="Inter"
+                            fontFamily="Furore"
                             fontSize="20px"
-                            fontWeight="500"
                             color="#FFFFFF"
-                            width="310px"
-                            marginTop="9px"
+                            width="280px"
+                            marginTop="20px"
                             lineHeight="22px"
                           >
                             {item.title}
@@ -465,26 +406,25 @@ const Fourth = () => {
                             fontSize="14px"
                             fontWeight="300"
                             color="#FFFFFF"
-                            width={item.descriptionWidthTablet || "294px"}
-                            marginTop="9px"
-                            lineHeight="17px"
+                            width="294px"
+                            marginTop="20px"
+                            lineHeight="16.94px"
                           >
                             {item.description}
                           </Typography>
                         </Box>
                         <Box
                           sx={{
-                            position: "absolute",
-                            left: "50%",
-                            transform: `translate(${item.transformX}, ${item.transformY})`,
-                            top: "100%",
+                            height: "225px",
+                            display: "flex",
+                            justifyContent: "center",
                           }}
                         >
                           <img
                             src={`${item.img}`}
-                            width="240px"
                             alt={item.title}
                             loading="lazy"
+                            height="225px"
                           />
                         </Box>
                       </Box>
@@ -492,37 +432,42 @@ const Fourth = () => {
                   </Box>
                   <Box
                     sx={{
-                      marginTop: "124px",
+                      marginTop: "30px",
                       width: "100%",
                       justifyContent: "center",
                       display: "flex",
                     }}
                   >
                     <Box
+                      key={`screen4-activity-${2}`}
                       sx={{
-                        width: "345px",
-                        height: "274px",
-                        background: `url(${activities[0].maskTablet})`,
-                        backgroundPositionX: "center",
-                        backgroundRepeat: "no-repeat",
                         position: "relative",
+                        border: "1px solid",
+                        borderImageSlice: 1,
+                        borderWidth: "1px",
+                        borderStyle: "outset",
+                        borderColor: "buttonborder",
+                        borderImageSource:
+                          "linear-gradient(154.48deg, rgba(0, 255, 183, 0) -12.15%, rgba(71, 255, 244, 0.722892) 28.8%, #FFFFFF 44.5%, rgba(0, 178, 255, 0.55) 66.34%, rgba(0, 255, 183, 0) 117.45%)",
+                        width: "344px ",
+                        display: "flex",
+                        flexDirection: "column",
                       }}
                     >
-                      <Box sx={{ marginLeft: "27px" }}>
+                      <Box marginLeft="26px" sx={{ flexGrow: 2 }}>
                         <Typography
                           fontFamily="Furore"
                           fontSize="20px"
                           color="#44F4C3"
                           marginTop="27px"
-                          lineHeight="23px"
+                          lineHeight="22px"
                         >{`[0${3}]`}</Typography>
                         <Typography
-                          fontFamily="Inter"
+                          fontFamily="Furore"
                           fontSize="20px"
-                          fontWeight="500"
                           color="#FFFFFF"
-                          width="310px"
-                          marginTop="9px"
+                          width="280px"
+                          marginTop="20px"
                           lineHeight="22px"
                         >
                           {activities[2].title}
@@ -532,28 +477,25 @@ const Fourth = () => {
                           fontSize="14px"
                           fontWeight="300"
                           color="#FFFFFF"
-                          width={
-                            activities[2].descriptionWidthTablet || "294px"
-                          }
-                          marginTop="9px"
-                          lineHeight="17px"
+                          width="294px"
+                          marginTop="20px"
+                          lineHeight="16.94px"
                         >
                           {activities[2].description}
                         </Typography>
                       </Box>
                       <Box
                         sx={{
-                          position: "absolute",
-                          left: "50%",
-                          transform: `translate(${activities[2].transformX}, ${activities[2].transformY})`,
-                          top: "100%",
+                          height: "225px",
+                          display: "flex",
+                          justifyContent: "center",
                         }}
                       >
                         <img
                           src={`${activities[2].img}`}
-                          width="240px"
                           alt={activities[2].title}
                           loading="lazy"
+                          height="225px"
                         />
                       </Box>
                     </Box>
@@ -570,7 +512,7 @@ const Fourth = () => {
             background: `url(${SmokeMobile})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "76px 0px 162px 0px",
+            padding: "76px 0px 80px 0px",
           }}
         >
           <Box>
@@ -598,7 +540,7 @@ const Fourth = () => {
             <Box>
               <Box
                 sx={{
-                  marginTop: "92px",
+                  marginTop: "44px",
                   width: "100%",
                   display: "flex",
                   flexDirection: "column",
@@ -607,43 +549,47 @@ const Fourth = () => {
               >
                 {activities.map((item, index) => (
                   <Box
-                    key={`screen4-tablet-activity-${index}`}
+                    key={`screen4-activity-${index}`}
                     sx={{
-                      width: "290px",
-                      height: "273px",
-                      background: `url(${MaskMobile})`,
-                      backgroundPositionX: "center",
-                      backgroundRepeat: "no-repeat",
                       position: "relative",
-                      marginTop: index ? "119px" : "0",
+                      border: "1px solid",
+                      borderImageSlice: 1,
+                      borderWidth: "1px",
+                      borderStyle: "outset",
+                      borderColor: "buttonborder",
+                      borderImageSource:
+                        "linear-gradient(154.48deg, rgba(0, 255, 183, 0) -12.15%, rgba(71, 255, 244, 0.722892) 28.8%, #FFFFFF 44.5%, rgba(0, 178, 255, 0.55) 66.34%, rgba(0, 255, 183, 0) 117.45%)",
+                      width: "290px ",
+                      display: "flex",
+                      flexDirection: "column",
+                      marginTop: index ? "15px" : "unset",
                     }}
                   >
-                    <Box sx={{ marginLeft: "27px" }}>
+                    <Box marginLeft="23px" sx={{ flexGrow: 2 }}>
                       <Typography
                         fontFamily="Furore"
-                        fontSize="15px"
+                        fontSize="16px"
                         color="#44F4C3"
                         marginTop="25px"
                         lineHeight="17.6px"
                       >{`[0${index + 1}]`}</Typography>
                       <Typography
-                        fontFamily="Inter"
+                        fontFamily="Furore"
                         fontSize="16px"
-                        fontWeight="400"
                         color="#FFFFFF"
-                        maxWidth="191px"
-                        marginTop="9px"
+                        width="243px"
+                        marginTop="20px"
                         lineHeight="19.2px"
                       >
                         {item.title}
                       </Typography>
                       <Typography
                         fontFamily="Inter"
-                        fontSize="13px"
+                        fontSize="14px"
                         fontWeight="300"
                         color="#FFFFFF"
-                        maxWidth={item.descriptionWidthMobile}
-                        marginTop="15px"
+                        width="243px"
+                        marginTop="13px"
                         lineHeight="15.73px"
                       >
                         {item.description}
@@ -651,17 +597,16 @@ const Fourth = () => {
                     </Box>
                     <Box
                       sx={{
-                        position: "absolute",
-                        left: item.mobileLeft || "50%",
-                        transform: `translate(${item.transformX}, ${item.transformY})`,
-                        top: item.mobileTop || "100%",
+                        height: "225px",
+                        display: "flex",
+                        justifyContent: "center",
                       }}
                     >
                       <img
                         src={`${item.img}`}
-                        width="240px"
                         alt={item.title}
                         loading="lazy"
+                        height="225px"
                       />
                     </Box>
                   </Box>
