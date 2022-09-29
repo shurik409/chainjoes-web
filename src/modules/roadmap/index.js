@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Plane, GoodPoint, BadPoint } from "../../imgs/webp/screen6";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
 
 const Six = () => {
+  const [curentItem, setCurentItem] = useState(0);
+  const [curentProgress, setProgress] = useState(0);
+  const swiperRef = useRef(null);
   const steps = [
     {
       title: "Q2 2022",
@@ -15,6 +21,7 @@ const Six = () => {
         "Marketing team formation",
       ],
       img: Plane,
+      mobileWidth: "212px",
     },
     {
       title: "Q3-Q4 2022",
@@ -26,11 +33,13 @@ const Six = () => {
       ],
       bad: ["Seed Raising", "Partnerships", "Onboarding Advisors"],
       img: Plane,
+      mobileWidth: "226px",
     },
     {
       title: "Q1 2023",
       bad: ["Release Roadmap", "Release Whitepaper", "Start game production"],
       img: Plane,
+      mobileWidth: "188px",
     },
   ];
 
@@ -38,10 +47,21 @@ const Six = () => {
 
   const desktop768Width = useMediaQuery("(min-width: 768px)");
 
+  const desktop530Width = useMediaQuery(
+    `(min-width: ${125 * steps.length + 30}px`
+  );
+
+  const getCurrentTransform = (index) => {
+    if (index === 1) return "translate3d(-80%, 0, 0)";
+    if (index === 2) return "translate3d(80%, 0, 0)";
+    if (index === 0 && curentItem === 1) return "translate3d(-80%, 0, 0)";
+    if (index === 0 && curentItem === 2) return "translate3d(80%, 0, 0)";
+  };
+
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ padding: "180px 0 180px 80px", background: "#091015" }}>
+        <Box sx={{ padding: "180px 0 180px 0px", background: "#091015" }}>
           <Box>
             <Typography
               fontFamily="Furore"
@@ -60,12 +80,163 @@ const Six = () => {
                 WebkitTextFillColor: "transparent",
               }}
               textTransform="uppercase"
-              width="415px"
+              textAlign="center"
             >
               RELEASE ROADMAP
             </Typography>
           </Box>
-          <Box sx={{ marginTop: "128px" }}>
+          <Box>
+            <Box
+              sx={{
+                position: "relative",
+                marginTop: "87px",
+                display: "block",
+                width: `${steps.length * 293}px`,
+                marginX: "auto",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  width: `${steps.length * 293}px`,
+                }}
+              >
+                {steps.map((item, index) => (
+                  <Box
+                    key={`screen-2-mobile-title-${index}`}
+                    sx={{ width: "293px", cursor: "pointer" }}
+                    onClick={() => {
+                      setCurentItem(index);
+                    }}
+                  >
+                    <Typography
+                      fontFamily="Furore"
+                      fontWeight={index === curentItem ? "400" : "300"}
+                      fontSize="20px"
+                      lineHeight="23px"
+                      textAlign="center"
+                      marginX="auto"
+                      color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+              <Box
+                sx={{
+                  marginTop: "21px",
+                  width: `${steps.length * 293}px`,
+                  height: 3,
+                  backgroundColor: "#A5a5a5",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "293px",
+                    height: "3px",
+                    backgroundColor: "#44F4C3",
+                    marginLeft: `${curentItem * 293}px`,
+                  }}
+                ></Box>
+              </Box>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              position: "relative",
+              height: "350px",
+              display: "flex",
+              marginTop: "90px",
+            }}
+          >
+            {steps.map((step, index) => (
+              <Box
+                sx={{
+                  position: "absolute",
+                  width: "33%",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  filter: curentItem === index ? "blur(0)" : "blur(2.5px)",
+                  transform:
+                    curentItem === index
+                      ? "translate3d(0,0,0)"
+                      : getCurrentTransform(index),
+                  transition: "all 0.3s ease-in-out",
+                  marginX: "auto",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                key={`screen-6-step-${index}`}
+              >
+                <Box>
+                  {step.good &&
+                    step.good.map((item, goodIndex) => (
+                      <Box
+                        key={`screen-6-step-${index}-bad-${goodIndex}`}
+                        sx={{
+                          display: "flex",
+                          marginTop: goodIndex ? "15px" : "",
+                        }}
+                      >
+                        <Box>
+                          <Box
+                            sx={{
+                              width: "12px",
+                              height: "21px",
+                              background: `url(${GoodPoint})`,
+                              marginRight: "34px",
+                            }}
+                          />
+                        </Box>
+                        <Typography
+                          fontFamily="Inter"
+                          fontWeight="300"
+                          fontSize="18px"
+                          color="#FFFFFF"
+                          maxWidth="250px"
+                        >
+                          {item}
+                        </Typography>
+                      </Box>
+                    ))}
+                  {step.bad &&
+                    step.bad.map((item, badIndex) => (
+                      <Box
+                        key={`screen-6-step-${index}-bad-${badIndex}`}
+                        sx={{
+                          display: "flex",
+                          marginTop: badIndex || step.good ? "15px" : "",
+                        }}
+                      >
+                        <Box>
+                          <Box
+                            sx={{
+                              width: "12px",
+                              height: "21px",
+                              background: `url(${BadPoint})`,
+                              marginRight: "34px",
+                            }}
+                          />
+                        </Box>
+                        <Typography
+                          fontFamily="Inter"
+                          fontWeight="300"
+                          fontSize="18px"
+                          color="#FFFFFF"
+                          textTransform="capitalize"
+                        >
+                          {item}
+                        </Typography>
+                      </Box>
+                    ))}
+                </Box>
+              </Box>
+            ))}
+          </Box>
+          {/* <Box sx={{ marginTop: "128px" }}>
             <Box sx={{ display: "flex", justifyContent: "end" }}>
               <Box
                 sx={{
@@ -174,7 +345,7 @@ const Six = () => {
                 </Box>
               ))}
             </Box>
-          </Box>
+          </Box> */}
         </Box>
       )}
       {desktop768Width && !desktop1080Width && (
@@ -202,45 +373,70 @@ const Six = () => {
               RELEASE ROADMAP
             </Typography>
           </Box>
-          <Box>
-            {steps.map((step, index) => (
-              <Box
-                key={`screen-6-Tablet-step-${index}`}
-                sx={{ marginTop: index ? "35px" : "60px" }}
-              >
+          <Box sx={{ paddingX: "25px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-around",
+                marginTop: "50px",
+              }}
+            >
+              {steps.map((item, index) => (
                 <Box
-                  sx={{
-                    display: "flex",
-                    marginBottom: index < steps.length - 1 ? "25px" : "",
-                    paddingX: "25px",
+                  key={`five_screen_tablet_items_${index}`}
+                  sx={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setCurentItem(index);
+                    swiperRef.current.swiper.slideTo(index);
                   }}
                 >
+                  <Typography
+                    fontFamily="Furore"
+                    fontSize="20px"
+                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                  >
+                    {item.title}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                height: 3,
+                backgroundColor: "#A5a5a5",
+                marginTop: "20px",
+              }}
+            >
+              <Box
+                sx={{
+                  width: "calc(100% / 3)",
+                  height: "100%",
+                  backgroundColor: "#44F4C3",
+                  marginLeft: `calc(${curentProgress} * calc(${steps.length} * calc(100% / ${steps.length}) - calc(100% / ${steps.length})))`,
+                }}
+              />
+            </Box>
+          </Box>
+          <Swiper
+            slidesPerView={1}
+            centeredSlides={true}
+            grabCursor={true}
+            className="mySwiper"
+            onProgress={({ progress }) =>
+              !(progress < 0 || progress > 1) && setProgress(progress)
+            }
+            onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
+            ref={swiperRef}
+          >
+            {steps.map((step, index) => (
+              <SwiperSlide key={`screen-6-Tablet-step-${index}`}>
+                <Box>
                   <Box
                     sx={{
-                      width: "196px",
-                      height: "50px",
-                      background: `url(${step.img})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
                       display: "flex",
                       justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
-                      fontFamily="Inter"
-                      fontWeight="300"
-                      fontSize="14px"
-                      color="#44F4C3"
-                    >
-                      {step.title}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      marginLeft: "66px",
-                      justifyContent: "space-between",
+                      marginTop: "60px",
                     }}
                   >
                     {step.good && (
@@ -270,6 +466,7 @@ const Six = () => {
                                 fontSize="14px"
                                 color="#FFFFFF"
                                 maxWidth="184px"
+                                lineHeight="23.02px"
                               >
                                 {item}
                               </Typography>
@@ -304,6 +501,7 @@ const Six = () => {
                                       fontSize="14px"
                                       color="#FFFFFF"
                                       maxWidth="184px"
+                                      lineHeight="23.02px"
                                     >
                                       {item}
                                     </Typography>
@@ -337,6 +535,7 @@ const Six = () => {
                                       fontSize="14px"
                                       color="#FFFFFF"
                                       maxWidth="137px"
+                                      lineHeight="23.02px"
                                     >
                                       {item}
                                     </Typography>
@@ -354,7 +553,7 @@ const Six = () => {
                             key={`screen-6-step-${index}-bad-${badIndex}`}
                             sx={{
                               display: "flex",
-                              marginTop: badIndex || step.good ? "15px" : "",
+                              marginTop: badIndex ? "15px" : "",
                             }}
                           >
                             <Box>
@@ -373,6 +572,7 @@ const Six = () => {
                               fontSize="14px"
                               color="#FFFFFF"
                               textTransform="capitalize"
+                              lineHeight="23.02px"
                             >
                               {item}
                             </Typography>
@@ -381,19 +581,9 @@ const Six = () => {
                     </Box>
                   </Box>
                 </Box>
-                {index < steps.length - 1 && (
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "1px",
-                      background:
-                        "linear-gradient(90deg, #FFFFFF 19.42%, rgba(255, 255, 255, 0) 79.24%)",
-                    }}
-                  />
-                )}
-              </Box>
+              </SwiperSlide>
             ))}
-          </Box>
+          </Swiper>
         </Box>
       )}
       {!desktop768Width && !desktop1080Width && (
@@ -424,105 +614,219 @@ const Six = () => {
             </Typography>
           </Box>
           <Box>
-            {steps.map((step, index) => (
-              <Box
-                key={`screen-6-Tablet-step-${index}`}
-                sx={{ marginTop: index ? "35px" : "45px" }}
-              >
+            <Box>
+              {!desktop530Width ? (
+                <Box
+                  sx={{
+                    position: "relative",
+                    overflowX: "hidden",
+                    marginTop: "40px",
+                    display: "block",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      width: `${steps.length * 135}px`,
+                      marginLeft: `calc(15px + max(calc(${
+                        steps.length * 135 + 30
+                      }px - 100vw), 0px) * -${curentProgress})`,
+                    }}
+                  >
+                    {steps.map((item, index) => (
+                      <Box
+                        key={`screen-2-mobile-title-${index}`}
+                        sx={{ width: "135px" }}
+                        onClick={() => {
+                          setCurentItem(index);
+                          swiperRef.current.swiper.slideTo(index);
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Furore"
+                          fontSize="16px"
+                          lineHeight="19.2px"
+                          textAlign="center"
+                          marginX="auto"
+                          color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                  <Box
+                    sx={{
+                      marginLeft: `calc(15px + max(calc(${
+                        steps.length * 135 + 30
+                      }px - 100vw), 0px) * -${curentProgress})`,
+                      marginTop: "21px",
+                      width: `${steps.length * 135}px`,
+                      height: 3,
+                      backgroundColor: "#A5a5a5",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "135px",
+                        height: "3px",
+                        backgroundColor: "#44F4C3",
+                        marginLeft: `${
+                          curentProgress * (steps.length * 135 - 135)
+                        }px`,
+                      }}
+                    ></Box>
+                  </Box>
+                </Box>
+              ) : (
                 <Box>
                   <Box
                     sx={{
-                      width: "177px",
-                      height: "44px",
-                      background: `url(${step.img})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      marginX: "auto",
+                      position: "relative",
+                      overflowX: "hidden",
+                      marginTop: "40px",
+                      display: "block",
+                      paddingX: "15px",
                     }}
                   >
-                    <Typography
-                      fontFamily="Inter"
-                      fontWeight="400"
-                      fontSize="16px"
-                      color="#44F4C3"
+                    <Box
+                      sx={{
+                        display: "flex",
+                        width: `100%`,
+                      }}
                     >
-                      {step.title}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      marginX: "auto",
-                      marginTop: "35px",
-                      maxWidth: "225px",
-                    }}
-                  >
-                    {step.good &&
-                      step.good.map((item, goodIndex) => (
+                      {steps.map((item, index) => (
                         <Box
-                          key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
+                          key={`screen-2-mobile-title-${index}`}
                           sx={{
-                            marginTop: goodIndex ? "10px" : "",
-                            display: "flex",
+                            width: `calc(100% / ${steps.length})`,
+                          }}
+                          onClick={() => {
+                            setCurentItem(index);
+                            swiperRef.current.swiper.slideTo(index);
                           }}
                         >
-                          <Box>
-                            <Box
-                              sx={{
-                                width: "12px",
-                                height: "21px",
-                                background: `url(${GoodPoint})`,
-                                marginRight: "34px",
-                              }}
-                            />
-                          </Box>
                           <Typography
-                            fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="13px"
-                            color="#FFFFFF"
-                            maxWidth="193px"
+                            fontFamily="Furore"
+                            fontSize="16px"
+                            lineHeight="19.2px"
+                            textAlign="center"
+                            marginX="auto"
+                            color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                           >
-                            {item}
+                            {item.title}
                           </Typography>
                         </Box>
                       ))}
-                    {step.bad &&
-                      step.bad.map((item, badIndex) => (
-                        <Box
-                          key={`screen-6-step-${index}-bad-${badIndex}`}
-                          sx={{
-                            display: "flex",
-                            marginTop: badIndex || step.good ? "10px" : "",
-                          }}
-                        >
-                          <Box>
-                            <Box
-                              sx={{
-                                width: "12px",
-                                height: "21px",
-                                background: `url(${BadPoint})`,
-                                marginRight: "34px",
-                              }}
-                            />
-                          </Box>
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="13px"
-                            color="#FFFFFF"
-                            textTransform="capitalize"
-                          >
-                            {item}
-                          </Typography>
-                        </Box>
-                      ))}
+                    </Box>
+                    <Box
+                      sx={{
+                        marginTop: "21px",
+                        width: "100%",
+                        height: 3,
+                        backgroundColor: "#A5a5a5",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: "125px",
+                          height: "3px",
+                          backgroundColor: "#44F4C3",
+                          marginLeft: `calc(${curentProgress} * calc(${steps.length} * calc(100% / ${steps.length}) - calc(100% / ${steps.length})))`,
+                        }}
+                      ></Box>
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
-            ))}
+              )}
+            </Box>
+            <Box sx={{ marginTop: "45px" }}>
+              <Swiper
+                slidesPerView={1}
+                centeredSlides={true}
+                grabCursor={true}
+                className="mySwiper"
+                onProgress={({ progress }) =>
+                  !(progress < 0 || progress > 1) && setProgress(progress)
+                }
+                onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
+                ref={swiperRef}
+              >
+                {steps.map((step, index) => (
+                  <SwiperSlide key={`screen-6-swiper-item-${index}`}>
+                    <Box>
+                      <Box
+                        sx={{
+                          marginX: "auto",
+                          maxWidth: step.mobileWidth,
+                        }}
+                      >
+                        {step.good &&
+                          step.good.map((item, goodIndex) => (
+                            <Box
+                              key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
+                              sx={{
+                                marginTop: goodIndex ? "10px" : "",
+                                display: "flex",
+                              }}
+                            >
+                              <Box>
+                                <Box
+                                  sx={{
+                                    width: "12px",
+                                    height: "21px",
+                                    background: `url(${GoodPoint})`,
+                                    marginRight: "34px",
+                                  }}
+                                />
+                              </Box>
+                              <Typography
+                                fontFamily="Inter"
+                                fontWeight="300"
+                                fontSize="13px"
+                                color="#FFFFFF"
+                                maxWidth="193px"
+                              >
+                                {item}
+                              </Typography>
+                            </Box>
+                          ))}
+                        {step.bad &&
+                          step.bad.map((item, badIndex) => (
+                            <Box
+                              key={`screen-6-step-${index}-bad-${badIndex}`}
+                              sx={{
+                                display: "flex",
+                                marginTop: badIndex || step.good ? "10px" : "",
+                              }}
+                            >
+                              <Box>
+                                <Box
+                                  sx={{
+                                    width: "12px",
+                                    height: "21px",
+                                    background: `url(${BadPoint})`,
+                                    marginRight: "34px",
+                                  }}
+                                />
+                              </Box>
+                              <Typography
+                                fontFamily="Inter"
+                                fontWeight="300"
+                                fontSize="13px"
+                                color="#FFFFFF"
+                                textTransform="capitalize"
+                              >
+                                {item}
+                              </Typography>
+                            </Box>
+                          ))}
+                      </Box>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </Box>
           </Box>
         </Box>
       )}
