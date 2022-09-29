@@ -10,6 +10,7 @@ import MonkeyVideoMp4 from "../../videos/monkey.mp4";
 import GreenBtn from "../../imgs/webp/green_btn.webp";
 import { DsLogo } from "./components/header/components/Icons";
 import FirstFooter from "../../imgs/webp/first_footer.webp";
+import Scratches from "../../imgs/scratches.svg";
 
 const First = () => {
   const refVideo = useRef(null);
@@ -29,7 +30,7 @@ const First = () => {
 
   const desktop1080Width = useMediaQuery("(min-width:1000px)");
   const desktop768Width = useMediaQuery("(min-width:768px)");
-  const desktop1080Height = useMediaQuery("(min-height:1000px)");
+  const desktop1080Height = useMediaQuery("(min-height:900px)");
   const desktop768Height = useMediaQuery("(min-height:685px)");
 
   return (
@@ -165,18 +166,54 @@ const First = () => {
                 animationDelay: "3s",
               }}
             >
-              <Box
+              {/* <Box
                 sx={{
                   background: `url(${ScratchesDesktop})`,
                   width: "100%",
                   height: "100%",
                   position: "absolute",
-                  backgroundSize: "contain",
+                  backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                   top: 0,
                   left: 0,
                 }}
-              ></Box>
+              ></Box> */}
+              <Typography
+                fontFamily="Furore"
+                fontSize={() => {
+                  if (desktop1080Height && desktop1080Width) {
+                    return "95px";
+                  } else if (desktop768Height) {
+                    return "80px";
+                  } else {
+                    return "60px";
+                  }
+                }}
+                color="#252625"
+                lineHeight={() => {
+                  if (desktop1080Height) {
+                    return "95px";
+                  } else if (desktop768Height) {
+                    return "80px";
+                  } else {
+                    return "60px";
+                  }
+                }}
+                maxWidth={desktop768Height ? "800px" : "500px"}
+                style={{
+                  WebkitMaskImage: `url(${Scratches})`,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                WELCOME <br /> TO{" "}
+                <span style={{ color: "#252625", display: "inline" }}>
+                  CHAIN JOES WORLD
+                </span>
+              </Typography>
               <Typography
                 fontFamily="Furore"
                 fontSize={() => {
@@ -394,7 +431,7 @@ const First = () => {
                 animationDelay: "3s",
               }}
             >
-              <Box
+              {/* <Box
                 sx={{
                   background: `url(${ScratchesTablet})`,
                   width: "100%",
@@ -404,7 +441,27 @@ const First = () => {
                   top: 0,
                   left: 0,
                 }}
-              ></Box>
+              ></Box> */}
+
+              <Typography
+                fontFamily="Furore"
+                fontSize="60px"
+                color="#252625"
+                lineHeight="60px"
+                style={{
+                  WebkitMaskImage: `url(${Scratches})`,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                WELCOME TO <br />
+                <span style={{ color: "#252625", display: "inline" }}>
+                  CHAIN JOES WORLD
+                </span>
+              </Typography>
               <Typography
                 fontFamily="Furore"
                 fontSize="60px"
@@ -630,7 +687,7 @@ const First = () => {
                 animationDelay: "3s",
               }}
             >
-              <Box
+              {/* <Box
                 sx={{
                   background: `url(${ScratchesMobile})`,
                   width: "100%",
@@ -640,7 +697,31 @@ const First = () => {
                   top: 0,
                   left: 0,
                 }}
-              ></Box>
+              ></Box> */}
+              <Typography
+                fontFamily="Furore"
+                fontSize="35px"
+                color="#252625"
+                lineHeight="35px"
+                style={{
+                  WebkitMaskImage: `url(${Scratches})`,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                
+                WELCOME
+                <br />
+                TO{" "}
+                <span style={{ color: "#252625", display: "inline" }}>
+                  CHAIN JOES
+                  <br />
+                  WORLD
+                </span>
+              </Typography>
               <Typography
                 fontFamily="Furore"
                 fontSize="35px"
