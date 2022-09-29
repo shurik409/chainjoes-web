@@ -134,7 +134,7 @@ const Five = () => {
                     <Box>
                       <Typography
                         fontFamily="Furore"
-                        fontSize="20px"
+                        fontSize="26px"
                         color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                       >
                         {item.title}
@@ -230,9 +230,8 @@ const Five = () => {
                     onClick={() => setCurentItem(index)}
                   >
                     <Typography
-                      fontFamily="Inter"
-                      fontWeight={index === curentItem ? 500 : 300}
-                      fontSize="26px"
+                      fontFamily="Furore"
+                      fontSize="20px"
                       color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                     >
                       {item.title}
@@ -266,38 +265,49 @@ const Five = () => {
               backgroundRepeat: "no-repeat",
               backgroundPositionX: "left",
               width: "100%",
-              height: "558px",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              zIndex: 0,
+              height: "498px",
+              position: "relative",
+              paddingTop: "60px",
             }}
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              height: "380px",
-              width: "100%",
-              background:
-                "linear-gradient(180deg, #091015 10.59%, rgba(9, 16, 21, 0) 83.66%)",
-              top: "44%",
-              right: 0,
-              zIndex: 2,
-            }}
-          />
-          <Box sx={{ position: "relative", height: "500px", zIndex: 2 }}>
-            <Typography
-              fontFamily="Inter"
-              fontSize="14px"
-              lineHeight="17px"
-              fontWeight="300"
-              maxWidth="441px"
-              color="#FFFFFF"
-              marginTop="60px"
-              paddingLeft="25px"
-            >
-              {texts[curentItem].description}
-            </Typography>
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                height: "380px",
+                width: "100%",
+                background:
+                  "linear-gradient(180deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
+                top: 0,
+                left: 0,
+                zIndex: 1,
+              }}
+            />
+            <Box sx={{ position: "relative", zIndex: 2 }}>
+              {texts.map((item, index) => (
+                <Box
+                  key={`five_screen_tablet_text_${index}`}
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: index === curentItem ? 0 : "-50%",
+                    opacity: index === curentItem ? 1 : 0,
+                    transition: "all 0.3s ease-in",
+                  }}
+                >
+                  <Typography
+                    fontFamily="Inter"
+                    fontSize="14px"
+                    lineHeight="17px"
+                    fontWeight="300"
+                    maxWidth="441px"
+                    color="#FFFFFF"
+                    paddingLeft="25px"
+                  >
+                    {item.description}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Box>
       )}
@@ -385,74 +395,133 @@ const Five = () => {
             />
           </Box>
           <Box>
-            <Box
-              sx={{
-                position: "relative",
-                overflowX: "hidden",
-                marginTop: "28px",
-                display: desktop530Width ? "flex" : "block",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  width: `${texts.length * 125}px`,
-                  marginLeft: !desktop530Width
-                    ? `calc(15px + max(calc(${
-                        texts.length * 125 + 30
-                      }px - 100vw), 0px) * -${curentProgress})`
-                    : 0,
-                }}
-              >
-                {texts.map((item, index) => (
-                  <Box
-                    key={`screen-2-mobile-title-${index}`}
-                    sx={{ width: "125px" }}
-                    onClick={() => {
-                      setCurentItem(index);
-                      swiperRef.current.swiper.slideTo(index);
-                    }}
-                  >
-                    <Typography
-                      fontFamily="Inter"
-                      fontWeight={index === curentItem ? "400" : "300"}
-                      fontSize="16px"
-                      lineHeight="19.2px"
-                      textAlign="center"
-                      marginX="auto"
-                      color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                    >
-                      {item.title}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
-              <Box
-                sx={{
-                  marginLeft: !desktop530Width
-                    ? `calc(15px + max(calc(${
-                        texts.length * 125 + 30
-                      }px - 100vw), 0px) * -${curentProgress})`
-                    : 0,
-                  marginTop: "21px",
-                  width: `${texts.length * 125}px`,
-                  height: 3,
-                  backgroundColor: "#A5a5a5",
-                }}
-              >
+            <Box>
+              {!desktop530Width ? (
                 <Box
                   sx={{
-                    width: "125px",
-                    height: "3px",
-                    backgroundColor: "#44F4C3",
-                    marginLeft: `${
-                      curentProgress * (texts.length * 125 - 125)
-                    }px`,
+                    position: "relative",
+                    overflowX: "hidden",
+                    marginTop: "28px",
+                    display: "block",
                   }}
-                ></Box>
-              </Box>
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      width: `${texts.length * 125}px`,
+                      marginLeft: `calc(15px + max(calc(${
+                        texts.length * 125 + 30
+                      }px - 100vw), 0px) * -${curentProgress})`,
+                    }}
+                  >
+                    {texts.map((item, index) => (
+                      <Box
+                        key={`screen-2-mobile-title-${index}`}
+                        sx={{ width: "125px" }}
+                        onClick={() => {
+                          setCurentItem(index);
+                          swiperRef.current.swiper.slideTo(index);
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          fontWeight={index === curentItem ? "400" : "300"}
+                          fontSize="16px"
+                          lineHeight="19.2px"
+                          textAlign="center"
+                          marginX="auto"
+                          color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                  <Box
+                    sx={{
+                      marginLeft: `calc(15px + max(calc(${
+                        texts.length * 125 + 30
+                      }px - 100vw), 0px) * -${curentProgress})`,
+                      marginTop: "21px",
+                      width: `${texts.length * 125}px`,
+                      height: 3,
+                      backgroundColor: "#A5a5a5",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "125px",
+                        height: "3px",
+                        backgroundColor: "#44F4C3",
+                        marginLeft: `${
+                          curentProgress * (texts.length * 125 - 125)
+                        }px`,
+                      }}
+                    ></Box>
+                  </Box>
+                </Box>
+              ) : (
+                <Box>
+                  <Box
+                    sx={{
+                      position: "relative",
+                      overflowX: "hidden",
+                      marginTop: "28px",
+                      display: "block",
+                      paddingX: "15px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        width: `100%`,
+                      }}
+                    >
+                      {texts.map((item, index) => (
+                        <Box
+                          key={`screen-2-mobile-title-${index}`}
+                          sx={{
+                            width: `calc(100% / ${texts.length})`,
+                          }}
+                          onClick={() => {
+                            setCurentItem(index);
+                            swiperRef.current.swiper.slideTo(index);
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight={index === curentItem ? "400" : "300"}
+                            fontSize="16px"
+                            lineHeight="19.2px"
+                            textAlign="center"
+                            marginX="auto"
+                            color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                          >
+                            {item.title}
+                          </Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                    <Box
+                      sx={{
+                        marginTop: "21px",
+                        width: "100%",
+                        height: 3,
+                        backgroundColor: "#A5a5a5",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: "125px",
+                          height: "3px",
+                          backgroundColor: "#44F4C3",
+                          marginLeft: `calc(${curentProgress} * calc(${texts.length} * calc(100% / ${texts.length}) - calc(100% / ${texts.length})))`,
+                        }}
+                      ></Box>
+                    </Box>
+                  </Box>
+                </Box>
+              )}
             </Box>
             <Box sx={{ marginTop: "35px" }}>
               <Swiper
@@ -476,8 +545,8 @@ const Five = () => {
                         color="#FFFFFF"
                         lineHeight="15.73px"
                         maxWidth="290px"
-                        textAlign="center"
-                        marginX="auto"
+                        textAlign="left"
+                        marginLeft="15px"
                       >
                         {item.description}
                       </Typography>
