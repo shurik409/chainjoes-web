@@ -86,7 +86,7 @@ const Seven = () => {
 
   const desktop1080Width = useMediaQuery("(min-width: 1200px)");
 
-  const desktopFullGridWidth = useMediaQuery("(min-width: 1555px)");
+  const desktopFullGridWidth = useMediaQuery("(min-width: 1900px)");
 
   const desktop768Width = useMediaQuery("(min-width: 768px)");
 
@@ -135,9 +135,8 @@ const Seven = () => {
           >
             <Box
               sx={{
-                // width: "910px",
-                // height: "417px",
                 width: desktopFullGridWidth ? "100%" : "calc(100% - 80px)",
+                maxWidth: desktopFullGridWidth ? "1150px" : "unset",
                 border: "1px solid",
                 borderImageSlice: 1,
                 borderWidth: "1px",
@@ -146,8 +145,8 @@ const Seven = () => {
                 borderImageSource:
                   "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
                 padding: desktop1080Width
-                  ? "38px 40px 45px 40px"
-                  : "34px 34px 37px 36px",
+                  ? "38px 38px 45px 38px"
+                  : "34px 34px 37px 34px",
               }}
             >
               <Box sx={{ marginBottom: "30px" }}>
@@ -177,8 +176,10 @@ const Seven = () => {
               <Box
                 sx={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(142px,1fr))",
-                  gridGap: desktop1080Width ? "30px" : "24px",
+                  gridTemplateColumns: desktop1080Width
+                    ? "repeat(auto-fit, minmax(179.5px,1fr))"
+                    : "repeat(auto-fit, minmax(143px,1fr))",
+                  gridGap: desktop1080Width ? "30px" : "20px",
                 }}
               >
                 {managment.map((person, index) => (
@@ -188,8 +189,8 @@ const Seven = () => {
                   >
                     <Box
                       sx={{
-                        width: "142px",
-                        height: "165px",
+                        width: desktop1080Width ? "179.5px" : "143px",
+                        height: desktop1080Width ? "208.57px" : "165px",
                         position: "relative",
                       }}
                     >
@@ -197,8 +198,8 @@ const Seven = () => {
                         src={`${person.photo}`}
                         alt={person.name}
                         loading="lazy"
-                        width="142px"
-                        height="165px"
+                        width={desktop1080Width ? "179.5px" : "143px"}
+                        height={desktop1080Width ? "208.57px" : "165px"}
                       />
                       <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
                         <img
@@ -228,8 +229,8 @@ const Seven = () => {
                       color="#FFFFFF"
                       width="142px"
                       marginTop="25px"
-                      lineHeight="21.8px"
-                      height="32px"
+                      lineHeight="21.78px"
+                      // height="37px"
                       style={{ opacity: 0.7 }}
                     >
                       {person.job}
@@ -242,7 +243,7 @@ const Seven = () => {
             <Box
               sx={{
                 marginTop: desktopFullGridWidth ? "" : "30px",
-                marginLeft: desktopFullGridWidth ? "32px" : "",
+                marginLeft: desktopFullGridWidth ? "30px" : "",
                 border: "1px solid",
                 borderImageSlice: 1,
                 borderWidth: "1px",
@@ -250,10 +251,12 @@ const Seven = () => {
                 borderColor: "buttonborder",
                 borderImageSource:
                   "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
-                padding: "38px 90px 45px 40px",
+                padding: desktop1080Width
+                  ? "40px 37px 60px 37px"
+                  : "35px 33px 45px 35px",
               }}
             >
-              <Box sx={{ marginBottom: "30px" }}>
+              <Box sx={{ marginBottom: desktop1080Width ? "59px" : "31px" }}>
                 <Typography
                   fontFamily="Inter"
                   fontSize="20px"
@@ -281,6 +284,7 @@ const Seven = () => {
                 sx={
                   !desktopFullGridWidth && {
                     display: "flex",
+                    alignItems: "center",
                   }
                 }
               >
@@ -289,7 +293,7 @@ const Seven = () => {
                     src={`${RedRiftLogo}`}
                     alt={"Red Rift Logo"}
                     loading="lazy"
-                    width={desktop1080Width ? "" : "319px"}
+                    width={desktop1080Width ? "530px" : "319px"}
                   />
                 </Box>
                 <Box
@@ -302,7 +306,7 @@ const Seven = () => {
                   <Box
                     sx={{
                       display: "flex",
-                      marginTop: desktop1080Width ? "25px" : "0px",
+                      marginTop: desktopFullGridWidth ? "50px" : "0px",
                       alignItems: "center",
                     }}
                   >
@@ -330,8 +334,8 @@ const Seven = () => {
                     fontSize="18px"
                     fontWeight="300"
                     color="#FFFFFF"
-                    maxWidth={desktop1080Width ? "175px" : "unset"}
-                    marginTop={desktop1080Width ? "25px" : "14px"}
+                    maxWidth={desktopFullGridWidth ? "175px" : "unset"}
+                    marginTop={desktopFullGridWidth ? "25px" : "10px"}
                     lineHeight="21.8px"
                     height="32px"
                     style={{ opacity: 0.7 }}
@@ -346,7 +350,7 @@ const Seven = () => {
           <Box sx={{ display: "flex", marginTop: "30px" }}>
             <Box
               sx={{
-                width: "1433px",
+                width: "1488px",
                 // height: "427px",
                 border: "1px solid",
                 borderImageSlice: 1,
@@ -356,7 +360,7 @@ const Seven = () => {
                 borderImageSource:
                   "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
                 padding: desktop1080Width
-                  ? "38px 40px 45px 40px"
+                  ? "38px 38px 45px 38px"
                   : "34px 34px 37px 36px",
               }}
             >
@@ -387,8 +391,10 @@ const Seven = () => {
               <Box
                 sx={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(142px,1fr))",
-                  gridGap: desktop1080Width ? "30px" : "24px",
+                  gridTemplateColumns: desktop1080Width
+                    ? "repeat(auto-fit, minmax(179.5px,1fr))"
+                    : "repeat(auto-fit, minmax(143px,1fr))",
+                  gridGap: desktop1080Width ? "30px" : "20px",
                 }}
               >
                 {marketing.map((person, index) => (
@@ -398,8 +404,8 @@ const Seven = () => {
                   >
                     <Box
                       sx={{
-                        width: "142px",
-                        height: "165px",
+                        width: desktop1080Width ? "179.5px" : "143px",
+                        height: desktop1080Width ? "208.57px" : "165px",
                         position: "relative",
                       }}
                     >
@@ -407,8 +413,8 @@ const Seven = () => {
                         src={`${person.photo}`}
                         alt={person.name}
                         loading="lazy"
-                        width="142px"
-                        height="165px"
+                        width={desktop1080Width ? "179.5px" : "143px"}
+                        height={desktop1080Width ? "208.57px" : "165px"}
                       />
                       <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
                         <img
@@ -439,7 +445,6 @@ const Seven = () => {
                       width="142px"
                       marginTop="25px"
                       lineHeight="21.8px"
-                      height="32px"
                       style={{ opacity: 0.7 }}
                     >
                       {person.job}
