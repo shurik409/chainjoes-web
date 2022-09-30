@@ -415,6 +415,7 @@ const Third = () => {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "end",
+                        WebkitAlignItems: "flex-end",
                       }}
                     >
                       <Box sx={{ marginRight: "29px", zIndex: 1 }}>

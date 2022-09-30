@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
-import { Texture, Solana, Damnn } from "../../imgs/webp/screen10";
+import { Link as RouterLink } from "react-router-dom";
+import { Solana, Damnn } from "../../imgs/webp/screen10";
 import { DocsLogo } from "../first/components/header/components/Icons";
 
 const Ten = () => {
@@ -93,7 +94,11 @@ const Ten = () => {
             </Link>
           </Box>
           <Box sx={{ display: "flex" }}>
-            <Link href="" target="_blank" underline="none">
+            <RouterLink
+              to="/terms-conditions"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               <Box
                 sx={{
                   color: "#FFFFFF",
@@ -111,8 +116,12 @@ const Ten = () => {
                   Terms of Service
                 </Typography>
               </Box>
-            </Link>
-            <Link href="" target="_blank" underline="none" marginLeft="30px">
+            </RouterLink>
+            <RouterLink
+              to="/privacy-policy"
+              target="_blank"
+              style={{ textDecoration: "none", marginLeft: "30px" }}
+            >
               <Box
                 sx={{
                   color: "#FFFFFF",
@@ -130,7 +139,7 @@ const Ten = () => {
                   Privacy Policy
                 </Typography>
               </Box>
-            </Link>
+            </RouterLink>
           </Box>
           {/* <Box>
             <Link
@@ -310,7 +319,11 @@ const Ten = () => {
             }}
           >
             <Box sx={{ display: "flex" }}>
-              <Link href="" target="_blank" underline="none">
+              <RouterLink
+                to="/terms-conditions"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
                 <Box
                   sx={{
                     color: "#FFFFFF",
@@ -328,8 +341,12 @@ const Ten = () => {
                     Terms of Service
                   </Typography>
                 </Box>
-              </Link>
-              <Link href="" target="_blank" underline="none" marginLeft="30px">
+              </RouterLink>
+              <RouterLink
+                to="/privacy-policy"
+                target="_blank"
+                style={{ textDecoration: "none", marginLeft: "30px" }}
+              >
                 <Box
                   sx={{
                     color: "#FFFFFF",
@@ -347,7 +364,7 @@ const Ten = () => {
                     Privacy Policy
                   </Typography>
                 </Box>
-              </Link>
+              </RouterLink>
             </Box>
             <Box>
               <Link
@@ -516,7 +533,11 @@ const Ten = () => {
               marginTop: "35px",
             }}
           >
-            <Link href="" target="_blank" underline="none">
+            <RouterLink
+              to="/terms-conditions"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               <Box
                 sx={{
                   color: "#FFFFFF",
@@ -534,8 +555,12 @@ const Ten = () => {
                   Terms of Service
                 </Typography>
               </Box>
-            </Link>
-            <Link href="" target="_blank" underline="none">
+            </RouterLink>
+            <RouterLink
+              to="/privacy-policy"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               <Box
                 sx={{
                   color: "#FFFFFF",
@@ -553,7 +578,7 @@ const Ten = () => {
                   Privacy Policy
                 </Typography>
               </Box>
-            </Link>
+            </RouterLink>
           </Box>
         </Box>
       )}
