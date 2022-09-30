@@ -34,54 +34,86 @@ const Seven = () => {
       ),
       photo: Mike,
       nameWidth: "107px",
+      link: "https://www.linkedin.com/in/michal-sykora-11378b215/",
     },
     {
       name: "Christiaan van Steenbergen",
       job: "Blockchain CTO,  Co-founder",
       photo: Cris,
+      link: "https://www.linkedin.com/in/michal-sykora-11378b215/",
     },
     {
       name: "Gary",
       surname: "Yankovich",
       job: "Chief Product Officer ",
       photo: Gary,
+      link: "https://www.linkedin.com/in/gary-yankovich-671811168/",
     },
     {
       name: "Dasha",
       surname: "Maltseva",
       job: "Chief Operating Officer ",
       photo: Dasha,
+      link: "https://www.linkedin.com/in/darya-maltseva-34868220a/",
     },
     {
       name: "Katsia",
       surname: "Dziatlova",
       job: "Head of management",
       photo: Katsia,
+      link: "https://www.linkedin.com/in/katsia-dziatlova",
     },
   ];
   const marketing = [
-    { name: "Egor", surname: "Aniferyk", job: "Producer", photo: Egor },
+    {
+      name: "Egor",
+      surname: "Aniferyk",
+      job: "Producer",
+      photo: Egor,
+      link: "https://www.linkedin.com/in/egor-aniferyk-204930219/",
+    },
     {
       name: "Maya",
       surname: "Kostenkova",
       job: "Creative producer",
       photo: Maya,
+      link: "https://www.linkedin.com/in/egor-aniferyk-204930219/",
     },
-    { name: "Hanna", surname: "Valasheniuk", job: "Creative", photo: Hanna },
+    {
+      name: "Hanna",
+      surname: "Valasheniuk",
+      job: "Creative",
+      photo: Hanna,
+      link: "",
+    },
     {
       name: "Nastia",
       surname: "Naumenko",
       job: "Head of graphic design",
       photo: Nastia,
+      link: "",
     },
     {
       name: "Veronika",
       surname: "Yasulevich",
       job: "Graphic Designer",
       photo: Veronika,
+      link: "https://www.linkedin.com/in/nikahartmann/",
     },
-    { name: "Pavel", surname: "Ivuts", job: "Head of 3D arts", photo: Pasha },
-    { name: "Alex", surname: "Andriyashko", job: "3D artist", photo: Alex },
+    {
+      name: "Pavel",
+      surname: "Ivuts",
+      job: "Head of 3D arts",
+      photo: Pasha,
+      link: "https://www.linkedin.com/in/ivuts/",
+    },
+    {
+      name: "Alex",
+      surname: "Andriyashko",
+      job: "3D artist",
+      photo: Alex,
+      link: "https://www.linkedin.com/in/alexander-andriyashko-97a298206/",
+    },
   ];
 
   const desktop1080Width = useMediaQuery("(min-width: 1200px)");
@@ -201,13 +233,19 @@ const Seven = () => {
                         width={desktop1080Width ? "179.5px" : "143px"}
                         height={desktop1080Width ? "208.57px" : "165px"}
                       />
-                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
-                        <img
-                          src={LinkedIn}
-                          alt={`${person.name}-linked`}
-                          loading="lazy"
-                        />
-                      </Box>
+                      {person.link && (
+                        <Link href={person.link} target="_blank">
+                          <Box
+                            sx={{ position: "absolute", right: 10, bottom: 10 }}
+                          >
+                            <img
+                              src={LinkedIn}
+                              alt={`${person.name}-linked`}
+                              loading="lazy"
+                            />
+                          </Box>
+                        </Link>
+                      )}
                     </Box>
                     <Typography
                       fontFamily="Inter"
@@ -416,13 +454,19 @@ const Seven = () => {
                         width={desktop1080Width ? "179.5px" : "143px"}
                         height={desktop1080Width ? "208.57px" : "165px"}
                       />
-                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
-                        <img
-                          src={LinkedIn}
-                          alt={`${person.name}-linked`}
-                          loading="lazy"
-                        />
-                      </Box>
+                      {person.link && (
+                        <Link href={person.link} target="_blank">
+                          <Box
+                            sx={{ position: "absolute", right: 10, bottom: 10 }}
+                          >
+                            <img
+                              src={LinkedIn}
+                              alt={`${person.name}-linked`}
+                              loading="lazy"
+                            />
+                          </Box>
+                        </Link>
+                      )}
                     </Box>
                     <Typography
                       fontFamily="Inter"
@@ -561,13 +605,19 @@ const Seven = () => {
                         width="110px"
                         height="127px"
                       />
-                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
-                        <img
-                          src={LinkedIn}
-                          alt={`${person.name}-linked`}
-                          loading="lazy"
-                        />
-                      </Box>
+                      {person.link && (
+                        <Link href={person.link} target="_blank">
+                          <Box
+                            sx={{ position: "absolute", right: 10, bottom: 10 }}
+                          >
+                            <img
+                              src={LinkedIn}
+                              alt={`${person.name}-linked`}
+                              loading="lazy"
+                            />
+                          </Box>
+                        </Link>
+                      )}
                     </Box>
                     <Typography
                       fontFamily="Inter"
@@ -754,13 +804,19 @@ const Seven = () => {
                         width="110px"
                         height="127px"
                       />
-                      <Box sx={{ position: "absolute", right: 10, bottom: 10 }}>
-                        <img
-                          src={LinkedIn}
-                          alt={`${person.name}-linked`}
-                          loading="lazy"
-                        />
-                      </Box>
+                      {person.link && (
+                        <Link href={person.link} target="_blank">
+                          <Box
+                            sx={{ position: "absolute", right: 10, bottom: 10 }}
+                          >
+                            <img
+                              src={LinkedIn}
+                              alt={`${person.name}-linked`}
+                              loading="lazy"
+                            />
+                          </Box>
+                        </Link>
+                      )}
                     </Box>
                     <Typography
                       fontFamily="Inter"
