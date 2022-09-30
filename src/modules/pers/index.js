@@ -7,14 +7,11 @@ import {
   FourthImg,
   FiveImg,
   SixImg,
-  HeaderTexture,
 } from "../../imgs/webp/screen3";
-import { Line } from "../first/components/header/components/Icons";
 import GreenBtn from "../../imgs/webp/green_btn_small.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import zIndex from "@mui/material/styles/zIndex";
 
 const Third = () => {
   const [curentItem, setCurentItem] = useState(0);
@@ -192,6 +189,8 @@ const Third = () => {
                       backgroundPositionY: "center",
                       position: "relative",
                       paddingTop: "240px",
+                      opacity: curentItem === index ? 1 : 0,
+                      transition: "opacity 0.3s ease-in",
                     }}
                   >
                     <Box
