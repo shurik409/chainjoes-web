@@ -164,7 +164,7 @@ const Nine = () => {
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
                 >
                   <Link
-                    href="https://www.instagram.com/chainjoes"
+                    href="https://www.instagram.com/chain_joes/"
                     target="_blank"
                     underline="none"
                   >
@@ -447,7 +447,7 @@ const Nine = () => {
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
                 >
                   <Link
-                    href="https://www.instagram.com/chainjoes"
+                    href="https://www.instagram.com/chain_joes/"
                     target="_blank"
                     underline="none"
                   >
@@ -737,7 +737,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://www.instagram.com/chainjoes"
+                    href="https://www.instagram.com/chain_joes/"
                     target="_blank"
                     underline="none"
                   >
