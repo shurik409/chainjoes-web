@@ -23,14 +23,10 @@ const Nine = () => {
       {desktop1080Width && (
         <Box
           sx={{
-            backgroundColor: "#070809",
             padding: desktopFlexWidth
               ? "9px 25px 140px 25px"
               : "9px 25px 40px 25px",
             display: "flex",
-            backgroundImage: `url(${Smoke})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
             justifyContent: "space-around",
             alignItems: desktopFlexWidth ? "unset" : "center",
             flexDirection: desktopFlexWidth ? "row" : "column",
@@ -300,11 +296,7 @@ const Nine = () => {
       {!desktop1080Width && desktop768Width && (
         <Box
           sx={{
-            backgroundColor: "#070809",
             padding: "57px 28px 105px 28px",
-            backgroundImage: `url(${Smoke})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
             position: "relative",
           }}
         >
@@ -587,11 +579,7 @@ const Nine = () => {
       {!desktop1080Width && !desktop768Width && (
         <Box
           sx={{
-            backgroundColor: "#070809",
             padding: "0 15px 75px 15px",
-            backgroundImage: `url(${Smoke})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
             position: "relative",
           }}
         >

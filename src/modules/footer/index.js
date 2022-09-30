@@ -16,9 +16,6 @@ const Ten = () => {
         <Box
           sx={{
             padding: "33px min(80px, 4vw) 38px min(80px, 4vw)",
-            background: `url(${Texture})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
             display: "flex",
             gap: "10px",
             justifyContent: "space-between",
@@ -26,7 +23,13 @@ const Ten = () => {
           }}
         >
           <Box sx={{ display: "flex" }}>
-            <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
               <Typography
                 fontFamily="Inter"
                 fontSize="13px"
@@ -38,7 +41,14 @@ const Ten = () => {
               </Typography>
               <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
             </Box>
-            <Box sx={{ marginLeft: "22px" }}>
+            <Box
+              sx={{
+                marginLeft: "22px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
               <Typography
                 fontFamily="Inter"
                 fontSize="13px"
@@ -93,25 +103,6 @@ const Ten = () => {
                   color="inherit"
                 >
                   Terms of Service
-                </Typography>
-              </Box>
-            </Link>
-            <Link href="" target="_blank" underline="none" marginLeft="30px">
-              <Box
-                sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="16px"
-                  fontWeight="300"
-                  color="inherit"
-                >
-                  Contract Audit
                 </Typography>
               </Box>
             </Link>
@@ -196,9 +187,6 @@ const Ten = () => {
         <Box
           sx={{
             padding: "57px 25px 58px 25px",
-            background: `url(${Texture})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
           }}
         >
           <Box
@@ -344,25 +332,6 @@ const Ten = () => {
                     fontWeight="300"
                     color="inherit"
                   >
-                    Contract Audit
-                  </Typography>
-                </Box>
-              </Link>
-              <Link href="" target="_blank" underline="none" marginLeft="30px">
-                <Box
-                  sx={{
-                    color: "#FFFFFF",
-                    ":hover": {
-                      color: "#44F4C3",
-                    },
-                  }}
-                >
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="14px"
-                    fontWeight="300"
-                    color="inherit"
-                  >
                     Privacy Policy
                   </Typography>
                 </Box>
@@ -397,9 +366,6 @@ const Ten = () => {
         <Box
           sx={{
             padding: "35px 15px 35px 15px",
-            background: `url(${Texture})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
           }}
         >
           <Box
@@ -548,25 +514,6 @@ const Ten = () => {
                   color="inherit"
                 >
                   Terms of Service
-                </Typography>
-              </Box>
-            </Link>
-            <Link href="" target="_blank" underline="none">
-              <Box
-                sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="12px"
-                  fontWeight="300"
-                  color="inherit"
-                >
-                  Contract Audit
                 </Typography>
               </Box>
             </Link>
