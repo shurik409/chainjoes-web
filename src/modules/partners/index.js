@@ -3,11 +3,9 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   Partner1,
   Partner2,
-  Partner3,
   Partner4,
   Partner1Color,
   Partner2Color,
-  Partner3Color,
   Partner4Color,
   // Partner5,
 } from "../../imgs/webp/screen8";
@@ -57,18 +55,14 @@ const Eight = () => {
           </Box>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "60px",
               marginTop: desktopFlexWidth ? "unset" : "45px",
             }}
           >
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "column",
-                height: "235px",
                 justifyContent: "space-between",
+                alignItems: "center",
               }}
             >
               <Box
@@ -115,60 +109,6 @@ const Eight = () => {
                 sx={{
                   position: "relative",
                   ":hover": {
-                    ".partner3": {
-                      opacity: 0,
-                    },
-                    ".partner3Color": {
-                      opacity: 1,
-                    },
-                  },
-                }}
-              >
-                <Box
-                  className="partner3"
-                  sx={{
-                    transition: "opacity 0.2s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${Partner3}`}
-                    width={desktopImageWidth ? "393px" : "321px"}
-                    alt="Tamashi"
-                    loading="lazy"
-                  />
-                </Box>
-                <Box
-                  className="partner3Color"
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    opacity: 0,
-                    transition: "opacity 0.2s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${Partner3Color}`}
-                    width={desktopImageWidth ? "393px" : "321px"}
-                    alt="Tamashi"
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                height: "235px",
-                justifyContent: "space-between",
-              }}
-            >
-              <Box
-                sx={{
-                  position: "relative",
-                  ":hover": {
                     ".partner2": {
                       opacity: 0,
                     },
@@ -176,6 +116,7 @@ const Eight = () => {
                       opacity: 1,
                     },
                   },
+                  marginLeft: "110px",
                 }}
               >
                 <Box
@@ -210,6 +151,14 @@ const Eight = () => {
                   />
                 </Box>
               </Box>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "60px",
+              }}
+            >
               <Box
                 sx={{
                   position: "relative",
@@ -311,10 +260,10 @@ const Eight = () => {
                 width="270px"
               />
               <img
-                src={`${Partner3}`}
-                alt="Tamashi"
+                src={`${Partner4}`}
+                alt={"Damnn"}
                 loading="lazy"
-                width="268px"
+                width="224px"
               />
             </Box>
             <Box
@@ -331,12 +280,6 @@ const Eight = () => {
                 loading="lazy"
                 width="305px"
               />
-              <img
-                src={`${Partner4}`}
-                alt={"Damnn"}
-                loading="lazy"
-                width="224px"
-              />
               {/* <img src={`${Partner5}`} alt={"Moonraised"} loading="lazy" /> */}
             </Box>
           </Box>
@@ -345,7 +288,7 @@ const Eight = () => {
       {!desktop768Width && !desktop1080Width && (
         <Box
           sx={{
-            padding: "76px 15px 76px 15px",
+            padding: "76px 15px 80px 15px",
             backgroundColor: "#091015",
             position: "relative",
           }}
@@ -388,16 +331,14 @@ const Eight = () => {
           </Box>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "space-around",
               marginTop: "45px",
-              height: "92px",
+              maxWidth: "320px",
+              marginX: "auto",
             }}
           >
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "column",
                 justifyContent: "space-between",
               }}
             >
@@ -408,25 +349,19 @@ const Eight = () => {
                 width="135px"
               />
               <img
-                src={`${Partner3Color}`}
-                alt="Tamashi"
-                loading="lazy"
-                width="131px"
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <img
                 src={`${Partner2Color}`}
                 alt={"Red Rift"}
                 loading="lazy"
                 width="123px"
               />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "25px",
+              }}
+            >
               <img
                 src={`${Partner4Color}`}
                 alt={"Damnn"}
