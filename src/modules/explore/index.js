@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import {
   FirstImg,
@@ -9,6 +9,7 @@ import {
 } from "../../imgs/webp/screen2";
 import Smoke from "../../imgs/smoke.png";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SmokeThree from "../../components/smoke";
 
 import "swiper/css";
 
@@ -16,6 +17,8 @@ const Second = () => {
   const [curentItem, setCurentItem] = useState(0);
   const [curentProgress, setProgress] = useState(0);
   const swiperRef = useRef(null);
+  const smokeElement = useRef(null);
+  const [smokeInit, setSmokeInit] = useState(false);
 
   const texts = [
     {
@@ -84,12 +87,36 @@ const Second = () => {
     `(min-width: ${125 * texts.length + 30}px`
   );
 
+  useEffect(() => {
+    if (smokeElement.current && !smokeInit) {
+      setSmokeInit(true);
+      SmokeRender();
+    } else {
+      return;
+    }
+  }, []);
+
+  const SmokeRender = () => {
+    smokeElement.current && SmokeThree(smokeElement.current);
+  };
+
+  useEffect(() => {
+    // set resize listener
+    window.addEventListener("resize", SmokeRender);
+
+    // clean up function
+    return () => {
+      // remove resize listener
+      window.removeEventListener("resize", SmokeRender);
+    };
+  }, []);
+
   return (
     <Box>
       {desktop1080Width && (
         <Box
           sx={{
-            background: `url(${Smoke})`,
+            // background: `url(${Smoke})`,
             position: "relative",
             backgroundPositionY: "bottom",
             backgroundRepeat: "no-repeat",
@@ -97,6 +124,17 @@ const Second = () => {
             padding: "136px 0 127px 80px",
           }}
         >
+          <Box
+            ref={smokeElement}
+            sx={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+            }}
+          ></Box>
           <Box sx={{ display: "flex", maxHeight: "725px" }}>
             <Box>
               <Box sx={{ width: "540px" }}>
@@ -243,7 +281,7 @@ const Second = () => {
       {!desktop1080Width && desktop768Width && (
         <Box
           sx={{
-            background: `url(${Smoke})`,
+            // background: `url(${Smoke})`,
             position: "relative",
             backgroundPositionY: "bottom",
             backgroundRepeat: "no-repeat",
@@ -251,6 +289,17 @@ const Second = () => {
             padding: "102px 42px 78px 30px",
           }}
         >
+          <Box
+            ref={smokeElement}
+            sx={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+            }}
+          ></Box>
           <Box>
             <Typography
               fontFamily="Furore"
@@ -437,7 +486,7 @@ const Second = () => {
       {!desktop1080Width && !desktop768Width && (
         <Box
           sx={{
-            background: `url(${Smoke})`,
+            // background: `url(${Smoke})`,
             // background: `#FFF`,
             position: "relative",
             backgroundPositionY: "bottom",
@@ -446,6 +495,17 @@ const Second = () => {
             padding: "75px 0px 55px 0px",
           }}
         >
+          <Box
+            ref={smokeElement}
+            sx={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+            }}
+          ></Box>
           <Box>
             <Typography
               fontFamily="Furore"
@@ -558,8 +618,7 @@ const Second = () => {
                       margin: "auto",
                     }}
                   >
-                    <Box
-                    >
+                    <Box>
                       <Typography
                         fontFamily="Inter"
                         fontSize="13px"

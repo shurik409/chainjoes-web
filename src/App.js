@@ -1,8 +1,8 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Box } from "@mui/material";
-import { Main, PrivacyPolicy, Terms } from "./pages";
+import { Main, PrivacyPolicy, Terms, Test } from "./pages";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="terms-conditions" element={<Terms />} />
+        <Route path="test" element={<Test />} />
       </Routes>
     </Box>
   );
