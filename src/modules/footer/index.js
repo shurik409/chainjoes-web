@@ -23,24 +23,26 @@ const Ten = () => {
           }}
         >
           <Box sx={{ display: "flex" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <Typography
-                fontFamily="Inter"
-                fontSize="13px"
-                fontWeight="300"
-                color="#BDBDBD"
-                marginBottom="7px"
+            <Link href="https://solana.com/" target="_blank" underline="none">
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
               >
-                Powered by
-              </Typography>
-              <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
-            </Box>
+                <Typography
+                  fontFamily="Inter"
+                  fontSize="13px"
+                  fontWeight="300"
+                  color="#BDBDBD"
+                  marginBottom="7px"
+                >
+                  Powered by
+                </Typography>
+                <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+              </Box>
+            </Link>
             <Box
               sx={{
                 marginLeft: "22px",
@@ -49,16 +51,20 @@ const Ten = () => {
                 justifyContent: "space-between",
               }}
             >
-              <Typography
-                fontFamily="Inter"
-                fontSize="13px"
-                fontWeight="300"
-                color="#BDBDBD"
-                marginBottom="7px"
-              >
-                Production by
-              </Typography>
-              <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+              <Link href="https://damnn.tv/" target="_blank" underline="none">
+                <Box>
+                  <Typography
+                    fontFamily="Inter"
+                    fontSize="13px"
+                    fontWeight="300"
+                    color="#BDBDBD"
+                    marginBottom="7px"
+                  >
+                    Production by
+                  </Typography>
+                  <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+                </Box>
+              </Link>
             </Box>
           </Box>
           <Box>
@@ -203,29 +209,35 @@ const Ten = () => {
                 WebkitAlignItems: "flex-end",
               }}
             >
-              <Box>
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="13px"
-                  fontWeight="300"
-                  color="#BDBDBD"
-                  marginBottom="7px"
-                >
-                  Powered by
-                </Typography>
-                <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
-              </Box>
+              <Link href="https://solana.com/" target="_blank" underline="none">
+                <Box>
+                  <Typography
+                    fontFamily="Inter"
+                    fontSize="13px"
+                    fontWeight="300"
+                    color="#BDBDBD"
+                    marginBottom="7px"
+                  >
+                    Powered by
+                  </Typography>
+                  <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+                </Box>
+              </Link>
               <Box sx={{ marginLeft: "22px" }}>
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="13px"
-                  fontWeight="300"
-                  color="#BDBDBD"
-                  marginBottom="7px"
-                >
-                  Production by
-                </Typography>
-                <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+                <Link href="https://damnn.tv/" target="_blank" underline="none">
+                  <Box>
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="13px"
+                      fontWeight="300"
+                      color="#BDBDBD"
+                      marginBottom="7px"
+                    >
+                      Production by
+                    </Typography>
+                    <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+                  </Box>
+                </Link>
               </Box>
             </Box>
             {/* <Box>
@@ -466,29 +478,35 @@ const Ten = () => {
               marginTop: "32px",
             }}
           >
-            <Box>
-              <Typography
-                fontFamily="Inter"
-                fontSize="13px"
-                fontWeight="300"
-                color="#BDBDBD"
-                marginBottom="7px"
-              >
-                Powered by
-              </Typography>
-              <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
-            </Box>
+            <Link href="https://solana.com/" target="_blank" underline="none">
+              <Box>
+                <Typography
+                  fontFamily="Inter"
+                  fontSize="13px"
+                  fontWeight="300"
+                  color="#BDBDBD"
+                  marginBottom="7px"
+                >
+                  Powered by
+                </Typography>
+                <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+              </Box>
+            </Link>
             <Box sx={{ marginLeft: "22px" }}>
-              <Typography
-                fontFamily="Inter"
-                fontSize="13px"
-                fontWeight="300"
-                color="#BDBDBD"
-                marginBottom="7px"
-              >
-                Production by
-              </Typography>
-              <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+              <Link href="https://damnn.tv/" target="_blank" underline="none">
+                <Box>
+                  <Typography
+                    fontFamily="Inter"
+                    fontSize="13px"
+                    fontWeight="300"
+                    color="#BDBDBD"
+                    marginBottom="7px"
+                  >
+                    Production by
+                  </Typography>
+                  <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+                </Box>
+              </Link>
             </Box>
           </Box>
           <Box
