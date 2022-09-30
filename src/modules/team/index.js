@@ -326,14 +326,16 @@ const Seven = () => {
                   }
                 }
               >
-                <Box>
-                  <img
-                    src={`${RedRiftLogo}`}
-                    alt={"Red Rift Logo"}
-                    loading="lazy"
-                    width={desktop1080Width ? "530px" : "319px"}
-                  />
-                </Box>
+                <Link href="https://redrift.com/" target="_blank">
+                  <Box>
+                    <img
+                      src={`${RedRiftLogo}`}
+                      alt={"Red Rift Logo"}
+                      loading="lazy"
+                      width={desktop1080Width ? "530px" : "319px"}
+                    />
+                  </Box>
+                </Link>
                 <Box
                   sx={
                     !desktopFullGridWidth && {
@@ -357,15 +359,6 @@ const Seven = () => {
                     >
                       Red Rift
                     </Typography>
-                    <Box sx={{ marginLeft: "15px" }}>
-                      <Link href="https://redrift.com/" target="_blank">
-                        <img
-                          src={`${WebLink}`}
-                          alt={"Web link"}
-                          loading="lazy"
-                        />
-                      </Link>
-                    </Box>
                   </Box>
                   <Typography
                     fontFamily="Inter"
@@ -687,14 +680,16 @@ const Seven = () => {
                 </Typography>
               </Box>
               <Box>
-                <Box>
-                  <img
-                    src={`${RedRiftLogo}`}
-                    alt={"Red Rift Logo"}
-                    loading="lazy"
-                    width={"241px"}
-                  />
-                </Box>
+                <Link href="https://redrift.com/" target="_blank">
+                  <Box>
+                    <img
+                      src={`${RedRiftLogo}`}
+                      alt={"Red Rift Logo"}
+                      loading="lazy"
+                      width={"241px"}
+                    />
+                  </Box>
+                </Link>
                 <Box
                   sx={{
                     display: "flex",
@@ -711,11 +706,6 @@ const Seven = () => {
                   >
                     Red Rift
                   </Typography>
-                  <Box sx={{ marginLeft: "15px" }}>
-                    <Link href="https://redrift.com/" target="_blank">
-                      <img src={`${WebLink}`} alt={"Web link"} loading="lazy" />
-                    </Link>
-                  </Box>
                 </Box>
                 <Typography
                   fontFamily="Inter"
