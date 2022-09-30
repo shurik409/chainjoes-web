@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import Screen from "../../imgs/webp/screen5.webp";
+import { screen5 } from "../../imgs/webp/";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -40,7 +40,7 @@ const Five = () => {
         <Box sx={{ position: "relative", padding: "170px 0px 200px 80px" }}>
           <Box
             sx={{
-              background: `url(${Screen})`,
+              background: `url(${screen5})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPositionX: "right",
@@ -260,7 +260,7 @@ const Five = () => {
           </Box>
           <Box
             sx={{
-              background: `url(${Screen})`,
+              background: `url(${screen5})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPositionX: "left",
@@ -363,7 +363,7 @@ const Five = () => {
               position: "relative",
               height: "210px",
               width: "100%",
-              background: `url(${Screen})`,
+              background: `url(${screen5})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPositionX: "left",
