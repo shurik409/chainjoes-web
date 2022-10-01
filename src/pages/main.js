@@ -79,22 +79,22 @@ const Main = () => {
               }}
             >
               <video
-                ref={prevideo}
-                autoPlay="autoPlay"
-                muted
-                playsInline
-                onContextMenu={() => false}
-                preload="auto"
-                id="vid"
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                }}
-              >
-                <source src={PreLogoWebM} type="video/webm" />
-                <source src={PreLogoMp4} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                 ref={prevideo}
+                 autoPlay="autoPlay"
+                 muted
+                 playsInline
+                 onContextMenu={() => false}
+                 preload="auto"
+                 id="vid"
+                 style={{
+                   objectFit: "cover",
+                   width: "100%",
+                 }}
+               >
+                 <source src={PreLogoWebM} type="video/webm" />
+                 <source src={PreLogoMp4} type="video/mp4" />
+                 Your browser does not support the video tag.
+               </video>
             </Box>
           ) : (
             <>
