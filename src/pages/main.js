@@ -13,7 +13,7 @@ import {
   Ten,
   Loader,
 } from "../modules";
-import Smoke from "../imgs/smoke.png";
+import Smoke from "../imgs/smoke2x.png";
 import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
@@ -79,22 +79,22 @@ const Main = () => {
               }}
             >
               <video
-                 ref={prevideo}
-                 autoPlay="autoPlay"
-                 muted
-                 playsInline
-                 onContextMenu={() => false}
-                 preload="auto"
-                 id="vid"
-                 style={{
-                   objectFit: "cover",
-                   width: "100%",
-                 }}
-               >
-                 <source src={PreLogoWebM} type="video/webm" />
-                 <source src={PreLogoMp4} type="video/mp4" />
-                 Your browser does not support the video tag.
-               </video>
+                ref={prevideo}
+                autoPlay="autoPlay"
+                muted
+                playsInline
+                onContextMenu={() => false}
+                preload="auto"
+                id="vid"
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                }}
+              >
+                <source src={PreLogoWebM} type="video/webm" />
+                <source src={PreLogoMp4} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </Box>
           ) : (
             <>

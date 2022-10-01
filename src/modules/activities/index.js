@@ -8,7 +8,7 @@ import {
   SmokeMobile,
   MaskTablet,
 } from "../../imgs/webp/screen4";
-import Smoke from "../../imgs/smoke.png";
+import Smoke from "../../imgs/smoke2x.png";
 
 const Fourth = () => {
   const activities = [

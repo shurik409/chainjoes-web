@@ -8,7 +8,7 @@ const Loader = ({ progres }) => {
 
   const getText = () => {
     if (Math.floor(progres * 100) < 33) {
-      return "Loading ammunition...";
+      return "Loading equipment...";
     } else if (Math.floor(progres * 100) < 66) {
       return "Exploration of new metaverses...";
     } else if (Math.floor(progres * 100) <= 100) {

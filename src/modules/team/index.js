@@ -18,7 +18,7 @@ import {
   Gary,
   LinkedIn,
 } from "../../imgs/webp/screen7";
-import Smoke from "../../imgs/smoke.png";
+import Smoke from "../../imgs/smoke2x.png";
 
 const Seven = () => {
   const managment = [
@@ -218,13 +218,29 @@ const Seven = () => {
                   <Box
                     key={`screen-7-managment-person-${index}`}
                     // sx={{ marginLeft: index ? "30px" : "" }}
+                    sx={{
+                      ":hover": {
+                        // [`.managment-person-${index}`]: {
+                        //   transform: "scale(1.2)",
+                        // },
+                        [`.managment-name-${index}`]: {
+                          color: "#44F4C3",
+                        },
+                        [`.managment-job-${index}`]: {
+                          color: "#44F4C3",
+                        },
+                      },
+                    }}
                   >
                     <Box
                       sx={{
                         width: desktop1080Width ? "179.5px" : "143px",
                         height: desktop1080Width ? "208.57px" : "165px",
                         position: "relative",
+                        transform: "scale(1)",
+                        transition: "transform 0.3s ease-in-out",
                       }}
+                      className={`managment-person-${index}`}
                     >
                       <img
                         src={`${person.photo}`}
@@ -255,6 +271,8 @@ const Seven = () => {
                       width={person.nameWidth || "142px"}
                       marginTop="25px"
                       lineHeight="22px"
+                      style={{ transition: "color 0.3s ease-in-out" }}
+                      className={`managment-name-${index}`}
                     >
                       {person.name}
                       <br />
@@ -268,8 +286,12 @@ const Seven = () => {
                       width="142px"
                       marginTop="25px"
                       lineHeight="21.78px"
+                      className={`managment-job-${index}`}
                       // height="37px"
-                      style={{ opacity: 0.7 }}
+                      style={{
+                        opacity: 0.7,
+                        transition: "color 0.3s ease-in-out",
+                      }}
                     >
                       {person.job}
                     </Typography>
@@ -320,14 +342,45 @@ const Seven = () => {
               </Box>
               <Box
                 sx={
-                  !desktopFullGridWidth && {
-                    display: "flex",
-                    alignItems: "center",
-                  }
+                  !desktopFullGridWidth
+                    ? {
+                        display: "flex",
+                        alignItems: "center",
+                        ":hover": {
+                          // [`.redrift-photo`]: {
+                          //   transform: "scale(1.2)",
+                          // },
+                          [`.redrift-name`]: {
+                            color: "#44F4C3",
+                          },
+                          [`.redrift-job`]: {
+                            color: "#44F4C3",
+                          },
+                        },
+                      }
+                    : {
+                        ":hover": {
+                          // [`.redrift-photo`]: {
+                          //   transform: "scale(1.2)",
+                          // },
+                          [`.redrift-name`]: {
+                            color: "#44F4C3",
+                          },
+                          [`.redrift-job`]: {
+                            color: "#44F4C3",
+                          },
+                        },
+                      }
                 }
               >
                 <Link href="https://redrift.com/" target="_blank">
-                  <Box>
+                  <Box
+                    sx={{
+                      transform: "scale(1)",
+                      transition: "transform 0.3s ease-in-out",
+                    }}
+                    className={`redrift-photo`}
+                  >
                     <img
                       src={`${RedRiftLogo}`}
                       alt={"Red Rift Logo"}
@@ -338,9 +391,11 @@ const Seven = () => {
                 </Link>
                 <Box
                   sx={
-                    !desktopFullGridWidth && {
-                      marginLeft: "85px",
-                    }
+                    !desktopFullGridWidth
+                      ? {
+                          marginLeft: "85px",
+                        }
+                      : {}
                   }
                 >
                   <Box
@@ -356,6 +411,8 @@ const Seven = () => {
                       fontWeight="500"
                       color="#FFFFFF"
                       lineHeight="22px"
+                      style={{ transition: "color 0.3s ease-in-out" }}
+                      className={`redrift-name`}
                     >
                       Red Rift
                     </Typography>
@@ -369,7 +426,11 @@ const Seven = () => {
                     marginTop={desktopFullGridWidth ? "25px" : "10px"}
                     lineHeight="21.8px"
                     height="32px"
-                    style={{ opacity: 0.7 }}
+                    style={{
+                      opacity: 0.7,
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                    className={`redrift-job`}
                   >
                     Game Development partner
                   </Typography>
@@ -430,15 +491,31 @@ const Seven = () => {
               >
                 {marketing.map((person, index) => (
                   <Box
-                    key={`screen-7-managment-person-${index}`}
+                    key={`screen-7-marketing-person-${index}`}
                     // sx={{ marginLeft: index ? "30px" : "" }}
+                    sx={{
+                      ":hover": {
+                        // [`.marketing-person-${index}`]: {
+                        //   transform: "scale(1.2)",
+                        // },
+                        [`.marketing-name-${index}`]: {
+                          color: "#44F4C3",
+                        },
+                        [`.marketing-job-${index}`]: {
+                          color: "#44F4C3",
+                        },
+                      },
+                    }}
                   >
                     <Box
                       sx={{
                         width: desktop1080Width ? "179.5px" : "143px",
                         height: desktop1080Width ? "208.57px" : "165px",
                         position: "relative",
+                        transform: "scale(1)",
+                        transition: "transform 0.3s ease-in-out",
                       }}
+                      className={`marketing-person-${index}`}
                     >
                       <img
                         src={`${person.photo}`}
@@ -469,6 +546,8 @@ const Seven = () => {
                       width={person.nameWidth || "142px"}
                       marginTop="25px"
                       lineHeight="22px"
+                      style={{ transition: "color 0.3s ease-in-out" }}
+                      className={`marketing-name-${index}`}
                     >
                       {person.name}
                       <br />
@@ -482,7 +561,12 @@ const Seven = () => {
                       width="142px"
                       marginTop="25px"
                       lineHeight="21.8px"
-                      style={{ opacity: 0.7 }}
+                      className={`marketing-job-${index}`}
+                      // height="37px"
+                      style={{
+                        opacity: 0.7,
+                        transition: "color 0.3s ease-in-out",
+                      }}
                     >
                       {person.job}
                     </Typography>

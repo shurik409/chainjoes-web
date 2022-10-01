@@ -85,7 +85,7 @@ import {
 } from "./imgs/webp/screen9";
 import { Texture, Solana, Damnn } from "./imgs/webp/screen10";
 import { monkeyWebM, monkeyMp4, PreLogoWebM, PreLogoMp4 } from "./videos";
-import Smoke from "./imgs/smoke.png";
+import Smoke from "./imgs/smoke2x.png";
 
 const getAllImage = () => {
   return [
