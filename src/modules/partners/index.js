@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import {
   Partner1,
   Partner2,
@@ -65,92 +65,106 @@ const Eight = () => {
                 alignItems: "center",
               }}
             >
-              <Box
-                sx={{
-                  position: "relative",
-                  ":hover": {
-                    ".partner1": {
-                      opacity: 0,
-                    },
-                    ".partner1Color": {
-                      opacity: 1,
-                    },
-                  },
-                }}
+              <Link
+                href="https://www.payaccept.net/"
+                target="_blank"
+                underline="none"
               >
                 <Box
-                  className="partner1"
                   sx={{
-                    transition: "opacity 0.2s ease-in-out",
+                    position: "relative",
+                    ":hover": {
+                      ".partner1": {
+                        opacity: 0,
+                      },
+                      ".partner1Color": {
+                        opacity: 1,
+                      },
+                    },
                   }}
                 >
-                  <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
-                </Box>
-                <Box
-                  className="partner1Color"
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    opacity: 0,
-                    transition: "opacity 0.2s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${Partner1Color}`}
-                    alt="Pay accept"
-                    loading="lazy"
-                    width="320px"
-                  />
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  position: "relative",
-                  ":hover": {
-                    ".partner2": {
+                  <Box
+                    className="partner1"
+                    sx={{
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  >
+                    <img src={`${Partner1}`} alt="Pay accept" loading="lazy" />
+                  </Box>
+                  <Box
+                    className="partner1Color"
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
                       opacity: 0,
-                    },
-                    ".partner2Color": {
-                      opacity: 1,
-                    },
-                  },
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  >
+                    <img
+                      src={`${Partner1Color}`}
+                      alt="Pay accept"
+                      loading="lazy"
+                      width="320px"
+                    />
+                  </Box>
+                </Box>
+              </Link>
+              <Link
+                href="https://redrift.com/"
+                target="_blank"
+                underline="none"
+                style={{
                   marginLeft: "110px",
                 }}
               >
                 <Box
-                  className="partner2"
                   sx={{
-                    transition: "opacity 0.2s ease-in-out",
+                    position: "relative",
+                    ":hover": {
+                      ".partner2": {
+                        opacity: 0,
+                      },
+                      ".partner2Color": {
+                        opacity: 1,
+                      },
+                    },
                   }}
                 >
-                  <img
-                    src={`${Partner2}`}
-                    alt={"Red Rift"}
-                    width={desktopImageWidth ? "361px" : "318px"}
-                    loading="lazy"
-                  />
+                  <Box
+                    className="partner2"
+                    sx={{
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  >
+                    <img
+                      src={`${Partner2}`}
+                      alt={"Red Rift"}
+                      width={desktopImageWidth ? "361px" : "318px"}
+                      loading="lazy"
+                    />
+                  </Box>
+                  <Box
+                    className="partner2Color"
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      opacity: 0,
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  >
+                    <img
+                      src={`${Partner2Color}`}
+                      alt={"Red Rift"}
+                      loading="lazy"
+                      width={desktopImageWidth ? "361px" : "318px"}
+                    />
+                  </Box>
                 </Box>
-                <Box
-                  className="partner2Color"
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    opacity: 0,
-                    transition: "opacity 0.2s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${Partner2Color}`}
-                    alt={"Red Rift"}
-                    loading="lazy"
-                    width={desktopImageWidth ? "361px" : "318px"}
-                  />
-                </Box>
-              </Box>
+              </Link>
             </Box>
             <Box
               sx={{
@@ -159,51 +173,53 @@ const Eight = () => {
                 marginTop: "60px",
               }}
             >
-              <Box
-                sx={{
-                  position: "relative",
-                  ":hover": {
-                    ".partner4": {
+              <Link href="https://damnn.tv/" target="_blank" underline="none">
+                <Box
+                  sx={{
+                    position: "relative",
+                    ":hover": {
+                      ".partner4": {
+                        opacity: 0,
+                      },
+                      ".partner4Color": {
+                        opacity: 1,
+                      },
+                    },
+                  }}
+                >
+                  <Box
+                    className="partner4"
+                    sx={{
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  >
+                    <img
+                      src={`${Partner4}`}
+                      width={desktopImageWidth ? "305px" : "269px"}
+                      alt={"Damnn"}
+                      loading="lazy"
+                    />
+                  </Box>
+                  <Box
+                    className="partner4Color"
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
                       opacity: 0,
-                    },
-                    ".partner4Color": {
-                      opacity: 1,
-                    },
-                  },
-                }}
-              >
-                <Box
-                  className="partner4"
-                  sx={{
-                    transition: "opacity 0.2s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${Partner4}`}
-                    width={desktopImageWidth ? "305px" : "269px"}
-                    alt={"Damnn"}
-                    loading="lazy"
-                  />
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  >
+                    <img
+                      src={`${Partner4Color}`}
+                      width={desktopImageWidth ? "305px" : "269px"}
+                      alt={"Damnn"}
+                      loading="lazy"
+                    />
+                  </Box>
                 </Box>
-                <Box
-                  className="partner4Color"
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    opacity: 0,
-                    transition: "opacity 0.2s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${Partner4Color}`}
-                    width={desktopImageWidth ? "305px" : "269px"}
-                    alt={"Damnn"}
-                    loading="lazy"
-                  />
-                </Box>
-              </Box>
+              </Link>
             </Box>
           </Box>
         </Box>
@@ -253,18 +269,26 @@ const Eight = () => {
                 justifyContent: "space-between",
               }}
             >
-              <img
-                src={`${Partner1}`}
-                alt="Pay accept"
-                loading="lazy"
-                width="270px"
-              />
-              <img
-                src={`${Partner4}`}
-                alt={"Damnn"}
-                loading="lazy"
-                width="224px"
-              />
+              <Link
+                href="https://www.payaccept.net/"
+                target="_blank"
+                underline="none"
+              >
+                <img
+                  src={`${Partner1}`}
+                  alt="Pay accept"
+                  loading="lazy"
+                  width="270px"
+                />
+              </Link>
+              <Link href="https://damnn.tv/" target="_blank" underline="none">
+                <img
+                  src={`${Partner4}`}
+                  alt={"Damnn"}
+                  loading="lazy"
+                  width="224px"
+                />
+              </Link>
             </Box>
             <Box
               sx={{
@@ -274,12 +298,18 @@ const Eight = () => {
                 justifyContent: "space-between",
               }}
             >
-              <img
-                src={`${Partner2}`}
-                alt={"Red Rift"}
-                loading="lazy"
-                width="305px"
-              />
+              <Link
+                href="https://redrift.com/"
+                target="_blank"
+                underline="none"
+              >
+                <img
+                  src={`${Partner2}`}
+                  alt={"Red Rift"}
+                  loading="lazy"
+                  width="305px"
+                />
+              </Link>
               {/* <img src={`${Partner5}`} alt={"Moonraised"} loading="lazy" /> */}
             </Box>
           </Box>
@@ -342,18 +372,30 @@ const Eight = () => {
                 justifyContent: "space-between",
               }}
             >
-              <img
-                src={`${Partner1Color}`}
-                alt="Pay accept"
-                loading="lazy"
-                width="135px"
-              />
-              <img
-                src={`${Partner2Color}`}
-                alt={"Red Rift"}
-                loading="lazy"
-                width="123px"
-              />
+              <Link
+                href="https://www.payaccept.net/"
+                target="_blank"
+                underline="none"
+              >
+                <img
+                  src={`${Partner1Color}`}
+                  alt="Pay accept"
+                  loading="lazy"
+                  width="135px"
+                />
+              </Link>
+              <Link
+                href="https://redrift.com/"
+                target="_blank"
+                underline="none"
+              >
+                <img
+                  src={`${Partner2Color}`}
+                  alt={"Red Rift"}
+                  loading="lazy"
+                  width="123px"
+                />
+              </Link>
             </Box>
             <Box
               sx={{
@@ -362,12 +404,14 @@ const Eight = () => {
                 marginTop: "25px",
               }}
             >
-              <img
-                src={`${Partner4Color}`}
-                alt={"Damnn"}
-                loading="lazy"
-                width="107px"
-              />
+              <Link href="https://damnn.tv/" target="_blank" underline="none">
+                <img
+                  src={`${Partner4Color}`}
+                  alt={"Damnn"}
+                  loading="lazy"
+                  width="107px"
+                />
+              </Link>
             </Box>
           </Box>
         </Box>
