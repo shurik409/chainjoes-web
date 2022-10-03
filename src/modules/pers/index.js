@@ -45,7 +45,7 @@ const Third = () => {
       desktopPosition: "left",
       overlayMargin: "130px",
       descriptionOne:
-        "Duncan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years. Due to the overabundance of various advanced technologies inside the city, it can «lag» a little — the locations are distorted and merge into each other. ",
+        "Shaan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years. Due to the overabundance of various advanced technologies inside the city, it can «lag» a little — the locations are distorted and merge into each other. ",
       descriptionTwo: "",
     },
     {
