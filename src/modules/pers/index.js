@@ -39,7 +39,7 @@ const Third = () => {
       descriptionTwo: "",
     },
     {
-      title: "Tama Shi",
+      title: "Shaan",
       background: ThirdImg,
       mobilePosition: "left",
       desktopPosition: "left",
