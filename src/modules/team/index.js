@@ -40,7 +40,7 @@ const Seven = () => {
       name: "Christiaan van Steenbergen",
       job: "Blockchain CTO,  Co-founder",
       photo: Cris,
-      link: "https://www.linkedin.com/in/michal-sykora-11378b215/",
+      link: "https://www.linkedin.com/in/christiaanvansteenbergen/",
     },
     {
       name: "Gary",
@@ -50,14 +50,14 @@ const Seven = () => {
       link: "https://www.linkedin.com/in/gary-yankovich-671811168/",
     },
     {
-      name: "Dasha",
+      name: "Darcy",
       surname: "Maltseva",
       job: "Chief Operating Officer ",
       photo: Dasha,
       link: "https://www.linkedin.com/in/darya-maltseva-34868220a/",
     },
     {
-      name: "Katsia",
+      name: "Katerina",
       surname: "Dziatlova",
       job: "Head of management",
       photo: Katsia,
@@ -66,7 +66,7 @@ const Seven = () => {
   ];
   const marketing = [
     {
-      name: "Egor",
+      name: "George",
       surname: "Aniferyk",
       job: "Producer",
       photo: Egor,
@@ -87,21 +87,21 @@ const Seven = () => {
       link: "",
     },
     {
-      name: "Nastia",
+      name: "Stacy",
       surname: "Naumenko",
       job: "Head of graphic design",
       photo: Nastia,
       link: "",
     },
     {
-      name: "Veronika",
+      name: "Veronica",
       surname: "Yasulevich",
       job: "Graphic Designer",
       photo: Veronika,
       link: "https://www.linkedin.com/in/nikahartmann/",
     },
     {
-      name: "Pavel",
+      name: "Paul",
       surname: "Ivuts",
       job: "Head of 3D arts",
       photo: Pasha,
