@@ -17,6 +17,8 @@ import {
   Veronika,
   Gary,
   LinkedIn,
+  Egor2,
+  Dimitri,
 } from "../../imgs/webp/screen7";
 import Smoke from "../../imgs/smoke2x.png";
 
@@ -66,6 +68,13 @@ const Seven = () => {
   ];
   const marketing = [
     {
+      name: "Yahor",
+      surname: "Andrianov",
+      job: "Head of Marketing",
+      photo: Egor2,
+      link: "https://www.linkedin.com/in/egor-andri/",
+    },
+    {
       name: "George",
       surname: "Aniferyk",
       job: "Producer",
@@ -84,14 +93,14 @@ const Seven = () => {
       surname: "Valasheniuk",
       job: "Creative",
       photo: Hanna,
-      link: "",
+      link: "https://www.linkedin.com/in/hanna-valasheniuk-928970252/",
     },
     {
       name: "Stacy",
       surname: "Naumenko",
       job: "Head of graphic design",
       photo: Nastia,
-      link: "",
+      link: "https://www.linkedin.com/in/anastasia-naumenko/",
     },
     {
       name: "Veronica",
@@ -113,6 +122,13 @@ const Seven = () => {
       job: "3D artist",
       photo: Alex,
       link: "https://www.linkedin.com/in/alexander-andriyashko-97a298206/",
+    },
+    {
+      name: "Dimitri",
+      surname: "Shatsila",
+      job: "3D artist",
+      photo: Dimitri,
+      link: "https://www.linkedin.com/in/dimitri-shatsila-11154711a/",
     },
   ];
 
@@ -442,7 +458,7 @@ const Seven = () => {
           <Box sx={{ display: "flex", marginTop: "30px" }}>
             <Box
               sx={{
-                width: "1488px",
+                width: "100%",
                 // height: "427px",
                 border: "1px solid",
                 borderImageSlice: 1,
@@ -484,9 +500,9 @@ const Seven = () => {
                 sx={{
                   display: "grid",
                   gridTemplateColumns: desktop1080Width
-                    ? "repeat(auto-fit, minmax(179.5px,1fr))"
+                    ? "repeat(auto-fit, minmax(164px,1fr))"
                     : "repeat(auto-fit, minmax(143px,1fr))",
-                  gridGap: desktop1080Width ? "30px" : "20px",
+                  gridGap: desktop1080Width ? "23px" : "20px",
                 }}
               >
                 {marketing.map((person, index) => (
@@ -509,8 +525,8 @@ const Seven = () => {
                   >
                     <Box
                       sx={{
-                        width: desktop1080Width ? "179.5px" : "143px",
-                        height: desktop1080Width ? "208.57px" : "165px",
+                        width: desktop1080Width ? "165px" : "143px",
+                        height: desktop1080Width ? "209px" : "165px",
                         position: "relative",
                         transform: "scale(1)",
                         transition: "transform 0.3s ease-in-out",
@@ -521,8 +537,8 @@ const Seven = () => {
                         src={`${person.photo}`}
                         alt={person.name}
                         loading="lazy"
-                        width={desktop1080Width ? "179.5px" : "143px"}
-                        height={desktop1080Width ? "208.57px" : "165px"}
+                        width={desktop1080Width ? "165px" : "143px"}
+                        height={desktop1080Width ? "209px" : "165px"}
                       />
                       {person.link && (
                         <Link href={person.link} target="_blank">

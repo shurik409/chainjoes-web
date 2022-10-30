@@ -42,6 +42,100 @@ const Six = () => {
       mobileWidth: "188px",
     },
   ];
+  const roadMap = [
+    {
+      year: "2022",
+      steps: [
+        {
+          title: "Q2 2022",
+          good: [
+            "Concept and Idea Development",
+            "Blockchain Team Formation",
+            "GameDev Team Formation",
+            "Marketing Core Team Formation",
+            "Game Pre-production",
+            "Brand Building",
+          ],
+        },
+        {
+          title: "Q3 2022",
+          bad: ["GDD Release", "Website Release", "Community Сreation"],
+        },
+        {
+          title: "Q4 2022",
+          bad: [
+            "Characters Reveal",
+            "Marketing Launch",
+            "Private Sale",
+            "Token Audit",
+            "Whitepaper Release",
+            "IDO",
+            "Game Production Plan Development",
+            "Partnerships: Early Bird stage",
+            "Onboarding advisors",
+          ],
+        },
+      ],
+    },
+    {
+      year: "2023",
+      steps: [
+        {
+          title: "Q1 2023",
+          bad: [
+            "Start Game Production",
+            "DEX Listing",
+            "NFT Development",
+            "Marketing Boost",
+          ],
+        },
+        {
+          title: "Q2 2023",
+          bad: [
+            "NFT Release",
+            "NFT Sales",
+            "DAO Development",
+            "Game MVP Version Release",
+            "Ambassador Program Launch",
+          ],
+        },
+        {
+          title: "Q3 2023",
+          bad: [
+            "Testnet Launch",
+            "Closed Beta Test Launch",
+            "DAO: Governance Platform Development",
+          ],
+        },
+        {
+          title: "Q4 2023",
+          bad: ["DAO Launch", "Bug Bounty Program Release", "CEX Listing"],
+        },
+      ],
+    },
+    {
+      year: "2024",
+      steps: [
+        {
+          title: "Q1 2024",
+          bad: [
+            "Cross-Chain Study",
+            "Partnerships: Whales Welcome stage",
+            "Community Events Release",
+          ],
+        },
+        {
+          title: "Q2 2024",
+          bad: [
+            "Mainnet Launch",
+            "Game Alpha Launch",
+            "Staking Launch",
+            "Cross-Chain Development",
+          ],
+        },
+      ],
+    },
+  ];
 
   const desktop1080Width = useMediaQuery("(min-width: 1200px)");
 
@@ -61,7 +155,7 @@ const Six = () => {
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ padding: "180px 0 180px 0px", background: "#091015" }}>
+        <Box sx={{ padding: "180px 0px 180px 0px", background: "#091015" }}>
           <Box>
             <Typography
               fontFamily="Furore"
@@ -91,17 +185,17 @@ const Six = () => {
                 position: "relative",
                 marginTop: "87px",
                 display: "block",
-                width: `${steps.length * 293}px`,
+                width: `${roadMap.length * 293}px`,
                 marginX: "auto",
               }}
             >
               <Box
                 sx={{
                   display: "flex",
-                  width: `${steps.length * 293}px`,
+                  width: `${roadMap.length * 293}px`,
                 }}
               >
-                {steps.map((item, index) => (
+                {roadMap.map((item, index) => (
                   <Box
                     key={`screen-2-mobile-title-${index}`}
                     sx={{ width: "293px", cursor: "pointer" }}
@@ -118,7 +212,7 @@ const Six = () => {
                       marginX="auto"
                       color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                     >
-                      {item.title}
+                      {item.year}
                     </Typography>
                   </Box>
                 ))}
@@ -142,210 +236,185 @@ const Six = () => {
               </Box>
             </Box>
           </Box>
-          <Box
-            sx={{
-              position: "relative",
-              height: "350px",
-              display: "flex",
-              marginTop: "90px",
-            }}
-          >
-            {steps.map((step, index) => (
-              <Box
-                sx={{
-                  position: "absolute",
-                  width: "33%",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  filter: curentItem === index ? "blur(0)" : "blur(2.5px)",
-                  transform:
-                    curentItem === index
-                      ? "translate3d(0,0,0)"
-                      : getCurrentTransform(index),
-                  transition: "all 0.3s ease-in-out",
-                  marginX: "auto",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-                key={`screen-6-step-${index}`}
-              >
-                <Box>
-                  {step.good &&
-                    step.good.map((item, goodIndex) => (
-                      <Box
-                        key={`screen-6-step-${index}-bad-${goodIndex}`}
-                        sx={{
-                          display: "flex",
-                          marginTop: goodIndex ? "15px" : "",
-                        }}
-                      >
-                        <Box>
-                          <Box
-                            sx={{
-                              width: "12px",
-                              height: "21px",
-                              background: `url(${GoodPoint})`,
-                              marginRight: "34px",
-                            }}
-                          />
-                        </Box>
-                        <Typography
-                          fontFamily="Inter"
-                          fontWeight="300"
-                          fontSize="18px"
-                          color="#FFFFFF"
-                          maxWidth="250px"
-                        >
-                          {item}
-                        </Typography>
-                      </Box>
-                    ))}
-                  {step.bad &&
-                    step.bad.map((item, badIndex) => (
-                      <Box
-                        key={`screen-6-step-${index}-bad-${badIndex}`}
-                        sx={{
-                          display: "flex",
-                          marginTop: badIndex || step.good ? "15px" : "",
-                        }}
-                      >
-                        <Box>
-                          <Box
-                            sx={{
-                              width: "12px",
-                              height: "21px",
-                              background: `url(${BadPoint})`,
-                              marginRight: "34px",
-                            }}
-                          />
-                        </Box>
-                        <Typography
-                          fontFamily="Inter"
-                          fontWeight="300"
-                          fontSize="18px"
-                          color="#FFFFFF"
-                          textTransform="capitalize"
-                        >
-                          {item}
-                        </Typography>
-                      </Box>
-                    ))}
-                </Box>
-              </Box>
-            ))}
-          </Box>
-          {/* <Box sx={{ marginTop: "128px" }}>
-            <Box sx={{ display: "flex", justifyContent: "end" }}>
-              <Box
-                sx={{
-                  width: "calc(100% - 80px)",
-                  height: "1px",
-                  background:
-                    "linear-gradient(90deg, #FFFFFF 13.39%, rgba(255, 255, 255, 0) 109.9%)",
-                }}
-              />
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-              {steps.map((step, index) => (
+          {roadMap.map(
+            (period, index) =>
+              index === curentItem && (
                 <Box
                   sx={{
-                    position: "relative",
-                    minWidth: "371px",
-                    // marginLeft: index ? "323px" : "",
+                    paddingTop: "128px",
+                    height: "628px",
+                    overflowX: "auto",
                   }}
-                  key={`screen-6-step-${index}`}
                 >
+                  <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    <Box
+                      sx={{
+                        width: "calc(100% - 160px)",
+                        minWidth: `${period.steps.length * 376 + 376}px`,
+                        height: "1px",
+                        transform: "translateY(37px)",
+                        background:
+                          "linear-gradient(270deg, rgba(255, 255, 255, 0) 0.11%, #FFFFFF 50.23%, rgba(255, 255, 255, 0) 99.09%)",
+                      }}
+                    />
+                  </Box>
                   <Box
                     sx={{
-                      width: "296px",
-                      height: "75px",
-                      position: "absolute",
-                      background: `url(${step.img})`,
-                      top: 0,
-                      left: 0,
-                      transform: "translateY(-50%)",
                       display: "flex",
                       justifyContent: "center",
-                      alignItems: "center",
+                      gap: "100px",
+                      minWidth: `${period.steps.length * 376 + 376}px`,
                     }}
                   >
-                    <Typography
-                      fontFamily="Inter"
-                      fontWeight="400"
-                      fontSize="24px"
-                      color="#44F4C3"
+                    <Box
+                      sx={{
+                        position: "relative",
+                        height: "65px",
+                      }}
                     >
-                      {step.title}
-                    </Typography>
-                  </Box>
-                  <Box sx={{ marginTop: "106px" }}>
-                    {step.good &&
-                      step.good.map((item, goodIndex) => (
+                      <Typography
+                        fontFamily="Furore"
+                        fontSize="55px"
+                        lineHeight="55px"
+                        color="#b5ffea"
+                        style={{
+                          textShadow: "0px 0px 53px rgba(75, 248, 200, 0.4)",
+                        }}
+                      >
+                        {period.year}
+                      </Typography>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          position: "absolute",
+                          left: 0,
+                          top: "-50%",
+                          transform: "translateY(50%)",
+                        }}
+                      >
                         <Box
-                          key={`screen-6-step-${index}-bad-${goodIndex}`}
                           sx={{
+                            background: "#44F4C3",
+                            opacity: "0.4",
+                            filter: "blur(60px)",
+                            width: "91px",
+                            height: "91px",
+                            borderRadius: "100px",
+                          }}
+                        ></Box>
+                        <Box
+                          sx={{
+                            background: "#44F4C3",
+                            opacity: "0.4",
+                            filter: "blur(60px)",
+                            width: "91px",
+                            height: "91px",
+                            borderRadius: "100px",
+                          }}
+                        ></Box>
+                      </Box>
+                    </Box>
+                    {period.steps.map((step, index) => (
+                      <Box
+                        sx={{
+                          position: "relative",
+                          minWidth: "280px",
+                          // marginLeft: index ? "323px" : "",
+                        }}
+                        key={`screen-6-step-${index}`}
+                      >
+                        <Box
+                          sx={{
+                            width: "237px",
+                            height: "75px",
+                            position: "absolute",
+                            background: `url(${Plane})`,
+                            top: 0,
+                            left: 0,
                             display: "flex",
-                            marginTop: goodIndex ? "15px" : "",
+                            justifyContent: "center",
+                            alignItems: "center",
                           }}
                         >
-                          <Box>
-                            <Box
-                              sx={{
-                                width: "12px",
-                                height: "21px",
-                                background: `url(${GoodPoint})`,
-                                marginRight: "34px",
-                              }}
-                            />
-                          </Box>
                           <Typography
                             fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="18px"
-                            color="#FFFFFF"
-                            maxWidth="361px"
+                            fontWeight="400"
+                            fontSize="24px"
+                            color="#44F4C3"
                           >
-                            {item}
+                            {step.title}
                           </Typography>
                         </Box>
-                      ))}
-                    {step.bad &&
-                      step.bad.map((item, badIndex) => (
-                        <Box
-                          key={`screen-6-step-${index}-bad-${badIndex}`}
-                          sx={{
-                            display: "flex",
-                            marginTop: badIndex || step.good ? "15px" : "",
-                          }}
-                        >
-                          <Box>
-                            <Box
-                              sx={{
-                                width: "12px",
-                                height: "21px",
-                                background: `url(${BadPoint})`,
-                                marginRight: "34px",
-                              }}
-                            />
-                          </Box>
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="18px"
-                            color="#FFFFFF"
-                            textTransform="capitalize"
-                          >
-                            {item}
-                          </Typography>
+                        <Box sx={{ marginTop: "106px" }}>
+                          {step.good &&
+                            step.good.map((item, goodIndex) => (
+                              <Box
+                                key={`screen-6-step-${index}-bad-${goodIndex}`}
+                                sx={{
+                                  display: "flex",
+                                  marginTop: goodIndex ? "15px" : "",
+                                }}
+                              >
+                                <Box>
+                                  <Box
+                                    sx={{
+                                      width: "12px",
+                                      height: "21px",
+                                      background: `url(${GoodPoint})`,
+                                      marginRight: "34px",
+                                    }}
+                                  />
+                                </Box>
+                                <Typography
+                                  fontFamily="Inter"
+                                  fontWeight="300"
+                                  fontSize="16px"
+                                  color="#FFFFFF"
+                                  maxWidth="255px"
+                                >
+                                  {item}
+                                </Typography>
+                              </Box>
+                            ))}
+                          {step.bad &&
+                            step.bad.map((item, badIndex) => (
+                              <Box
+                                key={`screen-6-step-${index}-bad-${badIndex}`}
+                                sx={{
+                                  display: "flex",
+                                  marginTop:
+                                    badIndex || step.good ? "15px" : "",
+                                }}
+                              >
+                                <Box>
+                                  <Box
+                                    sx={{
+                                      width: "12px",
+                                      height: "21px",
+                                      background: `url(${BadPoint})`,
+                                      marginRight: "34px",
+                                    }}
+                                  />
+                                </Box>
+                                <Typography
+                                  fontFamily="Inter"
+                                  fontWeight="300"
+                                  fontSize="16px"
+                                  color="#FFFFFF"
+                                  textTransform="capitalize"
+                                  maxWidth="255px"
+                                >
+                                  {item}
+                                </Typography>
+                              </Box>
+                            ))}
                         </Box>
-                      ))}
+                      </Box>
+                    ))}
                   </Box>
                 </Box>
-              ))}
-            </Box>
-          </Box> */}
+              )
+          )}
         </Box>
       )}
       {desktop768Width && !desktop1080Width && (
@@ -373,217 +442,200 @@ const Six = () => {
               RELEASE ROADMAP
             </Typography>
           </Box>
-          <Box sx={{ paddingX: "25px" }}>
+          <Box>
             <Box
               sx={{
-                display: "flex",
-                justifyContent: "space-around",
-                marginTop: "50px",
-              }}
-            >
-              {steps.map((item, index) => (
-                <Box
-                  key={`five_screen_tablet_items_${index}`}
-                  sx={{ cursor: "pointer" }}
-                  onClick={() => {
-                    setCurentItem(index);
-                    swiperRef.current.swiper.slideTo(index);
-                  }}
-                >
-                  <Typography
-                    fontFamily="Furore"
-                    fontSize="20px"
-                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                  >
-                    {item.title}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-            <Box
-              sx={{
-                width: "100%",
-                height: 3,
-                backgroundColor: "#A5a5a5",
-                marginTop: "20px",
+                position: "relative",
+                marginTop: "87px",
+                display: "block",
+                width: `${roadMap.length * 235}px`,
+                marginX: "auto",
               }}
             >
               <Box
                 sx={{
-                  width: "calc(100% / 3)",
-                  height: "100%",
-                  backgroundColor: "#44F4C3",
-                  marginLeft: `calc(${curentProgress} * calc(${steps.length} * calc(100% / ${steps.length}) - calc(100% / ${steps.length})))`,
+                  display: "flex",
+                  width: `${roadMap.length * 235}px`,
                 }}
-              />
+              >
+                {roadMap.map((item, index) => (
+                  <Box
+                    key={`screen-2-mobile-title-${index}`}
+                    sx={{ width: "235px", cursor: "pointer" }}
+                    onClick={() => {
+                      setCurentItem(index);
+                    }}
+                  >
+                    <Typography
+                      fontFamily="Furore"
+                      fontWeight={index === curentItem ? "400" : "300"}
+                      fontSize="20px"
+                      lineHeight="23px"
+                      textAlign="center"
+                      marginX="auto"
+                      color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                    >
+                      {item.year}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+              <Box
+                sx={{
+                  marginTop: "21px",
+                  width: `${steps.length * 235}px`,
+                  height: 3,
+                  backgroundColor: "#A5a5a5",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "235px",
+                    height: "3px",
+                    backgroundColor: "#44F4C3",
+                    marginLeft: `${curentItem * 235}px`,
+                  }}
+                ></Box>
+              </Box>
             </Box>
           </Box>
-          <Swiper
-            slidesPerView={1}
-            centeredSlides={true}
-            grabCursor={true}
-            className="mySwiper"
-            onProgress={({ progress }) =>
-              !(progress < 0 || progress > 1) && setProgress(progress)
-            }
-            onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
-            ref={swiperRef}
-          >
-            {steps.map((step, index) => (
-              <SwiperSlide key={`screen-6-Tablet-step-${index}`}>
-                <Box>
+          {roadMap.map(
+            (period, index) =>
+              index === curentItem && (
+                <Box
+                  sx={{
+                    paddingTop: "128px",
+                    height: "628px",
+                    overflowX: "auto",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "start",
+                      paddingLeft: "-50px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "calc(100% - 50px)",
+                        minWidth: `${period.steps.length * 376}px`,
+                        height: "1px",
+                        transform: "translateY(37px)",
+                        background:
+                          "linear-gradient(270deg, rgba(255, 255, 255, 0) 0.11%, #FFFFFF 50.23%, rgba(255, 255, 255, 0) 99.09%)",
+                      }}
+                    />
+                  </Box>
                   <Box
                     sx={{
                       display: "flex",
                       justifyContent: "center",
-                      marginTop: "60px",
+                      gap: "100px",
+                      minWidth: `${period.steps.length * 376}px`,
                     }}
                   >
-                    {step.good && (
-                      <Box>
-                        {step.bad ? (
-                          step.good.map((item, goodIndex) => (
-                            <Box
-                              key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
-                              sx={{
-                                display: "flex",
-                                marginTop: goodIndex ? "15px" : "",
-                              }}
-                            >
-                              <Box>
-                                <Box
-                                  sx={{
-                                    width: "12px",
-                                    height: "21px",
-                                    background: `url(${GoodPoint})`,
-                                    marginRight: "25px",
-                                  }}
-                                />
-                              </Box>
-                              <Typography
-                                fontFamily="Inter"
-                                fontWeight="300"
-                                fontSize="14px"
-                                color="#FFFFFF"
-                                maxWidth="184px"
-                                lineHeight="23.02px"
-                              >
-                                {item}
-                              </Typography>
-                            </Box>
-                          ))
-                        ) : (
-                          <Box sx={{ display: "flex" }}>
-                            <Box>
-                              {step.good
-                                .slice(0, step.good.length / 2)
-                                .map((item, goodIndex) => (
-                                  <Box
-                                    key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
-                                    sx={{
-                                      display: "flex",
-                                      marginTop: goodIndex ? "15px" : "",
-                                    }}
-                                  >
-                                    <Box>
-                                      <Box
-                                        sx={{
-                                          width: "12px",
-                                          height: "21px",
-                                          background: `url(${GoodPoint})`,
-                                          marginRight: "25px",
-                                        }}
-                                      />
-                                    </Box>
-                                    <Typography
-                                      fontFamily="Inter"
-                                      fontWeight="300"
-                                      fontSize="14px"
-                                      color="#FFFFFF"
-                                      maxWidth="184px"
-                                      lineHeight="23.02px"
-                                    >
-                                      {item}
-                                    </Typography>
-                                  </Box>
-                                ))}
-                            </Box>
-                            <Box sx={{ marginLeft: "17px" }}>
-                              {step.good
-                                .slice(step.good.length / 2, step.good.length)
-                                .map((item, goodIndex) => (
-                                  <Box
-                                    key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
-                                    sx={{
-                                      display: "flex",
-                                      marginTop: goodIndex ? "15px" : "",
-                                    }}
-                                  >
-                                    <Box>
-                                      <Box
-                                        sx={{
-                                          width: "12px",
-                                          height: "21px",
-                                          background: `url(${GoodPoint})`,
-                                          marginRight: "25px",
-                                        }}
-                                      />
-                                    </Box>
-                                    <Typography
-                                      fontFamily="Inter"
-                                      fontWeight="300"
-                                      fontSize="14px"
-                                      color="#FFFFFF"
-                                      maxWidth="137px"
-                                      lineHeight="23.02px"
-                                    >
-                                      {item}
-                                    </Typography>
-                                  </Box>
-                                ))}
-                            </Box>
-                          </Box>
-                        )}
-                      </Box>
-                    )}
-                    <Box sx={{ marginLeft: step.good ? "17px" : "" }}>
-                      {step.bad &&
-                        step.bad.map((item, badIndex) => (
-                          <Box
-                            key={`screen-6-step-${index}-bad-${badIndex}`}
-                            sx={{
-                              display: "flex",
-                              marginTop: badIndex ? "15px" : "",
-                            }}
+                    {period.steps.map((step, index) => (
+                      <Box
+                        sx={{
+                          position: "relative",
+                          minWidth: "280px",
+                          // marginLeft: index ? "323px" : "",
+                        }}
+                        key={`screen-6-step-${index}`}
+                      >
+                        <Box
+                          sx={{
+                            width: "237px",
+                            height: "75px",
+                            position: "absolute",
+                            background: `url(${Plane})`,
+                            top: 0,
+                            left: 0,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight="400"
+                            fontSize="24px"
+                            color="#44F4C3"
                           >
-                            <Box>
+                            {step.title}
+                          </Typography>
+                        </Box>
+                        <Box sx={{ marginTop: "106px" }}>
+                          {step.good &&
+                            step.good.map((item, goodIndex) => (
                               <Box
+                                key={`screen-6-step-${index}-bad-${goodIndex}`}
                                 sx={{
-                                  width: "12px",
-                                  height: "21px",
-                                  background: `url(${BadPoint})`,
-                                  marginRight: "25px",
+                                  display: "flex",
+                                  marginTop: goodIndex ? "15px" : "",
                                 }}
-                              />
-                            </Box>
-                            <Typography
-                              fontFamily="Inter"
-                              fontWeight="300"
-                              fontSize="14px"
-                              color="#FFFFFF"
-                              textTransform="capitalize"
-                              lineHeight="23.02px"
-                            >
-                              {item}
-                            </Typography>
-                          </Box>
-                        ))}
-                    </Box>
+                              >
+                                <Box>
+                                  <Box
+                                    sx={{
+                                      width: "12px",
+                                      height: "21px",
+                                      background: `url(${GoodPoint})`,
+                                      marginRight: "34px",
+                                    }}
+                                  />
+                                </Box>
+                                <Typography
+                                  fontFamily="Inter"
+                                  fontWeight="300"
+                                  fontSize="16px"
+                                  color="#FFFFFF"
+                                  maxWidth="255px"
+                                >
+                                  {item}
+                                </Typography>
+                              </Box>
+                            ))}
+                          {step.bad &&
+                            step.bad.map((item, badIndex) => (
+                              <Box
+                                key={`screen-6-step-${index}-bad-${badIndex}`}
+                                sx={{
+                                  display: "flex",
+                                  marginTop:
+                                    badIndex || step.good ? "15px" : "",
+                                }}
+                              >
+                                <Box>
+                                  <Box
+                                    sx={{
+                                      width: "12px",
+                                      height: "21px",
+                                      background: `url(${BadPoint})`,
+                                      marginRight: "34px",
+                                    }}
+                                  />
+                                </Box>
+                                <Typography
+                                  fontFamily="Inter"
+                                  fontWeight="300"
+                                  fontSize="16px"
+                                  color="#FFFFFF"
+                                  textTransform="capitalize"
+                                  maxWidth="255px"
+                                >
+                                  {item}
+                                </Typography>
+                              </Box>
+                            ))}
+                        </Box>
+                      </Box>
+                    ))}
                   </Box>
                 </Box>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              )
+          )}
         </Box>
       )}
       {!desktop768Width && !desktop1080Width && (
@@ -627,13 +679,13 @@ const Six = () => {
                   <Box
                     sx={{
                       display: "flex",
-                      width: `${steps.length * 135}px`,
+                      width: `${roadMap.length * 135}px`,
                       marginLeft: `calc(15px + max(calc(${
-                        steps.length * 135 + 30
+                        roadMap.length * 135 + 30
                       }px - 100vw), 0px) * -${curentProgress})`,
                     }}
                   >
-                    {steps.map((item, index) => (
+                    {roadMap.map((item, index) => (
                       <Box
                         key={`screen-2-mobile-title-${index}`}
                         sx={{ width: "135px" }}
@@ -650,7 +702,7 @@ const Six = () => {
                           marginX="auto"
                           color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                         >
-                          {item.title}
+                          {item.year}
                         </Typography>
                       </Box>
                     ))}
@@ -658,10 +710,10 @@ const Six = () => {
                   <Box
                     sx={{
                       marginLeft: `calc(15px + max(calc(${
-                        steps.length * 135 + 30
+                        roadMap.length * 135 + 30
                       }px - 100vw), 0px) * -${curentProgress})`,
                       marginTop: "21px",
-                      width: `${steps.length * 135}px`,
+                      width: `${roadMap.length * 135}px`,
                       height: 3,
                       backgroundColor: "#A5a5a5",
                     }}
@@ -672,7 +724,7 @@ const Six = () => {
                         height: "3px",
                         backgroundColor: "#44F4C3",
                         marginLeft: `${
-                          curentProgress * (steps.length * 135 - 135)
+                          curentProgress * (roadMap.length * 135 - 135)
                         }px`,
                       }}
                     ></Box>
@@ -695,11 +747,11 @@ const Six = () => {
                         width: `100%`,
                       }}
                     >
-                      {steps.map((item, index) => (
+                      {roadMap.map((item, index) => (
                         <Box
                           key={`screen-2-mobile-title-${index}`}
                           sx={{
-                            width: `calc(100% / ${steps.length})`,
+                            width: `calc(100% / ${roadMap.length})`,
                           }}
                           onClick={() => {
                             setCurentItem(index);
@@ -714,7 +766,7 @@ const Six = () => {
                             marginX="auto"
                             color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
                           >
-                            {item.title}
+                            {item.year}
                           </Typography>
                         </Box>
                       ))}
@@ -732,7 +784,7 @@ const Six = () => {
                           width: "125px",
                           height: "3px",
                           backgroundColor: "#44F4C3",
-                          marginLeft: `calc(${curentProgress} * calc(${steps.length} * calc(100% / ${steps.length}) - calc(100% / ${steps.length})))`,
+                          marginLeft: `calc(${curentProgress} * calc(${roadMap.length} * calc(100% / ${roadMap.length}) - calc(100% / ${roadMap.length})))`,
                         }}
                       ></Box>
                     </Box>
@@ -752,77 +804,105 @@ const Six = () => {
                 onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
                 ref={swiperRef}
               >
-                {steps.map((step, index) => (
+                {roadMap.map((period, index) => (
                   <SwiperSlide key={`screen-6-swiper-item-${index}`}>
-                    <Box>
+                    {period.steps.map((step, index) => (
                       <Box
                         sx={{
-                          marginX: "auto",
-                          maxWidth: step.mobileWidth,
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
                         }}
+                        key={`screen-6-step-${index}`}
                       >
-                        {step.good &&
-                          step.good.map((item, goodIndex) => (
-                            <Box
-                              key={`screen-6-step-tablet-${index}-bad-${goodIndex}`}
-                              sx={{
-                                marginTop: goodIndex ? "10px" : "",
-                                display: "flex",
-                              }}
-                            >
-                              <Box>
-                                <Box
-                                  sx={{
-                                    width: "12px",
-                                    height: "21px",
-                                    background: `url(${GoodPoint})`,
-                                    marginRight: "34px",
-                                  }}
-                                />
-                              </Box>
-                              <Typography
-                                fontFamily="Inter"
-                                fontWeight="300"
-                                fontSize="13px"
-                                color="#FFFFFF"
-                                maxWidth="193px"
+                        <Box
+                          sx={{
+                            width: "200px",
+                            height: "55px",
+                            background: `url(${Plane})`,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            backgroundSize: "cover",
+                            marginTop: index ? "55px" : "45px",
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Furore"
+                            fontWeight="400"
+                            fontSize="18px"
+                            color="#44F4C3"
+                          >
+                            {step.title}
+                          </Typography>
+                        </Box>
+                        <Box sx={{ marginTop: "25px" }}>
+                          {step.good &&
+                            step.good.map((item, goodIndex) => (
+                              <Box
+                                key={`screen-6-step-${index}-bad-${goodIndex}`}
+                                sx={{
+                                  display: "flex",
+                                  marginTop: goodIndex ? "15px" : "",
+                                }}
                               >
-                                {item}
-                              </Typography>
-                            </Box>
-                          ))}
-                        {step.bad &&
-                          step.bad.map((item, badIndex) => (
-                            <Box
-                              key={`screen-6-step-${index}-bad-${badIndex}`}
-                              sx={{
-                                display: "flex",
-                                marginTop: badIndex || step.good ? "10px" : "",
-                              }}
-                            >
-                              <Box>
-                                <Box
-                                  sx={{
-                                    width: "12px",
-                                    height: "21px",
-                                    background: `url(${BadPoint})`,
-                                    marginRight: "34px",
-                                  }}
-                                />
+                                <Box>
+                                  <Box
+                                    sx={{
+                                      width: "12px",
+                                      height: "21px",
+                                      background: `url(${GoodPoint})`,
+                                      marginRight: "15px",
+                                    }}
+                                  />
+                                </Box>
+                                <Typography
+                                  fontFamily="Inter"
+                                  fontWeight="300"
+                                  fontSize="13px"
+                                  color="#FFFFFF"
+                                  maxWidth="170px"
+                                  textTransform="capitalize"
+                                >
+                                  {item}
+                                </Typography>
                               </Box>
-                              <Typography
-                                fontFamily="Inter"
-                                fontWeight="300"
-                                fontSize="13px"
-                                color="#FFFFFF"
-                                textTransform="capitalize"
+                            ))}
+                          {step.bad &&
+                            step.bad.map((item, badIndex) => (
+                              <Box
+                                key={`screen-6-step-${index}-bad-${badIndex}`}
+                                sx={{
+                                  display: "flex",
+                                  marginTop:
+                                    badIndex || step.good ? "15px" : "",
+                                }}
                               >
-                                {item}
-                              </Typography>
-                            </Box>
-                          ))}
+                                <Box>
+                                  <Box
+                                    sx={{
+                                      width: "12px",
+                                      height: "21px",
+                                      background: `url(${BadPoint})`,
+                                      marginRight: "15px",
+                                    }}
+                                  />
+                                </Box>
+                                <Typography
+                                  fontFamily="Inter"
+                                  fontWeight="300"
+                                  fontSize="13px"
+                                  color="#FFFFFF"
+                                  maxWidth="170px"
+                                  textTransform="capitalize"
+                                >
+                                  {item}
+                                </Typography>
+                              </Box>
+                            ))}
+                        </Box>
                       </Box>
-                    </Box>
+                    ))}
                   </SwiperSlide>
                 ))}
               </Swiper>

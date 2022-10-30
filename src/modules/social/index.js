@@ -60,32 +60,42 @@ const Nine = () => {
           <Box
             sx={{
               marginTop: desktopFlexWidth ? "171px" : "",
-              width: desktopFlexWidth ? "unset" : "562px",
+              // width: desktopFlexWidth ? "unset" : "562px",
             }}
           >
             <Box sx={{ position: "relative" }}>
               <Typography
                 fontFamily="Furore"
                 fontSize="50px"
+                color="#252625"
+                maxWidth="678px"
+                lineHeight="50px"
+                style={{
+                  WebkitMaskImage: `url(${Scratches})`,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                <span style={{ color: "#252625", display: "inline" }}>
+                  join our community{" "}
+                </span>
+                to recieve our latest news, events and announcements first
+              </Typography>
+              <Typography
+                fontFamily="Furore"
+                fontSize="50px"
                 color="#FFFFFF"
-                maxWidth="550px"
+                maxWidth="678px"
                 lineHeight="50px"
               >
                 <span style={{ color: "#44F4C3", display: "inline" }}>
-                  Stay up to date{" "}
+                  join our community{" "}
                 </span>
-                with our latest news, events, and announcements.
+                to recieve our latest news, events and announcements first
               </Typography>
-              <Box
-                sx={{ position: "absolute", top: 0, left: 0, width: "100%" }}
-              >
-                <img
-                  src={`${Scratches}`}
-                  alt="scratches"
-                  loading="lazy"
-                  width="100%"
-                />
-              </Box>
             </Box>
             <Box
               sx={{
@@ -323,26 +333,36 @@ const Nine = () => {
             <Box sx={{ position: "relative" }}>
               <Typography
                 fontFamily="Furore"
-                fontSize="35px"
+                fontSize="33px"
+                color="#252625"
+                maxWidth="448px"
+                lineHeight="33px"
+                style={{
+                  WebkitMaskImage: `url(${Scratches})`,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                <span style={{ color: "#252625", display: "inline" }}>
+                  join our community{" "}
+                </span>
+                to recieve our latest news, events and announcements first
+              </Typography>
+              <Typography
+                fontFamily="Furore"
+                fontSize="33px"
                 color="#FFFFFF"
-                maxWidth="387px"
-                lineHeight="35px"
+                maxWidth="448px"
+                lineHeight="33px"
               >
                 <span style={{ color: "#44F4C3", display: "inline" }}>
-                  Stay up to date{" "}
+                  join our community{" "}
                 </span>
-                with our latest news, events, and announcements.
+                to recieve our latest news, events and announcements first
               </Typography>
-              <Box
-                sx={{ position: "absolute", top: 0, left: 0, width: "100%" }}
-              >
-                <img
-                  src={`${Scratches}`}
-                  alt="scratches"
-                  loading="lazy"
-                  width="100%"
-                />
-              </Box>
             </Box>
             <Box sx={{ position: "relative", zIndex: 1 }}>
               <img
@@ -631,27 +651,38 @@ const Nine = () => {
             <Box sx={{ position: "relative", width: "290px", marginX: "auto" }}>
               <Typography
                 fontFamily="Furore"
-                fontSize="25px"
+                fontSize="22px"
+                color="#252625"
+                maxWidth="290px"
+                lineHeight="22px"
+                textAlign="center"
+                style={{
+                  WebkitMaskImage: `url(${Scratches})`,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                <span style={{ color: "#252625", display: "inline" }}>
+                  join our community <br />
+                </span>
+                to recieve our latest news, events and announcements first
+              </Typography>
+              <Typography
+                fontFamily="Furore"
+                fontSize="22px"
                 color="#FFFFFF"
                 maxWidth="290px"
-                lineHeight="25px"
+                lineHeight="22px"
                 textAlign="center"
               >
                 <span style={{ color: "#44F4C3", display: "inline" }}>
-                  Stay up to date{" "}
+                  join our community <br />
                 </span>
-                with our latest news, events, and announcements.
+                to recieve our latest news, events and announcements first
               </Typography>
-              <Box
-                sx={{ position: "absolute", top: 0, left: 0, width: "100%" }}
-              >
-                <img
-                  src={`${ScratchesMobile}`}
-                  alt="scratches"
-                  loading="lazy"
-                  width="100%"
-                />
-              </Box>
             </Box>
           </Box>
           <Box>

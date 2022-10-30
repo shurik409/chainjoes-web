@@ -17,6 +17,8 @@ import Pasha from "./team/Pasha.jpg";
 import Veronika from "./team/Veronika.jpg";
 import Gary from "./team/Gary.jpg";
 import LinkedIn from "./linkedIn.svg";
+import Egor2 from "./team/Egor2.png";
+import Dimitri from "./team/Dimitri.png";
 
 export {
   Photo1,
@@ -38,4 +40,6 @@ export {
   Veronika,
   Gary,
   LinkedIn,
+  Egor2,
+  Dimitri
 };

@@ -5,6 +5,7 @@ import {
   SecondImg,
   ThirdImg,
   FourthImg,
+  FiveImg,
   MobileMask,
 } from "../../imgs/webp/screen2";
 import Smoke from "../../imgs/smoke2x.png";
@@ -19,60 +20,64 @@ const Second = () => {
 
   const texts = [
     {
-      title: `Free gameplay`,
+      title: "Strong gameplay in crypto theme",
+      mobileBottom: "5%",
+      description: `Chain Joes is filled with references to cryptothematics, memes and a large number of gaming phenomena from the past that will cause real game lovers to delight. A thoughtful game world, characters with a unique story and high-quality visualization and enemies in the form of Scammers, Spammers and Hackers allowed us to create strong gameplay that has a high player retention system.`,
+      img: FirstImg,
       mobileTitle: (
         <>
-          Free
+          Strong gameplay
           <br />
-          gameplay
+          in crypto theme
         </>
       ),
-      img: FirstImg,
-      mobileBottom: "5%",
-      description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion.`,
-      descriptionTwo: "Join the battle without any barrier!",
     },
     {
-      title: `Play & Earn system`,
+      title: `Play And Earn mechanics `,
       mobileTitle: (
         <>
-          {`Play & Earn`}
+          Play & Earn
           <br />
-          system
+          mechanics
         </>
       ),
       img: SecondImg,
       mobileBottom: "5%",
-      description: `Our Plan-And-Earn model evolved from the P2E framework and puts the focus back on providing real entertainment value to create a sustainable, open game economy.`,
-      descriptionTwo: `With Play-to-Earn we aim to build value with gameplay. Providing a high entertainment value encourages players to keep playing, and to do so, they’ll want to get rewards they can spend in the game to improve their gameplay experience.`,
+      description: `There will be a deep and sustainable economy within Chain Joes where players can play for free and earn both NFTs and tokens. Just like the real world economy, you can choose how you want to specialize or play within the Chain Joes Economy.`,
     },
     {
-      title: `NFT assets`,
+      title: `control assets`,
       mobileTitle: (
         <>
-          NFT
+          Control
           <br />
           assets
         </>
       ),
       img: ThirdImg,
       mobileBottom: "3%",
-      description: `Improve and Merge the NFT’s to increase their power and get the first positions in the competitions. `,
-      descriptionTwo: `Our NFTs are not just collections, they deine the life of the game and the legacy of the players. `,
+      description: `The introduction of NFT provides certain desirable features that non-blockchain games simply cannot provide, such as verifiable, immutable digital ownership. The in-game assets represented by an NFT gives the player a hard-coded assurance that the item belongs to them — allowing them the right to sell, trade, 
+      or swap it as they see fit. `,
     },
     {
-      title: `Ranked PvP system`,
+      title: `Ranked system`,
       mobileTitle: (
         <>
-          Ranked PvP
+          Ranked
           <br />
           system
         </>
       ),
       img: FourthImg,
       mobileBottom: "-3%",
-      description: `The essence of the game revolves around PVP champs fighting each other in a ranked system to increase their rating.`,
-      descriptionTwo: `The balance of the Ranked System, based on the Elo Rating system, will help the player find a team suitable for the level. Increase your rank and skill to reach the highest rank and earn more tokens for winning.`,
+      description: `The essence of the game revolves around PVP champs fighting each other in a ranked system to increase their rating. The balance of the rating system, based on the Elo Rating system, will help the player find a team suitable for the level. Increase your rank and skill to reach the highest rank and earn more tokens for winning.`,
+    },
+    {
+      title: `Free to Play`,
+      mobileTitle: "Free to Play",
+      img: FiveImg,
+      mobileBottom: "5%",
+      description: `Players will be able to play with free character and equipment to earn in-game resources, more free equipment, and, with skill, some tokens. Eventually, players may earn enough to obtain NFT equipment, even though they started with just free equipment and free characters.`,
     },
   ];
 
@@ -129,7 +134,7 @@ const Second = () => {
                 <Box
                   sx={{
                     width: "3px",
-                    height: "510px",
+                    height: "543px",
                     backgroundColor: "#A5a5a5",
                     marginRight: "45px",
                     marginTop: "-50px",
@@ -138,9 +143,9 @@ const Second = () => {
                   <Box
                     sx={{
                       width: "3px",
-                      height: "228px",
+                      height: "203px",
                       backgroundColor: "#44F4C3",
-                      marginTop: `${curentItem * 94}px`,
+                      marginTop: `${curentItem * 85}px`,
                     }}
                   ></Box>
                 </Box>
@@ -248,7 +253,7 @@ const Second = () => {
             backgroundPositionY: "bottom",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            padding: "102px 42px 78px 30px",
+            padding: "102px 0px 78px 0px",
           }}
         >
           <Box>
@@ -258,6 +263,7 @@ const Second = () => {
               color="#ffffff"
               lineHeight="60px"
               maxWidth="380px"
+              marginLeft="30px"
               style={{
                 textFillColor: "transparent",
                 backgroundcolor: "primary",
@@ -273,164 +279,143 @@ const Second = () => {
               EXPLORE THE WORLD
             </Typography>
           </Box>
-          <Box>
-            <Box>
+          <Box
+            sx={{
+              position: "relative",
+              overflowX: "hidden",
+              marginTop: "71px",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                width: `${texts.length * 265}px`,
+                // marginLeft: `calc(30px + max(calc(${
+                //   header.length * 265 + 30
+                // }px - 100vw), 0px) * -${curentProgress})`,
+                marginLeft: `calc(min(${
+                  curentItem > 1 ? 265 * curentItem - 265 : -30
+                }px, calc(${texts.length * 265 + 30}px - 100vw)) * -1)`,
+                transition: "all 0.3s ease-in-out",
+              }}
+            >
+              {texts.map((item, index) => (
+                <Box
+                  key={`screen-2-mobile-title-${index}`}
+                  sx={{
+                    width: `265px`,
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setCurentItem(index);
+                    swiperRef.current.swiper.slideTo(index);
+                  }}
+                >
+                  <Typography
+                    fontFamily="Furore"
+                    fontSize="20px"
+                    lineHeight="23.02px"
+                    textAlign="center"
+                    marginX="auto"
+                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
+                  >
+                    {item.mobileTitle}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+            <Box
+              sx={{
+                marginTop: "16px",
+                width: `${265 * texts.length}px`,
+                height: 3,
+                backgroundColor: "#A5a5a5",
+                marginLeft: `calc(min(${
+                  curentItem > 1 ? 265 * curentItem - 265 : -30
+                }px, calc(${texts.length * 265 + 30}px - 100vw)) * -1)`,
+                transition: "all 0.3s ease-in-out",
+              }}
+            >
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: "60px",
+                  width: `${265}px`,
+                  height: "3px",
+                  backgroundColor: "#44F4C3",
+                  marginLeft: `${
+                    curentProgress * (texts.length * 265 - 265)
+                  }px`,
+                  transition: "all 0.3s ease-in-out",
                 }}
-              >
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    sx={{
-                      width: "3px",
-                      height: "172px",
-                      backgroundColor: "#A5a5a5",
-                      marginRight: "35px",
-                    }}
-                  >
-                    {curentItem < 2 && (
-                      <Box
-                        sx={{
-                          width: "100%",
-                          height: "86px",
-                          backgroundColor: "#44F4C3",
-                          marginTop: `${curentItem * 86}px`,
-                        }}
-                      />
-                    )}
-                  </Box>
-                  <Box>
-                    {texts.slice(0, 2).map((item, index) => (
-                      <Box
-                        key={`secondScreen_items_${index}`}
-                        sx={{
-                          marginTop: index ? "58px" : "",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => setCurentItem(index)}
-                      >
-                        <Box>
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight={index === curentItem ? "500" : "300"}
-                            fontSize="20px"
-                            color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                            width="200px"
-                          >
-                            {item.title}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    sx={{
-                      width: "3px",
-                      height: "172px",
-                      backgroundColor: "#A5a5a5",
-                      marginRight: "35px",
-                    }}
-                  >
-                    {curentItem >= 2 && (
-                      <Box
-                        sx={{
-                          width: "100%",
-                          height: "86px",
-                          backgroundColor: "#44F4C3",
-                          marginTop: `${(curentItem - 2) * 86}px`,
-                        }}
-                      />
-                    )}
-                  </Box>
-                  <Box>
-                    {texts.slice(2, 4).map((item, index) => (
-                      <Box
-                        key={`secondScreen_items_${index + 2}`}
-                        sx={{
-                          marginTop: index ? "56px" : "",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => setCurentItem(index + 2)}
-                      >
-                        <Box>
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight={
-                              index + 2 === curentItem ? "500" : "300"
-                            }
-                            fontSize="20px"
-                            color={
-                              index + 2 === curentItem ? "#44F4C3" : "#FFFFFF"
-                            }
-                            width="200px"
-                          >
-                            {item.title}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-                </Box>
-              </Box>
+              ></Box>
             </Box>
           </Box>
           <Box>
-            {texts.map((item, index) => (
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: index === curentItem ? "43px" : "0",
-                  height: index === curentItem ? "340px" : "0px",
-                  opacity: index === curentItem ? 1 : 0,
-                  overflow: "hidden",
-                  transition: "all 0.3s ease-in-out",
-                }}
-                key={`screen-2-information-block-${index}`}
-              >
-                <Box sx={{ width: "343px" }}>
-                  <img
-                    src={`${item.img}`}
-                    alt={item.title}
-                    loading="lazy"
-                    style={{ maxWidth: "100%" }}
-                  />
-                </Box>
-                <Box sx={{ marginLeft: "27px" }}>
-                  <Box>
-                    <Box>
-                      <Typography
-                        fontFamily="Inter"
-                        fontWeight="300"
-                        fontSize="14px"
-                        color="#ffffff"
-                        maxWidth="340px"
-                      >
-                        {item.description}
-                      </Typography>
+            <Swiper
+              slidesPerView={1}
+              centeredSlides={true}
+              grabCursor={true}
+              className="mySwiper"
+              onProgress={({ progress }) =>
+                !(progress < 0 || progress > 1) && setProgress(progress)
+              }
+              onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
+              ref={swiperRef}
+            >
+              {texts.map((item, index) => (
+                <SwiperSlide key={`screen-3-swiper-item-${index}`}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginTop: "43px",
+                      height: "340px",
+                      opacity: 1,
+                      overflow: "hidden",
+                      transition: "all 0.3s ease-in-out",
+                    }}
+                    key={`screen-2-information-block-${index}`}
+                  >
+                    <Box sx={{ width: "343px" }}>
+                      <img
+                        src={`${item.img}`}
+                        alt={item.title}
+                        loading="lazy"
+                        style={{ maxWidth: "100%" }}
+                      />
                     </Box>
-                    {item.descriptionTwo && (
-                      <Box sx={{ marginTop: "20px" }}>
-                        <Typography
-                          fontFamily="Inter"
-                          fontWeight="300"
-                          fontSize="14px"
-                          color="#ffffff"
-                          maxWidth="340px"
-                        >
-                          {item.descriptionTwo}
-                        </Typography>
+                    <Box sx={{ marginLeft: "27px" }}>
+                      <Box>
+                        <Box>
+                          <Typography
+                            fontFamily="Inter"
+                            fontWeight="300"
+                            fontSize="14px"
+                            color="#ffffff"
+                            maxWidth="340px"
+                          >
+                            {item.description}
+                          </Typography>
+                        </Box>
+                        {item.descriptionTwo && (
+                          <Box sx={{ marginTop: "20px" }}>
+                            <Typography
+                              fontFamily="Inter"
+                              fontWeight="300"
+                              fontSize="14px"
+                              color="#ffffff"
+                              maxWidth="340px"
+                            >
+                              {item.descriptionTwo}
+                            </Typography>
+                          </Box>
+                        )}
                       </Box>
-                    )}
+                    </Box>
                   </Box>
-                </Box>
-              </Box>
-            ))}
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </Box>
         </Box>
       )}
@@ -482,18 +467,20 @@ const Second = () => {
             <Box
               sx={{
                 display: "flex",
-                width: `${texts.length * 140}px`,
+                alignItems: "center",
+                width: `${texts.length * 165}px`,
                 marginLeft: !desktop530Width
                   ? `calc(15px + max(calc(${
-                      texts.length * 140 + 30
+                      texts.length * 165 + 30
                     }px - 100vw), 0px) * -${curentProgress})`
                   : 0,
+                transition: "all 0.3s ease-in-out",
               }}
             >
               {texts.map((item, index) => (
                 <Box
                   key={`screen-2-mobile-title-${index}`}
-                  sx={{ width: "140px" }}
+                  sx={{ width: "165px" }}
                   onClick={() => {
                     setCurentItem(index);
                     swiperRef.current.swiper.slideTo(index);
@@ -501,8 +488,8 @@ const Second = () => {
                 >
                   <Typography
                     fontFamily="Furore"
-                    fontSize="16px"
-                    lineHeight="19.2px"
+                    fontSize="15px"
+                    lineHeight="18px"
                     textAlign="center"
                     marginX="auto"
                     color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
@@ -516,23 +503,25 @@ const Second = () => {
               sx={{
                 marginLeft: !desktop530Width
                   ? `calc(15px + max(calc(${
-                      texts.length * 140 + 30
+                      texts.length * 165 + 30
                     }px - 100vw), 0px) * -${curentProgress})`
                   : 0,
                 marginTop: "21px",
-                width: `${texts.length * 140}px`,
+                width: `${texts.length * 165}px`,
                 height: 3,
                 backgroundColor: "#A5a5a5",
+                transition: "all 0.3s ease-in-out",
               }}
             >
               <Box
                 sx={{
-                  width: "140px",
+                  width: "165px",
                   height: "3px",
                   backgroundColor: "#44F4C3",
                   marginLeft: `${
-                    curentProgress * (texts.length * 140 - 140)
+                    curentProgress * (texts.length * 165 - 165)
                   }px`,
+                  transition: "all 0.3s ease-in-out",
                 }}
               ></Box>
             </Box>
@@ -558,8 +547,7 @@ const Second = () => {
                       margin: "auto",
                     }}
                   >
-                    <Box
-                    >
+                    <Box>
                       <Typography
                         fontFamily="Inter"
                         fontSize="13px"

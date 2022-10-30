@@ -5,7 +5,7 @@ import Medium from "./medium.webp";
 import Tg from "./tg.webp";
 import Twitter from "./twitter.webp";
 import Logo from "./logo.webp";
-import Scratches from "./scratches.webp";
+import Scratches from "./scratches.png";
 import ScratchesMobile from "./scratches_mobile.webp";
 
 export {

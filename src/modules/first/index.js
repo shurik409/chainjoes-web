@@ -163,18 +163,6 @@ const First = () => {
                 animationDelay: "3s",
               }}
             >
-              {/* <Box
-                sx={{
-                  background: `url(${ScratchesDesktop})`,
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  top: 0,
-                  left: 0,
-                }}
-              ></Box> */}
               <Typography
                 fontFamily="Furore"
                 fontSize={() => {
@@ -260,7 +248,6 @@ const First = () => {
                 lineHeight={desktop768Height ? "28.8px" : "21.8px"}
               >
                 Chain Joes is an action-packed mobile game designed for the WEB3
-                generation
               </Typography>
               <Typography
                 fontFamily="Inter"
@@ -490,7 +477,6 @@ const First = () => {
                 lineHeight="26.4px"
               >
                 Chain Joes is an action-packed mobile game designed for the WEB3
-                generation
               </Typography>
               <Typography
                 fontFamily="Inter"
