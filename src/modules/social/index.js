@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import {
-  Fb,
+  Linked,
   Discord,
   Medium,
-  Inst,
+  TikTok,
   Tg,
   Twitter,
   Logo,
@@ -155,7 +155,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Tg}`} alt="Inst" loading="lazy" />
+                      <img src={`${Tg}`} alt="Telegram" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -174,7 +174,7 @@ const Nine = () => {
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
                 >
                   <Link
-                    href="https://www.instagram.com/chain_joes/"
+                    href="https://www.tiktok.com/@chainjoes"
                     target="_blank"
                     underline="none"
                   >
@@ -186,7 +186,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Inst}`} alt="Inst" loading="lazy" />
+                      <img src={`${TikTok}`} alt="TikTok" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -194,7 +194,7 @@ const Nine = () => {
                         color="inherit"
                         marginLeft="15px"
                       >
-                        Instagram
+                        Tik Tok
                       </Typography>
                     </Box>
                   </Link>
@@ -273,7 +273,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://www.facebook.com/ChainJoes"
+                    href="https://www.linkedin.com/company/chainjoes"
                     target="_blank"
                     underline="none"
                   >
@@ -285,7 +285,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Fb}`} alt="Logo" loading="lazy" />
+                      <img src={`${Linked}`} alt="Linked" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -293,7 +293,7 @@ const Nine = () => {
                         color="inherit"
                         marginLeft="17px"
                       >
-                        Facebook
+                        LinkedIn
                       </Typography>
                     </Box>
                   </Link>
@@ -448,7 +448,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Tg}`} alt="Inst" loading="lazy" />
+                      <img src={`${Tg}`} alt="Telegram" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -467,7 +467,7 @@ const Nine = () => {
                   sx={{ height: "30px", display: "flex", alignItems: "center" }}
                 >
                   <Link
-                    href="https://www.instagram.com/chain_joes/"
+                    href="https://www.tiktok.com/@chainjoes"
                     target="_blank"
                     underline="none"
                   >
@@ -479,7 +479,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Inst}`} alt="Inst" loading="lazy" />
+                      <img src={`${TikTok}`} alt="TikTok" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -487,7 +487,7 @@ const Nine = () => {
                         color="inherit"
                         marginLeft="15px"
                       >
-                        Instagram
+                        Tik Tok
                       </Typography>
                     </Box>
                   </Link>
@@ -566,7 +566,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://www.facebook.com/ChainJoes"
+                    href="https://www.linkedin.com/company/chainjoes"
                     target="_blank"
                     underline="none"
                   >
@@ -578,7 +578,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Fb}`} alt="Logo" loading="lazy" />
+                      <img src={`${Linked}`} alt="LinkedIn" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -586,7 +586,7 @@ const Nine = () => {
                         color="inherit"
                         marginLeft="17px"
                       >
-                        Facebook
+                        LinkedIn
                       </Typography>
                     </Box>
                   </Link>
@@ -746,7 +746,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Tg}`} alt="Inst" loading="lazy" />
+                      <img src={`${Tg}`} alt="Telegram" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -768,7 +768,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://www.instagram.com/chain_joes/"
+                    href="https://www.tiktok.com/@chainjoes"
                     target="_blank"
                     underline="none"
                   >
@@ -780,7 +780,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Inst}`} alt="Inst" loading="lazy" />
+                      <img src={`${TikTok}`} alt="TikTok" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -788,7 +788,7 @@ const Nine = () => {
                         color="inherit"
                         marginLeft="15px"
                       >
-                        Instagram
+                        Tik Tok
                       </Typography>
                     </Box>
                   </Link>
@@ -871,7 +871,7 @@ const Nine = () => {
                   }}
                 >
                   <Link
-                    href="https://www.facebook.com/ChainJoes"
+                    href="https://www.linkedin.com/company/chainjoes"
                     target="_blank"
                     underline="none"
                   >
@@ -883,7 +883,7 @@ const Nine = () => {
                         alignItems: "center",
                       }}
                     >
-                      <img src={`${Fb}`} alt="Logo" loading="lazy" />
+                      <img src={`${Linked}`} alt="Linked" loading="lazy" />
                       <Typography
                         fontFamily="Inter"
                         fontSize="18"
@@ -891,7 +891,7 @@ const Nine = () => {
                         color="inherit"
                         marginLeft="17px"
                       >
-                        Facebook
+                        LinkedIn
                       </Typography>
                     </Box>
                   </Link>

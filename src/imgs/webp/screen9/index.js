@@ -1,18 +1,18 @@
-import Fb from "./fb.webp";
 import Discord from "./discord.webp";
-import Inst from "./inst.webp";
 import Medium from "./medium.webp";
 import Tg from "./tg.webp";
 import Twitter from "./twitter.webp";
+import Linked from "./linked.png";
+import TikTok from "./tiktok.png";
 import Logo from "./logo.webp";
 import Scratches from "./scratches.png";
 import ScratchesMobile from "./scratches_mobile.webp";
 
 export {
-  Fb,
+  Linked,
   Discord,
   Medium,
-  Inst,
+  TikTok,
   Tg,
   Twitter,
   Logo,
