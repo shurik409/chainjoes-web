@@ -59,7 +59,7 @@ const Six = () => {
         },
         {
           title: "Q3 2022",
-          bad: ["GDD Release", "Website Release", "Community Сreation"],
+          good: ["GDD Release", "Website Release", "Community Сreation"],
         },
         {
           title: "Q4 2022",
@@ -68,7 +68,7 @@ const Six = () => {
             "Marketing Launch",
             "Private Sale",
             "Token Audit",
-            "Whitepaper Release",
+            "Litepaper Release",
             "IDO",
             "Game Production Plan Development",
             "Partnerships: Early Bird stage",
