@@ -24,26 +24,6 @@ const Ten = () => {
           }}
         >
           <Box sx={{ display: "flex" }}>
-            <Link href="https://solana.com/" target="_blank" underline="none">
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="13px"
-                  fontWeight="300"
-                  color="#BDBDBD"
-                  marginBottom="7px"
-                >
-                  Powered by
-                </Typography>
-                {/* <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" /> */}
-              </Box>
-            </Link>
             <Box
               sx={{
                 marginLeft: "22px",
@@ -218,20 +198,6 @@ const Ten = () => {
                 WebkitAlignItems: "flex-end",
               }}
             >
-              <Link href="https://solana.com/" target="_blank" underline="none">
-                <Box>
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="13px"
-                    fontWeight="300"
-                    color="#BDBDBD"
-                    marginBottom="7px"
-                  >
-                    Powered by
-                  </Typography>
-                  {/* <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" /> */}
-                </Box>
-              </Link>
               <Box sx={{ marginLeft: "22px" }}>
                 <Link href="https://damnn.tv/" target="_blank" underline="none">
                   <Box>
@@ -495,20 +461,6 @@ const Ten = () => {
               marginTop: "32px",
             }}
           >
-            <Link href="https://solana.com/" target="_blank" underline="none">
-              <Box>
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="13px"
-                  fontWeight="300"
-                  color="#BDBDBD"
-                  marginBottom="7px"
-                >
-                  Powered by
-                </Typography>
-                {/* <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" /> */}
-              </Box>
-            </Link>
             <Box sx={{ marginLeft: "22px" }}>
               <Link href="https://damnn.tv/" target="_blank" underline="none">
                 <Box>
