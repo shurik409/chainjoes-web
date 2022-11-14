@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { Solana, Damnn } from "../../imgs/webp/screen10";
+import { Damnn } from "../../imgs/webp/screen10";
 import { DocsLogo } from "../first/components/header/components/Icons";
 
 const Ten = () => {
@@ -41,7 +41,7 @@ const Ten = () => {
                 >
                   Powered by
                 </Typography>
-                <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+                {/* <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" /> */}
               </Box>
             </Link>
             <Box
@@ -229,7 +229,7 @@ const Ten = () => {
                   >
                     Powered by
                   </Typography>
-                  <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+                  {/* <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" /> */}
                 </Box>
               </Link>
               <Box sx={{ marginLeft: "22px" }}>
@@ -506,7 +506,7 @@ const Ten = () => {
                 >
                   Powered by
                 </Typography>
-                <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" />
+                {/* <img src={`${Solana}`} alt={"Solana logo"} loading="lazy" /> */}
               </Box>
             </Link>
             <Box sx={{ marginLeft: "22px" }}>
