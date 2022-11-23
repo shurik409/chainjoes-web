@@ -2,10 +2,11 @@ import React, { useState, useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { screen5 } from "../../imgs/webp/";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Cross from "../../imgs/new/Cross.png";
 
 import "swiper/css";
 
-const Five = () => {
+const Enemies = () => {
   const [curentItem, setCurentItem] = useState(0);
   const [curentProgress, setProgress] = useState(0);
   const swiperRef = useRef(null);
@@ -26,7 +27,9 @@ const Five = () => {
     },
   ];
 
-  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
+  
+  const desktop1080Width = true;
+  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
   const desktop768Width = useMediaQuery("(min-width: 768px)");
 
@@ -37,523 +40,161 @@ const Five = () => {
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ position: "relative", padding: "170px 0px 200px 80px" }}>
+        <Box sx={{ paddingY: "200px" }}>
           <Box
             sx={{
-              background: `url(${screen5})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPositionX: "right",
-              width: "100%",
-              height: "100%",
-              position: "absolute",
-              top: 0,
-              right: 0,
-              zIndex: -2,
+              display: "flex",
+              justifyContent: "center",
+              position: "relative",
             }}
-          />
-          <Box
-            sx={{
-              width: "60%",
-              height: "100%",
-              background:
-                "linear-gradient(97.55deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: -1,
-            }}
-          />
-          <Box>
-            <Box>
-              <Typography
-                fontFamily="Furore"
-                fontSize="75px"
-                color="#ffffff"
-                lineHeight="75px"
-                style={{
-                  textFillColor: "transparent",
-                  backgroundcolor: "primary",
-                  backgroundImage:
-                    "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-                textTransform="uppercase"
-                width="617px"
-              >
-                Know your ENEMIES
-              </Typography>
-            </Box>
-            <Box sx={{ marginTop: "60px" }}>
-              <Typography
-                fontFamily="Inter"
-                fontSize="18px"
-                fontWeight="300"
-                width="480px"
-                color="#FFFFFF"
-              >
-                Protect the world from the most harmful inhabitants of the WEB3
-                world and get exclusive prizes in PvE modes
-              </Typography>
-            </Box>
+          >
             <Box
               sx={{
-                marginTop: "115px",
+                background: `#2E2E2E`,
+                backgroundBlendMode: "soft-light, normal",
+                width: 966,
+                height: 618,
+                backgroundSize: "cover",
+                borderRadius: "8px",
+                position: "absolute",
+                zIndex: -1,
+                transform: "translateX(-50%) rotate(5deg)",
+                left: "50%",
+                top: 0,
+              }}
+            ></Box>
+            <Box
+              sx={{
+                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${screen5})`,
+                width: 966,
+                height: 618,
+                backgroundSize: "cover",
+                borderRadius: "8px",
                 display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <Box
-                sx={{
-                  width: "3px",
-                  height: "382px",
-                  backgroundColor: "#A5a5a5",
-                  marginRight: "45px",
-                  marginTop: "-10px",
-                }}
-              >
-                <Box
-                  sx={{
-                    width: "3px",
-                    height: "214px",
-                    backgroundColor: "#44F4C3",
-                    marginTop: `${curentItem * 84}px`,
-                  }}
-                ></Box>
-              </Box>
               <Box>
-                {texts.map((item, index) => (
-                  <Box
-                    key={`secondScreen_items_${index}`}
-                    sx={{ marginTop: index ? "50px" : "", cursor: "pointer" }}
-                    onClick={() => setCurentItem(index)}
-                  >
-                    <Box>
-                      <Typography
-                        fontFamily="Furore"
-                        fontSize="26px"
-                        color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                      >
-                        {item.title}
-                      </Typography>
-                    </Box>
-                    {/* {index === curentItem && ( */}
-                    <Box>
-                      <Box
-                        sx={{
-                          width: "600px",
-                          marginTop: index === curentItem ? "25px" : "0px",
-                          maxHeight: index === curentItem ? "110px" : "0px",
-                          opacity: index === curentItem ? 1 : 0,
-                          overflow: "hidden",
-                          transition: "all 0.3s ease-in",
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Inter"
-                          fontWeight="300"
-                          fontSize="18px"
-                          color="#ffffff"
-                        >
-                          {item.description}
-                        </Typography>
-                      </Box>
-                    </Box>
-                    {/* )} */}
-                  </Box>
-                ))}
+                <Typography
+                  fontFamily="Aaaiight"
+                  fontSize="80px"
+                  lineHeight="100%"
+                  color="#FFF"
+                >
+                  Near future...
+                </Typography>
               </Box>
-            </Box>
-          </Box>
-        </Box>
-      )}
-      {desktop768Width && !desktop1080Width && (
-        <Box
-          sx={{
-            position: "relative",
-            padding: "100px 0px 0px 0px",
-            backgroundColor: "#000000",
-          }}
-        >
-          <Box sx={{ paddingX: "25px" }}>
-            <Box>
-              <Typography
-                fontFamily="Furore"
-                fontSize="60px"
-                color="#ffffff"
-                lineHeight="60px"
-                style={{
-                  textFillColor: "transparent",
-                  backgroundcolor: "primary",
-                  backgroundImage:
-                    "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-                textTransform="uppercase"
-                maxWidth="430px"
-              >
-                Know your ENEMIES
-              </Typography>
-            </Box>
-            <Box sx={{ marginTop: "60px" }}>
-              <Typography
-                fontFamily="Inter"
-                fontSize="14px"
-                lineHeight="17px"
-                fontWeight="300"
-                maxWidth="475px"
-                color="#FFFFFF"
-              >
-                Protect the world from the most harmful inhabitants of the WEB3
-                world and get exclusive prizes in PvE modes
-              </Typography>
-            </Box>
-            <Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-around",
-                  marginTop: "50px",
-                }}
-              >
-                {texts.map((item, index) => (
-                  <Box
-                    key={`five_screen_tablet_items_${index}`}
-                    sx={{ cursor: "pointer" }}
-                    onClick={() => setCurentItem(index)}
-                  >
-                    <Typography
-                      fontFamily="Furore"
-                      fontSize="20px"
-                      color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                    >
-                      {item.title}
-                    </Typography>
-                  </Box>
-                ))}
+              <Box sx={{ marginTop: "24px" }}>
+                <Typography
+                  color="#FFF"
+                  textAlign="center"
+                  fontSize="16px"
+                  lineHeight="170%"
+                >
+                  Billions of citizens in existing metaverses now have access
+                  <br /> to a new meta-jump technology. Using this technology,
+                  <br />
+                  you can move between any metaverse...
+                </Typography>
               </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: 3,
-                  backgroundColor: "#A5a5a5",
-                  marginTop: "30px",
-                }}
-              >
+              <Box sx={{ display: "flex", marginTop: "44px" }}>
                 <Box
                   sx={{
-                    width: "calc(100% / 3)",
-                    height: "100%",
-                    backgroundColor: "#44F4C3",
-                    marginLeft: `calc((100% / 3) * ${curentItem} )`,
-                  }}
-                />
-              </Box>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              background: `url(${screen5})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPositionX: "left",
-              width: "100%",
-              height: "498px",
-              position: "relative",
-              paddingTop: "60px",
-            }}
-          >
-            <Box
-              sx={{
-                position: "absolute",
-                height: "380px",
-                width: "100%",
-                background:
-                  "linear-gradient(180deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
-                top: 0,
-                left: 0,
-                zIndex: 1,
-              }}
-            />
-            <Box sx={{ position: "relative", zIndex: 2 }}>
-              {texts.map((item, index) => (
-                <Box
-                  key={`five_screen_tablet_text_${index}`}
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: index === curentItem ? 0 : "-50%",
-                    opacity: index === curentItem ? 1 : 0,
-                    transition: "all 0.3s ease-in",
+                    width: "260px",
+                    height: "60px",
+                    display: "flex",
+                    borderRadius: "2px",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    cursor: "pointer",
+                    background:
+                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                    marginRight: "24px",
                   }}
                 >
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="14px"
-                    lineHeight="17px"
-                    fontWeight="300"
-                    maxWidth="441px"
-                    color="#FFFFFF"
-                    paddingLeft="25px"
-                  >
-                    {item.description}
+                  <Typography color="#FFFFFF" fontWeight="600" fontSize="16px">
+                    Explore the full lore
                   </Typography>
                 </Box>
-              ))}
-            </Box>
-          </Box>
-        </Box>
-      )}
-      {!desktop768Width && !desktop1080Width && (
-        <Box
-          sx={{
-            padding: "76px 0px 81px 0px",
-            backgroundColor: "#000000",
-          }}
-        >
-          <Box>
-            <Box>
-              <Typography
-                fontFamily="Furore"
-                fontSize="32px"
-                marginLeft="15px"
-                color="#ffffff"
-                lineHeight="32px"
-                style={{
-                  textFillColor: "transparent",
-                  backgroundcolor: "primary",
-                  backgroundImage:
-                    "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-                textTransform="uppercase"
-                maxWidth="209px"
-              >
-                Know your ENEMIES
-              </Typography>
-            </Box>
-            <Box sx={{ marginTop: "45px" }}>
-              <Typography
-                fontFamily="Inter"
-                marginLeft="15px"
-                fontSize="13px"
-                lineHeight="15.73px"
-                fontWeight="300"
-                maxWidth="290px"
-                color="#FFFFFF"
-              >
-                Protect the world from the most harmful inhabitants of the WEB3
-                world and get exclusive prizes in PvE modes
-              </Typography>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "relative",
-              height: "210px",
-              width: "100%",
-              background: `url(${screen5})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPositionX: "left",
-              backgroundPositionY: "bottom",
-              marginTop: "-2px",
-            }}
-          >
-            <Box
-              sx={{
-                position: "absolute",
-                height: "101px",
-                width: "100%",
-                background:
-                  "linear-gradient(180deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
-                top: 0,
-                right: 0,
-              }}
-            />
-            <Box
-              sx={{
-                position: "absolute",
-                height: "74px",
-                width: "100%",
-                background:
-                  "linear-gradient(0deg, #000000 10.59%, rgba(9, 16, 21, 0) 83.66%)",
-                bottom: 0,
-                right: 0,
-              }}
-            />
-          </Box>
-          <Box>
-            <Box>
-              {!desktop530Width ? (
                 <Box
                   sx={{
-                    position: "relative",
-                    overflowX: "hidden",
-                    marginTop: "28px",
-                    display: "block",
+                    width: "260px",
+                    height: "60px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: "2px",
+                    border: "1px solid #868D8B",
+                    marginRight: "16px",
+                    cursor: "pointer",
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      width: `${texts.length * 125}px`,
-                      marginLeft: `calc(15px + max(calc(${
-                        texts.length * 125 + 30
-                      }px - 100vw), 0px) * -${curentProgress})`,
-                    }}
-                  >
-                    {texts.map((item, index) => (
-                      <Box
-                        key={`screen-2-mobile-title-${index}`}
-                        sx={{ width: "125px" }}
-                        onClick={() => {
-                          setCurentItem(index);
-                          swiperRef.current.swiper.slideTo(index);
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Inter"
-                          fontWeight={index === curentItem ? "400" : "300"}
-                          fontSize="16px"
-                          lineHeight="19.2px"
-                          textAlign="center"
-                          marginX="auto"
-                          color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                        >
-                          {item.title}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Box>
-                  <Box
-                    sx={{
-                      marginLeft: `calc(15px + max(calc(${
-                        texts.length * 125 + 30
-                      }px - 100vw), 0px) * -${curentProgress})`,
-                      marginTop: "21px",
-                      width: `${texts.length * 125}px`,
-                      height: 3,
-                      backgroundColor: "#A5a5a5",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: "125px",
-                        height: "3px",
-                        backgroundColor: "#44F4C3",
-                        marginLeft: `${
-                          curentProgress * (texts.length * 125 - 125)
-                        }px`,
-                      }}
-                    ></Box>
-                  </Box>
+                  <Typography color="#868D8B" fontWeight="600" fontSize="16px">
+                    Watch teaser <span fontSize="12px">(Coming Soon)</span>
+                  </Typography>
                 </Box>
-              ) : (
-                <Box>
-                  <Box
-                    sx={{
-                      position: "relative",
-                      overflowX: "hidden",
-                      marginTop: "28px",
-                      display: "block",
-                      paddingX: "15px",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        width: `100%`,
-                      }}
-                    >
-                      {texts.map((item, index) => (
-                        <Box
-                          key={`screen-2-mobile-title-${index}`}
-                          sx={{
-                            width: `calc(100% / ${texts.length})`,
-                          }}
-                          onClick={() => {
-                            setCurentItem(index);
-                            swiperRef.current.swiper.slideTo(index);
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight={index === curentItem ? "400" : "300"}
-                            fontSize="16px"
-                            lineHeight="19.2px"
-                            textAlign="center"
-                            marginX="auto"
-                            color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                          >
-                            {item.title}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Box>
-                    <Box
-                      sx={{
-                        marginTop: "21px",
-                        width: "100%",
-                        height: 3,
-                        backgroundColor: "#A5a5a5",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: "125px",
-                          height: "3px",
-                          backgroundColor: "#44F4C3",
-                          marginLeft: `calc(${curentProgress} * calc(${texts.length} * calc(100% / ${texts.length}) - calc(100% / ${texts.length})))`,
-                        }}
-                      ></Box>
-                    </Box>
-                  </Box>
-                </Box>
-              )}
+              </Box>
             </Box>
-            <Box sx={{ marginTop: "35px" }}>
-              <Swiper
-                slidesPerView={1}
-                centeredSlides={true}
-                grabCursor={true}
-                className="mySwiper"
-                onProgress={({ progress }) =>
-                  !(progress < 0 || progress > 1) && setProgress(progress)
-                }
-                onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
-                ref={swiperRef}
+            <Box>
+              <Box sx={{ position: "absolute", top: "-23%", left: "17%" }}>
+                <img src={Cross} width="158px" alt="cross" />
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "23%",
+                  right: "5%",
+                  transform: "rotate(30deg)",
+                }}
               >
-                {texts.map((item, index) => (
-                  <SwiperSlide key={`screen-5-swiper-item-${index}`}>
-                    <Box>
-                      <Typography
-                        fontFamily="Inter"
-                        fontSize="13px"
-                        fontWeight="300"
-                        color="#FFFFFF"
-                        lineHeight="15.73px"
-                        maxWidth="290px"
-                        textAlign="left"
-                        marginLeft="15px"
-                      >
-                        {item.description}
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                <img src={Cross} width="82px" alt="cross" />
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: "-23%",
+                  left: "50%",
+                  transform: "rotate(-21deg)",
+                }}
+              >
+                <img src={Cross} width="49px" alt="cross" />
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  background: "#464646",
+                  paddingX: "20px",
+                  paddingY: "10px",
+                  borderRadius: "100px",
+                  transform: "rotate(-30deg)",
+                  top: "50%",
+                  right: "17%",
+                }}
+              >
+                <Typography color="#FFF" fontWeight="500">
+                  Without paying for gas
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  background: "#464646",
+                  paddingX: "20px",
+                  paddingY: "10px",
+                  borderRadius: "100px",
+                  transform: "rotate(30deg)",
+                  top: "35%",
+                  left: "21%",
+                }}
+              >
+                <Typography color="#FFF" fontWeight="500">
+                  In a second
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -562,4 +203,4 @@ const Five = () => {
   );
 };
 
-export default Five;
+export default Enemies;

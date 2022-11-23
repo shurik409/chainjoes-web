@@ -1,50 +1,93 @@
 import React from "react";
-import { Box, useMediaQuery } from "@mui/material";
-import HeaderButton from "./components/HeaderButton";
-import { TwitterLogo, TgLogo, DsLogo, DocsLogo } from "./components/Icons";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import Logo from "../../../../imgs/webp/logo.png";
 
 const Header = (props) => {
   const buttons = [
-    // {
-    //   title: "Facebook",
-    //   //icon: FbLogo,
-    //   link: "https://facebook.com/ChainJoes",
-    //   iconWidth: 20,
-    // },
-    // {
-    //   title: "Instagram",
-    //   //icon: InstLogo,
-    //   link: "https://www.instagram.com/chain_joes/",
-    //   iconWidth: 26,
-    // },
     {
-      title: "Twitter",
-      icon: TwitterLogo,
-      link: "https://twitter.com/chainjoes",
-      iconWidth: 31,
+      title: "Gameplay",
+      links: [
+        {
+          title: "About",
+          link: "#",
+        },
+        {
+          title: "Litepaper",
+          link: "#",
+        },
+        {
+          title: "One page",
+          link: "#",
+        },
+        {
+          title: "IDO strategy",
+          link: "#",
+        },
+      ],
     },
     {
-      title: "Telegram",
-      icon: TgLogo,
-      link: "https://t.me/chainjoes",
-      iconWidth: 29,
+      title: "Community",
+      links: [
+        {
+          title: "About",
+          link: "#",
+        },
+        {
+          title: "Litepaper",
+          link: "#",
+        },
+        {
+          title: "One page",
+          link: "#",
+        },
+        {
+          title: "IDO strategy",
+          link: "#",
+        },
+      ],
     },
-    // {
-    //   title: "Medium",
-    //   //icon: MediumLogo,
-    //   link: "https://medium.com/@ChainJoes",
-    //   iconWidth: 36,
-    // },
     {
-      title: "Discord",
-      icon: DsLogo,
-      link: "https://discord.com/invite/6XcvPDbXBa",
-      iconWidth: 32,
+      title: "Team",
+      link: "#",
+    },
+    {
+      title: "Partners",
+      link: "#",
+    },
+    {
+      title: "Roadmap",
+      link: "#",
+    },
+    {
+      title: "Help",
+      links: [
+        {
+          title: "About",
+          link: "#",
+        },
+        {
+          title: "Litepaper",
+          link: "#",
+        },
+        {
+          title: "One page",
+          link: "#",
+        },
+        {
+          title: "IDO strategy",
+          link: "#",
+        },
+      ],
+    },
+    {
+      title: "News",
+      link: "#",
     },
   ];
 
-  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
+  
+  const desktop1080Width = true;
+  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
   const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   return (
@@ -60,56 +103,9 @@ const Header = (props) => {
           sx={{
             width: "100%",
             display: "flex",
-            justifyContent: "space-between",
             paddingTop: "33px",
             alignItems: "center",
-          }}
-        >
-          <Box
-            sx={{
-              height: 45,
-              width: 109,
-              backgroundImage: `url(${Logo})`,
-              backgroundSize: "cover",
-            }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              marginRight: "70px",
-              border: "1px solid",
-              borderImageSlice: 1,
-              borderWidth: "1px",
-              borderStyle: "outset",
-              borderColor: "buttonborder",
-              borderImageSource:
-                "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
-              transform: "skewX(-11deg)",
-            }}
-          >
-            {buttons.map((item, index) => (
-              <HeaderButton
-                key={`header-button-${index}`}
-                icon={item.icon}
-                index={index}
-                last={index === buttons.length - 1}
-                link={item.link}
-              />
-            ))}
-            {/* <Box sx={{ marginLeft: "14px" }}>
-              <HeaderButton title="docs" icon={DocsLogo} noLine width={137} />
-            </Box> */}
-          </Box>
-        </Box>
-      )}
-      {!desktop1080Width && desktop768Width && (
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
             justifyContent: "space-between",
-            paddingTop: "30px",
-            alignItems: "center",
           }}
         >
           <Box
@@ -120,74 +116,107 @@ const Header = (props) => {
               backgroundSize: "cover",
             }}
           />
-          <Box
-            sx={{
-              display: "flex",
-              border: "1px solid",
-              borderImageSlice: 1,
-              borderWidth: "1px",
-              borderStyle: "outset",
-              borderColor: "buttonborder",
-              borderImageSource:
-                "linear-gradient(204.53deg, rgba(0, 255, 183, 0) -2.02%, rgba(71, 255, 244, 0.722892) 25.27%, #FFFFFF 35.73%, rgba(0, 178, 255, 0.55) 50.28%, rgba(0, 255, 183, 0) 84.33%)",
-              transform: "skewX(-11deg)",
-            }}
-          >
-            {buttons.map((item, index) => (
-              <HeaderButton
-                key={`header-button-${index}`}
-                icon={item.icon}
-                index={index}
-                last={index === buttons.length - 1}
-                height={40}
-                iconHeight={14}
-                width={50}
-                link={item.link}
-              />
-            ))}
-            {/* <Box sx={{ marginLeft: "14px" }}>
-              <HeaderButton
-                title="docs"
-                icon={DocsLogo}
-                noLine
-                width={96}
-                height={40}
-                iconHeight={14}
-              />
-            </Box> */}
-          </Box>
-        </Box>
-      )}
-      {!desktop1080Width && !desktop768Width && (
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-            paddingTop: "10px",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            sx={{
-              height: 45,
-              width: 109,
-              backgroundImage: `url(${Logo})`,
-              backgroundSize: "cover",
-            }}
-          />
-          {/* <Box sx={{ display: "flex" }}>
-            <Box sx={{ marginLeft: "14px" }}>
-              <HeaderButton
-                title="docs"
-                icon={DocsLogo}
-                noLine
-                width={96}
-                height={40}
-                iconHeight={14}
-              />
+          <Box sx={{ color: "#fff" }}>
+            <Box
+              style={{
+                display: "flex",
+                listStyleType: "none",
+                gap: "20px",
+                fontSize: "14px",
+              }}
+            >
+              {buttons.map((item, index) => (
+                <Box
+                  key={`main-header-button-${index}`}
+                  sx={{
+                    position: "relative",
+                    cursor: "pointer",
+                    ":hover": {
+                      "& > .open-menu": {
+                        display: "block",
+                      },
+                    },
+                  }}
+                >
+                  <Box sx={{}}>{item.title}</Box>
+                  {item.links && (
+                    <Box
+                      className={`open-menu`}
+                      sx={{
+                        display: "none",
+                        position: "absolute",
+                        top: "20px",
+                        left: "-20px",
+                        background: "rgba(255, 255, 255, 0.1)",
+                        backdropFilter: "blur(10px)",
+                        padding: "20px",
+                      }}
+                    >
+                      {item.links.map((button, index) => (
+                        <Box
+                          key={`main-header-subbutton-${index}`}
+                          sx={{
+                            marginY: "14px",
+                            minWidth: "90px",
+                            borderBottom:
+                              index !== item.links.length - 1
+                                ? "1px solid rgba(255, 255, 255, 0.1)"
+                                : "",
+                          }}
+                        >
+                          {button.title}
+                        </Box>
+                      ))}
+                    </Box>
+                  )}
+                </Box>
+              ))}
             </Box>
-          </Box> */}
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                width: "150px",
+                height: "44px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "2px",
+                border: "1px solid",
+                borderImageSlice: 1,
+                borderImageSource:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                marginRight: "16px",
+                cursor: "pointer",
+              }}
+            >
+              <Typography color="#7F7F7F" fontSize="14px">
+                Sale
+              </Typography>
+              <Typography color="#05D19B" fontSize="14px">
+                Comming soon
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "150px",
+                height: "44px",
+                display: "flex",
+                borderRadius: "2px",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                background:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+              }}
+            >
+              <Typography color="#FFFFFF" fontSize="14px">
+                Whitelist
+              </Typography>
+            </Box>
+          </Box>
         </Box>
       )}
     </Box>

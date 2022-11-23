@@ -4,10 +4,6 @@ import Header from "./components/header";
 import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
-import GreenBtn from "../../imgs/webp/green_btn.webp";
-import { DsLogo } from "./components/header/components/Icons";
-import FirstFooter from "../../imgs/webp/first_footer.webp";
-import Scratches from "../../imgs/scratches.svg";
 
 const First = () => {
   const refVideo = useRef(null);
@@ -25,7 +21,9 @@ const First = () => {
     }
   });
 
-  const desktop1080Width = useMediaQuery("(min-width:1000px)");
+  
+  const desktop1080Width = true;
+  // const desktop1080Width = useMediaQuery("(min-width:1000px)");
   const desktop768Width = useMediaQuery("(min-width:768px)");
   const desktop1080Height = useMediaQuery("(min-height:900px)");
   const desktop768Height = useMediaQuery("(min-height:685px)");
@@ -76,14 +74,16 @@ const First = () => {
       }}
     >
       {desktop1080Width && (
-        <Box sx={{ position: "relative", height: "100vh" }}>
+        <Box sx={{ position: "relative", height: "100vh", paddingX: "135px" }}>
           <Box
-            sx={{
-              animationName: "video",
-              animationDuration: "10s",
-              animationFillMode: "both",
-              animationDelay: "1s",
-            }}
+            sx={
+              {
+                // animationName: "video",
+                // animationDuration: "10s",
+                // animationFillMode: "both",
+                // animationDelay: "1s",
+              }
+            }
           >
             <video
               ref={refVideo}
@@ -105,26 +105,12 @@ const First = () => {
                 zIndex: -1,
               }}
             >
-              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
               <source src={MonkeyVideoMp4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </Box>
           <Box
             sx={{
-              width: "100%",
-              height: "100vh",
-              background:
-                "linear-gradient(111.64deg, #000000 9.79%, rgba(0, 0, 0, 0) 74.77%)",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: -1,
-            }}
-          ></Box>
-          <Box
-            sx={{
-              marginLeft: "70px",
               display: "flex",
               justifyContent: "end",
               WebkitJustifyContent: "flex-end",
@@ -135,686 +121,67 @@ const First = () => {
           >
             <Header />
           </Box>
-          <Box
-            sx={
-              !desktop1080Height && {
+          <Box sx={{ marginTop: "150px" }}>
+            <Typography
+              color="#FFF"
+              fontSize="105px"
+              lineHeight="90%"
+              fontFamily="Aaaiight"
+            >
+              Fight like
+              <br />
+              never before
+            </Typography>
+            <Box sx={{ marginTop: "24px" }}>
+              <Typography color="#FFF" fontSize="20px" lineHeight="140%">
+                Forget about P2E. Chain Joes is an action-packed
+                <br />
+                mobile game with new PLAY-AND-EARN model.
+              </Typography>
+            </Box>
+          </Box>
+          <Box sx={{ display: "flex", marginTop: "52px" }}>
+            <Box
+              sx={{
+                width: "280px",
+                height: "68px",
                 display: "flex",
-                justifyContent: "center",
-                height: "calc(100% - 100px)",
+                borderRadius: "2px",
                 flexDirection: "column",
-              }
-            }
-          >
-            <Box
-              sx={{
-                position: "relative",
-                marginTop: () => {
-                  if (desktop1080Height) {
-                    return "120px";
-                  } else if (desktop768Height) {
-                    return "20px";
-                  }
-                },
-                maxWidth: "800px",
-                marginLeft: "80px",
-                animationName: "title",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "3s",
-              }}
-            >
-              <Typography
-                fontFamily="Furore"
-                fontSize={() => {
-                  if (desktop1080Height && desktop1080Width) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                color="#252625"
-                lineHeight={() => {
-                  if (desktop1080Height) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                maxWidth={desktop768Height ? "800px" : "500px"}
-                style={{
-                  WebkitMaskImage: `url(${Scratches})`,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                WELCOME <br /> TO{" "}
-                <span style={{ color: "#252625", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-              <Typography
-                fontFamily="Furore"
-                fontSize={() => {
-                  if (desktop1080Height && desktop1080Width) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                color="#ffffff"
-                lineHeight={() => {
-                  if (desktop1080Height) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                maxWidth={desktop768Height ? "800px" : "500px"}
-              >
-                WELCOME <br /> TO{" "}
-                <span style={{ color: "#44F4C3", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                zIndex: 1,
-                width: desktop768Height ? "590px" : "400px",
-                marginTop: desktop768Height ? "60px" : "15px",
-                marginLeft: "80px",
-                animationName: "description",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "4s",
-              }}
-            >
-              <Typography
-                fontFamily="Inter"
-                fontSize={desktop768Height ? "24px" : "16px"}
-                color="#ffffff"
-                fontWeight="400"
-                lineHeight={desktop768Height ? "28.8px" : "21.8px"}
-              >
-                Chain Joes is an action-packed mobile game designed for the WEB3
-              </Typography>
-              <Typography
-                fontFamily="Inter"
-                fontSize={desktop768Height ? "18px" : "14px"}
-                color="#ffffff"
-                fontWeight="300"
-                lineHeight="21.8px"
-                style={{ marginTop: desktop768Height ? "25px" : "15px" }}
-              >
-                Battle with each other to win and earn rewards through our
-                Play-and-Earn mechanics and protect the community from Spammers,
-                Scammers and Hackers to get unique rewards
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                zIndex: 1,
-                marginTop: desktop768Height ? "60px" : "15px",
-                marginLeft: "80px",
-                width: 288,
-                height: 64,
-                transform: desktop768Height ? "" : "scale(0.8)",
-                transformOrigin: desktop768Height ? "" : "top left",
-                ":hover": {
-                  ".first_dsBtn": {
-                    transform: "translateY(-5px)",
-                  },
-                },
-                animationName: "button",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "5s",
-              }}
-            >
-              <Link
-                href="https://discord.com/invite/6XcvPDbXBa"
-                target="_blank"
-                underline="none"
-              >
-                <Box
-                  className="first_dsBtn"
-                  sx={{
-                    background: `url(${GreenBtn})`,
-                    cursor: "pointer",
-                    width: 288,
-                    height: 64,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <DsLogo color="#000000" />
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="16px"
-                      fontStyle="italic"
-                      fontWeight="400"
-                      textTransform="uppercase"
-                      color="#000000"
-                      style={{ marginLeft: "11px" }}
-                    >
-                      Join discord server
-                    </Typography>
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              background: `url(${FirstFooter})`,
-              height: "230px",
-              width: "100%",
-              bottom: "-160px",
-              backgroundSize: "cover",
-              zIndex: -1,
-            }}
-          />
-        </Box>
-      )}
-      {!desktop1080Width && desktop768Width && (
-        <Box
-          sx={{
-            position: "relative",
-            height: "100vh",
-            backgroundColor: "#000000",
-            zIndex: 0,
-          }}
-        >
-          <Box>
-            <Box
-              sx={{
-                width: "100%",
-                height: "calc(100vh - 681px)",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
                 background:
-                  "linear-gradient(180deg, #000000 7.85%, rgba(0, 0, 0, 0) 78.92%)",
-                position: "absolute",
-                top: "calc(100vh - 681px)",
-                left: 0,
-                zIndex: 1,
-              }}
-            />
-            <Box
-              sx={{
-                animationName: "video",
-                animationDuration: "10s",
-                animationFillMode: "both",
-                animationDelay: "1s",
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                marginRight: "24px",
               }}
             >
-              <video
-                autoPlay="autoPlay"
-                ref={refVideo}
-                loop="loop"
-                muted
-                playsInline
-                onContextMenu={() => false}
-                preload="auto"
-                id="vid"
-                poster={Background}
-                style={{
-                  objectFit: "cover",
-                  height: "100vh",
-                  maxHeight: "681px",
-                  width: "100%",
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  zIndex: -2,
-                }}
-              >
-                {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-                <source src={MonkeyVideoMp4} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              width: "100%",
-              animationName: "header",
-              animationDuration: "2s",
-              animationFillMode: "both",
-            }}
-          >
-            <Header padding="0 44px 0 80px" />
-          </Box>
-          <Box>
-            <Box
-              sx={{
-                position: "relative",
-                marginTop: "60px",
-                marginLeft: "27px",
-                zIndex: 2,
-                animationName: "title",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "3s",
-              }}
-            >
-              {/* <Box
-                sx={{
-                  background: `url(${ScratchesTablet})`,
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  backgroundRepeat: "no-repeat",
-                  top: 0,
-                  left: 0,
-                }}
-              ></Box> */}
-
-              <Typography
-                fontFamily="Furore"
-                fontSize="60px"
-                color="#252625"
-                lineHeight="60px"
-                style={{
-                  WebkitMaskImage: `url(${Scratches})`,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                WELCOME TO <br />
-                <span style={{ color: "#252625", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-              <Typography
-                fontFamily="Furore"
-                fontSize="60px"
-                color="#ffffff"
-                lineHeight="60px"
-              >
-                WELCOME TO <br />
-                <span style={{ color: "#44F4C3", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
+              <Typography color="#FFFFFF" fontWeight="600" fontSize="20px">
+                Join the Battle
               </Typography>
             </Box>
             <Box
               sx={{
-                width: "530px",
-                marginTop: "40px",
-                marginLeft: "30px",
-                animationName: "description",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "4s",
+                width: "280px",
+                height: "68px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "2px",
+                border: "1px solid",
+                borderImageSlice: 1,
+                borderImageSource:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                marginRight: "16px",
+                cursor: "pointer",
               }}
             >
-              <Typography
-                fontFamily="Inter"
-                fontSize="22px"
-                color="#ffffff"
-                fontWeight="400"
-                lineHeight="26.4px"
-              >
-                Chain Joes is an action-packed mobile game designed for the WEB3
-              </Typography>
-              <Typography
-                fontFamily="Inter"
-                fontSize="14px"
-                color="#ffffff"
-                fontWeight="300"
-                lineHeight="16.94px"
-                marginTop="25px"
-                maxWidth="534px"
-              >
-                Battle with each other to win and earn rewards through our
-                <br />
-                Play-and-Earn mechanics and protect the community from Spammers,
-                Scammers and Hackers to get unique rewards
+              <Typography color="#05D19B" fontWeight="600" fontSize="20px">
+                Read Litepaper
               </Typography>
             </Box>
-            <Box
-              sx={{
-                marginTop: "40px",
-                marginLeft: "30px",
-                width: 288,
-                height: 64,
-                ":hover": {
-                  ".first_dsBtn": {
-                    transform: "translateY(-5px)",
-                  },
-                },
-                animationName: "button",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "5s",
-              }}
-            >
-              <Link
-                href="https://discord.com/invite/6XcvPDbXBa"
-                target="_blank"
-                underline="none"
-              >
-                <Box
-                  className="first_dsBtn"
-                  sx={{
-                    background: `url(${GreenBtn})`,
-                    cursor: "pointer",
-                    width: 288,
-                    height: 64,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <DsLogo color="#000000" />
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="16px"
-                      fontStyle="italic"
-                      fontWeight="400"
-                      textTransform="uppercase"
-                      color="#000000"
-                      style={{ marginLeft: "11px" }}
-                    >
-                      Join discord server
-                    </Typography>
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
           </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              background: `url(${FirstFooter})`,
-              height: "230px",
-              width: "100%",
-              bottom: "-160px",
-              backgroundSize: "cover",
-              zIndex: -1,
-            }}
-          />
-        </Box>
-      )}
-      {!desktop1080Width && !desktop768Width && (
-        <Box
-          sx={{
-            position: "relative",
-            height: "100vh",
-            backgroundColor: "#000000",
-            zIndex: 0,
-          }}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "100px",
-              height: "calc(100vh - 200px)",
-              minHeight: "382px",
-              width: "100%",
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                height: "135px",
-                background:
-                  "linear-gradient(180deg, #000000 13.63%, rgba(0, 0, 0, 0) 92.63%)",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 1,
-              }}
-            />
-            <Box
-              sx={{
-                animationName: "video",
-                animationDuration: "10s",
-                animationFillMode: "both",
-                animationDelay: "1s",
-              }}
-            >
-              <video
-                autoplay="true"
-                ref={refVideo}
-                loop="loop"
-                muted="true"
-                playsInline
-                onContextMenu={() => false}
-                preload="auto"
-                id="vid"
-                poster={Background}
-                style={{
-                  objectFit: "cover",
-                  height: "100%",
-                  width: "100%",
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  zIndex: -2,
-                }}
-              >
-                {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-                <source src={MonkeyVideoMp4} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-            <Box
-              sx={{
-                width: "100%",
-                height: "135px",
-                background:
-                  "linear-gradient(0deg, #000000 9.79%, rgba(0, 0, 0, 0) 74.77%)",
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                zIndex: 0,
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              width: "100%",
-              animationName: "header",
-              animationDuration: "2s",
-              animationFillMode: "both",
-            }}
-          >
-            <Header padding="0 15px 0 15px" />
-          </Box>
-          <Box
-            sx={{
-              paddingX: "13px",
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "calc(100% - 80px)",
-            }}
-          >
-            <Box
-              sx={{
-                position: "relative",
-                marginTop: "29px",
-                zIndex: 2,
-                animationName: "title",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "3s",
-              }}
-            >
-              {/* <Box
-                sx={{
-                  background: `url(${ScratchesMobile})`,
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  backgroundRepeat: "no-repeat",
-                  top: 0,
-                  left: 0,
-                }}
-              ></Box> */}
-              <Typography
-                fontFamily="Furore"
-                fontSize="35px"
-                color="#252625"
-                lineHeight="35px"
-                style={{
-                  WebkitMaskImage: `url(${Scratches})`,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                
-                WELCOME
-                <br />
-                TO{" "}
-                <span style={{ color: "#252625", display: "inline" }}>
-                  CHAIN JOES
-                  <br />
-                  WORLD
-                </span>
-              </Typography>
-              <Typography
-                fontFamily="Furore"
-                fontSize="35px"
-                color="#ffffff"
-                lineHeight="35px"
-              >
-                WELCOME
-                <br />
-                TO{" "}
-                <span style={{ color: "#44F4C3", display: "inline" }}>
-                  CHAIN JOES
-                  <br />
-                  WORLD
-                </span>
-              </Typography>
-            </Box>
-            <Box>
-              <Box
-                sx={{
-                  animationName: "description",
-                  animationDuration: "3s",
-                  animationFillMode: "both",
-                  animationDelay: "4s",
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="14px"
-                  color="#ffffff"
-                  fontWeight="300"
-                  lineHeight="16.94px"
-                  marginTop="25px"
-                  marginX="auto"
-                >
-                  Battle with each other to win and earn rewards through our
-                  Play-and-Earn mechanics and protect the community from
-                  Spammers, Scammers and Hackers to get unique rewards
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  marginTop: "40px",
-                  ":hover": {
-                    ".first_dsBtn": {
-                      transform: "translateY(-5px)",
-                    },
-                  },
-                  animationName: "button",
-                  animationDuration: "3s",
-                  animationFillMode: "both",
-                  animationDelay: "5s",
-                }}
-              >
-                <Link
-                  href="https://discord.com/invite/6XcvPDbXBa"
-                  target="_blank"
-                  underline="none"
-                >
-                  <Box
-                    className="first_dsBtn"
-                    sx={{
-                      background: `url(${GreenBtn})`,
-                      cursor: "pointer",
-                      width: 253,
-                      height: 50,
-                      marginX: "auto",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
-                      }}
-                    >
-                      <DsLogo
-                        color="#000000"
-                        style={{ display: "block", height: "20px" }}
-                      />
-                      <Typography
-                        fontFamily="Inter"
-                        fontSize="14px"
-                        fontStyle="italic"
-                        fontWeight="400"
-                        textTransform="uppercase"
-                        color="#000000"
-                        style={{ marginLeft: "11px" }}
-                      >
-                        Join discord server
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Link>
-              </Box>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              background: `url(${FirstFooter})`,
-              height: "230px",
-              width: "100%",
-              bottom: "-160px",
-              backgroundSize: "cover",
-              zIndex: -1,
-            }}
-          />
         </Box>
       )}
     </Box>

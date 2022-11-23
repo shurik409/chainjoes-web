@@ -1,25 +1,25 @@
 import First from "./first";
-import Second from "./explore";
+import Explore from "./explore";
 import Third from "./pers";
-import Fourth from "./activities";
-import Five from "./enemies";
+import Activities from "./activities";
+import Enemies from "./enemies";
 import Six from "./roadmap";
 import Seven from "./team";
 import Eight from "./partners";
-import Nine from "./social";
-import Ten from "./footer";
+import Social from "./social";
+import Footer from "./footer";
 import Loader from "./loader";
 
 export {
   First,
-  Second,
+  Explore,
   Third,
-  Fourth,
-  Five,
+  Activities,
+  Enemies,
   Six,
   Seven,
   Eight,
-  Nine,
-  Ten,
+  Social,
+  Footer,
   Loader,
 };

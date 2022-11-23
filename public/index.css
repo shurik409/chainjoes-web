@@ -58,6 +58,12 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Aaaiight";
+  src: url("./fonts/aaaiight.ttf") format("truetype");
+  font-weight: 400;
+}
+
 body {
   background-color: #0d0d0d;
 }
@@ -69,3 +75,17 @@ body {
 .disabled {
   display: none;
 }
+
+/* .swiper-button-next {
+  width: 48;
+  height: 48;
+  background: #fff;
+  border-radius: 100px;
+}
+
+.swiper-button-prev {
+  width: 48;
+  height: 48;
+  background: #fff;
+  border-radius: 100px;
+} */

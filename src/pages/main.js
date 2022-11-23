@@ -2,16 +2,20 @@ import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
 import {
   First,
-  Second,
-  Third,
-  Fourth,
-  Five,
-  Six,
-  Seven,
-  Eight,
-  Nine,
-  Ten,
-  Loader,
+  Enemies,
+  Explore,
+  Activities,
+  Social,
+  Footer,
+  // Third,
+  // Fourth,
+  // Five,
+  // Six,
+  // Seven,
+  // Eight,
+  // Nine,
+  // Ten,
+  // Loader,
 } from "../modules";
 import Smoke from "../imgs/smoke2x.png";
 import { getAllImage, getAllVideo } from "../allImage";
@@ -65,70 +69,37 @@ const Main = () => {
 
   return (
     <>
-      {getCurrentProgresPercent() < 1 ? (
-        <Loader progres={getCurrentProgresPercent()} />
-      ) : (
-        <>
-          {isPlaying && !isPlayed ? (
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                height: "100vh",
-                backgroundColor: "#000000",
-              }}
-            >
-              <video
-                ref={prevideo}
-                autoPlay="autoPlay"
-                muted
-                playsInline
-                onContextMenu={() => false}
-                preload="auto"
-                id="vid"
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                }}
-              >
-                <source src={PreLogoWebM} type="video/webm" />
-                <source src={PreLogoMp4} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-          ) : (
-            <>
-              <First />
-              <Second />
-              <Third />
-              <Fourth />
-              <Five />
-              <Six />
-              <Seven />
-              <Eight />
-              <Box
-                sx={{
-                  backgroundColor: "#070809",
-                  backgroundImage: `url(${Smoke})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                }}
-              >
-                <Nine />
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "1px",
-                    background:
-                      "linear-gradient(268.99deg, rgba(0, 255, 183, 0) 1.98%, rgba(71, 255, 244, 0.722892) 32.41%, #FFFFFF 44.07%, rgba(0, 178, 255, 0.55) 60.3%, rgba(0, 255, 183, 0) 98.28%)",
-                  }}
-                />
-                <Ten />
-              </Box>
-            </>
-          )}
-        </>
-      )}
+      <First />
+      <Enemies />
+      <Explore />
+      <Activities />
+      <Social />
+      <Footer />
+      {/* <Third />
+      <Fourth />
+      <Five />
+      <Six />
+      <Seven />
+      <Eight />
+      <Box
+        sx={{
+          backgroundColor: "#070809",
+          backgroundImage: `url(${Smoke})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <Nine />
+        <Box
+          sx={{
+            width: "100%",
+            height: "1px",
+            background:
+              "linear-gradient(268.99deg, rgba(0, 255, 183, 0) 1.98%, rgba(71, 255, 244, 0.722892) 32.41%, #FFFFFF 44.07%, rgba(0, 178, 255, 0.55) 60.3%, rgba(0, 255, 183, 0) 98.28%)",
+          }}
+        />
+        <Ten />
+      </Box> */}
     </>
   );
 };
