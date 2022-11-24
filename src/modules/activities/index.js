@@ -2,20 +2,31 @@ import React, { useState } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { FirstImg, SecondImg, ThirdImg } from "../../imgs/webp/screen4";
 import { GoodPoint, BadPoint } from "../../imgs/webp/screen6";
+import {
+  RedRiftLogo,
+  SmokeMobile,
+  Alex,
+  Cris,
+  Dasha,
+  Ilona,
+  Hanna,
+  Katsia,
+  Maya,
+  Mike,
+  Nastia,
+  Pasha,
+  Veronika,
+  Gary,
+  LinkedIn,
+  Dimitri,
+} from "../../imgs/webp/screen7";
+import { Partner1, Partner2, Partner4 } from "../../imgs/webp/screen8";
 
 const Activities = () => {
   const [activeYear, setActiveYear] = useState(0);
-  const desktopBigWidth = useMediaQuery("(min-width: 1890px)");
+  const [activeTeam, setActiveTeam] = useState("managment");
 
-  const desktopThreeWidth = useMediaQuery("(min-width: 1440px)");
-
-  
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width: 1330px)");
-
-  const tabletThreeWidth = useMediaQuery("(min-width: 1100px)");
-
-  const tablet768Width = useMediaQuery("(min-width: 768px)");
 
   const roadMap = [
     {
@@ -234,6 +245,109 @@ const Activities = () => {
           ],
         },
       ],
+    },
+  ];
+
+  const managment = [
+    {
+      name: "Mike",
+      surname: "Sykora",
+      job: (
+        <>
+          CEO,
+          <br />
+          Co-founder
+        </>
+      ),
+      photo: Mike,
+      nameWidth: "107px",
+      link: "https://www.linkedin.com/in/michal-sykora-11378b215/",
+    },
+    {
+      name: "Christiaan van Steenbergen",
+      job: "Blockchain CTO,  Co-founder",
+      photo: Cris,
+      link: "https://www.linkedin.com/in/christiaanvansteenbergen/",
+    },
+    {
+      name: "Gary",
+      surname: "Yankovich",
+      job: "Chief Product Officer ",
+      photo: Gary,
+      link: "https://www.linkedin.com/in/gary-yankovich-671811168/",
+    },
+    {
+      name: "Darcy",
+      surname: "Maltseva",
+      job: "Chief Operating Officer ",
+      photo: Dasha,
+      link: "https://www.linkedin.com/in/darya-maltseva-34868220a/",
+    },
+    {
+      name: "Katerina",
+      surname: "Dziatlova",
+      job: "Head of management",
+      photo: Katsia,
+      link: "https://www.linkedin.com/in/katsia-dziatlova",
+    },
+  ];
+
+  const marketing = [
+    {
+      name: "Ilona",
+      surname: "Makovetskaya",
+      job: "Head of Marketing",
+      photo: Ilona,
+      link: "",
+    },
+    {
+      name: "Maya",
+      surname: "Kostenkova",
+      job: "Creative producer",
+      photo: Maya,
+      link: "https://www.linkedin.com/in/egor-aniferyk-204930219/",
+    },
+    {
+      name: "Hanna",
+      surname: "Valasheniuk",
+      job: "Creative",
+      photo: Hanna,
+      link: "https://www.linkedin.com/in/hanna-valasheniuk-928970252/",
+    },
+    {
+      name: "Stacy",
+      surname: "Naumenko",
+      job: "Head of graphic design",
+      photo: Nastia,
+      link: "https://www.linkedin.com/in/anastasia-naumenko/",
+    },
+    {
+      name: "Veronica",
+      surname: "Yasulevich",
+      job: "Graphic Designer",
+      photo: Veronika,
+      link: "https://www.linkedin.com/in/nikahartmann/",
+    },
+    {
+      name: "Paul",
+      surname: "Ivuts",
+      job: "Head of 3D arts",
+      photo: Pasha,
+      link: "https://www.linkedin.com/in/ivuts/",
+    },
+    {
+      name: "Alex",
+      surname: "Andriyashko",
+      job: "3D artist",
+      photo: Alex,
+      link: "https://www.linkedin.com/in/alexander-andriyashko-97a298206/",
+    },
+    {
+      name: "Dimitri",
+      surname: "Shatsila",
+      job: "3D artist",
+      photo: Dimitri,
+      link: "https://www.linkedin.com/in/dimitri-shatsila-11154711a/",
     },
   ];
 
@@ -576,6 +690,285 @@ const Activities = () => {
                   </Box>
                 </Box>
               ))}
+            </Box>
+          </Box>
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Typography
+                fontFamily="Aaaiight"
+                fontSize="80px"
+                lineHeight="80px"
+                color="#FFF"
+              >
+                Team
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                background: "#121212",
+                width: "500px",
+                borderRadius: "4px",
+                display: "flex",
+                height: "40px",
+                marginX: "auto",
+                marginTop: "48px",
+                marginBottom: "40px",
+              }}
+            >
+              <Box
+                sx={{
+                  width: `${500 / 3}px`,
+                  background:
+                    activeTeam === "managment"
+                      ? "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)"
+                      : "",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+                onClick={() => setActiveTeam("managment")}
+              >
+                <Typography
+                  fontSize="20px"
+                  lineHeight="32px"
+                  color={activeTeam === "managment" ? "#FFF" : "#646464"}
+                  fontWeight={activeTeam === "managment" ? 600 : 400}
+                >
+                  Managment
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: `${500 / 3}px`,
+                  background:
+                    activeTeam === "game"
+                      ? "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)"
+                      : "",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+                onClick={() => setActiveTeam("game")}
+              >
+                <Typography
+                  fontSize="20px"
+                  lineHeight="32px"
+                  color={activeTeam === "game" ? "#FFF" : "#646464"}
+                  fontWeight={activeTeam === "game" ? 600 : 400}
+                >
+                  Game dev
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: `${500 / 3}px`,
+                  background:
+                    activeTeam === "marketing"
+                      ? "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)"
+                      : "",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+                onClick={() => setActiveTeam("marketing")}
+              >
+                <Typography
+                  fontSize="20px"
+                  lineHeight="32px"
+                  color={activeTeam === "marketing" ? "#FFF" : "#646464"}
+                  fontWeight={activeTeam === "marketing" ? 600 : 400}
+                >
+                  Marketing
+                </Typography>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                maxWidth: "1170px",
+                minHeight: "760px",
+                margin: "auto",
+              }}
+            >
+              {activeTeam === "managment" && (
+                <Box
+                  sx={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))",
+                    gridGap: "60px 40px",
+                  }}
+                >
+                  {managment.map((pers, index) => (
+                    <Box>
+                      <Box>
+                        <img
+                          src={pers.photo}
+                          alt={`${pers.name} ${pers.surname}`}
+                          style={{ width: "200px", height: "222px" }}
+                        />
+                      </Box>
+                      <Box sx={{ marginTop: "32px" }}>
+                        <Typography
+                          fontFamily="Aaaiight"
+                          fontSize="16px"
+                          lineHeight="19.2px"
+                          color="#FFF"
+                          maxWidth="200px"
+                        >
+                          {pers.name} {pers.surname}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ marginTop: "12px" }}>
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="14px"
+                          lineHeight="22.4px"
+                          color="#FFF"
+                          maxWidth="200px"
+                        >
+                          {pers.job}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ marginTop: "20px" }}>
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="14px"
+                          lineHeight="14px"
+                          color="#FFF"
+                          fontWeight="500"
+                          maxWidth="200px"
+                        >
+                          LinkedIn
+                        </Typography>
+                      </Box>
+                    </Box>
+                  ))}
+                </Box>
+              )}
+              {activeTeam === "game" && (
+                <Box>
+                  <Box
+                    sx={{
+                      padding: "48px 60px",
+                      border: "1px solid #00FFB7",
+                      borderRadius: "4px",
+                      width: "555px",
+                      margin: "auto",
+                    }}
+                  >
+                    <img src={RedRiftLogo} alt="red-rift logo" width="555px" />
+                  </Box>
+                  <Box sx={{ marginTop: "20px" }}>
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="16px"
+                      lineHeight="22.4px"
+                      color="#FFF"
+                      textAlign="center"
+                    >
+                      Game Development partner
+                    </Typography>
+                  </Box>
+                </Box>
+              )}
+              {activeTeam === "marketing" && (
+                <Box
+                  sx={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))",
+                    gridGap: "60px 40px",
+                  }}
+                >
+                  {marketing.map((pers, index) => (
+                    <Box>
+                      <Box>
+                        <img
+                          src={pers.photo}
+                          alt={`${pers.name} ${pers.surname}`}
+                          style={{ width: "200px", height: "222px" }}
+                        />
+                      </Box>
+                      <Box sx={{ marginTop: "32px" }}>
+                        <Typography
+                          fontFamily="Aaaiight"
+                          fontSize="16px"
+                          lineHeight="19.2px"
+                          color="#FFF"
+                          maxWidth="200px"
+                        >
+                          {pers.name} {pers.surname}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ marginTop: "12px" }}>
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="14px"
+                          lineHeight="22.4px"
+                          color="#FFF"
+                          maxWidth="200px"
+                        >
+                          {pers.job}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ marginTop: "20px" }}>
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="14px"
+                          lineHeight="14px"
+                          color="#FFF"
+                          fontWeight="500"
+                          maxWidth="200px"
+                        >
+                          LinkedIn
+                        </Typography>
+                      </Box>
+                    </Box>
+                  ))}
+                </Box>
+              )}
+            </Box>
+          </Box>
+          <Box sx={{ marginTop: "100px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Typography
+                fontFamily="Aaaiight"
+                fontSize="80px"
+                lineHeight="80px"
+                color="#FFF"
+              >
+                Our partners
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "780px",
+                display: "flex",
+                justifyContent: "space-between",
+                margin: "auto",
+                marginTop: "48px",
+              }}
+            >
+              <Box>
+                <img src={Partner1} alt="pay-accept" width="186px" />
+              </Box>
+              <Box>
+                <img src={Partner2} alt="red-rift" width="184px" />
+              </Box>
+              <Box>
+                <img src={Partner4} alt="damnn" width="174px" />
+              </Box>
             </Box>
           </Box>
         </Box>

@@ -19,6 +19,7 @@ import Gary from "./team/Gary.jpg";
 import LinkedIn from "./linkedIn.svg";
 import Egor2 from "./team/Egor2.png";
 import Dimitri from "./team/Dimitri.png";
+import Ilona from "./team/Ilona.png";
 
 export {
   Photo1,
@@ -41,5 +42,6 @@ export {
   Gary,
   LinkedIn,
   Egor2,
-  Dimitri
+  Dimitri,
+  Ilona,
 };
