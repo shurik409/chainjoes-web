@@ -813,7 +813,7 @@ const Activities = () => {
             </Box>
             <Box
               sx={{
-                maxWidth: "900px",
+                maxWidth: { lg: "900px", xl: "1170px" },
                 minHeight: "760px",
                 margin: "auto",
               }}
