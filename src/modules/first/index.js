@@ -4,6 +4,8 @@ import Header from "./components/header";
 import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
+import Login from "../../imgs/new/login.svg";
+import Document from "../../imgs/new/document.svg";
 
 const First = () => {
   const refVideo = useRef(null);
@@ -21,12 +23,7 @@ const First = () => {
     }
   });
 
-  
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width:1000px)");
-  const desktop768Width = useMediaQuery("(min-width:768px)");
-  const desktop1080Height = useMediaQuery("(min-height:900px)");
-  const desktop768Height = useMediaQuery("(min-height:685px)");
 
   return (
     <Box
@@ -147,7 +144,6 @@ const First = () => {
                 height: "68px",
                 display: "flex",
                 borderRadius: "2px",
-                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
@@ -156,7 +152,13 @@ const First = () => {
                 marginRight: "24px",
               }}
             >
-              <Typography color="#FFFFFF" fontWeight="600" fontSize="20px">
+              <img src={Login} alt="login" />
+              <Typography
+                marginLeft="11px"
+                color="#FFFFFF"
+                fontWeight="600"
+                fontSize="20px"
+              >
                 Join the Battle
               </Typography>
             </Box>
@@ -165,7 +167,6 @@ const First = () => {
                 width: "280px",
                 height: "68px",
                 display: "flex",
-                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: "2px",
@@ -177,7 +178,13 @@ const First = () => {
                 cursor: "pointer",
               }}
             >
-              <Typography color="#05D19B" fontWeight="600" fontSize="20px">
+              <img src={Document} alt="document" />
+              <Typography
+                marginLeft="8px"
+                color="#05D19B"
+                fontWeight="600"
+                fontSize="20px"
+              >
                 Read Litepaper
               </Typography>
             </Box>

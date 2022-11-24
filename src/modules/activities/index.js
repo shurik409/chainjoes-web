@@ -17,10 +17,10 @@ import {
   Pasha,
   Veronika,
   Gary,
-  LinkedIn,
   Dimitri,
 } from "../../imgs/webp/screen7";
 import { Partner1, Partner2, Partner4 } from "../../imgs/webp/screen8";
+import LinkedIn from "../../imgs/new/linkedin.svg";
 
 const Activities = () => {
   const [activeYear, setActiveYear] = useState(0);
@@ -836,8 +836,16 @@ const Activities = () => {
                           {pers.job}
                         </Typography>
                       </Box>
-                      <Box sx={{ marginTop: "20px" }}>
+                      <Box
+                        sx={{
+                          marginTop: "20px",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img src={LinkedIn} alt="linkedin" />
                         <Typography
+                          marginLeft="8px"
                           fontFamily="Inter"
                           fontSize="14px"
                           lineHeight="14px"
@@ -917,8 +925,16 @@ const Activities = () => {
                           {pers.job}
                         </Typography>
                       </Box>
-                      <Box sx={{ marginTop: "20px" }}>
+                      <Box
+                        sx={{
+                          marginTop: "20px",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img src={LinkedIn} alt="linkedin" />
                         <Typography
+                          marginLeft="8px"
                           fontFamily="Inter"
                           fontSize="14px"
                           lineHeight="14px"

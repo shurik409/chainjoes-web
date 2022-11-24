@@ -6,9 +6,7 @@ import {
   ThirdImg,
   FourthImg,
   FiveImg,
-  MobileMask,
 } from "../../imgs/webp/screen2";
-import Smoke from "../../imgs/smoke2x.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFlip, Pagination, Navigation } from "swiper";
 import {
@@ -20,14 +18,15 @@ import {
   SixImg as PersSixImg,
 } from "../../imgs/webp/screen3";
 
+import ArrowRight from "../../imgs/new/arrow-right-green.svg";
+import ArrowLeft from "../../imgs/new/arrow-left-green.svg";
+
 import "swiper/css";
 import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const Explore = () => {
-  const [curentItem, setCurentItem] = useState(0);
-  const [curentProgress, setProgress] = useState(0);
   const persSwiper = useRef(null);
   const [activePers, setActivePers] = useState(0);
   const texts = [
@@ -93,15 +92,7 @@ const Explore = () => {
     },
   ];
 
-  
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
-
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
-
-  const desktop530Width = useMediaQuery(
-    `(min-width: ${125 * texts.length + 30}px`
-  );
 
   const perses = [
     {
@@ -156,8 +147,21 @@ const Explore = () => {
                   height: 48,
                   background: "#fff",
                   borderRadius: "100px",
+                },
+                ".swiper-button-next": {
                   ":after": {
                     content: "''",
+                    width: "24px",
+                    height: "24px",
+                    background: `url(${ArrowRight})`,
+                  },
+                },
+                ".swiper-button-prev": {
+                  ":after": {
+                    content: "''",
+                    width: "24px",
+                    height: "24px",
+                    background: `url(${ArrowLeft})`,
                   },
                 },
                 ".swiper-pagination": {

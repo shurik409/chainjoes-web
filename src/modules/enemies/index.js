@@ -3,6 +3,10 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import { screen5 } from "../../imgs/webp/";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Cross from "../../imgs/new/Cross.png";
+import Login from "../../imgs/new/login.svg";
+import Timer from "../../imgs/new/timer.svg";
+import Video from "../../imgs/new/video.svg";
+import Close from "../../imgs/new/close.svg";
 
 import "swiper/css";
 
@@ -27,7 +31,6 @@ const Enemies = () => {
     },
   ];
 
-  
   const desktop1080Width = true;
   // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
@@ -106,7 +109,6 @@ const Enemies = () => {
                     height: "60px",
                     display: "flex",
                     borderRadius: "2px",
-                    flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
@@ -115,7 +117,14 @@ const Enemies = () => {
                     marginRight: "24px",
                   }}
                 >
-                  <Typography color="#FFFFFF" fontWeight="600" fontSize="16px">
+                  <img src={Login} alt="login" />
+                  <Typography
+                    marginLeft="11px"
+                    color="#FFFFFF"
+                    fontWeight="600"
+                    fontSize="16px"
+                    fontFamily="Inter"
+                  >
                     Explore the full lore
                   </Typography>
                 </Box>
@@ -124,7 +133,6 @@ const Enemies = () => {
                     width: "260px",
                     height: "60px",
                     display: "flex",
-                    flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
                     borderRadius: "2px",
@@ -133,8 +141,15 @@ const Enemies = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Typography color="#868D8B" fontWeight="600" fontSize="16px">
-                    Watch teaser <span fontSize="12px">(Coming Soon)</span>
+                  <img src={Video} alt="login" />
+                  <Typography
+                    color="#868D8B"
+                    fontWeight="600"
+                    fontSize="16px"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                  >
+                    Watch teaser <sup>Coming Soon</sup>
                   </Typography>
                 </Box>
               </Box>
@@ -173,9 +188,11 @@ const Enemies = () => {
                   transform: "rotate(-30deg)",
                   top: "50%",
                   right: "17%",
+                  display: "flex",
                 }}
               >
-                <Typography color="#FFF" fontWeight="500">
+                <img src={Close} alt="close" />
+                <Typography marginLeft="8px" color="#FFF" fontWeight="500">
                   Without paying for gas
                 </Typography>
               </Box>
@@ -189,9 +206,11 @@ const Enemies = () => {
                   transform: "rotate(30deg)",
                   top: "35%",
                   left: "21%",
+                  display: "flex",
                 }}
               >
-                <Typography color="#FFF" fontWeight="500">
+                <img src={Timer} alt="close" />
+                <Typography marginLeft="8px" color="#FFF" fontWeight="500">
                   In a second
                 </Typography>
               </Box>

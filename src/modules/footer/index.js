@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
+import ArrowAngle from "../../imgs/new/arrow-angle.svg";
+import Twitter from "../../imgs/new/twitter.svg";
+import Telegram from "../../imgs/new/telegram.svg";
+import TikTok from "../../imgs/new/tiktok.svg";
+import Discord from "../../imgs/new/discord.svg";
+import Medium from "../../imgs/new/medium.svg";
+import LinkedIn from "../../imgs/new/linkedin-logo.svg";
 
 const Footer = () => {
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
-
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box>
@@ -27,7 +31,7 @@ const Footer = () => {
           >
             <Box sx={{ display: "flex" }}>
               <Box sx={{ marginRight: "28px" }}>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -37,8 +41,9 @@ const Footer = () => {
                   >
                     Home
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -48,8 +53,9 @@ const Footer = () => {
                   >
                     FAQ
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box>
+                <Box sx={{ display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -59,10 +65,11 @@ const Footer = () => {
                   >
                     Gameplay
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
               </Box>
               <Box sx={{ marginRight: "28px" }}>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -72,8 +79,9 @@ const Footer = () => {
                   >
                     Litepaper
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -83,8 +91,9 @@ const Footer = () => {
                   >
                     Characters
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box>
+                <Box sx={{ display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -94,10 +103,11 @@ const Footer = () => {
                   >
                     OnePage
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -107,8 +117,9 @@ const Footer = () => {
                   >
                     IDO Strategy
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -118,8 +129,9 @@ const Footer = () => {
                   >
                     About
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box>
+                <Box sx={{ display: "flex" }}>
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -129,77 +141,90 @@ const Footer = () => {
                   >
                     Contact us
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
               </Box>
             </Box>
             <Box sx={{ display: "flex" }}>
               <Box sx={{ marginRight: "28px" }}>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                  <img src={Twitter} alt="twitter" />
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
                     lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    marginLeft="8px"
                   >
                     Twitter
                   </Typography>
                 </Box>
-                <Box>
+                <Box sx={{ display: "flex" }}>
+                  <img src={Telegram} alt="telegram" />
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
                     lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    marginLeft="8px"
                   >
-                    Tellegram
+                    Telegram
                   </Typography>
                 </Box>
               </Box>
               <Box sx={{ marginRight: "28px" }}>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                  <img src={TikTok} alt="tiktok" />
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
                     lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    marginLeft="8px"
                   >
                     Tik Tok
                   </Typography>
                 </Box>
-                <Box>
+                <Box sx={{ display: "flex" }}>
+                  <img src={Discord} alt="discord" />
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
                     lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    marginLeft="8px"
                   >
                     Discord
                   </Typography>
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ marginBottom: "28px" }}>
+                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                  <img src={Medium} alt="medium" />
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
                     lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    marginLeft="8px"
                   >
                     Medium
                   </Typography>
                 </Box>
-                <Box>
+                <Box sx={{ display: "flex" }}>
+                  <img src={LinkedIn} alt="linkedin" />
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
                     lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    marginLeft="8px"
                   >
                     LinkedIn
                   </Typography>

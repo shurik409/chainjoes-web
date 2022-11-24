@@ -1,25 +1,10 @@
 import React from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
-import {
-  Linked,
-  Discord,
-  Medium,
-  TikTok,
-  Tg,
-  Twitter,
-  Logo,
-  Scratches,
-  ScratchesMobile,
-} from "../../imgs/webp/screen9";
-import Smoke from "../../imgs/smoke2x.png";
+import Login from "../../imgs/new/login-green.svg";
 
 const Social = () => {
-  const desktopFlexWidth = useMediaQuery("(min-width: 1200px)");
-  
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
 
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
   return (
     <Box>
       {desktop1080Width && (
@@ -69,7 +54,9 @@ const Social = () => {
                 alignItems: "center",
               }}
             >
+              <img src={Login} alt="login" />
               <Typography
+                marginLeft="8px"
                 fontSize="20px"
                 lineHeight="32px"
                 fontWeight="600"

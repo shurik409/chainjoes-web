@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import Logo from "../../../../imgs/webp/logo.png";
+import ArrowRight from "../../../../imgs/new/arrow-right.svg";
+import ArrowDown from "../../../../imgs/new/arrow-down.svg";
 
 const Header = (props) => {
   const buttons = [
@@ -85,10 +87,7 @@ const Header = (props) => {
     },
   ];
 
-  
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box
@@ -138,7 +137,12 @@ const Header = (props) => {
                     },
                   }}
                 >
-                  <Box sx={{}}>{item.title}</Box>
+                  <Box sx={{ display: "flex" }}>
+                    <Typography sx={{ marginRight: item.links ? "6px" : "" }}>
+                      {item.title}
+                    </Typography>
+                    {item.links && <img src={ArrowDown} alt="arrow-down" />}
+                  </Box>
                   {item.links && (
                     <Box
                       className={`open-menu`}
@@ -183,19 +187,22 @@ const Header = (props) => {
                 justifyContent: "center",
                 alignItems: "center",
                 borderRadius: "2px",
-                border: "1px solid",
-                borderImageSlice: 1,
-                borderImageSource:
-                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                border: "1px solid #616161",
+                // borderImageSlice: 1,
+                // borderImageSource:
+                //   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                 marginRight: "16px",
                 cursor: "pointer",
               }}
             >
-              <Typography color="#7F7F7F" fontSize="14px">
+              <Typography
+                color="#7F7F7F"
+                fontSize="14px"
+                fontFamily="Inter"
+                fontWeight={500}
+              >
                 Sale
-              </Typography>
-              <Typography color="#05D19B" fontSize="14px">
-                Comming soon
+                <sup>comming soon</sup>
               </Typography>
             </Box>
             <Box
@@ -204,7 +211,6 @@ const Header = (props) => {
                 height: "44px",
                 display: "flex",
                 borderRadius: "2px",
-                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
                 cursor: "pointer",
@@ -212,9 +218,10 @@ const Header = (props) => {
                   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
               }}
             >
-              <Typography color="#FFFFFF" fontSize="14px">
+              <Typography color="#FFFFFF" fontSize="14px" marginRight="4px">
                 Whitelist
               </Typography>
+              <img src={ArrowRight} alt="arrow-right" />
             </Box>
           </Box>
         </Box>
