@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FirstImg, SecondImg, ThirdImg } from "../../imgs/webp/screen4";
 import { GoodPoint, BadPoint } from "../../imgs/webp/screen6";
 import {
   RedRiftLogo,
-  SmokeMobile,
   Alex,
   Cris,
   Dasha,
@@ -375,8 +374,8 @@ const Activities = () => {
             >
               <Box
                 sx={{
-                  width: "570px",
-                  height: "510px",
+                  width: { lg: "436px", xl: "570px" },
+                  height: { lg: "500px", xl: "510px" },
                   background:
                     "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                   marginRight: "30px",
@@ -428,8 +427,8 @@ const Activities = () => {
               <Box>
                 <Box
                   sx={{
-                    width: "570px",
-                    height: "240px",
+                    width: { lg: "436px", xl: "570px" },
+                    height: { lg: "240px" },
                     background:
                       "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                     marginBottom: "30px",
@@ -437,11 +436,21 @@ const Activities = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Box sx={{ marginRight: "16px", marginLeft: "32px" }}>
-                    <img src={SecondImg} alt="play" width="160px" />
+                  <Box
+                    sx={{
+                      marginRight: "16px",
+                      marginLeft: { lg: "20px", xl: "32px" },
+                      width: { lg: "120px", xl: "160px" },
+                    }}
+                  >
+                    <img
+                      src={SecondImg}
+                      alt="play"
+                      style={{ width: "inherit" }}
+                    />
                   </Box>
                   <Box>
-                    <Box>
+                    <Box sx={{ maxWidth: { lg: "228px", xl: "330px" } }}>
                       <Typography
                         fontFamily="Aaaiight"
                         fontSize="24px"
@@ -460,6 +469,7 @@ const Activities = () => {
                         fontSize="14px"
                         lineHeight="22.4px"
                         color="#FFF"
+                        fontFamily="Inter"
                       >
                         Unite with others to fight
                         <br />
@@ -470,8 +480,8 @@ const Activities = () => {
                 </Box>
                 <Box
                   sx={{
-                    width: "570px",
-                    height: "240px",
+                    width: { lg: "436px", xl: "570px" },
+                    height: { lg: "240px" },
                     background:
                       "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                     marginBottom: "30px",
@@ -479,17 +489,26 @@ const Activities = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Box sx={{ marginRight: "16px", marginLeft: "32px" }}>
-                    <img src={ThirdImg} alt="play" width="160px" />
+                  <Box
+                    sx={{
+                      marginRight: "16px",
+                      marginLeft: { lg: "20px", xl: "32px" },
+                      width: { lg: "120px", xl: "160px" },
+                    }}
+                  >
+                    <img
+                      src={ThirdImg}
+                      alt="play"
+                      style={{ width: "inherit" }}
+                    />
                   </Box>
                   <Box>
-                    <Box>
+                    <Box sx={{ maxWidth: { lg: "228px", xl: "330px" } }}>
                       <Typography
                         fontFamily="Aaaiight"
                         fontSize="24px"
                         lineHeight="33.05px"
                         color="#FFF"
-                        maxWidth="330px"
                       >
                         Join weekly & seasonal activities & tournaments
                       </Typography>
@@ -497,13 +516,14 @@ const Activities = () => {
                     <Box
                       sx={{
                         marginTop: "8px",
+                        maxWidth: { lg: "260px", xl: "330px" },
                       }}
                     >
                       <Typography
                         fontSize="14px"
                         lineHeight="22.4px"
                         color="#FFF"
-                        maxWidth="330px"
+                        fontFamily="Inter"
                       >
                         Participate in various quests and missions to receive
                         unique rewards and $CJ tokens.
@@ -584,8 +604,8 @@ const Activities = () => {
                     {year.steps.slice(0, 2).map((step, index) => (
                       <Box
                         sx={{
-                          width: 570,
-                          height: 334,
+                          width: { lg: 431, xl: 570 },
+                          height: { lg: 379, xl: 334 },
                           background: "#242424",
                           borderRadius: "8px",
                         }}
@@ -639,8 +659,8 @@ const Activities = () => {
                     {year.steps.slice(2, 4).map((step, index) => (
                       <Box
                         sx={{
-                          width: 570,
-                          height: 334,
+                          width: { lg: 431, xl: 570 },
+                          height: { lg: 379, xl: 334 },
                           background: "#242424",
                           borderRadius: "8px",
                         }}
@@ -697,6 +717,7 @@ const Activities = () => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
+                marginTop: "40px",
               }}
             >
               <Typography
@@ -792,7 +813,7 @@ const Activities = () => {
             </Box>
             <Box
               sx={{
-                maxWidth: "1170px",
+                maxWidth: "900px",
                 minHeight: "760px",
                 margin: "auto",
               }}
@@ -801,37 +822,53 @@ const Activities = () => {
                 <Box
                   sx={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))",
-                    gridGap: "60px 40px",
+                    gridTemplateColumns: {
+                      lg: "repeat(auto-fit, minmax(150px,1fr))",
+                      xl: "repeat(auto-fit, minmax(200px,1fr))",
+                    },
+                    gridGap: { lg: "40px 35px", xl: "60px 40px" },
                   }}
                 >
                   {managment.map((pers, index) => (
                     <Box>
-                      <Box>
+                      <Box
+                        sx={{
+                          width: { lg: "150px", xl: "200px" },
+                          height: { lg: "166px", xl: "222px" },
+                        }}
+                      >
                         <img
                           src={pers.photo}
                           alt={`${pers.name} ${pers.surname}`}
-                          style={{ width: "200px", height: "222px" }}
+                          style={{ width: "inherit", height: "inherit" }}
                         />
                       </Box>
-                      <Box sx={{ marginTop: "32px" }}>
+                      <Box
+                        sx={{
+                          marginTop: "32px",
+                          maxWidth: { lg: "150px", xl: "200px" },
+                        }}
+                      >
                         <Typography
                           fontFamily="Aaaiight"
                           fontSize="16px"
                           lineHeight="19.2px"
                           color="#FFF"
-                          maxWidth="200px"
                         >
                           {pers.name} {pers.surname}
                         </Typography>
                       </Box>
-                      <Box sx={{ marginTop: "12px" }}>
+                      <Box
+                        sx={{
+                          marginTop: "12px",
+                          maxWidth: { lg: "150px", xl: "200px" },
+                        }}
+                      >
                         <Typography
                           fontFamily="Inter"
                           fontSize="14px"
                           lineHeight="22.4px"
                           color="#FFF"
-                          maxWidth="200px"
                         >
                           {pers.job}
                         </Typography>
@@ -851,7 +888,6 @@ const Activities = () => {
                           lineHeight="14px"
                           color="#FFF"
                           fontWeight="500"
-                          maxWidth="200px"
                         >
                           LinkedIn
                         </Typography>
@@ -890,37 +926,53 @@ const Activities = () => {
                 <Box
                   sx={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))",
-                    gridGap: "60px 40px",
+                    gridTemplateColumns: {
+                      lg: "repeat(auto-fit, minmax(150px,1fr))",
+                      xl: "repeat(auto-fit, minmax(200px,1fr))",
+                    },
+                    gridGap: { lg: "40px 35px", xl: "60px 40px" },
                   }}
                 >
                   {marketing.map((pers, index) => (
                     <Box>
-                      <Box>
+                      <Box
+                        sx={{
+                          width: { lg: "150px", xl: "200px" },
+                          height: { lg: "166px", xl: "222px" },
+                        }}
+                      >
                         <img
                           src={pers.photo}
                           alt={`${pers.name} ${pers.surname}`}
-                          style={{ width: "200px", height: "222px" }}
+                          style={{ width: "inherit", height: "inherit" }}
                         />
                       </Box>
-                      <Box sx={{ marginTop: "32px" }}>
+                      <Box
+                        sx={{
+                          marginTop: "32px",
+                          maxWidth: { lg: "150px", xl: "200px" },
+                        }}
+                      >
                         <Typography
                           fontFamily="Aaaiight"
                           fontSize="16px"
                           lineHeight="19.2px"
                           color="#FFF"
-                          maxWidth="200px"
                         >
                           {pers.name} {pers.surname}
                         </Typography>
                       </Box>
-                      <Box sx={{ marginTop: "12px" }}>
+                      <Box
+                        sx={{
+                          marginTop: "12px",
+                          maxWidth: { lg: "150px", xl: "200px" },
+                        }}
+                      >
                         <Typography
                           fontFamily="Inter"
                           fontSize="14px"
                           lineHeight="22.4px"
                           color="#FFF"
-                          maxWidth="200px"
                         >
                           {pers.job}
                         </Typography>
@@ -940,7 +992,6 @@ const Activities = () => {
                           lineHeight="14px"
                           color="#FFF"
                           fontWeight="500"
-                          maxWidth="200px"
                         >
                           LinkedIn
                         </Typography>

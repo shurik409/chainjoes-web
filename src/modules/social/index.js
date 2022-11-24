@@ -11,8 +11,8 @@ const Social = () => {
         <Box sx={{ paddingY: "80px" }}>
           <Box
             sx={{
-              width: "970px",
-              height: "520px",
+              width: { lg: "740px", xl: "970px" },
+              height: { lg: "475px", xl: "520px" },
               background:
                 "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
               display: "flex",

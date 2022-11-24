@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import React from "react";
+import { Box, Typography } from "@mui/material";
 import { screen5 } from "../../imgs/webp/";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Cross from "../../imgs/new/Cross.png";
 import Login from "../../imgs/new/login.svg";
 import Timer from "../../imgs/new/timer.svg";
@@ -11,34 +10,7 @@ import Close from "../../imgs/new/close.svg";
 import "swiper/css";
 
 const Enemies = () => {
-  const [curentItem, setCurentItem] = useState(0);
-  const [curentProgress, setProgress] = useState(0);
-  const swiperRef = useRef(null);
-
-  const texts = [
-    {
-      title: `Scammers`,
-      description: `Scammers faction is based on hallucinations, illusions and fakes. The characters are very sneaky, selfish and ruthless. Some can be fast and loud, and some can be slow and persuasive. But don’t even think about getting caught by their tricks, otherwise you’re finished!`,
-    },
-    {
-      title: `Hackers`,
-      description: `Not numerous intelligent and technological formations that use small reprogrammed bots as cannon fodder. This faction is based on the strongest programming skills, technical skills and hacking. Protect yourself as much as possible!`,
-    },
-    {
-      title: `Spammers`,
-      description: `Spammers faction is based on fast and slashing movements, chaotic choice of targets, defiant and inappropriate behavior. It’s nearly impossible to dodge their attacks because you never know what the next target will be. 
-      But you can try!`,
-    },
-  ];
-
   const desktop1080Width = true;
-  // const desktop1080Width = useMediaQuery("(min-width: 1000px)");
-
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
-
-  const desktop530Width = useMediaQuery(
-    `(min-width: ${125 * texts.length + 30}px`
-  );
 
   return (
     <Box>
@@ -55,8 +27,8 @@ const Enemies = () => {
               sx={{
                 background: `#2E2E2E`,
                 backgroundBlendMode: "soft-light, normal",
-                width: 966,
-                height: 618,
+                width: { lg: 740, xl: 966 },
+                height: { lg: 470, xl: 618 },
                 backgroundSize: "cover",
                 borderRadius: "8px",
                 position: "absolute",
@@ -69,8 +41,8 @@ const Enemies = () => {
             <Box
               sx={{
                 background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${screen5})`,
-                width: 966,
-                height: 618,
+                width: { lg: 740, xl: 966 },
+                height: { lg: 470, xl: 618 },
                 backgroundSize: "cover",
                 borderRadius: "8px",
                 display: "flex",
@@ -83,7 +55,7 @@ const Enemies = () => {
                 <Typography
                   fontFamily="Aaaiight"
                   fontSize="80px"
-                  lineHeight="100%"
+                  lineHeight="80px"
                   color="#FFF"
                 >
                   Near future...
@@ -95,6 +67,7 @@ const Enemies = () => {
                   textAlign="center"
                   fontSize="16px"
                   lineHeight="170%"
+                  fontFamily="Inter"
                 >
                   Billions of citizens in existing metaverses now have access
                   <br /> to a new meta-jump technology. Using this technology,
@@ -155,14 +128,20 @@ const Enemies = () => {
               </Box>
             </Box>
             <Box>
-              <Box sx={{ position: "absolute", top: "-23%", left: "17%" }}>
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: { lg: "-32%", xl: "-23%" },
+                  left: { lg: "1%", xl: "17%" },
+                }}
+              >
                 <img src={Cross} width="158px" alt="cross" />
               </Box>
               <Box
                 sx={{
                   position: "absolute",
                   top: "23%",
-                  right: "5%",
+                  right: { lg: "2%", xl: "5%" },
                   transform: "rotate(30deg)",
                 }}
               >
@@ -172,7 +151,7 @@ const Enemies = () => {
                 sx={{
                   position: "absolute",
                   bottom: "-23%",
-                  left: "50%",
+                  left: { lg: "30%", xl: "50%" },
                   transform: "rotate(-21deg)",
                 }}
               >
@@ -186,8 +165,8 @@ const Enemies = () => {
                   paddingY: "10px",
                   borderRadius: "100px",
                   transform: "rotate(-30deg)",
-                  top: "50%",
-                  right: "17%",
+                  top: { lg: "110%", xl: "50%" },
+                  right: { lg: "2%", xl: "17%" },
                   display: "flex",
                 }}
               >
@@ -205,7 +184,7 @@ const Enemies = () => {
                   borderRadius: "100px",
                   transform: "rotate(30deg)",
                   top: "35%",
-                  left: "21%",
+                  left: { lg: "3%", xl: "21%" },
                   display: "flex",
                 }}
               >

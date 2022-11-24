@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Header from "./components/header";
 import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
@@ -10,7 +11,6 @@ import Document from "../../imgs/new/document.svg";
 const First = () => {
   const refVideo = useRef(null);
   const [muted, setMuted] = useState(false);
-
   useEffect(() => {
     if (!refVideo.current) {
       return;
@@ -28,50 +28,50 @@ const First = () => {
   return (
     <Box
       sx={{
-        "@keyframes video": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes header": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes title": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes description": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes button": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
+        // "@keyframes video": {
+        //   "0%": {
+        //     opacity: 0,
+        //   },
+        //   "100%": {
+        //     opacity: 1,
+        //   },
+        // },
+        // "@keyframes header": {
+        //   "0%": {
+        //     opacity: 0,
+        //   },
+        //   "100%": {
+        //     opacity: 1,
+        //   },
+        // },
+        // "@keyframes title": {
+        //   "0%": {
+        //     opacity: 0,
+        //   },
+        //   "100%": {
+        //     opacity: 1,
+        //   },
+        // },
+        // "@keyframes description": {
+        //   "0%": {
+        //     opacity: 0,
+        //   },
+        //   "100%": {
+        //     opacity: 1,
+        //   },
+        // },
+        // "@keyframes button": {
+        //   "0%": {
+        //     opacity: 0,
+        //   },
+        //   "100%": {
+        //     opacity: 1,
+        //   },
+        // },
       }}
     >
       {desktop1080Width && (
-        <Box sx={{ position: "relative", height: "100vh", paddingX: "135px" }}>
+        <Box sx={{ position: "relative", height: "100vh", paddingX: {lg: '66px',xl:"135px"} }}>
           <Box
             sx={
               {

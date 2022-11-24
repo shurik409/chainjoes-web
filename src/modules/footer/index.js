@@ -160,7 +160,12 @@ const Footer = () => {
                     Twitter
                   </Typography>
                 </Box>
-                <Box sx={{ display: "flex" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: { lg: "28px", xl: "0" },
+                  }}
+                >
                   <img src={Telegram} alt="telegram" />
                   <Typography
                     fontSize="20px"
@@ -173,8 +178,30 @@ const Footer = () => {
                     Telegram
                   </Typography>
                 </Box>
+                <Box
+                  sx={{
+                    display: { lg: "flex", xl: "none" },
+                  }}
+                >
+                  <img src={TikTok} alt="tiktok" />
+                  <Typography
+                    fontSize="20px"
+                    fontWeight="500"
+                    lineHeight="24.2px"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                  >
+                    Tik Tok
+                  </Typography>
+                </Box>
               </Box>
-              <Box sx={{ marginRight: "28px" }}>
+              <Box
+                sx={{
+                  marginRight: "28px",
+                  display: { lg: "none", xl: "block" },
+                }}
+              >
                 <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <img src={TikTok} alt="tiktok" />
                   <Typography
@@ -203,6 +230,24 @@ const Footer = () => {
                 </Box>
               </Box>
               <Box>
+                <Box
+                  sx={{
+                    display: { lg: "flex", xl: "none" },
+                    marginBottom: "28px",
+                  }}
+                >
+                  <img src={Discord} alt="discord" />
+                  <Typography
+                    fontSize="20px"
+                    fontWeight="500"
+                    lineHeight="24.2px"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                  >
+                    Discord
+                  </Typography>
+                </Box>
                 <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <img src={Medium} alt="medium" />
                   <Typography

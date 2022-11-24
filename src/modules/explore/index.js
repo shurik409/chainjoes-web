@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import {
   FirstImg,
   SecondImg,
@@ -96,7 +96,7 @@ const Explore = () => {
 
   const perses = [
     {
-      title: "Mr. Joe",
+      title: "Mr. Tyr",
       img: PersFirstImg,
       description:
         "This is carved on the coat of arms of the house of Hodler, whose metaverse was covered with ice after it was destroyed by hackers decades ago.  ",
@@ -140,7 +140,7 @@ const Explore = () => {
           <Box sx={{ marginBottom: "300px" }}>
             <Box
               sx={{
-                width: "1150px",
+                width: { lg: "892px", xl: "1150px" },
                 margin: "auto",
                 ".swiper-button-next, .swiper-button-prev": {
                   width: 48,
@@ -192,18 +192,19 @@ const Explore = () => {
                   <SwiperSlide>
                     <Box
                       sx={{
-                        width: 880,
-                        height: 480,
+                        width: { lg: 740, xl: 880 },
+                        height: { lg: 340, xl: 480 },
                         background:
                           "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                         margin: "auto",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
+                        borderRadius: "8px",
                       }}
                     >
                       <Box sx={{ display: "flex" }}>
-                        <Box sx={{ width: 400 }}>
+                        <Box sx={{ width: { lg: 260, xl: 400 } }}>
                           <img
                             src={text.img}
                             alt="explore"
@@ -242,18 +243,36 @@ const Explore = () => {
             </Box>
           </Box>
           <Box sx={{ paddingLeft: "135px" }}>
+            <Box
+              sx={{
+                display: { lg: "block", xl: "none" },
+                marginBottom: "60px",
+              }}
+            >
+              <Typography
+                fontFamily="Aaaiight"
+                fontSize="80px"
+                color="#FFF"
+                lineHeight="80px"
+                textAlign="center"
+              >
+                Choose your <span style={{ color: "#005B42" }}>Joe</span>
+              </Typography>
+            </Box>
             <Box sx={{ display: "flex", justifyContent: "space-around" }}>
               <Box>
-                <Typography
-                  fontFamily="Aaaiight"
-                  fontSize="80px"
-                  color="#FFF"
-                  lineHeight="80px"
-                >
-                  Choose
-                  <br />
-                  your <span style={{ color: "#005B42" }}>Joe</span>
-                </Typography>
+                <Box sx={{ display: { lg: "none", xl: "block" } }}>
+                  <Typography
+                    fontFamily="Aaaiight"
+                    fontSize="80px"
+                    color="#FFF"
+                    lineHeight="80px"
+                  >
+                    Choose
+                    <br />
+                    your <span style={{ color: "#005B42" }}>Joe</span>
+                  </Typography>
+                </Box>
                 <Box sx={{ marginTop: "32px" }}>
                   {perses.map((pers, index) => (
                     <Box
@@ -313,7 +332,7 @@ const Explore = () => {
                   ))}
                 </Box>
               </Box>
-              <Box sx={{ width: "700px" }}>
+              <Box sx={{ width: { lg: "500px", xl: "700px" } }}>
                 <Swiper
                   slidesPerView={1}
                   centeredSlides={true}
@@ -340,8 +359,8 @@ const Explore = () => {
                             top: "50%",
                             left: "50%",
                             position: "absolute",
-                            width: 580,
-                            height: 721,
+                            width: { lg: 350, xl: 580 },
+                            height: { lg: 435, xl: 721 },
                             background: "#2E2E2E",
                             margin: "auto",
                             display: "flex",
@@ -353,9 +372,10 @@ const Explore = () => {
                         ></Box>
                         <Box
                           sx={{
-                            width: 580,
-                            height: 721,
+                            width: { lg: 350, xl: 580 },
+                            height: { lg: 435, xl: 721 },
                             background: `url(${pers.img})`,
+                            backgroundSize: "cover",
                             margin: "auto",
                             display: "flex",
                             justifyContent: "center",
