@@ -25,15 +25,16 @@ import "swiper/css";
 import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Noise from "../../imgs/new/noise.png";
 
 const Explore = () => {
   const persSwiper = useRef(null);
   const [activePers, setActivePers] = useState(0);
   const texts = [
     {
-      title: "Strong gameplay in crypto theme",
+      title: "Free gameplay",
       mobileBottom: "5%",
-      description: `Chain Joes is filled with references to cryptothematics, memes and a large number of gaming phenomena from the past that will cause real game lovers to delight. A thoughtful game world, characters with a unique story and high-quality visualization and enemies in the form of Scammers, Spammers and Hackers allowed us to create strong gameplay that has a high player retention system.`,
+      description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion. Join the battle without any barrier! `,
       img: FirstImg,
       mobileTitle: (
         <>
@@ -140,7 +141,7 @@ const Explore = () => {
           <Box sx={{ marginBottom: "300px" }}>
             <Box
               sx={{
-                width: { lg: "892px", xl: "1150px" },
+                width: { md: "668px", lg: "892px", xl: "1150px" },
                 margin: "auto",
                 ".swiper-button-next, .swiper-button-prev": {
                   width: 48,
@@ -149,6 +150,7 @@ const Explore = () => {
                   borderRadius: "100px",
                 },
                 ".swiper-button-next": {
+                  right: { md: 0, lg: "10px" },
                   ":after": {
                     content: "''",
                     width: "24px",
@@ -157,6 +159,7 @@ const Explore = () => {
                   },
                 },
                 ".swiper-button-prev": {
+                  left: { md: 0, lg: "10px" },
                   ":after": {
                     content: "''",
                     width: "24px",
@@ -192,10 +195,10 @@ const Explore = () => {
                   <SwiperSlide>
                     <Box
                       sx={{
-                        width: { lg: 740, xl: 880 },
-                        height: { lg: 340, xl: 480 },
-                        background:
-                          "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                        width: { md: 620, lg: 740, xl: 880 },
+                        height: { md: 340, xl: 480 },
+                        background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
+                        backgroundBlendMode: "soft-light, normal",
                         margin: "auto",
                         display: "flex",
                         justifyContent: "center",
@@ -204,7 +207,13 @@ const Explore = () => {
                       }}
                     >
                       <Box sx={{ display: "flex" }}>
-                        <Box sx={{ width: { lg: 260, xl: 400 } }}>
+                        <Box
+                          sx={{
+                            width: { md: 260, xl: 400 },
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
                           <img
                             src={text.img}
                             alt="explore"
@@ -214,16 +223,20 @@ const Explore = () => {
                         </Box>
                         <Box
                           sx={{
-                            maxWidth: "400px",
+                            maxWidth: { md: "296px", lg: "400px" },
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "center",
+                            "& > .description": {
+                              fontSize: { md: "14px", lg: "16px" },
+                            },
                           }}
                         >
                           <Typography
                             fontFamily="Aaaiight"
                             fontSize="32px"
                             color="#FFF"
+                            className="title"
                           >
                             {text.title}
                           </Typography>
@@ -231,6 +244,7 @@ const Explore = () => {
                             fontSize="16px"
                             color="#FFF"
                             marginTop="12px"
+                            className="description"
                           >
                             {text.description}
                           </Typography>
@@ -242,10 +256,10 @@ const Explore = () => {
               </Swiper>
             </Box>
           </Box>
-          <Box sx={{ paddingLeft: "135px" }}>
+          <Box sx={{ paddingLeft: { md: "34px", lg: "66px", xl: "135px" } }}>
             <Box
               sx={{
-                display: { lg: "block", xl: "none" },
+                display: { md: "block", xl: "none" },
                 marginBottom: "60px",
               }}
             >
@@ -259,9 +273,15 @@ const Explore = () => {
                 Choose your <span style={{ color: "#005B42" }}>Joe</span>
               </Typography>
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: { md: "space-between", lg: "space-around" },
+                alignItems: { md: "center", lg: "normal" },
+              }}
+            >
               <Box>
-                <Box sx={{ display: { lg: "none", xl: "block" } }}>
+                <Box sx={{ display: { md: "none", xl: "block" } }}>
                   <Typography
                     fontFamily="Aaaiight"
                     fontSize="80px"
@@ -277,8 +297,7 @@ const Explore = () => {
                   {perses.map((pers, index) => (
                     <Box
                       sx={{
-                        width: "424px",
-                        padding: "20px",
+                        width: { md: "400px", lg: "500px" },
                         border:
                           index === activePers
                             ? "1px solid #005B42"
@@ -289,50 +308,56 @@ const Explore = () => {
                       }}
                     >
                       <Box
-                        sx={{ cursor: "pointer" }}
-                        onClick={() => {
-                          persSwiper.current.swiper.slideTo(index);
-                          setActivePers(index);
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Aaaiight"
-                          fontSize="18px"
-                          lineHeight="18px"
-                          color="#FFF"
-                        >
-                          {pers.title}
-                        </Typography>
-                      </Box>
-                      <Box
                         sx={{
-                          marginTop: "8px",
-                          maxHeight: index === activePers ? "120px" : "0px",
-                          opacity: index === activePers ? 1 : 0,
-                          overflow: "hidden",
-                          transition: "all 0.2s ease-in-out",
+                          padding: "20px",
                         }}
                       >
-                        <Typography
-                          color="#FFF"
-                          maxWidth="370px"
-                          fontSize="12px"
+                        <Box
+                          sx={{ cursor: "pointer" }}
+                          onClick={() => {
+                            persSwiper.current.swiper.slideTo(index);
+                            setActivePers(index);
+                          }}
                         >
-                          {pers.description}
-                        </Typography>
-                        <Typography
-                          color="#00FFB7"
-                          fontSize="12px"
-                          marginTop="12px"
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="18px"
+                            lineHeight="18px"
+                            color="#FFF"
+                          >
+                            {pers.title}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "8px",
+                            maxHeight: index === activePers ? "120px" : "0px",
+                            opacity: index === activePers ? 1 : 0,
+                            overflow: "hidden",
+                            transition: "all 0.2s ease-in-out",
+                          }}
                         >
-                          Explore the full lore
-                        </Typography>
+                          <Typography
+                            color="#FFF"
+                            maxWidth="370px"
+                            fontSize="12px"
+                          >
+                            {pers.description}
+                          </Typography>
+                          <Typography
+                            color="#00FFB7"
+                            fontSize="12px"
+                            marginTop="12px"
+                          >
+                            Explore the full lore
+                          </Typography>
+                        </Box>
                       </Box>
                     </Box>
                   ))}
                 </Box>
               </Box>
-              <Box sx={{ width: { lg: "500px", xl: "700px" } }}>
+              <Box sx={{ width: { md: "300px", lg: "500px", xl: "700px" } }}>
                 <Swiper
                   slidesPerView={1}
                   centeredSlides={true}
@@ -359,9 +384,9 @@ const Explore = () => {
                             top: "50%",
                             left: "50%",
                             position: "absolute",
-                            width: { lg: 350, xl: 580 },
-                            height: { lg: 435, xl: 721 },
-                            background: "#2E2E2E",
+                            width: { md: 300, lg: 350, xl: 580 },
+                            height: { md: 373, lg: 435, xl: 721 },
+                            background: `url(${Noise}) 0 0/30% 30%, #2E2E2E`,
                             margin: "auto",
                             display: "flex",
                             justifyContent: "center",
@@ -372,8 +397,8 @@ const Explore = () => {
                         ></Box>
                         <Box
                           sx={{
-                            width: { lg: 350, xl: 580 },
-                            height: { lg: 435, xl: 721 },
+                            width: { md: 300, lg: 350, xl: 580 },
+                            height: { md: 373, lg: 435, xl: 721 },
                             background: `url(${pers.img})`,
                             backgroundSize: "cover",
                             margin: "auto",

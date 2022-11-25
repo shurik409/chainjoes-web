@@ -20,6 +20,14 @@ import {
 } from "../../imgs/webp/screen7";
 import { Partner1, Partner2, Partner4 } from "../../imgs/webp/screen8";
 import LinkedIn from "../../imgs/new/linkedin.svg";
+import Noise from "../../imgs/new/noise.png";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, FreeMode } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
 
 const Activities = () => {
   const [activeYear, setActiveYear] = useState(0);
@@ -368,70 +376,87 @@ const Activities = () => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "center",
+                flexDirection: { md: "column", lg: "row" },
+                justifyContent: { md: "normal", lg: "center" },
+                alignItems: { md: "center", lg: "normal" },
                 marginTop: "48px",
               }}
             >
               <Box
                 sx={{
-                  width: { lg: "436px", xl: "570px" },
-                  height: { lg: "500px", xl: "510px" },
-                  background:
-                    "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                  marginRight: "30px",
+                  width: { md: "580px", lg: "436px", xl: "570px" },
+                  height: { md: "200px", lg: "500px", xl: "510px" },
+                  background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
+                  marginRight: { md: 0, lg: "30px" },
+                  marginBottom: { md: "30px", lg: 0 },
+                  backgroundBlendMode: "soft-light, normal",
                   display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
+                  flexDirection: { md: "row", lg: "column" },
+                  justifyContent: { md: "normal", lg: "center" },
+                  alignItems: { md: "center", lg: "center" },
                 }}
               >
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  <img src={FirstImg} alt="play" width="280px" />
+                <Box
+                  sx={{
+                    display: { md: "block", lg: "flex" },
+                    justifyContent: "center",
+                    width: { md: 176, lg: 280 },
+                    marginLeft: { md: "20px", lg: 0 },
+                  }}
+                >
+                  <img src={FirstImg} alt="play" style={{ width: "inherit" }} />
                 </Box>
                 <Box
                   sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: "28px",
+                    marginLeft: { md: "16px", lg: 0 },
                   }}
                 >
-                  <Typography
-                    fontFamily="Aaaiight"
-                    fontSize="32px"
-                    lineHeight="32px"
-                    color="#FFF"
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: { md: "normal", lg: "center" },
+                      marginTop: "28px",
+                    }}
                   >
-                    play different modes
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: "12px",
-                  }}
-                >
-                  <Typography
-                    fontSize="16px"
-                    lineHeight="27.2px"
-                    color="#FFF"
-                    textAlign="center"
+                    <Typography
+                      fontFamily="Aaaiight"
+                      fontSize="32px"
+                      lineHeight="32px"
+                      color="#FFF"
+                    >
+                      play different modes
+                    </Typography>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: { md: "normal", lg: "center" },
+                      marginTop: "12px",
+                      textAlign: { md: "left", lg: "center" },
+                    }}
                   >
-                    Explore classic deathmatch, battle royale,
-                    <br />
-                    meat grinder, capture the flag, duck hunt,
-                    <br />
-                    run the labyrinth and become a champ.
-                  </Typography>
+                    <Typography
+                      fontSize="16px"
+                      lineHeight="27.2px"
+                      color="#FFF"
+                    >
+                      Explore classic deathmatch, battle royale,
+                      <br />
+                      meat grinder, capture the flag, duck hunt,
+                      <br />
+                      run the labyrinth and become a champ.
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
               <Box>
                 <Box
                   sx={{
-                    width: { lg: "436px", xl: "570px" },
-                    height: { lg: "240px" },
-                    background:
-                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                    width: { md: "580px", lg: "436px", xl: "570px" },
+                    height: { md: "200px", lg: "240px" },
+                    background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
                     marginBottom: "30px",
+                    backgroundBlendMode: "soft-light, normal",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -439,8 +464,8 @@ const Activities = () => {
                   <Box
                     sx={{
                       marginRight: "16px",
-                      marginLeft: { lg: "20px", xl: "32px" },
-                      width: { lg: "120px", xl: "160px" },
+                      marginLeft: { md: "20px", xl: "32px" },
+                      width: { md: "176px", lg: "120px", xl: "160px" },
                     }}
                   >
                     <img
@@ -480,11 +505,11 @@ const Activities = () => {
                 </Box>
                 <Box
                   sx={{
-                    width: { lg: "436px", xl: "570px" },
-                    height: { lg: "240px" },
-                    background:
-                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                    width: { md: "580px", lg: "436px", xl: "570px" },
+                    height: { md: "200px", lg: "240px" },
+                    background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
                     marginBottom: "30px",
+                    backgroundBlendMode: "soft-light, normal",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -492,8 +517,8 @@ const Activities = () => {
                   <Box
                     sx={{
                       marginRight: "16px",
-                      marginLeft: { lg: "20px", xl: "32px" },
-                      width: { lg: "120px", xl: "160px" },
+                      marginLeft: { md: "20px", xl: "32px" },
+                      width: { md: "176px", lg: "120px", xl: "160px" },
                     }}
                   >
                     <img
@@ -516,7 +541,7 @@ const Activities = () => {
                     <Box
                       sx={{
                         marginTop: "8px",
-                        maxWidth: { lg: "260px", xl: "330px" },
+                        maxWidth: { md: "348px", lg: "260px", xl: "330px" },
                       }}
                     >
                       <Typography
@@ -534,7 +559,7 @@ const Activities = () => {
               </Box>
             </Box>
           </Box>
-          <Box>
+          <Box sx={{ marginBottom: { md: "40px", lg: 0 } }}>
             <Box
               sx={{
                 display: "flex",
@@ -590,7 +615,7 @@ const Activities = () => {
             </Box>
             <Box
               sx={{
-                display: "flex",
+                display: { xs: "none", lg: "flex" },
                 alignItems: "center",
                 flexDirection: "column",
                 height: "780px",
@@ -711,6 +736,112 @@ const Activities = () => {
                 </Box>
               ))}
             </Box>
+            <Box
+              sx={{
+                display: { xs: "block", lg: "none" },
+              }}
+            >
+              <Box>
+                {roadMap.map((year, index) => (
+                  <Box
+                    sx={{
+                      display: index === activeYear ? "block" : "none",
+                      ".swiper-pagination": {
+                        bottom: "-40px",
+                      },
+                      ".swiper-pagination-bullet": {
+                        background: "#242424",
+                        opacity: 1,
+                      },
+                      ".swiper-pagination-bullet-active": {
+                        background: "#FFF",
+                      },
+                      ".swiper": {
+                        overflow: "unset",
+                      },
+                    }}
+                  >
+                    <Swiper
+                      slidesPerView={2}
+                      centeredSlides={false}
+                      spaceBetween={30}
+                      grabCursor={true}
+                      className="mySwiper"
+                      pagination={true}
+                      // freeMode={true}
+                      modules={[Pagination]}
+                    >
+                      <>
+                        {year.steps.map((step, index) => (
+                          <SwiperSlide>
+                            <Box
+                              sx={{
+                                width: { md: 389 },
+                                height: { md: 379 },
+                                background: "#242424",
+                                borderRadius: "8px",
+                                marginX: "20px",
+                              }}
+                            >
+                              <Box
+                                sx={{ paddingTop: "32px", paddingLeft: "32px" }}
+                              >
+                                <Typography
+                                  fontFamily="Aaaiight"
+                                  fontSize="24px"
+                                  lineHeight="33.05px"
+                                  color="#FFF"
+                                >
+                                  {step.title}
+                                </Typography>
+                                <Box sx={{ marginTop: "20px" }}>
+                                  {step.points.map((point, index) => (
+                                    <Box
+                                      sx={{
+                                        marginTop: index ? "20px" : 0,
+                                        display: "flex",
+                                      }}
+                                    >
+                                      <Box
+                                        sx={{
+                                          width: "12px",
+                                          height: "16px",
+                                          background: `url(${
+                                            point.done ? GoodPoint : BadPoint
+                                          })`,
+                                          marginRight: "12px",
+                                          backgroundSize: "contain",
+                                          backgroundRepeat: "no-repeat",
+                                        }}
+                                      />
+                                      <Typography
+                                        fontSize="16px"
+                                        lineHeight="19.36px"
+                                        color="#FFF"
+                                      >
+                                        {point.title}
+                                      </Typography>
+                                    </Box>
+                                  ))}
+                                </Box>
+                              </Box>
+                            </Box>
+                          </SwiperSlide>
+                        ))}
+                        <SwiperSlide>
+                          <Box
+                            sx={{
+                              width: { md: 389 },
+                              height: { md: 379 },
+                            }}
+                          ></Box>
+                        </SwiperSlide>
+                      </>
+                    </Swiper>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
           </Box>
           <Box>
             <Box
@@ -813,7 +944,7 @@ const Activities = () => {
             </Box>
             <Box
               sx={{
-                maxWidth: { lg: "900px", xl: "1170px" },
+                maxWidth: { md: "715px", lg: "900px", xl: "1170px" },
                 minHeight: "760px",
                 margin: "auto",
               }}
@@ -823,18 +954,23 @@ const Activities = () => {
                   sx={{
                     display: "grid",
                     gridTemplateColumns: {
+                      md: "repeat(auto-fit, minmax(128px,1fr))",
                       lg: "repeat(auto-fit, minmax(150px,1fr))",
                       xl: "repeat(auto-fit, minmax(200px,1fr))",
                     },
-                    gridGap: { lg: "40px 35px", xl: "60px 40px" },
+                    gridGap: {
+                      md: "20px 15px",
+                      lg: "40px 35px",
+                      xl: "60px 40px",
+                    },
                   }}
                 >
                   {managment.map((pers, index) => (
                     <Box>
                       <Box
                         sx={{
-                          width: { lg: "150px", xl: "200px" },
-                          height: { lg: "166px", xl: "222px" },
+                          width: { md: "128px", lg: "150px", xl: "200px" },
+                          height: { md: "140px", lg: "166px", xl: "222px" },
                         }}
                       >
                         <img
@@ -846,7 +982,7 @@ const Activities = () => {
                       <Box
                         sx={{
                           marginTop: "32px",
-                          maxWidth: { lg: "150px", xl: "200px" },
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
                         }}
                       >
                         <Typography
@@ -861,13 +997,15 @@ const Activities = () => {
                       <Box
                         sx={{
                           marginTop: "12px",
-                          maxWidth: { lg: "150px", xl: "200px" },
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                          fontSize: { md: "12px", lg: "14px" },
+                          lineHeight: { md: "19.2px", lg: "22.4px" },
                         }}
                       >
                         <Typography
                           fontFamily="Inter"
-                          fontSize="14px"
-                          lineHeight="22.4px"
+                          lineHeight="inherit"
+                          fontSize="inherit"
                           color="#FFF"
                         >
                           {pers.job}
@@ -927,6 +1065,7 @@ const Activities = () => {
                   sx={{
                     display: "grid",
                     gridTemplateColumns: {
+                      md: "repeat(auto-fit, minmax(128px,1fr))",
                       lg: "repeat(auto-fit, minmax(150px,1fr))",
                       xl: "repeat(auto-fit, minmax(200px,1fr))",
                     },
@@ -937,8 +1076,8 @@ const Activities = () => {
                     <Box>
                       <Box
                         sx={{
-                          width: { lg: "150px", xl: "200px" },
-                          height: { lg: "166px", xl: "222px" },
+                          width: { md: "128px", lg: "150px", xl: "200px" },
+                          height: { md: "140px", lg: "166px", xl: "222px" },
                         }}
                       >
                         <img
@@ -950,7 +1089,7 @@ const Activities = () => {
                       <Box
                         sx={{
                           marginTop: "32px",
-                          maxWidth: { lg: "150px", xl: "200px" },
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
                         }}
                       >
                         <Typography
@@ -965,7 +1104,9 @@ const Activities = () => {
                       <Box
                         sx={{
                           marginTop: "12px",
-                          maxWidth: { lg: "150px", xl: "200px" },
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                          fontSize: { md: "12px", lg: "14px" },
+                          lineHeight: { md: "19.2px", lg: "22.4px" },
                         }}
                       >
                         <Typography
@@ -1020,21 +1161,29 @@ const Activities = () => {
             </Box>
             <Box
               sx={{
-                width: "780px",
+                width: { md: "100%", lg: "780px" },
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: { md: "space-around", lg: "space-between" },
                 margin: "auto",
                 marginTop: "48px",
               }}
             >
-              <Box>
-                <img src={Partner1} alt="pay-accept" width="186px" />
+              <Box sx={{ width: { md: "118px", lg: "186px" } }}>
+                <img
+                  src={Partner1}
+                  alt="pay-accept"
+                  style={{ width: "inherit" }}
+                />
               </Box>
-              <Box>
-                <img src={Partner2} alt="red-rift" width="184px" />
+              <Box sx={{ width: { md: "124px", lg: "184px" } }}>
+                <img
+                  src={Partner2}
+                  alt="red-rift"
+                  style={{ width: "inherit" }}
+                />
               </Box>
-              <Box>
-                <img src={Partner4} alt="damnn" width="174px" />
+              <Box sx={{ width: { md: "114px", lg: "174px" } }}>
+                <img src={Partner4} alt="damnn" style={{ width: "inherit" }} />
               </Box>
             </Box>
           </Box>

@@ -6,6 +6,7 @@ import Login from "../../imgs/new/login.svg";
 import Timer from "../../imgs/new/timer.svg";
 import Video from "../../imgs/new/video.svg";
 import Close from "../../imgs/new/close.svg";
+import Noise from "../../imgs/new/noise.png";
 
 import "swiper/css";
 
@@ -15,7 +16,7 @@ const Enemies = () => {
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ paddingY: "200px" }}>
+        <Box sx={{ paddingY: { xs: "100px", md: "200px" } }}>
           <Box
             sx={{
               display: "flex",
@@ -27,8 +28,8 @@ const Enemies = () => {
               sx={{
                 background: `#2E2E2E`,
                 backgroundBlendMode: "soft-light, normal",
-                width: { lg: 740, xl: 966 },
-                height: { lg: 470, xl: 618 },
+                width: { xs: 280, md: 696, lg: 740, xl: 966 },
+                height: { xs: 380, md: 470, xl: 618 },
                 backgroundSize: "cover",
                 borderRadius: "8px",
                 position: "absolute",
@@ -41,8 +42,8 @@ const Enemies = () => {
             <Box
               sx={{
                 background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${screen5})`,
-                width: { lg: 740, xl: 966 },
-                height: { lg: 470, xl: 618 },
+                width: { xs: 280, md: 696, lg: 740, xl: 966 },
+                height: { xs: 380, md: 470, xl: 618 },
                 backgroundSize: "cover",
                 borderRadius: "8px",
                 display: "flex",
@@ -51,23 +52,33 @@ const Enemies = () => {
                 alignItems: "center",
               }}
             >
-              <Box>
+              <Box
+                sx={{
+                  fontSize: { xs: "32px", md: "80px" },
+                  lineHeight: { xs: "32px", md: "80px" },
+                }}
+              >
                 <Typography
                   fontFamily="Aaaiight"
-                  fontSize="80px"
-                  lineHeight="80px"
                   color="#FFF"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
                   Near future...
                 </Typography>
               </Box>
-              <Box sx={{ marginTop: "24px" }}>
+              <Box
+                sx={{
+                  display: { xs: "none", md: "block" },
+                  marginTop: "24px",
+                  fontSize: { xs: "12px", md: "16px" },
+                  lineHeight: { xs: "19.2px", md: "170%" },
+                }}
+              >
                 <Typography
                   color="#FFF"
                   textAlign="center"
-                  fontSize="16px"
-                  lineHeight="170%"
                   fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
                   Billions of citizens in existing metaverses now have access
                   <br /> to a new meta-jump technology. Using this technology,
@@ -75,11 +86,38 @@ const Enemies = () => {
                   you can move between any metaverse...
                 </Typography>
               </Box>
-              <Box sx={{ display: "flex", marginTop: "44px" }}>
+              <Box
+                sx={{
+                  display: { xs: "block", md: "none" },
+                  marginTop: "24px",
+                  fontSize: { xs: "12px", md: "16px" },
+                  lineHeight: { xs: "19.2px", md: "170%" },
+                }}
+              >
+                <Typography
+                  color="#FFF"
+                  textAlign="center"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  maxWidth="242px"
+                >
+                  Billions of citizens in existing metaverses now have access to
+                  a new meta-jump technology. Using this technology, you can
+                  move between any metaverse...
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  marginTop: "44px",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: "center",
+                }}
+              >
                 <Box
                   sx={{
-                    width: "260px",
-                    height: "60px",
+                    width: { xs: "248px", md: "260px" },
+                    height: { xs: "48px", md: "60px" },
                     display: "flex",
                     borderRadius: "2px",
                     justifyContent: "center",
@@ -87,7 +125,9 @@ const Enemies = () => {
                     cursor: "pointer",
                     background:
                       "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-                    marginRight: "24px",
+                    marginRight: { xs: 0, md: "24px" },
+                    fontSize: { xs: "14px", md: "16px" },
+                    lineHeight: { xs: "14px", md: "16px" },
                   }}
                 >
                   <img src={Login} alt="login" />
@@ -95,32 +135,35 @@ const Enemies = () => {
                     marginLeft="11px"
                     color="#FFFFFF"
                     fontWeight="600"
-                    fontSize="16px"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Explore the full lore
                   </Typography>
                 </Box>
                 <Box
                   sx={{
-                    width: "260px",
-                    height: "60px",
+                    width: { xs: "248px", md: "260px" },
+                    height: { xs: "48px", md: "60px" },
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     borderRadius: "2px",
                     border: "1px solid #868D8B",
-                    marginRight: "16px",
+                    marginRight: { xs: 0, md: "16px" },
                     cursor: "pointer",
+                    fontSize: { xs: "14px", md: "16px" },
+                    lineHeight: { xs: "14px", md: "16px" },
+                    marginTop: { xs: "12px", md: 0 },
                   }}
                 >
                   <img src={Video} alt="login" />
                   <Typography
                     color="#868D8B"
                     fontWeight="600"
-                    fontSize="16px"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Watch teaser <sup>Coming Soon</sup>
                   </Typography>
@@ -131,65 +174,90 @@ const Enemies = () => {
               <Box
                 sx={{
                   position: "absolute",
-                  top: { lg: "-32%", xl: "-23%" },
-                  left: { lg: "1%", xl: "17%" },
+                  top: { xs: "-25%", md: "-32%", xl: "-23%" },
+                  left: { xs: "5%", md: "1%", xl: "17%" },
+                  width: { xs: "70px", md: "158px" },
                 }}
               >
-                <img src={Cross} width="158px" alt="cross" />
+                <img src={Cross} alt="cross" style={{ width: "inherit" }} />
               </Box>
               <Box
                 sx={{
                   position: "absolute",
-                  top: "23%",
-                  right: { lg: "2%", xl: "5%" },
+                  top: { md: "23%" },
+                  bottom: { xs: "-20%", md: "unset" },
+                  right: { xs: "40%", md: "-5%", lg: "2%", xl: "5%" },
                   transform: "rotate(30deg)",
+                  width: { xs: "50px", md: "82px" },
                 }}
               >
-                <img src={Cross} width="82px" alt="cross" />
+                <img src={Cross} style={{ width: "inherit" }} alt="cross" />
               </Box>
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: "-23%",
-                  left: { lg: "30%", xl: "50%" },
+                  bottom: { md: "-23%" },
+                  top: { xs: "-15%", md: "unset" },
+                  left: { xs: "70%", md: "30%", xl: "50%" },
                   transform: "rotate(-21deg)",
+                  width: { xs: "23px", md: "49px" },
                 }}
               >
-                <img src={Cross} width="49px" alt="cross" />
+                <img src={Cross} alt="cross" style={{ width: "inherit" }} />
               </Box>
               <Box
                 sx={{
                   position: "absolute",
-                  background: "#464646",
+                  backgroundBlendMode: "soft-light, normal",
+                  background: `url(${Noise}) 0 0/30% 30%,#464646`,
                   paddingX: "20px",
                   paddingY: "10px",
                   borderRadius: "100px",
-                  transform: "rotate(-30deg)",
-                  top: { lg: "110%", xl: "50%" },
-                  right: { lg: "2%", xl: "17%" },
+                  transform: { xs: "rotate(-15deg)", md: "rotate(-30deg)" },
+                  top: { xs: "95%", md: "110%", xl: "50%" },
+                  right: { xs: "-1%", md: "2%", xl: "17%" },
                   display: "flex",
+                  alignItems: "center",
+                  fontSize: { xs: "12px", md: "16px" },
+                  lineHeight: { xs: "12px", md: "16px" },
                 }}
               >
                 <img src={Close} alt="close" />
-                <Typography marginLeft="8px" color="#FFF" fontWeight="500">
+                <Typography
+                  marginLeft="8px"
+                  color="#FFF"
+                  fontWeight="500"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                >
                   Without paying for gas
                 </Typography>
               </Box>
               <Box
                 sx={{
                   position: "absolute",
-                  background: "#464646",
+                  backgroundBlendMode: "soft-light, normal",
+                  background: `url(${Noise}) 0 0/30% 30%,#464646`,
                   paddingX: "20px",
                   paddingY: "10px",
                   borderRadius: "100px",
-                  transform: "rotate(30deg)",
-                  top: "35%",
-                  left: { lg: "3%", xl: "21%" },
+                  transform: { xs: "rotate(15deg)", md: "rotate(30deg)" },
+                  top: { xs: "-10%", md: "5%", lg: "35%" },
+                  left: { xs: "5%", md: "3%", xl: "21%" },
                   display: "flex",
+                  alignItems: "center",
+                  fontSize: { xs: "12px", md: "16px" },
+                  lineHeight: { xs: "12px", md: "16px" },
                 }}
               >
                 <img src={Timer} alt="close" />
-                <Typography marginLeft="8px" color="#FFF" fontWeight="500">
+                <Typography
+                  marginLeft="8px"
+                  color="#FFF"
+                  fontWeight="500"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                >
                   In a second
                 </Typography>
               </Box>

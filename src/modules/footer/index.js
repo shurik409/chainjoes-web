@@ -8,6 +8,7 @@ import TikTok from "../../imgs/new/tiktok.svg";
 import Discord from "../../imgs/new/discord.svg";
 import Medium from "../../imgs/new/medium.svg";
 import LinkedIn from "../../imgs/new/linkedin-logo.svg";
+import Noise from "../../imgs/new/noise.png";
 
 const Footer = () => {
   const desktop1080Width = true;
@@ -17,8 +18,8 @@ const Footer = () => {
       {desktop1080Width && (
         <Box
           sx={{
-            background:
-              "linear-gradient(194.18deg, #00FFB7 -32.14%, #005B42 105.84%)",
+            background: `url(${Noise}) 0 0/4% 30%, linear-gradient(194.18deg, #00FFB7 -32.14%, #005B42 105.84%)`,
+            backgroundBlendMode: "soft-light, normal",
             paddingTop: "40px",
           }}
         >
@@ -55,7 +56,9 @@ const Footer = () => {
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ display: "flex" }}>
+                <Box
+                  sx={{ display: "flex", marginBottom: { md: "28px", lg: 0 } }}
+                >
                   <Typography
                     fontSize="20px"
                     fontWeight="500"
@@ -67,8 +70,39 @@ const Footer = () => {
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
+                <Box sx={{ display: { md: "block", lg: "none" } }}>
+                  <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                    <Typography
+                      fontSize="20px"
+                      fontWeight="500"
+                      lineHeight="24.2px"
+                      color="#FFF"
+                      fontFamily="Inter"
+                    >
+                      Litepaper
+                    </Typography>
+                    <img src={ArrowAngle} alt="arrow-angle" />
+                  </Box>
+                  <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                    <Typography
+                      fontSize="20px"
+                      fontWeight="500"
+                      lineHeight="24.2px"
+                      color="#FFF"
+                      fontFamily="Inter"
+                    >
+                      Characters
+                    </Typography>
+                    <img src={ArrowAngle} alt="arrow-angle" />
+                  </Box>
+                </Box>
               </Box>
-              <Box sx={{ marginRight: "28px" }}>
+              <Box
+                sx={{
+                  marginRight: "28px",
+                  display: { md: "none", lg: "block" },
+                }}
+              >
                 <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
@@ -107,6 +141,23 @@ const Footer = () => {
                 </Box>
               </Box>
               <Box>
+                <Box
+                  sx={{
+                    marginBottom: { md: "28px", lg: 0 },
+                    display: { md: "flex", lg: "none" },
+                  }}
+                >
+                  <Typography
+                    fontSize="20px"
+                    fontWeight="500"
+                    lineHeight="24.2px"
+                    color="#FFF"
+                    fontFamily="Inter"
+                  >
+                    OnePage
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
                 <Box sx={{ marginBottom: "28px", display: "flex" }}>
                   <Typography
                     fontSize="20px"
@@ -163,7 +214,7 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: "flex",
-                    marginBottom: { lg: "28px", xl: "0" },
+                    marginBottom: { md: "28px", xl: "0" },
                   }}
                 >
                   <img src={Telegram} alt="telegram" />
@@ -180,7 +231,7 @@ const Footer = () => {
                 </Box>
                 <Box
                   sx={{
-                    display: { lg: "flex", xl: "none" },
+                    display: { md: "flex", xl: "none" },
                   }}
                 >
                   <img src={TikTok} alt="tiktok" />
@@ -199,7 +250,7 @@ const Footer = () => {
               <Box
                 sx={{
                   marginRight: "28px",
-                  display: { lg: "none", xl: "block" },
+                  display: { md: "none", xl: "block" },
                 }}
               >
                 <Box sx={{ marginBottom: "28px", display: "flex" }}>
@@ -232,7 +283,7 @@ const Footer = () => {
               <Box>
                 <Box
                   sx={{
-                    display: { lg: "flex", xl: "none" },
+                    display: { md: "flex", xl: "none" },
                     marginBottom: "28px",
                   }}
                 >
@@ -279,7 +330,7 @@ const Footer = () => {
           </Box>
           <Box
             sx={{
-              background: "#FFFFFF1A",
+              background: `#FFFFFF1A`,
               paddingY: "16px",
               display: "flex",
               justifyContent: "space-around",

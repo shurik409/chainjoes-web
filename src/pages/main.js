@@ -72,7 +72,7 @@ const Main = () => {
   };
 
   return (
-    <>
+    <Box sx={{ overflowX: "hidden" }}>
       <ThemeProvider theme={theme}>
         <First />
         <Enemies />
@@ -81,7 +81,7 @@ const Main = () => {
         <Social />
         <Footer />
       </ThemeProvider>
-    </>
+    </Box>
   );
 };
 

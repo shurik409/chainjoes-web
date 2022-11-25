@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Link, Typography, useMediaQuery } from "@mui/material";
 import Login from "../../imgs/new/login-green.svg";
+import Noise from "../../imgs/new/noise.png";
 
 const Social = () => {
   const desktop1080Width = true;
@@ -11,15 +12,16 @@ const Social = () => {
         <Box sx={{ paddingY: "80px" }}>
           <Box
             sx={{
-              width: { lg: "740px", xl: "970px" },
-              height: { lg: "475px", xl: "520px" },
-              background:
-                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+              width: { md: "620px", lg: "740px", xl: "970px" },
+              height: { md: "475px", xl: "520px" },
+              backgroundBlendMode: "soft-light, normal",
+              background: `url(${Noise}) 0 0/30% 30%,linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
               margin: "auto",
+              borderRadius: "8px",
             }}
           >
             <Typography

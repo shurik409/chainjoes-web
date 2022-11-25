@@ -26,62 +26,16 @@ const First = () => {
   const desktop1080Width = true;
 
   return (
-    <Box
-      sx={{
-        // "@keyframes video": {
-        //   "0%": {
-        //     opacity: 0,
-        //   },
-        //   "100%": {
-        //     opacity: 1,
-        //   },
-        // },
-        // "@keyframes header": {
-        //   "0%": {
-        //     opacity: 0,
-        //   },
-        //   "100%": {
-        //     opacity: 1,
-        //   },
-        // },
-        // "@keyframes title": {
-        //   "0%": {
-        //     opacity: 0,
-        //   },
-        //   "100%": {
-        //     opacity: 1,
-        //   },
-        // },
-        // "@keyframes description": {
-        //   "0%": {
-        //     opacity: 0,
-        //   },
-        //   "100%": {
-        //     opacity: 1,
-        //   },
-        // },
-        // "@keyframes button": {
-        //   "0%": {
-        //     opacity: 0,
-        //   },
-        //   "100%": {
-        //     opacity: 1,
-        //   },
-        // },
-      }}
-    >
+    <Box>
       {desktop1080Width && (
-        <Box sx={{ position: "relative", height: "100vh", paddingX: {lg: '66px',xl:"135px"} }}>
-          <Box
-            sx={
-              {
-                // animationName: "video",
-                // animationDuration: "10s",
-                // animationFillMode: "both",
-                // animationDelay: "1s",
-              }
-            }
-          >
+        <Box
+          sx={{
+            position: "relative",
+            height: "100vh",
+            paddingX: { xs: "20px", md: "34px", lg: "66px", xl: "135px" },
+          }}
+        >
+          <Box>
             <video
               ref={refVideo}
               autoPlay="autoPlay"
@@ -118,30 +72,72 @@ const First = () => {
           >
             <Header />
           </Box>
-          <Box sx={{ marginTop: "150px" }}>
+          <Box
+            sx={{
+              marginTop: { xs: "93px", md: "150px" },
+              textAlign: { xs: "center", lg: "left" },
+              fontSize: { xs: "42px", md: "105px" },
+              lineHeight: { xs: "39.6px", md: "90%" },
+            }}
+          >
             <Typography
               color="#FFF"
-              fontSize="105px"
-              lineHeight="90%"
               fontFamily="Aaaiight"
+              style={{ fontSize: "inherit", lineHeight: "inherit" }}
             >
               Fight like
               <br />
               never before
             </Typography>
-            <Box sx={{ marginTop: "24px" }}>
-              <Typography color="#FFF" fontSize="20px" lineHeight="140%">
+            <Box
+              sx={{
+                marginTop: "24px",
+                fontSize: { xs: "12px", md: "20px" },
+                lineHeight: { xs: "19.2px", md: "140%" },
+                display: { xs: "none", md: "block" },
+              }}
+            >
+              <Typography
+                color="#FFF"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                fontFamily="inter"
+              >
                 Forget about P2E. Chain Joes is an action-packed
                 <br />
                 mobile game with new PLAY-AND-EARN model.
               </Typography>
             </Box>
+            <Box
+              sx={{
+                marginTop: "24px",
+                fontSize: { xs: "12px", md: "20px" },
+                lineHeight: { xs: "19.2px", md: "140%" },
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              <Typography
+                color="#FFF"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                fontFamily="inter"
+              >
+                Forget about P2E. Chain Joes <br />
+                is an action-packed mobile game <br />
+                with new PLAY-AND-EARN model.
+              </Typography>
+            </Box>
           </Box>
-          <Box sx={{ display: "flex", marginTop: "52px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              marginTop: "52px",
+              flexDirection: { xs: "column", md: "row" },
+              justifyContent: { md: "center", lg: "normal" },
+            }}
+          >
             <Box
               sx={{
                 width: "280px",
-                height: "68px",
+                height: { xs: "52px", md: "68px" },
                 display: "flex",
                 borderRadius: "2px",
                 justifyContent: "center",
@@ -150,14 +146,16 @@ const First = () => {
                 background:
                   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
                 marginRight: "24px",
+                fontWeight: { xs: 500 },
+                fontSize: { xs: "14px", md: "20px" },
               }}
             >
               <img src={Login} alt="login" />
               <Typography
                 marginLeft="11px"
                 color="#FFFFFF"
-                fontWeight="600"
-                fontSize="20px"
+                fontFamily="Inter"
+                style={{ fontWeight: "inherit", fontSize: "inherit" }}
               >
                 Join the Battle
               </Typography>
@@ -165,7 +163,7 @@ const First = () => {
             <Box
               sx={{
                 width: "280px",
-                height: "68px",
+                height: { xs: "52px", md: "68px" },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -176,6 +174,9 @@ const First = () => {
                   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                 marginRight: "16px",
                 cursor: "pointer",
+                marginTop: { xs: "12px", md: 0 },
+                fontWeight: { xs: 500 },
+                fontSize: { xs: "14px", md: "20px" },
               }}
             >
               <img src={Document} alt="document" />
@@ -183,7 +184,8 @@ const First = () => {
                 marginLeft="8px"
                 color="#05D19B"
                 fontWeight="600"
-                fontSize="20px"
+                fontFamily="Inter"
+                style={{ fontWeight: "inherit", fontSize: "inherit" }}
               >
                 Read Litepaper
               </Typography>
