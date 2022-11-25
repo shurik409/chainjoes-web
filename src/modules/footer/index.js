@@ -26,70 +26,92 @@ const Footer = () => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "space-around",
+              justifyContent: { xs: "space-between", md: "space-around" },
+              alignItems: { xs: "center", md: "normal" },
+              flexDirection: { xs: "column", md: "row" },
               paddingBottom: "40px",
+              fontSize: { xs: "12px", md: "20px" },
+              lineHeight: { xs: "12px", md: "24.2px" },
+              "& img": {
+                width: { xs: "16px", md: "24px" },
+              },
             }}
           >
             <Box sx={{ display: "flex" }}>
               <Box sx={{ marginRight: "28px" }}>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Home
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     FAQ
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
                 <Box
-                  sx={{ display: "flex", marginBottom: { md: "28px", lg: 0 } }}
+                  sx={{ display: "flex", marginBottom: { xs: "28px", lg: 0 } }}
                 >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Gameplay
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ display: { md: "block", lg: "none" } }}>
-                  <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box sx={{ display: { xs: "block", lg: "none" } }}>
+                  <Box
+                    sx={{
+                      marginBottom: { xs: "20px", md: "28px" },
+                      display: "flex",
+                    }}
+                  >
                     <Typography
-                      fontSize="20px"
                       fontWeight="500"
-                      lineHeight="24.2px"
                       color="#FFF"
                       fontFamily="Inter"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
                     >
                       Litepaper
                     </Typography>
                     <img src={ArrowAngle} alt="arrow-angle" />
                   </Box>
-                  <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                  <Box
+                    sx={{
+                      marginBottom: { xs: "20px", md: "28px" },
+                      display: "flex",
+                    }}
+                  >
                     <Typography
-                      fontSize="20px"
                       fontWeight="500"
-                      lineHeight="24.2px"
                       color="#FFF"
                       fontFamily="Inter"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
                     >
                       Characters
                     </Typography>
@@ -100,28 +122,36 @@ const Footer = () => {
               <Box
                 sx={{
                   marginRight: "28px",
-                  display: { md: "none", lg: "block" },
+                  display: { xs: "none", lg: "block" },
                 }}
               >
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Litepaper
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Characters
                   </Typography>
@@ -129,11 +159,10 @@ const Footer = () => {
                 </Box>
                 <Box sx={{ display: "flex" }}>
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     OnePage
                   </Typography>
@@ -143,40 +172,47 @@ const Footer = () => {
               <Box>
                 <Box
                   sx={{
-                    marginBottom: { md: "28px", lg: 0 },
-                    display: { md: "flex", lg: "none" },
+                    marginBottom: { xs: "28px", lg: 0 },
+                    display: { xs: "flex", lg: "none" },
                   }}
                 >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     OnePage
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     IDO Strategy
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     About
                   </Typography>
@@ -184,11 +220,10 @@ const Footer = () => {
                 </Box>
                 <Box sx={{ display: "flex" }}>
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Contact us
                   </Typography>
@@ -198,15 +233,19 @@ const Footer = () => {
             </Box>
             <Box sx={{ display: "flex" }}>
               <Box sx={{ marginRight: "28px" }}>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <img src={Twitter} alt="twitter" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Twitter
                   </Typography>
@@ -214,34 +253,32 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: "flex",
-                    marginBottom: { md: "28px", xl: "0" },
+                    marginBottom: { xs: "28px", xl: "0" },
                   }}
                 >
                   <img src={Telegram} alt="telegram" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Telegram
                   </Typography>
                 </Box>
                 <Box
                   sx={{
-                    display: { md: "flex", xl: "none" },
+                    display: { xs: "flex", xl: "none" },
                   }}
                 >
                   <img src={TikTok} alt="tiktok" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Tik Tok
                   </Typography>
@@ -250,18 +287,22 @@ const Footer = () => {
               <Box
                 sx={{
                   marginRight: "28px",
-                  display: { md: "none", xl: "block" },
+                  display: { xs: "none", xl: "block" },
                 }}
               >
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <img src={TikTok} alt="tiktok" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Tik Tok
                   </Typography>
@@ -269,12 +310,11 @@ const Footer = () => {
                 <Box sx={{ display: "flex" }}>
                   <img src={Discord} alt="discord" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Discord
                   </Typography>
@@ -283,31 +323,34 @@ const Footer = () => {
               <Box>
                 <Box
                   sx={{
-                    display: { md: "flex", xl: "none" },
-                    marginBottom: "28px",
+                    display: { xs: "flex", xl: "none" },
+                    marginBottom: { xs: "20px", md: "28px" },
                   }}
                 >
                   <img src={Discord} alt="discord" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Discord
                   </Typography>
                 </Box>
-                <Box sx={{ marginBottom: "28px", display: "flex" }}>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <img src={Medium} alt="medium" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     Medium
                   </Typography>
@@ -315,12 +358,11 @@ const Footer = () => {
                 <Box sx={{ display: "flex" }}>
                   <img src={LinkedIn} alt="linkedin" />
                   <Typography
-                    fontSize="20px"
                     fontWeight="500"
-                    lineHeight="24.2px"
                     color="#FFF"
                     fontFamily="Inter"
                     marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
                     LinkedIn
                   </Typography>

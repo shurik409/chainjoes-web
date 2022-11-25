@@ -363,12 +363,18 @@ const Activities = () => {
       {desktop1080Width && (
         <Box>
           <Box sx={{ paddingTop: "80px", marginBottom: "200px" }}>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                fontSize: { xs: "32px", md: "80px" },
+                lineHeight: { xs: "32px", md: "80px" },
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Typography
                 fontFamily="Aaaiight"
-                fontSize="80px"
-                lineHeight="80px"
                 color="#FFF"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
               >
                 activities
               </Typography>
@@ -376,53 +382,64 @@ const Activities = () => {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { md: "column", lg: "row" },
-                justifyContent: { md: "normal", lg: "center" },
-                alignItems: { md: "center", lg: "normal" },
+                flexDirection: { xs: "column", lg: "row" },
+                justifyContent: { xs: "normal", lg: "center" },
+                alignItems: { xs: "center", lg: "normal" },
                 marginTop: "48px",
               }}
             >
               <Box
                 sx={{
-                  width: { md: "580px", lg: "436px", xl: "570px" },
-                  height: { md: "200px", lg: "500px", xl: "510px" },
+                  width: { xs: "280px", md: "580px", lg: "436px", xl: "570px" },
+                  height: {
+                    xs: "260px",
+                    md: "200px",
+                    lg: "500px",
+                    xl: "510px",
+                  },
                   background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
-                  marginRight: { md: 0, lg: "30px" },
-                  marginBottom: { md: "30px", lg: 0 },
+                  marginRight: { xs: 0, lg: "30px" },
+                  marginBottom: { xs: "20px", md: "30px", lg: 0 },
                   backgroundBlendMode: "soft-light, normal",
                   display: "flex",
-                  flexDirection: { md: "row", lg: "column" },
-                  justifyContent: { md: "normal", lg: "center" },
-                  alignItems: { md: "center", lg: "center" },
+                  flexDirection: { xs: "column", md: "row", lg: "column" },
+                  justifyContent: { xs: "center", md: "normal", lg: "center" },
+                  alignItems: { xs: "center", md: "center", lg: "center" },
+                  borderRadius: "8px",
                 }}
               >
                 <Box
                   sx={{
-                    display: { md: "block", lg: "flex" },
+                    display: { xs: "flex", md: "block", lg: "flex" },
                     justifyContent: "center",
-                    width: { md: 176, lg: 280 },
-                    marginLeft: { md: "20px", lg: 0 },
+                    width: { xs: 120, md: 176, lg: 280 },
+                    marginLeft: { xs: 0, md: "20px", lg: 0 },
                   }}
                 >
                   <img src={FirstImg} alt="play" style={{ width: "inherit" }} />
                 </Box>
                 <Box
                   sx={{
-                    marginLeft: { md: "16px", lg: 0 },
+                    marginLeft: { xs: 0, md: "16px", lg: 0 },
                   }}
                 >
                   <Box
                     sx={{
                       display: "flex",
-                      justifyContent: { md: "normal", lg: "center" },
-                      marginTop: "28px",
+                      justifyContent: {
+                        xs: "center",
+                        md: "normal",
+                        lg: "center",
+                      },
+                      marginTop: { xs: "4px", md: "28px" },
+                      fontSize: { xs: "16px", md: "32px" },
+                      lineHeight: { xs: "16px", md: "32px" },
                     }}
                   >
                     <Typography
                       fontFamily="Aaaiight"
-                      fontSize="32px"
-                      lineHeight="32px"
                       color="#FFF"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
                     >
                       play different modes
                     </Typography>
@@ -432,13 +449,15 @@ const Activities = () => {
                       display: "flex",
                       justifyContent: { md: "normal", lg: "center" },
                       marginTop: "12px",
-                      textAlign: { md: "left", lg: "center" },
+                      textAlign: { xs: "center", md: "left", lg: "center" },
+                      fontSize: { xs: "12px", md: "16px" },
+                      lineHeight: { xs: "19.2px", md: "27.2px" },
                     }}
                   >
                     <Typography
-                      fontSize="16px"
-                      lineHeight="27.2px"
+                      fontFamily="Inter"
                       color="#FFF"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
                     >
                       Explore classic deathmatch, battle royale,
                       <br />
@@ -452,20 +471,33 @@ const Activities = () => {
               <Box>
                 <Box
                   sx={{
-                    width: { md: "580px", lg: "436px", xl: "570px" },
-                    height: { md: "200px", lg: "240px" },
+                    width: {
+                      xs: "280px",
+                      md: "580px",
+                      lg: "436px",
+                      xl: "570px",
+                    },
+                    height: { xs: "260px", md: "200px", lg: "240px" },
                     background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
                     marginBottom: "30px",
                     backgroundBlendMode: "soft-light, normal",
                     display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
                     alignItems: "center",
+                    justifyContent: { xs: "center", md: "normal" },
+                    borderRadius: "8px",
                   }}
                 >
                   <Box
                     sx={{
-                      marginRight: "16px",
-                      marginLeft: { md: "20px", xl: "32px" },
-                      width: { md: "176px", lg: "120px", xl: "160px" },
+                      marginRight: { xs: 0, md: "16px" },
+                      marginLeft: { xs: 0, md: "20px", xl: "32px" },
+                      width: {
+                        xs: "120px",
+                        md: "176px",
+                        lg: "120px",
+                        xl: "160px",
+                      },
                     }}
                   >
                     <img
@@ -475,12 +507,18 @@ const Activities = () => {
                     />
                   </Box>
                   <Box>
-                    <Box sx={{ maxWidth: { lg: "228px", xl: "330px" } }}>
+                    <Box
+                      sx={{
+                        maxWidth: { xs: "100%", lg: "228px", xl: "330px" },
+                        fontSize: { xs: "16px", md: "24px" },
+                        lineHeight: { xs: "19.2px", md: "24px" },
+                        textAlign: { xs: "center", md: "left" },
+                      }}
+                    >
                       <Typography
                         fontFamily="Aaaiight"
-                        fontSize="24px"
-                        lineHeight="24px"
                         color="#FFF"
+                        style={{ fontSize: "inherit", lineHeight: "inherit" }}
                       >
                         create a Clan
                       </Typography>
@@ -488,13 +526,15 @@ const Activities = () => {
                     <Box
                       sx={{
                         marginTop: "8px",
+                        fontSize: { xs: "12px", md: "14px" },
+                        lineHeight: { xs: "19.2px", md: "22.4px" },
+                        textAlign: { xs: "center", md: "left" },
                       }}
                     >
                       <Typography
-                        fontSize="14px"
-                        lineHeight="22.4px"
                         color="#FFF"
                         fontFamily="Inter"
+                        style={{ fontSize: "inherit", lineHeight: "inherit" }}
                       >
                         Unite with others to fight
                         <br />
@@ -505,20 +545,32 @@ const Activities = () => {
                 </Box>
                 <Box
                   sx={{
-                    width: { md: "580px", lg: "436px", xl: "570px" },
-                    height: { md: "200px", lg: "240px" },
+                    width: {
+                      xs: "280px",
+                      md: "580px",
+                      lg: "436px",
+                      xl: "570px",
+                    },
+                    height: { xs: "260px", md: "200px", lg: "240px" },
                     background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
                     marginBottom: "30px",
                     backgroundBlendMode: "soft-light, normal",
                     display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
                     alignItems: "center",
+                    borderRadius: "8px",
                   }}
                 >
                   <Box
                     sx={{
-                      marginRight: "16px",
-                      marginLeft: { md: "20px", xl: "32px" },
-                      width: { md: "176px", lg: "120px", xl: "160px" },
+                      marginRight: { xs: 0, md: "16px" },
+                      marginLeft: { xs: 0, md: "20px", xl: "32px" },
+                      width: {
+                        xs: "120px",
+                        md: "176px",
+                        lg: "120px",
+                        xl: "160px",
+                      },
                     }}
                   >
                     <img
@@ -528,12 +580,19 @@ const Activities = () => {
                     />
                   </Box>
                   <Box>
-                    <Box sx={{ maxWidth: { lg: "228px", xl: "330px" } }}>
+                    <Box
+                      sx={{
+                        maxWidth: { xs: "248px", lg: "228px", xl: "330px" },
+                        fontSize: { xs: "16px", md: "24px" },
+                        lineHeight: { xs: "19.2px", md: "24px" },
+                        textAlign: { xs: "center", md: "left" },
+                        margin: { xs: "auto", md: 0 },
+                      }}
+                    >
                       <Typography
                         fontFamily="Aaaiight"
-                        fontSize="24px"
-                        lineHeight="33.05px"
                         color="#FFF"
+                        style={{ fontSize: "inherit", lineHeight: "inherit" }}
                       >
                         Join weekly & seasonal activities & tournaments
                       </Typography>
@@ -541,14 +600,21 @@ const Activities = () => {
                     <Box
                       sx={{
                         marginTop: "8px",
-                        maxWidth: { md: "348px", lg: "260px", xl: "330px" },
+                        fontSize: { xs: "12px", md: "14px" },
+                        lineHeight: { xs: "19.2px", md: "22.4px" },
+                        textAlign: { xs: "center", md: "left" },
+                        maxWidth: {
+                          xs: "248px",
+                          md: "348px",
+                          lg: "260px",
+                          xl: "330px",
+                        },
                       }}
                     >
                       <Typography
-                        fontSize="14px"
-                        lineHeight="22.4px"
                         color="#FFF"
                         fontFamily="Inter"
+                        style={{ fontSize: "inherit", lineHeight: "inherit" }}
                       >
                         Participate in various quests and missions to receive
                         unique rewards and $CJ tokens.
@@ -564,13 +630,14 @@ const Activities = () => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
+                fontSize: { xs: "32px", md: "80px" },
+                lineHeight: { xs: "32px", md: "80px" },
               }}
             >
               <Typography
                 fontFamily="Aaaiight"
-                fontSize="80px"
-                lineHeight="80px"
                 color="#FFF"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
               >
                 release roadmap
               </Typography>
@@ -599,6 +666,7 @@ const Activities = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
+                    borderRadius: "4px",
                   }}
                   onClick={() => setActiveYear(index)}
                 >
@@ -762,9 +830,11 @@ const Activities = () => {
                     }}
                   >
                     <Swiper
-                      slidesPerView={2}
+                      slidesPerView={"auto"}
                       centeredSlides={false}
-                      spaceBetween={30}
+                      spaceBetween={20}
+                      slidesOffsetBefore={20}
+                      slidesOffsetAfter={20}
                       grabCursor={true}
                       className="mySwiper"
                       pagination={true}
@@ -773,24 +843,30 @@ const Activities = () => {
                     >
                       <>
                         {year.steps.map((step, index) => (
-                          <SwiperSlide>
+                          <SwiperSlide style={{ width: "auto" }}>
                             <Box
                               sx={{
-                                width: { md: 389 },
-                                height: { md: 379 },
+                                width: { xs: 240, md: 389 },
+                                height: { xs: 379 },
                                 background: "#242424",
                                 borderRadius: "8px",
-                                marginX: "20px",
                               }}
                             >
                               <Box
-                                sx={{ paddingTop: "32px", paddingLeft: "32px" }}
+                                sx={{
+                                  paddingTop: "32px",
+                                  paddingLeft: "32px",
+                                  fontSize: { xs: "16px", md: "24px" },
+                                  lineHeight: { xs: "19.2px", md: "33.05px" },
+                                }}
                               >
                                 <Typography
                                   fontFamily="Aaaiight"
-                                  fontSize="24px"
-                                  lineHeight="33.05px"
                                   color="#FFF"
+                                  style={{
+                                    fontSize: "inherit",
+                                    lineHeight: "inherit",
+                                  }}
                                 >
                                   {step.title}
                                 </Typography>
@@ -800,6 +876,11 @@ const Activities = () => {
                                       sx={{
                                         marginTop: index ? "20px" : 0,
                                         display: "flex",
+                                        fontSize: { xs: "12px", md: "16px" },
+                                        lineHeight: {
+                                          xs: "19.2px",
+                                          md: "19.36px",
+                                        },
                                       }}
                                     >
                                       <Box
@@ -815,9 +896,12 @@ const Activities = () => {
                                         }}
                                       />
                                       <Typography
-                                        fontSize="16px"
-                                        lineHeight="19.36px"
+                                        fontFamily="Inter"
                                         color="#FFF"
+                                        style={{
+                                          fontSize: "inherit",
+                                          lineHeight: "inherit",
+                                        }}
                                       >
                                         {point.title}
                                       </Typography>
@@ -828,14 +912,6 @@ const Activities = () => {
                             </Box>
                           </SwiperSlide>
                         ))}
-                        <SwiperSlide>
-                          <Box
-                            sx={{
-                              width: { md: 389 },
-                              height: { md: 379 },
-                            }}
-                          ></Box>
-                        </SwiperSlide>
                       </>
                     </Swiper>
                   </Box>
@@ -843,19 +919,19 @@ const Activities = () => {
               </Box>
             </Box>
           </Box>
-          <Box>
+          <Box sx={{ marginTop: { xs: "80px", md: 0 } }}>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "40px",
+                fontSize: { xs: "32px", md: "80px" },
+                lineHeight: { xs: "32px", md: "80px" },
               }}
             >
               <Typography
                 fontFamily="Aaaiight"
-                fontSize="80px"
-                lineHeight="80px"
                 color="#FFF"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
               >
                 Team
               </Typography>
@@ -863,7 +939,7 @@ const Activities = () => {
             <Box
               sx={{
                 background: "#121212",
-                width: "500px",
+                width: { xs: "280px", md: "500px" },
                 borderRadius: "4px",
                 display: "flex",
                 height: "40px",
@@ -874,7 +950,7 @@ const Activities = () => {
             >
               <Box
                 sx={{
-                  width: `${500 / 3}px`,
+                  width: { xs: `${280 / 3}px`, md: `${500 / 3}px` },
                   background:
                     activeTeam === "managment"
                       ? "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)"
@@ -883,21 +959,22 @@ const Activities = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   cursor: "pointer",
+                  fontSize: { xs: "12px", md: "20px" },
+                  lineHeight: { xs: "12px", md: "32px" },
                 }}
                 onClick={() => setActiveTeam("managment")}
               >
                 <Typography
-                  fontSize="20px"
-                  lineHeight="32px"
                   color={activeTeam === "managment" ? "#FFF" : "#646464"}
                   fontWeight={activeTeam === "managment" ? 600 : 400}
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
                   Managment
                 </Typography>
               </Box>
               <Box
                 sx={{
-                  width: `${500 / 3}px`,
+                  width: { xs: `${280 / 3}px`, md: `${500 / 3}px` },
                   background:
                     activeTeam === "game"
                       ? "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)"
@@ -906,21 +983,22 @@ const Activities = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   cursor: "pointer",
+                  fontSize: { xs: "12px", md: "20px" },
+                  lineHeight: { xs: "12px", md: "32px" },
                 }}
                 onClick={() => setActiveTeam("game")}
               >
                 <Typography
-                  fontSize="20px"
-                  lineHeight="32px"
                   color={activeTeam === "game" ? "#FFF" : "#646464"}
                   fontWeight={activeTeam === "game" ? 600 : 400}
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
                   Game dev
                 </Typography>
               </Box>
               <Box
                 sx={{
-                  width: `${500 / 3}px`,
+                  width: { xs: `${280 / 3}px`, md: `${500 / 3}px` },
                   background:
                     activeTeam === "marketing"
                       ? "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)"
@@ -929,14 +1007,15 @@ const Activities = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   cursor: "pointer",
+                  fontSize: { xs: "12px", md: "20px" },
+                  lineHeight: { xs: "12px", md: "32px" },
                 }}
                 onClick={() => setActiveTeam("marketing")}
               >
                 <Typography
-                  fontSize="20px"
-                  lineHeight="32px"
                   color={activeTeam === "marketing" ? "#FFF" : "#646464"}
                   fontWeight={activeTeam === "marketing" ? 600 : 400}
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
                   Marketing
                 </Typography>
@@ -950,102 +1029,234 @@ const Activities = () => {
               }}
             >
               {activeTeam === "managment" && (
-                <Box
-                  sx={{
-                    display: "grid",
-                    gridTemplateColumns: {
-                      md: "repeat(auto-fit, minmax(128px,1fr))",
-                      lg: "repeat(auto-fit, minmax(150px,1fr))",
-                      xl: "repeat(auto-fit, minmax(200px,1fr))",
-                    },
-                    gridGap: {
-                      md: "20px 15px",
-                      lg: "40px 35px",
-                      xl: "60px 40px",
-                    },
-                  }}
-                >
-                  {managment.map((pers, index) => (
-                    <Box>
-                      <Box
-                        sx={{
-                          width: { md: "128px", lg: "150px", xl: "200px" },
-                          height: { md: "140px", lg: "166px", xl: "222px" },
-                        }}
-                      >
-                        <img
-                          src={pers.photo}
-                          alt={`${pers.name} ${pers.surname}`}
-                          style={{ width: "inherit", height: "inherit" }}
-                        />
-                      </Box>
-                      <Box
-                        sx={{
-                          marginTop: "32px",
-                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Aaaiight"
-                          fontSize="16px"
-                          lineHeight="19.2px"
-                          color="#FFF"
+                <>
+                  <Box
+                    sx={{
+                      display: { xs: "none", md: "grid" },
+                      gridTemplateColumns: {
+                        md: "repeat(auto-fit, minmax(128px,1fr))",
+                        lg: "repeat(auto-fit, minmax(150px,1fr))",
+                        xl: "repeat(auto-fit, minmax(200px,1fr))",
+                      },
+                      gridGap: {
+                        md: "20px 15px",
+                        lg: "40px 35px",
+                        xl: "60px 40px",
+                      },
+                    }}
+                  >
+                    {managment.map((pers, index) => (
+                      <Box>
+                        <Box
+                          sx={{
+                            width: { md: "128px", lg: "150px", xl: "200px" },
+                            height: { md: "140px", lg: "166px", xl: "222px" },
+                          }}
                         >
-                          {pers.name} {pers.surname}
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          marginTop: "12px",
-                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                          fontSize: { md: "12px", lg: "14px" },
-                          lineHeight: { md: "19.2px", lg: "22.4px" },
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Inter"
-                          lineHeight="inherit"
-                          fontSize="inherit"
-                          color="#FFF"
+                          <img
+                            src={pers.photo}
+                            alt={`${pers.name} ${pers.surname}`}
+                            style={{ width: "inherit", height: "inherit" }}
+                          />
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "32px",
+                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                          }}
                         >
-                          {pers.job}
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          marginTop: "20px",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <img src={LinkedIn} alt="linkedin" />
-                        <Typography
-                          marginLeft="8px"
-                          fontFamily="Inter"
-                          fontSize="14px"
-                          lineHeight="14px"
-                          color="#FFF"
-                          fontWeight="500"
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="16px"
+                            lineHeight="19.2px"
+                            color="#FFF"
+                          >
+                            {pers.name} {pers.surname}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "12px",
+                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                            fontSize: { md: "12px", lg: "14px" },
+                            lineHeight: { md: "19.2px", lg: "22.4px" },
+                          }}
                         >
-                          LinkedIn
-                        </Typography>
+                          <Typography
+                            fontFamily="Inter"
+                            lineHeight="inherit"
+                            fontSize="inherit"
+                            color="#FFF"
+                          >
+                            {pers.job}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "20px",
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <img src={LinkedIn} alt="linkedin" />
+                          <Typography
+                            marginLeft="8px"
+                            fontFamily="Inter"
+                            fontSize="14px"
+                            lineHeight="14px"
+                            color="#FFF"
+                            fontWeight="500"
+                          >
+                            LinkedIn
+                          </Typography>
+                        </Box>
                       </Box>
+                    ))}
+                  </Box>
+                  <Box sx={{ display: { xs: "block", md: "none" } }}>
+                    <Box
+                      sx={{
+                        ".swiper-pagination": {
+                          bottom: "-40px",
+                        },
+                        ".swiper-pagination-bullet": {
+                          background: "#242424",
+                          opacity: 1,
+                        },
+                        ".swiper-pagination-bullet-active": {
+                          background: "#FFF",
+                        },
+                        ".swiper": {
+                          overflow: "unset",
+                        },
+                      }}
+                    >
+                      <Swiper
+                        slidesPerView={"auto"}
+                        centeredSlides={false}
+                        spaceBetween={15}
+                        slidesOffsetBefore={20}
+                        slidesOffsetAfter={20}
+                        grabCursor={true}
+                        className="mySwiper"
+                        pagination={true}
+                        // freeMode={true}
+                        modules={[Pagination]}
+                      >
+                        <>
+                          {managment.map((pers, index) => (
+                            <SwiperSlide style={{ width: "auto" }}>
+                              <Box>
+                                <Box
+                                  sx={{
+                                    width: {
+                                      xs: "128px",
+                                      lg: "150px",
+                                      xl: "200px",
+                                    },
+                                    height: {
+                                      xs: "140px",
+                                      lg: "166px",
+                                      xl: "222px",
+                                    },
+                                  }}
+                                >
+                                  <img
+                                    src={pers.photo}
+                                    alt={`${pers.name} ${pers.surname}`}
+                                    style={{
+                                      width: "inherit",
+                                      height: "inherit",
+                                    }}
+                                  />
+                                </Box>
+                                <Box
+                                  sx={{
+                                    marginTop: "32px",
+                                    maxWidth: {
+                                      xs: "128px",
+                                      lg: "150px",
+                                      xl: "200px",
+                                    },
+                                  }}
+                                >
+                                  <Typography
+                                    fontFamily="Aaaiight"
+                                    fontSize="16px"
+                                    lineHeight="19.2px"
+                                    color="#FFF"
+                                  >
+                                    {pers.name} {pers.surname}
+                                  </Typography>
+                                </Box>
+                                <Box
+                                  sx={{
+                                    marginTop: "12px",
+                                    maxWidth: {
+                                      xs: "128px",
+                                      lg: "150px",
+                                      xl: "200px",
+                                    },
+                                    fontSize: { xs: "12px", lg: "14px" },
+                                    lineHeight: { xs: "19.2px", lg: "22.4px" },
+                                  }}
+                                >
+                                  <Typography
+                                    fontFamily="Inter"
+                                    lineHeight="inherit"
+                                    fontSize="inherit"
+                                    color="#FFF"
+                                  >
+                                    {pers.job}
+                                  </Typography>
+                                </Box>
+                                <Box
+                                  sx={{
+                                    marginTop: "20px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <img src={LinkedIn} alt="linkedin" />
+                                  <Typography
+                                    marginLeft="8px"
+                                    fontFamily="Inter"
+                                    fontSize="14px"
+                                    lineHeight="14px"
+                                    color="#FFF"
+                                    fontWeight="500"
+                                  >
+                                    LinkedIn
+                                  </Typography>
+                                </Box>
+                              </Box>
+                            </SwiperSlide>
+                          ))}
+                        </>
+                      </Swiper>
                     </Box>
-                  ))}
-                </Box>
+                  </Box>
+                </>
               )}
               {activeTeam === "game" && (
                 <Box>
                   <Box
                     sx={{
-                      padding: "48px 60px",
+                      padding: { md: "48px 60px" },
                       border: "1px solid #00FFB7",
                       borderRadius: "4px",
-                      width: "555px",
+                      width: { xs: "280px", md: "555px" },
+                      height: { xs: "90px", md: "auto" },
                       margin: "auto",
+                      "& > img": {
+                        width: { xs: "163px", md: "555px" },
+                      },
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
-                    <img src={RedRiftLogo} alt="red-rift logo" width="555px" />
+                    <img src={RedRiftLogo} alt="red-rift logo" />
                   </Box>
                   <Box sx={{ marginTop: "20px" }}>
                     <Typography
@@ -1061,85 +1272,210 @@ const Activities = () => {
                 </Box>
               )}
               {activeTeam === "marketing" && (
-                <Box
-                  sx={{
-                    display: "grid",
-                    gridTemplateColumns: {
-                      md: "repeat(auto-fit, minmax(128px,1fr))",
-                      lg: "repeat(auto-fit, minmax(150px,1fr))",
-                      xl: "repeat(auto-fit, minmax(200px,1fr))",
-                    },
-                    gridGap: { lg: "40px 35px", xl: "60px 40px" },
-                  }}
-                >
-                  {marketing.map((pers, index) => (
-                    <Box>
-                      <Box
-                        sx={{
-                          width: { md: "128px", lg: "150px", xl: "200px" },
-                          height: { md: "140px", lg: "166px", xl: "222px" },
-                        }}
-                      >
-                        <img
-                          src={pers.photo}
-                          alt={`${pers.name} ${pers.surname}`}
-                          style={{ width: "inherit", height: "inherit" }}
-                        />
-                      </Box>
-                      <Box
-                        sx={{
-                          marginTop: "32px",
-                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Aaaiight"
-                          fontSize="16px"
-                          lineHeight="19.2px"
-                          color="#FFF"
+                <>
+                  <Box
+                    sx={{
+                      display: { xs: "none", md: "grid" },
+                      gridTemplateColumns: {
+                        md: "repeat(auto-fit, minmax(128px,1fr))",
+                        lg: "repeat(auto-fit, minmax(150px,1fr))",
+                        xl: "repeat(auto-fit, minmax(200px,1fr))",
+                      },
+                      gridGap: { lg: "40px 35px", xl: "60px 40px" },
+                    }}
+                  >
+                    {marketing.map((pers, index) => (
+                      <Box>
+                        <Box
+                          sx={{
+                            width: { md: "128px", lg: "150px", xl: "200px" },
+                            height: { md: "140px", lg: "166px", xl: "222px" },
+                          }}
                         >
-                          {pers.name} {pers.surname}
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          marginTop: "12px",
-                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                          fontSize: { md: "12px", lg: "14px" },
-                          lineHeight: { md: "19.2px", lg: "22.4px" },
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Inter"
-                          fontSize="14px"
-                          lineHeight="22.4px"
-                          color="#FFF"
+                          <img
+                            src={pers.photo}
+                            alt={`${pers.name} ${pers.surname}`}
+                            style={{ width: "inherit", height: "inherit" }}
+                          />
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "32px",
+                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                          }}
                         >
-                          {pers.job}
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          marginTop: "20px",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <img src={LinkedIn} alt="linkedin" />
-                        <Typography
-                          marginLeft="8px"
-                          fontFamily="Inter"
-                          fontSize="14px"
-                          lineHeight="14px"
-                          color="#FFF"
-                          fontWeight="500"
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="16px"
+                            lineHeight="19.2px"
+                            color="#FFF"
+                          >
+                            {pers.name} {pers.surname}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "12px",
+                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                            fontSize: { md: "12px", lg: "14px" },
+                            lineHeight: { md: "19.2px", lg: "22.4px" },
+                          }}
                         >
-                          LinkedIn
-                        </Typography>
+                          <Typography
+                            fontFamily="Inter"
+                            fontSize="14px"
+                            lineHeight="22.4px"
+                            color="#FFF"
+                          >
+                            {pers.job}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "20px",
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <img src={LinkedIn} alt="linkedin" />
+                          <Typography
+                            marginLeft="8px"
+                            fontFamily="Inter"
+                            fontSize="14px"
+                            lineHeight="14px"
+                            color="#FFF"
+                            fontWeight="500"
+                          >
+                            LinkedIn
+                          </Typography>
+                        </Box>
                       </Box>
+                    ))}
+                  </Box>
+                  <Box sx={{ display: { xs: "block", md: "none" } }}>
+                    <Box
+                      sx={{
+                        ".swiper-pagination": {
+                          bottom: "-40px",
+                        },
+                        ".swiper-pagination-bullet": {
+                          background: "#242424",
+                          opacity: 1,
+                        },
+                        ".swiper-pagination-bullet-active": {
+                          background: "#FFF",
+                        },
+                        ".swiper": {
+                          overflow: "unset",
+                        },
+                      }}
+                    >
+                      <Swiper
+                        slidesPerView={"auto"}
+                        centeredSlides={false}
+                        spaceBetween={15}
+                        slidesOffsetBefore={20}
+                        slidesOffsetAfter={20}
+                        grabCursor={true}
+                        className="mySwiper"
+                        pagination={true}
+                        // freeMode={true}
+                        modules={[Pagination]}
+                      >
+                        <>
+                          {marketing.map((pers, index) => (
+                            <SwiperSlide style={{ width: "auto" }}>
+                              <Box>
+                                <Box
+                                  sx={{
+                                    width: {
+                                      xs: "128px",
+                                      lg: "150px",
+                                      xl: "200px",
+                                    },
+                                    height: {
+                                      xs: "140px",
+                                      lg: "166px",
+                                      xl: "222px",
+                                    },
+                                  }}
+                                >
+                                  <img
+                                    src={pers.photo}
+                                    alt={`${pers.name} ${pers.surname}`}
+                                    style={{
+                                      width: "inherit",
+                                      height: "inherit",
+                                    }}
+                                  />
+                                </Box>
+                                <Box
+                                  sx={{
+                                    marginTop: "32px",
+                                    maxWidth: {
+                                      xs: "128px",
+                                      lg: "150px",
+                                      xl: "200px",
+                                    },
+                                  }}
+                                >
+                                  <Typography
+                                    fontFamily="Aaaiight"
+                                    fontSize="16px"
+                                    lineHeight="19.2px"
+                                    color="#FFF"
+                                  >
+                                    {pers.name} {pers.surname}
+                                  </Typography>
+                                </Box>
+                                <Box
+                                  sx={{
+                                    marginTop: "12px",
+                                    maxWidth: {
+                                      xs: "128px",
+                                      lg: "150px",
+                                      xl: "200px",
+                                    },
+                                    fontSize: { xs: "12px", lg: "14px" },
+                                    lineHeight: { xs: "19.2px", lg: "22.4px" },
+                                  }}
+                                >
+                                  <Typography
+                                    fontFamily="Inter"
+                                    lineHeight="inherit"
+                                    fontSize="inherit"
+                                    color="#FFF"
+                                  >
+                                    {pers.job}
+                                  </Typography>
+                                </Box>
+                                <Box
+                                  sx={{
+                                    marginTop: "20px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <img src={LinkedIn} alt="linkedin" />
+                                  <Typography
+                                    marginLeft="8px"
+                                    fontFamily="Inter"
+                                    fontSize="14px"
+                                    lineHeight="14px"
+                                    color="#FFF"
+                                    fontWeight="500"
+                                  >
+                                    LinkedIn
+                                  </Typography>
+                                </Box>
+                              </Box>
+                            </SwiperSlide>
+                          ))}
+                        </>
+                      </Swiper>
                     </Box>
-                  ))}
-                </Box>
+                  </Box>
+                </>
               )}
             </Box>
           </Box>
@@ -1148,41 +1484,42 @@ const Activities = () => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
+                fontSize: { xs: "32px", md: "80px" },
+                lineHeight: { xs: "32px", md: "80px" },
               }}
             >
               <Typography
                 fontFamily="Aaaiight"
-                fontSize="80px"
-                lineHeight="80px"
                 color="#FFF"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
               >
                 Our partners
               </Typography>
             </Box>
             <Box
               sx={{
-                width: { md: "100%", lg: "780px" },
+                width: { xs: "100%", lg: "780px" },
                 display: "flex",
-                justifyContent: { md: "space-around", lg: "space-between" },
+                justifyContent: { xs: "space-around", lg: "space-between" },
                 margin: "auto",
                 marginTop: "48px",
               }}
             >
-              <Box sx={{ width: { md: "118px", lg: "186px" } }}>
+              <Box sx={{ width: { xs: "66px", md: "118px", lg: "186px" } }}>
                 <img
                   src={Partner1}
                   alt="pay-accept"
                   style={{ width: "inherit" }}
                 />
               </Box>
-              <Box sx={{ width: { md: "124px", lg: "184px" } }}>
+              <Box sx={{ width: { xs: "84px", md: "124px", lg: "184px" } }}>
                 <img
                   src={Partner2}
                   alt="red-rift"
                   style={{ width: "inherit" }}
                 />
               </Box>
-              <Box sx={{ width: { md: "114px", lg: "174px" } }}>
+              <Box sx={{ width: { xs: "66px", md: "114px", lg: "174px" } }}>
                 <img src={Partner4} alt="damnn" style={{ width: "inherit" }} />
               </Box>
             </Box>

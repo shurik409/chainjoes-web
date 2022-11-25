@@ -20,6 +20,7 @@ import {
 
 import ArrowRight from "../../imgs/new/arrow-right-green.svg";
 import ArrowLeft from "../../imgs/new/arrow-left-green.svg";
+import ArrowRightWhite from "../../imgs/new/arrow-right.svg";
 
 import "swiper/css";
 import "swiper/css/effect-flip";
@@ -141,6 +142,7 @@ const Explore = () => {
           <Box sx={{ marginBottom: "300px" }}>
             <Box
               sx={{
+                display: { xs: "none", md: "block" },
                 width: { md: "668px", lg: "892px", xl: "1150px" },
                 margin: "auto",
                 ".swiper-button-next, .swiper-button-prev": {
@@ -255,33 +257,137 @@ const Explore = () => {
                 ))}
               </Swiper>
             </Box>
+            <Box
+              sx={{
+                display: { xs: "block", md: "none" },
+                width: { xs: "100%", md: "668px", lg: "892px", xl: "1150px" },
+                // margin: "auto",
+                ".swiper-pagination": {
+                  bottom: "-40px",
+                },
+                ".swiper-pagination-bullet": {
+                  background: "#242424",
+                  opacity: 1,
+                },
+                ".swiper-pagination-bullet-active": {
+                  background: "#FFF",
+                },
+                ".swiper": {
+                  overflow: "unset",
+                },
+              }}
+            >
+              <Swiper
+                slidesPerView={"auto"}
+                centeredSlides={false}
+                spaceBetween={24}
+                grabCursor={true}
+                className="mySwiper2"
+                pagination={true}
+                navigation={false}
+                slidesOffsetBefore={20}
+                slidesOffsetAfter={20}
+                modules={[Pagination]}
+              >
+                {texts.map((text, index) => (
+                  <SwiperSlide style={{ width: "252px" }}>
+                    <Box
+                      sx={{
+                        width: { xs: 252, md: 620, lg: 740, xl: 880 },
+                        height: { xs: 388, md: 340, xl: 480 },
+                        background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
+                        backgroundBlendMode: "soft-light, normal",
+                        margin: "auto",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      <Box sx={{ display: { xs: "block", md: "flex" } }}>
+                        <Box
+                          sx={{
+                            width: { xs: 120, md: 260, xl: 400 },
+                            display: "flex",
+                            alignItems: "center",
+                            marginX: { xs: "auto", md: 0 },
+                            marginBottom: { xs: "15px", md: 0 },
+                          }}
+                        >
+                          <img
+                            src={text.img}
+                            alt="explore"
+                            width="inherit"
+                            style={{ width: "inherit" }}
+                          />
+                        </Box>
+                        <Box
+                          sx={{
+                            maxWidth: { md: "296px", lg: "400px" },
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            "& > .description": {
+                              fontSize: { xs: "12px", md: "14px", lg: "16px" },
+                              maxWidth: { xs: "220px", md: "100%" },
+                            },
+                            "& > .title": {
+                              fontSize: { xs: "18px", md: "32px" },
+                            },
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="32px"
+                            color="#FFF"
+                            className="title"
+                          >
+                            {text.title}
+                          </Typography>
+                          <Typography
+                            fontSize="16px"
+                            color="#FFF"
+                            marginTop="12px"
+                            className="description"
+                            fontFamily="Inter"
+                          >
+                            {text.description}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </Box>
           </Box>
           <Box sx={{ paddingLeft: { md: "34px", lg: "66px", xl: "135px" } }}>
             <Box
               sx={{
-                display: { md: "block", xl: "none" },
+                display: { xs: "block", xl: "none" },
                 marginBottom: "60px",
+                fontSize: { xs: "32px", md: "80px" },
+                lineHeight: { xs: "32px", md: "80px" },
               }}
             >
               <Typography
                 fontFamily="Aaaiight"
-                fontSize="80px"
                 color="#FFF"
-                lineHeight="80px"
                 textAlign="center"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
               >
                 Choose your <span style={{ color: "#005B42" }}>Joe</span>
               </Typography>
             </Box>
             <Box
               sx={{
-                display: "flex",
+                display: { xs: "none", md: "flex" },
                 justifyContent: { md: "space-between", lg: "space-around" },
                 alignItems: { md: "center", lg: "normal" },
               }}
             >
               <Box>
-                <Box sx={{ display: { md: "none", xl: "block" } }}>
+                <Box sx={{ display: { xs: "none", xl: "block" } }}>
                   <Typography
                     fontFamily="Aaaiight"
                     fontSize="80px"
@@ -414,6 +520,147 @@ const Explore = () => {
                   ))}
                 </Swiper>
               </Box>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: "block", md: "none" },
+                width: { xs: "100%", md: "668px", lg: "892px", xl: "1150px" },
+                ".swiper-pagination": {
+                  bottom: "-40px",
+                },
+                ".swiper-pagination-bullet": {
+                  background: "#242424",
+                  opacity: 1,
+                },
+                ".swiper-pagination-bullet-active": {
+                  background: "#FFF",
+                },
+                ".swiper": {
+                  overflow: "unset",
+                },
+              }}
+            >
+              <Swiper
+                slidesPerView={"auto"}
+                centeredSlides={false}
+                spaceBetween={12}
+                grabCursor={true}
+                className="mySwiper2"
+                pagination={true}
+                navigation={false}
+                slidesOffsetBefore={20}
+                slidesOffsetAfter={20}
+                modules={[Pagination]}
+              >
+                {perses.map((pers, index) => (
+                  <SwiperSlide style={{ width: "auto" }}>
+                    <Box
+                      sx={{
+                        width: 280,
+                        height: 466,
+                        borderRadius: "4px",
+                        border: "1px solid #242424",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          position: "relative",
+                          display: "flex",
+                          justifyContent: "center",
+                          marginTop: "40px",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 240,
+                            height: 201,
+                            borderRadius: "8px",
+                            background: `url(${Noise}) 0 0/30% 30%, #2E2E2E`,
+                            backgroundBlendMode: "soft-light, normal, normal",
+                            transform: "rotate(5deg) translate(-50%, 0)",
+                            position: "absolute",
+                            top: 0,
+                            left: "50%",
+                          }}
+                        ></Box>
+                        <Box
+                          sx={{
+                            width: 240,
+                            height: 201,
+                            borderRadius: "8px",
+                            transform: "rotate(-5deg)",
+                            background: `url(${pers.img})`,
+                            backgroundSize: "cover",
+                          }}
+                        ></Box>
+                      </Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          marginTop: "30px",
+                        }}
+                      >
+                        <Box sx={{ width: 240 }}>
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="18px"
+                            lineHeight="18px"
+                            color="#FFF"
+                          >
+                            {pers.title}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "8px",
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Inter"
+                            fontSize="12px"
+                            lineHeight="19.2px"
+                            color="#FFF"
+                            maxWidth={240}
+                          >
+                            {pers.description}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            width: 240,
+                            height: 48,
+                            background:
+                              "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%);",
+                            borderRadius: "2px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            marginTop: "12px",
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Inter"
+                            fontSize="14px"
+                            lineHeight="100%"
+                            color="#FFF"
+                            textAlign="center"
+                            marginRight="8px"
+                          >
+                            Explore the full lore
+                          </Typography>
+                          <img
+                            src={ArrowRightWhite}
+                            alt="arrow-right"
+                            width="16px"
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </Box>
           </Box>
         </Box>
