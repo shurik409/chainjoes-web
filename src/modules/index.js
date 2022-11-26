@@ -5,7 +5,7 @@ import Activities from "./activities";
 import Enemies from "./enemies";
 import Six from "./roadmap";
 import Seven from "./team";
-import Eight from "./partners";
+import LoopLine from "./loopLine";
 import Social from "./social";
 import Footer from "./footer";
 import Loader from "./loader";
@@ -18,7 +18,7 @@ export {
   Enemies,
   Six,
   Seven,
-  Eight,
+  LoopLine,
   Social,
   Footer,
   Loader,

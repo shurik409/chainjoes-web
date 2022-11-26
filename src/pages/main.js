@@ -8,6 +8,7 @@ import {
   Activities,
   Social,
   Footer,
+  LoopLine,
   // Loader,
 } from "../modules";
 import { getAllImage, getAllVideo } from "../allImage";
@@ -76,6 +77,7 @@ const Main = () => {
       <ThemeProvider theme={theme}>
         <First />
         <Enemies />
+        <LoopLine />
         <Explore />
         <Activities />
         <Social />

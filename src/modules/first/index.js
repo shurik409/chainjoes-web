@@ -7,10 +7,12 @@ import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
 import Login from "../../imgs/new/login.svg";
 import Document from "../../imgs/new/document.svg";
+import CloseBtn from "../../imgs/new/close-btn.svg";
 
 const First = () => {
   const refVideo = useRef(null);
   const [muted, setMuted] = useState(false);
+  const [isBanner, setIsBanner] = useState(true);
   useEffect(() => {
     if (!refVideo.current) {
       return;
@@ -23,10 +25,81 @@ const First = () => {
     }
   });
 
+  const handleClose = (e) => {
+    e.preventDefault();
+    setIsBanner(false);
+  };
+
   const desktop1080Width = true;
 
   return (
     <Box>
+      <Box
+        sx={{
+          paddingY: { xs: "16px", md: "12px" },
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          position: "absolute",
+          width: "100%",
+          top: isBanner ? 0 : { xs: "-120px", md: "-80px" },
+          zIndex: 100,
+          transition: "top 0.2s ease-in-out",
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            fontSize: { xs: "12px" },
+            lineHeight: { xs: "12px" },
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "center",
+            alignItems: "center",
+            maxWidth: { xs: "175px", md: "100%" },
+            margin: { xs: "auto", md: 0 },
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            color="#FFF"
+            fontFamily="Inter"
+            style={{ fontSize: "inherit", lineHeight: "inherit" }}
+          >
+            Private sale starts in 30 days. Be first to participate
+          </Typography>
+          <Box
+            sx={{
+              padding: { xs: "10px 16px" },
+              marginLeft: { md: "12px" },
+              marginTop: { xs: "12px", md: 0 },
+              borderRadius: "2px",
+              background:
+                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+            }}
+          >
+            <Typography
+              color="#FFF"
+              fontFamily="Inter"
+              style={{ fontSize: "inherit", lineHeight: "inherit" }}
+            >
+              Explore IDO strategy
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            top: { xs: "13px", md: "50%" },
+            transform: { md: "translateY(-50%)" },
+            right: { xs: "8px", md: "135px" },
+            cursor: "pointer",
+          }}
+          onClick={(e) => handleClose(e)}
+        >
+          <img src={CloseBtn} alt="close-btn" width="20px" />
+        </Box>
+      </Box>
       {desktop1080Width && (
         <Box
           sx={{
@@ -62,12 +135,7 @@ const First = () => {
           </Box>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "end",
-              WebkitJustifyContent: "flex-end",
-              animationName: "header",
-              animationDuration: "2s",
-              animationFillMode: "both",
+              paddingTop: "60px",
             }}
           >
             <Header />
