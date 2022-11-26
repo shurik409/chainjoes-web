@@ -29,6 +29,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
+import BestTeam from "../../imgs/new/backIcons/bestTeam.svg";
+import KeyPartnership from "../../imgs/new/backIcons/keyPartnership.svg";
+import Cross from "../../imgs/new/Cross.png";
+
 const Activities = () => {
   const [activeYear, setActiveYear] = useState(0);
   const [activeTeam, setActiveTeam] = useState("managment");
@@ -362,7 +366,25 @@ const Activities = () => {
     <Box>
       {desktop1080Width && (
         <Box>
-          <Box sx={{ paddingTop: "80px", marginBottom: "200px" }}>
+          <Box
+            sx={{
+              paddingTop: "80px",
+              marginBottom: "200px",
+              position: "relative",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                bottom: { xs: "-10%", md: "-15%", lg: "-15%", xl: "-30%" },
+                left: { md: "2%", xl: "10%" },
+                "& > .cross": {
+                  width: { xs: 80, md: 150, lg: 150, xl: 200 },
+                },
+              }}
+            >
+              <img className="cross" src={Cross} alt="cross" />
+            </Box>
             <Box
               sx={{
                 fontSize: { xs: "32px", md: "80px" },
@@ -919,7 +941,24 @@ const Activities = () => {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ marginTop: { xs: "80px", md: 0 } }}>
+          <Box
+            sx={{
+              marginTop: { xs: "140px", md: "220px", lg: "160px", xl: "200px" },
+              position: "relative",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: { xs: "-80px", md: "-150px", lg: "-120px" },
+                left: { xs: "5%", md: "10%", lg: "5%", xl: "25%" },
+                "& > img": {
+                  width: { xs: "157px", md: "auto" },
+                },
+              }}
+            >
+              <img src={BestTeam} alt="our amazing" />
+            </Box>
             <Box
               sx={{
                 display: "flex",
@@ -1479,7 +1518,24 @@ const Activities = () => {
               )}
             </Box>
           </Box>
-          <Box sx={{ marginTop: "100px" }}>
+          <Box
+            sx={{
+              marginTop: { xs: 0, md: "40px", lg: "100px" },
+              position: "relative",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: { xs: "-60px", md: "-100px" },
+                left: { xs: "5%", md: "5%", lg: "5%", xl: "25%" },
+                "& > img": {
+                  width: { xs: "94px", md: "auto" },
+                },
+              }}
+            >
+              <img src={KeyPartnership} alt="our amazing" />
+            </Box>
             <Box
               sx={{
                 display: "flex",

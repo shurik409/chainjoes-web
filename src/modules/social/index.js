@@ -1,7 +1,9 @@
 import React from "react";
-import { Box, Link, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Login from "../../imgs/new/login-green.svg";
 import Noise from "../../imgs/new/noise.png";
+import Circle from "../../imgs/new/backIcons/circles2.svg";
+import Cross from "../../imgs/new/Cross.png";
 
 const Social = () => {
   const desktop1080Width = true;
@@ -9,7 +11,38 @@ const Social = () => {
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ paddingY: "80px" }}>
+        <Box
+          sx={{
+            paddingY: "80px",
+            marginTop: { xs: "30px", md: "80px", xl: 0 },
+            position: "relative",
+            marginBottom: "180px",
+          }}
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              right: { xs: "4%", lg: "4%", xl: "10%" },
+              top: { xs: "0", md: "-5%", xl: "10%" },
+              "& > .cross": {
+                width: { xs: 60, md: 100 },
+              },
+            }}
+          >
+            <img className="cross" src={Cross} alt="cross" />
+          </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              left: { xs: "4%", xl: "10%" },
+              bottom: { xs: "0", md: "-5%", xl: "-20%" },
+              "& > .cross": {
+                width: { xs: 60, md: 100 },
+              },
+            }}
+          >
+            <img className="cross" src={Cross} alt="cross" />
+          </Box>
           <Box
             sx={{
               width: { xs: "280px", md: "620px", lg: "740px", xl: "970px" },
@@ -24,8 +57,24 @@ const Social = () => {
               borderRadius: "8px",
               fontSize: { xs: "32px", md: "80px" },
               lineHeight: { xs: "32px", md: "80px" },
+              position: "relative",
+              overflow: "hidden",
             }}
           >
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: "50%",
+                transform: "translate(-50%)",
+                height: "100%",
+                "& > img": {
+                  height: "100%",
+                },
+              }}
+            >
+              <img src={Circle} alt="circles" />
+            </Box>
             <Typography
               fontFamily="Aaaiight"
               color="#FFF"

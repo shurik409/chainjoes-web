@@ -200,6 +200,7 @@ const First = () => {
               marginTop: "52px",
               flexDirection: { xs: "column", md: "row" },
               justifyContent: { md: "center", lg: "normal" },
+              alignItems: "center",
             }}
           >
             <Box

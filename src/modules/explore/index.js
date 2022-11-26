@@ -28,6 +28,21 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Noise from "../../imgs/new/noise.png";
 
+import AnwarLogo from "../../imgs/new/heroes/anwar.svg";
+import DeoLogo from "../../imgs/new/heroes/deo.svg";
+import GunnarLogo from "../../imgs/new/heroes/gunnar.svg";
+import MilcyLogo from "../../imgs/new/heroes/milcy.svg";
+import SamLogo from "../../imgs/new/heroes/sam.svg";
+import ShaanLogo from "../../imgs/new/heroes/shaan.svg";
+
+import MilcyBlock from "../../imgs/new/heroes/milcyBlock.png";
+import AnwarBlock from "../../imgs/new/heroes/anwarBlock.png";
+import ShaanBlock from "../../imgs/new/heroes/shaanBlock.png";
+
+import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
+import Circle from "../../imgs/new/backIcons/circles1.svg";
+import Cross from "../../imgs/new/Cross.png";
+
 const Explore = () => {
   const persSwiper = useRef(null);
   const [activePers, setActivePers] = useState(0);
@@ -100,45 +115,104 @@ const Explore = () => {
     {
       title: "Mr. Tyr",
       img: PersFirstImg,
+      logo: GunnarLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/mr.-tyr",
+      block: false,
       description:
-        "This is carved on the coat of arms of the house of Hodler, whose metaverse was covered with ice after it was destroyed by hackers decades ago.  ",
+        "Strength and Honor… This is carved on the coat of arms of the house of Hodler, whose metaverse was covered with ice after it was destroyed by hackers decades ago…",
     },
     {
-      title: "Anwar",
+      title: "Mr. Deo",
       img: PersSecondImg,
+      logo: DeoLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/deo",
+      block: false,
       description:
-        "From the metaverse Greece 21, reconstructed on the fragments of ancient Greece with the help of web 3.0 technologies, the warrior Anwar arrived.",
-    },
-    {
-      title: "Shaan",
-      img: PersThirdImg,
-      description:
-        "Shaan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years. Due to the overabundance of various advanced technologies inside the city, it can «lag» a little — the locations are distorted and merge into each other. ",
-    },
-    {
-      title: "Milcy",
-      img: PersFourthImg,
-      description:
-        "MLc s9 is one of the 10 newest bots that were created as part of the experimental development of metaverse A2. which is engaged in the creation of spam bots. These bots were supposed to be the crown of creation, which would allow them to bypass all current firewalls.",
-    },
-    {
-      title: "Deo",
-      img: PersFiveImg,
-      description:
-        "The Monk Deo arrived from the metaverse Temple of Fate...On his planet, the monks were able to curb web 3.0 technologies and now draw strength from there. ",
+        "The Monk, Deo, arrived from the metaverse Temple of Fate...On his planet, the monks were able to curb web 3.0 technologies and now draw strength from the power within…",
     },
     {
       title: "Sam",
-      img: PersSixImg,
+      img: PersThirdImg,
+      block: false,
+      logo: SamLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/sam",
       description:
-        "Earth X300 has reached its peak of development and formed its own system. People live in prosperity, and technologies work for the benefit of humanity and deliver only comfort.",
+        "Earth X300 has reached the peak of development and formed its own system. People live in prosperity, and technology works for the benefit of humanity to deliver comfort and security… ",
+    },
+    {
+      title: "Anwar",
+      img: AnwarBlock,
+      logo: AnwarLogo,
+      block: true,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/anwar",
+      description:
+        "Reconstructed from fragments of Ancient Greece using web 3.0 technologies, the warrior Anwar arrived from Metaverse Greece #21.",
+    },
+    {
+      title: "Shaan",
+      img: ShaanBlock,
+      logo: ShaanLogo,
+      block: true,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/shaan",
+      description:
+        "Shaan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years…",
+    },
+    {
+      title: "Milcy",
+      img: MilcyBlock,
+      logo: MilcyLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/milcy",
+      block: true,
+      description:
+        "MLc s9 is one of the 10 newest bots created as part of the experimental development of metaverse A2, engaged in the creation of spam bots…",
     },
   ];
 
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ paddingY: "228px" }}>
+        <Box sx={{ paddingY: "228px", position: "relative" }}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              zIndex: -1,
+              "& > img": {
+                width: "100%",
+              },
+              "& > .cross": {
+                width: 190,
+              },
+            }}
+          >
+            <img src={Circle} alt="circles" />
+          </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              top: { xs: "20px", md: "100px", lg: "60px", xl: "20px" },
+              left: { xs: "40%", md: "50%", xl: "60%" },
+              "& > img": {
+                width: { xs: "157px", md: "320px", lg: "auto" },
+              },
+            }}
+          >
+            <img src={OurAmazing} alt="our amazing" />
+          </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "700px",
+              right: "10%",
+              "& > .cross": {
+                width: 100,
+              },
+            }}
+          >
+            <img className="cross" src={Cross} alt="cross" />
+          </Box>
           <Box sx={{ marginBottom: "300px" }}>
             <Box
               sx={{
@@ -419,17 +493,27 @@ const Explore = () => {
                         }}
                       >
                         <Box
-                          sx={{ cursor: "pointer" }}
+                          sx={{
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            "& > img": {
+                              width: "24px",
+                              height: "24px",
+                            },
+                          }}
                           onClick={() => {
                             persSwiper.current.swiper.slideTo(index);
                             setActivePers(index);
                           }}
                         >
+                          <img src={pers.logo} alt={pers.title} width="24px" />
                           <Typography
                             fontFamily="Aaaiight"
                             fontSize="18px"
                             lineHeight="18px"
                             color="#FFF"
+                            marginLeft="12px"
                           >
                             {pers.title}
                           </Typography>
