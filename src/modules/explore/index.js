@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import {
   FirstImg,
   SecondImg,
@@ -537,13 +537,19 @@ const Explore = () => {
                           >
                             {pers.description}
                           </Typography>
-                          <Typography
-                            color="#00FFB7"
-                            fontSize="12px"
-                            marginTop="12px"
+                          <Link
+                            href={pers.link}
+                            target="_blank"
+                            underline="none"
                           >
-                            Explore the full lore
-                          </Typography>
+                            <Typography
+                              color="#00FFB7"
+                              fontSize="12px"
+                              marginTop="12px"
+                            >
+                              Explore the full lore
+                            </Typography>
+                          </Link>
                         </Box>
                       </Box>
                     </Box>

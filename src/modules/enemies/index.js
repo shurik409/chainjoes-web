@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import { screen5 } from "../../imgs/webp/";
 import Cross from "../../imgs/new/Cross.png";
 import Login from "../../imgs/new/login.svg";
@@ -111,33 +111,39 @@ const Enemies = () => {
                 alignItems: "center",
               }}
             >
-              <Box
-                sx={{
-                  width: { xs: "248px", md: "260px" },
-                  height: { xs: "48px", md: "60px" },
-                  display: "flex",
-                  borderRadius: "2px",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  cursor: "pointer",
-                  background:
-                    "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-                  marginRight: { xs: 0, md: "24px" },
-                  fontSize: { xs: "14px", md: "16px" },
-                  lineHeight: { xs: "14px", md: "16px" },
-                }}
+              <Link
+                href="https://chainjoes.gitbook.io/chainjoes/game-overview/characters"
+                target="_blank"
+                underline="none"
               >
-                <img src={Login} alt="login" />
-                <Typography
-                  marginLeft="11px"
-                  color="#FFFFFF"
-                  fontWeight="600"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    width: { xs: "248px", md: "260px" },
+                    height: { xs: "48px", md: "60px" },
+                    display: "flex",
+                    borderRadius: "2px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    cursor: "pointer",
+                    background:
+                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                    marginRight: { xs: 0, md: "24px" },
+                    fontSize: { xs: "14px", md: "16px" },
+                    lineHeight: { xs: "14px", md: "16px" },
+                  }}
                 >
-                  Explore the full lore
-                </Typography>
-              </Box>
+                  <img src={Login} alt="login" />
+                  <Typography
+                    marginLeft="11px"
+                    color="#FFFFFF"
+                    fontWeight="600"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Explore the full lore
+                  </Typography>
+                </Box>
+              </Link>
               <Box
                 sx={{
                   width: { xs: "248px", md: "260px" },

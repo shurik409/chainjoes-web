@@ -102,29 +102,36 @@ const Social = () => {
                 To recieve our latest news, events and announcements first
               </Typography>
             </Box>
-            <Box
-              sx={{
-                width: { xs: "240px", md: "280px" },
-                height: { xs: "52px", md: "64px" },
-                borderRadius: "2px",
-                background: "#FFF",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: { xs: "14px", md: "20px" },
-                lineHeight: { xs: "14px", md: "32px" },
-              }}
+
+            <Link
+              href="https://discord.com/invite/chainjoes"
+              target="_blank"
+              underline="none"
             >
-              <img src={Login} alt="login" />
-              <Typography
-                marginLeft="8px"
-                fontWeight="600"
-                color="#00A77B"
-                style={{ fontSize: "inherit", lineHeight: "inherit" }}
+              <Box
+                sx={{
+                  width: { xs: "240px", md: "280px" },
+                  height: { xs: "52px", md: "64px" },
+                  borderRadius: "2px",
+                  background: "#FFF",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: { xs: "14px", md: "20px" },
+                  lineHeight: { xs: "14px", md: "32px" },
+                }}
               >
-                Join now
-              </Typography>
-            </Box>
+                <img src={Login} alt="login" />
+                <Typography
+                  marginLeft="8px"
+                  fontWeight="600"
+                  color="#00A77B"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                >
+                  Join now
+                </Typography>
+              </Box>
+            </Link>
           </Box>
         </Box>
       )}

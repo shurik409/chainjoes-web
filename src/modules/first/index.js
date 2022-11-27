@@ -499,32 +499,38 @@ const First = () => {
             alignItems: "center",
           }}
         >
-          <Box
-            sx={{
-              width: "280px",
-              height: { xs: "52px", md: "68px" },
-              display: "flex",
-              borderRadius: "2px",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-              background:
-                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-              marginRight: { xs: 0, md: "24px" },
-              fontWeight: { xs: 500 },
-              fontSize: { xs: "14px", md: "20px" },
-            }}
+          <Link
+            href="https://discord.com/invite/chainjoes"
+            target="_blank"
+            underline="none"
           >
-            <img src={Login} alt="login" />
-            <Typography
-              marginLeft="11px"
-              color="#FFFFFF"
-              fontFamily="Inter"
-              style={{ fontWeight: "inherit", fontSize: "inherit" }}
+            <Box
+              sx={{
+                width: "280px",
+                height: { xs: "52px", md: "68px" },
+                display: "flex",
+                borderRadius: "2px",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                background:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                marginRight: { xs: 0, md: "24px" },
+                fontWeight: { xs: 500 },
+                fontSize: { xs: "14px", md: "20px" },
+              }}
             >
-              Join the Battle
-            </Typography>
-          </Box>
+              <img src={Login} alt="login" />
+              <Typography
+                marginLeft="11px"
+                color="#FFFFFF"
+                fontFamily="Inter"
+                style={{ fontWeight: "inherit", fontSize: "inherit" }}
+              >
+                Join the Battle
+              </Typography>
+            </Box>
+          </Link>
           <Box
             sx={{
               width: "280px",

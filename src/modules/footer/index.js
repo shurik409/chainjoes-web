@@ -39,38 +39,42 @@ const Footer = () => {
           >
             <Box sx={{ display: "flex" }}>
               <Box sx={{ marginRight: "28px" }}>
-                <Box
-                  sx={{
-                    marginBottom: { xs: "20px", md: "28px" },
-                    display: "flex",
-                  }}
-                >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <RouterLink to="/">
+                  <Box
+                    sx={{
+                      marginBottom: { xs: "20px", md: "28px" },
+                      display: "flex",
+                    }}
                   >
-                    Home
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box
-                  sx={{
-                    marginBottom: { xs: "20px", md: "28px" },
-                    display: "flex",
-                  }}
-                >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                    <Typography
+                      fontWeight="500"
+                      color="#FFF"
+                      fontFamily="Inter"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                    >
+                      Home
+                    </Typography>
+                    <img src={ArrowAngle} alt="arrow-angle" />
+                  </Box>
+                </RouterLink>
+                <RouterLink to="/faq">
+                  <Box
+                    sx={{
+                      marginBottom: { xs: "20px", md: "28px" },
+                      display: "flex",
+                    }}
                   >
-                    FAQ
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
+                    <Typography
+                      fontWeight="500"
+                      color="#FFF"
+                      fontFamily="Inter"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                    >
+                      FAQ
+                    </Typography>
+                    <img src={ArrowAngle} alt="arrow-angle" />
+                  </Box>
+                </RouterLink>
                 <Box
                   sx={{ display: "flex", marginBottom: { xs: "28px", lg: 0 } }}
                 >
@@ -97,7 +101,7 @@ const Footer = () => {
                       fontFamily="Inter"
                       style={{ fontSize: "inherit", lineHeight: "inherit" }}
                     >
-                      Litepaper
+                      Whitepaper
                     </Typography>
                     <img src={ArrowAngle} alt="arrow-angle" />
                   </Box>
