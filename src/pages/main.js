@@ -74,15 +74,13 @@ const Main = () => {
 
   return (
     <Box sx={{ overflowX: "hidden" }}>
-      <ThemeProvider theme={theme}>
-        <First />
-        <Enemies />
-        <LoopLine />
-        <Explore />
-        <Activities />
-        <Social />
-        <Footer />
-      </ThemeProvider>
+      <First />
+      <Enemies />
+      <LoopLine />
+      <Explore />
+      <Activities />
+      <Social />
+      <Footer />
     </Box>
   );
 };
