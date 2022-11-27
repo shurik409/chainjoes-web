@@ -76,6 +76,12 @@ body {
   display: none;
 }
 
+.mobileMenu {
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
 /* .swiper-button-next {
   width: 48;
   height: 48;
