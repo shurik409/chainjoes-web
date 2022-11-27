@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   First,
   Enemies,
@@ -15,18 +14,6 @@ import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
-
-const theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 320,
-      md: 768,
-      lg: 1024,
-      xl: 1440,
-    },
-  },
-});
 
 const Main = () => {
   const [progres, setProgres] = useState(0);
