@@ -9,6 +9,7 @@ import Discord from "../../imgs/new/discord.svg";
 import Medium from "../../imgs/new/medium.svg";
 import LinkedIn from "../../imgs/new/linkedin-logo.svg";
 import Noise from "../../imgs/new/noise.png";
+import DamnnLogo from "../../imgs/new/damn-logo-footer.png";
 
 const Footer = () => {
   const desktop1080Width = true;
@@ -38,7 +39,12 @@ const Footer = () => {
             }}
           >
             <Box sx={{ display: "flex" }}>
-              <Box sx={{ marginRight: "28px" }}>
+              <Box
+                sx={{
+                  width: { xs: "85px", md: "auto" },
+                  marginRight: { xs: "80px", md: "28px" },
+                }}
+              >
                 <RouterLink to="/">
                   <Box
                     sx={{
@@ -76,7 +82,10 @@ const Footer = () => {
                   </Box>
                 </RouterLink>
                 <Box
-                  sx={{ display: "flex", marginBottom: { xs: "28px", lg: 0 } }}
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
                 >
                   <Typography
                     fontWeight="500"
@@ -84,27 +93,11 @@ const Footer = () => {
                     fontFamily="Inter"
                     style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    Gameplay
+                    Whitepaper
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
                 <Box sx={{ display: { xs: "block", lg: "none" } }}>
-                  <Box
-                    sx={{
-                      marginBottom: { xs: "20px", md: "28px" },
-                      display: "flex",
-                    }}
-                  >
-                    <Typography
-                      fontWeight="500"
-                      color="#FFF"
-                      fontFamily="Inter"
-                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                    >
-                      Whitepaper
-                    </Typography>
-                    <img src={ArrowAngle} alt="arrow-angle" />
-                  </Box>
                   <Box
                     sx={{
                       marginBottom: { xs: "20px", md: "28px" },
@@ -141,27 +134,16 @@ const Footer = () => {
                     fontFamily="Inter"
                     style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    Litepaper
+                    Characters
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
                 <Box
                   sx={{
-                    marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    marginBottom: { xs: "20px", md: "28px" },
                   }}
                 >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    Characters
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box sx={{ display: "flex" }}>
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -172,11 +154,46 @@ const Footer = () => {
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-              </Box>
-              <Box>
                 <Box
                   sx={{
-                    marginBottom: { xs: "28px", lg: 0 },
+                    display: "flex",
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    IDO Strategy
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: { xs: "95px", md: "auto" },
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: { xs: "20px", md: "28px", lg: 0 },
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    IDO Strategy
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px", lg: 0 },
                     display: { xs: "flex", lg: "none" },
                   }}
                 >
@@ -192,23 +209,7 @@ const Footer = () => {
                 </Box>
                 <Box
                   sx={{
-                    marginBottom: { xs: "20px", md: "28px" },
-                    display: "flex",
-                  }}
-                >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    IDO Strategy
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box
-                  sx={{
-                    marginBottom: { xs: "20px", md: "28px" },
+                    marginBottom: { xs: "20px", md: "28px", lg: 0 },
                     display: "flex",
                   }}
                 >
@@ -236,7 +237,12 @@ const Footer = () => {
               </Box>
             </Box>
             <Box sx={{ display: "flex" }}>
-              <Box sx={{ marginRight: "28px" }}>
+              <Box
+                sx={{
+                  width: { xs: "85px", md: "auto" },
+                  marginRight: { xs: "80px", md: "28px" },
+                }}
+              >
                 <Box
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
@@ -328,6 +334,7 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: { xs: "flex", xl: "none" },
+                    width: { xs: "95px", md: "auto" },
                     marginBottom: { xs: "20px", md: "28px" },
                   }}
                 >
@@ -381,27 +388,38 @@ const Footer = () => {
               display: "flex",
               justifyContent: "space-around",
               alignItems: "center",
+              flexDirection: { xs: "column", md: "row" },
             }}
           >
             <Box
               sx={{
-                border: "#FFF 1px solid",
-                borderRadius: "14px",
-                height: "28px",
-                width: "105px",
                 display: "flex",
-                justifyContent: "center",
                 alignItems: "center",
+                marginBottom: { xs: "13px", md: 0 },
               }}
             >
-              <Typography
-                fontSize="12px"
-                lineHeight="12px"
-                fontFamily="Inter"
-                color="#FFF"
+              <img src={DamnnLogo} alt="damnn-logo" height="24px" />
+              <Box
+                sx={{
+                  border: "#FFF 1px solid",
+                  borderRadius: "14px",
+                  height: "28px",
+                  width: "105px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginLeft: "12px",
+                }}
               >
-                Production by
-              </Typography>
+                <Typography
+                  fontSize="12px"
+                  lineHeight="12px"
+                  fontFamily="Inter"
+                  color="#FFF"
+                >
+                  Production by
+                </Typography>
+              </Box>
             </Box>
             <Box sx={{ display: "flex" }}>
               <Typography
