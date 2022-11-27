@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Link, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import ArrowAngle from "../../imgs/new/arrow-angle.svg";
 import Twitter from "../../imgs/new/twitter.svg";
@@ -12,75 +12,96 @@ import Noise from "../../imgs/new/noise.png";
 import DamnnLogo from "../../imgs/new/damn-logo-footer.png";
 
 const Footer = () => {
-  const desktop1080Width = true;
-
   return (
     <Box>
-      {desktop1080Width && (
+      <Box
+        sx={{
+          background: `url(${Noise}) 0 0/4% 30%, linear-gradient(194.18deg, #00FFB7 -32.14%, #005B42 105.84%)`,
+          backgroundBlendMode: "soft-light, normal",
+          paddingTop: "40px",
+        }}
+      >
         <Box
           sx={{
-            background: `url(${Noise}) 0 0/4% 30%, linear-gradient(194.18deg, #00FFB7 -32.14%, #005B42 105.84%)`,
-            backgroundBlendMode: "soft-light, normal",
-            paddingTop: "40px",
+            display: "flex",
+            justifyContent: { xs: "space-between", md: "space-around" },
+            alignItems: { xs: "center", md: "normal" },
+            flexDirection: { xs: "column", md: "row" },
+            paddingBottom: "40px",
+            fontSize: { xs: "12px", md: "20px" },
+            lineHeight: { xs: "12px", md: "24.2px" },
+            "& img": {
+              width: { xs: "16px", md: "24px" },
+            },
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: { xs: "space-between", md: "space-around" },
-              alignItems: { xs: "center", md: "normal" },
-              flexDirection: { xs: "column", md: "row" },
-              paddingBottom: "40px",
-              fontSize: { xs: "12px", md: "20px" },
-              lineHeight: { xs: "12px", md: "24.2px" },
-              "& img": {
-                width: { xs: "16px", md: "24px" },
-              },
-            }}
-          >
-            <Box sx={{ display: "flex" }}>
-              <Box
-                sx={{
-                  width: { xs: "85px", md: "auto" },
-                  marginRight: { xs: "80px", md: "28px" },
-                }}
+          <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                width: { xs: "85px", md: "auto" },
+                marginRight: { xs: "80px", md: "28px" },
+              }}
+            >
+              <RouterLink to="/">
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Home
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </RouterLink>
+              <Link
+                href="https://chainjoes.gitbook.io/chainjoes/"
+                target="_blank"
+                underline="none"
               >
-                <RouterLink to="/">
-                  <Box
-                    sx={{
-                      marginBottom: { xs: "20px", md: "28px" },
-                      display: "flex",
-                    }}
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                    display: "flex",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    <Typography
-                      fontWeight="500"
-                      color="#FFF"
-                      fontFamily="Inter"
-                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                    >
-                      Home
-                    </Typography>
-                    <img src={ArrowAngle} alt="arrow-angle" />
-                  </Box>
-                </RouterLink>
-                <RouterLink to="/faq">
-                  <Box
-                    sx={{
-                      marginBottom: { xs: "20px", md: "28px" },
-                      display: "flex",
-                    }}
+                    About
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <RouterLink to="/faq" target="_blank">
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    <Typography
-                      fontWeight="500"
-                      color="#FFF"
-                      fontFamily="Inter"
-                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                    >
-                      FAQ
-                    </Typography>
-                    <img src={ArrowAngle} alt="arrow-angle" />
-                  </Box>
-                </RouterLink>
+                    FAQ
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </RouterLink>
+              <Box sx={{ display: { xs: "block", lg: "none" } }}>
                 <Box
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
@@ -97,132 +118,120 @@ const Footer = () => {
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-                <Box sx={{ display: { xs: "block", lg: "none" } }}>
-                  <Box
-                    sx={{
-                      marginBottom: { xs: "20px", md: "28px" },
-                      display: "flex",
-                    }}
-                  >
-                    <Typography
-                      fontWeight="500"
-                      color="#FFF"
-                      fontFamily="Inter"
-                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                    >
-                      Characters
-                    </Typography>
-                    <img src={ArrowAngle} alt="arrow-angle" />
-                  </Box>
-                </Box>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                marginRight: "28px",
+                display: { xs: "none", lg: "block" },
+              }}
+            >
+              <Box
+                sx={{
+                  marginBottom: { xs: "20px", md: "28px" },
+                  display: "flex",
+                }}
+              >
+                <Typography
+                  fontWeight="500"
+                  color="#FFF"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                >
+                  Whitepaper
+                </Typography>
+                <img src={ArrowAngle} alt="arrow-angle" />
               </Box>
               <Box
                 sx={{
-                  marginRight: "28px",
-                  display: { xs: "none", lg: "block" },
+                  display: "flex",
+                  marginBottom: { xs: "20px", md: "28px" },
                 }}
               >
-                <Box
-                  sx={{
-                    marginBottom: { xs: "20px", md: "28px" },
-                    display: "flex",
-                  }}
+                <Typography
+                  fontWeight="500"
+                  color="#FFF"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    Characters
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    marginBottom: { xs: "20px", md: "28px" },
-                  }}
-                >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    OnePage
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                  }}
-                >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    IDO Strategy
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
+                  Tokenomics
+                </Typography>
+                <img src={ArrowAngle} alt="arrow-angle" />
               </Box>
               <Box
                 sx={{
-                  width: { xs: "95px", md: "auto" },
+                  display: "flex",
                 }}
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    marginBottom: { xs: "20px", md: "28px", lg: 0 },
-                  }}
+                <Typography
+                  fontWeight="500"
+                  color="#FFF"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    IDO Strategy
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box
-                  sx={{
-                    marginBottom: { xs: "20px", md: "28px", lg: 0 },
-                    display: { xs: "flex", lg: "none" },
-                  }}
+                  IDO Strategy
+                </Typography>
+                <img src={ArrowAngle} alt="arrow-angle" />
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                width: { xs: "95px", md: "auto" },
+              }}
+            >
+              <Box
+                sx={{
+                  marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                  display: { xs: "flex", lg: "none" },
+                }}
+              >
+                <Typography
+                  fontWeight="500"
+                  color="#FFF"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    OnePage
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
-                <Box
-                  sx={{
-                    marginBottom: { xs: "20px", md: "28px", lg: 0 },
-                    display: "flex",
-                  }}
+                  Tokenomics
+                </Typography>
+                <img src={ArrowAngle} alt="arrow-angle" />
+              </Box>
+              <Box
+                sx={{
+                  marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                  display: { xs: "flex", lg: "none" },
+                }}
+              >
+                <Typography
+                  fontWeight="500"
+                  color="#FFF"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
-                  <Typography
-                    fontWeight="500"
-                    color="#FFF"
-                    fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                  >
-                    About
-                  </Typography>
-                  <img src={ArrowAngle} alt="arrow-angle" />
-                </Box>
+                  IDO strategy
+                </Typography>
+                <img src={ArrowAngle} alt="arrow-angle" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                }}
+              >
+                <Typography
+                  fontWeight="500"
+                  color="#FFF"
+                  fontFamily="Inter"
+                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                >
+                  One Page
+                </Typography>
+                <img src={ArrowAngle} alt="arrow-angle" />
+              </Box>
+              <Link
+                href="mailto:info@chainjoes.com"
+                target="_blank"
+                underline="true"
+              >
                 <Box sx={{ display: "flex" }}>
                   <Typography
                     fontWeight="500"
@@ -234,14 +243,20 @@ const Footer = () => {
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-              </Box>
+              </Link>
             </Box>
-            <Box sx={{ display: "flex" }}>
-              <Box
-                sx={{
-                  width: { xs: "85px", md: "auto" },
-                  marginRight: { xs: "80px", md: "28px" },
-                }}
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                width: { xs: "85px", md: "auto" },
+                marginRight: { xs: "80px", md: "28px" },
+              }}
+            >
+              <Link
+                href="https://twitter.com/chainjoes"
+                target="_blank"
+                underline="none"
               >
                 <Box
                   sx={{
@@ -260,6 +275,12 @@ const Footer = () => {
                     Twitter
                   </Typography>
                 </Box>
+              </Link>
+              <Link
+                href="https://t.me/chainjoes"
+                target="_blank"
+                underline="none"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -277,6 +298,12 @@ const Footer = () => {
                     Telegram
                   </Typography>
                 </Box>
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@chainjoes"
+                target="_blank"
+                underline="none"
+              >
                 <Box
                   sx={{
                     display: { xs: "flex", xl: "none" },
@@ -293,12 +320,18 @@ const Footer = () => {
                     Tik Tok
                   </Typography>
                 </Box>
-              </Box>
-              <Box
-                sx={{
-                  marginRight: "28px",
-                  display: { xs: "none", xl: "block" },
-                }}
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                marginRight: "28px",
+                display: { xs: "none", xl: "block" },
+              }}
+            >
+              <Link
+                href="https://www.tiktok.com/@chainjoes"
+                target="_blank"
+                underline="none"
               >
                 <Box
                   sx={{
@@ -317,6 +350,12 @@ const Footer = () => {
                     Tik Tok
                   </Typography>
                 </Box>
+              </Link>
+              <Link
+                href="https://discord.com/invite/6XcvPDbXBa"
+                target="_blank"
+                underline="none"
+              >
                 <Box sx={{ display: "flex" }}>
                   <img src={Discord} alt="discord" />
                   <Typography
@@ -329,8 +368,14 @@ const Footer = () => {
                     Discord
                   </Typography>
                 </Box>
-              </Box>
-              <Box>
+              </Link>
+            </Box>
+            <Box>
+              <Link
+                href="https://discord.com/invite/6XcvPDbXBa"
+                target="_blank"
+                underline="none"
+              >
                 <Box
                   sx={{
                     display: { xs: "flex", xl: "none" },
@@ -349,6 +394,12 @@ const Footer = () => {
                     Discord
                   </Typography>
                 </Box>
+              </Link>
+              <Link
+                href="https://medium.com/@ChainJoes"
+                target="_blank"
+                underline="none"
+              >
                 <Box
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
@@ -366,6 +417,12 @@ const Footer = () => {
                     Medium
                   </Typography>
                 </Box>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/chainjoes"
+                target="_blank"
+                underline="none"
+              >
                 <Box sx={{ display: "flex" }}>
                   <img src={LinkedIn} alt="linkedin" />
                   <Typography
@@ -378,19 +435,21 @@ const Footer = () => {
                     LinkedIn
                   </Typography>
                 </Box>
-              </Box>
+              </Link>
             </Box>
           </Box>
-          <Box
-            sx={{
-              background: `#FFFFFF1A`,
-              paddingY: "16px",
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-              flexDirection: { xs: "column", md: "row" },
-            }}
-          >
+        </Box>
+        <Box
+          sx={{
+            background: `#FFFFFF1A`,
+            paddingY: "16px",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            flexDirection: { xs: "column", md: "row" },
+          }}
+        >
+          <Link href="https://damnn.tv/" target="_blank" underline="none">
             <Box
               sx={{
                 display: "flex",
@@ -421,7 +480,9 @@ const Footer = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box sx={{ display: "flex" }}>
+          </Link>
+          <Box sx={{ display: "flex" }}>
+            <RouterLink to="/privacy-policy" target="_blank">
               <Typography
                 fontSize="12px"
                 lineHeight="12px"
@@ -431,6 +492,8 @@ const Footer = () => {
               >
                 Privacy Policy
               </Typography>
+            </RouterLink>
+            <RouterLink to="/terms-conditions" target="_blank">
               <Typography
                 fontSize="12px"
                 lineHeight="12px"
@@ -439,10 +502,10 @@ const Footer = () => {
               >
                 Terms of Service
               </Typography>
-            </Box>
+            </RouterLink>
           </Box>
         </Box>
-      )}
+      </Box>
     </Box>
   );
 };

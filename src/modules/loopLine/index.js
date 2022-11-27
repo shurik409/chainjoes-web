@@ -31,11 +31,10 @@ const LoopLine = () => {
         slidesPerView={"auto"}
         centeredSlides={false}
         spaceBetween={24}
-        grabCursor={true}
         className="mySwiper"
         loop={true}
-        autoplay={{ delay: 1.2, disableOnInteraction: false }}
-        speed={1000}
+        autoplay={{ delay: 2.2, disableOnInteraction: false }}
+        speed={1500}
         freeMode={true}
         modules={[Autoplay, FreeMode]}
       >

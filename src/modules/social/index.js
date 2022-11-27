@@ -68,6 +68,7 @@ const Social = () => {
                 left: "50%",
                 transform: "translate(-50%)",
                 height: "100%",
+                zIndex: -1,
                 "& > img": {
                   height: "100%",
                 },
@@ -102,11 +103,11 @@ const Social = () => {
                 To recieve our latest news, events and announcements first
               </Typography>
             </Box>
-
             <Link
               href="https://discord.com/invite/chainjoes"
               target="_blank"
               underline="none"
+              style={{ zIndex: 2 }}
             >
               <Box
                 sx={{
@@ -119,6 +120,7 @@ const Social = () => {
                   alignItems: "center",
                   fontSize: { xs: "14px", md: "20px" },
                   lineHeight: { xs: "14px", md: "32px" },
+                  cursor: "pointer",
                 }}
               >
                 <img src={Login} alt="login" />

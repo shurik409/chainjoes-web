@@ -65,6 +65,11 @@ const FAQ = () => {
       ],
     },
     {
+      title: "Roadmap",
+      link: "/#roadmap",
+      type: "scroll",
+    },
+    {
       title: "Team",
       link: "/#team",
       type: "scroll",

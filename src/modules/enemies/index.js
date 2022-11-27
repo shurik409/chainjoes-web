@@ -140,7 +140,7 @@ const Enemies = () => {
                     fontFamily="Inter"
                     style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    Explore the full lore
+                    Explore the Backstory
                   </Typography>
                 </Box>
               </Link>
@@ -168,7 +168,7 @@ const Enemies = () => {
                   marginLeft="8px"
                   style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
-                  Watch teaser <sup>Coming Soon</sup>
+                  Watch the teaser <sup>Coming Soon</sup>
                 </Typography>
               </Box>
             </Box>

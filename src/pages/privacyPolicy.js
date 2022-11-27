@@ -64,6 +64,11 @@ const PrivacyPolicy = () => {
       ],
     },
     {
+      title: "Roadmap",
+      link: "/#roadmap",
+      type: "scroll",
+    },
+    {
       title: "Team",
       link: "/#team",
       type: "scroll",
@@ -71,11 +76,6 @@ const PrivacyPolicy = () => {
     {
       title: "Partners",
       link: "/#partners",
-      type: "scroll",
-    },
-    {
-      title: "Roadmap",
-      link: "/#roadmap",
       type: "scroll",
     },
     {

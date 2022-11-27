@@ -47,9 +47,16 @@ const Header = ({ closeMenu, buttons }) => {
                   position: "relative",
                   cursor: "pointer",
                   height: "30px",
+                  "& .menu-arrow": {
+                    transform: "rotate(0deg)",
+                    transition: "all 0.2s ease-in-out",
+                  },
                   ":hover": {
                     "& > .open-menu": {
                       display: "block",
+                    },
+                    "& .menu-arrow": {
+                      transform: "rotate(180deg)",
                     },
                   },
                 }}
@@ -109,7 +116,12 @@ const Header = ({ closeMenu, buttons }) => {
                     </>
                   )}
                   {item.links && (
-                    <img src={ArrowDown} alt="arrow-down" width="12px" />
+                    <img
+                      src={ArrowDown}
+                      alt="arrow-down"
+                      width="12px"
+                      className="menu-arrow"
+                    />
                   )}
                 </Box>
                 {item.links && (
@@ -224,27 +236,29 @@ const Header = ({ closeMenu, buttons }) => {
                 fontWeight={500}
               >
                 Sale
-                <sup>comming soon</sup>
+                <sup>coming*</sup>
               </Typography>
             </Box>
-            <Box
-              sx={{
-                width: "150px",
-                height: "44px",
-                display: "flex",
-                borderRadius: "2px",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
-                background:
-                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-              }}
-            >
-              <Typography color="#FFFFFF" fontSize="14px" marginRight="4px">
-                Whitelist
-              </Typography>
-              <img src={ArrowRight} alt="arrow-right" />
-            </Box>
+            <Link href="/whitelist.html" target="_blank" underline="none">
+              <Box
+                sx={{
+                  width: "150px",
+                  height: "44px",
+                  display: "flex",
+                  borderRadius: "2px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  background:
+                    "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                }}
+              >
+                <Typography color="#FFFFFF" fontSize="14px" marginRight="4px">
+                  Whitelist
+                </Typography>
+                <img src={ArrowRight} alt="arrow-right" />
+              </Box>
+            </Link>
           </Box>
           <Box
             sx={{

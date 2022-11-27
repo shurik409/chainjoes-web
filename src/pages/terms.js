@@ -64,6 +64,11 @@ const Terms = () => {
       ],
     },
     {
+      title: "Roadmap",
+      link: "/#roadmap",
+      type: "scroll",
+    },
+    {
       title: "Team",
       link: "/#team",
       type: "scroll",
@@ -71,11 +76,6 @@ const Terms = () => {
     {
       title: "Partners",
       link: "/#partners",
-      type: "scroll",
-    },
-    {
-      title: "Roadmap",
-      link: "/#roadmap",
       type: "scroll",
     },
     {

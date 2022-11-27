@@ -177,16 +177,19 @@ const Explore = () => {
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ paddingY: "228px", position: "relative" }} id={"chainverse"}>
+        <Box sx={{ position: "relative" }} id={"chainverse"}>
           <Box
             sx={{
               position: "absolute",
               top: 0,
-              left: 0,
-              width: "100%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: { md: "100%" },
+              height: { xs: "100%", md: "auto" },
               zIndex: -1,
               "& > img": {
-                width: "100%",
+                width: { md: "100%" },
+                height: { xs: "50%", md: "auto" },
               },
               "& > .cross": {
                 width: 190,
@@ -219,7 +222,12 @@ const Explore = () => {
           >
             <img className="cross" src={Cross} alt="cross" />
           </Box>
-          <Box sx={{ marginBottom: "300px" }}>
+          <Box
+            sx={{
+              marginBottom: { xs: "130px", md: "130px", xl: "350px" },
+              paddingTop: "80px",
+            }}
+          >
             <Box
               sx={{
                 display: { xs: "none", md: "block" },
@@ -499,64 +507,105 @@ const Explore = () => {
                       <Box
                         sx={{
                           padding: "20px",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          persSwiper.current.swiper.slideTo(index);
+                          setActivePers(index);
                         }}
                       >
                         <Box
                           sx={{
-                            cursor: "pointer",
                             display: "flex",
                             alignItems: "center",
+                            justifyContent: "space-between",
                             "& > img": {
                               width: "24px",
                               height: "24px",
                             },
                           }}
-                          onClick={() => {
-                            persSwiper.current.swiper.slideTo(index);
-                            setActivePers(index);
-                          }}
                         >
-                          <img src={pers.logo} alt={pers.title} width="24px" />
-                          <Typography
-                            fontFamily="Aaaiight"
-                            fontSize="18px"
-                            lineHeight="18px"
-                            color="#FFF"
-                            marginLeft="12px"
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                            }}
                           >
-                            {pers.title}
-                          </Typography>
+                            <img
+                              src={pers.logo}
+                              alt={pers.title}
+                              width="24px"
+                            />
+                            <Typography
+                              fontFamily="Aaaiight"
+                              fontSize="18px"
+                              lineHeight="18px"
+                              color="#FFF"
+                              marginLeft="12px"
+                            >
+                              {pers.title}
+                            </Typography>
+                          </Box>
+                          {pers.block && (
+                            <Box
+                              sx={{
+                                width: "99px",
+                                height: "28px",
+                                background: "#003527",
+                                fontSize: "12px",
+                                lineHeight: "12px",
+                                borderRadius: "14px",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
+                            >
+                              <Typography
+                                fontFamily="Inter"
+                                color="#05D19B"
+                                textAlign="center"
+                                style={{
+                                  fontSize: "inherit",
+                                  lineHeight: "inherit",
+                                }}
+                              >
+                                Coming soon
+                              </Typography>
+                            </Box>
+                          )}
                         </Box>
-                        <Box
-                          sx={{
-                            marginTop: "8px",
-                            maxHeight: index === activePers ? "120px" : "0px",
-                            opacity: index === activePers ? 1 : 0,
-                            overflow: "hidden",
-                            transition: "all 0.2s ease-in-out",
-                          }}
-                        >
-                          <Typography
-                            color="#FFF"
-                            maxWidth="370px"
-                            fontSize="12px"
-                          >
-                            {pers.description}
-                          </Typography>
-                          <Link
-                            href={pers.link}
-                            target="_blank"
-                            underline="none"
+                        {!pers.block && (
+                          <Box
+                            sx={{
+                              marginTop: "8px",
+                              maxHeight: index === activePers ? "120px" : "0px",
+                              opacity: index === activePers ? 1 : 0,
+                              overflow: "hidden",
+                              transition: "all 0.2s ease-in-out",
+                            }}
                           >
                             <Typography
-                              color="#00FFB7"
+                              color="#FFF"
+                              maxWidth="370px"
                               fontSize="12px"
-                              marginTop="12px"
                             >
-                              Explore the full lore
+                              {pers.description}
                             </Typography>
-                          </Link>
-                        </Box>
+                            <Link
+                              href={pers.link}
+                              target="_blank"
+                              underline="none"
+                            >
+                              <Typography
+                                color="#00FFB7"
+                                fontSize="12px"
+                                marginTop="12px"
+                              >
+                                Explore the full lore
+                              </Typography>
+                            </Link>
+                          </Box>
+                        )}
                       </Box>
                     </Box>
                   ))}

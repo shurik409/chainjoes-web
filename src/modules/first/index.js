@@ -88,6 +88,11 @@ const First = () => {
       ],
     },
     {
+      title: "Roadmap",
+      link: "/#roadmap",
+      type: "scroll",
+    },
+    {
       title: "Team",
       link: "/#team",
       type: "scroll",
@@ -95,11 +100,6 @@ const First = () => {
     {
       title: "Partners",
       link: "/#partners",
-      type: "scroll",
-    },
-    {
-      title: "Roadmap",
-      link: "/#roadmap",
       type: "scroll",
     },
     {
@@ -449,9 +449,9 @@ const First = () => {
             fontFamily="Aaaiight"
             style={{ fontSize: "inherit", lineHeight: "inherit" }}
           >
-            Fight like
+            Kick the web3
             <br />
-            never before
+            enemies asses!
           </Typography>
           <Box
             sx={{
@@ -558,7 +558,7 @@ const First = () => {
               fontFamily="Inter"
               style={{ fontWeight: "inherit", fontSize: "inherit" }}
             >
-              Read Litepaper
+              Read Whitepaper
             </Typography>
           </Box>
         </Box>
