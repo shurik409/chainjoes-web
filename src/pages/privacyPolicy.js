@@ -26,22 +26,22 @@ const PrivacyPolicy = () => {
       links: [
         {
           title: "Backstory",
-          link: "#backstory",
+          link: "/#backstory",
           type: "scroll",
         },
         {
           title: "ChainVerse",
-          link: "#chainverse",
+          link: "/#chainverse",
           type: "scroll",
         },
         {
           title: "Characters",
-          link: "#characters",
+          link: "/#characters",
           type: "scroll",
         },
         {
           title: "Activities",
-          link: "#activities",
+          link: "/#activities",
           type: "scroll",
         },
       ],
@@ -65,17 +65,17 @@ const PrivacyPolicy = () => {
     },
     {
       title: "Team",
-      link: "#team",
+      link: "/#team",
       type: "scroll",
     },
     {
       title: "Partners",
-      link: "#partners",
+      link: "/#partners",
       type: "scroll",
     },
     {
       title: "Roadmap",
-      link: "#roadmap",
+      link: "/#roadmap",
       type: "scroll",
     },
     {
@@ -87,19 +87,19 @@ const PrivacyPolicy = () => {
         },
         {
           title: "Tokenomics",
-          link: "#",
+          link: "/#",
         },
         {
           title: "Whitepaper",
-          link: "#",
+          link: "/#",
         },
         {
           title: "One Page",
-          link: "#",
+          link: "/#",
         },
         {
           title: "IDO strategy",
-          link: "#",
+          link: "/#",
         },
         {
           title: "FAQ ",
