@@ -646,6 +646,7 @@ const Explore = () => {
                                 top: 0,
                                 right: 0,
                                 zIndex: -1,
+                                borderRadius: "8px",
                               }}
                             >
                               <source src={pers.video} type="video/mp4" />
@@ -801,35 +802,38 @@ const Explore = () => {
                             {pers.description}
                           </Typography>
                         </Box>
-                        <Box
-                          sx={{
-                            width: 240,
-                            height: 48,
-                            background:
-                              "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%);",
-                            borderRadius: "2px",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            marginTop: "12px",
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Inter"
-                            fontSize="14px"
-                            lineHeight="100%"
-                            color="#FFF"
-                            textAlign="center"
-                            marginRight="8px"
+
+                        <Link href={pers.link} target="_blank" underline="none">
+                          <Box
+                            sx={{
+                              width: 240,
+                              height: 48,
+                              background:
+                                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%);",
+                              borderRadius: "2px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              marginTop: "12px",
+                            }}
                           >
-                            Explore the full lore
-                          </Typography>
-                          <img
-                            src={ArrowRightWhite}
-                            alt="arrow-right"
-                            width="16px"
-                          />
-                        </Box>
+                            <Typography
+                              fontFamily="Inter"
+                              fontSize="14px"
+                              lineHeight="100%"
+                              color="#FFF"
+                              textAlign="center"
+                              marginRight="8px"
+                            >
+                              Explore the full lore
+                            </Typography>
+                            <img
+                              src={ArrowRightWhite}
+                              alt="arrow-right"
+                              width="16px"
+                            />
+                          </Box>
+                        </Link>
                       </Box>
                     </Box>
                   </SwiperSlide>
