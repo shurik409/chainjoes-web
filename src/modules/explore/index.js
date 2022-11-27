@@ -171,7 +171,7 @@ const Explore = () => {
   return (
     <Box>
       {desktop1080Width && (
-        <Box sx={{ paddingY: "228px", position: "relative" }}>
+        <Box sx={{ paddingY: "228px", position: "relative" }} id={"chainverse"}>
           <Box
             sx={{
               position: "absolute",
@@ -435,7 +435,10 @@ const Explore = () => {
               </Swiper>
             </Box>
           </Box>
-          <Box sx={{ paddingLeft: { md: "34px", lg: "66px", xl: "135px" } }}>
+          <Box
+            sx={{ paddingLeft: { md: "34px", lg: "66px", xl: "135px" } }}
+            id={"characters"}
+          >
             <Box
               sx={{
                 display: { xs: "block", xl: "none" },

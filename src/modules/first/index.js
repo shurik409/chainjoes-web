@@ -8,6 +8,7 @@ import Login from "../../imgs/new/login.svg";
 import Document from "../../imgs/new/document.svg";
 import CloseBtn from "../../imgs/new/close-btn.svg";
 import ArrowDown from "../../imgs/new/arrow-down.svg";
+import { HashLink } from "react-router-hash-link";
 
 const First = () => {
   const refVideo = useRef(null);
@@ -34,7 +35,7 @@ const First = () => {
   };
 
   const handleMobileMenu = (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     const html = document.documentElement;
     setIsMenuOpen(!isMenuOpen);
     document.getElementById("root").classList.toggle("mobileMenu");
@@ -49,19 +50,23 @@ const First = () => {
       links: [
         {
           title: "Backstory",
-          link: "#",
+          link: "#backstory",
+          type: "scroll",
         },
         {
           title: "ChainVerse",
-          link: "#",
+          link: "#chainverse",
+          type: "scroll",
         },
         {
           title: "Characters",
-          link: "#",
+          link: "#characters",
+          type: "scroll",
         },
         {
           title: "Activities",
-          link: "#",
+          link: "#activities",
+          type: "scroll",
         },
       ],
     },
@@ -70,36 +75,39 @@ const First = () => {
       links: [
         {
           title: "Discord",
-          link: "#",
+          link: "https://discord.com/invite/chainjoes ",
         },
         {
           title: "Twitter",
-          link: "#",
+          link: "https://twitter.com/ChainJoes",
         },
         {
           title: "Telegram",
-          link: "#",
+          link: "https://t.me/chainjoes",
         },
       ],
     },
     {
       title: "Team",
-      link: "#",
+      link: "#team",
+      type: "scroll",
     },
     {
       title: "Partners",
-      link: "#",
+      link: "#partners",
+      type: "scroll",
     },
     {
       title: "Roadmap",
-      link: "#",
+      link: "#roadmap",
+      type: "scroll",
     },
     {
       title: "Help",
       links: [
         {
           title: "GitBook",
-          link: "#",
+          link: "https://chainjoes.gitbook.io/chainjoes/",
         },
         {
           title: "Tokenomics",
@@ -119,13 +127,13 @@ const First = () => {
         },
         {
           title: "FAQ ",
-          link: "#",
+          link: "/faq",
         },
       ],
     },
     {
       title: "News",
-      link: "#",
+      link: "https://medium.com/@ChainJoes",
     },
   ];
 
@@ -230,11 +238,11 @@ const First = () => {
                   xs: activeMenuDropdown === index ? "0" : "32px",
                   md: activeMenuDropdown === index ? "0" : "36px",
                 },
-                fontSize: { xs: "16px", md: "32px" },
-                lineHeight: { xs: "16px", md: "32px" },
                 display: "flex",
-                "& > .menu-dropdown": {
+                "& .menu-dropdown": {
                   width: { xs: 256, md: 466 },
+                  fontSize: { xs: "16px", md: "32px" },
+                  lineHeight: { xs: "16px", md: "32px" },
                 },
                 "& > img": {
                   transform:
@@ -245,15 +253,52 @@ const First = () => {
                 },
               }}
             >
-              <Typography
-                className="menu-dropdown"
-                fontFamily="Inter"
-                fontWeight={500}
-                color="#FFFFFF"
-                style={{ fontSize: "inherit", lineHeight: "inherit" }}
-              >
-                {button.title}
-              </Typography>
+              {button.link ? (
+                <>
+                  {button.type === "scroll" ? (
+                    <HashLink
+                      to={button.link}
+                      scroll={(el) => {
+                        el.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                        handleMobileMenu();
+                      }}
+                    >
+                      <Typography
+                        className="menu-dropdown"
+                        fontFamily="Inter"
+                        fontWeight={500}
+                        color="#FFFFFF"
+                      >
+                        {button.title}
+                      </Typography>
+                    </HashLink>
+                  ) : (
+                    <Link href={button.link} target="_blank" underline="none">
+                      <Typography
+                        className="menu-dropdown"
+                        fontFamily="Inter"
+                        fontWeight={500}
+                        color="#FFFFFF"
+                      >
+                        {button.title}
+                      </Typography>
+                    </Link>
+                  )}
+                </>
+              ) : (
+                <Typography
+                  className="menu-dropdown"
+                  fontFamily="Inter"
+                  fontWeight={500}
+                  color="#FFFFFF"
+                >
+                  {button.title}
+                </Typography>
+              )}
+
               {button.links && (
                 <img src={ArrowDown} alt="arrow-down" width="32px" />
               )}
@@ -270,15 +315,15 @@ const First = () => {
                       activeMenuDropdown === index
                         ? `${
                             button.links.length * 14 +
-                            (button.links.length - 1) * 16 +
-                            10
+                            (button.links.length - 1) * 16
                           }px`
                         : 0,
                     md:
                       activeMenuDropdown === index
-                        ? `${(button.links.length * 2 - 1) * 24 + 10}px`
+                        ? `${(button.links.length * 2 - 1) * 24}px`
                         : 0,
                   },
+                  paddingBottom: activeMenuDropdown === index ? "5px" : "0px",
                   opacity: activeMenuDropdown === index ? 1 : 0,
                   overflow: "hidden",
                   transition: "all 0.2s ease-in-out",
@@ -291,18 +336,44 @@ const First = () => {
                         button.links.length - 1 !== index
                           ? { xs: "16px", md: "24px" }
                           : 0,
-                      fontSize: { xs: "14px", md: "24px" },
-                      lineHeight: { xs: "14px", md: "24px" },
+                      "& .dropdown-point": {
+                        fontSize: { xs: "14px", md: "24px" },
+                        lineHeight: { xs: "14px", md: "24px" },
+                      },
                     }}
                   >
-                    <Typography
-                      fontFamily="Inter"
-                      fontWeight={500}
-                      color="#FFFFFF"
-                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                    >
-                      {link.title}
-                    </Typography>
+                    {link.type === "scroll" ? (
+                      <HashLink
+                        to={link.link}
+                        scroll={(el) => {
+                          el.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                          handleMobileMenu();
+                        }}
+                      >
+                        <Typography
+                          className="dropdown-point"
+                          fontFamily="Inter"
+                          fontWeight={500}
+                          color="#FFFFFF"
+                        >
+                          {link.title}
+                        </Typography>
+                      </HashLink>
+                    ) : (
+                      <Link href={link.link} target="_blank" underline="none">
+                        <Typography
+                          className="dropdown-point"
+                          fontFamily="Inter"
+                          fontWeight={500}
+                          color="#FFFFFF"
+                        >
+                          {link.title}
+                        </Typography>
+                      </Link>
+                    )}
                   </Box>
                 ))}
               </Box>

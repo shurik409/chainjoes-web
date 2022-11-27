@@ -81,17 +81,6 @@ body {
   touch-action: none;
   -ms-touch-action: none;
 }
-
-/* .swiper-button-next {
-  width: 48;
-  height: 48;
-  background: #fff;
-  border-radius: 100px;
+a {
+  text-decoration: none;
 }
-
-.swiper-button-prev {
-  width: 48;
-  height: 48;
-  background: #fff;
-  border-radius: 100px;
-} */

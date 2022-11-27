@@ -366,6 +366,7 @@ const Activities = () => {
       {desktop1080Width && (
         <Box>
           <Box
+            id={"activities"}
             sx={{
               paddingTop: "80px",
               marginBottom: "200px",
@@ -646,7 +647,7 @@ const Activities = () => {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ marginBottom: { md: "40px", lg: 0 } }}>
+          <Box sx={{ marginBottom: { md: "40px", lg: 0 } }} id={"roadmap"}>
             <Box
               sx={{
                 display: "flex",
@@ -945,6 +946,7 @@ const Activities = () => {
               marginTop: { xs: "140px", md: "220px", lg: "160px", xl: "200px" },
               position: "relative",
             }}
+            id={"team"}
           >
             <Box
               sx={{
@@ -1522,6 +1524,7 @@ const Activities = () => {
               marginTop: { xs: 0, md: "40px", lg: "100px" },
               position: "relative",
             }}
+            id={"partners"}
           >
             <Box
               sx={{

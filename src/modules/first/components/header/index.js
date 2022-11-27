@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import Logo from "../../../../imgs/webp/logo.png";
 import ArrowRight from "../../../../imgs/new/arrow-right.svg";
 import ArrowDown from "../../../../imgs/new/arrow-down.svg";
 import Menu from "../../../../imgs/new/menu.svg";
+import { HashLink } from "react-router-hash-link";
 
 const Header = ({ closeMenu, buttons }) => {
   return (
@@ -45,6 +46,7 @@ const Header = ({ closeMenu, buttons }) => {
                 sx={{
                   position: "relative",
                   cursor: "pointer",
+                  height: "30px",
                   ":hover": {
                     "& > .open-menu": {
                       display: "block",
@@ -53,10 +55,62 @@ const Header = ({ closeMenu, buttons }) => {
                 }}
               >
                 <Box sx={{ display: "flex" }}>
-                  <Typography sx={{ marginRight: item.links ? "6px" : "" }}>
-                    {item.title}
-                  </Typography>
-                  {item.links && <img src={ArrowDown} alt="arrow-down" />}
+                  {item.links ? (
+                    <Box sx={{ marginRight: item.links ? "6px" : "" }}>
+                      <Typography
+                        fontFamily="Inter"
+                        fontSize="14px"
+                        lineHeight="14px"
+                        fontWeight="400"
+                        color="#FFF"
+                      >
+                        {item.title}
+                      </Typography>
+                    </Box>
+                  ) : (
+                    <>
+                      {item.type === "scroll" ? (
+                        <HashLink
+                          to={item.link}
+                          scroll={(el) =>
+                            el.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                            })
+                          }
+                        >
+                          <Box sx={{ marginRight: item.links ? "6px" : "" }}>
+                            <Typography
+                              fontFamily="Inter"
+                              fontSize="14px"
+                              lineHeight="14px"
+                              fontWeight="400"
+                              color="#FFF"
+                            >
+                              {item.title}
+                            </Typography>
+                          </Box>
+                        </HashLink>
+                      ) : (
+                        <Link href={item.link} target="_blank" underline="none">
+                          <Box sx={{ marginRight: item.links ? "6px" : "" }}>
+                            <Typography
+                              fontFamily="Inter"
+                              fontSize="14px"
+                              lineHeight="14px"
+                              fontWeight="400"
+                              color="#FFF"
+                            >
+                              {item.title}
+                            </Typography>
+                          </Box>
+                        </Link>
+                      )}
+                    </>
+                  )}
+                  {item.links && (
+                    <img src={ArrowDown} alt="arrow-down" width="12px" />
+                  )}
                 </Box>
                 {item.links && (
                   <Box
@@ -72,19 +126,71 @@ const Header = ({ closeMenu, buttons }) => {
                     }}
                   >
                     {item.links.map((button, index) => (
-                      <Box
-                        key={`main-header-subbutton-${index}`}
-                        sx={{
-                          marginY: "14px",
-                          minWidth: "90px",
-                          borderBottom:
-                            index !== item.links.length - 1
-                              ? "1px solid rgba(255, 255, 255, 0.1)"
-                              : "",
-                        }}
-                      >
-                        {button.title}
-                      </Box>
+                      <>
+                        {button.type === "scroll" ? (
+                          <HashLink
+                            to={button.link}
+                            scroll={(el) =>
+                              el.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              })
+                            }
+                          >
+                            <Box
+                              key={`main-header-subbutton-${index}`}
+                              sx={{
+                                marginY: "14px",
+                                minWidth: "90px",
+                                textDecoration: "none",
+                                borderBottom:
+                                  index !== item.links.length - 1
+                                    ? "1px solid rgba(255, 255, 255, 0.1)"
+                                    : "",
+                              }}
+                            >
+                              <Typography
+                                fontFamily="Inter"
+                                fontSize="14px"
+                                lineHeight="14px"
+                                fontWeight="500"
+                                color="#FFF"
+                              >
+                                {button.title}
+                              </Typography>
+                            </Box>
+                          </HashLink>
+                        ) : (
+                          <Link
+                            href={button.link}
+                            target="_blank"
+                            underline="none"
+                          >
+                            <Box
+                              key={`main-header-subbutton-${index}`}
+                              sx={{
+                                marginY: "14px",
+                                minWidth: "90px",
+                                textDecoration: "none",
+                                borderBottom:
+                                  index !== item.links.length - 1
+                                    ? "1px solid rgba(255, 255, 255, 0.1)"
+                                    : "",
+                              }}
+                            >
+                              <Typography
+                                fontFamily="Inter"
+                                fontSize="14px"
+                                lineHeight="14px"
+                                fontWeight="500"
+                                color="#FFF"
+                              >
+                                {button.title}
+                              </Typography>
+                            </Box>
+                          </Link>
+                        )}
+                      </>
                     ))}
                   </Box>
                 )}
