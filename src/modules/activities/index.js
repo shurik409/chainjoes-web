@@ -44,48 +44,31 @@ const Activities = () => {
       year: "2022",
       steps: [
         {
-          title: "quarter 1",
-          points: [
-            {
-              title: "Start Game Production",
-              done: true,
-            },
-            {
-              title: "Seed Raising",
-              done: true,
-            },
-            {
-              title: "Release Roadmap",
-              done: true,
-            },
-          ],
-        },
-        {
           title: "quarter 2",
           points: [
             {
-              title: "Game Ideation",
-              done: false,
-            },
-            {
-              title: "Defy Market Study ",
-              done: false,
-            },
-            {
-              title: "The Block NFT Gaming Consultation",
+              title: "Concept and Idea Development",
               done: true,
             },
             {
-              title: "Game Development Team Formation",
-              done: false,
-            },
-            {
-              title: "BlockChain Team Formation",
+              title: "Blockchain Team Formation",
               done: true,
             },
             {
-              title: "Marketing Team Formation",
-              done: false,
+              title: "GameDev Team Formation",
+              done: true,
+            },
+            {
+              title: "Marketing Core Team Formation",
+              done: true,
+            },
+            {
+              title: "Game Pre-production",
+              done: true,
+            },
+            {
+              title: "Brand Building",
+              done: true,
             },
           ],
         },
@@ -123,6 +106,22 @@ const Activities = () => {
             },
             {
               title: "Token Audit",
+              done: false,
+            },
+            {
+              title: "Litepaper Release",
+              done: false,
+            },
+            {
+              title: "Game Production Plan Development",
+              done: false,
+            },
+            {
+              title: "Partnerships: Early Bird stage",
+              done: false,
+            },
+            {
+              title: "Onboarding advisors",
               done: false,
             },
           ],
@@ -708,7 +707,7 @@ const Activities = () => {
                 display: { xs: "none", lg: "flex" },
                 alignItems: "center",
                 flexDirection: "column",
-                height: "780px",
+                minHeight: "780px",
               }}
             >
               {roadMap.map((year, index) => (
@@ -720,7 +719,7 @@ const Activities = () => {
                       <Box
                         sx={{
                           width: { lg: 431, xl: 570 },
-                          height: { lg: 379, xl: 334 },
+                          height: { lg: 400, xl: 400 },
                           background: "#242424",
                           borderRadius: "8px",
                         }}
@@ -775,7 +774,7 @@ const Activities = () => {
                       <Box
                         sx={{
                           width: { lg: 431, xl: 570 },
-                          height: { lg: 379, xl: 334 },
+                          height: { lg: 400, xl: 400 },
                           background: "#242424",
                           borderRadius: "8px",
                         }}
@@ -869,7 +868,7 @@ const Activities = () => {
                             <Box
                               sx={{
                                 width: { xs: 240, md: 389 },
-                                height: { xs: 379 },
+                                height: { xs: 400 },
                                 background: "#242424",
                                 borderRadius: "8px",
                               }}

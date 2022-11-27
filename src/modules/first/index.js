@@ -135,7 +135,8 @@ const First = () => {
           </Box>
           <Box
             sx={{
-              paddingTop: "60px",
+              paddingTop: isBanner ? { xs: "80px", md: "60px" } : "0",
+              transition: "all 0.2s ease-in-out",
             }}
           >
             <Header />
@@ -214,7 +215,7 @@ const First = () => {
                 cursor: "pointer",
                 background:
                   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-                marginRight: "24px",
+                marginRight: { xs: 0, md: "24px" },
                 fontWeight: { xs: 500 },
                 fontSize: { xs: "14px", md: "20px" },
               }}
@@ -241,7 +242,7 @@ const First = () => {
                 borderImageSlice: 1,
                 borderImageSource:
                   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                marginRight: "16px",
+                marginRight: { xs: 0, md: "16px" },
                 cursor: "pointer",
                 marginTop: { xs: "12px", md: 0 },
                 fontWeight: { xs: 500 },
