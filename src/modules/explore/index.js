@@ -42,6 +42,9 @@ import ShaanBlock from "../../imgs/new/heroes/shaanBlock.png";
 import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
 import Circle from "../../imgs/new/backIcons/circles1.svg";
 import Cross from "../../imgs/new/Cross.png";
+import DeoVideo from "../../videos/new/Deo.mp4";
+import SamVideo from "../../videos/new/Sam.mp4";
+import TyrVideo from "../../videos/new/Tyr.mp4";
 
 const Explore = () => {
   const persSwiper = useRef(null);
@@ -115,6 +118,7 @@ const Explore = () => {
     {
       title: "Mr. Tyr",
       img: PersFirstImg,
+      video: TyrVideo,
       logo: GunnarLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/mr.-tyr",
       block: false,
@@ -124,6 +128,7 @@ const Explore = () => {
     {
       title: "Mr. Deo",
       img: PersSecondImg,
+      video: DeoVideo,
       logo: DeoLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/deo",
       block: false,
@@ -133,6 +138,7 @@ const Explore = () => {
     {
       title: "Sam",
       img: PersThirdImg,
+      video: SamVideo,
       block: false,
       logo: SamLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/sam",
@@ -594,20 +600,59 @@ const Explore = () => {
                             borderRadius: "8px",
                           }}
                         ></Box>
-                        <Box
-                          sx={{
-                            width: { md: 300, lg: 350, xl: 580 },
-                            height: { md: 373, lg: 435, xl: 721 },
-                            background: `url(${pers.img})`,
-                            backgroundSize: "cover",
-                            margin: "auto",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            transform: "rotate(-5deg)",
-                            borderRadius: "8px",
-                          }}
-                        ></Box>
+                        {pers.block ? (
+                          <Box
+                            sx={{
+                              width: { md: 300, lg: 350, xl: 580 },
+                              height: { md: 373, lg: 435, xl: 721 },
+                              background: `url(${pers.img})`,
+                              backgroundSize: "cover",
+                              margin: "auto",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              transform: "rotate(-5deg)",
+                              borderRadius: "8px",
+                            }}
+                          ></Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              width: { md: 300, lg: 350, xl: 580 },
+                              height: { md: 373, lg: 435, xl: 721 },
+                              margin: "auto",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              transform: "rotate(-5deg)",
+                              borderRadius: "8px",
+                            }}
+                          >
+                            <video
+                              // ref={refVideo}
+                              autoPlay="autoPlay"
+                              loop="loop"
+                              muted
+                              playsInline
+                              onContextMenu={() => false}
+                              preload="auto"
+                              id="vid"
+                              // poster={per}
+                              style={{
+                                objectFit: "cover",
+                                height: "100%",
+                                width: "100%",
+                                position: "absolute",
+                                top: 0,
+                                right: 0,
+                                zIndex: -1,
+                              }}
+                            >
+                              <source src={pers.video} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          </Box>
+                        )}
                       </Box>
                     </SwiperSlide>
                   ))}
@@ -676,16 +721,52 @@ const Explore = () => {
                             left: "50%",
                           }}
                         ></Box>
-                        <Box
-                          sx={{
-                            width: 240,
-                            height: 201,
-                            borderRadius: "8px",
-                            transform: "rotate(-5deg)",
-                            background: `url(${pers.img})`,
-                            backgroundSize: "cover",
-                          }}
-                        ></Box>
+                        {pers.block ? (
+                          <Box
+                            sx={{
+                              width: 240,
+                              height: 201,
+                              borderRadius: "8px",
+                              transform: "rotate(-5deg)",
+                              background: `url(${pers.img})`,
+                              backgroundSize: "cover",
+                            }}
+                          ></Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              width: 240,
+                              height: 201,
+                              borderRadius: "8px",
+                              transform: "rotate(-5deg)",
+                            }}
+                          >
+                            <video
+                              // ref={refVideo}
+                              autoPlay="autoPlay"
+                              loop="loop"
+                              muted
+                              playsInline
+                              onContextMenu={() => false}
+                              preload="auto"
+                              id="vid"
+                              // poster={per}
+                              style={{
+                                objectFit: "cover",
+                                height: "100%",
+                                width: "100%",
+                                position: "absolute",
+                                top: 0,
+                                right: 0,
+                                zIndex: -1,
+                                borderRadius: "8px",
+                              }}
+                            >
+                              <source src={pers.video} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          </Box>
+                        )}
                       </Box>
                       <Box
                         sx={{
