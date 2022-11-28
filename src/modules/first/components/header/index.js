@@ -5,6 +5,7 @@ import ArrowRight from "../../../../imgs/new/arrow-right.svg";
 import ArrowDown from "../../../../imgs/new/arrow-down.svg";
 import Menu from "../../../../imgs/new/menu.svg";
 import { HashLink } from "react-router-hash-link";
+import BlockCursor from "../../../../imgs/new/blockCursor3.cur";
 
 const Header = ({ closeMenu, buttons }) => {
   return (
@@ -226,7 +227,7 @@ const Header = ({ closeMenu, buttons }) => {
                 // borderImageSource:
                 //   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
                 marginRight: "16px",
-                cursor: "pointer",
+                cursor: `url(${BlockCursor}), pointer`,
               }}
             >
               <Typography
@@ -236,7 +237,7 @@ const Header = ({ closeMenu, buttons }) => {
                 fontWeight={500}
               >
                 Sale
-                <sup>coming*</sup>
+                <sup>coming</sup>
               </Typography>
             </Box>
             <Link href="/whitelist.html" target="_blank" underline="none">
@@ -249,11 +250,28 @@ const Header = ({ closeMenu, buttons }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   cursor: "pointer",
+                  color: "#FFF",
                   background:
                     "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                  ":hover": {
+                    outline: "1px solid #00FFB7",
+                    background: "none",
+                  },
+                  ":focus": {
+                    outline: "1px solid #FFF",
+                    background: "none",
+                  },
+                  ":active": {
+                    background: "#FFF",
+                    color: "#080808",
+                  },
                 }}
               >
-                <Typography color="#FFFFFF" fontSize="14px" marginRight="4px">
+                <Typography
+                  fontSize="14px"
+                  marginRight="4px"
+                  style={{ color: "inherit" }}
+                >
                   Whitelist
                 </Typography>
                 <img src={ArrowRight} alt="arrow-right" />

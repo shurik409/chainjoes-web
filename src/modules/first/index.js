@@ -179,14 +179,31 @@ const First = () => {
               marginLeft: { md: "12px" },
               marginTop: { xs: "12px", md: 0 },
               borderRadius: "2px",
+              color: "#FFF",
+              cursor: "pointer",
               background:
                 "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+              ":hover": {
+                outline: "1px solid #00FFB7",
+                background: "none",
+              },
+              ":focus": {
+                outline: "1px solid #FFF",
+                background: "none",
+              },
+              ":active": {
+                background: "#FFF",
+                color: "#080808",
+              },
             }}
           >
             <Typography
-              color="#FFF"
               fontFamily="Inter"
-              style={{ fontSize: "inherit", lineHeight: "inherit" }}
+              style={{
+                fontSize: "inherit",
+                lineHeight: "inherit",
+                color: "inherit",
+              }}
             >
               Explore IDO strategy
             </Typography>
@@ -518,14 +535,30 @@ const First = () => {
                 marginRight: { xs: 0, md: "24px" },
                 fontWeight: { xs: 500 },
                 fontSize: { xs: "14px", md: "20px" },
+                color: "#FFFFFF",
+                ":hover": {
+                  outline: "1px solid #00FFB7",
+                  background: "none",
+                },
+                ":focus": {
+                  outline: "1px solid #FFF",
+                  background: "none",
+                },
+                ":active": {
+                  background: "#FFF",
+                  color: "#080808",
+                },
               }}
             >
               <img src={Login} alt="login" />
               <Typography
                 marginLeft="11px"
-                color="#FFFFFF"
                 fontFamily="Inter"
-                style={{ fontWeight: "inherit", fontSize: "inherit" }}
+                style={{
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  color: "inherit",
+                }}
               >
                 Join the Battle
               </Typography>
@@ -547,16 +580,31 @@ const First = () => {
               cursor: "pointer",
               marginTop: { xs: "12px", md: 0 },
               fontWeight: { xs: 500 },
+              color: "#05D19B",
               fontSize: { xs: "14px", md: "20px" },
+              ":hover": {
+                color: "#FFF",
+              },
+              ":focus": {
+                border: "1px solid #FFF",
+                color: "#FFF",
+              },
+              ":active": {
+                background: "#FFF",
+                color: "#080808",
+              },
             }}
           >
             <img src={Document} alt="document" />
             <Typography
               marginLeft="8px"
-              color="#05D19B"
               fontWeight="600"
               fontFamily="Inter"
-              style={{ fontWeight: "inherit", fontSize: "inherit" }}
+              style={{
+                fontWeight: "inherit",
+                fontSize: "inherit",
+                color: "inherit",
+              }}
             >
               Read Whitepaper
             </Typography>

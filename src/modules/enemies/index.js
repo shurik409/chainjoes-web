@@ -7,6 +7,7 @@ import Timer from "../../imgs/new/timer.svg";
 import Video from "../../imgs/new/video.svg";
 import Close from "../../imgs/new/close.svg";
 import Noise from "../../imgs/new/noise.png";
+import BlockCursor from "../../imgs/new/blockCursor3.cur";
 
 import "swiper/css";
 
@@ -130,15 +131,31 @@ const Enemies = () => {
                     marginRight: { xs: 0, md: "24px" },
                     fontSize: { xs: "14px", md: "16px" },
                     lineHeight: { xs: "14px", md: "16px" },
+                    color: "#FFFFFF",
+                    ":hover": {
+                      outline: "1px solid #00FFB7",
+                      background: "none",
+                    },
+                    ":focus": {
+                      outline: "1px solid #FFF",
+                      background: "none",
+                    },
+                    ":active": {
+                      background: "#FFF",
+                      color: "#080808",
+                    },
                   }}
                 >
                   <img src={Login} alt="login" />
                   <Typography
                     marginLeft="11px"
-                    color="#FFFFFF"
                     fontWeight="600"
                     fontFamily="Inter"
-                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                    style={{
+                      fontSize: "inherit",
+                      lineHeight: "inherit",
+                      color: "inherit",
+                    }}
                   >
                     Explore the Backstory
                   </Typography>
@@ -154,10 +171,10 @@ const Enemies = () => {
                   borderRadius: "2px",
                   border: "1px solid #868D8B",
                   marginRight: { xs: 0, md: "16px" },
-                  cursor: "pointer",
                   fontSize: { xs: "14px", md: "16px" },
                   lineHeight: { xs: "14px", md: "16px" },
                   marginTop: { xs: "12px", md: 0 },
+                  cursor: `url(${BlockCursor}), pointer`,
                 }}
               >
                 <img src={Video} alt="login" />

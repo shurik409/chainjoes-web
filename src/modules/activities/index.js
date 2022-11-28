@@ -32,6 +32,8 @@ import "swiper/css/free-mode";
 import BestTeam from "../../imgs/new/backIcons/bestTeam.svg";
 import KeyPartnership from "../../imgs/new/backIcons/keyPartnership.svg";
 import Cross from "../../imgs/new/Cross.png";
+import Circle from "../../imgs/new/backIcons/circles3.svg";
+import Elipces from "../../imgs/new/elipces.svg";
 
 const Activities = () => {
   const [activeYear, setActiveYear] = useState(0);
@@ -741,6 +743,9 @@ const Activities = () => {
                           height: { lg: 400, xl: 400 },
                           background: "#242424",
                           borderRadius: "8px",
+                          position: "relative",
+                          overflow: "hidden",
+                          zIndex: 1,
                         }}
                       >
                         <Box sx={{ paddingTop: "32px", paddingLeft: "32px" }}>
@@ -783,6 +788,34 @@ const Activities = () => {
                             ))}
                           </Box>
                         </Box>
+                        <Box
+                          sx={{
+                            position: "absolute",
+                            display: { xs: "none", xl: "block" },
+                            bottom: index ? "100%" : "0",
+                            right: 0,
+                            transform: "translate(50%,50%)",
+                            zIndex: -1,
+                          }}
+                        >
+                          <img src={Elipces} alt="elipces" />
+                        </Box>
+                        <Box
+                          className="road-circle"
+                          sx={{
+                            position: "absolute",
+                            display: { xs: "block", xl: "none" },
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%,-50%)",
+                            "& > img": {
+                              height: "100%",
+                            },
+                            zIndex: -1,
+                          }}
+                        >
+                          <img src={Circle} alt="circle" />
+                        </Box>
                       </Box>
                     ))}
                   </Box>
@@ -796,6 +829,9 @@ const Activities = () => {
                           height: { lg: 400, xl: 400 },
                           background: "#242424",
                           borderRadius: "8px",
+                          position: "relative",
+                          overflow: "hidden",
+                          zIndex: 1,
                         }}
                       >
                         <Box sx={{ paddingTop: "32px", paddingLeft: "32px" }}>
@@ -837,6 +873,34 @@ const Activities = () => {
                               </Box>
                             ))}
                           </Box>
+                        </Box>
+                        <Box
+                          sx={{
+                            position: "absolute",
+                            bottom: index ? "100%" : "0",
+                            display: { xs: "none", xl: "block" },
+                            left: 0,
+                            transform: "translate(-30%,50%)",
+                            zIndex: -1,
+                          }}
+                        >
+                          <img src={Elipces} alt="elipces" />
+                        </Box>
+                        <Box
+                          className="road-circle"
+                          sx={{
+                            position: "absolute",
+                            display: { xs: "block", xl: "none" },
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%,-50%)",
+                            "& > img": {
+                              height: "100%",
+                            },
+                            zIndex: -1,
+                          }}
+                        >
+                          <img src={Circle} alt="circle" />
                         </Box>
                       </Box>
                     ))}
@@ -890,6 +954,8 @@ const Activities = () => {
                                 height: { xs: 400 },
                                 background: "#242424",
                                 borderRadius: "8px",
+                                position: "relative",
+                                overflow: "hidden",
                               }}
                             >
                               <Box
@@ -948,6 +1014,22 @@ const Activities = () => {
                                     </Box>
                                   ))}
                                 </Box>
+                              </Box>
+                              <Box
+                                className="road-circle"
+                                sx={{
+                                  position: "absolute",
+                                  display: { xs: "block", xl: "none" },
+                                  top: "50%",
+                                  left: "50%",
+                                  transform: "translate(-50%,-50%)",
+                                  "& > img": {
+                                    height: "100%",
+                                  },
+                                  zIndex: -1,
+                                }}
+                              >
+                                <img src={Circle} alt="circle" />
                               </Box>
                             </Box>
                           </SwiperSlide>

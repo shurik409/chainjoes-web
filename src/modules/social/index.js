@@ -121,14 +121,32 @@ const Social = () => {
                   fontSize: { xs: "14px", md: "20px" },
                   lineHeight: { xs: "14px", md: "32px" },
                   cursor: "pointer",
+                  color: "#00A77B",
+                  ":hover": {
+                    outline: "1px solid #FFF",
+                    color: "#FFF",
+                    background: "none",
+                  },
+                  ":focus": {
+                    outline: "1px solid #FFF",
+                    background: "rgba(255, 255, 255, 0.1",
+                    color: "#FFF",
+                  },
+                  ":active": {
+                    background: "rgba(255, 255, 255, 0.1",
+                    color: "#FFF",
+                  },
                 }}
               >
                 <img src={Login} alt="login" />
                 <Typography
                   marginLeft="8px"
                   fontWeight="600"
-                  color="#00A77B"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  style={{
+                    fontSize: "inherit",
+                    lineHeight: "inherit",
+                    color: "inherit",
+                  }}
                 >
                   Join now
                 </Typography>
