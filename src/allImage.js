@@ -1,57 +1,19 @@
 import {
-  btnTexture,
-  discordBtn,
-  firstFooter,
-  firstScreen,
-  greenBtnSmall,
-  greenBtn,
-  screen2Smoke,
-  screen5,
-  logo,
-} from "./imgs/webp";
+  monkeyWebM,
+  monkeyMp4,
+  PreLogoWebM,
+  PreLogoMp4,
+  SamMp4,
+  DeoMp4,
+  TyrMp4,
+} from "./videos";
+
 import {
-  firstScreenBack,
-  scratchesDesktop,
-  scratchesTablet,
-  scratchesMobile,
-} from "./imgs/webp/screen1";
-import {
-  FirstImg as screen2FirstImg,
-  SecondImg as screen2SecondImg,
-  ThirdImg as screen2ThirdImg,
-  FourthImg as screen2FourthImg,
-  MobileMask as screen2MobileMask,
-} from "./imgs/webp/screen2";
-import {
-  FirstImg as screen3FirstImg,
-  SecondImg as screen3SecondImg,
-  ThirdImg as screen3ThirdImg,
-  FourthImg as screen3FourthImg,
-  FiveImg as screen3FiveImg,
-  SixImg as screen3SixImg,
-  HeaderTexture as screen3HeaderTexture,
-} from "./imgs/webp/screen3";
-import {
-  FirstImg as screen4FirstImg,
-  SecondImg as screen4SecondImg,
-  ThirdImg as screen4ThirdImg,
-  Mask as screen4Mask,
-  SmokeMobile as screen4SmokeMobile,
-  MaskTablet as screen4MaskTablet,
-  MaskMobile as screen4MaskMobile,
-} from "./imgs/webp/screen4";
-import { Plane, GoodPoint, BadPoint } from "./imgs/webp/screen6";
-import {
-  Photo1,
-  Photo2,
-  Photo3,
   RedRiftLogo,
-  WebLink,
-  SmokeMobile,
   Alex,
   Cris,
   Dasha,
-  Egor,
+  Ilona,
   Hanna,
   Katsia,
   Maya,
@@ -60,101 +22,86 @@ import {
   Pasha,
   Veronika,
   Gary,
-  LinkedIn,
+  Dimitri,
+  Alina,
+  Kirill,
+  Artem,
+  AlexK,
 } from "./imgs/webp/screen7";
+
+import { screen5 } from "./imgs/webp/";
+
+import Background from "./imgs/webp/screen1/first_screen_reverse.webp";
+import Login from "./imgs/new/login.svg";
+import Document from "./imgs/new/document.svg";
+import CloseBtn from "./imgs/new/close-btn.svg";
+import ArrowDown from "./imgs/new/arrow-down.svg";
+
+import Cross from "./imgs/new/Cross.png";
+import Timer from "./imgs/new/timer.svg";
+import Video from "./imgs/new/video.svg";
+import Close from "./imgs/new/close.svg";
+import Noise from "./imgs/new/noise.png";
+import BlockCursor from "./imgs/new/blockCursor3.cur";
+
+import BannerLogo from "./imgs/new/banner-logo.svg";
+
 import {
-  Partner1,
-  Partner2,
-  Partner3,
-  Partner4,
-  Partner1Color,
-  Partner2Color,
-  Partner3Color,
-  Partner4Color,
-} from "./imgs/webp/screen8";
-import {
-  Linked,
-  Discord,
-  Medium,
-  TikTok,
-  Tg,
-  Twitter,
-  Logo,
-  Scratches,
-  ScratchesMobile,
-} from "./imgs/webp/screen9";
-import { Texture, Solana, Damnn } from "./imgs/webp/screen10";
-import { monkeyWebM, monkeyMp4, PreLogoWebM, PreLogoMp4 } from "./videos";
-import Smoke from "./imgs/smoke2x.png";
+  FirstImg as PersFirstImg,
+  SecondImg as PersSecondImg,
+  ThirdImg as PersThirdImg,
+  FourthImg as PersFourthImg,
+  FiveImg as PersFiveImg,
+  SixImg as PersSixImg,
+} from "./imgs/webp/screen3";
+
+import ArrowRight from "./imgs/new/arrow-right-green.svg";
+import ArrowLeft from "./imgs/new/arrow-left-green.svg";
+import ArrowRightWhite from "./imgs/new/arrow-right.svg";
+
+import AnwarLogo from "./imgs/new/heroes/anwar.svg";
+import DeoLogo from "./imgs/new/heroes/deo.svg";
+import GunnarLogo from "./imgs/new/heroes/gunnar.svg";
+import MilcyLogo from "./imgs/new/heroes/milcy.svg";
+import SamLogo from "./imgs/new/heroes/sam.svg";
+import ShaanLogo from "./imgs/new/heroes/shaan.svg";
+
+import MilcyBlock from "./imgs/new/heroes/milcyBlock.png";
+import AnwarBlock from "./imgs/new/heroes/anwarBlock.png";
+import ShaanBlock from "./imgs/new/heroes/shaanBlock.png";
+
+import OurAmazing from "./imgs/new/backIcons/ourAmazing.svg";
+import Circle from "./imgs/new/backIcons/circles1.svg";
+import { FirstImg, SecondImg, ThirdImg } from "./imgs/webp/screen4";
+import { GoodPoint, BadPoint } from "./imgs/webp/screen6";
+
+import { Partner1, Partner2, Partner4 } from "./imgs/webp/screen8";
+import LinkedIn from "./imgs/new/linkedin.svg";
+
+import BestTeam from "./imgs/new/backIcons/bestTeam.svg";
+import KeyPartnership from "./imgs/new/backIcons/keyPartnership.svg";
+import Circle3 from "./imgs/new/backIcons/circles3.svg";
+import Elipces from "./imgs/new/elipces.svg";
+
+import ArrowAngle from "./imgs/new/arrow-angle.svg";
+import Twitter from "./imgs/new/twitter.svg";
+import Telegram from "./imgs/new/telegram.svg";
+import TikTok from "./imgs/new/tiktok.svg";
+import Discord from "./imgs/new/discord.svg";
+import Medium from "./imgs/new/medium.svg";
+import LinkedInLogo from "./imgs/new/linkedin-logo.svg";
+import DamnnLogo from "./imgs/new/damn-logo-footer.png";
+
+import Circle2 from "./imgs/new/backIcons/circles2.svg";
 
 const getAllImage = () => {
   return [
-    btnTexture,
-    discordBtn,
-    firstFooter,
-    firstScreen,
-    greenBtnSmall,
-    greenBtn,
-    screen2Smoke,
-    screen5,
-    logo,
-    firstScreenBack,
-    scratchesDesktop,
-    scratchesTablet,
-    scratchesMobile,
-    screen2FirstImg,
-    screen2SecondImg,
-    screen2ThirdImg,
-    screen2FourthImg,
-    screen2MobileMask,
-    screen3FirstImg,
-    screen3SecondImg,
-    screen3ThirdImg,
-    screen3FourthImg,
-    screen3FiveImg,
-    screen3SixImg,
-    screen3HeaderTexture,
-    screen4FirstImg,
-    screen4SecondImg,
-    screen4ThirdImg,
-    screen4Mask,
-    screen4SmokeMobile,
-    screen4MaskTablet,
-    screen4MaskMobile,
-    Plane,
-    GoodPoint,
-    BadPoint,
-    Photo1,
-    Photo2,
-    Photo3,
+    Circle2,
     RedRiftLogo,
-    WebLink,
-    Smoke,
-    SmokeMobile,
-    Partner1,
-    Partner2,
-    Partner3,
-    Partner4,
-    Partner1Color,
-    Partner2Color,
-    Partner3Color,
-    Partner4Color,
-    Linked,
-    Discord,
-    Medium,
-    TikTok,
-    Tg,
-    Twitter,
-    Logo,
-    Scratches,
-    ScratchesMobile,
-    Texture,
-    Solana,
-    Damnn,
     Alex,
     Cris,
     Dasha,
-    Egor,
+    Ilona,
     Hanna,
     Katsia,
     Maya,
@@ -163,11 +110,69 @@ const getAllImage = () => {
     Pasha,
     Veronika,
     Gary,
+    Dimitri,
+    Alina,
+    Kirill,
+    Artem,
+    AlexK,
+    screen5,
+    Background,
+    Login,
+    Document,
+    CloseBtn,
+    ArrowDown,
+    Cross,
+    Timer,
+    Video,
+    Close,
+    Noise,
+    BlockCursor,
+    BannerLogo,
+    PersFirstImg,
+    PersSecondImg,
+    PersThirdImg,
+    PersFourthImg,
+    PersFiveImg,
+    PersSixImg,
+    ArrowRight,
+    ArrowLeft,
+    ArrowRightWhite,
+    AnwarLogo,
+    DeoLogo,
+    GunnarLogo,
+    MilcyLogo,
+    SamLogo,
+    ShaanLogo,
+    MilcyBlock,
+    AnwarBlock,
+    ShaanBlock,
+    OurAmazing,
+    Circle,
+    FirstImg,
+    SecondImg,
+    ThirdImg,
+    GoodPoint,
+    BadPoint,
+    Partner1,
+    Partner2,
+    Partner4,
     LinkedIn,
+    BestTeam,
+    KeyPartnership,
+    Circle3,
+    Elipces,
+    ArrowAngle,
+    Twitter,
+    Telegram,
+    TikTok,
+    Discord,
+    Medium,
+    LinkedInLogo,
+    DamnnLogo,
   ];
 };
 const getAllVideo = () => {
-  return [monkeyMp4, PreLogoMp4];
+  return [monkeyMp4, PreLogoMp4, SamMp4, DeoMp4, TyrMp4];
 };
 
 export { getAllImage, getAllVideo };

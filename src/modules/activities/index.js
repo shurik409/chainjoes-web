@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import { Box, Typography, Link } from "@mui/material";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, FreeMode } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+
 import { FirstImg, SecondImg, ThirdImg } from "../../imgs/webp/screen4";
 import { GoodPoint, BadPoint } from "../../imgs/webp/screen6";
 import {
@@ -17,17 +25,14 @@ import {
   Veronika,
   Gary,
   Dimitri,
+  Alina,
+  Kirill,
+  Artem,
+  AlexK,
 } from "../../imgs/webp/screen7";
 import { Partner1, Partner2, Partner4 } from "../../imgs/webp/screen8";
 import LinkedIn from "../../imgs/new/linkedin.svg";
 import Noise from "../../imgs/new/noise.png";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, FreeMode } from "swiper";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
 
 import BestTeam from "../../imgs/new/backIcons/bestTeam.svg";
 import KeyPartnership from "../../imgs/new/backIcons/keyPartnership.svg";
@@ -61,15 +66,11 @@ const Activities = () => {
               done: true,
             },
             {
-              title: "Marketing Core Team Formation",
+              title: "Marketing Team Formation",
               done: true,
             },
             {
               title: "Game Pre-production",
-              done: true,
-            },
-            {
-              title: "Brand Building",
               done: true,
             },
           ],
@@ -78,11 +79,19 @@ const Activities = () => {
           title: "quarter 3",
           points: [
             {
+              title: "Brand Building",
+              done: true,
+            },
+            {
               title: "GDD Release",
               done: true,
             },
             {
               title: "Website Release",
+              done: true,
+            },
+            {
+              title: "Roadmap Release",
               done: true,
             },
             {
@@ -95,36 +104,36 @@ const Activities = () => {
           title: "quarter 4",
           points: [
             {
-              title: "Characters Reveal",
-              done: false,
-            },
-            {
               title: "Marketing Launch",
-              done: false,
+              done: true,
             },
             {
               title: "Private Sale",
               done: false,
             },
             {
-              title: "Token Audit",
+              title: "Whitepaper Release",
+              done: true,
+            },
+            {
+              title: "Game teaser Release",
               done: false,
             },
             {
-              title: "Litepaper Release",
-              done: false,
+              title: "One Page Release",
+              done: true,
             },
             {
-              title: "Game Production Plan Development",
-              done: false,
+              title: "IDO strategy Release",
+              done: true,
             },
             {
-              title: "Partnerships: Early Bird stage",
-              done: false,
+              title: "GitBook Release",
+              done: true,
             },
             {
-              title: "Onboarding advisors",
-              done: false,
+              title: "Characters Reveal",
+              done: true,
             },
           ],
         },
@@ -136,6 +145,10 @@ const Activities = () => {
         {
           title: "quarter 1",
           points: [
+            {
+              title: "Public Sale",
+              done: false,
+            },
             {
               title: "Start Game Production",
               done: false,
@@ -152,6 +165,14 @@ const Activities = () => {
               title: "Marketing Boost",
               done: false,
             },
+            {
+              title: "Project Collabs",
+              done: false,
+            },
+            {
+              title: "Game Trailer",
+              done: false,
+            },
           ],
         },
         {
@@ -159,6 +180,10 @@ const Activities = () => {
           points: [
             {
               title: "NFT Release",
+              done: false,
+            },
+            {
+              title: "NFT Trailer",
               done: false,
             },
             {
@@ -170,10 +195,6 @@ const Activities = () => {
               done: false,
             },
             {
-              title: "Game MVP Version Release",
-              done: false,
-            },
-            {
               title: "Ambassador Program Launch",
               done: false,
             },
@@ -182,6 +203,10 @@ const Activities = () => {
         {
           title: "quarter 3",
           points: [
+            {
+              title: "Game MVP Version Release",
+              done: false,
+            },
             {
               title: "Testnet Launch",
               done: false,
@@ -378,6 +403,34 @@ const Activities = () => {
       job: "3D artist",
       photo: Dimitri,
       link: "https://www.linkedin.com/in/dimitri-shatsila-11154711a/",
+    },
+    {
+      name: "Alina",
+      surname: "Bulavkina",
+      job: "Project manager",
+      photo: Alina,
+      link: "",
+    },
+    {
+      name: "Kirill",
+      surname: "Pestovsky",
+      job: "Motion Designer",
+      photo: Kirill,
+      link: "",
+    },
+    {
+      name: "Artsem",
+      surname: "Bautrukevich",
+      job: "Motion Designer",
+      photo: Artem,
+      link: "",
+    },
+    {
+      name: "Alex",
+      surname: "Karaychentsev",
+      job: "Developer",
+      photo: AlexK,
+      link: "https://www.linkedin.com/in/alexandr-karaichentsev-3a3695110/",
     },
   ];
 
@@ -987,6 +1040,9 @@ const Activities = () => {
                                           xs: "19.2px",
                                           md: "19.36px",
                                         },
+                                        "& .roadmap-text": {
+                                          maxWidth: { xs: 180, md: "unset" },
+                                        },
                                       }}
                                     >
                                       <Box
@@ -1002,6 +1058,7 @@ const Activities = () => {
                                         }}
                                       />
                                       <Typography
+                                        className="roadmap-text"
                                         fontFamily="Inter"
                                         color="#FFF"
                                         style={{
@@ -1638,7 +1695,7 @@ const Activities = () => {
           </Box>
           <Box
             sx={{
-              marginTop: { xs: "165px", md: "220px", lg: "100px" },
+              marginTop: { xs: "165px", md: "220px", lg: "160px", xl: "200px" },
               position: "relative",
             }}
             id={"partners"}

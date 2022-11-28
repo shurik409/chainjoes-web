@@ -102,6 +102,41 @@ const Footer = () => {
                 </Box>
               </RouterLink>
               <Box sx={{ display: { xs: "block", lg: "none" } }}>
+                <Link
+                  href="/pdfs/Whitepaper.pdf"
+                  target="_blank"
+                  underline="none"
+                >
+                  <Box
+                    sx={{
+                      marginBottom: { xs: "20px", md: "28px" },
+                      display: "flex",
+                    }}
+                  >
+                    <Typography
+                      fontWeight="500"
+                      color="#FFF"
+                      fontFamily="Inter"
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                    >
+                      Whitepaper
+                    </Typography>
+                    <img src={ArrowAngle} alt="arrow-angle" />
+                  </Box>
+                </Link>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                marginRight: "28px",
+                display: { xs: "none", lg: "block" },
+              }}
+            >
+              <Link
+                href="/pdfs/Whitepaper.pdf"
+                target="_blank"
+                underline="none"
+              >
                 <Box
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
@@ -118,119 +153,126 @@ const Footer = () => {
                   </Typography>
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                marginRight: "28px",
-                display: { xs: "none", lg: "block" },
-              }}
-            >
-              <Box
-                sx={{
-                  marginBottom: { xs: "20px", md: "28px" },
-                  display: "flex",
-                }}
+              </Link>
+              <Link
+                href="/pdfs/Tokenomics.pdf"
+                target="_blank"
+                underline="none"
               >
-                <Typography
-                  fontWeight="500"
-                  color="#FFF"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: { xs: "20px", md: "28px" },
+                  }}
                 >
-                  Whitepaper
-                </Typography>
-                <img src={ArrowAngle} alt="arrow-angle" />
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  marginBottom: { xs: "20px", md: "28px" },
-                }}
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Tokenomics
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <Link
+                href="/pdfs/Sale_Strategy.pdf"
+                target="_blank"
+                underline="none"
               >
-                <Typography
-                  fontWeight="500"
-                  color="#FFF"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    display: "flex",
+                  }}
                 >
-                  Tokenomics
-                </Typography>
-                <img src={ArrowAngle} alt="arrow-angle" />
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                }}
-              >
-                <Typography
-                  fontWeight="500"
-                  color="#FFF"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
-                >
-                  IDO Strategy
-                </Typography>
-                <img src={ArrowAngle} alt="arrow-angle" />
-              </Box>
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Sale Strategy
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
             </Box>
             <Box
               sx={{
                 width: { xs: "95px", md: "auto" },
               }}
             >
-              <Box
-                sx={{
-                  marginBottom: { xs: "20px", md: "28px", lg: "28px" },
-                  display: { xs: "flex", lg: "none" },
-                }}
+              <Link
+                href="/pdfs/Tokenomics.pdf"
+                target="_blank"
+                underline="none"
               >
-                <Typography
-                  fontWeight="500"
-                  color="#FFF"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                    display: { xs: "flex", lg: "none" },
+                  }}
                 >
-                  Tokenomics
-                </Typography>
-                <img src={ArrowAngle} alt="arrow-angle" />
-              </Box>
-              <Box
-                sx={{
-                  marginBottom: { xs: "20px", md: "28px", lg: "28px" },
-                  display: { xs: "flex", lg: "none" },
-                }}
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Tokenomics
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <Link
+                href="/pdfs/Sale_Strategy.pdf"
+                target="_blank"
+                underline="none"
               >
-                <Typography
-                  fontWeight="500"
-                  color="#FFF"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                    display: { xs: "flex", lg: "none" },
+                  }}
                 >
-                  IDO strategy
-                </Typography>
-                <img src={ArrowAngle} alt="arrow-angle" />
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  marginBottom: { xs: "20px", md: "28px", lg: "28px" },
-                }}
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Sale Strategy
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <Link
+                href="/pdfs/One_Page.pdf"
+                target="_blank"
+                underline="none"
               >
-                <Typography
-                  fontWeight="500"
-                  color="#FFF"
-                  fontFamily="Inter"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                  }}
                 >
-                  One Page
-                </Typography>
-                <img src={ArrowAngle} alt="arrow-angle" />
-              </Box>
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    One Page
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
               <Link
                 href="mailto:info@chainjoes.com"
                 target="_blank"
-                underline="true"
+                underline="none"
               >
                 <Box sx={{ display: "flex" }}>
                   <Typography

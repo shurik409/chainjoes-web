@@ -185,7 +185,7 @@ const Enemies = () => {
                   marginLeft="8px"
                   style={{ fontSize: "inherit", lineHeight: "inherit" }}
                 >
-                  Watch the teaser <sup>Coming Soon</sup>
+                  Watch the teaser <sup>coming soon</sup>
                 </Typography>
               </Box>
             </Box>

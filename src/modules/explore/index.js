@@ -13,9 +13,6 @@ import {
   FirstImg as PersFirstImg,
   SecondImg as PersSecondImg,
   ThirdImg as PersThirdImg,
-  FourthImg as PersFourthImg,
-  FiveImg as PersFiveImg,
-  SixImg as PersSixImg,
 } from "../../imgs/webp/screen3";
 
 import ArrowRight from "../../imgs/new/arrow-right-green.svg";
@@ -42,9 +39,12 @@ import ShaanBlock from "../../imgs/new/heroes/shaanBlock.png";
 import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
 import Circle from "../../imgs/new/backIcons/circles1.svg";
 import Cross from "../../imgs/new/Cross.png";
-import DeoVideo from "../../videos/new/Deo.mp4";
-import SamVideo from "../../videos/new/Sam.mp4";
-import TyrVideo from "../../videos/new/Tyr.mp4";
+
+import {
+  SamMp4,
+  DeoMp4,
+  TyrMp4,
+} from "../../videos";
 
 const Explore = () => {
   const persSwiper = useRef(null);
@@ -118,7 +118,7 @@ const Explore = () => {
     {
       title: "Mr. Tyr",
       img: PersFirstImg,
-      video: TyrVideo,
+      video: TyrMp4,
       logo: GunnarLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/mr.-tyr",
       block: false,
@@ -128,7 +128,7 @@ const Explore = () => {
     {
       title: "Mr. Deo",
       img: PersSecondImg,
-      video: DeoVideo,
+      video: DeoMp4,
       logo: DeoLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/deo",
       block: false,
@@ -138,7 +138,7 @@ const Explore = () => {
     {
       title: "Sam",
       img: PersThirdImg,
-      video: SamVideo,
+      video: SamMp4,
       block: false,
       logo: SamLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/sam",
@@ -806,6 +806,7 @@ const Explore = () => {
                                 height: "100%",
                                 width: "100%",
                                 position: "absolute",
+                                objectPosition: "top",
                                 top: 0,
                                 right: 0,
                                 zIndex: -1,

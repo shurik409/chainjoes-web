@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Link, Typography } from "@mui/material";
 import Header from "./components/header";
-import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
+import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
 import Login from "../../imgs/new/login.svg";
 import Document from "../../imgs/new/document.svg";
 import CloseBtn from "../../imgs/new/close-btn.svg";
@@ -111,19 +111,19 @@ const First = () => {
         },
         {
           title: "Tokenomics",
-          link: "/#",
+          link: "/pdfs/Tokenomics.pdf",
         },
         {
           title: "Whitepaper",
-          link: "/#",
+          link: "/pdfs/Whitepaper.pdf",
         },
         {
           title: "One Page",
-          link: "/#",
+          link: "/pdfs/One_Page.pdf",
         },
         {
-          title: "IDO strategy",
-          link: "/#",
+          title: "Sale Strategy",
+          link: "/pdfs/Sale_Strategy.pdf",
         },
         {
           title: "FAQ ",
@@ -205,7 +205,7 @@ const First = () => {
                 color: "inherit",
               }}
             >
-              Explore IDO strategy
+              Explore Sale Strategy
             </Typography>
           </Box>
         </Box>

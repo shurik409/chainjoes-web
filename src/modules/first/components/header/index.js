@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { Box, Typography, Link } from "@mui/material";
 import Logo from "../../../../imgs/webp/logo.png";
 import ArrowRight from "../../../../imgs/new/arrow-right.svg";
@@ -24,14 +25,16 @@ const Header = ({ closeMenu, buttons }) => {
           justifyContent: "space-between",
         }}
       >
-        <Box
-          sx={{
-            height: 45,
-            width: 109,
-            backgroundImage: `url(${Logo})`,
-            backgroundSize: "cover",
-          }}
-        />
+        <RouterLink to="/">
+          <Box
+            sx={{
+              height: 45,
+              width: 109,
+              backgroundImage: `url(${Logo})`,
+              backgroundSize: "cover",
+            }}
+          />
+        </RouterLink>
         <Box sx={{ color: "#fff", display: { xs: "none", xl: "block" } }}>
           <Box
             style={{
@@ -236,8 +239,7 @@ const Header = ({ closeMenu, buttons }) => {
                 fontFamily="Inter"
                 fontWeight={500}
               >
-                Sale
-                <sup>coming</sup>
+                Sale <sup>coming soon</sup>
               </Typography>
             </Box>
             <Link href="/whitelist.html" target="_blank" underline="none">

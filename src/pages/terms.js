@@ -87,19 +87,19 @@ const Terms = () => {
         },
         {
           title: "Tokenomics",
-          link: "/#",
+          link: "/pdfs/Tokenomics.pdf",
         },
         {
           title: "Whitepaper",
-          link: "/#",
+          link: "/pdfs/Whitepaper.pdf",
         },
         {
           title: "One Page",
-          link: "/#",
+          link: "/pdfs/One_Page.pdf",
         },
         {
-          title: "IDO strategy",
-          link: "/#",
+          title: "Sale Strategy",
+          link: "/pdfs/Sale_Strategy.pdf",
         },
         {
           title: "FAQ ",

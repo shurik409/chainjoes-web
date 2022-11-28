@@ -8,7 +8,7 @@ import {
   Social,
   Footer,
   LoopLine,
-  // Loader,
+  Loader,
 } from "../modules";
 import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
@@ -60,16 +60,54 @@ const Main = () => {
   };
 
   return (
-    <Box sx={{ overflowX: "hidden" }}>
-      <First />
-      <Enemies />
-      <LoopLine />
-      <Explore />
-      <Activities />
-      <Social />
-      <Footer />
-    </Box>
+    <>
+      {getCurrentProgresPercent() < 1 ? (
+        <Loader progres={getCurrentProgresPercent()} />
+      ) : (
+        <>
+          {isPlaying && !isPlayed ? (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "#000000",
+              }}
+            >
+              <video
+                ref={prevideo}
+                autoPlay="autoPlay"
+                muted
+                playsInline
+                onContextMenu={() => false}
+                preload="auto"
+                id="vid"
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                }}
+              >
+                <source src={PreLogoWebM} type="video/webm" />
+                <source src={PreLogoMp4} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
+          ) : (
+            <>
+              <Box sx={{ overflowX: "hidden" }}>
+                <First />
+                <Enemies />
+                <LoopLine />
+                <Explore />
+                <Activities />
+                <Social />
+                <Footer />
+              </Box>
+            </>
+          )}
+        </>
+      )}
+    </>
   );
 };
-
 export default Main;
