@@ -88,28 +88,28 @@ const FAQ = () => {
       title: "Help",
       links: [
         {
-          title: "GitBook",
-          link: "https://chainjoes.gitbook.io/chainjoes/",
+          title: "FAQ ",
+          link: "/faq",
         },
         {
-          title: "Tokenomics",
-          link: "/pdfs/Tokenomics.pdf",
+          title: "GitBook",
+          link: "https://chainjoes.gitbook.io/chainjoes/",
         },
         {
           title: "Whitepaper",
           link: "/pdfs/Whitepaper.pdf",
         },
         {
-          title: "One Page",
-          link: "/pdfs/One_Page.pdf",
+          title: "Tokenomics",
+          link: "/pdfs/Tokenomics.pdf",
         },
         {
           title: "Sale Strategy",
           link: "/pdfs/Sale_Strategy.pdf",
         },
         {
-          title: "FAQ ",
-          link: "/faq",
+          title: "One Page",
+          link: "/pdfs/One_Page.pdf",
         },
       ],
     },
@@ -380,10 +380,16 @@ const FAQ = () => {
         "I'm an influencer/content creator/partner - Who should I contact?",
       description: (
         <>
-          Influencers and content creators, can apply here:
-          <br />
-          <br />
-          For Partnerships, please apply here:
+          Influencers and content creators, can apply here:{" "}
+          <Link
+            href="https://fiakirr0buy.typeform.com/to/fEjlXJH5"
+            underline="none"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            https://fiakirr0buy.typeform.com/to/fEjlXJH5
+          </Link>
         </>
       ),
     },

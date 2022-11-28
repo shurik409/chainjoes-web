@@ -5,7 +5,7 @@ import RedRiftLogo from "./redRift_logo.webp";
 import WebLink from "./link.png";
 import SmokeMobile from "./smoke_mobile.png";
 import Alex from "./team/Alex.jpg";
-import Cris from "./team/Cris.jpg";
+import Cris from "./team/Cris.png";
 import Dasha from "./team/Dasha.jpg";
 import Egor from "./team/Egor.jpg";
 import Hanna from "./team/Hanna.jpg";

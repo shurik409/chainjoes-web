@@ -353,7 +353,7 @@ const Activities = () => {
       surname: "Makovetskaya",
       job: "Head of Marketing",
       photo: Ilona,
-      link: "",
+      link: "https://www.linkedin.com/in/ilonamak/",
     },
     {
       name: "Maya",
@@ -409,7 +409,7 @@ const Activities = () => {
       surname: "Bulavkina",
       job: "Project manager",
       photo: Alina,
-      link: "",
+      link: "https://www.linkedin.com/in/abulav/",
     },
     {
       name: "Kirill",
@@ -1536,27 +1536,33 @@ const Activities = () => {
                             {pers.job}
                           </Typography>
                         </Box>
-                        <Link href={pers.link} target="_blank" underline="none">
-                          <Box
-                            sx={{
-                              marginTop: "20px",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
+                        {pers.link && (
+                          <Link
+                            href={pers.link}
+                            target="_blank"
+                            underline="none"
                           >
-                            <img src={LinkedIn} alt="linkedin" />
-                            <Typography
-                              marginLeft="8px"
-                              fontFamily="Inter"
-                              fontSize="14px"
-                              lineHeight="14px"
-                              color="#FFF"
-                              fontWeight="500"
+                            <Box
+                              sx={{
+                                marginTop: "20px",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
                             >
-                              LinkedIn
-                            </Typography>
-                          </Box>
-                        </Link>
+                              <img src={LinkedIn} alt="linkedin" />
+                              <Typography
+                                marginLeft="8px"
+                                fontFamily="Inter"
+                                fontSize="14px"
+                                lineHeight="14px"
+                                color="#FFF"
+                                fontWeight="500"
+                              >
+                                LinkedIn
+                              </Typography>
+                            </Box>
+                          </Link>
+                        )}
                       </Box>
                     ))}
                   </Box>
@@ -1657,31 +1663,33 @@ const Activities = () => {
                                     {pers.job}
                                   </Typography>
                                 </Box>
-                                <Link
-                                  href={pers.link}
-                                  target="_blank"
-                                  underline="none"
-                                >
-                                  <Box
-                                    sx={{
-                                      marginTop: "20px",
-                                      display: "flex",
-                                      alignItems: "center",
-                                    }}
+                                {pers.link && (
+                                  <Link
+                                    href={pers.link}
+                                    target="_blank"
+                                    underline="none"
                                   >
-                                    <img src={LinkedIn} alt="linkedin" />
-                                    <Typography
-                                      marginLeft="8px"
-                                      fontFamily="Inter"
-                                      fontSize="14px"
-                                      lineHeight="14px"
-                                      color="#FFF"
-                                      fontWeight="500"
+                                    <Box
+                                      sx={{
+                                        marginTop: "20px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                      }}
                                     >
-                                      LinkedIn
-                                    </Typography>
-                                  </Box>
-                                </Link>
+                                      <img src={LinkedIn} alt="linkedin" />
+                                      <Typography
+                                        marginLeft="8px"
+                                        fontFamily="Inter"
+                                        fontSize="14px"
+                                        lineHeight="14px"
+                                        color="#FFF"
+                                        fontWeight="500"
+                                      >
+                                        LinkedIn
+                                      </Typography>
+                                    </Box>
+                                  </Link>
+                                )}
                               </Box>
                             </SwiperSlide>
                           ))}

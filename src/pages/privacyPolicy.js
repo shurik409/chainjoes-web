@@ -82,28 +82,28 @@ const PrivacyPolicy = () => {
       title: "Help",
       links: [
         {
-          title: "GitBook",
-          link: "https://chainjoes.gitbook.io/chainjoes/",
+          title: "FAQ ",
+          link: "/faq",
         },
         {
-          title: "Tokenomics",
-          link: "/pdfs/Tokenomics.pdf",
+          title: "GitBook",
+          link: "https://chainjoes.gitbook.io/chainjoes/",
         },
         {
           title: "Whitepaper",
           link: "/pdfs/Whitepaper.pdf",
         },
         {
-          title: "One Page",
-          link: "/pdfs/One_Page.pdf",
+          title: "Tokenomics",
+          link: "/pdfs/Tokenomics.pdf",
         },
         {
           title: "Sale Strategy",
           link: "/pdfs/Sale_Strategy.pdf",
         },
         {
-          title: "FAQ ",
-          link: "/faq",
+          title: "One Page",
+          link: "/pdfs/One_Page.pdf",
         },
       ],
     },

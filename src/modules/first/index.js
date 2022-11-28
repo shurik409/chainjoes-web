@@ -3,7 +3,7 @@ import { Box, Link, Typography } from "@mui/material";
 import Header from "./components/header";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
-import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
+import Background from "../../imgs/new/MainScreen.jpg";
 import Login from "../../imgs/new/login.svg";
 import Document from "../../imgs/new/document.svg";
 import CloseBtn from "../../imgs/new/close-btn.svg";
@@ -106,28 +106,28 @@ const First = () => {
       title: "Help",
       links: [
         {
-          title: "GitBook",
-          link: "https://chainjoes.gitbook.io/chainjoes/",
+          title: "FAQ ",
+          link: "/faq",
         },
         {
-          title: "Tokenomics",
-          link: "/pdfs/Tokenomics.pdf",
+          title: "GitBook",
+          link: "https://chainjoes.gitbook.io/chainjoes/",
         },
         {
           title: "Whitepaper",
           link: "/pdfs/Whitepaper.pdf",
         },
         {
-          title: "One Page",
-          link: "/pdfs/One_Page.pdf",
+          title: "Tokenomics",
+          link: "/pdfs/Tokenomics.pdf",
         },
         {
           title: "Sale Strategy",
           link: "/pdfs/Sale_Strategy.pdf",
         },
         {
-          title: "FAQ ",
-          link: "/faq",
+          title: "One Page",
+          link: "/pdfs/One_Page.pdf",
         },
       ],
     },
@@ -171,43 +171,45 @@ const First = () => {
             fontFamily="Inter"
             style={{ fontSize: "inherit", lineHeight: "inherit" }}
           >
-            Private sale starts in 30 days. Be first to participate
+            The Private Sale starts on December 20. Be first to participate
           </Typography>
-          <Box
-            sx={{
-              padding: { xs: "10px 16px" },
-              marginLeft: { md: "12px" },
-              marginTop: { xs: "12px", md: 0 },
-              borderRadius: "2px",
-              color: "#FFF",
-              cursor: "pointer",
-              background:
-                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-              ":hover": {
-                outline: "1px solid #00FFB7",
-                background: "none",
-              },
-              ":focus": {
-                outline: "1px solid #FFF",
-                background: "none",
-              },
-              ":active": {
-                background: "#FFF",
-                color: "#080808",
-              },
-            }}
-          >
-            <Typography
-              fontFamily="Inter"
-              style={{
-                fontSize: "inherit",
-                lineHeight: "inherit",
-                color: "inherit",
+          <Link href="/pdfs/Sale_Strategy.pdf" target="_blank" underline="none">
+            <Box
+              sx={{
+                padding: { xs: "10px 16px" },
+                marginLeft: { md: "12px" },
+                marginTop: { xs: "12px", md: 0 },
+                borderRadius: "2px",
+                color: "#FFF",
+                cursor: "pointer",
+                background:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                ":hover": {
+                  outline: "1px solid #00FFB7",
+                  background: "none",
+                },
+                ":focus": {
+                  outline: "1px solid #FFF",
+                  background: "none",
+                },
+                ":active": {
+                  background: "#FFF",
+                  color: "#080808",
+                },
               }}
             >
-              Explore Sale Strategy
-            </Typography>
-          </Box>
+              <Typography
+                fontFamily="Inter"
+                style={{
+                  fontSize: "inherit",
+                  lineHeight: "inherit",
+                  color: "inherit",
+                }}
+              >
+                Explore Sale Strategy
+              </Typography>
+            </Box>
+          </Link>
         </Box>
         <Box
           sx={{

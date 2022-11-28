@@ -31,7 +31,7 @@ import {
 
 import { screen5 } from "./imgs/webp/";
 
-import Background from "./imgs/webp/screen1/first_screen_reverse.webp";
+import Background from "./imgs/new/MainScreen.jpg";
 import Login from "./imgs/new/login.svg";
 import Document from "./imgs/new/document.svg";
 import CloseBtn from "./imgs/new/close-btn.svg";
