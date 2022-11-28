@@ -58,14 +58,29 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Aaaiight";
+  src: url("./fonts/aaaiight.ttf") format("truetype");
+  font-weight: 400;
+}
+
 body {
   background-color: #0d0d0d;
 }
 
 .preloadScreen {
-  background-image: url("./imgs/smoke.webp");
+  background: "#1E1E1E";
 }
 
 .disabled {
   display: none;
+}
+
+.mobileMenu {
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+a {
+  text-decoration: none;
 }

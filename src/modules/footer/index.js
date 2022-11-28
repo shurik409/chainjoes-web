@@ -1,541 +1,555 @@
 import React, { useState } from "react";
-import { Box, Link, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { Damnn } from "../../imgs/webp/screen10";
-import { DocsLogo } from "../first/components/header/components/Icons";
+import ArrowAngle from "../../imgs/new/arrow-angle.svg";
+import Twitter from "../../imgs/new/twitter.svg";
+import Telegram from "../../imgs/new/telegram.svg";
+import TikTok from "../../imgs/new/tiktok.svg";
+import Discord from "../../imgs/new/discord.svg";
+import Medium from "../../imgs/new/medium.svg";
+import LinkedIn from "../../imgs/new/linkedin-logo.svg";
+import Noise from "../../imgs/new/noise.png";
+import DamnnLogo from "../../imgs/new/damn-logo-footer.png";
 
-const Ten = () => {
-  const [docsHover, setdocsHover] = useState(false);
-
-  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
-
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
-
+const Footer = () => {
   return (
     <Box>
-      {desktop1080Width && (
+      <Box
+        sx={{
+          background: `url(${Noise}) 0 0/4% 30%, linear-gradient(194.18deg, #00FFB7 -32.14%, #005B42 105.84%)`,
+          backgroundBlendMode: "soft-light, normal",
+          paddingTop: "40px",
+        }}
+      >
         <Box
           sx={{
-            padding: "33px min(80px, 4vw) 38px min(80px, 4vw)",
             display: "flex",
-            gap: "10px",
-            justifyContent: "space-between",
-            alignItems: "center",
+            justifyContent: { xs: "space-between", md: "space-around" },
+            alignItems: { xs: "center", md: "normal" },
+            flexDirection: { xs: "column", md: "row" },
+            paddingBottom: "40px",
+            fontSize: { xs: "12px", md: "20px" },
+            lineHeight: { xs: "12px", md: "24.2px" },
+            "& img": {
+              width: { xs: "16px", md: "24px" },
+            },
           }}
         >
           <Box sx={{ display: "flex" }}>
             <Box
               sx={{
-                marginLeft: "22px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
+                width: { xs: "85px", md: "auto" },
+                marginRight: { xs: "80px", md: "28px" },
               }}
             >
-              <Link href="https://damnn.tv/" target="_blank" underline="none">
-                <Box>
+              <RouterLink to="/">
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
                   <Typography
+                    fontWeight="500"
+                    color="#FFF"
                     fontFamily="Inter"
-                    fontSize="13px"
-                    fontWeight="300"
-                    color="#BDBDBD"
-                    marginBottom="7px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    Production by
+                    Home
                   </Typography>
-                  <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-              </Link>
-            </Box>
-          </Box>
-          <Box>
-            <Link
-              href="mailto:info@chainjoes.com"
-              target="_blank"
-              underline="none"
-            >
-              <Box
-                sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="18px"
-                  fontWeight="300"
-                  color="inherit"
-                >
-                  info@chainjoes.com
-                </Typography>
-              </Box>
-            </Link>
-          </Box>
-          <Box sx={{ display: "flex" }}>
-            <RouterLink
-              to="/terms-conditions"
-              target="_blank"
-              style={{ textDecoration: "none" }}
-            >
-              <Box
-                sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="16px"
-                  fontWeight="300"
-                  color="inherit"
-                >
-                  Terms of Service
-                </Typography>
-              </Box>
-            </RouterLink>
-            <RouterLink
-              to="/privacy-policy"
-              target="_blank"
-              style={{ textDecoration: "none", marginLeft: "30px" }}
-            >
-              <Box
-                sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="16px"
-                  fontWeight="300"
-                  color="inherit"
-                >
-                  Privacy Policy
-                </Typography>
-              </Box>
-            </RouterLink>
-          </Box>
-          {/* <Box>
-            <Link
-              href=""
-              target="_blank"
-              underline="none"
-              onMouseOver={(e) => {
-                setdocsHover(true);
-              }}
-              onMouseLeave={() => setdocsHover(false)}
-              style={{
-                cursor: "pointer",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  position: "relative",
-                }}
+              </RouterLink>
+              <Link
+                href="https://chainjoes.gitbook.io/chainjoes/"
+                target="_blank"
+                underline="none"
               >
                 <Box
                   sx={{
-                    height: "58px",
-                    width: "137px",
-                    transform: "skewX(-11deg)",
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    color: "#ffffff",
-                    border: `1px solid ${docsHover ? "#44F4C3" : "#ACACAC"}`,
+                    cursor: "pointer",
                   }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    About
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <RouterLink to="/faq" target="_blank">
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    FAQ
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </RouterLink>
+              <Box sx={{ display: { xs: "block", lg: "none" } }}>
+                <Link
+                  href="/pdfs/Whitepaper.pdf"
+                  target="_blank"
+                  underline="none"
                 >
                   <Box
                     sx={{
-                      transform: "skewX(11deg)",
+                      marginBottom: { xs: "20px", md: "28px" },
                       display: "flex",
                     }}
                   >
-                    <DocsLogo color={docsHover ? "#44F4C3" : "#FFFFFF"} />
                     <Typography
-                      fontSize="16px"
+                      fontWeight="500"
+                      color="#FFF"
                       fontFamily="Inter"
-                      fontStyle="italic"
-                      textTransform="uppercase"
-                      style={{
-                        marginLeft: "12px",
-                      }}
-                      color={docsHover ? "#44F4C3" : "#FFFFFF"}
+                      style={{ fontSize: "inherit", lineHeight: "inherit" }}
                     >
-                      Docs
+                      Whitepaper
                     </Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Link>
-          </Box> */}
-        </Box>
-      )}
-      {!desktop1080Width && desktop768Width && (
-        <Box
-          sx={{
-            padding: "57px 25px 58px 25px",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "end",
-                WebkitAlignItems: "flex-end",
-              }}
-            >
-              <Box sx={{ marginLeft: "22px" }}>
-                <Link href="https://damnn.tv/" target="_blank" underline="none">
-                  <Box>
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="13px"
-                      fontWeight="300"
-                      color="#BDBDBD"
-                      marginBottom="7px"
-                    >
-                      Production by
-                    </Typography>
-                    <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
+                    <img src={ArrowAngle} alt="arrow-angle" />
                   </Box>
                 </Link>
               </Box>
             </Box>
-            {/* <Box>
+            <Box
+              sx={{
+                marginRight: "28px",
+                display: { xs: "none", lg: "block" },
+              }}
+            >
               <Link
-                href=""
+                href="/pdfs/Whitepaper.pdf"
                 target="_blank"
                 underline="none"
-                onMouseOver={(e) => {
-                  setdocsHover(true);
-                }}
-                onMouseLeave={() => setdocsHover(false)}
-                style={{
-                  cursor: "pointer",
-                }}
+              >
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Whitepaper
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <Link
+                href="/pdfs/Tokenomics.pdf"
+                target="_blank"
+                underline="none"
               >
                 <Box
                   sx={{
                     display: "flex",
-                    position: "relative",
+                    marginBottom: { xs: "20px", md: "28px" },
                   }}
                 >
-                  <Box
-                    sx={{
-                      height: "41px",
-                      width: "102px",
-                      transform: "skewX(-11deg)",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      color: "#ffffff",
-                      border: `1px solid #44F4C3`,
-                    }}
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    <Box
-                      sx={{
-                        transform: "skewX(11deg)",
-                        display: "flex",
-                      }}
-                    >
-                      <Box>
-                        <DocsLogo
-                          color="#44F4C3"
-                          style={{ width: "11px", display: "block" }}
-                        />
-                      </Box>
-                      <Typography
-                        fontSize="14px"
-                        fontFamily="Inter"
-                        fontStyle="italic"
-                        textTransform="uppercase"
-                        style={{
-                          marginLeft: "12px",
-                        }}
-                        color="#44F4C3"
-                      >
-                        Docs
-                      </Typography>
-                    </Box>
-                  </Box>
+                    Tokenomics
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
               </Link>
-            </Box> */}
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: "27px",
-            }}
-          >
-            <Box sx={{ display: "flex" }}>
-              <RouterLink
-                to="/terms-conditions"
+              <Link
+                href="/pdfs/Sale_Strategy.pdf"
                 target="_blank"
-                style={{ textDecoration: "none" }}
+                underline="none"
               >
                 <Box
                   sx={{
-                    color: "#FFFFFF",
-                    ":hover": {
-                      color: "#44F4C3",
-                    },
+                    display: "flex",
                   }}
                 >
                   <Typography
+                    fontWeight="500"
+                    color="#FFF"
                     fontFamily="Inter"
-                    fontSize="14px"
-                    fontWeight="300"
-                    color="inherit"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    Terms of Service
+                    Sale Strategy
                   </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
-              </RouterLink>
-              <RouterLink
-                to="/privacy-policy"
-                target="_blank"
-                style={{ textDecoration: "none", marginLeft: "30px" }}
-              >
-                <Box
-                  sx={{
-                    color: "#FFFFFF",
-                    ":hover": {
-                      color: "#44F4C3",
-                    },
-                  }}
-                >
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="14px"
-                    fontWeight="300"
-                    color="inherit"
-                  >
-                    Privacy Policy
-                  </Typography>
-                </Box>
-              </RouterLink>
+              </Link>
             </Box>
-            <Box>
+            <Box
+              sx={{
+                width: { xs: "95px", md: "auto" },
+              }}
+            >
+              <Link
+                href="/pdfs/Tokenomics.pdf"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                    display: { xs: "flex", lg: "none" },
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Tokenomics
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <Link
+                href="/pdfs/Sale_Strategy.pdf"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                    display: { xs: "flex", lg: "none" },
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Sale Strategy
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+              <Link
+                href="/pdfs/One_Page.pdf"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                  }}
+                >
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    One Page
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
               <Link
                 href="mailto:info@chainjoes.com"
                 target="_blank"
                 underline="none"
               >
+                <Box sx={{ display: "flex" }}>
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Contact us
+                  </Typography>
+                  <img src={ArrowAngle} alt="arrow-angle" />
+                </Box>
+              </Link>
+            </Box>
+          </Box>
+          <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                width: { xs: "85px", md: "auto" },
+                marginRight: { xs: "80px", md: "28px" },
+              }}
+            >
+              <Link
+                href="https://twitter.com/chainjoes"
+                target="_blank"
+                underline="none"
+              >
                 <Box
                   sx={{
-                    color: "#44F4C3",
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
                   }}
                 >
+                  <img src={Twitter} alt="twitter" />
                   <Typography
+                    fontWeight="500"
+                    color="#FFF"
                     fontFamily="Inter"
-                    fontSize="22px"
-                    fontWeight="400"
-                    color="inherit"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
                   >
-                    info@chainjoes.com
+                    Twitter
+                  </Typography>
+                </Box>
+              </Link>
+              <Link
+                href="https://t.me/chainjoes"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    marginBottom: { xs: "28px", xl: "0" },
+                  }}
+                >
+                  <img src={Telegram} alt="telegram" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Telegram
+                  </Typography>
+                </Box>
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@chainjoes"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    display: { xs: "flex", xl: "none" },
+                  }}
+                >
+                  <img src={TikTok} alt="tiktok" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Tik Tok
+                  </Typography>
+                </Box>
+              </Link>
+            </Box>
+            <Box
+              sx={{
+                marginRight: "28px",
+                display: { xs: "none", xl: "block" },
+              }}
+            >
+              <Link
+                href="https://www.tiktok.com/@chainjoes"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
+                  <img src={TikTok} alt="tiktok" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Tik Tok
+                  </Typography>
+                </Box>
+              </Link>
+              <Link
+                href="https://discord.com/invite/6XcvPDbXBa"
+                target="_blank"
+                underline="none"
+              >
+                <Box sx={{ display: "flex" }}>
+                  <img src={Discord} alt="discord" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Discord
+                  </Typography>
+                </Box>
+              </Link>
+            </Box>
+            <Box>
+              <Link
+                href="https://discord.com/invite/6XcvPDbXBa"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    display: { xs: "flex", xl: "none" },
+                    width: { xs: "95px", md: "auto" },
+                    marginBottom: { xs: "20px", md: "28px" },
+                  }}
+                >
+                  <img src={Discord} alt="discord" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Discord
+                  </Typography>
+                </Box>
+              </Link>
+              <Link
+                href="https://medium.com/@ChainJoes"
+                target="_blank"
+                underline="none"
+              >
+                <Box
+                  sx={{
+                    marginBottom: { xs: "20px", md: "28px" },
+                    display: "flex",
+                  }}
+                >
+                  <img src={Medium} alt="medium" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Medium
+                  </Typography>
+                </Box>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/chainjoes"
+                target="_blank"
+                underline="none"
+              >
+                <Box sx={{ display: "flex" }}>
+                  <img src={LinkedIn} alt="linkedin" />
+                  <Typography
+                    fontWeight="500"
+                    color="#FFF"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    LinkedIn
                   </Typography>
                 </Box>
               </Link>
             </Box>
           </Box>
         </Box>
-      )}
-      {!desktop1080Width && !desktop768Width && (
         <Box
           sx={{
-            padding: "35px 15px 35px 15px",
+            background: `#FFFFFF1A`,
+            paddingY: "16px",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            flexDirection: { xs: "column", md: "row" },
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-            }}
-          >
-            <Box>
-              <Link
-                href="mailto:info@chainjoes.com"
-                target="_blank"
-                underline="none"
-              >
-                <Box
-                  sx={{
-                    color: "#44F4C3",
-                  }}
-                >
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="16px"
-                    fontWeight="400"
-                    color="inherit"
-                  >
-                    info@chainjoes.com
-                  </Typography>
-                </Box>
-              </Link>
-            </Box>
-            {/* <Box>
-              <Link
-                href=""
-                target="_blank"
-                underline="none"
-                onMouseOver={(e) => {
-                  setdocsHover(true);
-                }}
-                onMouseLeave={() => setdocsHover(false)}
-                style={{
-                  cursor: "pointer",
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    position: "relative",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      height: "41px",
-                      width: "102px",
-                      transform: "skewX(-11deg)",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      color: "#ffffff",
-                      border: `1px solid #44F4C3`,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        transform: "skewX(11deg)",
-                        display: "flex",
-                      }}
-                    >
-                      <Box>
-                        <DocsLogo
-                          color="#44F4C3"
-                          style={{ width: "11px", display: "block" }}
-                        />
-                      </Box>
-                      <Typography
-                        fontSize="14px"
-                        fontFamily="Inter"
-                        fontStyle="italic"
-                        textTransform="uppercase"
-                        style={{
-                          marginLeft: "12px",
-                        }}
-                        color="#44F4C3"
-                      >
-                        Docs
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Box>
-              </Link>
-            </Box> */}
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-              marginTop: "32px",
-            }}
-          >
-            <Box sx={{ marginLeft: "22px" }}>
-              <Link href="https://damnn.tv/" target="_blank" underline="none">
-                <Box>
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="13px"
-                    fontWeight="300"
-                    color="#BDBDBD"
-                    marginBottom="7px"
-                  >
-                    Production by
-                  </Typography>
-                  <img src={`${Damnn}`} alt={"Damnn logo"} loading="lazy" />
-                </Box>
-              </Link>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-around",
-              marginTop: "35px",
-            }}
-          >
-            <RouterLink
-              to="/terms-conditions"
-              target="_blank"
-              style={{ textDecoration: "none" }}
+          <Link href="https://damnn.tv/" target="_blank" underline="none">
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: { xs: "13px", md: 0 },
+              }}
             >
+              <img src={DamnnLogo} alt="damnn-logo" height="24px" />
               <Box
                 sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
+                  border: "#FFF 1px solid",
+                  borderRadius: "14px",
+                  height: "28px",
+                  width: "105px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginLeft: "12px",
                 }}
               >
                 <Typography
-                  fontFamily="Inter"
                   fontSize="12px"
-                  fontWeight="300"
-                  color="inherit"
+                  lineHeight="12px"
+                  fontFamily="Inter"
+                  color="#FFF"
                 >
-                  Terms of Service
+                  Production by
                 </Typography>
               </Box>
+            </Box>
+          </Link>
+          <Box sx={{ display: "flex" }}>
+            <RouterLink to="/privacy-policy" target="_blank">
+              <Typography
+                fontSize="12px"
+                lineHeight="12px"
+                fontFamily="Inter"
+                color="#FFF"
+                marginRight="24px"
+              >
+                Privacy Policy
+              </Typography>
             </RouterLink>
-            <RouterLink
-              to="/privacy-policy"
-              target="_blank"
-              style={{ textDecoration: "none" }}
-            >
-              <Box
-                sx={{
-                  color: "#FFFFFF",
-                  ":hover": {
-                    color: "#44F4C3",
-                  },
-                }}
+            <RouterLink to="/terms-conditions" target="_blank">
+              <Typography
+                fontSize="12px"
+                lineHeight="12px"
+                fontFamily="Inter"
+                color="#FFF"
               >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="12px"
-                  fontWeight="300"
-                  color="inherit"
-                >
-                  Privacy Policy
-                </Typography>
-              </Box>
+                Terms of Service
+              </Typography>
             </RouterLink>
           </Box>
         </Box>
-      )}
+      </Box>
     </Box>
   );
 };
 
-export default Ten;
+export default Footer;

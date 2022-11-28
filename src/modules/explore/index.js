@@ -1,28 +1,59 @@
 import React, { useState, useRef } from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import {
   FirstImg,
   SecondImg,
   ThirdImg,
   FourthImg,
   FiveImg,
-  MobileMask,
 } from "../../imgs/webp/screen2";
-import Smoke from "../../imgs/smoke2x.png";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFlip, Pagination, Navigation } from "swiper";
+import {
+  FirstImg as PersFirstImg,
+  SecondImg as PersSecondImg,
+  ThirdImg as PersThirdImg,
+} from "../../imgs/webp/screen3";
+
+import ArrowRight from "../../imgs/new/arrow-right-green.svg";
+import ArrowLeft from "../../imgs/new/arrow-left-green.svg";
+import ArrowRightWhite from "../../imgs/new/arrow-right.svg";
 
 import "swiper/css";
+import "swiper/css/effect-flip";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import Noise from "../../imgs/new/noise.png";
 
-const Second = () => {
-  const [curentItem, setCurentItem] = useState(0);
-  const [curentProgress, setProgress] = useState(0);
-  const swiperRef = useRef(null);
+import AnwarLogo from "../../imgs/new/heroes/anwar.svg";
+import DeoLogo from "../../imgs/new/heroes/deo.svg";
+import GunnarLogo from "../../imgs/new/heroes/gunnar.svg";
+import MilcyLogo from "../../imgs/new/heroes/milcy.svg";
+import SamLogo from "../../imgs/new/heroes/sam.svg";
+import ShaanLogo from "../../imgs/new/heroes/shaan.svg";
 
+import MilcyBlock from "../../imgs/new/heroes/milcyBlock.png";
+import AnwarBlock from "../../imgs/new/heroes/anwarBlock.png";
+import ShaanBlock from "../../imgs/new/heroes/shaanBlock.png";
+
+import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
+import Circle from "../../imgs/new/backIcons/circles1.svg";
+import Cross from "../../imgs/new/Cross.png";
+
+import {
+  SamMp4,
+  DeoMp4,
+  TyrMp4,
+} from "../../videos";
+
+const Explore = () => {
+  const persSwiper = useRef(null);
+  const [activePers, setActivePers] = useState(0);
   const texts = [
     {
-      title: "Strong gameplay in crypto theme",
+      title: "Free gameplay",
       mobileBottom: "5%",
-      description: `Chain Joes is filled with references to cryptothematics, memes and a large number of gaming phenomena from the past that will cause real game lovers to delight. A thoughtful game world, characters with a unique story and high-quality visualization and enemies in the form of Scammers, Spammers and Hackers allowed us to create strong gameplay that has a high player retention system.`,
+      description: `Chain Joes is a free Battle Arena game in crypto and memes setting that real gamers will love. Explore the stunningly designed ChainVerse and engage with unique characters. Enjoy high-quality visuals and battle a range of challenging enemies including Scammers, Spammers and Hackers to become a champion. Join the battle without any barrier! `,
       img: FirstImg,
       mobileTitle: (
         <>
@@ -81,509 +112,784 @@ const Second = () => {
     },
   ];
 
-  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
+  const desktop1080Width = true;
 
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
-
-  const desktop530Width = useMediaQuery(
-    `(min-width: ${125 * texts.length + 30}px`
-  );
+  const perses = [
+    {
+      title: "Mr. Tyr",
+      img: PersFirstImg,
+      video: TyrMp4,
+      logo: GunnarLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/mr.-tyr",
+      block: false,
+      description:
+        "Strength and Honor… This is carved on the coat of arms of the house of Hodler, whose metaverse was covered with ice after it was destroyed by hackers decades ago…",
+    },
+    {
+      title: "Mr. Deo",
+      img: PersSecondImg,
+      video: DeoMp4,
+      logo: DeoLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/deo",
+      block: false,
+      description:
+        "The Monk, Deo, arrived from the metaverse Temple of Fate...On his planet, the monks were able to curb web 3.0 technologies and now draw strength from the power within…",
+    },
+    {
+      title: "Sam",
+      img: PersThirdImg,
+      video: SamMp4,
+      block: false,
+      logo: SamLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/sam",
+      description:
+        "Earth X300 has reached the peak of development and formed its own system. People live in prosperity, and technology works for the benefit of humanity to deliver comfort and security… ",
+    },
+    {
+      title: "Anwar",
+      img: AnwarBlock,
+      logo: AnwarLogo,
+      block: true,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/anwar",
+      description:
+        "Reconstructed from fragments of Ancient Greece using web 3.0 technologies, the warrior Anwar arrived from Metaverse Greece #21.",
+    },
+    {
+      title: "Shaan",
+      img: ShaanBlock,
+      logo: ShaanLogo,
+      block: true,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/shaan",
+      description:
+        "Shaan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years…",
+    },
+    {
+      title: "Milcy",
+      img: MilcyBlock,
+      logo: MilcyLogo,
+      link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/milcy",
+      block: true,
+      description:
+        "MLc s9 is one of the 10 newest bots created as part of the experimental development of metaverse A2, engaged in the creation of spam bots…",
+    },
+  ];
 
   return (
     <Box>
       {desktop1080Width && (
-        <Box
-          sx={{
-            background: `url(${Smoke})`,
-            position: "relative",
-            backgroundPositionY: "bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            padding: "136px 0 127px 80px",
-          }}
-        >
-          <Box sx={{ display: "flex", maxHeight: "725px" }}>
-            <Box>
-              <Box sx={{ width: "540px" }}>
-                <Typography
-                  fontFamily="Furore"
-                  fontSize="75px"
-                  color="#ffffff"
-                  lineHeight="75px"
-                  style={{
-                    textFillColor: "transparent",
-                    backgroundcolor: "primary",
-                    backgroundImage:
-                      "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-                    backgroundSize: "100%",
-                    backgroundRepeat: "repeat",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  EXPLORE THE WORLD
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  marginTop: "115px",
-                  display: "flex",
-                }}
-              >
-                <Box
-                  sx={{
-                    width: "3px",
-                    height: "543px",
-                    backgroundColor: "#A5a5a5",
-                    marginRight: "45px",
-                    marginTop: "-50px",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "3px",
-                      height: "203px",
-                      backgroundColor: "#44F4C3",
-                      marginTop: `${curentItem * 85}px`,
-                    }}
-                  ></Box>
-                </Box>
-                <Box>
-                  {texts.map((item, index) => (
-                    <Box
-                      key={`secondScreen_items_${index}`}
-                      sx={{ marginTop: index ? "56px" : "", cursor: "pointer" }}
-                      onClick={() => setCurentItem(index)}
-                    >
-                      <Box>
-                        <Typography
-                          fontFamily="Furore"
-                          textTransform="uppercase"
-                          fontSize="20px"
-                          color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                          lineHeight="20px"
-                        >
-                          {item.title}
-                        </Typography>
-                      </Box>
-                      {/* {index === curentItem && ( */}
-                      <Box>
-                        <Box
-                          sx={{
-                            marginTop: index === curentItem ? "25px" : "0px",
-                            maxHeight: index === curentItem ? "220px" : "0px",
-                            opacity: index === curentItem ? 1 : 0,
-                            overflow: "hidden",
-                            transition: "all 0.3s ease-in-out",
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="18px"
-                            color="#ffffff"
-                            maxWidth="730px"
-                            lineHeight="21.78px"
-                          >
-                            {item.description}
-                            {item.descriptionTwo && (
-                              <>
-                                <br />
-                                <br />
-                                {item.descriptionTwo}
-                              </>
-                            )}
-                          </Typography>
-                        </Box>
-                        {/* {item.descriptionTwo && (
-                            <Box sx={{ marginTop: "25px" }}>
-                              <Typography
-                                fontFamily="Inter"
-                                fontWeight="300"
-                                fontSize="18px"
-                                color="#ffffff"
-                                maxWidth="730px"
-                                lineHeight="21.78px"
-                              >
-                                
-                              </Typography>
-                            </Box>
-                          )} */}
-                      </Box>
-                      {/* )} */}
-                    </Box>
-                  ))}
-                </Box>
-              </Box>
-            </Box>
-            <Box
-              sx={{ position: "relative", maxWidth: "865px", width: "100%" }}
-            >
-              {texts.map((item, index) => (
-                <Box
-                  key={`screen-2-image-block-${index}`}
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    heigth: "100%",
-                    opacity: index === curentItem ? 1 : 0,
-                    transition: "all 0.3s ease-in-out",
-                  }}
-                >
-                  <img
-                    src={`${item.img}`}
-                    alt={item.title}
-                    loading="lazy"
-                    style={{ width: "100%" }}
-                  />
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        </Box>
-      )}
-      {!desktop1080Width && desktop768Width && (
-        <Box
-          sx={{
-            background: `url(${Smoke})`,
-            position: "relative",
-            backgroundPositionY: "bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            padding: "102px 0px 78px 0px",
-          }}
-        >
-          <Box>
-            <Typography
-              fontFamily="Furore"
-              fontSize="60px"
-              color="#ffffff"
-              lineHeight="60px"
-              maxWidth="380px"
-              marginLeft="30px"
-              style={{
-                textFillColor: "transparent",
-                backgroundcolor: "primary",
-                backgroundImage:
-                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-                backgroundSize: "100%",
-                backgroundRepeat: "repeat",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              EXPLORE THE WORLD
-            </Typography>
+        <Box sx={{ position: "relative" }} id={"chainverse"}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: { md: "100%" },
+              height: { xs: "100%", md: "auto" },
+              zIndex: -1,
+              "& > img": {
+                width: { md: "100%" },
+                height: { xs: "50%", md: "auto" },
+              },
+              "& > .cross": {
+                width: 190,
+              },
+            }}
+          >
+            <img src={Circle} alt="circles" />
           </Box>
           <Box
             sx={{
-              position: "relative",
-              overflowX: "hidden",
-              marginTop: "71px",
+              position: "absolute",
+              top: { xs: "20px", md: "100px", lg: "60px", xl: "20px" },
+              left: { xs: "40%", md: "50%", xl: "60%" },
+              "& > img": {
+                width: { xs: "157px", md: "320px", lg: "auto" },
+              },
+            }}
+          >
+            <img src={OurAmazing} alt="our amazing" />
+          </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "700px",
+              right: "10%",
+              "& > .cross": {
+                width: 100,
+              },
+            }}
+          >
+            <img className="cross" src={Cross} alt="cross" />
+          </Box>
+          <Box
+            sx={{
+              marginBottom: { xs: "130px", md: "130px", xl: "350px" },
+              paddingTop: "80px",
             }}
           >
             <Box
               sx={{
-                display: "flex",
-                width: `${texts.length * 265}px`,
-                // marginLeft: `calc(30px + max(calc(${
-                //   header.length * 265 + 30
-                // }px - 100vw), 0px) * -${curentProgress})`,
-                marginLeft: `calc(min(${
-                  curentItem > 1 ? 265 * curentItem - 265 : -30
-                }px, calc(${texts.length * 265 + 30}px - 100vw)) * -1)`,
-                transition: "all 0.3s ease-in-out",
+                display: { xs: "none", md: "block" },
+                width: { md: "668px", lg: "892px", xl: "1150px" },
+                margin: "auto",
+                ".swiper-button-next, .swiper-button-prev": {
+                  width: 48,
+                  height: 48,
+                  background: "#fff",
+                  borderRadius: "100px",
+                },
+                ".swiper-button-next": {
+                  right: { md: 0, lg: "10px" },
+                  ":after": {
+                    content: "''",
+                    width: "24px",
+                    height: "24px",
+                    background: `url(${ArrowRight})`,
+                  },
+                },
+                ".swiper-button-prev": {
+                  left: { md: 0, lg: "10px" },
+                  ":after": {
+                    content: "''",
+                    width: "24px",
+                    height: "24px",
+                    background: `url(${ArrowLeft})`,
+                  },
+                },
+                ".swiper-pagination": {
+                  bottom: "-40px",
+                },
+                ".swiper-pagination-bullet": {
+                  background: "#242424",
+                  opacity: 1,
+                },
+                ".swiper-pagination-bullet-active": {
+                  background: "#FFF",
+                },
               }}
             >
-              {texts.map((item, index) => (
-                <Box
-                  key={`screen-2-mobile-title-${index}`}
-                  sx={{
-                    width: `265px`,
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    setCurentItem(index);
-                    swiperRef.current.swiper.slideTo(index);
-                  }}
-                >
-                  <Typography
-                    fontFamily="Furore"
-                    fontSize="20px"
-                    lineHeight="23.02px"
-                    textAlign="center"
-                    marginX="auto"
-                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                  >
-                    {item.mobileTitle}
-                  </Typography>
-                </Box>
-              ))}
+              <Swiper
+                slidesPerView={1}
+                centeredSlides={true}
+                grabCursor={true}
+                className="mySwiper"
+                effect={"flip"}
+                pagination={true}
+                modules={[EffectFlip, Pagination, Navigation]}
+                navigation={{
+                  enabled: true,
+                }}
+              >
+                {texts.map((text, index) => (
+                  <SwiperSlide>
+                    <Box
+                      sx={{
+                        width: { md: 620, lg: 740, xl: 880 },
+                        height: { md: 340, xl: 480 },
+                        background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
+                        backgroundBlendMode: "soft-light, normal",
+                        margin: "auto",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      <Box sx={{ display: "flex" }}>
+                        <Box
+                          sx={{
+                            width: { md: 260, xl: 400 },
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <img
+                            src={text.img}
+                            alt="explore"
+                            width="inherit"
+                            style={{ width: "inherit" }}
+                          />
+                        </Box>
+                        <Box
+                          sx={{
+                            maxWidth: { md: "296px", lg: "400px" },
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            "& > .description": {
+                              fontSize: { md: "14px", lg: "16px" },
+                            },
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="32px"
+                            color="#FFF"
+                            className="title"
+                          >
+                            {text.title}
+                          </Typography>
+                          <Typography
+                            fontSize="16px"
+                            color="#FFF"
+                            marginTop="12px"
+                            className="description"
+                          >
+                            {text.description}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </Box>
             <Box
               sx={{
-                marginTop: "16px",
-                width: `${265 * texts.length}px`,
-                height: 3,
-                backgroundColor: "#A5a5a5",
-                marginLeft: `calc(min(${
-                  curentItem > 1 ? 265 * curentItem - 265 : -30
-                }px, calc(${texts.length * 265 + 30}px - 100vw)) * -1)`,
-                transition: "all 0.3s ease-in-out",
+                display: { xs: "block", md: "none" },
+                width: { xs: "100%", md: "668px", lg: "892px", xl: "1150px" },
+                // margin: "auto",
+                ".swiper-pagination": {
+                  bottom: "-40px",
+                },
+                ".swiper-pagination-bullet": {
+                  background: "#242424",
+                  opacity: 1,
+                },
+                ".swiper-pagination-bullet-active": {
+                  background: "#FFF",
+                },
+                ".swiper": {
+                  overflow: "unset",
+                },
               }}
             >
-              <Box
-                sx={{
-                  width: `${265}px`,
-                  height: "3px",
-                  backgroundColor: "#44F4C3",
-                  marginLeft: `${
-                    curentProgress * (texts.length * 265 - 265)
-                  }px`,
-                  transition: "all 0.3s ease-in-out",
-                }}
-              ></Box>
-            </Box>
-          </Box>
-          <Box>
-            <Swiper
-              slidesPerView={1}
-              centeredSlides={true}
-              grabCursor={true}
-              className="mySwiper"
-              onProgress={({ progress }) =>
-                !(progress < 0 || progress > 1) && setProgress(progress)
-              }
-              onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
-              ref={swiperRef}
-            >
-              {texts.map((item, index) => (
-                <SwiperSlide key={`screen-3-swiper-item-${index}`}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginTop: "43px",
-                      height: "340px",
-                      opacity: 1,
-                      overflow: "hidden",
-                      transition: "all 0.3s ease-in-out",
-                    }}
-                    key={`screen-2-information-block-${index}`}
-                  >
-                    <Box sx={{ width: "343px" }}>
-                      <img
-                        src={`${item.img}`}
-                        alt={item.title}
-                        loading="lazy"
-                        style={{ maxWidth: "100%" }}
-                      />
-                    </Box>
-                    <Box sx={{ marginLeft: "27px" }}>
-                      <Box>
-                        <Box>
+              <Swiper
+                slidesPerView={"auto"}
+                centeredSlides={false}
+                spaceBetween={24}
+                grabCursor={true}
+                className="mySwiper2"
+                pagination={true}
+                navigation={false}
+                slidesOffsetBefore={20}
+                slidesOffsetAfter={20}
+                modules={[Pagination]}
+              >
+                {texts.map((text, index) => (
+                  <SwiperSlide style={{ width: "252px" }}>
+                    <Box
+                      sx={{
+                        width: { xs: 252, md: 620, lg: 740, xl: 880 },
+                        height: { xs: 388, md: 340, xl: 480 },
+                        background: `url(${Noise}) 0 0/30% 30%, linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)`,
+                        backgroundBlendMode: "soft-light, normal",
+                        margin: "auto",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      <Box sx={{ display: { xs: "block", md: "flex" } }}>
+                        <Box
+                          sx={{
+                            width: { xs: 120, md: 260, xl: 400 },
+                            display: "flex",
+                            alignItems: "center",
+                            marginX: { xs: "auto", md: 0 },
+                            marginBottom: { xs: "15px", md: 0 },
+                          }}
+                        >
+                          <img
+                            src={text.img}
+                            alt="explore"
+                            width="inherit"
+                            style={{ width: "inherit" }}
+                          />
+                        </Box>
+                        <Box
+                          sx={{
+                            maxWidth: { md: "296px", lg: "400px" },
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            "& > .description": {
+                              fontSize: { xs: "12px", md: "14px", lg: "16px" },
+                              maxWidth: { xs: "220px", md: "100%" },
+                            },
+                            "& > .title": {
+                              fontSize: { xs: "18px", md: "32px" },
+                            },
+                          }}
+                        >
                           <Typography
-                            fontFamily="Inter"
-                            fontWeight="300"
-                            fontSize="14px"
-                            color="#ffffff"
-                            maxWidth="340px"
+                            fontFamily="Aaaiight"
+                            fontSize="32px"
+                            color="#FFF"
+                            className="title"
                           >
-                            {item.description}
+                            {text.title}
+                          </Typography>
+                          <Typography
+                            fontSize="16px"
+                            color="#FFF"
+                            marginTop="12px"
+                            className="description"
+                            fontFamily="Inter"
+                          >
+                            {text.description}
                           </Typography>
                         </Box>
-                        {item.descriptionTwo && (
-                          <Box sx={{ marginTop: "20px" }}>
+                      </Box>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </Box>
+          </Box>
+          <Box
+            sx={{ paddingLeft: { md: "34px", lg: "66px", xl: "135px" } }}
+            id={"characters"}
+          >
+            <Box
+              sx={{
+                display: { xs: "block", xl: "none" },
+                marginBottom: "60px",
+                fontSize: { xs: "32px", md: "80px" },
+                lineHeight: { xs: "32px", md: "80px" },
+              }}
+            >
+              <Typography
+                fontFamily="Aaaiight"
+                color="#FFF"
+                textAlign="center"
+                style={{ fontSize: "inherit", lineHeight: "inherit" }}
+              >
+                Choose your <span style={{ color: "#005B42" }}>Joe</span>
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                justifyContent: { md: "space-between", lg: "space-around" },
+                alignItems: { md: "center", lg: "normal" },
+              }}
+            >
+              <Box>
+                <Box sx={{ display: { xs: "none", xl: "block" } }}>
+                  <Typography
+                    fontFamily="Aaaiight"
+                    fontSize="80px"
+                    color="#FFF"
+                    lineHeight="80px"
+                  >
+                    Choose
+                    <br />
+                    your <span style={{ color: "#005B42" }}>Joe</span>
+                  </Typography>
+                </Box>
+                <Box sx={{ marginTop: "32px" }}>
+                  {perses.map((pers, index) => (
+                    <Box
+                      sx={{
+                        width: { md: "400px", lg: "500px" },
+                        border:
+                          index === activePers
+                            ? "1px solid #005B42"
+                            : "1px solid #242424",
+                        borderRadius: "4px",
+                        marginBottom: "20px",
+                        transition: "all 0.2s ease-in-out",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          padding: "20px",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          persSwiper.current.swiper.slideTo(index);
+                          setActivePers(index);
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            "& > img": {
+                              width: "24px",
+                              height: "24px",
+                            },
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <img
+                              src={pers.logo}
+                              alt={pers.title}
+                              width="24px"
+                            />
                             <Typography
-                              fontFamily="Inter"
-                              fontWeight="300"
-                              fontSize="14px"
-                              color="#ffffff"
-                              maxWidth="340px"
+                              fontFamily="Aaaiight"
+                              fontSize="18px"
+                              lineHeight="18px"
+                              color="#FFF"
+                              marginLeft="12px"
                             >
-                              {item.descriptionTwo}
+                              {pers.title}
                             </Typography>
+                          </Box>
+                          {pers.block && (
+                            <Box
+                              sx={{
+                                width: "99px",
+                                height: "28px",
+                                background: "#003527",
+                                fontSize: "12px",
+                                lineHeight: "12px",
+                                borderRadius: "14px",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
+                            >
+                              <Typography
+                                fontFamily="Inter"
+                                color="#05D19B"
+                                textAlign="center"
+                                style={{
+                                  fontSize: "inherit",
+                                  lineHeight: "inherit",
+                                }}
+                              >
+                                Coming soon
+                              </Typography>
+                            </Box>
+                          )}
+                        </Box>
+                        {!pers.block && (
+                          <Box
+                            sx={{
+                              marginTop: "8px",
+                              maxHeight: index === activePers ? "120px" : "0px",
+                              opacity: index === activePers ? 1 : 0,
+                              overflow: "hidden",
+                              transition: "all 0.2s ease-in-out",
+                            }}
+                          >
+                            <Typography
+                              color="#FFF"
+                              maxWidth="370px"
+                              fontSize="12px"
+                            >
+                              {pers.description}
+                            </Typography>
+                            <Link
+                              href={pers.link}
+                              target="_blank"
+                              underline="none"
+                            >
+                              <Typography
+                                color="#00FFB7"
+                                fontSize="12px"
+                                marginTop="12px"
+                              >
+                                Explore the full lore
+                              </Typography>
+                            </Link>
                           </Box>
                         )}
                       </Box>
                     </Box>
-                  </Box>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </Box>
-        </Box>
-      )}
-      {!desktop1080Width && !desktop768Width && (
-        <Box
-          sx={{
-            background: `url(${Smoke})`,
-            // background: `#FFF`,
-            position: "relative",
-            backgroundPositionY: "bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            padding: "75px 0px 55px 0px",
-          }}
-        >
-          <Box>
-            <Typography
-              fontFamily="Furore"
-              fontSize="32px"
-              color="#ffffff"
-              lineHeight="32px"
-              maxWidth="227px"
-              marginLeft="15px"
-              style={{
-                textFillColor: "transparent",
-                backgroundcolor: "primary",
-                backgroundImage:
-                  "linear-gradient(180.16deg, #FFFFFF 0.14%, rgba(255, 255, 255, 0) 186.06%)",
-                backgroundSize: "100%",
-                backgroundRepeat: "repeat",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              EXPLORE THE WORLD
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              position: "relative",
-              overflowX: "hidden",
-              marginTop: "28px",
-              display: desktop530Width ? "flex" : "block",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                width: `${texts.length * 165}px`,
-                marginLeft: !desktop530Width
-                  ? `calc(15px + max(calc(${
-                      texts.length * 165 + 30
-                    }px - 100vw), 0px) * -${curentProgress})`
-                  : 0,
-                transition: "all 0.3s ease-in-out",
-              }}
-            >
-              {texts.map((item, index) => (
-                <Box
-                  key={`screen-2-mobile-title-${index}`}
-                  sx={{ width: "165px" }}
-                  onClick={() => {
-                    setCurentItem(index);
-                    swiperRef.current.swiper.slideTo(index);
-                  }}
-                >
-                  <Typography
-                    fontFamily="Furore"
-                    fontSize="15px"
-                    lineHeight="18px"
-                    textAlign="center"
-                    marginX="auto"
-                    color={index === curentItem ? "#44F4C3" : "#FFFFFF"}
-                  >
-                    {item.mobileTitle}
-                  </Typography>
+                  ))}
                 </Box>
-              ))}
+              </Box>
+              <Box sx={{ width: { md: "300px", lg: "500px", xl: "700px" } }}>
+                <Swiper
+                  slidesPerView={1}
+                  centeredSlides={true}
+                  grabCursor={false}
+                  className="mySwiper"
+                  effect={"flip"}
+                  modules={[EffectFlip]}
+                  pagination={false}
+                  navigation={false}
+                  ref={persSwiper}
+                >
+                  {perses.map((pers, index) => (
+                    <SwiperSlide key={`pers-slide-${index}`}>
+                      <Box
+                        sx={{
+                          position: "relative",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            top: "50%",
+                            left: "50%",
+                            position: "absolute",
+                            width: { md: 300, lg: 350, xl: 580 },
+                            height: { md: 373, lg: 435, xl: 721 },
+                            background: `url(${Noise}) 0 0/30% 30%, #2E2E2E`,
+                            margin: "auto",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            transform: "rotate(10deg) translate(-50%, -50%)",
+                            borderRadius: "8px",
+                          }}
+                        ></Box>
+                        {pers.block ? (
+                          <Box
+                            sx={{
+                              width: { md: 300, lg: 350, xl: 580 },
+                              height: { md: 373, lg: 435, xl: 721 },
+                              background: `url(${pers.img})`,
+                              backgroundSize: "cover",
+                              margin: "auto",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              transform: "rotate(-5deg)",
+                              borderRadius: "8px",
+                            }}
+                          ></Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              width: { md: 300, lg: 350, xl: 580 },
+                              height: { md: 373, lg: 435, xl: 721 },
+                              margin: "auto",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              transform: "rotate(-5deg)",
+                              borderRadius: "8px",
+                            }}
+                          >
+                            <video
+                              // ref={refVideo}
+                              autoPlay="autoPlay"
+                              loop="loop"
+                              muted
+                              playsInline
+                              onContextMenu={() => false}
+                              preload="auto"
+                              id="vid"
+                              // poster={per}
+                              style={{
+                                objectFit: "cover",
+                                height: "100%",
+                                width: "100%",
+                                position: "absolute",
+                                top: 0,
+                                right: 0,
+                                zIndex: -1,
+                                borderRadius: "8px",
+                              }}
+                            >
+                              <source src={pers.video} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          </Box>
+                        )}
+                      </Box>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </Box>
             </Box>
             <Box
               sx={{
-                marginLeft: !desktop530Width
-                  ? `calc(15px + max(calc(${
-                      texts.length * 165 + 30
-                    }px - 100vw), 0px) * -${curentProgress})`
-                  : 0,
-                marginTop: "21px",
-                width: `${texts.length * 165}px`,
-                height: 3,
-                backgroundColor: "#A5a5a5",
-                transition: "all 0.3s ease-in-out",
+                display: { xs: "block", md: "none" },
+                width: { xs: "100%", md: "668px", lg: "892px", xl: "1150px" },
+                ".swiper-pagination": {
+                  bottom: "-40px",
+                },
+                ".swiper-pagination-bullet": {
+                  background: "#242424",
+                  opacity: 1,
+                },
+                ".swiper-pagination-bullet-active": {
+                  background: "#FFF",
+                },
+                ".swiper": {
+                  overflow: "unset",
+                },
               }}
             >
-              <Box
-                sx={{
-                  width: "165px",
-                  height: "3px",
-                  backgroundColor: "#44F4C3",
-                  marginLeft: `${
-                    curentProgress * (texts.length * 165 - 165)
-                  }px`,
-                  transition: "all 0.3s ease-in-out",
-                }}
-              ></Box>
-            </Box>
-          </Box>
-          <Box sx={{ marginTop: "45px" }}>
-            <Swiper
-              slidesPerView={1}
-              centeredSlides={true}
-              grabCursor={true}
-              className="mySwiper"
-              onProgress={({ progress }) =>
-                !(progress < 0 || progress > 1) && setProgress(progress)
-              }
-              onSlideChange={({ activeIndex }) => setCurentItem(activeIndex)}
-              ref={swiperRef}
-            >
-              {texts.map((item, index) => (
-                <SwiperSlide key={`screen-2-swiper-item-${index}`}>
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "290px",
-                      margin: "auto",
-                    }}
-                  >
-                    <Box>
-                      <Typography
-                        fontFamily="Inter"
-                        fontSize="13px"
-                        fontWeight="300"
-                        color="#FFFFFF"
-                        lineHeight="15.73px"
-                        maxWidth="290px"
-                      >
-                        {item.description}
-                      </Typography>
-                      {item.descriptionTwo && (
-                        <Typography
-                          fontFamily="Inter"
-                          fontSize="13px"
-                          fontWeight="300"
-                          color="#FFFFFF"
-                          lineHeight="15.73px"
-                          marginTop="15px"
-                        >
-                          {item.descriptionTwo}
-                        </Typography>
-                      )}
-                    </Box>
+              <Swiper
+                slidesPerView={"auto"}
+                centeredSlides={false}
+                spaceBetween={12}
+                grabCursor={true}
+                className="mySwiper2"
+                pagination={true}
+                navigation={false}
+                slidesOffsetBefore={20}
+                slidesOffsetAfter={20}
+                modules={[Pagination]}
+              >
+                {perses.map((pers, index) => (
+                  <SwiperSlide style={{ width: "auto" }}>
                     <Box
                       sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        marginTop: "40px",
+                        width: 280,
+                        height: 466,
+                        borderRadius: "4px",
+                        border: "1px solid #242424",
                       }}
                     >
-                      <img width={227} src={item.img} alt={item.title} />
+                      <Box
+                        sx={{
+                          position: "relative",
+                          display: "flex",
+                          justifyContent: "center",
+                          marginTop: "40px",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: 240,
+                            height: 201,
+                            borderRadius: "8px",
+                            background: `url(${Noise}) 0 0/30% 30%, #2E2E2E`,
+                            backgroundBlendMode: "soft-light, normal, normal",
+                            transform: "rotate(5deg) translate(-50%, 0)",
+                            position: "absolute",
+                            top: 0,
+                            left: "50%",
+                          }}
+                        ></Box>
+                        {pers.block ? (
+                          <Box
+                            sx={{
+                              width: 240,
+                              height: 201,
+                              borderRadius: "8px",
+                              transform: "rotate(-5deg)",
+                              background: `url(${pers.img})`,
+                              backgroundSize: "cover",
+                            }}
+                          ></Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              width: 240,
+                              height: 201,
+                              borderRadius: "8px",
+                              transform: "rotate(-5deg)",
+                            }}
+                          >
+                            <video
+                              // ref={refVideo}
+                              autoPlay="autoPlay"
+                              loop="loop"
+                              muted
+                              playsInline
+                              onContextMenu={() => false}
+                              preload="auto"
+                              id="vid"
+                              // poster={per}
+                              style={{
+                                objectFit: "cover",
+                                height: "100%",
+                                width: "100%",
+                                position: "absolute",
+                                objectPosition: "top",
+                                top: 0,
+                                right: 0,
+                                zIndex: -1,
+                                borderRadius: "8px",
+                              }}
+                            >
+                              <source src={pers.video} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          </Box>
+                        )}
+                      </Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          marginTop: "30px",
+                        }}
+                      >
+                        <Box sx={{ width: 240 }}>
+                          <Typography
+                            fontFamily="Aaaiight"
+                            fontSize="18px"
+                            lineHeight="18px"
+                            color="#FFF"
+                          >
+                            {pers.title}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            marginTop: "8px",
+                          }}
+                        >
+                          <Typography
+                            fontFamily="Inter"
+                            fontSize="12px"
+                            lineHeight="19.2px"
+                            color="#FFF"
+                            maxWidth={240}
+                          >
+                            {pers.description}
+                          </Typography>
+                        </Box>
+
+                        <Link href={pers.link} target="_blank" underline="none">
+                          <Box
+                            sx={{
+                              width: 240,
+                              height: 48,
+                              background:
+                                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%);",
+                              borderRadius: "2px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              marginTop: "12px",
+                            }}
+                          >
+                            <Typography
+                              fontFamily="Inter"
+                              fontSize="14px"
+                              lineHeight="100%"
+                              color="#FFF"
+                              textAlign="center"
+                              marginRight="8px"
+                            >
+                              Explore the full lore
+                            </Typography>
+                            <img
+                              src={ArrowRightWhite}
+                              alt="arrow-right"
+                              width="16px"
+                            />
+                          </Box>
+                        </Link>
+                      </Box>
                     </Box>
-                  </Box>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </Box>
           </Box>
         </Box>
       )}
@@ -591,4 +897,4 @@ const Second = () => {
   );
 };
 
-export default Second;
+export default Explore;

@@ -2,18 +2,14 @@ import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
 import {
   First,
-  Second,
-  Third,
-  Fourth,
-  Five,
-  Six,
-  Seven,
-  Eight,
-  Nine,
-  Ten,
+  Enemies,
+  Explore,
+  Activities,
+  Social,
+  Footer,
+  LoopLine,
   Loader,
 } from "../modules";
-import Smoke from "../imgs/smoke2x.png";
 import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
@@ -98,32 +94,14 @@ const Main = () => {
             </Box>
           ) : (
             <>
-              <First />
-              <Second />
-              <Third />
-              <Fourth />
-              <Five />
-              <Six />
-              <Seven />
-              <Eight />
-              <Box
-                sx={{
-                  backgroundColor: "#070809",
-                  backgroundImage: `url(${Smoke})`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                }}
-              >
-                <Nine />
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "1px",
-                    background:
-                      "linear-gradient(268.99deg, rgba(0, 255, 183, 0) 1.98%, rgba(71, 255, 244, 0.722892) 32.41%, #FFFFFF 44.07%, rgba(0, 178, 255, 0.55) 60.3%, rgba(0, 255, 183, 0) 98.28%)",
-                  }}
-                />
-                <Ten />
+              <Box sx={{ overflowX: "hidden" }}>
+                <First />
+                <Enemies />
+                <LoopLine />
+                <Explore />
+                <Activities />
+                <Social />
+                <Footer />
               </Box>
             </>
           )}
@@ -132,5 +110,4 @@ const Main = () => {
     </>
   );
 };
-
 export default Main;

@@ -8,11 +8,11 @@ const Loader = ({ progres }) => {
 
   const getText = () => {
     if (Math.floor(progres * 100) < 33) {
-      return "Loading equipment...";
+      return "Get your reward!";
     } else if (Math.floor(progres * 100) < 66) {
-      return "Exploration of new metaverses...";
+      return "Looking for web3 enemies";
     } else if (Math.floor(progres * 100) <= 100) {
-      return "Generating races...";
+      return "Kicking their asses";
     }
   };
 
@@ -37,7 +37,7 @@ const Loader = ({ progres }) => {
       >
         <Typography
           fontFamily="Inter"
-          fontWeight="400"
+          fontWeight="500"
           fontSize={desktop768Width ? "40px" : "17px"}
           color="#FFFFFF"
         >
@@ -50,11 +50,13 @@ const Loader = ({ progres }) => {
               : desktop768Width
               ? "400px"
               : "200px",
-            height: 0,
-            border: "2px solid #FFFFFF59",
+            height: 8,
+            background: "rgba(255, 255, 255, 0.1)",
             position: "relative",
             marginTop: "40px",
-            borderRadius: "10px",
+            borderRadius: "4px",
+            display: "flex",
+            alignItems: "center",
           }}
         >
           <Box
@@ -64,11 +66,11 @@ const Loader = ({ progres }) => {
                 : desktop768Width
                 ? `${400 * progres}px`
                 : `${200 * progres}px`,
-              height: 0,
-              border: "3px solid #FFFFFF",
+              height: 8,
+              background:
+                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
               position: "relative",
-              marginTop: "-3px",
-              borderRadius: "10px",
+              borderRadius: "4px",
             }}
           />
         </Box>
@@ -78,11 +80,10 @@ const Loader = ({ progres }) => {
           }}
         >
           <Typography
-            fontFamily="Inter"
+            fontFamily="Aaaiight"
             fontWeight="400"
-            fontSize={desktop768Width ? "18px" : "16px"}
+            fontSize={desktop768Width ? "32px" : "20px"}
             color="#FFFFFF"
-            style={{ opacity: 0.4 }}
           >
             {getText()}
           </Typography>

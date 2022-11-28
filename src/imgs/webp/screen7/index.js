@@ -5,7 +5,7 @@ import RedRiftLogo from "./redRift_logo.webp";
 import WebLink from "./link.png";
 import SmokeMobile from "./smoke_mobile.png";
 import Alex from "./team/Alex.jpg";
-import Cris from "./team/Cris.jpg";
+import Cris from "./team/Cris.png";
 import Dasha from "./team/Dasha.jpg";
 import Egor from "./team/Egor.jpg";
 import Hanna from "./team/Hanna.jpg";
@@ -19,6 +19,11 @@ import Gary from "./team/Gary.jpg";
 import LinkedIn from "./linkedIn.svg";
 import Egor2 from "./team/Egor2.png";
 import Dimitri from "./team/Dimitri.png";
+import Ilona from "./team/Ilona.png";
+import Alina from "./team/Alina.png";
+import Kirill from "./team/Kirill.png";
+import Artem from "./team/Artem.png";
+import AlexK from "./team/AlexK.png";
 
 export {
   Photo1,
@@ -41,5 +46,10 @@ export {
   Gary,
   LinkedIn,
   Egor2,
-  Dimitri
+  Dimitri,
+  Ilona,
+  Alina,
+  Kirill,
+  Artem,
+  AlexK,
 };

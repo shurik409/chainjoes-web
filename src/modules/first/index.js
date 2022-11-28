@@ -1,17 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Link, Typography, useMediaQuery } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Header from "./components/header";
-import Background from "../../imgs/webp/screen1/first_screen_reverse.webp";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
-import GreenBtn from "../../imgs/webp/green_btn.webp";
-import { DsLogo } from "./components/header/components/Icons";
-import FirstFooter from "../../imgs/webp/first_footer.webp";
-import Scratches from "../../imgs/scratches.svg";
+import Background from "../../imgs/new/MainScreen.jpg";
+import Login from "../../imgs/new/login.svg";
+import Document from "../../imgs/new/document.svg";
+import CloseBtn from "../../imgs/new/close-btn.svg";
+import ArrowDown from "../../imgs/new/arrow-down.svg";
+import { HashLink } from "react-router-hash-link";
 
 const First = () => {
   const refVideo = useRef(null);
   const [muted, setMuted] = useState(false);
+  const [isBanner, setIsBanner] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeMenuDropdown, setActiveMenuDropdown] = useState(0);
 
   useEffect(() => {
     if (!refVideo.current) {
@@ -25,798 +29,590 @@ const First = () => {
     }
   });
 
-  const desktop1080Width = useMediaQuery("(min-width:1000px)");
-  const desktop768Width = useMediaQuery("(min-width:768px)");
-  const desktop1080Height = useMediaQuery("(min-height:900px)");
-  const desktop768Height = useMediaQuery("(min-height:685px)");
+  const handleClose = (e) => {
+    e.preventDefault();
+    setIsBanner(false);
+  };
+
+  const handleMobileMenu = (e) => {
+    e?.preventDefault();
+    const html = document.documentElement;
+    setIsMenuOpen(!isMenuOpen);
+    document.getElementById("root").classList.toggle("mobileMenu");
+    html.style.overflow === "hidden"
+      ? (html.style.overflow = "auto")
+      : (html.style.overflow = "hidden");
+  };
+
+  const buttons = [
+    {
+      title: "Gameplay",
+      links: [
+        {
+          title: "Backstory",
+          link: "/#backstory",
+          type: "scroll",
+        },
+        {
+          title: "ChainVerse",
+          link: "/#chainverse",
+          type: "scroll",
+        },
+        {
+          title: "Characters",
+          link: "/#characters",
+          type: "scroll",
+        },
+        {
+          title: "Activities",
+          link: "/#activities",
+          type: "scroll",
+        },
+      ],
+    },
+    {
+      title: "Community",
+      links: [
+        {
+          title: "Discord",
+          link: "https://discord.com/invite/chainjoes ",
+        },
+        {
+          title: "Twitter",
+          link: "https://twitter.com/ChainJoes",
+        },
+        {
+          title: "Telegram",
+          link: "https://t.me/chainjoes",
+        },
+      ],
+    },
+    {
+      title: "Roadmap",
+      link: "/#roadmap",
+      type: "scroll",
+    },
+    {
+      title: "Team",
+      link: "/#team",
+      type: "scroll",
+    },
+    {
+      title: "Partners",
+      link: "/#partners",
+      type: "scroll",
+    },
+    {
+      title: "Help",
+      links: [
+        {
+          title: "FAQ ",
+          link: "/faq",
+        },
+        {
+          title: "GitBook",
+          link: "https://chainjoes.gitbook.io/chainjoes/",
+        },
+        {
+          title: "Whitepaper",
+          link: "/pdfs/Whitepaper.pdf",
+        },
+        {
+          title: "Tokenomics",
+          link: "/pdfs/Tokenomics.pdf",
+        },
+        {
+          title: "Sale Strategy",
+          link: "/pdfs/Sale_Strategy.pdf",
+        },
+        {
+          title: "One Page",
+          link: "/pdfs/One_Page.pdf",
+        },
+      ],
+    },
+    {
+      title: "News",
+      link: "https://medium.com/@ChainJoes",
+    },
+  ];
 
   return (
-    <Box
-      sx={{
-        "@keyframes video": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes header": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes title": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes description": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-        "@keyframes button": {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 1,
-          },
-        },
-      }}
-    >
-      {desktop1080Width && (
-        <Box sx={{ position: "relative", height: "100vh" }}>
-          <Box
-            sx={{
-              animationName: "video",
-              animationDuration: "10s",
-              animationFillMode: "both",
-              animationDelay: "1s",
-            }}
+    <Box sx={{ position: "relative" }}>
+      <Box
+        sx={{
+          paddingY: { xs: "16px", md: "12px" },
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          position: "absolute",
+          width: "100%",
+          top: isBanner ? 0 : { xs: "-120px", md: "-80px" },
+          zIndex: 2,
+          transition: "top 0.2s ease-in-out",
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            fontSize: { xs: "12px" },
+            lineHeight: { xs: "12px" },
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "center",
+            alignItems: "center",
+            maxWidth: { xs: "175px", md: "100%" },
+            margin: { xs: "auto", md: 0 },
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            color="#FFF"
+            fontFamily="Inter"
+            style={{ fontSize: "inherit", lineHeight: "inherit" }}
           >
-            <video
-              ref={refVideo}
-              autoPlay="autoPlay"
-              loop="loop"
-              muted
-              playsInline
-              onContextMenu={() => false}
-              preload="auto"
-              id="vid"
-              poster={Background}
-              style={{
-                objectFit: "cover",
-                height: "100vh",
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                right: 0,
-                zIndex: -1,
+            The Private Sale starts on December 20. Be first to participate
+          </Typography>
+          <Link href="/pdfs/Sale_Strategy.pdf" target="_blank" underline="none">
+            <Box
+              sx={{
+                padding: { xs: "10px 16px" },
+                marginLeft: { md: "12px" },
+                marginTop: { xs: "12px", md: 0 },
+                borderRadius: "2px",
+                color: "#FFF",
+                cursor: "pointer",
+                background:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                ":hover": {
+                  outline: "1px solid #00FFB7",
+                  background: "none",
+                },
+                ":focus": {
+                  outline: "1px solid #FFF",
+                  background: "none",
+                },
+                ":active": {
+                  background: "#FFF",
+                  color: "#080808",
+                },
               }}
             >
-              {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-              <source src={MonkeyVideoMp4} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </Box>
+              <Typography
+                fontFamily="Inter"
+                style={{
+                  fontSize: "inherit",
+                  lineHeight: "inherit",
+                  color: "inherit",
+                }}
+              >
+                Explore Sale Strategy
+              </Typography>
+            </Box>
+          </Link>
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            top: { xs: "13px", md: "50%" },
+            transform: { md: "translateY(-50%)" },
+            right: { xs: "8px", md: "135px" },
+            cursor: "pointer",
+          }}
+          onClick={(e) => handleClose(e)}
+        >
+          <img src={CloseBtn} alt="close-btn" width="20px" />
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          width: { xs: "calc(100% - 80px)", md: 498 },
+          height: "100%",
+          right: isMenuOpen ? 0 : "-100%",
+          top: 0,
+          background: "#080808",
+          zIndex: 100,
+          transition: "all 0.2s ease-in-out",
+          padding: "36px 40px",
+          overflowY: "auto",
+        }}
+      >
+        <Box
+          sx={{ position: "absolute", top: "12px", right: "12px" }}
+          onClick={handleMobileMenu}
+        >
+          <img src={CloseBtn} alt="close-btn" />
+        </Box>
+        {buttons.map((button, index) => (
           <Box
-            sx={{
-              width: "100%",
-              height: "100vh",
-              background:
-                "linear-gradient(111.64deg, #000000 9.79%, rgba(0, 0, 0, 0) 74.77%)",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: -1,
-            }}
-          ></Box>
-          <Box
-            sx={{
-              marginLeft: "70px",
-              display: "flex",
-              justifyContent: "end",
-              WebkitJustifyContent: "flex-end",
-              animationName: "header",
-              animationDuration: "2s",
-              animationFillMode: "both",
-            }}
+            sx={{ marginBottom: activeMenuDropdown === index ? "36px" : "0" }}
           >
-            <Header />
-          </Box>
-          <Box
-            sx={
-              !desktop1080Height && {
+            <Box
+              onClick={() => {
+                setActiveMenuDropdown(index);
+              }}
+              sx={{
+                marginBottom: {
+                  xs: activeMenuDropdown === index ? "0" : "32px",
+                  md: activeMenuDropdown === index ? "0" : "36px",
+                },
                 display: "flex",
-                justifyContent: "center",
-                height: "calc(100% - 100px)",
-                flexDirection: "column",
-              }
-            }
-          >
-            <Box
-              sx={{
-                position: "relative",
-                marginTop: () => {
-                  if (desktop1080Height) {
-                    return "120px";
-                  } else if (desktop768Height) {
-                    return "20px";
-                  }
+                "& .menu-dropdown": {
+                  width: { xs: 256, md: 466 },
+                  fontSize: { xs: "16px", md: "32px" },
+                  lineHeight: { xs: "16px", md: "32px" },
                 },
-                maxWidth: "800px",
-                marginLeft: "80px",
-                animationName: "title",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "3s",
-              }}
-            >
-              <Typography
-                fontFamily="Furore"
-                fontSize={() => {
-                  if (desktop1080Height && desktop1080Width) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                color="#252625"
-                lineHeight={() => {
-                  if (desktop1080Height) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                maxWidth={desktop768Height ? "800px" : "500px"}
-                style={{
-                  WebkitMaskImage: `url(${Scratches})`,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                WELCOME <br /> TO{" "}
-                <span style={{ color: "#252625", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-              <Typography
-                fontFamily="Furore"
-                fontSize={() => {
-                  if (desktop1080Height && desktop1080Width) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                color="#ffffff"
-                lineHeight={() => {
-                  if (desktop1080Height) {
-                    return "95px";
-                  } else if (desktop768Height) {
-                    return "80px";
-                  } else {
-                    return "60px";
-                  }
-                }}
-                maxWidth={desktop768Height ? "800px" : "500px"}
-              >
-                WELCOME <br /> TO{" "}
-                <span style={{ color: "#44F4C3", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                zIndex: 1,
-                width: desktop768Height ? "590px" : "400px",
-                marginTop: desktop768Height ? "60px" : "15px",
-                marginLeft: "80px",
-                animationName: "description",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "4s",
-              }}
-            >
-              <Typography
-                fontFamily="Inter"
-                fontSize={desktop768Height ? "24px" : "16px"}
-                color="#ffffff"
-                fontWeight="400"
-                lineHeight={desktop768Height ? "28.8px" : "21.8px"}
-              >
-                Chain Joes is an action-packed mobile game designed for the WEB3
-              </Typography>
-              <Typography
-                fontFamily="Inter"
-                fontSize={desktop768Height ? "18px" : "14px"}
-                color="#ffffff"
-                fontWeight="300"
-                lineHeight="21.8px"
-                style={{ marginTop: desktop768Height ? "25px" : "15px" }}
-              >
-                Battle with each other to win and earn rewards through our
-                Play-and-Earn mechanics and protect the community from Spammers,
-                Scammers and Hackers to get unique rewards
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                zIndex: 1,
-                marginTop: desktop768Height ? "60px" : "15px",
-                marginLeft: "80px",
-                width: 288,
-                height: 64,
-                transform: desktop768Height ? "" : "scale(0.8)",
-                transformOrigin: desktop768Height ? "" : "top left",
-                ":hover": {
-                  ".first_dsBtn": {
-                    transform: "translateY(-5px)",
-                  },
+                "& > img": {
+                  transform:
+                    activeMenuDropdown === index
+                      ? "rotate(180deg)"
+                      : "rotate(0deg)",
+                  transition: "all 0.2s ease-in-out",
                 },
-                animationName: "button",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "5s",
               }}
             >
-              <Link
-                href="https://discord.com/invite/6XcvPDbXBa"
-                target="_blank"
-                underline="none"
-              >
-                <Box
-                  className="first_dsBtn"
-                  sx={{
-                    background: `url(${GreenBtn})`,
-                    cursor: "pointer",
-                    width: 288,
-                    height: 64,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <DsLogo color="#000000" />
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="16px"
-                      fontStyle="italic"
-                      fontWeight="400"
-                      textTransform="uppercase"
-                      color="#000000"
-                      style={{ marginLeft: "11px" }}
-                    >
-                      Join discord server
-                    </Typography>
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              background: `url(${FirstFooter})`,
-              height: "230px",
-              width: "100%",
-              bottom: "-160px",
-              backgroundSize: "cover",
-              zIndex: -1,
-            }}
-          />
-        </Box>
-      )}
-      {!desktop1080Width && desktop768Width && (
-        <Box
-          sx={{
-            position: "relative",
-            height: "100vh",
-            backgroundColor: "#000000",
-            zIndex: 0,
-          }}
-        >
-          <Box>
-            <Box
-              sx={{
-                width: "100%",
-                height: "calc(100vh - 681px)",
-                background:
-                  "linear-gradient(180deg, #000000 7.85%, rgba(0, 0, 0, 0) 78.92%)",
-                position: "absolute",
-                top: "calc(100vh - 681px)",
-                left: 0,
-                zIndex: 1,
-              }}
-            />
-            <Box
-              sx={{
-                animationName: "video",
-                animationDuration: "10s",
-                animationFillMode: "both",
-                animationDelay: "1s",
-              }}
-            >
-              <video
-                autoPlay="autoPlay"
-                ref={refVideo}
-                loop="loop"
-                muted
-                playsInline
-                onContextMenu={() => false}
-                preload="auto"
-                id="vid"
-                poster={Background}
-                style={{
-                  objectFit: "cover",
-                  height: "100vh",
-                  maxHeight: "681px",
-                  width: "100%",
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  zIndex: -2,
-                }}
-              >
-                {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-                <source src={MonkeyVideoMp4} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              width: "100%",
-              animationName: "header",
-              animationDuration: "2s",
-              animationFillMode: "both",
-            }}
-          >
-            <Header padding="0 44px 0 80px" />
-          </Box>
-          <Box>
-            <Box
-              sx={{
-                position: "relative",
-                marginTop: "60px",
-                marginLeft: "27px",
-                zIndex: 2,
-                animationName: "title",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "3s",
-              }}
-            >
-              {/* <Box
-                sx={{
-                  background: `url(${ScratchesTablet})`,
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  backgroundRepeat: "no-repeat",
-                  top: 0,
-                  left: 0,
-                }}
-              ></Box> */}
-
-              <Typography
-                fontFamily="Furore"
-                fontSize="60px"
-                color="#252625"
-                lineHeight="60px"
-                style={{
-                  WebkitMaskImage: `url(${Scratches})`,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                WELCOME TO <br />
-                <span style={{ color: "#252625", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-              <Typography
-                fontFamily="Furore"
-                fontSize="60px"
-                color="#ffffff"
-                lineHeight="60px"
-              >
-                WELCOME TO <br />
-                <span style={{ color: "#44F4C3", display: "inline" }}>
-                  CHAIN JOES WORLD
-                </span>
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                width: "530px",
-                marginTop: "40px",
-                marginLeft: "30px",
-                animationName: "description",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "4s",
-              }}
-            >
-              <Typography
-                fontFamily="Inter"
-                fontSize="22px"
-                color="#ffffff"
-                fontWeight="400"
-                lineHeight="26.4px"
-              >
-                Chain Joes is an action-packed mobile game designed for the WEB3
-              </Typography>
-              <Typography
-                fontFamily="Inter"
-                fontSize="14px"
-                color="#ffffff"
-                fontWeight="300"
-                lineHeight="16.94px"
-                marginTop="25px"
-                maxWidth="534px"
-              >
-                Battle with each other to win and earn rewards through our
-                <br />
-                Play-and-Earn mechanics and protect the community from Spammers,
-                Scammers and Hackers to get unique rewards
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                marginTop: "40px",
-                marginLeft: "30px",
-                width: 288,
-                height: 64,
-                ":hover": {
-                  ".first_dsBtn": {
-                    transform: "translateY(-5px)",
-                  },
-                },
-                animationName: "button",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "5s",
-              }}
-            >
-              <Link
-                href="https://discord.com/invite/6XcvPDbXBa"
-                target="_blank"
-                underline="none"
-              >
-                <Box
-                  className="first_dsBtn"
-                  sx={{
-                    background: `url(${GreenBtn})`,
-                    cursor: "pointer",
-                    width: 288,
-                    height: 64,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <DsLogo color="#000000" />
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="16px"
-                      fontStyle="italic"
-                      fontWeight="400"
-                      textTransform="uppercase"
-                      color="#000000"
-                      style={{ marginLeft: "11px" }}
-                    >
-                      Join discord server
-                    </Typography>
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              background: `url(${FirstFooter})`,
-              height: "230px",
-              width: "100%",
-              bottom: "-160px",
-              backgroundSize: "cover",
-              zIndex: -1,
-            }}
-          />
-        </Box>
-      )}
-      {!desktop1080Width && !desktop768Width && (
-        <Box
-          sx={{
-            position: "relative",
-            height: "100vh",
-            backgroundColor: "#000000",
-            zIndex: 0,
-          }}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "100px",
-              height: "calc(100vh - 200px)",
-              minHeight: "382px",
-              width: "100%",
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                height: "135px",
-                background:
-                  "linear-gradient(180deg, #000000 13.63%, rgba(0, 0, 0, 0) 92.63%)",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: 1,
-              }}
-            />
-            <Box
-              sx={{
-                animationName: "video",
-                animationDuration: "10s",
-                animationFillMode: "both",
-                animationDelay: "1s",
-              }}
-            >
-              <video
-                autoplay="true"
-                ref={refVideo}
-                loop="loop"
-                muted="true"
-                playsInline
-                onContextMenu={() => false}
-                preload="auto"
-                id="vid"
-                poster={Background}
-                style={{
-                  objectFit: "cover",
-                  height: "100%",
-                  width: "100%",
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  zIndex: -2,
-                }}
-              >
-                {/* <source src={MonkeyVideoWebM} type="video/webm" /> */}
-                <source src={MonkeyVideoMp4} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-            <Box
-              sx={{
-                width: "100%",
-                height: "135px",
-                background:
-                  "linear-gradient(0deg, #000000 9.79%, rgba(0, 0, 0, 0) 74.77%)",
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                zIndex: 0,
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              width: "100%",
-              animationName: "header",
-              animationDuration: "2s",
-              animationFillMode: "both",
-            }}
-          >
-            <Header padding="0 15px 0 15px" />
-          </Box>
-          <Box
-            sx={{
-              paddingX: "13px",
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "calc(100% - 80px)",
-            }}
-          >
-            <Box
-              sx={{
-                position: "relative",
-                marginTop: "29px",
-                zIndex: 2,
-                animationName: "title",
-                animationDuration: "3s",
-                animationFillMode: "both",
-                animationDelay: "3s",
-              }}
-            >
-              {/* <Box
-                sx={{
-                  background: `url(${ScratchesMobile})`,
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  backgroundRepeat: "no-repeat",
-                  top: 0,
-                  left: 0,
-                }}
-              ></Box> */}
-              <Typography
-                fontFamily="Furore"
-                fontSize="35px"
-                color="#252625"
-                lineHeight="35px"
-                style={{
-                  WebkitMaskImage: `url(${Scratches})`,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                
-                WELCOME
-                <br />
-                TO{" "}
-                <span style={{ color: "#252625", display: "inline" }}>
-                  CHAIN JOES
-                  <br />
-                  WORLD
-                </span>
-              </Typography>
-              <Typography
-                fontFamily="Furore"
-                fontSize="35px"
-                color="#ffffff"
-                lineHeight="35px"
-              >
-                WELCOME
-                <br />
-                TO{" "}
-                <span style={{ color: "#44F4C3", display: "inline" }}>
-                  CHAIN JOES
-                  <br />
-                  WORLD
-                </span>
-              </Typography>
-            </Box>
-            <Box>
-              <Box
-                sx={{
-                  animationName: "description",
-                  animationDuration: "3s",
-                  animationFillMode: "both",
-                  animationDelay: "4s",
-                }}
-              >
-                <Typography
-                  fontFamily="Inter"
-                  fontSize="14px"
-                  color="#ffffff"
-                  fontWeight="300"
-                  lineHeight="16.94px"
-                  marginTop="25px"
-                  marginX="auto"
-                >
-                  Battle with each other to win and earn rewards through our
-                  Play-and-Earn mechanics and protect the community from
-                  Spammers, Scammers and Hackers to get unique rewards
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  marginTop: "40px",
-                  ":hover": {
-                    ".first_dsBtn": {
-                      transform: "translateY(-5px)",
-                    },
-                  },
-                  animationName: "button",
-                  animationDuration: "3s",
-                  animationFillMode: "both",
-                  animationDelay: "5s",
-                }}
-              >
-                <Link
-                  href="https://discord.com/invite/6XcvPDbXBa"
-                  target="_blank"
-                  underline="none"
-                >
-                  <Box
-                    className="first_dsBtn"
-                    sx={{
-                      background: `url(${GreenBtn})`,
-                      cursor: "pointer",
-                      width: 253,
-                      height: 50,
-                      marginX: "auto",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
+              {button.link ? (
+                <>
+                  {button.type === "scroll" ? (
+                    <HashLink
+                      to={button.link}
+                      scroll={(el) => {
+                        el.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                        handleMobileMenu();
                       }}
                     >
-                      <DsLogo
-                        color="#000000"
-                        style={{ display: "block", height: "20px" }}
-                      />
                       <Typography
+                        className="menu-dropdown"
                         fontFamily="Inter"
-                        fontSize="14px"
-                        fontStyle="italic"
-                        fontWeight="400"
-                        textTransform="uppercase"
-                        color="#000000"
-                        style={{ marginLeft: "11px" }}
+                        fontWeight={500}
+                        color="#FFFFFF"
                       >
-                        Join discord server
+                        {button.title}
                       </Typography>
-                    </Box>
-                  </Box>
-                </Link>
-              </Box>
+                    </HashLink>
+                  ) : (
+                    <Link href={button.link} target="_blank" underline="none">
+                      <Typography
+                        className="menu-dropdown"
+                        fontFamily="Inter"
+                        fontWeight={500}
+                        color="#FFFFFF"
+                      >
+                        {button.title}
+                      </Typography>
+                    </Link>
+                  )}
+                </>
+              ) : (
+                <Typography
+                  className="menu-dropdown"
+                  fontFamily="Inter"
+                  fontWeight={500}
+                  color="#FFFFFF"
+                >
+                  {button.title}
+                </Typography>
+              )}
+
+              {button.links && (
+                <img src={ArrowDown} alt="arrow-down" width="32px" />
+              )}
             </Box>
+            {button.links && (
+              <Box
+                sx={{
+                  marginTop: {
+                    xs: activeMenuDropdown === index ? "16px" : "0px",
+                    md: activeMenuDropdown === index ? "20px" : "0px",
+                  },
+                  maxHeight: {
+                    xs:
+                      activeMenuDropdown === index
+                        ? `${
+                            button.links.length * 14 +
+                            (button.links.length - 1) * 16
+                          }px`
+                        : 0,
+                    md:
+                      activeMenuDropdown === index
+                        ? `${(button.links.length * 2 - 1) * 24}px`
+                        : 0,
+                  },
+                  paddingBottom: activeMenuDropdown === index ? "5px" : "0px",
+                  opacity: activeMenuDropdown === index ? 1 : 0,
+                  overflow: "hidden",
+                  transition: "all 0.2s ease-in-out",
+                }}
+              >
+                {button.links.map((link, index) => (
+                  <Box
+                    sx={{
+                      marginBottom:
+                        button.links.length - 1 !== index
+                          ? { xs: "16px", md: "24px" }
+                          : 0,
+                      "& .dropdown-point": {
+                        fontSize: { xs: "14px", md: "24px" },
+                        lineHeight: { xs: "14px", md: "24px" },
+                      },
+                    }}
+                  >
+                    {link.type === "scroll" ? (
+                      <HashLink
+                        to={link.link}
+                        scroll={(el) => {
+                          el.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                          handleMobileMenu();
+                        }}
+                      >
+                        <Typography
+                          className="dropdown-point"
+                          fontFamily="Inter"
+                          fontWeight={500}
+                          color="#FFFFFF"
+                        >
+                          {link.title}
+                        </Typography>
+                      </HashLink>
+                    ) : (
+                      <Link href={link.link} target="_blank" underline="none">
+                        <Typography
+                          className="dropdown-point"
+                          fontFamily="Inter"
+                          fontWeight={500}
+                          color="#FFFFFF"
+                        >
+                          {link.title}
+                        </Typography>
+                      </Link>
+                    )}
+                  </Box>
+                ))}
+              </Box>
+            )}
+          </Box>
+        ))}
+      </Box>
+      <Box
+        sx={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: isMenuOpen
+            ? "rgba(255, 255, 255, 0.1)"
+            : "rgba(255, 255, 255, 0)",
+          backdropFilter: isMenuOpen ? "blur(10px)" : "blur(0px)",
+          zIndex: isMenuOpen ? 2 : -1,
+          transition: "all 0.2s ease-in-out",
+        }}
+      />
+      <Box
+        sx={{
+          position: "relative",
+          height: "100vh",
+          paddingX: { xs: "20px", md: "34px", lg: "66px", xl: "135px" },
+        }}
+      >
+        <Box>
+          <video
+            ref={refVideo}
+            autoPlay="autoPlay"
+            loop="loop"
+            muted
+            playsInline
+            onContextMenu={() => false}
+            preload="auto"
+            id="vid"
+            poster={Background}
+            style={{
+              objectFit: "cover",
+              height: "100vh",
+              width: "100%",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              zIndex: -1,
+            }}
+          >
+            <source src={MonkeyVideoMp4} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </Box>
+        <Box
+          sx={{
+            paddingTop: isBanner ? { xs: "80px", md: "60px" } : "0",
+            transition: "all 0.2s ease-in-out",
+          }}
+        >
+          <Header closeMenu={handleMobileMenu} buttons={buttons} />
+        </Box>
+        <Box
+          sx={{
+            marginTop: { xs: "93px", md: "150px" },
+            textAlign: { xs: "center", lg: "left" },
+            fontSize: { xs: "42px", md: "105px" },
+            lineHeight: { xs: "39.6px", md: "90%" },
+          }}
+        >
+          <Typography
+            color="#FFF"
+            fontFamily="Aaaiight"
+            style={{ fontSize: "inherit", lineHeight: "inherit" }}
+          >
+            Kick the web3
+            <br />
+            enemies asses!
+          </Typography>
+          <Box
+            sx={{
+              marginTop: "24px",
+              fontSize: { xs: "12px", md: "20px" },
+              lineHeight: { xs: "19.2px", md: "140%" },
+              display: { xs: "none", md: "block" },
+            }}
+          >
+            <Typography
+              color="#FFF"
+              style={{ fontSize: "inherit", lineHeight: "inherit" }}
+              fontFamily="inter"
+            >
+              Forget about P2E. Chain Joes is an action-packed
+              <br />
+              mobile game with new PLAY-AND-EARN model.
+            </Typography>
           </Box>
           <Box
             sx={{
-              position: "absolute",
-              background: `url(${FirstFooter})`,
-              height: "230px",
-              width: "100%",
-              bottom: "-160px",
-              backgroundSize: "cover",
-              zIndex: -1,
+              marginTop: "24px",
+              fontSize: { xs: "12px", md: "20px" },
+              lineHeight: { xs: "19.2px", md: "140%" },
+              display: { xs: "block", md: "none" },
             }}
-          />
+          >
+            <Typography
+              color="#FFF"
+              style={{ fontSize: "inherit", lineHeight: "inherit" }}
+              fontFamily="inter"
+            >
+              Forget about P2E. Chain Joes <br />
+              is an action-packed mobile game <br />
+              with new PLAY-AND-EARN model.
+            </Typography>
+          </Box>
         </Box>
-      )}
+        <Box
+          sx={{
+            display: "flex",
+            marginTop: "52px",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: { md: "center", lg: "normal" },
+            alignItems: "center",
+          }}
+        >
+          <Link
+            href="https://discord.com/invite/chainjoes"
+            target="_blank"
+            underline="none"
+          >
+            <Box
+              sx={{
+                width: "280px",
+                height: { xs: "52px", md: "68px" },
+                display: "flex",
+                borderRadius: "2px",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                background:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+                marginRight: { xs: 0, md: "24px" },
+                fontWeight: { xs: 500 },
+                fontSize: { xs: "14px", md: "20px" },
+                color: "#FFFFFF",
+                ":hover": {
+                  outline: "1px solid #00FFB7",
+                  background: "none",
+                },
+                ":focus": {
+                  outline: "1px solid #FFF",
+                  background: "none",
+                },
+                ":active": {
+                  background: "#FFF",
+                  color: "#080808",
+                },
+              }}
+            >
+              <img src={Login} alt="login" />
+              <Typography
+                marginLeft="11px"
+                fontFamily="Inter"
+                style={{
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  color: "inherit",
+                }}
+              >
+                Join the Battle
+              </Typography>
+            </Box>
+          </Link>
+          <Box
+            sx={{
+              width: "280px",
+              height: { xs: "52px", md: "68px" },
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "2px",
+              border: "1px solid",
+              borderImageSlice: 1,
+              borderImageSource:
+                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+              marginRight: { xs: 0, md: "16px" },
+              cursor: "pointer",
+              marginTop: { xs: "12px", md: 0 },
+              fontWeight: { xs: 500 },
+              color: "#05D19B",
+              fontSize: { xs: "14px", md: "20px" },
+              ":hover": {
+                color: "#FFF",
+              },
+              ":focus": {
+                border: "1px solid #FFF",
+                color: "#FFF",
+              },
+              ":active": {
+                background: "#FFF",
+                color: "#080808",
+              },
+            }}
+          >
+            <img src={Document} alt="document" />
+            <Typography
+              marginLeft="8px"
+              fontWeight="600"
+              fontFamily="Inter"
+              style={{
+                fontWeight: "inherit",
+                fontSize: "inherit",
+                color: "inherit",
+              }}
+            >
+              Read Whitepaper
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
