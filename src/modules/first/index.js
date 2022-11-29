@@ -566,51 +566,53 @@ const First = () => {
               </Typography>
             </Box>
           </Link>
-          <Box
-            sx={{
-              width: "280px",
-              height: { xs: "52px", md: "68px" },
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "2px",
-              border: "1px solid",
-              borderImageSlice: 1,
-              borderImageSource:
-                "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-              marginRight: { xs: 0, md: "16px" },
-              cursor: "pointer",
-              marginTop: { xs: "12px", md: 0 },
-              fontWeight: { xs: 500 },
-              color: "#05D19B",
-              fontSize: { xs: "14px", md: "20px" },
-              ":hover": {
-                color: "#FFF",
-              },
-              ":focus": {
-                border: "1px solid #FFF",
-                color: "#FFF",
-              },
-              ":active": {
-                background: "#FFF",
-                color: "#080808",
-              },
-            }}
-          >
-            <img src={Document} alt="document" />
-            <Typography
-              marginLeft="8px"
-              fontWeight="600"
-              fontFamily="Inter"
-              style={{
-                fontWeight: "inherit",
-                fontSize: "inherit",
-                color: "inherit",
+          <Link href="/pdfs/Whitepaper.pdf" target="_blank" underline="none">
+            <Box
+              sx={{
+                width: "280px",
+                height: { xs: "52px", md: "68px" },
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "2px",
+                border: "1px solid",
+                borderImageSlice: 1,
+                borderImageSource:
+                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                marginRight: { xs: 0, md: "16px" },
+                cursor: "pointer",
+                marginTop: { xs: "12px", md: 0 },
+                fontWeight: { xs: 500 },
+                color: "#05D19B",
+                fontSize: { xs: "14px", md: "20px" },
+                ":hover": {
+                  color: "#FFF",
+                },
+                ":focus": {
+                  border: "1px solid #FFF",
+                  color: "#FFF",
+                },
+                ":active": {
+                  background: "#FFF",
+                  color: "#080808",
+                },
               }}
             >
-              Read Whitepaper
-            </Typography>
-          </Box>
+              <img src={Document} alt="document" />
+              <Typography
+                marginLeft="8px"
+                fontWeight="600"
+                fontFamily="Inter"
+                style={{
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  color: "inherit",
+                }}
+              >
+                Read Whitepaper
+              </Typography>
+            </Box>
+          </Link>
         </Box>
       </Box>
     </Box>
