@@ -24,7 +24,8 @@ const Footer = () => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: { xs: "space-between", md: "space-around" },
+            paddingX: {md: '65px', xl: '135px'},
+            justifyContent: { xs: "space-between", md: "space-between" },
             alignItems: { xs: "center", md: "normal" },
             flexDirection: { xs: "column", md: "row" },
             paddingBottom: "40px",
@@ -583,9 +584,10 @@ const Footer = () => {
         <Box
           sx={{
             background: `#FFFFFF1A`,
+            paddingX: {md: '65px', xl: '135px'},
             paddingY: "16px",
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             alignItems: "center",
             flexDirection: { xs: "column", md: "row" },
           }}
