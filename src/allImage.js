@@ -31,7 +31,7 @@ import {
 
 import { screen5 } from "./imgs/webp/";
 
-import Background from "./imgs/new/MainScreen.jpg";
+import Background from "./imgs/new/MainScreen.png";
 import Login from "./imgs/new/login.svg";
 import Document from "./imgs/new/document.svg";
 import CloseBtn from "./imgs/new/close-btn.svg";
@@ -90,7 +90,7 @@ import TikTok from "./imgs/new/tiktok.svg";
 import Discord from "./imgs/new/discord.svg";
 import Medium from "./imgs/new/medium.svg";
 import LinkedInLogo from "./imgs/new/linkedin-logo.svg";
-import DamnnLogo from "./imgs/new/damn-logo-footer.png";
+import DamnnLogo from "./imgs/new/damn-logo-footer.svg";
 
 import Circle2 from "./imgs/new/backIcons/circles2.svg";
 

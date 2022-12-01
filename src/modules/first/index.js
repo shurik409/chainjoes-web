@@ -3,7 +3,7 @@ import { Box, Link, Typography } from "@mui/material";
 import Header from "./components/header";
 import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
-import Background from "../../imgs/new/MainScreen.jpg";
+import Background from "../../imgs/new/MainScreen.png";
 import Login from "../../imgs/new/login.svg";
 import Document from "../../imgs/new/document.svg";
 import CloseBtn from "../../imgs/new/close-btn.svg";
@@ -470,7 +470,7 @@ const First = () => {
           >
             Kick the web3
             <br />
-            enemies asses!
+            enemies <sup style={{ fontSize: "32px" }}>'</sup> asses!
           </Typography>
           <Box
             sx={{

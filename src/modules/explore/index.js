@@ -616,6 +616,7 @@ const Explore = () => {
                   slidesPerView={1}
                   centeredSlides={true}
                   grabCursor={false}
+                  simulateTouch={false}
                   className="mySwiper"
                   effect={"flip"}
                   modules={[EffectFlip]}

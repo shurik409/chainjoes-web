@@ -8,11 +8,11 @@ const Loader = ({ progres }) => {
 
   const getText = () => {
     if (Math.floor(progres * 100) < 33) {
-      return "Get your reward!";
-    } else if (Math.floor(progres * 100) < 66) {
       return "Looking for web3 enemies";
-    } else if (Math.floor(progres * 100) <= 100) {
+    } else if (Math.floor(progres * 100) < 66) {
       return "Kicking their asses";
+    } else if (Math.floor(progres * 100) <= 100) {
+      return "Get your reward!";
     }
   };
 

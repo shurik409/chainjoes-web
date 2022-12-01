@@ -15,12 +15,39 @@ import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
 
+const DELAY = 5000;
+
 const Main = () => {
   const [progres, setProgres] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPlayed, setIsPlayed] = useState(0);
+  // const [startTime, setStartTime] = useState(0);
+  const [timeProgres, setTimeProgres] = useState(0);
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
+
+  const getTimeProgress = (startTime, currentTime) => {
+    if (startTime) {
+      console.log((currentTime.getTime() - startTime) / DELAY);
+      return (currentTime.getTime() - startTime) / DELAY;
+    } else {
+      return 0;
+    }
+  };
+
+  const updateTime = (startTime) => {
+    let currentTime = new Date();
+    if (currentTime.getTime() - startTime <= DELAY + 1000) {
+      console.log("time:", getTimeProgress(), timeProgres);
+      setTimeProgres(getTimeProgress(startTime, currentTime));
+    }
+  };
+
+  useEffect(() => {
+    const currentTime = new Date().getTime();
+    const interval = setInterval(() => updateTime(currentTime), 10);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
@@ -61,8 +88,8 @@ const Main = () => {
 
   return (
     <>
-      {getCurrentProgresPercent() < 1 ? (
-        <Loader progres={getCurrentProgresPercent()} />
+      {timeProgres < 1 ? (
+        <Loader progres={timeProgres} />
       ) : (
         <>
           {isPlaying && !isPlayed ? (
