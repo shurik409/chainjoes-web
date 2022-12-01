@@ -62,10 +62,23 @@ const Header = ({ closeMenu, buttons }) => {
                     "& .menu-arrow": {
                       transform: "rotate(180deg)",
                     },
+                    "& .drop-title": {
+                      background:
+                        "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      textFillColor: "transparent",
+                    },
                   },
                 }}
               >
-                <Box sx={{ display: "flex" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    padding: "5px 8px",
+                  }}
+                >
                   {item.links ? (
                     <Box sx={{ marginRight: item.links ? "6px" : "" }}>
                       <Typography
@@ -74,6 +87,7 @@ const Header = ({ closeMenu, buttons }) => {
                         lineHeight="14px"
                         fontWeight="400"
                         color="#FFF"
+                        className="drop-title"
                       >
                         {item.title}
                       </Typography>
@@ -97,6 +111,7 @@ const Header = ({ closeMenu, buttons }) => {
                               lineHeight="14px"
                               fontWeight="400"
                               color="#FFF"
+                              className="drop-title"
                             >
                               {item.title}
                             </Typography>
@@ -156,8 +171,8 @@ const Header = ({ closeMenu, buttons }) => {
                             <Box
                               key={`main-header-subbutton-${index}`}
                               sx={{
-                                marginY: "14px",
-                                minWidth: "90px",
+                                paddingY: "14px",
+                                minWidth: "100px",
                                 textDecoration: "none",
                                 borderBottom:
                                   index !== item.links.length - 1
@@ -185,13 +200,23 @@ const Header = ({ closeMenu, buttons }) => {
                             <Box
                               key={`main-header-subbutton-${index}`}
                               sx={{
-                                marginY: "14px",
-                                minWidth: "90px",
+                                paddingY: "14px",
+                                minWidth: "100px",
                                 textDecoration: "none",
                                 borderBottom:
                                   index !== item.links.length - 1
                                     ? "1px solid rgba(255, 255, 255, 0.1)"
                                     : "",
+                                ":hover": {
+                                  "& .drop-button": {
+                                    background:
+                                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                    textFillColor: "transparent",
+                                  },
+                                },
                               }}
                             >
                               <Typography
@@ -200,6 +225,7 @@ const Header = ({ closeMenu, buttons }) => {
                                 lineHeight="14px"
                                 fontWeight="500"
                                 color="#FFF"
+                                className="drop-button"
                               >
                                 {button.title}
                               </Typography>

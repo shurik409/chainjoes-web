@@ -9,7 +9,7 @@ import Discord from "../../imgs/new/discord.svg";
 import Medium from "../../imgs/new/medium.svg";
 import LinkedIn from "../../imgs/new/linkedin-logo.svg";
 import Noise from "../../imgs/new/noise.png";
-import DamnnLogo from "../../imgs/new/damn-logo-footer.png";
+import DamnnLogo from "../../imgs/new/damn-logo-footer.svg";
 
 const Footer = () => {
   return (
@@ -47,6 +47,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -70,6 +79,15 @@ const Footer = () => {
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: "flex",
                     cursor: "pointer",
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -88,6 +106,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -111,6 +138,15 @@ const Footer = () => {
                     sx={{
                       marginBottom: { xs: "20px", md: "28px" },
                       display: "flex",
+                      '& img': {
+                        transform: 'rotate(0deg)',
+                        transition: 'all 0.2s ease-in-out',
+                      },
+                      ':hover': {
+                        '& img': {
+                          transform: 'rotate(45deg)',
+                        }
+                      }
                     }}
                   >
                     <Typography
@@ -141,6 +177,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -163,6 +208,15 @@ const Footer = () => {
                   sx={{
                     display: "flex",
                     marginBottom: { xs: "20px", md: "28px" },
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -184,6 +238,15 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: "flex",
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -212,6 +275,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: { xs: "flex", lg: "none" },
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -234,6 +306,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: { xs: "flex", lg: "none" },
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -256,6 +337,15 @@ const Footer = () => {
                   sx={{
                     display: "flex",
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
+                    '& img': {
+                      transform: 'rotate(0deg)',
+                      transition: 'all 0.2s ease-in-out',
+                    },
+                    ':hover': {
+                      '& img': {
+                        transform: 'rotate(45deg)',
+                      }
+                    }
                   }}
                 >
                   <Typography
@@ -274,7 +364,16 @@ const Footer = () => {
                 target="_blank"
                 underline="none"
               >
-                <Box sx={{ display: "flex" }}>
+                <Box sx={{ display: "flex",
+                      '& img': {
+                        transform: 'rotate(0deg)',
+                        transition: 'all 0.2s ease-in-out',
+                      },
+                      ':hover': {
+                        '& img': {
+                          transform: 'rotate(45deg)',
+                        }
+                      } }}>
                   <Typography
                     fontWeight="500"
                     color="#FFF"
