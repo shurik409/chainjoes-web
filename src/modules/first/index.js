@@ -5,13 +5,15 @@ import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
 import Background from "../../imgs/new/MainScreen.png";
 import Login from "../../imgs/new/login.svg";
-import Document from "../../imgs/new/document.svg";
+// import Document from "../../imgs/new/document.svg";
 import CloseBtn from "../../imgs/new/close-btn.svg";
 import ArrowDown from "../../imgs/new/arrow-down.svg";
 import { HashLink } from "react-router-hash-link";
+import { Document } from "../../imgs/new/svg";
 
 const First = () => {
   const refVideo = useRef(null);
+  const refDocument = useRef(Document);
   const [muted, setMuted] = useState(false);
   const [isBanner, setIsBanner] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -597,8 +599,11 @@ const First = () => {
                   color: "#080808",
                 },
               }}
+              
             >
-              <img src={Document} alt="document" />
+              <Box>
+                <Document ref={refDocument}/>
+              </Box>
               <Typography
                 marginLeft="8px"
                 fontWeight="600"
