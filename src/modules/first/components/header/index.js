@@ -178,10 +178,21 @@ const Header = ({ closeMenu, buttons }) => {
                                   index !== item.links.length - 1
                                     ? "1px solid rgba(255, 255, 255, 0.1)"
                                     : "",
+                                ":hover": {
+                                  "& .drop-button": {
+                                    background:
+                                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                    textFillColor: "transparent",
+                                  },
+                                },
                               }}
                             >
                               <Typography
                                 fontFamily="Inter"
+                                className="drop-button"
                                 fontSize="14px"
                                 lineHeight="14px"
                                 fontWeight="500"
