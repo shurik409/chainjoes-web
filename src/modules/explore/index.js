@@ -17,6 +17,8 @@ import {
 
 import ArrowRight from "../../imgs/new/arrow-right-green.svg";
 import ArrowLeft from "../../imgs/new/arrow-left-green.svg";
+import ArrowRightGray from "../../imgs/new/arrow-right-gray.svg";
+import ArrowLeftGray from "../../imgs/new/arrow-left-gray.svg";
 import ArrowRightWhite from "../../imgs/new/arrow-right.svg";
 
 import "swiper/css";
@@ -40,11 +42,7 @@ import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
 import Circle from "../../imgs/new/backIcons/circles1.svg";
 import Cross from "../../imgs/new/Cross.png";
 
-import {
-  SamMp4,
-  DeoMp4,
-  TyrMp4,
-} from "../../videos";
+import { SamMp4, DeoMp4, TyrMp4 } from "../../videos";
 
 const Explore = () => {
   const persSwiper = useRef(null);
@@ -255,6 +253,18 @@ const Explore = () => {
                     width: "24px",
                     height: "24px",
                     background: `url(${ArrowLeft})`,
+                  },
+                },
+                ".swiper-button-prev.swiper-button-disabled": {
+                  background: "#616161",
+                  ":after": {
+                    background: `url(${ArrowLeftGray})`,
+                  },
+                },
+                ".swiper-button-next.swiper-button-disabled": {
+                  background: "#616161",
+                  ":after": {
+                    background: `url(${ArrowRightGray})`,
                   },
                 },
                 ".swiper-pagination": {
@@ -591,19 +601,31 @@ const Explore = () => {
                             >
                               {pers.description}
                             </Typography>
-                            <Link
-                              href={pers.link}
-                              target="_blank"
-                              underline="none"
-                            >
-                              <Typography
-                                color="#00FFB7"
-                                fontSize="12px"
-                                marginTop="12px"
+                            <Box sx={{ maxWidth: "110px" }}>
+                              <Link
+                                href={pers.link}
+                                target="_blank"
+                                underline="none"
                               >
-                                Explore the full lore
-                              </Typography>
-                            </Link>
+                                <Box
+                                  sx={{
+                                    color: "#00FFB7",
+                                    transition: "color 0.2 ease-in-out",
+                                    ":hover": {
+                                      color: "#FFF",
+                                    },
+                                  }}
+                                >
+                                  <Typography
+                                    className="exploreLore"
+                                    fontSize="12px"
+                                    marginTop="12px"
+                                  >
+                                    Explore the full lore
+                                  </Typography>
+                                </Box>
+                              </Link>
+                            </Box>
                           </Box>
                         )}
                       </Box>

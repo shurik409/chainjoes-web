@@ -5,19 +5,18 @@ import MonkeyVideoWebM from "../../videos/monkey.webm";
 import MonkeyVideoMp4 from "../../videos/monkey.mp4";
 import Background from "../../imgs/new/MainScreen.png";
 import Login from "../../imgs/new/login.svg";
-// import Document from "../../imgs/new/document.svg";
-import CloseBtn from "../../imgs/new/close-btn.svg";
 import ArrowDown from "../../imgs/new/arrow-down.svg";
 import { HashLink } from "react-router-hash-link";
-import { Document } from "../../imgs/new/svg";
+import { Document, CloseBtn } from "../../imgs/new/svg";
 
 const First = () => {
   const refVideo = useRef(null);
-  const refDocument = useRef(Document);
   const [muted, setMuted] = useState(false);
   const [isBanner, setIsBanner] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenuDropdown, setActiveMenuDropdown] = useState(0);
+  const [documentColor, setDocumentColor] = useState("");
+  const [crossColor, setCrossColor] = useState("");
 
   useEffect(() => {
     if (!refVideo.current) {
@@ -222,8 +221,16 @@ const First = () => {
             cursor: "pointer",
           }}
           onClick={(e) => handleClose(e)}
+          onMouseEnter={(e) => {
+            e.preventDefault();
+            setCrossColor("#FFF");
+          }}
+          onMouseLeave={(e) => {
+            e.preventDefault();
+            setCrossColor("");
+          }}
         >
-          <img src={CloseBtn} alt="close-btn" width="20px" />
+          <CloseBtn color={crossColor} />
         </Box>
       </Box>
       <Box
@@ -599,10 +606,17 @@ const First = () => {
                   color: "#080808",
                 },
               }}
-              
+              onMouseEnter={(e) => {
+                e.preventDefault();
+                setDocumentColor("#FFF");
+              }}
+              onMouseLeave={(e) => {
+                e.preventDefault();
+                setDocumentColor("");
+              }}
             >
               <Box>
-                <Document ref={refDocument}/>
+                <Document color={documentColor} />
               </Box>
               <Typography
                 marginLeft="8px"

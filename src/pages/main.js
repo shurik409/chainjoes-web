@@ -28,7 +28,6 @@ const Main = () => {
 
   const getTimeProgress = (startTime, currentTime) => {
     if (startTime) {
-      console.log((currentTime.getTime() - startTime) / DELAY);
       return (currentTime.getTime() - startTime) / DELAY;
     } else {
       return 0;
@@ -38,7 +37,6 @@ const Main = () => {
   const updateTime = (startTime) => {
     let currentTime = new Date();
     if (currentTime.getTime() - startTime <= DELAY + 1000) {
-      console.log("time:", getTimeProgress(), timeProgres);
       setTimeProgres(getTimeProgress(startTime, currentTime));
     }
   };

@@ -1294,6 +1294,10 @@ const Activities = () => {
                               marginTop: "20px",
                               display: "flex",
                               alignItems: "center",
+                              color: "#FFF",
+                              ":hover": {
+                                color: "#00FFB7",
+                              },
                             }}
                           >
                             {}
@@ -1303,7 +1307,6 @@ const Activities = () => {
                               fontFamily="Inter"
                               fontSize="14px"
                               lineHeight="14px"
-                              color="#FFF"
                               fontWeight="500"
                             >
                               LinkedIn
@@ -1547,6 +1550,10 @@ const Activities = () => {
                                 marginTop: "20px",
                                 display: "flex",
                                 alignItems: "center",
+                                color: "#FFF",
+                                ":hover": {
+                                  color: "#00FFB7",
+                                },
                               }}
                             >
                               <img src={LinkedIn} alt="linkedin" />
@@ -1555,7 +1562,6 @@ const Activities = () => {
                                 fontFamily="Inter"
                                 fontSize="14px"
                                 lineHeight="14px"
-                                color="#FFF"
                                 fontWeight="500"
                               >
                                 LinkedIn
