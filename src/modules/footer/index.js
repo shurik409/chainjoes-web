@@ -2,16 +2,26 @@ import React, { useState } from "react";
 import { Box, Link, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import ArrowAngle from "../../imgs/new/arrow-angle.svg";
-import Twitter from "../../imgs/new/twitter.svg";
-import Telegram from "../../imgs/new/telegram.svg";
-import TikTok from "../../imgs/new/tiktok.svg";
-import Discord from "../../imgs/new/discord.svg";
-import Medium from "../../imgs/new/medium.svg";
-import LinkedIn from "../../imgs/new/linkedin-logo.svg";
+// import Twitter from "../../imgs/new/twitter.svg";
+// import Telegram from "../../imgs/new/telegram.svg";
+// import TikTok from "../../imgs/new/tiktok.svg";
+// import Discord from "../../imgs/new/discord.svg";
+// import Medium from "../../imgs/new/medium.svg";
+// import LinkedIn from "../../imgs/new/linkedin-logo.svg";
 import Noise from "../../imgs/new/noise.png";
 import DamnnLogo from "../../imgs/new/damn-logo-footer.svg";
 
+import {
+  Twitter,
+  Telegram,
+  Tiktok,
+  Discord,
+  Medium,
+  LinkedinLogo,
+} from "../../imgs/new/svg";
+
 const Footer = () => {
+  const [activeSocial, setActiveSocial] = useState("");
   return (
     <Box>
       <Box
@@ -48,15 +58,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -80,15 +90,15 @@ const Footer = () => {
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: "flex",
                     cursor: "pointer",
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -107,15 +117,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -139,15 +149,15 @@ const Footer = () => {
                     sx={{
                       marginBottom: { xs: "20px", md: "28px" },
                       display: "flex",
-                      '& img': {
-                        transform: 'rotate(0deg)',
-                        transition: 'all 0.2s ease-in-out',
+                      "& img": {
+                        transform: "rotate(0deg)",
+                        transition: "all 0.2s ease-in-out",
                       },
-                      ':hover': {
-                        '& img': {
-                          transform: 'rotate(45deg)',
-                        }
-                      }
+                      ":hover": {
+                        "& img": {
+                          transform: "rotate(45deg)",
+                        },
+                      },
                     }}
                   >
                     <Typography
@@ -178,15 +188,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -209,15 +219,15 @@ const Footer = () => {
                   sx={{
                     display: "flex",
                     marginBottom: { xs: "20px", md: "28px" },
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -239,15 +249,15 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: "flex",
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -276,15 +286,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: { xs: "flex", lg: "none" },
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -307,15 +317,15 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
                     display: { xs: "flex", lg: "none" },
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -329,24 +339,20 @@ const Footer = () => {
                   <img src={ArrowAngle} alt="arrow-angle" />
                 </Box>
               </Link>
-              <Link
-                href="/pdfs/One_Page.pdf"
-                target="_blank"
-                underline="none"
-              >
+              <Link href="/pdfs/One_Page.pdf" target="_blank" underline="none">
                 <Box
                   sx={{
                     display: "flex",
                     marginBottom: { xs: "20px", md: "28px", lg: "28px" },
-                    '& img': {
-                      transform: 'rotate(0deg)',
-                      transition: 'all 0.2s ease-in-out',
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
                     },
-                    ':hover': {
-                      '& img': {
-                        transform: 'rotate(45deg)',
-                      }
-                    }
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
+                      },
+                    },
                   }}
                 >
                   <Typography
@@ -365,16 +371,20 @@ const Footer = () => {
                 target="_blank"
                 underline="none"
               >
-                <Box sx={{ display: "flex",
-                      '& img': {
-                        transform: 'rotate(0deg)',
-                        transition: 'all 0.2s ease-in-out',
+                <Box
+                  sx={{
+                    display: "flex",
+                    "& img": {
+                      transform: "rotate(0deg)",
+                      transition: "all 0.2s ease-in-out",
+                    },
+                    ":hover": {
+                      "& img": {
+                        transform: "rotate(45deg)",
                       },
-                      ':hover': {
-                        '& img': {
-                          transform: 'rotate(45deg)',
-                        }
-                      } }}>
+                    },
+                  }}
+                >
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -404,9 +414,21 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    alignItems: "center",
+                    height: "20px",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Twitter");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
                   }}
                 >
-                  <img src={Twitter} alt="twitter" />
+                  <Twitter
+                    color={activeSocial === "Twitter" ? "#003527" : ""}
+                  />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -426,10 +448,22 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: "flex",
-                    marginBottom: { xs: "28px", xl: "0" },
+                    height: "20px",
+                    marginBottom: { xs: "20px", md: "28px", xl: "0" },
+                    alignItems: "center",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Telegram");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
                   }}
                 >
-                  <img src={Telegram} alt="telegram" />
+                  <Telegram
+                    color={activeSocial === "Telegram" ? "#003527" : ""}
+                  />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -449,9 +483,19 @@ const Footer = () => {
                 <Box
                   sx={{
                     display: { xs: "flex", xl: "none" },
+                    alignItems: "center",
+                    height: "20px",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Tiktok");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
                   }}
                 >
-                  <img src={TikTok} alt="tiktok" />
+                  <Tiktok color={activeSocial === "Tiktok" ? "#003527" : ""} />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -479,9 +523,19 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    alignItems: "center",
+                    height: "20px",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Tiktok");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
                   }}
                 >
-                  <img src={TikTok} alt="tiktok" />
+                  <Tiktok color={activeSocial === "Tiktok" ? "#003527" : ""} />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -498,8 +552,20 @@ const Footer = () => {
                 target="_blank"
                 underline="none"
               >
-                <Box sx={{ display: "flex" }}>
-                  <img src={Discord} alt="discord" />
+                <Box
+                  sx={{ display: "flex", alignItems: "center", height: "20px" }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Discord");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
+                  }}
+                >
+                  <Discord
+                    color={activeSocial === "Discord" ? "#003527" : ""}
+                  />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -523,9 +589,21 @@ const Footer = () => {
                     display: { xs: "flex", xl: "none" },
                     width: { xs: "95px", md: "auto" },
                     marginBottom: { xs: "20px", md: "28px" },
+                    height: "20px",
+                    alignItems: "center",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Discord");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
                   }}
                 >
-                  <img src={Discord} alt="discord" />
+                  <Discord
+                    color={activeSocial === "Discord" ? "#003527" : ""}
+                  />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -546,9 +624,19 @@ const Footer = () => {
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },
                     display: "flex",
+                    height: "20px",
+                    alignItems: "center",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Medium");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
                   }}
                 >
-                  <img src={Medium} alt="medium" />
+                  <Medium color={activeSocial === "Medium" ? "#003527" : ""} />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -565,8 +653,20 @@ const Footer = () => {
                 target="_blank"
                 underline="none"
               >
-                <Box sx={{ display: "flex" }}>
-                  <img src={LinkedIn} alt="linkedin" />
+                <Box
+                  sx={{ display: "flex", alignItems: "center", height: "20px" }}
+                  onMouseEnter={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("Link");
+                  }}
+                  onMouseLeave={(e) => {
+                    e.preventDefault();
+                    setActiveSocial("");
+                  }}
+                >
+                  <LinkedinLogo
+                    color={activeSocial === "Link" ? "#003527" : ""}
+                  />
                   <Typography
                     fontWeight="500"
                     color="#FFF"
@@ -611,6 +711,9 @@ const Footer = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   marginLeft: "12px",
+                  ":hover": {
+                    border: "#003527 1px solid",
+                  },
                 }}
               >
                 <Typography
@@ -625,27 +728,53 @@ const Footer = () => {
             </Box>
           </Link>
           <Box sx={{ display: "flex" }}>
-            <RouterLink to="/privacy-policy" target="_blank">
-              <Typography
-                fontSize="12px"
-                lineHeight="12px"
-                fontFamily="Inter"
-                color="#FFF"
-                marginRight="24px"
-              >
-                Privacy Policy
-              </Typography>
-            </RouterLink>
-            <RouterLink to="/terms-conditions" target="_blank">
-              <Typography
-                fontSize="12px"
-                lineHeight="12px"
-                fontFamily="Inter"
-                color="#FFF"
-              >
-                Terms of Service
-              </Typography>
-            </RouterLink>
+            <Box
+              sx={{
+                "& .privacy": {
+                  color: "#FFF",
+                },
+                ":hover": {
+                  "& .privacy": {
+                    color: "#003527",
+                  },
+                },
+              }}
+            >
+              <RouterLink to="/privacy-policy" target="_blank">
+                <Typography
+                  fontSize="12px"
+                  lineHeight="12px"
+                  fontFamily="Inter"
+                  marginRight="24px"
+                  className="privacy"
+                >
+                  Privacy Policy
+                </Typography>
+              </RouterLink>
+            </Box>
+            <Box
+              sx={{
+                "& .terms": {
+                  color: "#FFF",
+                },
+                ":hover": {
+                  "& .terms": {
+                    color: "#003527",
+                  },
+                },
+              }}
+            >
+              <RouterLink to="/terms-conditions" target="_blank">
+                <Typography
+                  fontSize="12px"
+                  lineHeight="12px"
+                  fontFamily="Inter"
+                  className="terms"
+                >
+                  Terms of Service
+                </Typography>
+              </RouterLink>
+            </Box>
           </Box>
         </Box>
       </Box>
