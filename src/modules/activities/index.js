@@ -360,7 +360,7 @@ const Activities = () => {
       surname: "Kostenkova",
       job: "Creative producer",
       photo: Maya,
-      link: "https://www.linkedin.com/in/maya-kostenkova/ ",
+      link: "https://www.linkedin.com/in/ma%D1%83%D0%B0-kostenkova/",
     },
     {
       name: "Hanna",
