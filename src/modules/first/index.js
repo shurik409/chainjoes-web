@@ -217,7 +217,7 @@ const First = () => {
             position: "absolute",
             top: { xs: "13px", md: "50%" },
             transform: { md: "translateY(-50%)" },
-            right: { xs: "8px", md: "135px" },
+            right: { xs: "8px", md: "70px", lg: "135px" },
             cursor: "pointer",
           }}
           onClick={(e) => handleClose(e)}
@@ -251,11 +251,12 @@ const First = () => {
           sx={{ position: "absolute", top: "12px", right: "12px" }}
           onClick={handleMobileMenu}
         >
-          <img src={CloseBtn} alt="close-btn" />
+          <CloseBtn />
         </Box>
         {buttons.map((button, index) => (
           <Box
             sx={{ marginBottom: activeMenuDropdown === index ? "36px" : "0" }}
+            key={`mobile-button-${index}`}
           >
             <Box
               onClick={() => {
@@ -369,6 +370,7 @@ const First = () => {
                         lineHeight: { xs: "14px", md: "24px" },
                       },
                     }}
+                    key={`mobile-link-${index}`}
                   >
                     {link.type === "scroll" ? (
                       <HashLink

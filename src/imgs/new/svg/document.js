@@ -25,8 +25,8 @@ const Document = ({ color }) => (
         y2="27.5702"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_321_707"
@@ -36,8 +36,8 @@ const Document = ({ color }) => (
         y2="27.5702"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_321_707"
@@ -47,8 +47,8 @@ const Document = ({ color }) => (
         y2="10.8887"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
     </defs>
   </svg>

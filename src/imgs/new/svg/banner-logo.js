@@ -28,8 +28,8 @@ const BannerLogo = ({ color }) => (
         y2="37.3748"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_158_3045"
@@ -39,8 +39,8 @@ const BannerLogo = ({ color }) => (
         y2="20.0126"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_158_3045"
@@ -50,8 +50,8 @@ const BannerLogo = ({ color }) => (
         y2="28.9475"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
     </defs>
   </svg>

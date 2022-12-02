@@ -157,7 +157,7 @@ const Header = ({ closeMenu, buttons }) => {
                     }}
                   >
                     {item.links.map((button, index) => (
-                      <>
+                      <Box key={`menu-link-${index}`}>
                         {button.type === "scroll" ? (
                           <HashLink
                             to={button.link}
@@ -232,7 +232,7 @@ const Header = ({ closeMenu, buttons }) => {
                             </Box>
                           </Link>
                         )}
-                      </>
+                      </Box>
                     ))}
                   </Box>
                 )}

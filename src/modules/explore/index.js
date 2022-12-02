@@ -292,7 +292,7 @@ const Explore = () => {
                 }}
               >
                 {texts.map((text, index) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={`explore-swiper-slide-${index}`}>
                     <Box
                       sx={{
                         width: { md: 620, lg: 740, xl: 880 },
@@ -388,7 +388,10 @@ const Explore = () => {
                 modules={[Pagination]}
               >
                 {texts.map((text, index) => (
-                  <SwiperSlide style={{ width: "252px" }}>
+                  <SwiperSlide
+                    style={{ width: "252px" }}
+                    key={`explore-mobile-swiper-slide-${index}`}
+                  >
                     <Box
                       sx={{
                         width: { xs: 252, md: 620, lg: 740, xl: 880 },
@@ -513,6 +516,7 @@ const Explore = () => {
                         marginBottom: "20px",
                         transition: "all 0.2s ease-in-out",
                       }}
+                      key={`perses-swiper-slide-${index}`}
                     >
                       <Box
                         sx={{
@@ -764,7 +768,10 @@ const Explore = () => {
                 modules={[Pagination]}
               >
                 {perses.map((pers, index) => (
-                  <SwiperSlide style={{ width: "auto" }}>
+                  <SwiperSlide
+                    style={{ width: "auto" }}
+                    key={`perses-swiper-mobile-slide-${index}`}
+                  >
                     <Box
                       sx={{
                         width: 280,

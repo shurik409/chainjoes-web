@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, Link } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, FreeMode } from "swiper";
+import { Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -763,6 +763,7 @@ const Activities = () => {
                     cursor: "pointer",
                     borderRadius: "4px",
                   }}
+                  key={`roadmap-year-${index}`}
                   onClick={() => setActiveYear(index)}
                 >
                   <Typography
@@ -785,12 +786,16 @@ const Activities = () => {
               }}
             >
               {roadMap.map((year, index) => (
-                <Box sx={{ display: index === activeYear ? "block" : "none" }}>
+                <Box
+                  key={`roadmap-year-view-${index}`}
+                  sx={{ display: index === activeYear ? "block" : "none" }}
+                >
                   <Box
                     sx={{ display: "flex", gap: "30px", marginBottom: "30px" }}
                   >
                     {year.steps.slice(0, 2).map((step, index) => (
                       <Box
+                        key={`roadmap-year-view-step-1-${index}`}
                         sx={{
                           width: { lg: 431, xl: 570 },
                           height: { lg: 400, xl: 400 },
@@ -813,6 +818,7 @@ const Activities = () => {
                           <Box sx={{ marginTop: "20px" }}>
                             {step.points.map((point, index) => (
                               <Box
+                                key={`roadmap-year-view-step-1-point-${index}`}
                                 sx={{
                                   marginTop: index ? "20px" : 0,
                                   display: "flex",
@@ -886,6 +892,7 @@ const Activities = () => {
                           overflow: "hidden",
                           zIndex: 1,
                         }}
+                        key={`roadmap-year-view-step-2-${index}`}
                       >
                         <Box sx={{ paddingTop: "32px", paddingLeft: "32px" }}>
                           <Typography
@@ -903,6 +910,7 @@ const Activities = () => {
                                   marginTop: index ? "20px" : 0,
                                   display: "flex",
                                 }}
+                                key={`roadmap-year-view-step-2-point-${index}`}
                               >
                                 <Box
                                   sx={{
@@ -969,6 +977,7 @@ const Activities = () => {
               <Box>
                 {roadMap.map((year, index) => (
                   <Box
+                    key={`roadmap-year-swiper-${index}`}
                     sx={{
                       display: index === activeYear ? "block" : "none",
                       ".swiper-pagination": {
@@ -1000,7 +1009,10 @@ const Activities = () => {
                     >
                       <>
                         {year.steps.map((step, index) => (
-                          <SwiperSlide style={{ width: "auto" }}>
+                          <SwiperSlide
+                            style={{ width: "auto" }}
+                            key={`roadmap-swiper-slide-${index}`}
+                          >
                             <Box
                               sx={{
                                 width: { xs: 240, md: 389 },
@@ -1032,6 +1044,7 @@ const Activities = () => {
                                 <Box sx={{ marginTop: "20px" }}>
                                   {step.points.map((point, index) => (
                                     <Box
+                                      key={`roadmap-slide-point-${index}`}
                                       sx={{
                                         marginTop: index ? "20px" : 0,
                                         display: "flex",
@@ -1243,7 +1256,7 @@ const Activities = () => {
                     }}
                   >
                     {managment.map((pers, index) => (
-                      <Box>
+                      <Box key={`managment-${index}`}>
                         <Box
                           sx={{
                             width: { md: "128px", lg: "150px", xl: "200px" },
@@ -1348,7 +1361,10 @@ const Activities = () => {
                       >
                         <>
                           {managment.map((pers, index) => (
-                            <SwiperSlide style={{ width: "auto" }}>
+                            <SwiperSlide
+                              style={{ width: "auto" }}
+                              key={`managment-slide-${index}`}
+                            >
                               <Box>
                                 <Box
                                   sx={{
@@ -1494,7 +1510,7 @@ const Activities = () => {
                     }}
                   >
                     {marketing.map((pers, index) => (
-                      <Box>
+                      <Box key={`marketing-${index}`}>
                         <Box
                           sx={{
                             width: { md: "128px", lg: "150px", xl: "200px" },
@@ -1604,7 +1620,10 @@ const Activities = () => {
                       >
                         <>
                           {marketing.map((pers, index) => (
-                            <SwiperSlide style={{ width: "auto" }}>
+                            <SwiperSlide
+                              style={{ width: "auto" }}
+                              key={`marketing-slide-${index}`}
+                            >
                               <Box>
                                 <Box
                                   sx={{

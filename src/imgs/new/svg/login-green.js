@@ -24,8 +24,8 @@ const LoginGreen = ({ color }) => (
         y2="20.3814"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_321_194"
@@ -35,8 +35,8 @@ const LoginGreen = ({ color }) => (
         y2="14.1869"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
     </defs>
   </svg>
