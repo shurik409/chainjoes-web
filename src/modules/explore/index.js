@@ -42,7 +42,7 @@ import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
 import Circle from "../../imgs/new/backIcons/circles1.svg";
 import Cross from "../../imgs/new/Cross.png";
 
-import { SamMp4, DeoMp4, TyrMp4 } from "../../videos";
+import { SamMp4, DeoMp4, TyrMp4, AnwarMp4, MilcyMp4, ShoonMp4 } from "../../videos";
 
 const Explore = () => {
   const persSwiper = useRef(null);
@@ -147,7 +147,8 @@ const Explore = () => {
       title: "Anwar",
       img: AnwarBlock,
       logo: AnwarLogo,
-      block: true,
+      video: AnwarMp4,
+      block: false,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/anwar",
       description:
         "Reconstructed from fragments of Ancient Greece using web 3.0 technologies, the warrior Anwar arrived from Metaverse Greece #21.",
@@ -156,7 +157,8 @@ const Explore = () => {
       title: "Shaan",
       img: ShaanBlock,
       logo: ShaanLogo,
-      block: true,
+      video: ShoonMp4,
+      block: false,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/shaan",
       description:
         "Shaan has been a member of a cybercriminal gang from the Cyberizzz metaverse for many years…",
@@ -166,7 +168,8 @@ const Explore = () => {
       img: MilcyBlock,
       logo: MilcyLogo,
       link: "https://chainjoes.gitbook.io/chainjoes/game-overview/characters/milcy",
-      block: true,
+      video: MilcyMp4,
+      block: false,
       description:
         "MLc s9 is one of the 10 newest bots created as part of the experimental development of metaverse A2, engaged in the creation of spam bots…",
     },
