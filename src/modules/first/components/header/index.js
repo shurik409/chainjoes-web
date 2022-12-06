@@ -6,7 +6,7 @@ import ArrowRight from "../../../../imgs/new/arrow-right.svg";
 import ArrowDown from "../../../../imgs/new/arrow-down.svg";
 import Menu from "../../../../imgs/new/menu.svg";
 import { HashLink } from "react-router-hash-link";
-import BlockCursor from "../../../../imgs/new/blockCursor3.cur";
+import BlockCursor from "../../../../imgs/new/disabled.cur";
 
 const Header = ({ closeMenu, buttons }) => {
   return (
