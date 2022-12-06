@@ -1238,69 +1238,332 @@ const Activities = () => {
                 margin: "auto",
               }}
             >
-              {activeTeam === "managment" && (
-                <>
+              <>
+                <Box
+                  sx={{
+                    display:
+                      activeTeam === "managment"
+                        ? { xs: "none", md: "grid" }
+                        : "none",
+                    gridTemplateColumns: {
+                      md: "repeat(auto-fit, minmax(128px,1fr))",
+                      lg: "repeat(auto-fit, minmax(150px,1fr))",
+                      xl: "repeat(auto-fit, minmax(200px,1fr))",
+                    },
+                    gridGap: {
+                      md: "20px 15px",
+                      lg: "40px 35px",
+                      xl: "60px 40px",
+                    },
+                  }}
+                >
+                  {managment.map((pers, index) => (
+                    <Box key={`managment-${index}`}>
+                      <Box
+                        sx={{
+                          width: { md: "128px", lg: "150px", xl: "200px" },
+                          height: { md: "140px", lg: "166px", xl: "222px" },
+                        }}
+                      >
+                        <img
+                          src={pers.photo}
+                          alt={`${pers.name} ${pers.surname}`}
+                          style={{ width: "inherit", height: "inherit" }}
+                        />
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: "32px",
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Aaaiight"
+                          fontSize="16px"
+                          lineHeight="19.2px"
+                          color="#FFF"
+                        >
+                          {pers.name} {pers.surname}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: "12px",
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                          fontSize: { md: "12px", lg: "14px" },
+                          lineHeight: { md: "19.2px", lg: "22.4px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          lineHeight="inherit"
+                          fontSize="inherit"
+                          color="#FFF"
+                        >
+                          {pers.job}
+                        </Typography>
+                      </Box>
+                      <Link href={pers.link} target="_blank" underline="none">
+                        <Box
+                          sx={{
+                            marginTop: "20px",
+                            display: "flex",
+                            alignItems: "center",
+                            color: "#FFF",
+                            ":hover": {
+                              color: "#00FFB7",
+                            },
+                          }}
+                        >
+                          {}
+                          <img src={LinkedIn} alt="linkedin" />
+                          <Typography
+                            marginLeft="8px"
+                            fontFamily="Inter"
+                            fontSize="14px"
+                            lineHeight="14px"
+                            fontWeight="500"
+                          >
+                            LinkedIn
+                          </Typography>
+                        </Box>
+                      </Link>
+                    </Box>
+                  ))}
+                </Box>
+                <Box
+                  sx={{
+                    display:
+                      activeTeam === "managment"
+                        ? { xs: "block", md: "none" }
+                        : "none",
+                  }}
+                >
                   <Box
                     sx={{
-                      display: { xs: "none", md: "grid" },
-                      gridTemplateColumns: {
-                        md: "repeat(auto-fit, minmax(128px,1fr))",
-                        lg: "repeat(auto-fit, minmax(150px,1fr))",
-                        xl: "repeat(auto-fit, minmax(200px,1fr))",
+                      ".swiper-pagination": {
+                        bottom: "-40px",
                       },
-                      gridGap: {
-                        md: "20px 15px",
-                        lg: "40px 35px",
-                        xl: "60px 40px",
+                      ".swiper-pagination-bullet": {
+                        background: "#242424",
+                        opacity: 1,
+                      },
+                      ".swiper-pagination-bullet-active": {
+                        background: "#FFF",
+                      },
+                      ".swiper": {
+                        overflow: "unset",
                       },
                     }}
                   >
-                    {managment.map((pers, index) => (
-                      <Box key={`managment-${index}`}>
-                        <Box
-                          sx={{
-                            width: { md: "128px", lg: "150px", xl: "200px" },
-                            height: { md: "140px", lg: "166px", xl: "222px" },
-                          }}
-                        >
-                          <img
-                            src={pers.photo}
-                            alt={`${pers.name} ${pers.surname}`}
-                            style={{ width: "inherit", height: "inherit" }}
-                          />
-                        </Box>
-                        <Box
-                          sx={{
-                            marginTop: "32px",
-                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Aaaiight"
-                            fontSize="16px"
-                            lineHeight="19.2px"
-                            color="#FFF"
+                    <Swiper
+                      slidesPerView={"auto"}
+                      centeredSlides={false}
+                      spaceBetween={15}
+                      slidesOffsetBefore={20}
+                      slidesOffsetAfter={20}
+                      grabCursor={true}
+                      className="mySwiper"
+                      pagination={true}
+                      // freeMode={true}
+                      modules={[Pagination]}
+                    >
+                      <>
+                        {managment.map((pers, index) => (
+                          <SwiperSlide
+                            style={{ width: "auto" }}
+                            key={`managment-slide-${index}`}
                           >
-                            {pers.name} {pers.surname}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            marginTop: "12px",
-                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                            fontSize: { md: "12px", lg: "14px" },
-                            lineHeight: { md: "19.2px", lg: "22.4px" },
-                          }}
+                            <Box>
+                              <Box
+                                sx={{
+                                  width: {
+                                    xs: "128px",
+                                    lg: "150px",
+                                    xl: "200px",
+                                  },
+                                  height: {
+                                    xs: "140px",
+                                    lg: "166px",
+                                    xl: "222px",
+                                  },
+                                }}
+                              >
+                                <img
+                                  src={pers.photo}
+                                  alt={`${pers.name} ${pers.surname}`}
+                                  style={{
+                                    width: "inherit",
+                                    height: "inherit",
+                                  }}
+                                />
+                              </Box>
+                              <Box
+                                sx={{
+                                  marginTop: "32px",
+                                  maxWidth: {
+                                    xs: "128px",
+                                    lg: "150px",
+                                    xl: "200px",
+                                  },
+                                }}
+                              >
+                                <Typography
+                                  fontFamily="Aaaiight"
+                                  fontSize="16px"
+                                  lineHeight="19.2px"
+                                  color="#FFF"
+                                >
+                                  {pers.name} {pers.surname}
+                                </Typography>
+                              </Box>
+                              <Box
+                                sx={{
+                                  marginTop: "12px",
+                                  maxWidth: {
+                                    xs: "128px",
+                                    lg: "150px",
+                                    xl: "200px",
+                                  },
+                                  fontSize: { xs: "12px", lg: "14px" },
+                                  lineHeight: { xs: "19.2px", lg: "22.4px" },
+                                }}
+                              >
+                                <Typography
+                                  fontFamily="Inter"
+                                  lineHeight="inherit"
+                                  fontSize="inherit"
+                                  color="#FFF"
+                                >
+                                  {pers.job}
+                                </Typography>
+                              </Box>
+                              <Link
+                                href={pers.link}
+                                target="_blank"
+                                underline="none"
+                              >
+                                <Box
+                                  sx={{
+                                    marginTop: "20px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <img src={LinkedIn} alt="linkedin" />
+                                  <Typography
+                                    marginLeft="8px"
+                                    fontFamily="Inter"
+                                    fontSize="14px"
+                                    lineHeight="14px"
+                                    color="#FFF"
+                                    fontWeight="500"
+                                  >
+                                    LinkedIn
+                                  </Typography>
+                                </Box>
+                              </Link>
+                            </Box>
+                          </SwiperSlide>
+                        ))}
+                      </>
+                    </Swiper>
+                  </Box>
+                </Box>
+              </>
+              <Box sx={{ display: activeTeam === "game" ? "block" : "none"}}>
+                <Box
+                  sx={{
+                    padding: { md: "48px 60px" },
+                    border: "1px solid #00FFB7",
+                    borderRadius: "4px",
+                    width: { xs: "280px", md: "555px" },
+                    height: { xs: "90px", md: "auto" },
+                    margin: "auto",
+                    "& > img": {
+                      width: { xs: "163px", md: "555px" },
+                    },
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <img src={RedRiftLogo} alt="red-rift logo" />
+                </Box>
+                <Box sx={{ marginTop: "20px" }}>
+                  <Typography
+                    fontFamily="Inter"
+                    fontSize="16px"
+                    lineHeight="22.4px"
+                    color="#FFF"
+                    textAlign="center"
+                  >
+                    Game Development partner
+                  </Typography>
+                </Box>
+              </Box>
+              <>
+                <Box
+                  sx={{
+                    display:
+                      activeTeam === "marketing"
+                        ? { xs: "none", md: "grid" }
+                        : "none",
+                    gridTemplateColumns: {
+                      md: "repeat(auto-fit, minmax(128px,1fr))",
+                      lg: "repeat(auto-fit, minmax(150px,1fr))",
+                      xl: "repeat(auto-fit, minmax(200px,1fr))",
+                    },
+                    gridGap: { lg: "40px 35px", xl: "60px 40px" },
+                  }}
+                >
+                  {marketing.map((pers, index) => (
+                    <Box key={`marketing-${index}`}>
+                      <Box
+                        sx={{
+                          width: { md: "128px", lg: "150px", xl: "200px" },
+                          height: { md: "140px", lg: "166px", xl: "222px" },
+                        }}
+                      >
+                        <img
+                          src={pers.photo}
+                          alt={`${pers.name} ${pers.surname}`}
+                          style={{ width: "inherit", height: "inherit" }}
+                        />
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: "32px",
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Aaaiight"
+                          fontSize="16px"
+                          lineHeight="19.2px"
+                          color="#FFF"
                         >
-                          <Typography
-                            fontFamily="Inter"
-                            lineHeight="inherit"
-                            fontSize="inherit"
-                            color="#FFF"
-                          >
-                            {pers.job}
-                          </Typography>
-                        </Box>
+                          {pers.name} {pers.surname}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: "12px",
+                          maxWidth: { md: "128px", lg: "150px", xl: "200px" },
+                          fontSize: { md: "12px", lg: "14px" },
+                          lineHeight: { md: "19.2px", lg: "22.4px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          fontSize="14px"
+                          lineHeight="22.4px"
+                          color="#FFF"
+                        >
+                          {pers.job}
+                        </Typography>
+                      </Box>
+                      {pers.link && (
                         <Link href={pers.link} target="_blank" underline="none">
                           <Box
                             sx={{
@@ -1313,7 +1576,6 @@ const Activities = () => {
                               },
                             }}
                           >
-                            {}
                             <img src={LinkedIn} alt="linkedin" />
                             <Typography
                               marginLeft="8px"
@@ -1326,109 +1588,118 @@ const Activities = () => {
                             </Typography>
                           </Box>
                         </Link>
-                      </Box>
-                    ))}
-                  </Box>
-                  <Box sx={{ display: { xs: "block", md: "none" } }}>
-                    <Box
-                      sx={{
-                        ".swiper-pagination": {
-                          bottom: "-40px",
-                        },
-                        ".swiper-pagination-bullet": {
-                          background: "#242424",
-                          opacity: 1,
-                        },
-                        ".swiper-pagination-bullet-active": {
-                          background: "#FFF",
-                        },
-                        ".swiper": {
-                          overflow: "unset",
-                        },
-                      }}
+                      )}
+                    </Box>
+                  ))}
+                </Box>
+                <Box
+                  sx={{
+                    display:
+                      activeTeam === "marketing"
+                        ? { xs: "block", md: "none" }
+                        : "none",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      ".swiper-pagination": {
+                        bottom: "-40px",
+                      },
+                      ".swiper-pagination-bullet": {
+                        background: "#242424",
+                        opacity: 1,
+                      },
+                      ".swiper-pagination-bullet-active": {
+                        background: "#FFF",
+                      },
+                      ".swiper": {
+                        overflow: "unset",
+                      },
+                    }}
+                  >
+                    <Swiper
+                      slidesPerView={"auto"}
+                      centeredSlides={false}
+                      spaceBetween={15}
+                      slidesOffsetBefore={20}
+                      slidesOffsetAfter={20}
+                      grabCursor={true}
+                      className="mySwiper"
+                      pagination={true}
+                      // freeMode={true}
+                      modules={[Pagination]}
                     >
-                      <Swiper
-                        slidesPerView={"auto"}
-                        centeredSlides={false}
-                        spaceBetween={15}
-                        slidesOffsetBefore={20}
-                        slidesOffsetAfter={20}
-                        grabCursor={true}
-                        className="mySwiper"
-                        pagination={true}
-                        // freeMode={true}
-                        modules={[Pagination]}
-                      >
-                        <>
-                          {managment.map((pers, index) => (
-                            <SwiperSlide
-                              style={{ width: "auto" }}
-                              key={`managment-slide-${index}`}
-                            >
-                              <Box>
-                                <Box
-                                  sx={{
-                                    width: {
-                                      xs: "128px",
-                                      lg: "150px",
-                                      xl: "200px",
-                                    },
-                                    height: {
-                                      xs: "140px",
-                                      lg: "166px",
-                                      xl: "222px",
-                                    },
+                      <>
+                        {marketing.map((pers, index) => (
+                          <SwiperSlide
+                            style={{ width: "auto" }}
+                            key={`marketing-slide-${index}`}
+                          >
+                            <Box>
+                              <Box
+                                sx={{
+                                  width: {
+                                    xs: "128px",
+                                    lg: "150px",
+                                    xl: "200px",
+                                  },
+                                  height: {
+                                    xs: "140px",
+                                    lg: "166px",
+                                    xl: "222px",
+                                  },
+                                }}
+                              >
+                                <img
+                                  src={pers.photo}
+                                  alt={`${pers.name} ${pers.surname}`}
+                                  style={{
+                                    width: "inherit",
+                                    height: "inherit",
                                   }}
+                                />
+                              </Box>
+                              <Box
+                                sx={{
+                                  marginTop: "32px",
+                                  maxWidth: {
+                                    xs: "128px",
+                                    lg: "150px",
+                                    xl: "200px",
+                                  },
+                                }}
+                              >
+                                <Typography
+                                  fontFamily="Aaaiight"
+                                  fontSize="16px"
+                                  lineHeight="19.2px"
+                                  color="#FFF"
                                 >
-                                  <img
-                                    src={pers.photo}
-                                    alt={`${pers.name} ${pers.surname}`}
-                                    style={{
-                                      width: "inherit",
-                                      height: "inherit",
-                                    }}
-                                  />
-                                </Box>
-                                <Box
-                                  sx={{
-                                    marginTop: "32px",
-                                    maxWidth: {
-                                      xs: "128px",
-                                      lg: "150px",
-                                      xl: "200px",
-                                    },
-                                  }}
+                                  {pers.name} {pers.surname}
+                                </Typography>
+                              </Box>
+                              <Box
+                                sx={{
+                                  marginTop: "12px",
+                                  maxWidth: {
+                                    xs: "128px",
+                                    lg: "150px",
+                                    xl: "200px",
+                                  },
+                                  fontSize: { xs: "12px", lg: "14px" },
+                                  lineHeight: { xs: "19.2px", lg: "22.4px" },
+                                }}
+                              >
+                                <Typography
+                                  fontFamily="Inter"
+                                  lineHeight="inherit"
+                                  fontSize="inherit"
+                                  color="#FFF"
                                 >
-                                  <Typography
-                                    fontFamily="Aaaiight"
-                                    fontSize="16px"
-                                    lineHeight="19.2px"
-                                    color="#FFF"
-                                  >
-                                    {pers.name} {pers.surname}
-                                  </Typography>
-                                </Box>
-                                <Box
-                                  sx={{
-                                    marginTop: "12px",
-                                    maxWidth: {
-                                      xs: "128px",
-                                      lg: "150px",
-                                      xl: "200px",
-                                    },
-                                    fontSize: { xs: "12px", lg: "14px" },
-                                    lineHeight: { xs: "19.2px", lg: "22.4px" },
-                                  }}
-                                >
-                                  <Typography
-                                    fontFamily="Inter"
-                                    lineHeight="inherit"
-                                    fontSize="inherit"
-                                    color="#FFF"
-                                  >
-                                    {pers.job}
-                                  </Typography>
-                                </Box>
+                                  {pers.job}
+                                </Typography>
+                              </Box>
+                              {pers.link && (
                                 <Link
                                   href={pers.link}
                                   target="_blank"
@@ -1454,276 +1725,15 @@ const Activities = () => {
                                     </Typography>
                                   </Box>
                                 </Link>
-                              </Box>
-                            </SwiperSlide>
-                          ))}
-                        </>
-                      </Swiper>
-                    </Box>
-                  </Box>
-                </>
-              )}
-              {activeTeam === "game" && (
-                <Box>
-                  <Box
-                    sx={{
-                      padding: { md: "48px 60px" },
-                      border: "1px solid #00FFB7",
-                      borderRadius: "4px",
-                      width: { xs: "280px", md: "555px" },
-                      height: { xs: "90px", md: "auto" },
-                      margin: "auto",
-                      "& > img": {
-                        width: { xs: "163px", md: "555px" },
-                      },
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img src={RedRiftLogo} alt="red-rift logo" />
-                  </Box>
-                  <Box sx={{ marginTop: "20px" }}>
-                    <Typography
-                      fontFamily="Inter"
-                      fontSize="16px"
-                      lineHeight="22.4px"
-                      color="#FFF"
-                      textAlign="center"
-                    >
-                      Game Development partner
-                    </Typography>
+                              )}
+                            </Box>
+                          </SwiperSlide>
+                        ))}
+                      </>
+                    </Swiper>
                   </Box>
                 </Box>
-              )}
-              {activeTeam === "marketing" && (
-                <>
-                  <Box
-                    sx={{
-                      display: { xs: "none", md: "grid" },
-                      gridTemplateColumns: {
-                        md: "repeat(auto-fit, minmax(128px,1fr))",
-                        lg: "repeat(auto-fit, minmax(150px,1fr))",
-                        xl: "repeat(auto-fit, minmax(200px,1fr))",
-                      },
-                      gridGap: { lg: "40px 35px", xl: "60px 40px" },
-                    }}
-                  >
-                    {marketing.map((pers, index) => (
-                      <Box key={`marketing-${index}`}>
-                        <Box
-                          sx={{
-                            width: { md: "128px", lg: "150px", xl: "200px" },
-                            height: { md: "140px", lg: "166px", xl: "222px" },
-                          }}
-                        >
-                          <img
-                            src={pers.photo}
-                            alt={`${pers.name} ${pers.surname}`}
-                            style={{ width: "inherit", height: "inherit" }}
-                          />
-                        </Box>
-                        <Box
-                          sx={{
-                            marginTop: "32px",
-                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Aaaiight"
-                            fontSize="16px"
-                            lineHeight="19.2px"
-                            color="#FFF"
-                          >
-                            {pers.name} {pers.surname}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{
-                            marginTop: "12px",
-                            maxWidth: { md: "128px", lg: "150px", xl: "200px" },
-                            fontSize: { md: "12px", lg: "14px" },
-                            lineHeight: { md: "19.2px", lg: "22.4px" },
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Inter"
-                            fontSize="14px"
-                            lineHeight="22.4px"
-                            color="#FFF"
-                          >
-                            {pers.job}
-                          </Typography>
-                        </Box>
-                        {pers.link && (
-                          <Link
-                            href={pers.link}
-                            target="_blank"
-                            underline="none"
-                          >
-                            <Box
-                              sx={{
-                                marginTop: "20px",
-                                display: "flex",
-                                alignItems: "center",
-                                color: "#FFF",
-                                ":hover": {
-                                  color: "#00FFB7",
-                                },
-                              }}
-                            >
-                              <img src={LinkedIn} alt="linkedin" />
-                              <Typography
-                                marginLeft="8px"
-                                fontFamily="Inter"
-                                fontSize="14px"
-                                lineHeight="14px"
-                                fontWeight="500"
-                              >
-                                LinkedIn
-                              </Typography>
-                            </Box>
-                          </Link>
-                        )}
-                      </Box>
-                    ))}
-                  </Box>
-                  <Box sx={{ display: { xs: "block", md: "none" } }}>
-                    <Box
-                      sx={{
-                        ".swiper-pagination": {
-                          bottom: "-40px",
-                        },
-                        ".swiper-pagination-bullet": {
-                          background: "#242424",
-                          opacity: 1,
-                        },
-                        ".swiper-pagination-bullet-active": {
-                          background: "#FFF",
-                        },
-                        ".swiper": {
-                          overflow: "unset",
-                        },
-                      }}
-                    >
-                      <Swiper
-                        slidesPerView={"auto"}
-                        centeredSlides={false}
-                        spaceBetween={15}
-                        slidesOffsetBefore={20}
-                        slidesOffsetAfter={20}
-                        grabCursor={true}
-                        className="mySwiper"
-                        pagination={true}
-                        // freeMode={true}
-                        modules={[Pagination]}
-                      >
-                        <>
-                          {marketing.map((pers, index) => (
-                            <SwiperSlide
-                              style={{ width: "auto" }}
-                              key={`marketing-slide-${index}`}
-                            >
-                              <Box>
-                                <Box
-                                  sx={{
-                                    width: {
-                                      xs: "128px",
-                                      lg: "150px",
-                                      xl: "200px",
-                                    },
-                                    height: {
-                                      xs: "140px",
-                                      lg: "166px",
-                                      xl: "222px",
-                                    },
-                                  }}
-                                >
-                                  <img
-                                    src={pers.photo}
-                                    alt={`${pers.name} ${pers.surname}`}
-                                    style={{
-                                      width: "inherit",
-                                      height: "inherit",
-                                    }}
-                                  />
-                                </Box>
-                                <Box
-                                  sx={{
-                                    marginTop: "32px",
-                                    maxWidth: {
-                                      xs: "128px",
-                                      lg: "150px",
-                                      xl: "200px",
-                                    },
-                                  }}
-                                >
-                                  <Typography
-                                    fontFamily="Aaaiight"
-                                    fontSize="16px"
-                                    lineHeight="19.2px"
-                                    color="#FFF"
-                                  >
-                                    {pers.name} {pers.surname}
-                                  </Typography>
-                                </Box>
-                                <Box
-                                  sx={{
-                                    marginTop: "12px",
-                                    maxWidth: {
-                                      xs: "128px",
-                                      lg: "150px",
-                                      xl: "200px",
-                                    },
-                                    fontSize: { xs: "12px", lg: "14px" },
-                                    lineHeight: { xs: "19.2px", lg: "22.4px" },
-                                  }}
-                                >
-                                  <Typography
-                                    fontFamily="Inter"
-                                    lineHeight="inherit"
-                                    fontSize="inherit"
-                                    color="#FFF"
-                                  >
-                                    {pers.job}
-                                  </Typography>
-                                </Box>
-                                {pers.link && (
-                                  <Link
-                                    href={pers.link}
-                                    target="_blank"
-                                    underline="none"
-                                  >
-                                    <Box
-                                      sx={{
-                                        marginTop: "20px",
-                                        display: "flex",
-                                        alignItems: "center",
-                                      }}
-                                    >
-                                      <img src={LinkedIn} alt="linkedin" />
-                                      <Typography
-                                        marginLeft="8px"
-                                        fontFamily="Inter"
-                                        fontSize="14px"
-                                        lineHeight="14px"
-                                        color="#FFF"
-                                        fontWeight="500"
-                                      >
-                                        LinkedIn
-                                      </Typography>
-                                    </Box>
-                                  </Link>
-                                )}
-                              </Box>
-                            </SwiperSlide>
-                          ))}
-                        </>
-                      </Swiper>
-                    </Box>
-                  </Box>
-                </>
-              )}
+              </>
             </Box>
           </Box>
           <Box
