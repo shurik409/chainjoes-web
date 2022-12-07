@@ -382,13 +382,13 @@ const FAQ = () => {
         <>
           Influencers and content creators, can apply here:{" "}
           <Link
-            href="https://fiakirr0buy.typeform.com/to/fEjlXJH5"
+            href="https://bit.ly/cj-Influencers"
             underline="none"
             style={{
               color: "#00FFB7",
             }}
           >
-            https://fiakirr0buy.typeform.com/to/fEjlXJH5
+            https://bit.ly/cj-Influencers
           </Link>
         </>
       ),

@@ -349,13 +349,6 @@ const Activities = () => {
 
   const marketing = [
     {
-      name: "Ilona",
-      surname: "Makovetskaya",
-      job: "Head of Marketing",
-      photo: Ilona,
-      link: "https://www.linkedin.com/in/ilonamak/",
-    },
-    {
       name: "Maya",
       surname: "Kostenkova",
       job: "Creative producer",

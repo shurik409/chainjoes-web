@@ -42,7 +42,14 @@ import OurAmazing from "../../imgs/new/backIcons/ourAmazing.svg";
 import Circle from "../../imgs/new/backIcons/circles1.svg";
 import Cross from "../../imgs/new/Cross.png";
 
-import { SamMp4, DeoMp4, TyrMp4, AnwarMp4, MilcyMp4, ShoonMp4 } from "../../videos";
+import {
+  SamMp4,
+  DeoMp4,
+  TyrMp4,
+  AnwarMp4,
+  MilcyMp4,
+  ShoonMp4,
+} from "../../videos";
 
 const Explore = () => {
   const persSwiper = useRef(null);
@@ -179,6 +186,15 @@ const Explore = () => {
     <Box>
       {desktop1080Width && (
         <Box sx={{ position: "relative" }} id={"chainverse"}>
+          <Box sx={{display: 'none'}}>
+            {texts.map((item, index) => (
+              <img
+                src={item.img}
+                alt="preload"
+                key={`cache-image-${index}`}
+              />
+            ))}
+          </Box>
           <Box
             sx={{
               position: "absolute",
@@ -287,12 +303,11 @@ const Explore = () => {
                 centeredSlides={true}
                 grabCursor={true}
                 className="mySwiper"
-                effect={"flip"}
+                effect={"slide"}
                 pagination={true}
-                modules={[EffectFlip, Pagination, Navigation]}
-                navigation={{
-                  enabled: true,
-                }}
+                modules={[Pagination, Navigation]}
+                navigation={true}
+                preloadImages={true}
               >
                 {texts.map((text, index) => (
                   <SwiperSlide key={`explore-swiper-slide-${index}`}>
