@@ -1,10 +1,7 @@
 import React from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Loader = ({ progres }) => {
-  const desktop1080Width = useMediaQuery("(min-width: 1000px)");
-
-  const desktop768Width = useMediaQuery("(min-width: 768px)");
 
   const getText = () => {
     if (Math.floor(progres * 100) < 33) {
@@ -33,23 +30,20 @@ const Loader = ({ progres }) => {
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
+          fontSize: { xs: "17px", md: "40px" },
         }}
       >
         <Typography
           fontFamily="Inter"
           fontWeight="500"
-          fontSize={desktop768Width ? "40px" : "17px"}
           color="#FFFFFF"
+          style={{ fontSize: "inherit" }}
         >
           {Math.floor(progres * 100)}%
         </Typography>
         <Box
           sx={{
-            width: desktop1080Width
-              ? "563px"
-              : desktop768Width
-              ? "400px"
-              : "200px",
+            width: { xs: 200, md: 400, lg: 563 },
             height: 8,
             background: "rgba(255, 255, 255, 0.1)",
             position: "relative",
@@ -61,11 +55,7 @@ const Loader = ({ progres }) => {
         >
           <Box
             sx={{
-              width: desktop1080Width
-                ? `${563 * progres}px`
-                : desktop768Width
-                ? `${400 * progres}px`
-                : `${200 * progres}px`,
+              width: { xs: 200 * progres, md: 400 * progres, lg: 563 * progres },
               height: 8,
               background:
                 "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
@@ -77,13 +67,16 @@ const Loader = ({ progres }) => {
         <Box
           sx={{
             marginTop: "40px",
+            fontSize: { xs: "20px", md: "32px" },
+            width: '100%',
           }}
         >
           <Typography
             fontFamily="Aaaiight"
             fontWeight="400"
-            fontSize={desktop768Width ? "32px" : "20px"}
+            textAlign='center'
             color="#FFFFFF"
+            style={{ fontSize: "inherit", width: 'inherit' }}
           >
             {getText()}
           </Typography>
