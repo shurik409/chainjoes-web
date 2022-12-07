@@ -19,7 +19,7 @@ import Gary from "./team/Gary.jpg";
 import LinkedIn from "./linkedIn.svg";
 import Egor2 from "./team/Egor2.png";
 import Dimitri from "./team/Dimitri.png";
-import Ilona from "./team/Ilona.png";
+import Nikita from "./team/Nikita.png";
 import Alina from "./team/Alina.png";
 import Kirill from "./team/Kirill.png";
 import Artem from "./team/Artem.png";
@@ -47,7 +47,7 @@ export {
   LinkedIn,
   Egor2,
   Dimitri,
-  Ilona,
+  Nikita,
   Alina,
   Kirill,
   Artem,

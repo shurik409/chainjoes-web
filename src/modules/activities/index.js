@@ -15,7 +15,7 @@ import {
   Alex,
   Cris,
   Dasha,
-  Ilona,
+  Nikita,
   Hanna,
   Katsia,
   Maya,
@@ -416,6 +416,13 @@ const Activities = () => {
       surname: "Bautrukevich",
       job: "Motion Designer",
       photo: Artem,
+      link: "",
+    },
+    {
+      name: "Nikita",
+      surname: "Mazikov",
+      job: "SMM Manager",
+      photo: Nikita,
       link: "",
     },
     {
