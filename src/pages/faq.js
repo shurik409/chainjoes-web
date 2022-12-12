@@ -303,31 +303,6 @@ const FAQ = () => {
       ),
     },
     {
-      title: "What characters can I play for in the game?",
-      description: (
-        <>
-          At the time of the Closed Beta Test, 6 characters will be available in
-          the game:
-          <br />
-          <br />
-          - Watch Mr. Tyr backstory.
-          <br />
-          <br />
-          - Watch Deo backstory;
-          <br />
-          <br />
-          - Watch Sam backstory;
-          <br />
-          <br />- Watch Shaan backstory;
-          <br />
-          <br />
-          - Watch MiLcy backstory;
-          <br />
-          <br />- Watch Anwar backstory.
-        </>
-      ),
-    },
-    {
       title: "Can you share some video gameplay?",
       description: <>Discover our gameplay concept by the link.</>,
     },
@@ -367,8 +342,34 @@ const FAQ = () => {
         <>
           First things first, read our Chain Joes <b>Whitepaper</b> to get a
           broad overview of what we are building and why. For further
-          information, follow our posts on <b>Medium</b>, <b>Twitter</b> and
-          simply stay connected to our <b>Discord</b> server.
+          information, follow our posts on{" "}
+          <a
+            href="https://medium.com/@ChainJoes"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#fff", cursor: "pointer" }}
+          >
+            <b>Medium</b>
+          </a>
+          ,{" "}
+          <a
+            href="https://twitter.com/ChainJoes"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#fff", cursor: "pointer" }}
+          >
+            <b>Twitter</b>
+          </a>{" "}
+          and simply stay connected to our{" "}
+          <a
+            href="https://discord.com/invite/chainjoes"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#fff", cursor: "pointer" }}
+          >
+            <b>Discord</b>
+          </a>{" "}
+          server.
           <br />
           <br />
           You can check out the Chain Joes Gitbook.
