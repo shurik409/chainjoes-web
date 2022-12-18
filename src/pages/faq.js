@@ -189,9 +189,8 @@ const FAQ = () => {
       title: "How can I get into a private sale?",
       description: (
         <>
-          We have a limited number of places for our private sale - 2000 seats.
-          Check out our Sale Strategy to take your seat among the early
-          supporters.
+          Anyone can participate in our sale without any restrictions! Just join
+          the Whitelist to take a seat.
         </>
       ),
     },
@@ -252,7 +251,17 @@ const FAQ = () => {
           Verse.
           <br />
           <br />
-          Watch the Backstory video.
+          Watch the{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=yfwYxR_gd6s"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            Backstory video.
+          </Link>
         </>
       ),
     },
@@ -273,7 +282,23 @@ const FAQ = () => {
           The game release of the Alpha Version is scheduled for the 2nd quarter
           of 2024. In the third quarter of 2023, a Closed Beta Test will be
           available. The project's roadmap can be discovered in more detail at
-          the link.
+          the{" "}
+          <HashLink
+            to="/#roadmap"
+            scroll={(el) => {
+              el.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+              handleMobileMenu();
+            }}
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            link
+          </HashLink>
+          .
         </>
       ),
     },
@@ -284,27 +309,97 @@ const FAQ = () => {
           At the time of the Closed Beta Test, 6 characters will be available in
           the game:
           <br />
+          <br />- Watch Mr. Tyr{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=w2EYhMi7DyA"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            backstory.
+          </Link>
           <br />
-          - Watch Mr. Tyr backstory.
+          <br />- Watch Deo{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=lEDsg8A2wIk"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            backstory.
+          </Link>
           <br />
+          <br />- Watch Sam{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=Vz8_JnxTew0"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            backstory.
+          </Link>
           <br />
-          - Watch Deo backstory;
+          <br />- Watch Shaan{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=ztPV7zLrz28"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            backstory.
+          </Link>
           <br />
+          <br />- Watch MiLcy{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=Ut3KeILUrRg"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            backstory.
+          </Link>
           <br />
-          - Watch Sam backstory;
-          <br />
-          <br />- Watch Shaan backstory;
-          <br />
-          <br />
-          - Watch MiLcy backstory;
-          <br />
-          <br />- Watch Anwar backstory.
+          <br />- Watch Anwar{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=OwwP3IB0czo"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            backstory.
+          </Link>
         </>
       ),
     },
     {
       title: "Can you share some video gameplay?",
-      description: <>Discover our gameplay concept by the link.</>,
+      description: (
+        <>
+          Discover our gameplay concept by the{" "}
+          <Link
+            href="https://www.youtube.com/watch?v=bJ28vhjO4Qg"
+            underline="none"
+            target="_blank"
+            style={{
+              color: "#00FFB7",
+            }}
+          >
+            link.
+          </Link>
+        </>
+      ),
     },
     {
       title: "Do you have a video teaser? ",
@@ -340,8 +435,16 @@ const FAQ = () => {
       title: "Where can I learn more about the game?",
       description: (
         <>
-          First things first, read our Chain Joes <b>Whitepaper</b> to get a
-          broad overview of what we are building and why. For further
+          First things first, read our Chain Joes{" "}
+          <a
+            href="/pdfs/Whitepaper.pdf"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#fff", cursor: "pointer" }}
+          >
+            <b>Whitepaper</b>
+          </a>{" "}
+          to get a broad overview of what we are building and why. For further
           information, follow our posts on{" "}
           <a
             href="https://medium.com/@ChainJoes"
