@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Box } from "@mui/material";
-import { Main, PrivacyPolicy, Terms, FAQ } from "./pages";
+import { Main, PrivacyPolicy, Terms, FAQ, Sale } from "./pages";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -26,6 +26,7 @@ function App() {
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-conditions" element={<Terms />} />
           <Route path="faq" element={<FAQ />} />
+          <Route path="sale" element={<Sale/>} />
         </Routes>
       </ThemeProvider>
     </Box>

@@ -18,6 +18,7 @@ import Telegram from "./telegram";
 import Tiktok from "./tiktok";
 import Twitter from "./twitter";
 import Video from "./video";
+import WatchGreen from "./watch-green";
 
 export {
   ArrowAngle,
@@ -40,4 +41,5 @@ export {
   Tiktok,
   Twitter,
   Video,
+  WatchGreen,
 };
