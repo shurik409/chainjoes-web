@@ -821,7 +821,7 @@ const Sale = () => {
                 }}
               >
                 <Link
-                  href="/pdfs/Whitepaper.pdf"
+                  href="https://www.youtube.com/watch?v=bJ28vhjO4Qg&ab_channel=ChainJoes"
                   target="_blank"
                   underline="none"
                 >
