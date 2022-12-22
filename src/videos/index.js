@@ -8,6 +8,8 @@ import TyrMp4 from "./new/Tyr.mp4";
 import AnwarMp4 from "./new/Anwar.mp4";
 import MilcyMp4 from "./new/Milcy.mp4";
 import ShoonMp4 from "./new/Shoon.mp4";
+import PreSaleMp4 from "./presale.mp4"
+import PreSaleWebM from "./presale.webm"
 
 
 export {
@@ -20,5 +22,7 @@ export {
   TyrMp4,
   AnwarMp4,
   MilcyMp4,
-  ShoonMp4
+  ShoonMp4,
+  PreSaleMp4,
+  PreSaleWebM
 };

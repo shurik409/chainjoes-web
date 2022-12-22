@@ -6,6 +6,7 @@ import {
   SamMp4,
   DeoMp4,
   TyrMp4,
+  PreSaleMp4
 } from "./videos";
 
 import {
@@ -172,7 +173,7 @@ const getAllImage = () => {
   ];
 };
 const getAllVideo = () => {
-  return [monkeyMp4, PreLogoMp4, SamMp4, DeoMp4, TyrMp4];
+  return [monkeyMp4, PreLogoMp4, SamMp4, DeoMp4, TyrMp4, PreSaleMp4];
 };
 
 export { getAllImage, getAllVideo };

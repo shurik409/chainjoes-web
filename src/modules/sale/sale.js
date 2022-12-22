@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Typography, Link } from "@mui/material";
 import Header from "../first/components/header";
 import CloseBtn from "../../imgs/new/close-btn.svg";
@@ -9,6 +9,7 @@ import SaleBG from "../../imgs/sale_bg.png";
 import Login from "../../imgs/new/login.svg";
 import { Document, WatchGreen } from "../../imgs/new/svg";
 import { intervalToDuration } from "date-fns";
+import { PreSaleMp4 } from "../../videos";
 
 const Sale = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,22 @@ const Sale = () => {
       end: new Date("Dec 26 2022 00:00:00 GMT+0100"),
     })
   );
+  const refVideo = useRef(null);
+  const [muted, setMuted] = useState(false);
 
   useEffect(() => {
-    console.log(1);
+    if (!refVideo.current) {
+      return;
+    }
+    if (!muted) {
+      refVideo.current.defaultMuted = true;
+      refVideo.current.muted = true;
+      refVideo.current.play();
+      setMuted(true);
+    }
+  });
+
+  useEffect(() => {
     const interval = setInterval(() => getTime(), 1000);
     return () => clearInterval(interval);
   }, []);
@@ -298,13 +312,36 @@ const Sale = () => {
       >
         <Box
           sx={{
-            backgroundImage: `url(${SaleBG})`,
             minHeight: "100vh",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
+            position: 'relative'
           }}
         >
+
+        <Box>
+          <video
+            ref={refVideo}
+            autoPlay="autoPlay"
+            loop="loop"
+            muted
+            playsInline
+            onContextMenu={() => false}
+            preload="auto"
+            id="vid"
+            poster={SaleBG}
+            style={{
+              objectFit: "cover",
+              height: "100vh",
+              width: "100%",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              zIndex: -1,
+            }}
+          >
+            <source src={PreSaleMp4} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </Box>
           <Box
             sx={{
               position: "absolute",
