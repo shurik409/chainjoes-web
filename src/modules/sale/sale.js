@@ -286,6 +286,7 @@ const Sale = () => {
       ),
     },
   ];
+
   return (
     <Box>
       <Box
@@ -298,6 +299,7 @@ const Sale = () => {
         <Box
           sx={{
             backgroundImage: `url(${SaleBG})`,
+            minHeight: "100vh",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -518,10 +520,10 @@ const Sale = () => {
           </Box>
           <Box
             sx={{
-              minHeight: "100vh",
               display: "flex",
               alignItems: "center",
               paddingLeft: { xs: 0, md: "135px" },
+              paddingTop: { xs: '30px', md: "160px" },
               justifyContent: { xs: "center", md: "start" },
             }}
           >
