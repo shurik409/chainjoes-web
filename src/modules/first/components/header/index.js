@@ -253,32 +253,41 @@ const Header = ({ closeMenu, buttons }) => {
         </Box>
         <Box sx={{ display: "flex" }}>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Box
-              sx={{
-                width: "150px",
-                height: "44px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "2px",
-                border: "1px solid #616161",
-                // borderImageSlice: 1,
-                // borderImageSource:
-                //   "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                marginRight: "16px",
-                cursor: `url(${BlockCursor}), pointer`,
-              }}
-            >
-              <Typography
-                color="#7F7F7F"
-                fontSize="14px"
-                fontFamily="Inter"
-                fontWeight={500}
+            <Link href="/sale" underline="none">
+              <Box
+                sx={{
+                  width: "150px",
+                  height: "44px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "2px",
+                  border: "1px solid",
+                  borderImageSlice: 1,
+                  borderImageSource:
+                    "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                  marginRight: "16px",
+                  cursor: `pointer`,
+                  color: "#05D19B",
+                  ":hover": {
+                    color: "#FFF",
+                  },
+                  ":focus": {
+                    border: "1px solid #FFF",
+                    color: "#FFF",
+                  },
+                  ":active": {
+                    background: "#FFF",
+                    color: "#080808",
+                  },
+                }}
               >
-                Sale <sup>coming soon</sup>
-              </Typography>
-            </Box>
+                <Typography fontSize="14px" fontFamily="Inter" fontWeight={500}>
+                  Sale
+                </Typography>
+              </Box>
+            </Link>
             <Link href="/whitelist.html" target="_blank" underline="none">
               <Box
                 sx={{
