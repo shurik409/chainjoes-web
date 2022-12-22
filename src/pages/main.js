@@ -52,7 +52,7 @@ const Main = () => {
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
     const saleVisit = Cookies.get("VisitSale");
-    if(saleVisit === '0') {
+    if(saleVisit !== '1') {
       navigate("/sale");
     }
     setProgres(0);
