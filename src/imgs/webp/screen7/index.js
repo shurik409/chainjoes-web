@@ -24,6 +24,7 @@ import Alina from "./team/Alina.png";
 import Kirill from "./team/Kirill.png";
 import Artem from "./team/Artem.png";
 import AlexK from "./team/AlexK.png";
+import Roman from "./team/Roman.jpg";
 
 export {
   Photo1,
@@ -52,4 +53,5 @@ export {
   Kirill,
   Artem,
   AlexK,
+  Roman
 };

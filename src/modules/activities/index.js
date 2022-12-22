@@ -15,7 +15,7 @@ import {
   Alex,
   Cris,
   Dasha,
-  Nikita,
+  Roman,
   Hanna,
   Katsia,
   Maya,
@@ -419,10 +419,10 @@ const Activities = () => {
       link: "",
     },
     {
-      name: "Nikita",
-      surname: "Mazikov",
+      name: "Roman",
+      surname: "Zhirov",
       job: "SMM Manager",
-      photo: Nikita,
+      photo: Roman,
       link: "",
     },
     {

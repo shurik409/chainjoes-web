@@ -167,7 +167,7 @@ const FAQ = () => {
       ),
     },
     {
-      title: "Why choose Plan-And-Earn instead of Play-to-Earn?",
+      title: "Why choose Play-And-Earn instead of Play-to-Earn?",
       description: (
         <>
           Our Play-And-Earn model evolved from the P2E framework. It puts the

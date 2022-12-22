@@ -1,20 +1,13 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
 import {
-  First,
-  Enemies,
-  Explore,
-  Activities,
-  Social,
-  Footer,
-  LoopLine,
   Loader,
 } from "../modules";
 import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import Sale from "../modules/sale/sale";
 
 const DELAY = 5000;
 
@@ -22,9 +15,7 @@ const Main = () => {
   const [progres, setProgres] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPlayed, setIsPlayed] = useState(0);
-  // const [startTime, setStartTime] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
-  const navigate = useNavigate();
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
 
@@ -51,10 +42,7 @@ const Main = () => {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
-    const saleVisit = Cookies.get("VisitSale");
-    if(saleVisit !== '1') {
-      navigate("/sale");
-    }
+    Cookies.set("VisitSale", 1);
     setProgres(0);
     setIsPlayed(cook);
     getAllVideo().forEach((src) => {
@@ -84,15 +72,11 @@ const Main = () => {
     }
   }, []);
 
-  const getCurrentProgresPercent = () => {
-    const percent = progres / (getAllImage().length + getAllVideo().length);
-
-    return percent;
-  };
+  
 
   return (
     <>
-      {timeProgres < 1 && isPlaying && !isPlayed ?  (
+      {timeProgres < 1 && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>
@@ -126,13 +110,7 @@ const Main = () => {
           ) : (
             <>
               <Box sx={{ overflowX: "hidden" }}>
-                <First />
-                <Enemies />
-                <LoopLine />
-                <Explore />
-                <Activities />
-                <Social />
-                <Footer />
+                <Sale/>
               </Box>
             </>
           )}
