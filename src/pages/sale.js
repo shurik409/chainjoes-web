@@ -15,7 +15,6 @@ const Main = () => {
   const [progres, setProgres] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPlayed, setIsPlayed] = useState(0);
-  // const [startTime, setStartTime] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
@@ -43,6 +42,7 @@ const Main = () => {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
+    Cookies.set("VisitSale", 1);
     setProgres(0);
     setIsPlayed(cook);
     getAllVideo().forEach((src) => {
@@ -72,10 +72,11 @@ const Main = () => {
     }
   }, []);
 
+  
 
   return (
     <>
-      {timeProgres < 1 ? (
+      {timeProgres < 1 && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>

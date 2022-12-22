@@ -14,6 +14,7 @@ import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const DELAY = 5000;
 
@@ -23,6 +24,7 @@ const Main = () => {
   const [isPlayed, setIsPlayed] = useState(0);
   // const [startTime, setStartTime] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
+  const navigate = useNavigate();
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
 
@@ -49,6 +51,10 @@ const Main = () => {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
+    const saleVisit = Cookies.get("VisitSale");
+    if(saleVisit === '0') {
+      navigate("/sale");
+    }
     setProgres(0);
     setIsPlayed(cook);
     getAllVideo().forEach((src) => {
@@ -86,7 +92,7 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 ? (
+      {timeProgres < 1 && isPlaying && !isPlayed ?  (
         <Loader progres={timeProgres} />
       ) : (
         <>
