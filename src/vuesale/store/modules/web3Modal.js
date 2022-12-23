@@ -1,6 +1,6 @@
-import { getLibrary } from "@/utils/web3"
-import { ethers } from "ethers"
-import { parseInt } from "lodash"
+import { getLibrary } from "../../utils/web3";
+import { ethers } from "ethers";
+import { parseInt } from "lodash";
 
 const web3ModalStore = {
   state: {
@@ -9,72 +9,72 @@ const web3ModalStore = {
     library: getLibrary(),
     active: false,
     account: null,
-    chainId: 0
+    chainId: 0,
   },
   mutations: {
     setWeb3Modal(state, web3Modal) {
-      state.web3Modal = web3Modal
+      state.web3Modal = web3Modal;
     },
     setLibrary(state, library) {
-      state.library = library
+      state.library = library;
     },
     setActive(state, active) {
-      state.active = active
+      state.active = active;
     },
     setAccount(state, account) {
-      state.account = account
+      state.account = account;
     },
     setChainId(state, chainId) {
-      state.chainId = chainId
-    }
+      state.chainId = chainId;
+    },
   },
   actions: {
     async connect({ state, commit, dispatch }) {
-      const provider = await state.web3Modal.connect()
+      const provider = await state.web3Modal.connect();
 
-      const library = new ethers.providers.Web3Provider(provider)
+      const library = new ethers.providers.Web3Provider(provider);
 
-      library.pollingInterval = 12000
-      commit("setLibrary", library)
+      library.pollingInterval = 12000;
+      commit("setLibrary", library);
 
-      const accounts = await library.listAccounts()
+      const accounts = await library.listAccounts();
       if (accounts.length > 0) {
-        commit("setAccount", accounts[0])
+        commit("setAccount", accounts[0]);
       }
-      const network = await library.getNetwork()
-      commit("setChainId", network.chainId)
-      commit("setActive", true)
+      const network = await library.getNetwork();
+      commit("setChainId", network.chainId);
+      commit("setActive", true);
 
       provider.on("connect", async (info) => {
-        const chainId = parseInt(info.chainId)
-        commit("setChainId", chainId)
-        console.log("connect", info)
-      })
+        const chainId = parseInt(info.chainId);
+        commit("setChainId", chainId);
+        console.log("connect", info);
+      });
 
       provider.on("accountsChanged", async (accounts) => {
         if (accounts.length > 0) {
-          commit("setAccount", accounts[0])
+          commit("setAccount", accounts[0]);
         } else {
-          await dispatch("resetApp")
+          await dispatch("resetApp");
         }
-        console.log("accountsChanged")
-      })
+        console.log("accountsChanged");
+      });
       provider.on("chainChanged", async (chainId) => {
-        chainId = parseInt(chainId)
-        commit("setChainId", chainId)
-        console.log("chainChanged", chainId)
-      })
+        chainId = parseInt(chainId);
+        commit("setChainId", chainId);
+        console.log("chainChanged", chainId);
+      });
     },
     async resetApp({ state, commit }) {
       try {
-        await state.web3Modal.clearCachedProvider()
+        await state.web3Modal.clearCachedProvider();
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
-      commit("setAccount", null)
-      commit("setActive", false)
-      commit("setLibrary", getLibrary())
-    }
-  }
-}
-export default web3ModalStore
+      commit("setAccount", null);
+      commit("setActive", false);
+      commit("setLibrary", getLibrary());
+    },
+  },
+};
+export default web3ModalStore;

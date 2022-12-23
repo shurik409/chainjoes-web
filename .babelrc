@@ -1,0 +1,12 @@
+// {
+//     "rules": [
+//         {
+//           "test": /\.vue$/,
+//           "loader": 'vue-loader',
+//           "options": {
+//             // настройки vue-loader
+//           }
+//         }
+//     ]
+//   }
+{}
