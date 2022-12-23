@@ -4,16 +4,16 @@
 </template>
 
 <script>
-import TokenSale from './components/TokenSale.vue'
+// import TokenSale from './components/TokenSale.vue'
 
 
 console.log(12312);
 export default {
-  name: 'AppVue',
+  name: 'App',
 
-  components: {
-    TokenSale
-  },
+  // components: {
+  //   TokenSale
+  // },
 
   data() {
     return {
