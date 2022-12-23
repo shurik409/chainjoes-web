@@ -11,6 +11,10 @@ import { Document, WatchGreen } from "../../imgs/new/svg";
 import { intervalToDuration } from "date-fns";
 import { PreSaleMp4 } from "../../videos";
 
+import TokenSale from "../../vuesale/components/TokenSale.vue";
+import { applyVueInReact, applyPureVueInReact } from "veaury";
+const BasicWithNormal = applyVueInReact(TokenSale);
+
 const Sale = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenuDropdown, setActiveMenuDropdown] = useState(0);
@@ -302,7 +306,8 @@ const Sale = () => {
 
   return (
     <Box>
-      <Box
+      <BasicWithNormal />
+      {/* <Box
         sx={{
           position: "relative",
           paddingBottom: { xs: "60px", md: "100px", lg: "160px", xl: "200px" },
@@ -1067,7 +1072,7 @@ const Sale = () => {
           ))}
         </Box>
       </Box>
-      <Footer />
+      <Footer /> */}
     </Box>
   );
 };
