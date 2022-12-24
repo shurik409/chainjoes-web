@@ -20,7 +20,7 @@ const Sale = () => {
   const [timeInterval, setTimeInterval] = useState(
     intervalToDuration({
       start: new Date(),
-      end: new Date("Dec 26 2022 00:00:00 GMT+0100"),
+      end: new Date("Dec 29 2022 00:00:00 GMT+0100"),
     })
   );
   const refVideo = useRef(null);
@@ -548,7 +548,7 @@ const Sale = () => {
           <Box
             sx={{
               paddingX: { xs: "20px", md: "34px", lg: "66px", xl: "135px" },
-              paddingY: { xs: "15px", lg: "30px" },
+              // paddingY: { xs: "15px", lg: "30px" },
             }}
           >
             <Box>
