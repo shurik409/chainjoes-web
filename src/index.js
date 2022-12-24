@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
-
 // Vue3 App
 // import { createApp } from 'vue';
 // import TokenSale from './vuesale/components/TokenSale.vue';
@@ -18,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     {/* <React.StrictMode> */}
-    <App />
+      <App />
     {/* </React.StrictMode> */}
   </BrowserRouter>
 );

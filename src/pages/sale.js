@@ -8,9 +8,9 @@ import Cookies from "js-cookie";
 import Sale from "../modules/sale/sale";
 import { useMediaQuery } from "@mui/material";
 
-import {applyVueInReact, applyPureVueInReact} from 'veaury'
-import App from "../vuesale/App.vue";
-const BasicWithNormal = applyVueInReact(App)
+import { applyVueInReact } from "veaury";
+import App from "../vuesale/App";
+const BasicWithNormal = applyVueInReact(App);
 
 const DELAY = 5000;
 
