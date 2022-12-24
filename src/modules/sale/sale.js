@@ -11,6 +11,10 @@ import { Document, WatchGreen } from "../../imgs/new/svg";
 import { intervalToDuration } from "date-fns";
 import { PreSaleMp4 } from "../../videos";
 
+import { applyVueInReact } from "veaury";
+import App from "../../vuesale/App";
+const VueApp = applyVueInReact(App);
+
 const Sale = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenuDropdown, setActiveMenuDropdown] = useState(0);
@@ -555,12 +559,16 @@ const Sale = () => {
               <Header closeMenu={handleMobileMenu} buttons={buttons} />
             </Box>
           </Box>
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               alignItems: "center",
               paddingLeft: { xs: 0, md: "135px" },
+<<<<<<< HEAD
               // paddingTop: { xs: "30px", md: "160px" },
+=======
+              paddingTop: { xs: "30px", md: "160px" },
+>>>>>>> 44542ea (add styles)
               justifyContent: { xs: "center", md: "start" },
               height: "calc(100vh - 80px)",
               // display: "flex",
@@ -982,6 +990,14 @@ const Sale = () => {
                 </Link>
               </Box>
             </Box>
+          </Box> */}
+          <Box
+            sx={{
+              paddingLeft: { xs: 0, md: "135px" },
+              paddingTop: { xs: "30px", md: "160px" },
+            }}
+          >
+            <VueApp />
           </Box>
         </Box>
         <Box sx={{ marginTop: { xs: "60px", md: "100px" } }}>

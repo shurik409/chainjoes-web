@@ -8,15 +8,7 @@
     />
 
     <!-- Alert -->
-    <transition name="fade">
-      <div
-        class="z-50 fixed inset-x-0 top-0 m-auto flex items-center bg-black text-white text-md px-4 py-4 lg:w-6/6"
-        role="alert"
-        v-if="alertShow"
-      >
-        <p>{{ alertMsg }}</p>
-      </div>
-    </transition>
+
     <section id="sale-box">
       <div class="sale-box">
         <div class="sale-calc">
@@ -27,16 +19,130 @@
           </p>
           <div class="sale-calc__info-btns">
             <div class="sale-calec__btns-left">
-              <div class="info-btns__refresh">refresh</div>
-              <div class="info-btns__balance">balance: {{ this.balance }}</div>
+              <div class="info-btns__refresh" @click="getBalance">
+                <svg
+                  width="22"
+                  height="20"
+                  viewBox="0 0 22 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.85757 7.97868C4.28443 6.49002 5.17162 5.17472 6.39197 4.22127C7.61232 3.26783 9.10319 2.7252 10.6509 2.67115C12.1986 2.61711 13.7237 3.05442 15.0076 3.92041C16.2915 4.78641 17.2682 6.03662 17.7979 7.49187"
+                    stroke="#616161"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.6634 12.8508C17.1118 14.1582 16.1926 15.2775 15.0175 16.073C13.8423 16.8684 12.4616 17.3058 11.0428 17.3321C9.62396 17.3583 8.228 16.9724 7.02417 16.2211C5.82034 15.4698 4.86036 14.3853 4.26064 13.0992"
+                    stroke="#616161"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5.76172 12.4457L3.62259 12.763L2.59289 14.6646"
+                    stroke="#616161"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16.1111 8.10822L18.2502 7.791L19.2799 5.88938"
+                    stroke="#616161"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="info-btns__balance">
+                <div class="info-btns__balance-wallet">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18.3334 9.14169V10.8584C18.3334 11.3167 17.9667 11.6917 17.5 11.7084H15.8667C14.9667 11.7084 14.1417 11.05 14.0667 10.15C14.0167 9.62502 14.2167 9.13335 14.5667 8.79169C14.875 8.47502 15.3 8.29169 15.7667 8.29169H17.5C17.9667 8.30835 18.3334 8.68335 18.3334 9.14169Z"
+                      fill="#616161"
+                    />
+                    <path
+                      d="M17.0584 12.9584H15.8667C14.2834 12.9584 12.9501 11.7667 12.8167 10.25C12.7417 9.38335 13.0584 8.51669 13.6917 7.90002C14.2251 7.35002 14.9667 7.04169 15.7667 7.04169H17.0584C17.3001 7.04169 17.5001 6.84169 17.4751 6.60002C17.2917 4.57502 15.9501 3.19169 13.9584 2.95835C13.7584 2.92502 13.5501 2.91669 13.3334 2.91669H5.83342C5.60008 2.91669 5.37508 2.93335 5.15841 2.96669C3.03341 3.23335 1.66675 4.81669 1.66675 7.08335V12.9167C1.66675 15.2167 3.53341 17.0834 5.83342 17.0834H13.3334C15.6667 17.0834 17.2751 15.625 17.4751 13.4C17.5001 13.1584 17.3001 12.9584 17.0584 12.9584ZM10.8334 8.12502H5.83342C5.49175 8.12502 5.20841 7.84169 5.20841 7.50002C5.20841 7.15835 5.49175 6.87502 5.83342 6.87502H10.8334C11.1751 6.87502 11.4584 7.15835 11.4584 7.50002C11.4584 7.84169 11.1751 8.12502 10.8334 8.12502Z"
+                      fill="#616161"
+                    />
+                  </svg>
+                </div>
+                {{ this.balance }}
+
+                <div class="info-btns__balance-eth">
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 19 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g opacity="0.8">
+                      <path
+                        d="M9.45717 3.13617L9.37817 3.40018V11.061L9.45717 11.1385L13.0738 9.03656L9.45717 3.13617Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M9.45718 3.13617L5.84058 9.03656L9.45718 11.1386V7.42023V3.13617Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M9.45711 12.2955L9.4126 12.3489V15.0778L9.45711 15.2057L13.0759 10.1946L9.45711 12.2955Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M9.45718 15.2057V12.2955L5.84058 10.1946L9.45718 15.2057Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M9.45703 11.1386L13.0736 9.03662L9.45703 7.42029V11.1386Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.84058 9.03655L9.45712 11.1385V7.42023L5.84058 9.03655Z"
+                        fill="white"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
             </div>
             <div class="info-btns__max">Max</div>
           </div>
-          <div class="sale-calc__input">
-            <input />
+          <div class="sale-calc__input" v-bind:class="{ 'allert-border' : alertShow}">
+            <input
+              :value="sendAmount"
+              type="number"
+              @input="(event) => (sendAmount = event.target.value)"
+            />
+            <div class="sale-calc__currency">ETH</div>
+          </div>
+          <div class="sale-calc__allert">
+            <transition name="fade">
+              <div
+                v-if="alertShow"
+              >
+                <p>{{ alertMsg }}</p>
+              </div>
+            </transition>
           </div>
           <div class="sale-calc__range">
-            <input type="range" min="0" max="100" step="25" />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="25"
+              v-on:input="rangeChange"
+            />
             <div class="sale-calc__range-text">
               <p>0%</p>
               <p>25%</p>
@@ -45,33 +151,194 @@
               <p>100%</p>
             </div>
           </div>
-          <div class="sale-calc__btn-deposit">
-            Deposit {{ this.sendAmount }}
+          <div class="sale-calc__buy-calc">
+            {{this.sendAmount}} ETH = {{this.sendAmount * 4000}} JC tokens
+          </div>
+          <div class="sale-calc__btn-deposit" @click="buyToken">
+            Deposit {{ this.sendAmount || 0 }} ETH
           </div>
           <div class="sale-calc__btns">
             <div class="sale-calc__btn-wallet" @click="connect">
+              <div>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.1547 1.68331C12.5919 0.120508 10.0581 0.120506 8.49525 1.68331L6.14078 4.03778C5.87856 4.3 6.09951 4.70051 6.47 4.68462L7.93048 4.62196C8.23593 4.60885 8.52535 4.48164 8.74153 4.26545L9.90946 3.09752C10.6912 2.31577 11.9587 2.31577 12.7404 3.09752C13.5222 3.87928 13.5222 5.14675 12.7404 5.9285L10.9286 7.74032C10.9058 7.76312 10.894 7.79469 10.8963 7.82685C10.9008 7.88935 10.8527 7.94317 10.7901 7.94586L10.7707 7.94669C10.7381 7.94809 10.7073 7.96165 10.6843 7.98469L10.386 8.28297C9.60422 9.06473 8.33675 9.06473 7.55499 8.28297C7.44193 8.16991 7.29158 8.09595 7.13183 8.10281L6.77691 8.11803C5.9868 8.15193 5.46512 8.95519 5.99432 9.54287C6.04151 9.59528 6.09033 9.64674 6.14078 9.69719C7.70358 11.26 10.2374 11.26 11.8002 9.69719L14.1547 7.34271C15.7175 5.77991 15.7175 3.24611 14.1547 1.68331Z"
+                    fill="white"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.75232 7.82161C9.55133 7.79441 10.0605 6.96961 9.49515 6.4043C7.91136 4.82051 5.34352 4.82051 3.75973 6.4043L1.48128 8.68276C-0.102517 10.2665 -0.102518 12.8344 1.48128 14.4182C3.06507 16.002 5.6329 16.002 7.2167 14.4182L9.49515 12.1397C9.71043 11.9244 9.53463 11.5897 9.23035 11.6001L7.60369 11.6554C7.30256 11.6657 7.01656 11.7899 6.80351 12.0029L5.80248 13.004C4.99974 13.8067 3.69823 13.8067 2.89549 13.004C2.09274 12.2012 2.09274 10.8997 2.89549 10.097L5.17394 7.81852C5.97669 7.01577 7.27819 7.01577 8.08094 7.81852C8.09679 7.83437 8.11842 7.84319 8.14082 7.84243L8.75232 7.82161Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
               Connect wallet
             </div>
-            <div class="sale-calc__btn-chat">Chat</div>
+            <div class="sale-calc__btn-chat">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.5263 12.6353L4.52721 12.6334C5.03637 11.6045 5.03637 10.4047 4.52722 9.37574L4.52655 9.3744L2.93155 6.17524L2.93129 6.17472C1.78193 3.87599 4.25869 1.45006 6.53061 2.65087C6.5308 2.65097 6.53099 2.65107 6.53118 2.65117L7.94158 3.40216L7.94151 3.40231L7.95297 3.40804C8.05135 3.45723 8.11925 3.53318 8.15381 3.61765L8.15706 3.6256L8.16058 3.63344L13.3751 15.2264C13.3753 15.2268 13.3755 15.2272 13.3757 15.2276C13.4808 15.467 13.3814 15.7405 13.1617 15.8547L13.1596 15.8559L6.5229 19.3484L6.52139 19.3492C4.26106 20.5485 1.78068 18.1265 2.93129 15.8253L4.5263 12.6353Z"
+                  stroke="url(#paint0_linear_698_1569)"
+                />
+                <path
+                  d="M11.9876 6.50465L11.9874 6.50422C11.7973 6.08339 12.2522 5.66324 12.6531 5.87702L12.6553 5.8782L17.9445 8.66487L17.9446 8.66493C19.8342 9.65989 19.8344 12.3581 17.9449 13.3532C17.9448 13.3533 17.9447 13.3534 17.9446 13.3534L16.0785 14.3322C15.8283 14.4581 15.5262 14.3553 15.4062 14.0934C15.4061 14.0931 15.4059 14.0928 15.4058 14.0925L11.9876 6.50465Z"
+                  stroke="url(#paint1_linear_698_1569)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_698_1569"
+                    x1="15.341"
+                    y1="-0.171808"
+                    x2="0.604244"
+                    y2="20.6731"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#00FFB7" />
+                    <stop offset="1" stop-color="#005B42" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint1_linear_698_1569"
+                    x1="20.8794"
+                    y1="4.27227"
+                    x2="14.2321"
+                    y2="17.1546"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#00FFB7" />
+                    <stop offset="1" stop-color="#005B42" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
         </div>
         <div class="sale-info">
           <div class="sale-info-box sale-info__period">
-            <p class="sale-info__period-text">Sale Period Ends</p>
-            <div class="sale-info__period-time">15:40:35</div>
+            <p class="sale-info__period-text sale-info__header">
+              Sale Period Ends
+            </p>
+            <div class="sale-info__period-time sale-info__info">
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="9.5"
+                  cy="9.5"
+                  r="8.25"
+                  stroke="#878787"
+                  stroke-width="2"
+                />
+                <path
+                  d="M9.5 5.75V10.25L11.375 12.125"
+                  stroke="#878787"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              15:40:35
+            </div>
           </div>
           <div class="sale-info-box sale-info__price">
-            <p class="sale-info__price-text">Price per 1000 tokens</p>
-            <div class="sale-info__price-ammount">0.25 ETH</div>
+            <p class="sale-info__price-text sale-info__header">
+              Price per 1000 tokens
+            </p>
+            <div class="sale-info__price-ammount sale-info__info">
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g opacity="0.8">
+                  <path
+                    d="M9.45717 3.13617L9.37817 3.40018V11.061L9.45717 11.1385L13.0738 9.03656L9.45717 3.13617Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45718 3.13617L5.84058 9.03656L9.45718 11.1386V7.42023V3.13617Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45711 12.2955L9.4126 12.3489V15.0778L9.45711 15.2057L13.0759 10.1946L9.45711 12.2955Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45718 15.2057V12.2955L5.84058 10.1946L9.45718 15.2057Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45703 11.1386L13.0736 9.03662L9.45703 7.42029V11.1386Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M5.84058 9.03655L9.45712 11.1385V7.42023L5.84058 9.03655Z"
+                    fill="white"
+                  />
+                </g>
+              </svg>
+              0.25 ETH
+            </div>
           </div>
           <div class="sale-info-box sale-info__amount">
-            <p class="sale-info__amount-text">CJ For Sale</p>
-            <div class="sale-info__amount-count">2 000 000</div>
+            <p class="sale-info__amount-text sale-info__header">CJ For Sale</p>
+            <div class="sale-info__amount-count sale-info__info">
+              <img :src="tokenImg" />2 000 000
+            </div>
           </div>
           <div class="sale-info-box sale-info__own">
-            <p class="sale-info__own-text">You own</p>
-            <div class="sale-info__own-count">
-              {{ this.totalSupply }}
+            <p class="sale-info__own-text sale-info__header">You own</p>
+            <div class="sale-info__own-count sale-info__info">
+              <img :src="tokenImg" /> {{ this.totalSupply || 0 }}
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.5 17C13.6421 17 17 13.6421 17 9.5C17 5.35786 13.6421 2 9.5 2C5.35786 2 2 5.35786 2 9.5C2 13.6421 5.35786 17 9.5 17Z"
+                  stroke="#05D19B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 12.5V9.5"
+                  stroke="#05D19B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 6.5H9.5075"
+                  stroke="#05D19B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -90,7 +357,8 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import { web3Modal } from "../config/mixins";
 import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
 import store from "../store";
-
+import TokenPng from "../../imgs/sale/token.png";
+console.log(TokenPng);
 export default {
   name: "TokenSale",
   components: {
@@ -127,7 +395,7 @@ export default {
       contractObj: {},
       tokenContractObj: {},
       price: 0,
-      sendAmount: "",
+      sendAmount: 0.1,
       ethereum: window.ethereum,
       copiedTooltip: false,
       contractAddr: "",
@@ -170,6 +438,8 @@ export default {
       },
       number: 0,
       balance: 0,
+      claimCJ: 0,
+      tokenImg: TokenPng,
     };
   },
 
@@ -396,6 +666,15 @@ export default {
       }, 1000);
     },
 
+    rangeChange: function (e) {
+      let target = e.target;
+      const min = target.min;
+      const max = target.max;
+      const val = target.value;
+      target.style.backgroundSize =
+        ((val - min) * 100) / (max - min) + "% 100%";
+    },
+
     // Fallback Function
     connectMetaMask: async function (param) {
       if (param == 1) {
@@ -428,7 +707,6 @@ export default {
     },
   },
 };
-console.log(123123123);
 </script>
 
 <style>
@@ -447,6 +725,8 @@ button[disabled="disabled"] {
   opacity: 0.8;
 }
 .sale-box {
+  font-family: "Inter";
+  font-weight: 400;
   display: flex;
   align-items: center;
 }
@@ -458,6 +738,8 @@ button[disabled="disabled"] {
 }
 .sale-calc__headline {
   font-size: 40px;
+  font-family: "Aaaiight";
+  margin: 0;
   line-height: 36px;
   text-align: center;
 }
@@ -477,6 +759,10 @@ button[disabled="disabled"] {
 .sale-calec__btns-left {
   display: flex;
 }
+.sale-calc__input {
+  position: relative;
+  margin-top: 16px;
+}
 .sale-calc__input input {
   width: 100%;
   height: 62px;
@@ -484,16 +770,37 @@ button[disabled="disabled"] {
   background: none;
   border: 1px solid #242424;
   border-radius: 4px;
-  margin-top: 16px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+  padding-left: 12px;
+  font-family: "Inter";
+  font-weight: 500;
+}
+.sale-calc__currency {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-weight: 500;
+  color: #878787;
 }
 .sale-calc__range input {
   width: 100%;
   margin-top: 16px;
   height: 8px;
   border-radius: 8px;
-  background: #242424;
   -webkit-appearance: none;
   outline: none;
+
+  background: #242424;
+  background-image: linear-gradient(
+    204.42deg,
+    #00ffb7 -11.28%,
+    #005b42 105.96%
+  );
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
 }
 .sale-calc__range input::-webkit-slider-thumb {
   appearance: none;
@@ -502,12 +809,16 @@ button[disabled="disabled"] {
   background: #fff;
   cursor: pointer;
   transition: background 0.15s ease-in-out;
-  border: 6px solid #616161;
+  border: 6px solid #00ffb7;
   border-radius: 20px;
+}
+.sale-calc__range input::-ms-fill-lower {
+  background-color: #005b42;
 }
 .sale-calc__range-text {
   display: flex;
   justify-content: space-between;
+  color: #878787;
 }
 .sale-calc__range-text p {
   text-align: center;
@@ -524,6 +835,8 @@ button[disabled="disabled"] {
   justify-content: center;
   align-items: center;
   margin-top: 16px;
+  font-weight: 500;
+  cursor: pointer;
 }
 .sale-calc__btns {
   display: flex;
@@ -540,8 +853,38 @@ button[disabled="disabled"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
+.info-btns__refresh {
+  cursor: pointer;
+}
+.info-btns__balance {
+  display: flex;
+  margin-left: 10px;
+}
+.info-btns__balance-wallet {
+  margin-right: 9px;
+}
+.info-btns__balance-eth {
+  margin-left: 4px;
+}
+.info-btns__max {
+  color: #00ffb7;
+  cursor: pointer;
+}
+.sale-calc__btn-chat {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 .sale-info {
   background: rgba(8, 8, 8, 0.9);
   border-radius: 0px 8px 8px 0px;
@@ -555,5 +898,45 @@ button[disabled="disabled"] {
   justify-content: center;
   text-align: center;
   border-bottom: 1px solid #242424;
+}
+.sale-info__header {
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 22.4px;
+  color: #878787;
+  margin: 0;
+}
+.sale-info__info {
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 30.6px;
+  color: #fff;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.sale-calc__allert{
+  color: #FE6161;
+  font-size: 12px;
+  line-height: 19.2px;
+}
+.allert-border input{
+  border-color: #FE6161;
+}
+.sale-calc__buy-calc {
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 </style>
