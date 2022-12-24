@@ -11,6 +11,10 @@ import { Document, WatchGreen } from "../../imgs/new/svg";
 import { intervalToDuration } from "date-fns";
 import { PreSaleMp4 } from "../../videos";
 
+import { applyVueInReact } from "veaury";
+import App from "../../vuesale/App";
+const VueApp = applyVueInReact(App);
+
 const Sale = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenuDropdown, setActiveMenuDropdown] = useState(0);
@@ -312,35 +316,34 @@ const Sale = () => {
         <Box
           sx={{
             minHeight: "100vh",
-            position: 'relative'
+            position: "relative",
           }}
         >
-
-        <Box>
-          <video
-            ref={refVideo}
-            autoPlay="autoPlay"
-            loop="loop"
-            muted
-            playsInline
-            onContextMenu={() => false}
-            preload="auto"
-            id="vid"
-            poster={SaleBG}
-            style={{
-              objectFit: "cover",
-              height: "100vh",
-              width: "100%",
-              position: "absolute",
-              top: 0,
-              right: 0,
-              zIndex: -1,
-            }}
-          >
-            <source src={PreSaleMp4} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </Box>
+          <Box>
+            <video
+              ref={refVideo}
+              autoPlay="autoPlay"
+              loop="loop"
+              muted
+              playsInline
+              onContextMenu={() => false}
+              preload="auto"
+              id="vid"
+              poster={SaleBG}
+              style={{
+                objectFit: "cover",
+                height: "100vh",
+                width: "100%",
+                position: "absolute",
+                top: 0,
+                right: 0,
+                zIndex: -1,
+              }}
+            >
+              <source src={PreSaleMp4} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
           <Box
             sx={{
               position: "absolute",
@@ -554,12 +557,12 @@ const Sale = () => {
               <Header closeMenu={handleMobileMenu} buttons={buttons} />
             </Box>
           </Box>
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               alignItems: "center",
               paddingLeft: { xs: 0, md: "135px" },
-              paddingTop: { xs: '30px', md: "160px" },
+              paddingTop: { xs: "30px", md: "160px" },
               justifyContent: { xs: "center", md: "start" },
             }}
           >
@@ -803,11 +806,7 @@ const Sale = () => {
                   </Box>
                 </Box>
               </Box>
-              <Link
-                href="/whitelist.html"
-                target="_blank"
-                underline="none"
-              >
+              <Link href="/whitelist.html" target="_blank" underline="none">
                 <Box
                   sx={{
                     width: { xs: "240px", md: "394px" },
@@ -981,6 +980,14 @@ const Sale = () => {
                 </Link>
               </Box>
             </Box>
+          </Box> */}
+          <Box
+            sx={{
+              paddingLeft: { xs: 0, md: "135px" },
+              paddingTop: { xs: "30px", md: "160px" },
+            }}
+          >
+            <VueApp />
           </Box>
         </Box>
         <Box sx={{ marginTop: { xs: "60px", md: "100px" } }}>

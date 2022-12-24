@@ -7,10 +7,6 @@ import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
 import Sale from "../modules/sale/sale";
 
-import { applyVueInReact } from "veaury";
-import App from "../vuesale/App";
-const BasicWithNormal = applyVueInReact(App);
-
 const DELAY = 5000;
 
 const Main = () => {
@@ -111,7 +107,6 @@ const Main = () => {
             <>
               <Box sx={{ overflowX: "hidden" }}>
                 <Sale />
-                <BasicWithNormal />
               </Box>
             </>
           )}
