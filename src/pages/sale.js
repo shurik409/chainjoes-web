@@ -1,17 +1,15 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
-import {
-  Loader,
-} from "../modules";
+import { Loader } from "../modules";
 import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
 import Sale from "../modules/sale/sale";
 
-import {applyVueInReact, applyPureVueInReact} from 'veaury'
-import App from "../vuesale/App.vue";
-const BasicWithNormal = applyVueInReact(App)
+import { applyVueInReact } from "veaury";
+import App from "../vuesale/App";
+const BasicWithNormal = applyVueInReact(App);
 
 const DELAY = 5000;
 
@@ -76,8 +74,6 @@ const Main = () => {
     }
   }, []);
 
-  
-
   return (
     <>
       {timeProgres < 1 && isPlaying && !isPlayed ? (
@@ -114,8 +110,8 @@ const Main = () => {
           ) : (
             <>
               <Box sx={{ overflowX: "hidden" }}>
-                <Sale/>
-                <BasicWithNormal/>
+                <Sale />
+                <BasicWithNormal />
               </Box>
             </>
           )}

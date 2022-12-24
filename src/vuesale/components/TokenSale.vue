@@ -81,14 +81,15 @@
 </template>
 <script>
 import Web3 from "web3";
-import PresaleJson from "../../contracts/Presale.json";
-import TokenJson from "../../contracts/Token.json";
-import ContractAddresses from "../../contracts/contract-address.json";
+import PresaleJson from "../contracts/Presale.json";
+import TokenJson from "../contracts/Token.json";
+import ContractAddresses from "../contracts/contract-address.json";
 
 import { Web3ModalComponent } from "web3modal-vue3";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { web3Modal } from "../config/mixins";
 import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
+import store from "../store";
 
 export default {
   name: "TokenSale",
@@ -98,13 +99,13 @@ export default {
   mixins: [web3Modal],
   computed: {
     web3() {
-      return this.$store.state.web3;
+      return store.state.web3;
     },
     chainId() {
-      if (this.$store.state.web3.isInjected == false) {
+      if (store.state.web3.isInjected == false) {
         return 1;
       } else {
-        return this.$store.state.myChainId;
+        return store.state.myChainId;
       }
     },
     recvAmount: {
@@ -177,7 +178,7 @@ export default {
       console.log("created---------", window.ethereum);
       this.web3Obj.eth.getAccounts().then((result) => {
         this.account = result[0];
-        //this.$store.dispatch("checkMetamaskAddr", {metamask:result[0]});
+        //store.dispatch("checkMetamaskAddr", {metamask:result[0]});
       });
       window.ethereum.on("networkChanged", (networkId) => {
         this.networkChanged(networkId);
@@ -203,8 +204,8 @@ export default {
     // WalletConnect
     this.$nextTick(async () => {
       const web3modal = this.$refs.web3modal;
-      //this.$store.dispatch("setWeb3ModalAction", web3modal)
-      this.$store.commit("setWeb3Modal", web3modal);
+      //store.dispatch("setWeb3ModalAction", web3modal)
+      store.commit("setWeb3Modal", web3modal);
       console.log("cacheProvider=>>>>", web3modal.cacheProvider);
       if (web3modal.cacheProvider) {
         this.connect();
@@ -214,7 +215,7 @@ export default {
   methods: {
     // WalletConnect
     connect() {
-      this.$store.dispatch("connect");
+      store.dispatch("connect");
       //this.subscribeMewBlockHeaders()
     },
     async switchNetwork(netid) {
@@ -405,10 +406,10 @@ export default {
             document.location.reload();
           });
       } else {
-        console.log("here", this.$store.state.web3.coinbase);
+        console.log("here", store.state.web3.coinbase);
         let params = [
           {
-            from: this.$store.state.web3.coinbase,
+            from: store.state.web3.coinbase,
             to: ContractAddresses.Token,
           },
         ];

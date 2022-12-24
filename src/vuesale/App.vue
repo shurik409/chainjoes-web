@@ -1,19 +1,18 @@
 <template>
-  <div>asdad</div>
- <!-- <TokenSale /> -->
+  <!-- <div>asdad</div> -->
+ <TokenSale />
 </template>
 
 <script>
-// import TokenSale from './components/TokenSale.vue'
+import TokenSale from './components/TokenSale.vue'
 
 
-console.log(12312);
 export default {
   name: 'App',
 
-  // components: {
-  //   TokenSale
-  // },
+  components: {
+    TokenSale
+  },
 
   data() {
     return {
