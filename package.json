@@ -103,7 +103,7 @@
     "vue-loader": "^17.0.0"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false && node --max-old-space-size=4096 scripts/start.js",
+    "start": "GENERATE_SOURCEMAP=false && node --max-old-space-size=4096 --trace-deprecation scripts/start.js",
     "build": "GENERATE_SOURCEMAP=false && node --max-old-space-size=4096 scripts/build.js",
     "test": "node scripts/test.js"
   },
