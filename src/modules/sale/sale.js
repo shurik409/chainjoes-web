@@ -29,6 +29,12 @@ const Sale = () => {
   );
   const refVideo = useRef(null);
   const [muted, setMuted] = useState(false);
+  const [endSaleTime, setEndSaleTime] = useState(
+    intervalToDuration({
+      start: new Date(),
+      end: new Date("Dec 31 2022 00:00:00 GMT+0100"),
+    })
+  );
 
   useEffect(() => {
     if (!refVideo.current) {
@@ -44,7 +50,11 @@ const Sale = () => {
 
   useEffect(() => {
     const interval = setInterval(() => getTime(), 1000);
-    return () => clearInterval(interval);
+    const intervalToEnd = setInterval(() => getTimeToEnd(), 1000);
+    return () => {
+      clearInterval(interval);
+      clearInterval(intervalToEnd);
+    };
   }, []);
 
   const handleMobileMenu = (e) => {
@@ -64,6 +74,14 @@ const Sale = () => {
     });
 
     setTimeInterval(time);
+  };
+
+  const getTimeToEnd = () => {
+    let time = intervalToDuration({
+      start: new Date(),
+      end: new Date("Dec 31 2022 00:00:00 GMT+0100"),
+    });
+    setEndSaleTime(time);
   };
 
   const buttons = [
@@ -997,7 +1015,7 @@ const Sale = () => {
               paddingTop: { xs: "30px", md: "160px" },
             }}
           >
-            <VueApp />
+            <VueApp timer={endSaleTime}/>
           </Box>
         </Box>
         <Box sx={{ marginTop: { xs: "60px", md: "100px" } }}>
