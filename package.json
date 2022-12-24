@@ -103,8 +103,8 @@
     "vue-loader": "^17.0.0"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false node scripts/start.js",
-    "build": "GENERATE_SOURCEMAP=false && node --max-old-space-size=4096  scripts/build.js",
+    "start": "GENERATE_SOURCEMAP=false && node --max-old-space-size=4096  node scripts/start.js",
+    "build": "GENERATE_SOURCEMAP=false scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
