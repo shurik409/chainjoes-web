@@ -116,9 +116,12 @@
                 </div>
               </div>
             </div>
-            <div class="info-btns__max">Max</div>
+            <div class="info-btns__max" @click="setMaxAmount">Max</div>
           </div>
-          <div class="sale-calc__input" v-bind:class="{ 'allert-border' : alertShow}">
+          <div
+            class="sale-calc__input"
+            v-bind:class="{ 'allert-border': alertShow }"
+          >
             <input
               :value="sendAmount"
               type="number"
@@ -128,9 +131,7 @@
           </div>
           <div class="sale-calc__allert">
             <transition name="fade">
-              <div
-                v-if="alertShow"
-              >
+              <div v-if="alertShow">
                 <p>{{ alertMsg }}</p>
               </div>
             </transition>
@@ -142,6 +143,9 @@
               max="100"
               step="25"
               v-on:input="rangeChange"
+              :value="rangeValue"
+              ref="range"
+              @input="(event) => (rangeValue = event.target.value)"
             />
             <div class="sale-calc__range-text">
               <p>0%</p>
@@ -152,7 +156,7 @@
             </div>
           </div>
           <div class="sale-calc__buy-calc">
-            {{this.sendAmount}} ETH = {{this.sendAmount * 4000}} JC tokens
+            {{ this.sendAmount }} ETH = {{ this.sendAmount * 4000 }} JC tokens
           </div>
           <div class="sale-calc__btn-deposit" @click="buyToken">
             Deposit {{ this.sendAmount || 0 }} ETH
@@ -255,7 +259,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              15:40:35
+              {{ $attrs.timer.days * 24 + $attrs.timer.hours }}:{{
+                $attrs.timer.minutes
+              }}:{{ $attrs.timer.seconds }}
             </div>
           </div>
           <div class="sale-info-box sale-info__price">
@@ -440,6 +446,8 @@ export default {
       balance: 0,
       claimCJ: 0,
       tokenImg: TokenPng,
+      balance2: 1000,
+      rangeValue: 50,
     };
   },
 
@@ -481,6 +489,7 @@ export default {
         this.connect();
       }
     });
+    this.sendAmount = this.balance2 / 2;
   },
   methods: {
     // WalletConnect
@@ -535,6 +544,7 @@ export default {
 
     async getBalance() {
       await this.web3Obj.eth.getBalance(this.account).then((result) => {
+        console.log(1212, result);
         this.balance = Web3.utils.fromWei(result, "ether");
       });
       this.tokenContractObj.methods
@@ -543,6 +553,7 @@ export default {
         .then((result) => {
           this.nextBalance = result;
         });
+      console.log(22);
     },
 
     async getSupply() {
@@ -666,13 +677,22 @@ export default {
       }, 1000);
     },
 
-    rangeChange: function (e) {
-      let target = e.target;
+    rangeChange: function (e, value) {
+      if (value) {
+        this.rangeValue = value;
+      }
+      let target = this.$refs.range;
       const min = target.min;
       const max = target.max;
-      const val = target.value;
+      const val = value || target.value;
+      console.log(123, val);
+      this.sendAmount = (this.balance2 * val) / 100;
       target.style.backgroundSize =
         ((val - min) * 100) / (max - min) + "% 100%";
+    },
+    setMaxAmount: function () {
+      this.sendAmount = this.balance2;
+      this.rangeChange(false, 100);
     },
 
     // Fallback Function
@@ -916,13 +936,13 @@ button[disabled="disabled"] {
   justify-content: center;
   align-items: center;
 }
-.sale-calc__allert{
-  color: #FE6161;
+.sale-calc__allert {
+  color: #fe6161;
   font-size: 12px;
   line-height: 19.2px;
 }
-.allert-border input{
-  border-color: #FE6161;
+.allert-border input {
+  border-color: #fe6161;
 }
 .sale-calc__buy-calc {
   text-align: center;
@@ -936,7 +956,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 </style>
