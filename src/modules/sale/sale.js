@@ -57,7 +57,7 @@ const Sale = () => {
     console.log(12);
     let time = intervalToDuration({
       start: new Date(),
-      end: new Date("Dec 26 2022 00:00:00 GMT+0100"),
+      end: new Date("Dec 29 2022 00:00:00 GMT+0100"),
     });
 
     setTimeInterval(time);
