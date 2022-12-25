@@ -172,7 +172,7 @@ const First = () => {
             fontFamily="Inter"
             style={{ fontSize: "inherit", lineHeight: "inherit" }}
           >
-            The Private Sale starts on December 26. Be first to participate
+            The Private Sale starts on December 29. Be first to participate
           </Typography>
           <Link href="/pdfs/Sale_Strategy.pdf" target="_blank" underline="none">
             <Box
