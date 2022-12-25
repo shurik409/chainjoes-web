@@ -489,7 +489,7 @@ export default {
         this.connect();
       }
     });
-    this.sendAmount = this.balance2 / 2;
+    this.sendAmount = this.balance / 2 || 0;
   },
   methods: {
     // WalletConnect
@@ -544,7 +544,6 @@ export default {
 
     async getBalance() {
       await this.web3Obj.eth.getBalance(this.account).then((result) => {
-        console.log(1212, result);
         this.balance = Web3.utils.fromWei(result, "ether");
       });
       this.tokenContractObj.methods
@@ -553,7 +552,6 @@ export default {
         .then((result) => {
           this.nextBalance = result;
         });
-      console.log(22);
     },
 
     async getSupply() {
@@ -685,13 +683,12 @@ export default {
       const min = target.min;
       const max = target.max;
       const val = value || target.value;
-      console.log(123, val);
-      this.sendAmount = (this.balance2 * val) / 100;
+      this.sendAmount = (this.balance * val) / 100;
       target.style.backgroundSize =
         ((val - min) * 100) / (max - min) + "% 100%";
     },
     setMaxAmount: function () {
-      this.sendAmount = this.balance2;
+      this.sendAmount = this.balance;
       this.rangeChange(false, 100);
     },
 
