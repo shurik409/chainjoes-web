@@ -25,7 +25,7 @@ const Header = ({ closeMenu, buttons }) => {
           justifyContent: "space-between",
         }}
       >
-        <RouterLink to="/">
+        <RouterLink to="/main">
           <Box
             sx={{
               height: 45,

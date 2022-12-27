@@ -161,33 +161,53 @@ const Enemies = () => {
                   </Typography>
                 </Box>
               </Link>
-              <Box
-                sx={{
-                  width: { xs: "248px", md: "260px" },
-                  height: { xs: "48px", md: "60px" },
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "2px",
-                  border: "1px solid #868D8B",
-                  marginRight: { xs: 0, md: "16px" },
-                  fontSize: { xs: "14px", md: "16px" },
-                  lineHeight: { xs: "14px", md: "16px" },
-                  marginTop: { xs: "12px", md: 0 },
-                  cursor: `url(${BlockCursor}), pointer`,
-                }}
+              <Link
+                href="https://www.youtube.com/watch?v=bJ28vhjO4Qg"
+                target="_blank"
+                underline="none"
               >
-                <img src={Video} alt="login" />
-                <Typography
-                  color="#868D8B"
-                  fontWeight="600"
-                  fontFamily="Inter"
-                  marginLeft="8px"
-                  style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                <Box
+                  sx={{
+                    width: { xs: "248px", md: "260px" },
+                    height: { xs: "48px", md: "60px" },
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    border: "1px solid",
+                    borderRadius: "2px",
+                    borderImageSlice: 1,
+                    marginRight: { xs: 0, md: "16px" },
+                    fontSize: { xs: "14px", md: "16px" },
+                    lineHeight: { xs: "14px", md: "16px" },
+                    marginTop: { xs: "12px", md: 0 },
+                    borderImageSource:
+                      "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                    cursor: `pointer`,
+                    color: "#05D19B",
+                    ":hover": {
+                      color: "#FFF",
+                    },
+                    ":focus": {
+                      border: "1px solid #FFF",
+                      color: "#FFF",
+                    },
+                    ":active": {
+                      background: "#FFF",
+                      color: "#080808",
+                    },
+                  }}
                 >
-                  Watch the teaser <sup>coming soon</sup>
-                </Typography>
-              </Box>
+                  <img src={Video} alt="login" />
+                  <Typography
+                    fontWeight="600"
+                    fontFamily="Inter"
+                    marginLeft="8px"
+                    style={{ fontSize: "inherit", lineHeight: "inherit" }}
+                  >
+                    Watch the teaser
+                  </Typography>
+                </Box>
+              </Link>
             </Box>
           </Box>
           <Box>

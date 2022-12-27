@@ -213,8 +213,8 @@ const Sale = () => {
       title: "For how long will the private sale be opened?",
       description: (
         <>
-          The private sale will begin on 26th of December and will close on 28th
-          of December or until the hard cap is reached.
+          The private sale will begin on December 29 and will close on December
+          30 or until the hard cap is reached.
         </>
       ),
     },
@@ -268,8 +268,8 @@ const Sale = () => {
           In that case we will open the sale for the rest of the people who
           registered in the WL beyond the first 2000 who got selected.
           <br />
-          The private sale will then continue until 31st of December or until
-          the hard cap is reached.
+          The private sale will then continue until December 30 or until the
+          hard cap is reached.
         </>
       ),
     },
@@ -313,35 +313,34 @@ const Sale = () => {
         <Box
           sx={{
             minHeight: "100vh",
-            position: 'relative'
+            position: "relative",
           }}
         >
-
-        <Box>
-          <video
-            ref={refVideo}
-            autoPlay="autoPlay"
-            loop="loop"
-            muted
-            playsInline
-            onContextMenu={() => false}
-            preload="auto"
-            id="vid"
-            poster={SaleBG}
-            style={{
-              objectFit: "cover",
-              height: "100vh",
-              width: "100%",
-              position: "absolute",
-              top: 0,
-              right: 0,
-              zIndex: -1,
-            }}
-          >
-            <source src={PreSaleMp4} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </Box>
+          <Box>
+            <video
+              ref={refVideo}
+              autoPlay="autoPlay"
+              loop="loop"
+              muted
+              playsInline
+              onContextMenu={() => false}
+              preload="auto"
+              id="vid"
+              poster={SaleBG}
+              style={{
+                objectFit: "cover",
+                height: "100vh",
+                width: "100%",
+                position: "absolute",
+                top: 0,
+                right: 0,
+                zIndex: -1,
+              }}
+            >
+              <source src={PreSaleMp4} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
           <Box
             sx={{
               position: "absolute",
@@ -368,6 +367,7 @@ const Sale = () => {
                 sx={{
                   marginBottom: activeMenuDropdown === index ? "36px" : "0",
                 }}
+                key={`menu-button-sale-${index}`}
               >
                 <Box
                   onClick={() => {
@@ -486,6 +486,7 @@ const Sale = () => {
                             lineHeight: { xs: "14px", md: "24px" },
                           },
                         }}
+                        key={`button-index-${index}`}
                       >
                         {link.type === "scroll" ? (
                           <HashLink
@@ -560,7 +561,7 @@ const Sale = () => {
               display: "flex",
               alignItems: "center",
               paddingLeft: { xs: 0, md: "135px" },
-              paddingTop: { xs: '30px', md: "160px" },
+              paddingTop: { xs: "30px", md: "160px" },
               justifyContent: { xs: "center", md: "start" },
             }}
           >
@@ -804,11 +805,7 @@ const Sale = () => {
                   </Box>
                 </Box>
               </Box>
-              <Link
-                href="/whitelist.html"
-                target="_blank"
-                underline="none"
-              >
+              <Link href="/whitelist.html" target="_blank" underline="none">
                 <Box
                   sx={{
                     width: { xs: "240px", md: "394px" },
@@ -1015,6 +1012,7 @@ const Sale = () => {
                 cursor: "pointer",
               }}
               onClick={() => setActiveFaq(index)}
+              key={`faq-el-${index}`}
             >
               <Box
                 sx={{

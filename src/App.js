@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import { Box } from "@mui/material";
 import { Main, PrivacyPolicy, Terms, FAQ, Sale } from "./pages";
@@ -22,11 +22,12 @@ function App() {
     <Box>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route exact path="/" element={<Navigate to="/sale" replace />}/>
+          <Route path="/main" element={<Main />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-conditions" element={<Terms />} />
           <Route path="faq" element={<FAQ />} />
-          <Route path="sale" element={<Sale/>} />
+          <Route path="sale" element={<Sale />} />
         </Routes>
       </ThemeProvider>
     </Box>

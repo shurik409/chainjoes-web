@@ -8,6 +8,7 @@ import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
 import Cookies from "js-cookie";
 import Sale from "../modules/sale/sale";
+import { useMediaQuery } from "@mui/material";
 
 const DELAY = 5000;
 
@@ -16,6 +17,8 @@ const Main = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPlayed, setIsPlayed] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
+
+  const desktop = useMediaQuery("(min-width: 768px)");
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
 
@@ -80,7 +83,7 @@ const Main = () => {
         <Loader progres={timeProgres} />
       ) : (
         <>
-          {isPlaying && !isPlayed ? (
+          {isPlaying && !isPlayed && desktop ? (
             <Box
               sx={{
                 display: "flex",

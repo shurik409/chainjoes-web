@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
+import { useMediaQuery } from "@mui/material";
 import {
   First,
   Enemies,
@@ -36,6 +37,8 @@ const Main = () => {
     }
   };
 
+  const desktop = useMediaQuery("(min-width: 768px)");
+
   const updateTime = (startTime) => {
     let currentTime = new Date();
     if (currentTime.getTime() - startTime <= DELAY + 1000) {
@@ -51,10 +54,6 @@ const Main = () => {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
-    const saleVisit = Cookies.get("VisitSale");
-    if(saleVisit !== '1') {
-      navigate("/sale");
-    }
     setProgres(0);
     setIsPlayed(cook);
     getAllVideo().forEach((src) => {
@@ -92,11 +91,11 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 && isPlaying && !isPlayed ?  (
+      {timeProgres < 1 && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>
-          {isPlaying && !isPlayed ? (
+          {isPlaying && !isPlayed && desktop ? (
             <Box
               sx={{
                 display: "flex",

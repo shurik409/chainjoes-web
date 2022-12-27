@@ -53,7 +53,7 @@ const Footer = () => {
                 marginRight: { xs: "80px", md: "28px" },
               }}
             >
-              <RouterLink to="/">
+              <RouterLink to="/main">
                 <Box
                   sx={{
                     marginBottom: { xs: "20px", md: "28px" },

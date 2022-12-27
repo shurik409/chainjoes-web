@@ -20,8 +20,8 @@ const WatchGreen = ({ color, width }) => (
         y2="18.7186"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFB7" />
-        <stop offset="1" stop-color="#005B42" />
+        <stop stopColor="#00FFB7" />
+        <stop offset="1" stopColor="#005B42" />
       </linearGradient>
     </defs>
   </svg>
