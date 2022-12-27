@@ -30,6 +30,7 @@ const web3ModalStore = {
   },
   actions: {
     async connect({ state, commit, dispatch }) {
+      console.log(2);
       const provider = await state.web3Modal.connect();
 
       const library = new ethers.providers.Web3Provider(provider);
@@ -38,6 +39,8 @@ const web3ModalStore = {
       commit("setLibrary", library);
 
       const accounts = await library.listAccounts();
+      console.log("library", library)
+      console.log("accounts", accounts)
       if (accounts.length > 0) {
         commit("setAccount", accounts[0]);
       }
@@ -47,6 +50,7 @@ const web3ModalStore = {
 
       provider.on("connect", async (info) => {
         const chainId = parseInt(info.chainId);
+        console.log(chainId);
         commit("setChainId", chainId);
         console.log("connect", info);
       });
