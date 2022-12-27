@@ -12,6 +12,7 @@ export default createStore({
   state,
   mutations: {
     registerWeb3Instance(state, payload) {
+      console.log(12212);
       let result = payload;
       let web3Copy = state.web3;
       web3Copy.coinbase = result.coinbase;
@@ -27,6 +28,7 @@ export default createStore({
   },
   actions: {
     registerWeb3({ commit }) {
+      console.log("register")
       console.log("registerWeb3 Action being executed");
       getWeb3
         .then((result) => {

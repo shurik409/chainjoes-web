@@ -166,7 +166,36 @@
             Deposit {{ this.sendAmount || 0 }} ETH
           </div>
           <div class="sale-calc__btns">
-            <div class="sale-calc__btn-wallet" @click="connect">
+            <div class="sale-calc__btn-wallet" v-if="!account" @click="connect">
+              <div>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.1547 1.68331C12.5919 0.120508 10.0581 0.120506 8.49525 1.68331L6.14078 4.03778C5.87856 4.3 6.09951 4.70051 6.47 4.68462L7.93048 4.62196C8.23593 4.60885 8.52535 4.48164 8.74153 4.26545L9.90946 3.09752C10.6912 2.31577 11.9587 2.31577 12.7404 3.09752C13.5222 3.87928 13.5222 5.14675 12.7404 5.9285L10.9286 7.74032C10.9058 7.76312 10.894 7.79469 10.8963 7.82685C10.9008 7.88935 10.8527 7.94317 10.7901 7.94586L10.7707 7.94669C10.7381 7.94809 10.7073 7.96165 10.6843 7.98469L10.386 8.28297C9.60422 9.06473 8.33675 9.06473 7.55499 8.28297C7.44193 8.16991 7.29158 8.09595 7.13183 8.10281L6.77691 8.11803C5.9868 8.15193 5.46512 8.95519 5.99432 9.54287C6.04151 9.59528 6.09033 9.64674 6.14078 9.69719C7.70358 11.26 10.2374 11.26 11.8002 9.69719L14.1547 7.34271C15.7175 5.77991 15.7175 3.24611 14.1547 1.68331Z"
+                    v-bind:fill="'white'"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.75232 7.82161C9.55133 7.79441 10.0605 6.96961 9.49515 6.4043C7.91136 4.82051 5.34352 4.82051 3.75973 6.4043L1.48128 8.68276C-0.102517 10.2665 -0.102518 12.8344 1.48128 14.4182C3.06507 16.002 5.6329 16.002 7.2167 14.4182L9.49515 12.1397C9.71043 11.9244 9.53463 11.5897 9.23035 11.6001L7.60369 11.6554C7.30256 11.6657 7.01656 11.7899 6.80351 12.0029L5.80248 13.004C4.99974 13.8067 3.69823 13.8067 2.89549 13.004C2.09274 12.2012 2.09274 10.8997 2.89549 10.097L5.17394 7.81852C5.97669 7.01577 7.27819 7.01577 8.08094 7.81852C8.09679 7.83437 8.11842 7.84319 8.14082 7.84243L8.75232 7.82161Z"
+                    v-bind:fill="'white'"
+                  />
+                </svg>
+              </div>
+              Connect wallet
+            </div>
+            <div
+              class="sale-calc__btn-wallet"
+              v-else="!account"
+              @click="connectMetaMask(2)"
+            >
               <div>
                 <svg
                   width="16"
@@ -485,10 +514,12 @@ export default {
     // WalletConnect
     this.$nextTick(async () => {
       const web3modal = this.$refs.web3modal;
-      //store.dispatch("setWeb3ModalAction", web3modal)
+      console.log("web3modal", web3modal);
+      // store.dispatch("setWeb3ModalAction", web3modal)
       store.commit("setWeb3Modal", web3modal);
       console.log("cacheProvider=>>>>", web3modal.cacheProvider);
       if (web3modal.cacheProvider) {
+        console.log("asdas");
         this.connect();
       }
     });
@@ -497,6 +528,7 @@ export default {
   methods: {
     // WalletConnect
     connect() {
+      console.log(1);
       store.dispatch("connect");
       //this.subscribeMewBlockHeaders()
     },
@@ -964,5 +996,48 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 768px) {
+  .sale-box {
+    flex-direction: column;
+  }
+
+  .sale-calc {
+    padding: 40px 20px;
+    max-width: 240px;
+  }
+
+  .sale-calc__headline {
+    font-size: 37px;
+    line-height: 33.3px;
+    max-width: 240px;
+    margin: auto;
+  }
+  .sale-calc__subheadline {
+    font-size: 12px;
+    line-height: 19.2px;
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sale-calc__input input {
+    min-width: 228px;
+    width: 228px;
+  }
+  .sale-calc__range-text {
+    justify-content: space-between;
+  }
+  .sale-calc__range-text p {
+    font-size: 12px;
+    line-height: 19.2px;
+  }
+  .sale-calc__buy-calc {
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+  .sale-calc__btn-wallet {
+    width: 184px;
+  }
 }
 </style>
