@@ -19,6 +19,8 @@ const Main = () => {
 
   const desktop = useMediaQuery("(min-width: 768px)");
 
+  const desktop = useMediaQuery("(min-width: 768px)");
+
   const increaseProgres = () => setProgres((prev) => prev + 1);
 
   const getTimeProgress = (startTime, currentTime) => {
