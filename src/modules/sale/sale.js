@@ -20,7 +20,7 @@ const Sale = () => {
   const [timeInterval, setTimeInterval] = useState(
     intervalToDuration({
       start: new Date(),
-      end: new Date("Dec 29 2022 00:00:00 GMT+0100"),
+      end: new Date("Dec 29 2022 18:00:00 GMT+0100"),
     })
   );
   const refVideo = useRef(null);
@@ -54,10 +54,9 @@ const Sale = () => {
   };
 
   const getTime = () => {
-    console.log(12);
     let time = intervalToDuration({
       start: new Date(),
-      end: new Date("Dec 29 2022 00:00:00 GMT+0100"),
+      end: new Date("Dec 29 2022 18:00:00 GMT+0100"),
     });
 
     setTimeInterval(time);
