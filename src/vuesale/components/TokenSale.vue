@@ -2,13 +2,9 @@
   <div>
     <Web3ModalComponent
       ref="web3modal"
-      :theme="theme"
       :provider-options="providerOptions"
       cache-provider
     />
-
-    <!-- Alert -->
-
     <section id="sale-box">
       <div class="sale-box">
         <div class="sale-calc">
@@ -383,6 +379,36 @@
         </div>
       </div>
     </section>
+    <section id="congrats" v-if="congrats">
+      <div class="congrats">
+        <div class="congrats__image"></div>
+        <div class="congrats__headline">
+          <p>
+            <span class="color-green">Congratulations,</span><br />you are now
+            part of the Chain Joes DAO!
+          </p>
+        </div>
+        <div class="congrats__description">
+          We are waiting for you among the Defenders in our
+          <a href="https://discord.com/invite/chainjoes" target="_blank"
+            >Discord</a
+          >
+          to fight web3 enemies!
+          <br />
+          <br />
+          The tokens will be claimable after the public IDO. We will deploy our
+          token on Uniswap after the public IDO. Before that, there will be no
+          active market for it. Therefore for security reasons, tokens from the
+          private sale will be claimable after the public IDO just before we
+          launch the liquidity pool on Uniswap.
+          <br />
+          <br />
+          Official trading contract on Uniswap will be announced in our socials
+          in the Q1 2023.
+        </div>
+        <div class="congrats__btn" @click="closeCongrats">Cool, thx</div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -480,6 +506,7 @@ export default {
       tokenImg: TokenPng,
       balance2: 1000,
       rangeValue: 50,
+      congrats: false,
     };
   },
 
@@ -679,7 +706,7 @@ export default {
         });
     },
     buyToken: async function () {
-      if (account) {
+      if (this.account) {
         if (this.sendAmount < this.minBUY) {
           return;
         }
@@ -696,7 +723,13 @@ export default {
           })
           .then((res) => {
             console.log(res);
-            document.location.reload();
+            this.congrats = true;
+            setIsMenuOpen(!isMenuOpen);
+            document.getElementById("root").classList.toggle("mobileMenu");
+            html.style.overflow === "hidden"
+              ? (html.style.overflow = "auto")
+              : (html.style.overflow = "hidden");
+            // document.location.reload();
           });
       }
     },
@@ -758,6 +791,13 @@ export default {
             console.log(error);
           });
       }
+    },
+    closeCongrats: function () {
+      this.congrats = false;
+      document.getElementById("root").classList.toggle("mobileMenu");
+      html.style.overflow === "hidden"
+        ? (html.style.overflow = "auto")
+        : (html.style.overflow = "hidden");
     },
   },
 };
@@ -985,6 +1025,68 @@ button[disabled="disabled"] {
   background: #616161;
   color: #878787;
 }
+#congrats {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #080808e6;
+}
+.congrats {
+  font-family: "Inter";
+  width: 570px;
+  padding-bottom: 60px;
+  background-color: #080808;
+}
+.congrats__image {
+  width: 100%;
+  height: 123px;
+  background: url(../../imgs/sale/congrats.png);
+}
+.congrats__headline {
+  margin-top: 40px;
+  font-size: 40px;
+  line-height: 36px;
+  color: #fff;
+  width: 415px;
+  font-family: "Aaaiight";
+  margin: auto;
+  text-align: center;
+}
+.color-green {
+  color: #05d19b;
+}
+.congrats__description {
+  margin-top: 40px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 22.4px;
+  width: 450px;
+  margin: auto;
+  text-align: center;
+}
+.congrats__description a {
+  color: #05d19b;
+  text-decoration: none;
+}
+.congrats__btn {
+  width: 450px;
+  padding: 16px 0px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(204.42deg, #00ffb7 -11.28%, #005b42 105.96%);
+  margin: auto;
+  margin-top: 40px;
+  cursor: pointer;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -1038,6 +1140,26 @@ input[type="number"] {
   }
   .sale-calc__btn-wallet {
     width: 184px;
+  }
+  .congrats {
+    width: 280px;
+  }
+  .congrats__image {
+    background: url(../../imgs/sale/congratsMobile.png);
+  }
+  .congrats__headline {
+    width: 240px;
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+  .congrats__description {
+    width: 240px;
+    font-size: 12px;
+    line-height: 19.2px;
+    margin-top: 12px;
+  }
+  .congrats__btn {
+    width: 240px;
   }
 }
 </style>
