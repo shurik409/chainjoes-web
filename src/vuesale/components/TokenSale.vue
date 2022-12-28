@@ -264,7 +264,7 @@
             </div>
           </div>
           <div class="sale-calc__subheadline">
-            Use a metamask compatible browser like Chrome or Firefox 
+            Use a metamask compatible browser like Chrome or Firefox
           </div>
         </div>
         <div class="sale-info">
@@ -717,12 +717,6 @@ export default {
         });
     },
     buyToken: async function () {
-      this.congrats = true;
-      const html = document.documentElement;
-      document.getElementById("root").classList.toggle("mobileMenu");
-      html.style.overflow === "hidden"
-        ? (html.style.overflow = "auto")
-        : (html.style.overflow = "hidden");
       if (this.account) {
         if (this.sendAmount < this.minBUY) {
           return;
@@ -740,7 +734,12 @@ export default {
           })
           .then((res) => {
             console.log(res);
-
+            this.congrats = true;
+            const html = document.documentElement;
+            document.getElementById("root").classList.toggle("mobileMenu");
+            html.style.overflow === "hidden"
+              ? (html.style.overflow = "auto")
+              : (html.style.overflow = "hidden");
             // document.location.reload();
           });
       }
@@ -963,7 +962,7 @@ button[disabled="disabled"] {
   align-items: center;
   gap: 4px;
   font-weight: 500;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
 }
 
