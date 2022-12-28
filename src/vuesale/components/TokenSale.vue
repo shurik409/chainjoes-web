@@ -162,7 +162,7 @@
             Deposit {{ this.sendAmount || 0 }} ETH
           </div>
           <div class="sale-calc__btns">
-            <div class="sale-calc__btn-wallet" v-if="!account" @click="connect">
+            <div class="sale-calc__btn-wallet" v-if="isMetamaskSupport" @click="connect">
               <div>
                 <svg
                   width="16"
@@ -187,10 +187,10 @@
               </div>
               Connect wallet
             </div>
-            <div
+            <a
               class="sale-calc__btn-wallet"
-              v-else="!account"
-              @click="connectMetaMask(2)"
+              v-else="!isMetamaskSupport"
+              href="https://metamask.app.link/dapp/shark-app-fbzrp.ondigitalocean.app/sale"
             >
               <div>
                 <svg
@@ -214,8 +214,8 @@
                   />
                 </svg>
               </div>
-              Connect wallet
-            </div>
+              Open in metamaskApp
+            </a>
             <div class="sale-calc__btn-chat">
               <svg
                 width="22"
@@ -510,6 +510,7 @@ export default {
       balance2: 0.4300990707,
       rangeValue: 50,
       congrats: false,
+      isMetamaskSupport: window.ethereum !== undefined
     };
   },
 
@@ -517,13 +518,16 @@ export default {
     if (window.ethereum) {
       console.log("created---------", window.ethereum);
       this.web3Obj.eth.getAccounts().then((result) => {
+        console.log(11122, result);
         this.account = result[0];
         //store.dispatch("checkMetamaskAddr", {metamask:result[0]});
       });
       window.ethereum.on("networkChanged", (networkId) => {
         this.networkChanged(networkId);
+        console.log(234);
       });
       window.ethereum.on("accountsChanged", async (accounts) => {
+        console.log(456666, accounts);
         this.account = accounts[0];
         this.getBalance();
         this.calcPrice();
