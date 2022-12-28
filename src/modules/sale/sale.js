@@ -115,7 +115,7 @@ const Sale = () => {
       links: [
         {
           title: "Discord",
-          link: "https://discord.com/invite/chainjoes ",
+          link: "https://discord.com/invite/chainjoes",
         },
         {
           title: "Twitter",
