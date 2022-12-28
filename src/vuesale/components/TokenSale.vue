@@ -474,7 +474,7 @@ export default {
       alertShow: false,
       alertMsg: "",
       networkId: "1",
-      account: "0x2579a0B2DF68B7a1FD07f033AE3553473A19c1B9", // fallback presale address
+      account: "", // fallback presale address
       is_tokensale: true,
       is_paused: false,
       nextBalance: 0,
