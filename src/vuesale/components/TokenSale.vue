@@ -259,6 +259,9 @@
               </svg>
             </div>
           </div>
+            <div>
+             Your account: {{ account }}
+            </div>
         </div>
         <div class="sale-info">
           <div class="sale-info-box sale-info__period">
@@ -338,7 +341,7 @@
           <div class="sale-info-box sale-info__amount">
             <p class="sale-info__amount-text sale-info__header">CJ For Sale</p>
             <div class="sale-info__amount-count sale-info__info">
-              <img :src="tokenImg" />2 000 000
+              <img :src="tokenImg" />{{2000000 - soldAmount}}
             </div>
           </div>
           <div class="sale-info-box sale-info__own">
