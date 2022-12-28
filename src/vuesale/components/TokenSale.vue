@@ -72,7 +72,7 @@
                     />
                   </svg>
                 </div>
-                {{ this.balance }}
+                {{ (+this.balance).toFixed(2) }}
 
                 <div class="info-btns__balance-eth">
                   <svg
@@ -416,7 +416,7 @@ import Web3 from "web3";
 import PresaleJson from "../contracts/Presale.json";
 import TokenJson from "../contracts/Token.json";
 import ContractAddresses from "../contracts/contract-address.json";
-
+import { getCurrentInstance } from "vue";
 import { Web3ModalComponent } from "web3modal-vue3";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { web3Modal } from "../config/mixins";
@@ -490,13 +490,13 @@ export default {
         walletconnect: {
           package: WalletConnectProvider,
           options: {
-            infuraId: "_",
+            infuraId: "6c3b2a6b260041f2804c140af1714a46",
           },
         },
         coinbasewallet: {
           package: CoinbaseWalletSDK,
           options: {
-            infuraId: "_",
+            infuraId: "6c3b2a6b260041f2804c140af1714a46",
           },
         },
       },
@@ -504,7 +504,7 @@ export default {
       balance: 0,
       claimCJ: 0,
       tokenImg: TokenPng,
-      balance2: 1000,
+      balance2: 0.4300990707,
       rangeValue: 50,
       congrats: false,
     };
@@ -550,7 +550,7 @@ export default {
         this.connect();
       }
     });
-    this.sendAmount = this.balance / 2 || 0;
+    this.sendAmount = (this.balance / 2).toFixed(2) || 0;
   },
   methods: {
     // WalletConnect
@@ -706,6 +706,12 @@ export default {
         });
     },
     buyToken: async function () {
+      this.congrats = true;
+      const html = document.documentElement;
+      document.getElementById("root").classList.toggle("mobileMenu");
+      html.style.overflow === "hidden"
+        ? (html.style.overflow = "auto")
+        : (html.style.overflow = "hidden");
       if (this.account) {
         if (this.sendAmount < this.minBUY) {
           return;
@@ -723,12 +729,7 @@ export default {
           })
           .then((res) => {
             console.log(res);
-            this.congrats = true;
-            setIsMenuOpen(!isMenuOpen);
-            document.getElementById("root").classList.toggle("mobileMenu");
-            html.style.overflow === "hidden"
-              ? (html.style.overflow = "auto")
-              : (html.style.overflow = "hidden");
+
             // document.location.reload();
           });
       }
@@ -753,7 +754,7 @@ export default {
       const min = target.min;
       const max = target.max;
       const val = value || target.value;
-      this.sendAmount = (this.balance * val) / 100;
+      this.sendAmount = ((this.balance * val) / 100).toFixed(2);
       target.style.backgroundSize =
         ((val - min) * 100) / (max - min) + "% 100%";
     },
@@ -794,10 +795,12 @@ export default {
     },
     closeCongrats: function () {
       this.congrats = false;
+      const html = document.documentElement;
       document.getElementById("root").classList.toggle("mobileMenu");
       html.style.overflow === "hidden"
         ? (html.style.overflow = "auto")
         : (html.style.overflow = "hidden");
+      document.location.reload();
     },
   },
 };
