@@ -440,7 +440,7 @@ export default {
       contractObj: {},
       tokenContractObj: {},
       price: 0,
-      sendAmount: 0.1,
+      sendAmount: 0.01,
       ethereum: window.ethereum,
       copiedTooltip: false,
       contractAddr: "",
@@ -738,12 +738,12 @@ export default {
       const min = target.min;
       const max = target.max;
       const val = value || target.value;
-      this.sendAmount = (this.balance * val) / 100;
+      this.sendAmount = `${(this.balance * val) / 100}`;
       target.style.backgroundSize =
         ((val - min) * 100) / (max - min) + "% 100%";
     },
     setMaxAmount: function () {
-      this.sendAmount = this.balance;
+      this.sendAmount = `${this.balance}`;
       this.rangeChange(false, 100);
     },
 
