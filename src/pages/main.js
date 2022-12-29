@@ -25,6 +25,7 @@ const Main = () => {
   const [isPlayed, setIsPlayed] = useState(0);
   // const [startTime, setStartTime] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
+  const [isPreload, setIsPreload] = useState(false);
   const navigate = useNavigate();
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
@@ -54,6 +55,10 @@ const Main = () => {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
+    const preloader = Cookies.get("Preloader");
+    if (preloader && !isPreload) {
+      setIsPreload(true);
+    }
     setProgres(0);
     setIsPlayed(cook);
     getAllVideo().forEach((src) => {
@@ -74,6 +79,18 @@ const Main = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (timeProgres >= 1) {
+      const preloader = Cookies.get("Preloader");
+      if (preloader && !isPreload) {
+        setIsPreload(true);
+      } else if (!preloader) {
+        Cookies.set("Preloader", true);
+        setIsPreload(true);
+      }
+    }
+  }, [timeProgres]);
+
   const prevideo = useCallback((node) => {
     if (node) {
       node.onended = () => {
@@ -91,7 +108,7 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 && isPlaying && !isPlayed ? (
+      {timeProgres < 1 && isPreload && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>
