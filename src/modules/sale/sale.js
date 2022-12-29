@@ -15,12 +15,14 @@ import { applyVueInReact } from "veaury";
 import App from "../../vuesale/App";
 const VueApp = applyVueInReact(App);
 
-const DATE = "Dec 26 2022 00:00:00 GMT+0100";
+const DATE = "Dec 29 2022 18:00:00 GMT+0100";
 const CLOSE_DATE = "Dec 31 2022 00:00:00 GMT+0100";
 
 const Sale = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSaleStarted, setIsSaleStarted] = useState(new Date(DATE) - new Date() > 0)
+  const [isSaleStarted, setIsSaleStarted] = useState(
+    new Date(DATE) - new Date() > 0
+  );
   const [activeMenuDropdown, setActiveMenuDropdown] = useState(0);
   const [activeFaq, setActiveFaq] = useState(0);
   const [documentColor, setDocumentColor] = useState("");
@@ -76,7 +78,7 @@ const Sale = () => {
       start: new Date(),
       end: new Date(DATE),
     });
-    setIsSaleStarted((new Date(DATE) - new Date() > 0));
+    setIsSaleStarted(new Date(DATE) - new Date() > 0);
     setTimeInterval(time);
   };
 
@@ -1005,15 +1007,16 @@ const Sale = () => {
               </Box>
             </Box>
           )}
-
-          <Box
-            sx={{
-              paddingLeft: { xs: 0, md: "135px" },
-              paddingTop: { xs: "30px", md: "160px" },
-            }}
-          >
-            <VueApp timer={endSaleTime} />
-          </Box>
+          {!isSaleStarted && (
+            <Box
+              sx={{
+                paddingLeft: { xs: 0, md: "135px" },
+                paddingTop: { xs: "30px", md: "160px" },
+              }}
+            >
+              <VueApp timer={endSaleTime} />
+            </Box>
+          )}
         </Box>
         <Box sx={{ marginTop: { xs: "60px", md: "100px" } }}>
           <Box
