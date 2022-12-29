@@ -52,7 +52,7 @@ const FAQ = () => {
       links: [
         {
           title: "Discord",
-          link: "https://discord.com/invite/chainjoes ",
+          link: "https://discord.gg/AABG2mJZAp",
         },
         {
           title: "Twitter",
@@ -465,7 +465,7 @@ const FAQ = () => {
           </a>{" "}
           and simply stay connected to our{" "}
           <a
-            href="https://discord.com/invite/chainjoes"
+            href="https://discord.gg/AABG2mJZAp"
             target="_blank"
             rel="noreferrer"
             style={{ color: "#fff", cursor: "pointer" }}

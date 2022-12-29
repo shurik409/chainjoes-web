@@ -371,7 +371,7 @@
         </div>
         <div class="congrats__description">
           We are waiting for you among the Defenders in our
-          <a href="https://discord.com/invite/chainjoes" target="_blank"
+          <a href="https://discord.gg/AABG2mJZAp" target="_blank"
             >Discord</a
           >
           to fight web3 enemies!

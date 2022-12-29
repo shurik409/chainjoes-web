@@ -103,7 +103,7 @@ const Social = () => {
             </Typography>
           </Box>
           <Link
-            href="https://discord.com/invite/chainjoes"
+            href="https://discord.gg/AABG2mJZAp"
             target="_blank"
             underline="none"
             style={{ zIndex: 2 }}

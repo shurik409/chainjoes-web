@@ -76,7 +76,7 @@ const First = () => {
       links: [
         {
           title: "Discord",
-          link: "https://discord.com/invite/chainjoes ",
+          link: "https://discord.gg/AABG2mJZAp",
         },
         {
           title: "Twitter",
@@ -530,7 +530,7 @@ const First = () => {
           }}
         >
           <Link
-            href="https://discord.com/invite/chainjoes"
+            href="https://discord.gg/AABG2mJZAp"
             target="_blank"
             underline="none"
           >

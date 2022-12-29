@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
       links: [
         {
           title: "Discord",
-          link: "https://discord.com/invite/chainjoes ",
+          link: "https://discord.gg/AABG2mJZAp",
         },
         {
           title: "Twitter",

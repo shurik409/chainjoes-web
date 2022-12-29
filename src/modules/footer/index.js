@@ -548,7 +548,7 @@ const Footer = () => {
                 </Box>
               </Link>
               <Link
-                href="https://discord.com/invite/chainjoes"
+                href="https://discord.gg/AABG2mJZAp"
                 target="_blank"
                 underline="none"
               >
@@ -580,7 +580,7 @@ const Footer = () => {
             </Box>
             <Box>
               <Link
-                href="https://discord.com/invite/chainjoes"
+                href="https://discord.gg/AABG2mJZAp"
                 target="_blank"
                 underline="none"
               >
