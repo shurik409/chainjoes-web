@@ -8,7 +8,7 @@
     <section id="sale-box">
       <div class="sale-box">
         <div class="sale-calc">
-          <p class="sale-calc__headline">private sales is live</p>
+          <p class="sale-calc__headline">private sale is live</p>
           <p class="sale-calc__subheadline">
             Join chain Joes Dao and let’s kick the Web3 enemies asses’s
             together!
