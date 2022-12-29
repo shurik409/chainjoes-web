@@ -560,8 +560,12 @@ const Sale = () => {
               display: "flex",
               alignItems: "center",
               paddingLeft: { xs: 0, md: "135px" },
-              paddingTop: { xs: "30px", md: "160px" },
+              // paddingTop: { xs: "30px", md: "160px" },
               justifyContent: { xs: "center", md: "start" },
+              height: "calc(100vh - 80px)",
+              // display: "flex",
+              // justifyContent: "start",
+              // alignItems: "center",
             }}
           >
             <Box

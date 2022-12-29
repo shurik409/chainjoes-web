@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Box } from "@mui/system";
-import {
-  Loader,
-} from "../modules";
+import { Loader } from "../modules";
 import { getAllImage, getAllVideo } from "../allImage";
 import PreLogoWebM from "../videos/prelogo.webm";
 import PreLogoMp4 from "../videos/prelogo.mp4";
@@ -17,6 +15,7 @@ const Main = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPlayed, setIsPlayed] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
+  const [isPreload, setIsPreload] = useState(false);
 
   const desktop = useMediaQuery("(min-width: 768px)");
 
@@ -45,6 +44,10 @@ const Main = () => {
 
   useEffect(() => {
     const cook = Cookies.get("PreLogo");
+    const preloader = Cookies.get("Preloader");
+    if (preloader && !isPreload) {
+      setIsPreload(true);
+    }
     Cookies.set("VisitSale", 1);
     setProgres(0);
     setIsPlayed(cook);
@@ -66,6 +69,30 @@ const Main = () => {
     });
   }, []);
 
+  useEffect(() => {
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "ee563a71-cdb5-450c-8897-219b26832c5b";
+    (function () {
+      let d = document;
+      let s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (timeProgres >= 1) {
+      const preloader = Cookies.get("Preloader");
+      if (preloader && !isPreload) {
+        setIsPreload(true);
+      } else if (!preloader) {
+        Cookies.set("Preloader", true);
+        setIsPreload(true);
+      }
+    }
+  }, [timeProgres]);
+
   const prevideo = useCallback((node) => {
     if (node) {
       node.onended = () => {
@@ -75,11 +102,9 @@ const Main = () => {
     }
   }, []);
 
-  
-
   return (
     <>
-      {timeProgres < 1 && isPlaying && !isPlayed ? (
+      {timeProgres < 1 && isPreload && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>
@@ -113,7 +138,7 @@ const Main = () => {
           ) : (
             <>
               <Box sx={{ overflowX: "hidden" }}>
-                <Sale/>
+                <Sale />
               </Box>
             </>
           )}
