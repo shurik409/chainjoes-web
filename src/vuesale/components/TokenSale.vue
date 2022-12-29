@@ -72,7 +72,7 @@
                     />
                   </svg>
                 </div>
-                {{ (+this.balance).toFixed(2) }}
+                {{ this.roundNumber(+this.balance) }}
 
                 <div class="info-btns__balance-eth">
                   <svg
@@ -226,10 +226,8 @@
           </div>
         </div>
         <div class="sale-info">
-          <!-- <div class="sale-info-box sale-info__period">
-            <p class="sale-info__period-text sale-info__header">
-              Sale Period Ends
-            </p>
+          <div class="sale-info-box sale-info__period">
+            <p class="sale-info__period-text sale-info__header">Min deposit</p>
             <div class="sale-info__period-time sale-info__info">
               <svg
                 width="19"
@@ -238,26 +236,36 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle
-                  cx="9.5"
-                  cy="9.5"
-                  r="8.25"
-                  stroke="#878787"
-                  stroke-width="2"
-                />
-                <path
-                  d="M9.5 5.75V10.25L11.375 12.125"
-                  stroke="#878787"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+                <g opacity="0.8">
+                  <path
+                    d="M9.45717 3.13617L9.37817 3.40018V11.061L9.45717 11.1385L13.0738 9.03656L9.45717 3.13617Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45718 3.13617L5.84058 9.03656L9.45718 11.1386V7.42023V3.13617Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45711 12.2955L9.4126 12.3489V15.0778L9.45711 15.2057L13.0759 10.1946L9.45711 12.2955Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45718 15.2057V12.2955L5.84058 10.1946L9.45718 15.2057Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M9.45703 11.1386L13.0736 9.03662L9.45703 7.42029V11.1386Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M5.84058 9.03655L9.45712 11.1385V7.42023L5.84058 9.03655Z"
+                    fill="white"
+                  />
+                </g>
               </svg>
-              {{ $attrs.timer.days * 24 + $attrs.timer.hours }}:{{
-                $attrs.timer.minutes
-              }}:{{ $attrs.timer.seconds }}
+              0.01 ETH
             </div>
-          </div> -->
+          </div>
           <div class="sale-info-box sale-info__price">
             <p class="sale-info__price-text sale-info__header">
               Price per 1000 tokens
@@ -310,35 +318,43 @@
             <p class="sale-info__own-text sale-info__header">You own</p>
             <div class="sale-info__own-count sale-info__info">
               <img :src="tokenImg" /> {{ claimableAmount }}
-              <svg
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.5 17C13.6421 17 17 13.6421 17 9.5C17 5.35786 13.6421 2 9.5 2C5.35786 2 2 5.35786 2 9.5C2 13.6421 5.35786 17 9.5 17Z"
-                  stroke="#05D19B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M9.5 12.5V9.5"
-                  stroke="#05D19B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M9.5 6.5H9.5075"
-                  stroke="#05D19B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <div class="sale-info__own-hover">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.5 17C13.6421 17 17 13.6421 17 9.5C17 5.35786 13.6421 2 9.5 2C5.35786 2 2 5.35786 2 9.5C2 13.6421 5.35786 17 9.5 17Z"
+                    stroke="#05D19B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.5 12.5V9.5"
+                    stroke="#05D19B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.5 6.5H9.5075"
+                    stroke="#05D19B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="sale-info__own-note">
+                  <p>
+                    The tokens will be claimable after the public IDO in the Q1
+                    2023
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -519,7 +535,7 @@ export default {
         this.connect();
       }
     });
-    this.sendAmount = (this.balance / 2).toFixed(2) || 0;
+    this.sendAmount = this.roundNumber(this.balance / 2) || 0;
   },
   methods: {
     // WalletConnect
@@ -722,7 +738,7 @@ export default {
       const min = target.min;
       const max = target.max;
       const val = value || target.value;
-      this.sendAmount = ((this.balance * val) / 100).toFixed(2);
+      this.sendAmount = this.roundNumber((this.balance * val) / 100);
       target.style.backgroundSize =
         ((val - min) * 100) / (max - min) + "% 100%";
     },
@@ -769,6 +785,9 @@ export default {
         ? (html.style.overflow = "auto")
         : (html.style.overflow = "hidden");
       document.location.reload();
+    },
+    roundNumber: function (num) {
+      return parseInt(num * 100) / 100;
     },
   },
 };
@@ -1021,6 +1040,38 @@ button[disabled="disabled"] {
   background: #616161;
   color: #878787;
 }
+
+.sale-info__own-hover {
+  position: relative;
+  cursor: pointer;
+}
+.sale-info__own-hover:hover > .sale-info__own-note {
+  display: flex;
+}
+
+.sale-info__own-note {
+  width: 256px;
+  height: 60px;
+  font-size: 14px;
+  background: #242424;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: -60px;
+  transform: translateX(-50%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+.sale-info__own-note p {
+  max-width: 232px;
+  margin: 0;
+  font-family: "Inter";
+  font-weight: 400;
+  color: #fff;
+}
+
 #congrats {
   width: 100vw;
   height: 100vh;
@@ -1084,6 +1135,18 @@ button[disabled="disabled"] {
   cursor: pointer;
 }
 
+.sale-congrats__btn:hover {
+  outline: 1px solid #00ffb7;
+  background: none;
+}
+.congrats__btn:focus {
+  outline: 1px solid #fff;
+  background: none;
+}
+.congrats__btn:active {
+  background: #fff;
+  color: #080808;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
