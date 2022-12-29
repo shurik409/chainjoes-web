@@ -226,7 +226,7 @@
           </div>
         </div>
         <div class="sale-info">
-          <div class="sale-info-box sale-info__period">
+          <!-- <div class="sale-info-box sale-info__period">
             <p class="sale-info__period-text sale-info__header">
               Sale Period Ends
             </p>
@@ -257,7 +257,7 @@
                 $attrs.timer.minutes
               }}:{{ $attrs.timer.seconds }}
             </div>
-          </div>
+          </div> -->
           <div class="sale-info-box sale-info__price">
             <p class="sale-info__price-text sale-info__header">
               Price per 1000 tokens

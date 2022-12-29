@@ -16,6 +16,7 @@ import App from "../../vuesale/App";
 const VueApp = applyVueInReact(App);
 
 const DATE = "Dec 26 2022 00:00:00 GMT+0100";
+const CLOSE_DATE = "Dec 31 2022 00:00:00 GMT+0100";
 
 const Sale = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ const Sale = () => {
   const [endSaleTime, setEndSaleTime] = useState(
     intervalToDuration({
       start: new Date(),
-      end: new Date("Dec 31 2022 00:00:00 GMT+0100"),
+      end: new Date(CLOSE_DATE),
     })
   );
 
@@ -82,7 +83,7 @@ const Sale = () => {
   const getTimeToEnd = () => {
     let time = intervalToDuration({
       start: new Date(),
-      end: new Date("Dec 31 2022 00:00:00 GMT+0100"),
+      end: new Date(CLOSE_DATE),
     });
     setEndSaleTime(time);
   };
