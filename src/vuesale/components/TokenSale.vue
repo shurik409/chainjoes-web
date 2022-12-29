@@ -738,7 +738,7 @@ export default {
       const min = target.min;
       const max = target.max;
       const val = value || target.value;
-      this.sendAmount = this.roundNumber((this.balance * val) / 100);
+      this.sendAmount = (this.balance * val) / 100;
       target.style.backgroundSize =
         ((val - min) * 100) / (max - min) + "% 100%";
     },
@@ -1044,6 +1044,8 @@ button[disabled="disabled"] {
 .sale-info__own-hover {
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .sale-info__own-hover:hover > .sale-info__own-note {
   display: flex;
@@ -1062,7 +1064,6 @@ button[disabled="disabled"] {
   display: none;
   justify-content: center;
   align-items: center;
-
 }
 .sale-info__own-note p {
   max-width: 232px;
