@@ -837,50 +837,6 @@ const Sale = () => {
                     </Box>
                   </Box>
                 </Box>
-                <Link href="/whitelist.html" target="_blank" underline="none">
-                  <Box
-                    sx={{
-                      width: { xs: "240px", md: "394px" },
-                      margin: "auto",
-                      height: { xs: "46px", md: "46px" },
-                      display: "flex",
-                      borderRadius: "2px",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      cursor: "pointer",
-                      background:
-                        "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-                      fontWeight: { xs: 500 },
-                      fontSize: { xs: "14px", md: "14px" },
-                      color: "#FFFFFF",
-                      ":hover": {
-                        outline: "1px solid #00FFB7",
-                        background: "none",
-                      },
-                      ":focus": {
-                        outline: "1px solid #FFF",
-                        background: "none",
-                      },
-                      ":active": {
-                        background: "#FFF",
-                        color: "#080808",
-                      },
-                    }}
-                  >
-                    <img src={Login} alt="login" />
-                    <Typography
-                      marginLeft="11px"
-                      fontFamily="Inter"
-                      style={{
-                        fontWeight: "inherit",
-                        fontSize: "inherit",
-                        color: "inherit",
-                      }}
-                    >
-                      Join Whitelist
-                    </Typography>
-                  </Box>
-                </Link>
                 <Box
                   sx={{
                     display: "flex",

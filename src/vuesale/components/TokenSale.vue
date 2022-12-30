@@ -468,12 +468,6 @@ export default {
       minBUY: 0.01,
       theme: "light",
       providerOptions: {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            infuraId: "6c3b2a6b260041f2804c140af1714a46",
-          },
-        },
         coinbasewallet: {
           package: CoinbaseWalletSDK,
           options: {

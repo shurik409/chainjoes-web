@@ -288,43 +288,6 @@ const Header = ({ closeMenu, buttons }) => {
                 </Typography>
               </Box>
             </Link>
-            <Link href="/whitelist.html" target="_blank" underline="none">
-              <Box
-                sx={{
-                  width: "150px",
-                  height: "44px",
-                  display: "flex",
-                  borderRadius: "2px",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  cursor: "pointer",
-                  color: "#FFF",
-                  background:
-                    "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%),linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-                  ":hover": {
-                    outline: "1px solid #00FFB7",
-                    background: "none",
-                  },
-                  ":focus": {
-                    outline: "1px solid #FFF",
-                    background: "none",
-                  },
-                  ":active": {
-                    background: "#FFF",
-                    color: "#080808",
-                  },
-                }}
-              >
-                <Typography
-                  fontSize="14px"
-                  marginRight="4px"
-                  style={{ color: "inherit" }}
-                >
-                  Whitelist
-                </Typography>
-                <img src={ArrowRight} alt="arrow-right" />
-              </Box>
-            </Link>
           </Box>
           <Box
             sx={{
