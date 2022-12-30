@@ -108,7 +108,7 @@ const Main = () => {
         <Loader progres={timeProgres} />
       ) : (
         <>
-          {isPlaying && !isPlayed && desktop ? (
+          {/* {isPlaying && !isPlayed && desktop ? (
             <Box
               sx={{
                 display: "flex",
@@ -135,13 +135,13 @@ const Main = () => {
                 Your browser does not support the video tag.
               </video>
             </Box>
-          ) : (
-            <>
-              <Box sx={{ overflowX: "hidden" }}>
-                <Sale />
-              </Box>
-            </>
-          )}
+          ) : ( */}
+          <>
+            <Box sx={{ overflowX: "hidden" }}>
+              <Sale />
+            </Box>
+          </>
+          {/* )} */}
         </>
       )}
     </>
