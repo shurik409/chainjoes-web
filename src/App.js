@@ -22,7 +22,7 @@ function App() {
     <Box>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/sale" replace />}/>
+          <Route exact path="/" element={<Navigate to="/sale" replace />} />
           <Route path="/main" element={<Main />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-conditions" element={<Terms />} />

@@ -27,22 +27,22 @@ const FAQ = () => {
       links: [
         {
           title: "Backstory",
-          link: "/#backstory",
+          link: "/main/#backstory",
           type: "scroll",
         },
         {
           title: "ChainVerse",
-          link: "/#chainverse",
+          link: "/main/#chainverse",
           type: "scroll",
         },
         {
           title: "Characters",
-          link: "/#characters",
+          link: "/main/#characters",
           type: "scroll",
         },
         {
           title: "Activities",
-          link: "/#activities",
+          link: "/main/#activities",
           type: "scroll",
         },
       ],
@@ -66,22 +66,22 @@ const FAQ = () => {
     },
     {
       title: "Roadmap",
-      link: "/#roadmap",
+      link: "/main/#roadmap",
       type: "scroll",
     },
     {
       title: "Team",
-      link: "/#team",
+      link: "/main/#team",
       type: "scroll",
     },
     {
       title: "Partners",
-      link: "/#partners",
+      link: "/main/#partners",
       type: "scroll",
     },
     {
       title: "Roadmap",
-      link: "/#roadmap",
+      link: "/main/#roadmap",
       type: "scroll",
     },
     {
@@ -284,7 +284,7 @@ const FAQ = () => {
           available. The project's roadmap can be discovered in more detail at
           the{" "}
           <HashLink
-            to="/#roadmap"
+            to="/main/#roadmap"
             scroll={(el) => {
               el.scrollIntoView({
                 behavior: "smooth",

@@ -25,8 +25,9 @@ const Main = () => {
   const [isPlayed, setIsPlayed] = useState(0);
   // const [startTime, setStartTime] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
-  const [isPreload, setIsPreload] = useState(false);
+  const [isPreload, setIsPreload] = useState(Cookies.get("Preloader"));
   const navigate = useNavigate();
+  console.log("isPreload:", isPreload);
 
   const increaseProgres = () => setProgres((prev) => prev + 1);
 
@@ -108,7 +109,7 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 && isPreload && isPlaying && !isPlayed ? (
+      {timeProgres < 1 && !isPreload && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>

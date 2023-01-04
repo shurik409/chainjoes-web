@@ -15,7 +15,7 @@ const Main = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPlayed, setIsPlayed] = useState(0);
   const [timeProgres, setTimeProgres] = useState(0);
-  const [isPreload, setIsPreload] = useState(false);
+  const [isPreload, setIsPreload] = useState(Cookies.get("Preloader"));
 
   const desktop = useMediaQuery("(min-width: 768px)");
 
@@ -104,7 +104,7 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 && isPreload && isPlaying && !isPlayed ? (
+      {timeProgres < 1 && !isPreload && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
         <>

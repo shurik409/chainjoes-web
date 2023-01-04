@@ -51,22 +51,22 @@ const First = () => {
       links: [
         {
           title: "Backstory",
-          link: "/#backstory",
+          link: "/main/#backstory",
           type: "scroll",
         },
         {
           title: "ChainVerse",
-          link: "/#chainverse",
+          link: "/main/#chainverse",
           type: "scroll",
         },
         {
           title: "Characters",
-          link: "/#characters",
+          link: "/main/#characters",
           type: "scroll",
         },
         {
           title: "Activities",
-          link: "/#activities",
+          link: "/main/#activities",
           type: "scroll",
         },
       ],
@@ -90,17 +90,17 @@ const First = () => {
     },
     {
       title: "Roadmap",
-      link: "/#roadmap",
+      link: "/main/#roadmap",
       type: "scroll",
     },
     {
       title: "Team",
-      link: "/#team",
+      link: "/main/#team",
       type: "scroll",
     },
     {
       title: "Partners",
-      link: "/#partners",
+      link: "/main/#partners",
       type: "scroll",
     },
     {
