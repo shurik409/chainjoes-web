@@ -109,11 +109,11 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 && !isPreload && isPlaying && !isPlayed ? (
+      {/* {timeProgres < 1 && !isPreload && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
-        <>
-          {/* {isPlaying && !isPlayed && desktop ? (
+        <> */}
+      {/* {isPlaying && !isPlayed && desktop ? (
             <Box
               sx={{
                 display: "flex",
@@ -141,20 +141,20 @@ const Main = () => {
               </video>
             </Box>
           ) : ( */}
-          <>
-            <Box sx={{ overflowX: "hidden" }}>
-              <First />
-              <Enemies />
-              <LoopLine />
-              <Explore />
-              <Activities />
-              <Social />
-              <Footer />
-            </Box>
-          </>
-          {/* )} */}
-        </>
-      )}
+      <>
+        <Box sx={{ overflowX: "hidden" }}>
+          <First />
+          <Enemies />
+          <LoopLine />
+          <Explore />
+          <Activities />
+          <Social />
+          <Footer />
+        </Box>
+      </>
+      {/* )} */}ы
+      {/* </>
+      )} */}
     </>
   );
 };

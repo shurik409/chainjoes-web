@@ -6,6 +6,7 @@ import ArrowDown from "../../imgs/new/arrow-down.svg";
 import { HashLink } from "react-router-hash-link";
 import { Footer } from "../";
 import SaleBG from "../../imgs/sale_bg.png";
+import SaleBG2 from "../../imgs/sale_bg2.jpeg";
 import Login from "../../imgs/new/login.svg";
 import { Document, WatchGreen } from "../../imgs/new/svg";
 import { intervalToDuration } from "date-fns";
@@ -329,7 +330,18 @@ const Sale = () => {
   ];
 
   return (
-    <Box>
+    <Box
+      sx={{
+        "@keyframes opacity": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+      }}
+    >
       <Box
         sx={{
           position: "relative",
@@ -339,12 +351,27 @@ const Sale = () => {
       >
         <Box
           sx={{
-            minHeight: "100vh",
+            minHeight: { xs: "100vh", md: "max(100vh, 900px)" },
             position: "relative",
+            ".sale-video": {
+              background: `url(${SaleBG2})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              height: { xs: "100vh", md: "max(100vh, 900px)" },
+              width: "100%",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              zIndex: -1,
+              animationName: "opacity",
+              animationDuration: "5s",
+              animationFillMode: "both",
+              animationDelay: "1s",
+            },
           }}
         >
-          <Box>
-            <video
+          <Box className="sale-video">
+            {/* <video
               ref={refVideo}
               autoPlay="autoPlay"
               loop="loop"
@@ -354,19 +381,12 @@ const Sale = () => {
               preload="auto"
               id="vid"
               poster={SaleBG}
-              style={{
-                objectFit: "cover",
-                height: "100vh",
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                right: 0,
-                zIndex: -1,
-              }}
+              className="sale-video"
+              style={{}}
             >
               <source src={PreSaleMp4} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
           </Box>
           <Box
             sx={{
@@ -579,406 +599,421 @@ const Sale = () => {
               // paddingY: { xs: "15px", lg: "30px" },
             }}
           >
-            <Box>
+            <Box
+              sx={{
+                animationName: "opacity",
+                animationDuration: "5s",
+                animationFillMode: "both",
+                animationDelay: "0s",
+              }}
+            >
               <Header closeMenu={handleMobileMenu} buttons={buttons} />
             </Box>
           </Box>
-          {isSaleStarted && (
-            <Box
+          <Box
               sx={{
-                display: "flex",
-                alignItems: "center",
-                paddingLeft: { xs: 0, md: "135px" },
-                // paddingTop: { xs: "30px", md: "160px" },
-                justifyContent: { xs: "center", md: "start" },
-                height: "calc(100vh - 80px)",
-              // display: "flex",
-              // justifyContent: "start",
-              // alignItems: "center",
-            }}
-            >
+                animationName: "opacity",
+                animationDuration: "5s",
+                animationFillMode: "both",
+                animationDelay: "2s",
+              }}>
+            {isSaleStarted && (
               <Box
                 sx={{
-                  padding: { xs: "40px 0px", md: "60px 40px" },
-                  maxWidth: { xs: "280px", md: "100%" },
-                  background: "#080808",
-                  borderRadius: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingLeft: { xs: 0, md: "135px" },
+                  // paddingTop: { xs: "30px", md: "160px" },
+                  justifyContent: { xs: "center", md: "start" },
+                  height: "calc(100vh - 80px)",
+                  // display: "flex",
+                  // justifyContent: "start",
+                  // alignItems: "center",
                 }}
               >
                 <Box
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+                    padding: { xs: "40px 0px", md: "60px 40px" },
+                    maxWidth: { xs: "280px", md: "100%" },
+                    background: "#080808",
+                    borderRadius: "8px",
                   }}
                 >
                   <Box
                     sx={{
-                      fontSize: { xs: "37px", md: "40px" },
-                      lineHeight: { xs: "33.3px", md: "36px" },
-                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
                     }}
                   >
-                    <Typography
-                      fontFamily="Aaaiight"
-                      color="#fff"
-                      style={{
-                        fontSize: "inherit",
-                        lineHeight: "inherit",
+                    <Box
+                      sx={{
+                        fontSize: { xs: "37px", md: "40px" },
+                        lineHeight: { xs: "33.3px", md: "36px" },
+                        textAlign: "center",
                       }}
                     >
-                      join private sale
-                    </Typography>
+                      <Typography
+                        fontFamily="Aaaiight"
+                        color="#fff"
+                        style={{
+                          fontSize: "inherit",
+                          lineHeight: "inherit",
+                        }}
+                      >
+                        join private sale
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        marginTop: "18px",
+                        fontSize: { xs: "12px", md: "14px" },
+                        lineHeight: { xs: "19.2px", md: "22.4px" },
+                        maxWidth: { xs: "200px", md: "100%" },
+                        textAlign: "center",
+                      }}
+                    >
+                      <Typography
+                        fontFamily="Inter"
+                        color="#fff"
+                        style={{
+                          fontSize: "inherit",
+                          lineHeight: "inherit",
+                        }}
+                      >
+                        and let’s kick the web3 enemies’ asses together!
+                      </Typography>
+                    </Box>
                   </Box>
                   <Box
                     sx={{
-                      marginTop: "18px",
-                      fontSize: { xs: "12px", md: "14px" },
-                      lineHeight: { xs: "19.2px", md: "22.4px" },
-                      maxWidth: { xs: "200px", md: "100%" },
-                      textAlign: "center",
+                      display: "flex",
+                      gap: { xs: "12px", md: "28px" },
+                      marginY: "40px",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
+                    <Box>
+                      <Box
+                        sx={{
+                          fontSize: { xs: "24px", md: "32px" },
+                          lineHeight: { xs: "28.8px", md: "28.8px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Aaaiight"
+                          color="#fff"
+                          textAlign="center"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          {timeInterval.days}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: { xs: "8px", md: "16px" },
+                          fontSize: { xs: "12px", md: "14px" },
+                          lineHeight: { xs: "19.2px", md: "22.4px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          color="#fff"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          days
+                        </Typography>
+                      </Box>
+                    </Box>
                     <Typography
                       fontFamily="Inter"
+                      fontSize="20px"
                       color="#fff"
-                      style={{
-                        fontSize: "inherit",
-                        lineHeight: "inherit",
-                      }}
+                      lineHeight="20px"
                     >
-                      and let’s kick the web3 enemies’ asses together!
+                      :
                     </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    gap: { xs: "12px", md: "28px" },
-                    marginY: "40px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Box>
-                    <Box
-                      sx={{
-                        fontSize: { xs: "24px", md: "32px" },
-                        lineHeight: { xs: "28.8px", md: "28.8px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Aaaiight"
-                        color="#fff"
-                        textAlign="center"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
+                    <Box>
+                      <Box
+                        sx={{
+                          fontSize: { xs: "24px", md: "32px" },
+                          lineHeight: { xs: "28.8px", md: "28.8px" },
                         }}
                       >
-                        {timeInterval.days}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        marginTop: { xs: "8px", md: "16px" },
-                        fontSize: { xs: "12px", md: "14px" },
-                        lineHeight: { xs: "19.2px", md: "22.4px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Inter"
-                        color="#fff"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        days
-                      </Typography>
-                    </Box>
-                  </Box>
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="20px"
-                    color="#fff"
-                    lineHeight="20px"
-                  >
-                    :
-                  </Typography>
-                  <Box>
-                    <Box
-                      sx={{
-                        fontSize: { xs: "24px", md: "32px" },
-                        lineHeight: { xs: "28.8px", md: "28.8px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Aaaiight"
-                        color="#fff"
-                        textAlign="center"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        {timeInterval.hours}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        marginTop: { xs: "8px", md: "16px" },
-                        fontSize: { xs: "12px", md: "14px" },
-                        lineHeight: { xs: "19.2px", md: "22.4px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Inter"
-                        color="#fff"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        hours
-                      </Typography>
-                    </Box>
-                  </Box>
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="20px"
-                    color="#fff"
-                    lineHeight="20px"
-                  >
-                    :
-                  </Typography>
-                  <Box>
-                    <Box
-                      sx={{
-                        fontSize: { xs: "24px", md: "32px" },
-                        lineHeight: { xs: "28.8px", md: "28.8px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Aaaiight"
-                        color="#fff"
-                        textAlign="center"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        {timeInterval.minutes}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        marginTop: { xs: "8px", md: "16px" },
-                        fontSize: { xs: "12px", md: "14px" },
-                        lineHeight: { xs: "19.2px", md: "22.4px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Inter"
-                        color="#fff"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        minutes
-                      </Typography>
-                    </Box>
-                  </Box>
-                  <Typography
-                    fontFamily="Inter"
-                    fontSize="20px"
-                    color="#fff"
-                    lineHeight="20px"
-                  >
-                    :
-                  </Typography>
-                  <Box>
-                    <Box
-                      sx={{
-                        fontSize: { xs: "24px", md: "32px" },
-                        lineHeight: { xs: "28.8px", md: "28.8px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Aaaiight"
-                        color="#fff"
-                        textAlign="center"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        {timeInterval.seconds}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        marginTop: { xs: "8px", md: "16px" },
-                        fontSize: { xs: "12px", md: "14px" },
-                        lineHeight: { xs: "19.2px", md: "22.4px" },
-                      }}
-                    >
-                      <Typography
-                        fontFamily="Inter"
-                        color="#fff"
-                        style={{
-                          fontSize: "inherit",
-                          lineHeight: "inherit",
-                        }}
-                      >
-                        seconds
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: { xs: "column", md: "row" },
-                    alignItems: "center",
-                  }}
-                >
-                  <Link
-                    href="https://www.youtube.com/watch?v=bJ28vhjO4Qg&ab_channel=ChainJoes"
-                    target="_blank"
-                    underline="none"
-                  >
-                    <Box
-                      sx={{
-                        width: { xs: "240px", md: "187px" },
-                        height: { xs: "46px", md: "46px" },
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: "2px",
-                        border: "1px solid",
-                        borderImageSlice: 1,
-                        borderImageSource:
-                          "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                        marginRight: { xs: "0", md: "16px" },
-                        cursor: "pointer",
-                        marginTop: { xs: "12px", md: "16px" },
-                        fontWeight: { xs: 500 },
-                        color: "#05D19B",
-                        fontSize: { xs: "14px", md: "14px" },
-                        ":hover": {
-                          color: "#FFF",
-                        },
-                        ":focus": {
-                          border: "1px solid #FFF",
-                          color: "#FFF",
-                        },
-                        ":active": {
-                          background: "#FFF",
-                          color: "#080808",
-                        },
-                      }}
-                      onMouseEnter={(e) => {
-                        e.preventDefault();
-                        setWatchColor("#FFF");
-                      }}
-                      onMouseLeave={(e) => {
-                        e.preventDefault();
-                        setWatchColor("");
-                      }}
-                    >
-                      <Box>
-                        <WatchGreen color={watchColor} />
+                        <Typography
+                          fontFamily="Aaaiight"
+                          color="#fff"
+                          textAlign="center"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          {timeInterval.hours}
+                        </Typography>
                       </Box>
-                      <Typography
-                        marginLeft="8px"
-                        fontWeight="600"
-                        fontFamily="Inter"
-                        style={{
-                          fontWeight: "inherit",
-                          fontSize: "inherit",
-                          color: "inherit",
+                      <Box
+                        sx={{
+                          marginTop: { xs: "8px", md: "16px" },
+                          fontSize: { xs: "12px", md: "14px" },
+                          lineHeight: { xs: "19.2px", md: "22.4px" },
                         }}
                       >
-                        Watch the Teaser
-                      </Typography>
-                    </Box>
-                  </Link>
-                  <Link
-                    href="/pdfs/Whitepaper.pdf"
-                    target="_blank"
-                    underline="none"
-                  >
-                    <Box
-                      sx={{
-                        width: { xs: "240px", md: "187px" },
-                        height: { xs: "46px", md: "46px" },
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: "2px",
-                        border: "1px solid",
-                        borderImageSlice: 1,
-                        borderImageSource:
-                          "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                        cursor: "pointer",
-                        marginTop: { xs: "12px", md: "16px" },
-                        fontWeight: { xs: 500 },
-                        color: "#05D19B",
-                        fontSize: { xs: "14px", md: "14px" },
-                        ":hover": {
-                          color: "#FFF",
-                        },
-                        ":focus": {
-                          border: "1px solid #FFF",
-                          color: "#FFF",
-                        },
-                        ":active": {
-                          background: "#FFF",
-                          color: "#080808",
-                        },
-                      }}
-                      onMouseEnter={(e) => {
-                        e.preventDefault();
-                        setDocumentColor("#FFF");
-                      }}
-                      onMouseLeave={(e) => {
-                        e.preventDefault();
-                        setDocumentColor("");
-                      }}
-                    >
-                      <Box>
-                        <Document color={documentColor} width="16px" />
+                        <Typography
+                          fontFamily="Inter"
+                          color="#fff"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          hours
+                        </Typography>
                       </Box>
-                      <Typography
-                        marginLeft="8px"
-                        fontWeight="600"
-                        fontFamily="Inter"
-                        style={{
-                          fontWeight: "inherit",
-                          fontSize: "inherit",
-                          color: "inherit",
+                    </Box>
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="20px"
+                      color="#fff"
+                      lineHeight="20px"
+                    >
+                      :
+                    </Typography>
+                    <Box>
+                      <Box
+                        sx={{
+                          fontSize: { xs: "24px", md: "32px" },
+                          lineHeight: { xs: "28.8px", md: "28.8px" },
                         }}
                       >
-                        Read Whitepaper
-                      </Typography>
+                        <Typography
+                          fontFamily="Aaaiight"
+                          color="#fff"
+                          textAlign="center"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          {timeInterval.minutes}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: { xs: "8px", md: "16px" },
+                          fontSize: { xs: "12px", md: "14px" },
+                          lineHeight: { xs: "19.2px", md: "22.4px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          color="#fff"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          minutes
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Link>
+                    <Typography
+                      fontFamily="Inter"
+                      fontSize="20px"
+                      color="#fff"
+                      lineHeight="20px"
+                    >
+                      :
+                    </Typography>
+                    <Box>
+                      <Box
+                        sx={{
+                          fontSize: { xs: "24px", md: "32px" },
+                          lineHeight: { xs: "28.8px", md: "28.8px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Aaaiight"
+                          color="#fff"
+                          textAlign="center"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          {timeInterval.seconds}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          marginTop: { xs: "8px", md: "16px" },
+                          fontSize: { xs: "12px", md: "14px" },
+                          lineHeight: { xs: "19.2px", md: "22.4px" },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Inter"
+                          color="#fff"
+                          style={{
+                            fontSize: "inherit",
+                            lineHeight: "inherit",
+                          }}
+                        >
+                          seconds
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: { xs: "column", md: "row" },
+                      alignItems: "center",
+                    }}
+                  >
+                    <Link
+                      href="https://www.youtube.com/watch?v=bJ28vhjO4Qg&ab_channel=ChainJoes"
+                      target="_blank"
+                      underline="none"
+                    >
+                      <Box
+                        sx={{
+                          width: { xs: "240px", md: "187px" },
+                          height: { xs: "46px", md: "46px" },
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "2px",
+                          border: "1px solid",
+                          borderImageSlice: 1,
+                          borderImageSource:
+                            "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                          marginRight: { xs: "0", md: "16px" },
+                          cursor: "pointer",
+                          marginTop: { xs: "12px", md: "16px" },
+                          fontWeight: { xs: 500 },
+                          color: "#05D19B",
+                          fontSize: { xs: "14px", md: "14px" },
+                          ":hover": {
+                            color: "#FFF",
+                          },
+                          ":focus": {
+                            border: "1px solid #FFF",
+                            color: "#FFF",
+                          },
+                          ":active": {
+                            background: "#FFF",
+                            color: "#080808",
+                          },
+                        }}
+                        onMouseEnter={(e) => {
+                          e.preventDefault();
+                          setWatchColor("#FFF");
+                        }}
+                        onMouseLeave={(e) => {
+                          e.preventDefault();
+                          setWatchColor("");
+                        }}
+                      >
+                        <Box>
+                          <WatchGreen color={watchColor} />
+                        </Box>
+                        <Typography
+                          marginLeft="8px"
+                          fontWeight="600"
+                          fontFamily="Inter"
+                          style={{
+                            fontWeight: "inherit",
+                            fontSize: "inherit",
+                            color: "inherit",
+                          }}
+                        >
+                          Watch the Teaser
+                        </Typography>
+                      </Box>
+                    </Link>
+                    <Link
+                      href="/pdfs/Whitepaper.pdf"
+                      target="_blank"
+                      underline="none"
+                    >
+                      <Box
+                        sx={{
+                          width: { xs: "240px", md: "187px" },
+                          height: { xs: "46px", md: "46px" },
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderRadius: "2px",
+                          border: "1px solid",
+                          borderImageSlice: 1,
+                          borderImageSource:
+                            "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
+                          cursor: "pointer",
+                          marginTop: { xs: "12px", md: "16px" },
+                          fontWeight: { xs: 500 },
+                          color: "#05D19B",
+                          fontSize: { xs: "14px", md: "14px" },
+                          ":hover": {
+                            color: "#FFF",
+                          },
+                          ":focus": {
+                            border: "1px solid #FFF",
+                            color: "#FFF",
+                          },
+                          ":active": {
+                            background: "#FFF",
+                            color: "#080808",
+                          },
+                        }}
+                        onMouseEnter={(e) => {
+                          e.preventDefault();
+                          setDocumentColor("#FFF");
+                        }}
+                        onMouseLeave={(e) => {
+                          e.preventDefault();
+                          setDocumentColor("");
+                        }}
+                      >
+                        <Box>
+                          <Document color={documentColor} width="16px" />
+                        </Box>
+                        <Typography
+                          marginLeft="8px"
+                          fontWeight="600"
+                          fontFamily="Inter"
+                          style={{
+                            fontWeight: "inherit",
+                            fontSize: "inherit",
+                            color: "inherit",
+                          }}
+                        >
+                          Read Whitepaper
+                        </Typography>
+                      </Box>
+                    </Link>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          )}
-          {!isSaleStarted && (
-            <Box
-              sx={{
-                paddingLeft: { xs: 0, md: "135px" },
-                paddingTop: { xs: "30px", md: "160px" },
-              }}
-            >
-              <VueApp timer={endSaleTime} />
-            </Box>
-          )}
+            )}
+            {!isSaleStarted && (
+              <Box
+                sx={{
+                  paddingLeft: { xs: 0, md: "135px" },
+                  paddingTop: { xs: "30px", md: "160px" },
+                }}
+              >
+                <VueApp timer={endSaleTime} />
+              </Box>
+            )}
+          </Box>
         </Box>
         <Box sx={{ marginTop: { xs: "60px", md: "100px" } }}>
           <Box

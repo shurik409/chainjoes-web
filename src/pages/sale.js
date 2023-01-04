@@ -104,10 +104,10 @@ const Main = () => {
 
   return (
     <>
-      {timeProgres < 1 && !isPreload && isPlaying && !isPlayed ? (
+      {/* {timeProgres < 1 && !isPreload && isPlaying && !isPlayed ? (
         <Loader progres={timeProgres} />
       ) : (
-        <>
+        <> */}
           {/* {isPlaying && !isPlayed && desktop ? (
             <Box
               sx={{
@@ -142,8 +142,8 @@ const Main = () => {
             </Box>
           </>
           {/* )} */}
-        </>
-      )}
+        {/* </>
+      )} */}
     </>
   );
 };
