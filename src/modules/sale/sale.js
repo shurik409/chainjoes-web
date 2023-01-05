@@ -596,6 +596,8 @@ const Sale = () => {
           <Box
             sx={{
               paddingX: { xs: "20px", md: "34px", lg: "66px", xl: "135px" },
+              zIndex: 100,
+              position: "relative",
               // paddingY: { xs: "15px", lg: "30px" },
             }}
           >
@@ -611,12 +613,13 @@ const Sale = () => {
             </Box>
           </Box>
           <Box
-              sx={{
-                animationName: "opacity",
-                animationDuration: "5s",
-                animationFillMode: "both",
-                animationDelay: "2s",
-              }}>
+            sx={{
+              animationName: "opacity",
+              animationDuration: "5s",
+              animationFillMode: "both",
+              animationDelay: "2s",
+            }}
+          >
             {isSaleStarted && (
               <Box
                 sx={{
