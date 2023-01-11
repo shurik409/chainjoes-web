@@ -162,7 +162,7 @@ const Enemies = () => {
                 </Box>
               </Link>
               <Link
-                href="https://www.youtube.com/watch?v=bJ28vhjO4Qg"
+                href="https://youtu.be/n2aK_gQoLls"
                 target="_blank"
                 underline="none"
               >
